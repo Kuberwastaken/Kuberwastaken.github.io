@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/b12e9109-4f76-4dc0-99a1-280630dde19c)
+
 # Terminal Inspired Personal Portfolio 🌟
 
 Welcome to my personal portfolio repository! This project showcases my skills, projects, and professional journey in a clean and interactive web-based design. Explore the terminal-style interface, animations, and responsive layouts that make my portfolio unique.
