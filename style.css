@@ -1,0 +1,381 @@
+/* Style for the footer text at the top */
+#footer-text {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); /* Center it horizontally */
+  text-align: left; /* Align text to the left inside the footer */
+  font-size: 14px;
+  color: #ffebcd; /* Set text color to match the rest of the content */
+  background-color: #000000; /* Changed to black */
+  padding: 10px 20px;
+  width: auto; /* Adjust width to fit the content */
+  max-width: 90%; /* Optional: limit the width of the footer */
+  z-index: 1000; /* Ensures it stays on top of the other content */
+}
+
+/* Add padding to the body content to avoid overlap with the fixed footer */
+body {
+  padding-top: 40px; /* Adjust based on the footer height */
+  color: #ffebcd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background-color: #000000; /* Changed to black */
+  background-size: 100%;
+  position: relative;
+  margin: 10px;
+}
+
+/* Resetting some default styling for all elements */
+* {
+  font-size: 20px;
+}
+
+/* Styling for inline containers */
+body .inlineContainer {
+  display: inline-flex;
+}
+
+/* Styling for the command name */
+body .commandName {
+  color: plum;
+}
+
+/* Styling for the avatar image */
+body .avatar {
+  margin-left: -25px;
+  opacity: 0.8;
+  width: 155px;
+  pointer-events: none;
+  height: 155px;
+}
+
+/* Terminal styles */
+body #terminal {
+  font-family: monospace;
+  color: #ffebcd;
+  height: 95%;
+  width: 95%;
+  position: relative;
+  padding-right: 160px; /* Ensures space for neofetch on the right */
+  overflow-y: scroll; /* Enables vertical scrolling */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  max-height: 95vh; /* Ensures the terminal stays within the viewport */
+}
+
+/* Styling for the terminal output */
+body #terminal #output {
+  margin-bottom: 10px;
+}
+
+/* Styling for the terminal input */
+body #terminal #input {
+  margin-top: 20px;
+}
+
+/* Styling for the prompt in the terminal */
+body #terminal #prompt {
+  font-weight: 700;
+}
+
+/* Styling for the command input field */
+body #terminal #cmd {
+  font-size: 20px;
+  background: 0 0;
+  border: none;
+  color: #ffebcd;
+  outline: 0;
+  transition: caret-color 0.3s ease;
+  width: 70%;
+}
+
+/* Styling for focused command input field */
+body #terminal #cmd:focus {
+  caret-color: #ffebcd;
+}
+
+/* Styling for suggestions */
+body #terminal #suggestions {
+  margin-top: 10px;
+  color: #ffebcd;
+}
+
+/* Styling for selected suggestions */
+body #terminal #suggestions .selected {
+  font-weight: 800;
+  color: #7fffd4;
+}
+
+/* Styling for the owner terminal */
+body #terminal .ownerTerminal {
+  font-size: 20px;
+  color: #5abb9a;
+}
+
+/* Neofetch styles */
+#neofetch {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #ffebcd;
+  font-size: 14px;
+  z-index: 10; /* Ensure neofetch stays on top */
+}
+
+/* Keyframe animation for destroying effect */
+@keyframes destroyAnimation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0.2;
+  }
+}
+
+/* Styling for command input text */
+.command-input {
+  font-weight: 400;
+}
+
+/* Styling for entered commands */
+.command-input.command-entered {
+  font-weight: 700;
+}
+
+/* Error styling for names and descriptions */
+.nameErr {
+  font-size: 100px;
+}
+
+.descErr {
+  font-size: 10px;
+}
+
+/* Styling for projects section */
+.projectsDiv {
+  display: inline-flex;
+  margin-top: 20px;
+}
+
+/* Styling for article wrappers */
+.article-wrapper {
+  margin: 10px;
+  width: 250px;
+  transition: 0.15s all ease-in-out;
+  border-radius: 2px;
+  padding: 5px;
+  border: 4px solid transparent;
+  cursor: pointer;
+  background-color: #ffebcd;
+}
+
+/* Hover effect for article wrapper */
+.article-wrapper:hover {
+  box-shadow: 10px 10px 0 #5abb9a, 20px 20px 0 plum;
+  border-color: #2d0922;
+  transform: translate(-20px, -20px);
+}
+
+/* Active state for article wrapper */
+.article-wrapper:active {
+  box-shadow: none;
+  transform: translate(0);
+}
+
+/* Hover effect for project hover element */
+.article-wrapper:hover .project-hover {
+  transform: rotate(-45deg);
+  background-color: #a6c2f0;
+}
+
+/* Styling for project information */
+.project-info {
+  padding: 10px 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Styling for project title */
+.project-info .project-title {
+  font-size: 2em;
+  margin: 0;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #000;
+}
+
+/* Styling for project description */
+.project-info .project-description {
+  color: #000;
+  font-weight: 300;
+}
+
+/* Flexbox styling for project information */
+.project-info .flex-pr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styling for project hover icon */
+.project-hover {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 9px;
+  transition: all 0.3s ease;
+}
+
+/* Container styling for project */
+.container-project {
+  width: 100%;
+  height: 170px;
+  background: gray;
+}
+
+/* Flex container for skills */
+body .container .flex {
+  display: inline-flex;
+  margin: 20px;
+}
+
+/* Styling for skill bars */
+.skillBar {
+  width: 250px;
+  height: 30px;
+  border: 1px solid #ffebcd;
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* Individual skill bar items */
+.skillBarItem1, .skillBarItem2, .skillBarItem3, .skillBarItem4, .skillBarItem5, .skillBarItem6, .skillBarItem7, .skillBarItem8 {
+  height: 30px;
+  background: #ffebcd;
+}
+
+/* Skill bar animation for slide-in effect */
+.skillBarItem1 {
+  width: 100%;
+  animation: slide1 2s ease-in-out;
+}
+
+.skillBarItem2 {
+  width: 100%;
+  animation: slide2 2s ease-in-out;
+}
+
+.skillBarItem3 {
+  width: 95%;
+  animation: slide3 2s ease-in-out;
+}
+
+.skillBarItem4 {
+  width: 55%;
+  animation: slide4 2s ease-in-out;
+}
+
+.skillBarItem5 {
+  width: 85%;
+  animation: slide5 2s ease-in-out;
+}
+
+.skillBarItem6 {
+  width: 15%;
+  animation: slide6 2s ease-in-out;
+}
+
+.skillBarItem7 {
+  width: 5%;
+  animation: slide7 2s ease-in-out;
+}
+
+.skillBarItem8 {
+  width: 5%;
+  animation: slide8 2s ease-in-out;
+}
+
+/* Keyframe animations for skill bars */
+@keyframes slide1 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes slide2 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes slide3 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 95%;
+  }
+}
+
+@keyframes slide4 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 55%;
+  }
+}
+
+@keyframes slide5 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 85%;
+  }
+}
+
+@keyframes slide6 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 15%;
+  }
+}
+
+@keyframes slide7 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 5%;
+  }
+}
+
+@keyframes slide8 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 5%;
+  }
+}
