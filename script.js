@@ -219,7 +219,7 @@ let skillsBar = `
 
 let projectCmd = `
   <div class="projectsDiv">
-    <article class="article-wrapper" onclick="linkHref('https://github.com/Kuberwastaken/ROOP-AI-Deepfakes')">
+    <article class="article-wrapper" onclick="linkHref(' https://github.com/Kuberwastaken/ROOP-AI-Deepfakes')">
       <div class="project-info">
         <div class="flex-pr">
           <div class="project-title text-nowrap">ROOP AI Deepfakes</div>
