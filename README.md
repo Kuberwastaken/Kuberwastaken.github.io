@@ -1,4 +1,4 @@
-# Personal Portfolio 🌟
+# Terminal Inspired Personal Portfolio 🌟
 
 Welcome to my personal portfolio repository! This project showcases my skills, projects, and professional journey in a clean and interactive web-based design. Explore the terminal-style interface, animations, and responsive layouts that make my portfolio unique.
 
