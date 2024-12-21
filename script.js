@@ -160,6 +160,7 @@ let helpCmd = `
   [<span class="commandName">neofetch</span>]<br /><br />
   [<span class="commandName">clear</span>]<br /><br />
   Contact me: <br />
+  
   [<span class="commandName">email</span>] <br />
   [<span class="commandName">linkedin</span>] <br />
   [<span class="commandName">github</span>] <br />
