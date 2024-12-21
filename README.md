@@ -22,6 +22,7 @@ This portfolio features:
 - **Project Showcase**: View detailed descriptions with hover effects.
 - **Skill Bars**: Animated visual representation of my expertise.
 - **Fixed Footer**: Persistent footer at the top with essential information.
+- **Neofetch**: I use arch btw.
 
 ## 📧 Contact
 Feel free to reach out:
