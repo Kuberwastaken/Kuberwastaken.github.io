@@ -1,28 +1,11 @@
-/* Style for the footer text at the top */
-#footer-text {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%); /* Center it horizontally */
-  text-align: left; /* Align text to the left inside the footer */
-  font-size: 14px;
-  color: #ffebcd; /* Set text color to match the rest of the content */
-  background-color: #000000; /* Changed to black */
-  padding: 10px 20px;
-  width: auto; /* Adjust width to fit the content */
-  max-width: 90%; /* Optional: limit the width of the footer */
-  z-index: 1000; /* Ensures it stays on top of the other content */
-}
-
-/* Add padding to the body content to avoid overlap with the fixed footer */
+/* Add padding to the body content to avoid overlap with fixed elements */
 body {
-  padding-top: 40px; /* Adjust based on the footer height */
   color: #ffebcd;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 90vh;
-  background-color: #000000; /* Changed to black */
+  background-color: #000000; /* Background remains black */
   background-size: 100%;
   position: relative;
   margin: 10px;
@@ -83,17 +66,41 @@ body #terminal #prompt {
 /* Styling for the command input field */
 body #terminal #cmd {
   font-size: 20px;
+  font-family: 'Courier New', monospace;  /* Monospace font for terminal-like look */
   background: 0 0;
   border: none;
   color: #ffebcd;
   outline: 0;
-  transition: caret-color 0.3s ease;
   width: 70%;
+  display: inline-block;
+  position: relative;
+  padding-right: 20px;
+  height: 30px;  /* Match the height of the text line */
+  caret-color: #ffebcd;  /* Default caret color */
+}
+
+/* Block-style cursor like in Linux terminal */
+body #terminal #cmd::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 12px;  /* Width of the block cursor */
+  height: 100%;  /* Matches input height */
+  background-color: #ffebcd;  /* Cursor color */
+  animation: blink 1s step-end infinite;  /* Blinking effect */
 }
 
 /* Styling for focused command input field */
 body #terminal #cmd:focus {
-  caret-color: #ffebcd;
+  outline: none;  /* No outline on focus */
+}
+
+/* Keyframe animation for blinking cursor effect */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
 
 /* Styling for suggestions */
