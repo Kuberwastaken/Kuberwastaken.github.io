@@ -220,7 +220,7 @@ let skillsBar = `
 
 let projectCmd = `
   <div class="projectsDiv">
-    <article class="article-wrapper" onclick="linkHref(' https://github.com/Kuberwastaken/ROOP-AI-Deepfakes')">
+    <article class="article-wrapper" onclick="linkHref('https://github.com/Kuberwastaken/ROOP-AI-Deepfakes')">
       <div class="project-info">
         <div class="flex-pr">
           <div class="project-title text-nowrap">ROOP AI Deepfakes</div>
@@ -240,5 +240,16 @@ let projectCmd = `
         </div>
       </div>
     </article>
+    <article class="article-wrapper" onclick="linkHref('https://www.kaggle.com/code/kubermehta/books-reimagined-diary-of-a-wimpy-kid-by-rodrick')">
+      <div class="project-info">
+        <div class="flex-pr">
+          <div class="project-title text-nowrap">Books Reimagined</div>
+        </div>
+        <div class="flex-pr">
+          <p class="project-description">An AI tool to transform narrative perspectives in literature powered by Google Gemini 1.5.</p>
+        </div>
+      </div>
+    </article>
   </div>
 `;
+
