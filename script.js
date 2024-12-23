@@ -136,7 +136,7 @@ function showNeofetch() {
 function showResume() {
   let resumeEmbed = `
     <div class="resume-container" style="text-align: center; margin: 20px 0;">
-      <iframe src="https://drive.google.com/file/d/1zWSeiPPDWvlwBR-qU9sykGNMQpWJXFjA/preview" 
+      <iframe src="pdfs/Resume.pdf#view=FitH" 
               width="80%" 
               height="1000px" 
               style="border: none;">
