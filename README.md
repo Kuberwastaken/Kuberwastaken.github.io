@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/b12e9109-4f76-4dc0-99a1-280630dde19c)
+![image](https://github.com/user-attachments/assets/8427b829-420b-4ab2-8d0d-c65632d9039f)
 
 # Terminal Inspired Personal Portfolio 🌟
 
