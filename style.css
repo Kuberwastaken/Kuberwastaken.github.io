@@ -1,178 +1,118 @@
-/* Add padding to the body content to avoid overlap with fixed elements */
+/* General Reset */
+* {
+  font-size: 20px;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
 body {
   color: #ffebcd;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 90vh;
-  background-color: #000000; /* Background remains black */
-  background-size: 100%;
-  position: relative;
+  background-color: #000;
   margin: 10px;
 }
 
-/* Resetting some default styling for all elements */
-* {
-  font-size: 20px;
-}
-
-/* Styling for inline containers */
-body .inlineContainer {
-  display: inline-flex;
-}
-
-/* Styling for the command name */
-body .commandName {
-  color: plum;
-}
-
-/* Styling for the avatar image */
-body .avatar {
-  margin-left: -25px;
-  opacity: 0.8;
-  width: 155px;
-  pointer-events: none;
-  height: 155px;
-}
-
-/* Terminal styles */
-body #terminal {
+/* Terminal Styling */
+#terminal {
   font-family: monospace;
   color: #ffebcd;
   height: 95%;
   width: 95%;
   position: relative;
-  padding-right: 160px; /* Ensures space for neofetch on the right */
-  overflow-y: scroll; /* Enables vertical scrolling */
-  overflow-x: hidden; /* Prevents horizontal scrolling */
-  max-height: 95vh; /* Ensures the terminal stays within the viewport */
+  padding-right: 160px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 95vh;
 }
 
-/* Styling for the terminal output */
-body #terminal #output {
+#terminal #output {
   margin-bottom: 10px;
 }
 
-/* Styling for the terminal input */
-body #terminal #input {
+#terminal #input {
   margin-top: 20px;
 }
 
-/* Styling for the prompt in the terminal */
-body #terminal #prompt {
+#terminal #prompt {
   font-weight: 700;
 }
 
-/* Styling for the command input field */
-body #terminal #cmd {
+#terminal #cmd {
   font-size: 20px;
-  font-family: 'Courier New', monospace;  /* Monospace font for terminal-like look */
-  background: 0 0;
+  font-family: 'Courier New', monospace;
+  background: transparent;
   border: none;
   color: #ffebcd;
-  outline: 0;
+  outline: none;
   width: 70%;
-  display: inline-block;
+  height: 30px;
+  caret-color: #ffebcd;
   position: relative;
-  padding-right: 20px;
-  height: 30px;  /* Match the height of the text line */
-  caret-color: #ffebcd;  /* Default caret color */
 }
 
-/* Block-style cursor like in Linux terminal */
-body #terminal #cmd::after {
+#terminal #cmd::after {
   content: '';
   position: absolute;
   right: 0;
   top: 0;
-  width: 12px;  /* Width of the block cursor */
-  height: 100%;  /* Matches input height */
-  background-color: #ffebcd;  /* Cursor color */
-  animation: blink 1s step-end infinite;  /* Blinking effect */
+  width: 12px;
+  height: 100%;
+  background-color: #ffebcd;
+  animation: blink 1s step-end infinite;
 }
 
-/* Styling for focused command input field */
-body #terminal #cmd:focus {
-  outline: none;  /* No outline on focus */
-}
-
-/* Keyframe animation for blinking cursor effect */
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
-
-/* Styling for suggestions */
-body #terminal #suggestions {
+#terminal #suggestions {
   margin-top: 10px;
   color: #ffebcd;
 }
 
-/* Styling for selected suggestions */
-body #terminal #suggestions .selected {
+#terminal #suggestions .selected {
   font-weight: 800;
   color: #7fffd4;
 }
 
-/* Styling for the owner terminal */
-body #terminal .ownerTerminal {
+#terminal .ownerTerminal {
   font-size: 20px;
   color: #5abb9a;
 }
 
-/* Neofetch styles */
+/* Neofetch Styling */
 #neofetch {
   position: absolute;
   top: 10px;
   right: 10px;
   color: #ffebcd;
   font-size: 14px;
-  z-index: 10; /* Ensure neofetch stays on top */
+  z-index: 10;
 }
 
-/* Keyframe animation for destroying effect */
-@keyframes destroyAnimation {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(0);
-    opacity: 0.2;
-  }
+/* Avatar Styling */
+.avatar {
+  margin-left: -25px;
+  opacity: 0.8;
+  width: 155px;
+  height: 155px;
+  pointer-events: none;
 }
 
-/* Styling for command input text */
-.command-input {
-  font-weight: 400;
+/* Inline Containers */
+.inlineContainer {
+  display: inline-flex;
 }
 
-/* Styling for entered commands */
-.command-input.command-entered {
-  font-weight: 700;
+.commandName {
+  color: plum;
 }
 
-/* Error styling for names and descriptions */
-.nameErr {
-  font-size: 100px;
-}
-
-.descErr {
-  font-size: 10px;
-}
-
-/* Styling for projects section */
+/* Projects Styling */
 .projectsDiv {
   display: inline-flex;
   margin-top: 20px;
 }
 
-/* Styling for article wrappers */
 .article-wrapper {
   margin: 10px;
   width: 250px;
@@ -184,26 +124,22 @@ body #terminal .ownerTerminal {
   background-color: #ffebcd;
 }
 
-/* Hover effect for article wrapper */
 .article-wrapper:hover {
   box-shadow: 10px 10px 0 #5abb9a, 20px 20px 0 plum;
   border-color: #2d0922;
   transform: translate(-20px, -20px);
 }
 
-/* Active state for article wrapper */
 .article-wrapper:active {
   box-shadow: none;
   transform: translate(0);
 }
 
-/* Hover effect for project hover element */
 .article-wrapper:hover .project-hover {
   transform: rotate(-45deg);
   background-color: #a6c2f0;
 }
 
-/* Styling for project information */
 .project-info {
   padding: 10px 0 20px;
   display: flex;
@@ -211,7 +147,6 @@ body #terminal .ownerTerminal {
   gap: 20px;
 }
 
-/* Styling for project title */
 .project-info .project-title {
   font-size: 2em;
   margin: 0;
@@ -222,26 +157,23 @@ body #terminal .ownerTerminal {
   color: #000;
 }
 
-/* Styling for project description */
 .project-info .project-description {
   color: #000;
   font-weight: 300;
 }
 
-/* Flexbox styling for project information */
-.project-info .flex-pr {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Styling for project hover icon */
 .project-hover {
   border-radius: 50%;
   width: 50px;
   height: 50px;
   padding: 9px;
   transition: all 0.3s ease;
+}
+
+.container-project {
+  width: 100%;
+  height: 170px;
+  background: gray;
 }
 
 /* Container styling for project */
@@ -310,7 +242,7 @@ body .container .flex {
 }
 
 .skillBarItem8 {
-  width: 5%;
+  width: 15%;
   animation: slide8 2s ease-in-out;
 }
 
@@ -383,6 +315,6 @@ body .container .flex {
     width: 0;
   }
   to {
-    width: 5%;
+    width: 15%;
   }
 }
