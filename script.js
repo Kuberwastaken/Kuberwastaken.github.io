@@ -1,140 +1,170 @@
+// Wait for DOM content to load
 window.addEventListener("DOMContentLoaded", function () {
-  let n = document.getElementById("cmd");
-  n.focus();
-  document.getElementById("helpCmdList").innerHTML = helpCmd;
-  let e = document.getElementById("output"),
-    s = document.getElementById("mainInfo");
-
-  n.addEventListener("keypress", function (i) {
-    if (13 === i.keyCode && "" !== (i = n.value.trim())) {
-      // Show user input in terminal
-      e.innerHTML += "<div><span class='ownerTerminal'><b>kuber@profile</b></span>:<b>~$</b> " + i + "</div>";
-      n.value = ""; // Clear the input field
-
-      // Command handling
-      if ("skills" === i || "s" === i) {
-        e.innerHTML += skillsBar;
-      } else if ("github" === i || "gh" === i) {
-        window.open("https://github.com/Kuberwastaken", "_blank");
-      } else if ("discord" === i || "ds" === i) {
-        window.open("https://discord.com/users/1296085958374068316", "_blank");
-      } else if ("email" === i || "em" === i) {
-        window.open("mailto:kuberhob@gmail.com", "_blank");
-      } else if ("youtube" === i || "yt" === i) {
-        window.open("https://www.youtube.com/@Kuberwastaken", "_blank");
-      } else if ("linkedin" === i || "li" === i) {
-        window.open("https://www.linkedin.com/in/kubermehta/", "_blank");
-      } else if ("projects" === i || "pj" === i) {
-        e.innerHTML += projectCmd;
-      } else if ("blog" === i) {
-        // Redirect to Medium profile
-        window.open("https://medium.com/@kubermehta", "_blank");
-      } else if ("neofetch" === i || "nf" === i) {
-        showNeofetch();
-      } else if ("help" === i) {
-        e.innerHTML += helpCmd;
-      } else if ("clear" === i || "c" === i) {
-        e.innerHTML = "";
-        s.innerHTML = "";
-      } else if ("resume" === i || "cv" === i) {
-        showResume();
-      } else {
-        e.innerHTML += "<div>Not found</div>";
-      }
-      e.scrollTop = e.scrollHeight; // Scroll to the latest output
-    }
-  });
+  initializeTerminal();
 });
 
-let currentSuggestionIndex = -1;
+/**
+ * Initializes the terminal functionality.
+ */
+function initializeTerminal() {
+  const commandInput = document.getElementById("cmd");
+  const output = document.getElementById("output");
+  const mainInfo = document.getElementById("mainInfo");
+  
+  commandInput.focus();
+  document.getElementById("helpCmdList").innerHTML = helpCmd;
 
-function showSuggestions() {
-  let cmdInput = document.getElementById("cmd");
-  let inputText = cmdInput.value.trim();
-  let suggestionsList = document.getElementById("suggestions");
-  suggestionsList.innerHTML = ""; // Clear previous suggestions
-
-  if (inputText) {
-    let filteredSuggestions = suggestions.filter(s => s.startsWith(inputText));
-    filteredSuggestions.forEach((suggestion) => {
-      let suggestionItem = document.createElement("div");
-      suggestionItem.textContent = suggestion;
-      suggestionItem.addEventListener("click", function () {
-        cmdInput.value = suggestion;
-        suggestionsList.innerHTML = ""; // Clear suggestions after selection
-      });
-      suggestionsList.appendChild(suggestionItem);
-    });
-    cmdInput.classList.add("command-entered");
-  } else {
-    cmdInput.classList.remove("command-entered");
-  }
-}
-
-function handleKeyDown(event) {
-  let suggestionsList = document.getElementById("suggestions");
-  let suggestionItems = suggestionsList.getElementsByTagName("div");
-
-  if (event.key === "ArrowUp") {
-    event.preventDefault();
-    if (currentSuggestionIndex > 0) currentSuggestionIndex--;
-  } else if (event.key === "ArrowDown") {
-    event.preventDefault();
-    if (currentSuggestionIndex < suggestionItems.length - 1) currentSuggestionIndex++;
-  } else if (event.key === "Enter") {
-    let cmdInput = document.getElementById("cmd");
-    let selectedItem = suggestionItems[currentSuggestionIndex];
-    if (selectedItem) {
-      cmdInput.value = selectedItem.textContent;
-      suggestionsList.innerHTML = ""; // Clear suggestions after selection
-      cmdInput.classList.remove("command-entered");
+  commandInput.addEventListener("keypress", function (event) {
+    if (event.keyCode === 13) {
+      handleCommand(commandInput, output, mainInfo);
     }
-  }
-
-  for (let i = 0; i < suggestionItems.length; i++) {
-    let item = suggestionItems[i];
-    item.classList.toggle("selected", i === currentSuggestionIndex);
-  }
+  });
 }
 
-function linkHref(url) {
+/**
+ * Handles user commands input.
+ * @param {HTMLElement} inputField - The command input field.
+ * @param {HTMLElement} output - The output container.
+ * @param {HTMLElement} mainInfo - The main info container.
+ */
+function handleCommand(inputField, output, mainInfo) {
+  const command = inputField.value.trim();
+  if (!command) return;
+
+  displayUserInput(output, command);
+  inputField.value = "";
+
+  switch (command) {
+    case "skills":
+    case "s":
+      output.innerHTML += skillsBar;
+      break;
+    case "github":
+    case "gh":
+      linkToURL("https://github.com/Kuberwastaken");
+      break;
+    case "discord":
+    case "ds":
+      linkToURL("https://discord.com/users/1296085958374068316");
+      break;
+    case "email":
+    case "em":
+      linkToURL("mailto:kuberhob@gmail.com");
+      break;
+    case "youtube":
+    case "yt":
+      linkToURL("https://www.youtube.com/@Kuberwastaken");
+      break;
+    case "linkedin":
+    case "li":
+      linkToURL("https://www.linkedin.com/in/kubermehta/");
+      break;
+    case "projects":
+    case "pj":
+      output.innerHTML += projectCmd;
+      break;
+    case "blog":
+      linkToURL("https://medium.com/@kubermehta");
+      break;
+    case "neofetch":
+    case "nf":
+      showNeofetch(output);
+      break;
+    case "help":
+      output.innerHTML += helpCmd;
+      break;
+    case "clear":
+    case "c":
+      clearTerminal(output, mainInfo);
+      break;
+    case "resume":
+    case "cv":
+      showResume(output);
+      break;
+    default:
+      output.innerHTML += `<div>Not found</div>`;
+  }
+
+  scrollToLatest(output);
+}
+
+/**
+ * Displays user input in the terminal output.
+ * @param {HTMLElement} output - The output container.
+ * @param {string} command - The user command.
+ */
+function displayUserInput(output, command) {
+  output.innerHTML += `<div><span class='ownerTerminal'><b>kuber@profile</b></span>:<b>~$</b> ${command}</div>`;
+}
+
+/**
+ * Opens a given URL in a new tab.
+ * @param {string} url - The URL to open.
+ */
+function linkToURL(url) {
   window.open(url, "_blank");
 }
 
-function showNeofetch() {
-  let neofetchOutput = `
-    <pre>
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣷⣤⣙⢻⣿⣿⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⡿⠛⠛⠿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀⠙⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⠿⣆⠀⠀⠀⠀
-⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀
-⠀⢀⣾⣿⣿⠿⠟⠛⠋⠉⠉⠀⠀⠀⠀⠀⠀⠉⠉⠙⠛⠻⠿⣿⣿⣷⡀⠀
-⣠⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠻⣄
-  </pre>
-  <span>OS: I use arch btw</span><br>
-  <span>Kernel: 6.4.7-arch1-1</span><br>
-  <span>Uptime: forever </span><br>
-  <span>Packages: 1200</span><br>
-  <span>Shell: Zsh 5.9</span><br>
-  <span>Resolution: 3840 x 2160</span><br>
-  <span>DE: KDE Plasma</span><br>
-  <span>WM: Mutter</span><br>
-  <span>Terminal: Made by Kuber Mehta</span><br>
-  <span>CPU: Intel Core i5 1355U</span><br>
-  <span>GPU: Intel UHD Graphics</span><br>
-  `;
-  document.getElementById("output").innerHTML += `<div>${neofetchOutput}</div>`;
+/**
+ * Clears the terminal output and main info.
+ * @param {HTMLElement} output - The output container.
+ * @param {HTMLElement} mainInfo - The main info container.
+ */
+function clearTerminal(output, mainInfo) {
+  output.innerHTML = "";
+  mainInfo.innerHTML = "";
 }
 
-function showResume() {
-  let resumeEmbed = `
+/**
+ * Scrolls the terminal output to the latest entry.
+ * @param {HTMLElement} output - The output container.
+ */
+function scrollToLatest(output) {
+  output.scrollTop = output.scrollHeight;
+}
+
+/**
+ * Displays the neofetch output in the terminal.
+ * @param {HTMLElement} output - The output container.
+ */
+function showNeofetch(output) {
+  const neofetchOutput = `
+    <pre>
+    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣷⣤⣙⢻⣿⣿⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⡿⠛⠛⠿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀⠙⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⠿⣆⠀⠀⠀⠀
+    ⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀
+    ⠀⢀⣾⣿⣿⠿⠟⠛⠋⠉⠉⠀⠀⠀⠀⠀⠀⠉⠉⠙⠛⠻⠿⣿⣿⣷⡀⠀
+    ⣠⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠻⣄
+    </pre>
+    <span>OS: I use arch btw</span><br>
+    <span>Kernel: 6.4.7-arch1-1</span><br>
+    <span>Uptime: forever </span><br>
+    <span>Packages: 1200</span><br>
+    <span>Shell: Zsh 5.9</span><br>
+    <span>Resolution: 3840 x 2160</span><br>
+    <span>DE: KDE Plasma</span><br>
+    <span>WM: Mutter</span><br>
+    <span>Terminal: Made by Kuber Mehta</span><br>
+    <span>CPU: Intel Core i5 1355U</span><br>
+    <span>GPU: Intel UHD Graphics</span><br>
+  `;
+  output.innerHTML += `<div>${neofetchOutput}</div>`;
+}
+
+/**
+ * Displays the resume embedded in the terminal.
+ * @param {HTMLElement} output - The output container.
+ */
+function showResume(output) {
+  const resumeEmbed = `
     <div class="resume-container" style="text-align: center; margin: 20px 0;">
       <iframe src="pdfs/Resume.pdf#view=FitH" 
               width="80%" 
@@ -143,15 +173,15 @@ function showResume() {
       </iframe>
     </div>
   `;
-  document.getElementById("output").innerHTML += resumeEmbed;
+  output.innerHTML += resumeEmbed;
 }
 
-// Command suggestions and help
-let suggestions = [
+// Suggestions and command definitions
+const suggestions = [
   "resume", "cv", "help", "skills", "clear", "projects", "blog", "tools", "github", "discord", "email", "youtube", "neofetch"
 ];
 
-let helpCmd = `
+const helpCmd = `
   <br>Available commands: <br />
   [<span class="commandName">skills</span>] or [<span class="commandName">s</span>]<br />
   [<span class="commandName">projects</span>] or [<span class="commandName">pj</span>]<br />
@@ -168,7 +198,7 @@ let helpCmd = `
   [<span class="commandName">youtube</span>]
 `;
 
-let skillsBar = `
+const skillsBar = `
   <div class="container">
     <div class="flex">
       <h2>HTML/EJS:</h2>
