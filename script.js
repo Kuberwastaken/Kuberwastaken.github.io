@@ -129,32 +129,67 @@ function scrollToLatest(output) {
  */
 function showNeofetch(output) {
   const neofetchOutput = `
-    <pre>
-    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣷⣤⣙⢻⣿⣿⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-    ⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀
-    ⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⠀⠀⠀⠀⠀⠀⠀
-    ⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⡿⠛⠛⠿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀
-    ⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀⠙⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀
-    ⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⠿⣆⠀⠀⠀⠀
-    ⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀
-    ⠀⢀⣾⣿⣿⠿⠟⠛⠋⠉⠉⠀⠀⠀⠀⠀⠀⠉⠉⠙⠛⠻⠿⣿⣿⣷⡀⠀
-    ⣠⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠻⣄
-    </pre>
-    <span>OS: I use arch btw</span><br>
-    <span>Kernel: 6.4.7-arch1-1</span><br>
-    <span>Uptime: forever </span><br>
-    <span>Packages: 1200</span><br>
-    <span>Shell: Zsh 5.9</span><br>
-    <span>Resolution: 3840 x 2160</span><br>
-    <span>DE: KDE Plasma</span><br>
-    <span>WM: Mutter</span><br>
-    <span>Terminal: Made by Kuber Mehta</span><br>
-    <span>CPU: Intel Core i5 1355U</span><br>
-    <span>GPU: Intel UHD Graphics</span><br>
+    <div style="display: flex; align-items: flex-start; font-family: monospace;">
+      <!-- Neofetch Logo -->
+      <div style="margin-right: 30px; padding: 10px;">
+        <pre style="line-height: 1.3em;">
+   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣷⣤⣙⢻⣿⣿⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+   ⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀
+   ⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⠀⠀⠀⠀⠀⠀⠀
+   ⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⡿⠛⠛⠿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀
+   ⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀⠙⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀
+   ⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⠿⣆⠀⠀⠀⠀
+   ⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀
+   ⠀⢀⣾⣿⣿⠿⠟⠛⠋⠉⠉⠀⠀⠀⠀⠀⠀⠉⠉⠙⠛⠻⠿⣿⣿⣷⡀⠀
+  ⣠⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠻⣄
+        </pre>
+      </div>
+      
+      <!-- Neofetch Details -->
+      <div style="padding: 10px; line-height: 1.6em;">
+        <span><strong>OS:</strong> I use Arch btw</span><br>
+        <span><strong>Host:</strong> Kuber's PC</span><br>
+        <span><strong>Kernel:</strong> 6.4.7-arch1-1</span><br>
+        <span><strong>Uptime:</strong> Forever</span><br>
+        <span><strong>Resolution:</strong> 3840x2160</span><br>
+        <span><strong>DE:</strong> KDE Plasma</span><br>
+        <span><strong>Vim:</strong> Neovim 0.9.1</span><br>
+        <span><strong>WPI:</strong> Kuber's Config</span><br>
+        <span><strong>Theme:</strong> Nord Dark</span><br>
+        <span><strong>Terminal:</strong> Made by Kuber Mehta</span><br>
+        <span><strong>CPU:</strong> Intel Core i5 1355U</span>
+      </div>
+
+      <!-- Color Palette (Two Rows) -->
+      <div style="clear: both; margin-top: 20px;">
+        <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 5px;">
+          <!-- Lighter shades -->
+          <div style="width: 10%; height: 20px; background-color: #ff5555;"></div>
+          <div style="width: 10%; height: 20px; background-color: #55ff55;"></div>
+          <div style="width: 10%; height: 20px; background-color: #5555ff;"></div>
+          <div style="width: 10%; height: 20px; background-color: #ffff55;"></div>
+          <div style="width: 10%; height: 20px; background-color: #ff55ff;"></div>
+          <div style="width: 10%; height: 20px; background-color: #55ffff;"></div>
+          <div style="width: 10%; height: 20px; background-color: #ffffff;"></div>
+          <div style="width: 10%; height: 20px; background-color: #aaaaaa;"></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; width: 100%;">
+          <!-- Darker shades -->
+          <div style="width: 10%; height: 20px; background-color: #990000;"></div>
+          <div style="width: 10%; height: 20px; background-color: #009900;"></div>
+          <div style="width: 10%; height: 20px; background-color: #000099;"></div>
+          <div style="width: 10%; height: 20px; background-color: #999900;"></div>
+          <div style="width: 10%; height: 20px; background-color: #990099;"></div>
+          <div style="width: 10%; height: 20px; background-color: #009999;"></div>
+          <div style="width: 10%; height: 20px; background-color: #333333;"></div>
+          <div style="width: 10%; height: 20px; background-color: #000000;"></div>
+        </div>
+      </div>
+    </div>
   `;
   output.innerHTML += `<div>${neofetchOutput}</div>`;
 }
