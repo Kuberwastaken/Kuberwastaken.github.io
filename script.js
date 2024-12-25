@@ -239,7 +239,7 @@ const skillsBar = `
       <h2>PYTHON:</h2>
       <div class="skillBar"><div class="skillBarItem8" style="width: 65%"></div></div>
       <h3>65%</h3>
-    </div>
+    <div>
     <div class="flex">
       <h2>C:</h2>
       <div class="skillBar"><div class="skillBarItem9" style="width: 75%"></div></div>
