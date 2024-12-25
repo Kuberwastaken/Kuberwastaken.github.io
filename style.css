@@ -200,7 +200,7 @@ body .container .flex {
 }
 
 /* Individual skill bar items */
-.skillBarItem1, .skillBarItem2, .skillBarItem3, .skillBarItem4, .skillBarItem5, .skillBarItem6, .skillBarItem7, .skillBarItem8 {
+.skillBarItem1, .skillBarItem2, .skillBarItem3, .skillBarItem4, .skillBarItem5, .skillBarItem6, .skillBarItem7, .skillBarItem8, .skillBarItem9 {
   height: 30px;
   background: #ffebcd;
 }
