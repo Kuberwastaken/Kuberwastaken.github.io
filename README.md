@@ -38,7 +38,7 @@ Command History Navigation: Use up and down arrow keys to navigate through previ
 Miscellaneous Tools: Handy utilities like URL opening, Google search, and more, integrated directly into the terminal.
 
 # 📖 Usage Instructions
-Clone the repository: git clone https://github.com/Kuberwastaken/terminal-portfolio.git
+Clone the repository: git clone https://github.com/Kuberwastaken/terminal-portfolio.io
 
 Navigate to the directory: cd terminal-portfolio
 
