@@ -221,15 +221,11 @@ function clearTerminal(output, mainInfo) {
   mainInfo.innerHTML = "";
 }
 
-/**
- * Displays the neofetch output in the terminal.
- * @param {HTMLElement} output - The output container.
- */
 function showNeofetch(output) {
   const neofetchOutput = `
-    <div style="display: flex; align-items: flex-start; font-family: monospace;">
+    <div style="display: flex; align-items: flex-start; font-family: monospace; color: #ffebcd;">
       <!-- Neofetch Logo -->
-      <div style="margin-right: 30px; padding: 10px;">
+      <div style="margin-right: 20px; padding: 10px;">
         <pre style="line-height: 1.3em;">
    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -248,48 +244,49 @@ function showNeofetch(output) {
       </div>
       
       <!-- Neofetch Details -->
-      <div style="padding: 10px; line-height: 1.6em;">
-        <span><strong>OS:</strong> I use Arch btw</span><br>
-        <span><strong>Host:</strong> Kuber's PC</span><br>
-        <span><strong>Kernel:</strong> 6.4.7-arch1-1</span><br>
-        <span><strong>Uptime:</strong> Forever</span><br>
-        <span><strong>Resolution:</strong> 3840x2160</span><br>
-        <span><strong>DE:</strong> KDE Plasma</span><br>
-        <span><strong>Vim:</strong> Neovim 0.9.1</span><br>
-        <span><strong>WPI:</strong> Kuber's Config</span><br>
-        <span><strong>Theme:</strong> Nord Dark</span><br>
-        <span><strong>Terminal:</strong> Made by Kuber Mehta</span><br>
-        <span><strong>CPU:</strong> Intel Core i5 1355U</span>
-      </div>
+      <div style="padding: 10px; line-height: 1.3em;">
+        <pre>
+kuber@portfolio
+------------
+OS:           I use Arch btw
+Host:         Kuber's PC
+Kernel:       6.4.7-arch1-1
+Uptime:       Forever
+Resolution:   3840x2160
+DE:           KDE Plasma
+Vim:          Neovim 0.9.1
+WPI:          Kuber's Config
+Theme:        Xfce
+Terminal:     Made by Kuber Mehta
+CPU:          Intel Core i5 1355U
 
-      <!-- Color Palette (Two Rows) -->
-      <div style="clear: both; margin-top: 20px;">
-        <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 5px;">
-          <!-- Lighter shades -->
-          <div style="width: 10%; height: 20px; background-color: #ff5555;"></div>
-          <div style="width: 10%; height: 20px; background-color: #55ff55;"></div>
-          <div style="width: 10%; height: 20px; background-color: #5555ff;"></div>
-          <div style="width: 10%; height: 20px; background-color: #ffff55;"></div>
-          <div style="width: 10%; height: 20px; background-color: #ff55ff;"></div>
-          <div style="width: 10%; height: 20px; background-color: #55ffff;"></div>
-          <div style="width: 10%; height: 20px; background-color: #ffffff;"></div>
-          <div style="width: 10%; height: 20px; background-color: #aaaaaa;"></div>
-        </div>
-        <div style="display: flex; justify-content: space-between; width: 100%;">
-          <!-- Darker shades -->
-          <div style="width: 10%; height: 20px; background-color: #990000;"></div>
-          <div style="width: 10%; height: 20px; background-color: #009900;"></div>
-          <div style="width: 10%; height: 20px; background-color: #000099;"></div>
-          <div style="width: 10%; height: 20px; background-color: #999900;"></div>
-          <div style="width: 10%; height: 20px; background-color: #990099;"></div>
-          <div style="width: 10%; height: 20px; background-color: #009999;"></div>
-          <div style="width: 10%; height: 20px; background-color: #333333;"></div>
-          <div style="width: 10%; height: 20px; background-color: #000000;"></div>
-        </div>
+<span style="display: flex; justify-content: flex-start; margin-bottom: -2px;">
+  <!-- Lighter shades -->
+  <div style="width: 20px; height: 20px; background-color: #ff5555; margin-right: 2px;"></div>
+  <div style="width: 20px; height: 20px; background-color: #55ff55; margin-right: 2px;"></div>
+  <div style="width: 20px; height: 20px; background-color: #5555ff; margin-right: 2px;"></div>
+  <div style="width: 20px; height: 20px; background-color: #ffff55; margin-right: 2px;"></div>
+  <div style="width: 20px; height: 20px; background-color: #ff55ff; margin-right: 2px;"></div>
+  <div style="width: 20px; height: 20px; background-color: #55ffff; margin-right: 2px;"></div>
+  <div style="width: 20px; height: 20px; background-color: #ffffff; margin-right: 2px;"></div>
+  <div style="width: 20px; height: 20px; background-color: #aaaaaa; margin-right: 2px;"></div>
+</span>
+<span style="display: flex; justify-content: flex-start;">
+  <!-- Darker shades -->
+  <div style="width: 20px; height: 20px; background-color: #990000; margin-right: 2px;"></div>
+  <div style="width: 20px; height: 20px; background-color: #009900; margin-right: 2px;"></div>
+  <div style="width: 20px; height: 20px; background-color: #000099; margin-right: 2px;"></div>
+  <div style="width: 20px; height: 20px; background-color: #999900; margin-right: 2px;"></div>
+  <div style="width: 20px; height: 20px; background-color: #990099; margin-right: 2px;"></div>
+  <div style="width: 20px; height: 20px; background-color: #009999; margin-right: 2px;"></div>
+  <div style="width: 20px; height: 20px; background-color: #333333; margin-right: 2px;"></div>
+  <div style="width: 20px; height: 20px; background-color: #000000;"></div>
+</span>
+        </pre>
       </div>
     </div>
   `;
-  output.innerHTML += `<div>${neofetchOutput}</div>`;
+  output.innerHTML += neofetchOutput;
 }
 
 // Function to show ASCII art selfie
@@ -322,8 +319,10 @@ function linkHref(url) {
 
 // Suggestions and command definitions
 const suggestions = [
-  "resume", "cv", "help", "skills", "clear", "projects", "blog", "tools", 
-  "github", "discord", "email", "youtube", "neofetch", "miscellaneous", "misc"
+  "resume", "cv", "help", "skills", "s", "clear", "c", "projects", "pj", "blog", 
+  "github", "gh", "discord", "ds", "email", "em", "youtube", "yt", "linkedin", "li", 
+  "neofetch", "nf", "miscellaneous", "misc", "ascii-selfie", "open", "google", 
+  "wiki", "wikipedia", "time", "date"
 ];
 
 const helpCmd = `
@@ -331,8 +330,6 @@ const helpCmd = `
   [<span class="commandName">skills</span>] or [<span class="commandName">s</span>]<br />
   [<span class="commandName">projects</span>] or [<span class="commandName">pj</span>]<br />
   [<span class="commandName">resume</span>] or [<span class="commandName">cv</span>]<br />
-  [<span class="commandName">blog</span>]<br />
-  [<span class="commandName">neofetch</span>]<br />
   [<span class="commandName">miscellaneous</span>] or [<span class="commandName">misc</span>]<br />
   [<span class="commandName">clear</span>]<br /><br />
   
@@ -341,7 +338,8 @@ const helpCmd = `
   [<span class="commandName">linkedin</span>] <br />
   [<span class="commandName">github</span>] <br />
   [<span class="commandName">discord</span>] <br />
-  [<span class="commandName">youtube</span>]
+  [<span class="commandName">youtube</span>] <br />
+  [<span class="commandName">blog</span>]
 `;
 
 const miscCmd = `
@@ -350,9 +348,10 @@ const miscCmd = `
   [<span class="commandName">google</span> query] - Search Google<br />
   [<span class="commandName">youtube</span> query] - Search YouTube<br />
   [<span class="commandName">wiki</span> query] - Search Wikipedia<br />
-  [<span class="commandName">ascii-selfie</span>] - See a selfie of me :) <br />
+  [<span class="commandName">neofetch</span>] - Neofetch<br />
+  [<span class="commandName">ascii-selfie</span>] - See a Selfie of me :) <br />
   [<span class="commandName">time</span>] - Show current time<br />
-  [<span class="commandName">date</span>] - Show current date<br />
+  [<span class="commandName">date</span>] - Show current date
 `;
 
 const skillsBar = `
