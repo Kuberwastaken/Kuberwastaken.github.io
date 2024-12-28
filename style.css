@@ -100,12 +100,19 @@ body {
 
 /* Neofetch Styling */
 #neofetch {
- position: absolute;
- top: 10px;
- right: 10px;
- color: #ffebcd;
- font-size: 14px;
- z-index: 10;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #ffebcd;
+  font-size: 14px;
+  z-index: 10;
+}
+
+/* System Info Styling */
+#neofetch .system-info span {
+  display: inline-block;
+  width: 200px;
+  line-height: 1.3em; /* Ensure consistent line height */
 }
 
 /* Avatar Styling */
@@ -167,14 +174,15 @@ body {
 }
 
 .project-info .project-title {
- font-size: 2em;
- margin: 0;
- font-weight: 600;
- overflow: hidden;
- text-overflow: ellipsis;
- white-space: nowrap;
- color: #000;
+  font-size: 1.2em;
+  font-weight: 700;
+  overflow-wrap: break-word;
+  white-space: normal;
+  text-align: center;
+  color: #000;
+  text-shadow: 0 0 5px #ffebcd, 0 0 10px #ffebcd, 0 0 15px #ffebcd; /* Glowing effect */
 }
+
 
 .project-info .project-description {
  color: #000;
@@ -225,18 +233,19 @@ body .container .flex {
   background: #ffebcd;
   display: flex;
   align-items: center; /* Center the text vertically */
+  animation: loadSkill 2s ease-in-out forwards; /* Apply animation */
 }
 
 /* Skill bar widths */
-.skillBarItem1 { width: 70%; }
-.skillBarItem2 { width: 100%; }
-.skillBarItem3 { width: 60%; }
-.skillBarItem4 { width: 55%; }
-.skillBarItem5 { width: 75%; }
-.skillBarItem6 { width: 75%; }
-.skillBarItem7 { width: 10%; }
-.skillBarItem8 { width: 65%; }
-.skillBarItem9 { width: 75%; }
+.skillBarItem1 { animation: slide1 2s ease-in-out forwards; }
+.skillBarItem2 { animation: slide2 2s ease-in-out forwards; }
+.skillBarItem3 { animation: slide3 2s ease-in-out forwards; }
+.skillBarItem4 { animation: slide4 2s ease-in-out forwards; }
+.skillBarItem5 { animation: slide5 2s ease-in-out forwards; }
+.skillBarItem6 { animation: slide6 2s ease-in-out forwards; }
+.skillBarItem7 { animation: slide7 2s ease-in-out forwards; }
+.skillBarItem8 { animation: slide8 2s ease-in-out forwards; }
+.skillBarItem9 { animation: slide9 2s ease-in-out forwards; }
 
 /* Percentage styling */
 .flex h3 {
