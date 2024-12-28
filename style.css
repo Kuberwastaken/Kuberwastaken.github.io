@@ -1,6 +1,11 @@
+/* Smooth Scrolling */ 
+html {
+   scroll-behavior: smooth; 
+  }
+
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
-  width: 6px; /* Smaller scrollbar */
+  width: 6px; /* Adjust the width of the scrollbar */
 }
 
 ::-webkit-scrollbar-track {
@@ -11,6 +16,7 @@
 ::-webkit-scrollbar-thumb {
   background-color: #ffebcd; /* Light color for the thumb */
   border-radius: 10px;
+  height: 20px; /* Adjust the height for visibility */
 }
 
 /* Optional: Add hover effect */
@@ -22,42 +28,37 @@
 * {
   font-size: 20px;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Body Styling */
 body {
   color: #ffebcd;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90vh;
+  height: 100vh;
   background-color: #000;
-  margin: 10px;
+  margin: 0;
 }
 
 /* Terminal Styling */
 #terminal {
   font-family: monospace;
   color: #ffebcd;
-  height: 95%;
-  width: 95%;
-  position: relative;
-  padding-right: 160px;
+  height: 100%;
+  width: 100%; /* Ensure it takes up full width */
+  max-width: 100vw; /* Prevent exceeding viewport width */
+  padding: 20px;
+  overflow-x: hidden; /* Prevent horizontal overflow */
   overflow-y: auto;
-  overflow-x: hidden;
-  max-height: 95vh;
 }
 
+/* Other Elements */
 #terminal #output {
   margin-bottom: 10px;
 }
 
 #terminal #input {
   margin-top: 20px;
-}
-
-#terminal #prompt {
-  font-weight: 700;
 }
 
 #terminal #cmd {
@@ -104,7 +105,6 @@ body {
   margin-top: 25px; /* Adjust this value as needed */
 }
 
- 
 /* Neofetch Styling */
 #neofetch {
   position: absolute;

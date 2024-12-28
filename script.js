@@ -1,6 +1,10 @@
-// Function to scroll to bottom immediately
+// Function to scroll to bottom of the terminal smoothly
 function scrollToBottom() {
-  window.scrollTo(0, document.body.scrollHeight);
+  const terminal = document.getElementById('terminal');
+  terminal.scrollTo({
+    top: terminal.scrollHeight,
+    behavior: 'smooth'
+  });
 }
 
 // Add MutationObserver to watch for content changes
@@ -85,6 +89,9 @@ function handleCommand(inputField, output, mainInfo) {
       case "misc":
           output.innerHTML += miscCmd;
           break;
+      case "ascii-selfie": 
+       showAsciiSelfie(output); 
+       break;
       case "open":
           if (argument) {
               const url = argument.startsWith('http') ? argument : `http://${argument}`;
@@ -119,9 +126,6 @@ function handleCommand(inputField, output, mainInfo) {
               output.innerHTML += `<div>Please provide a search query.</div>`;
           }
           break;
-      case "ascii-selfie": 
-       showAsciiSelfie(output); 
-       break;
       case "time":
           const timeNow = new Date().toLocaleTimeString();
           output.innerHTML += `<div>Current Time: ${timeNow}</div>`;
@@ -134,6 +138,7 @@ function handleCommand(inputField, output, mainInfo) {
           output.innerHTML += `<div>Command not found. Type 'help' for a list of commands.</div>`;
   }
 
+  // Scroll to the bottom after processing the command
   setTimeout(scrollToBottom, 0);
   setTimeout(scrollToBottom, 100);
   setTimeout(scrollToBottom, 500);
