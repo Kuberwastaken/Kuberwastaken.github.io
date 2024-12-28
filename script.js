@@ -3,84 +3,27 @@ function scrollToBottom() {
   window.scrollTo(0, document.body.scrollHeight);
 }
 
-// Handle command function modification
-function handleCommand(inputField, output, mainInfo) {
-  const command = inputField.value.trim();
-  if (!command) return;
-
-  displayUserInput(output, command);
-  inputField.value = "";
-
-  // Execute command
-  switch (command) {
-    // ... your existing switch cases ...
-  }
-
-  // Force scroll after content update
-  setTimeout(scrollToBottom, 0);
-  
-  // Additional scroll checks for dynamic content
-  setTimeout(scrollToBottom, 100);
-  setTimeout(scrollToBottom, 500);
-}
-
-// Add this to your initializeTerminal function
-function initializeTerminal() {
-  const commandInput = document.getElementById("cmd");
-  const output = document.getElementById("output");
-  const mainInfo = document.getElementById("mainInfo");
-  
-  commandInput.focus();
-  document.getElementById("helpCmdList").innerHTML = helpCmd;
-
-  // Add mutation observer to watch for content changes
-  const observer = new MutationObserver(() => {
-    scrollToBottom();
-  });
-
-  // Start observing output for changes
-  observer.observe(output, {
-    childList: true,
-    subtree: true
-  });
-
-  commandInput.addEventListener("keypress", function (event) {
-    if (event.keyCode === 13) {
-      handleCommand(commandInput, output, mainInfo);
-    }
-  });
-}
-
-// Wait for DOM content to load
-window.addEventListener("DOMContentLoaded", function () {
-  initializeTerminal();
+// Add MutationObserver to watch for content changes
+const observer = new MutationObserver(() => {
+  scrollToBottom();
 });
 
-/**
- * Initializes the terminal functionality.
- */
 function initializeTerminal() {
   const commandInput = document.getElementById("cmd");
   const output = document.getElementById("output");
   const mainInfo = document.getElementById("mainInfo");
-  
   commandInput.focus();
   document.getElementById("helpCmdList").innerHTML = helpCmd;
 
+  observer.observe(output, { childList: true, subtree: true });
 
   commandInput.addEventListener("keypress", function (event) {
-    if (event.keyCode === 13) {
-      handleCommand(commandInput, output, mainInfo);
-    }
+      if (event.keyCode === 13) {
+          handleCommand(commandInput, output, mainInfo);
+      }
   });
 }
 
-/**
- * Handles user commands input.
- * @param {HTMLElement} inputField - The command input field.
- * @param {HTMLElement} output - The output container.
- * @param {HTMLElement} mainInfo - The main info container.
- */
 function handleCommand(inputField, output, mainInfo) {
   const fullCommand = inputField.value.trim();
   if (!fullCommand) return;
@@ -92,113 +35,103 @@ function handleCommand(inputField, output, mainInfo) {
   inputField.value = "";
 
   switch (command.toLowerCase()) {
-    // Existing commands...
-    case "skills":
-    case "s":
-      output.innerHTML += skillsBar;
-      break;
-    case "github":
-    case "gh":
-      linkToURL("https://github.com/Kuberwastaken");
-      break;
-    case "discord":
-    case "ds":
-      linkToURL("https://discord.com/users/1296085958374068316");
-      break;
-    case "email":
-    case "em":
-      linkToURL("mailto:kuberhob@gmail.com");
-      break;
-    case "youtube":
-    case "yt":
-      linkToURL("https://www.youtube.com/@Kuberwastaken");
-      break;
-    case "linkedin":
-    case "li":
-      linkToURL("https://www.linkedin.com/in/kubermehta/");
-      break;
-    case "projects":
-    case "pj":
-      output.innerHTML += projectCmd;
-      break;
-    case "blog":
-      linkToURL("https://medium.com/@kubermehta");
-      break;
-    case "neofetch":
-    case "nf":
-      showNeofetch(output);
-      break;
-    case "help":
-      output.innerHTML += helpCmd;
-      break;
-    case "clear":
-    case "c":
-      clearTerminal(output, mainInfo);
-      break;
-    case "resume":
-    case "cv":
-      showResume(output);
-      break;
-
-    // Miscellaneous commands
-    case "miscellaneous":
-    case "misc":
-      output.innerHTML += miscCmd;
-      break;
-
-    // Utility commands
-    case "open":
-      if (argument) {
-        const url = argument.startsWith('http') ? argument : `http://${argument}`;
-        linkToURL(url);
-        output.innerHTML += `<div>Opening URL: ${argument}</div>`;
-      } else {
-        output.innerHTML += `<div>Please provide a URL to open.</div>`;
-      }
-      break;
-
-    case "google":
-      if (argument) {
-        linkToURL(`https://www.google.com/search?q=${encodeURIComponent(argument)}`);
-        output.innerHTML += `<div>Searching Google for: ${argument}</div>`;
-      } else {
-        output.innerHTML += `<div>Please provide a search query.</div>`;
-      }
-      break;
-
-    case "yt":
-    case "youtube":
-      if (argument) {
-        linkToURL(`https://www.youtube.com/results?search_query=${encodeURIComponent(argument)}`);
-        output.innerHTML += `<div>Searching YouTube for: ${argument}</div>`;
-      } else {
-        output.innerHTML += `<div>Please provide a search query.</div>`;
-      }
-      break;
-
-    case "wiki":
-    case "wikipedia":
-      if (argument) {
-        linkToURL(`https://wikipedia.org/w/index.php?search=${encodeURIComponent(argument)}`);
-        output.innerHTML += `<div>Searching Wikipedia for: ${argument}</div>`;
-      } else {
-        output.innerHTML += `<div>Please provide a search query.</div>`;
-      }
-      break;
-
-    case "time":
-      const timeNow = new Date().toLocaleTimeString();
-      output.innerHTML += `<div>Current Time: ${timeNow}</div>`;
-      break;
-
-    case "date":
-      const currentDate = new Date().toLocaleDateString();
-      output.innerHTML += `<div>Current Date: ${currentDate}</div>`;
-      break;
-
-    // Add other existing cases...
-    default:
-      output.innerHTML += `<div>Command not found. Type 'help' for a list of commands.</div>`;
+      case "skills":
+      case "s":
+          output.innerHTML += skillsBar;
+          break;
+      case "github":
+      case "gh":
+          linkToURL("https://github.com/Kuberwastaken");
+          break;
+      case "discord":
+      case "ds":
+          linkToURL("https://discord.com/users/1296085958374068316");
+          break;
+      case "email":
+      case "em":
+          linkToURL("mailto:kuberhob@gmail.com");
+          break;
+      case "youtube":
+      case "yt":
+          linkToURL("https://www.youtube.com/@Kuberwastaken");
+          break;
+      case "linkedin":
+      case "li":
+          linkToURL("https://www.linkedin.com/in/kubermehta/");
+          break;
+      case "projects":
+      case "pj":
+          output.innerHTML += projectCmd;
+          break;
+      case "blog":
+          linkToURL("https://medium.com/@kubermehta");
+          break;
+      case "neofetch":
+      case "nf":
+          showNeofetch(output);
+          break;
+      case "help":
+          output.innerHTML += helpCmd;
+          break;
+      case "clear":
+      case "c":
+          clearTerminal(output, mainInfo);
+          break;
+      case "resume":
+      case "cv":
+          showResume(output);
+          break;
+      case "miscellaneous":
+      case "misc":
+          output.innerHTML += miscCmd;
+          break;
+      case "open":
+          if (argument) {
+              const url = argument.startsWith('http') ? argument : `http://${argument}`;
+              linkToURL(url);
+              output.innerHTML += `<div>Opening URL: ${argument}</div>`;
+          } else {
+              output.innerHTML += `<div>Please provide a URL to open.</div>`;
+          }
+          break;
+      case "google":
+          if (argument) {
+              linkToURL(`https://www.google.com/search?q=${encodeURIComponent(argument)}`);
+              output.innerHTML += `<div>Searching Google for: ${argument}</div>`;
+          } else {
+              output.innerHTML += `<div>Please provide a search query.</div>`;
+          }
+          break;
+      case "youtube":
+          if (argument) {
+              linkToURL(`https://www.youtube.com/results?search_query=${encodeURIComponent(argument)}`);
+              output.innerHTML += `<div>Searching YouTube for: ${argument}</div>`;
+          } else {
+              output.innerHTML += `<div>Please provide a search query.</div>`;
+          }
+          break;
+      case "wiki":
+      case "wikipedia":
+          if (argument) {
+              linkToURL(`https://wikipedia.org/w/index.php?search=${encodeURIComponent(argument)}`);
+              output.innerHTML += `<div>Searching Wikipedia for: ${argument}</div>`;
+          } else {
+              output.innerHTML += `<div>Please provide a search query.</div>`;
+          }
+          break;
+      case "ascii-selfie": 
+       showAsciiSelfie(output); 
+       break;
+      case "time":
+          const timeNow = new Date().toLocaleTimeString();
+          output.innerHTML += `<div>Current Time: ${timeNow}</div>`;
+          break;
+      case "date":
+          const currentDate = new Date().toLocaleDateString();
+          output.innerHTML += `<div>Current Date: ${currentDate}</div>`;
+          break;
+      default:
+          output.innerHTML += `<div>Command not found. Type 'help' for a list of commands.</div>`;
   }
 
   setTimeout(scrollToBottom, 0);
@@ -206,23 +139,71 @@ function handleCommand(inputField, output, mainInfo) {
   setTimeout(scrollToBottom, 500);
 }
 
-
-
-/**
- * Displays user input in the terminal output.
- * @param {HTMLElement} output - The output container.
- * @param {string} command - The user command.
- */
 function displayUserInput(output, command) {
   output.innerHTML += `<div><span class='ownerTerminal'><b>kuber@profile</b></span>:<b>~$</b> ${command}</div>`;
 }
 
-/**
- * Opens a given URL in a new tab.
- * @param {string} url - The URL to open.
- */
 function linkToURL(url) {
   window.open(url, "_blank");
+}
+
+function clearTerminal(output, mainInfo) {
+  output.innerHTML = "";
+  mainInfo.innerHTML = "";
+}
+
+window.addEventListener("DOMContentLoaded", initializeTerminal);
+
+/**
+* Displays the neofetch output in the terminal.
+* @param {HTMLElement} output - The output container.
+*/
+function showNeofetch(output) {
+  const neofetchOutput = `
+      <div style="display: flex; align-items: flex-start; font-family: monospace;">
+          <div style="margin-right: 30px; padding: 10px;">
+              <pre style="line-height: 1.3em;">
+                  ...
+              </pre>
+          </div>
+          <div style="padding: 10px; line-height: 1.6em;">
+              <span><strong>OS:</strong> I use Arch btw</span><br>
+              <span><strong>Host:</strong> Kuber's PC</span><br>
+              <span><strong>Kernel:</strong> 6.4.7-arch1-1</span><br>
+              <span><strong>Uptime:</strong> Forever</span><br>
+              <span><strong>Resolution:</strong> 3840x2160</span><br>
+              <span><strong>DE:</strong> KDE Plasma</span><br>
+              <span><strong>Vim:</strong> Neovim 0.9.1</span><br>
+              <span><strong>WPI:</strong> Kuber's Config</span><br>
+              <span><strong>Theme:</strong> Nord Dark</span><br>
+              <span><strong>Terminal:</strong> Made by Kuber Mehta</span><br>
+              <span><strong>CPU:</strong> Intel Core i5 1355U</span>
+          </div>
+      </div>
+  `;
+  output.innerHTML += `<div>${neofetchOutput}</div>`;
+}
+
+/**
+* Displays the resume embedded in the terminal.
+* @param {HTMLElement} output - The output container.
+*/
+function showResume(output) {
+  const resumeEmbed = `
+      <div class="resume-container" style="text-align: center; margin: 20px 0;">
+          <iframe src="pdfs/Resume.pdf#view=FitH" 
+                  width="80%" 
+                  height="1000px" 
+                  style="border: none;">
+          </iframe>
+      </div>
+  `;
+  output.innerHTML += resumeEmbed;
+}
+
+// Function to handle external links in projects
+function linkHref(url) {
+  window.open(url, '_blank');
 }
 
 /**
@@ -306,6 +287,12 @@ function showNeofetch(output) {
   output.innerHTML += `<div>${neofetchOutput}</div>`;
 }
 
+// Function to show ASCII art selfie
+function showAsciiSelfie(output) {
+  const asciiArt = getAsciiArt();
+  output.innerHTML += `<div>${asciiArt}</div>`;
+}
+
 /**
  * Displays the resume embedded in the terminal.
  * @param {HTMLElement} output - The output container.
@@ -358,6 +345,7 @@ const miscCmd = `
   [<span class="commandName">google</span> query] - Search Google<br />
   [<span class="commandName">youtube</span> query] - Search YouTube<br />
   [<span class="commandName">wiki</span> query] - Search Wikipedia<br />
+  [<span class="commandName">ascii-selfie</span>] - See a selfie of me :) <br />
   [<span class="commandName">time</span>] - Show current time<br />
   [<span class="commandName">date</span>] - Show current date<br />
 `;
