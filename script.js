@@ -1,3 +1,56 @@
+// Function to scroll to bottom immediately
+function scrollToBottom() {
+  window.scrollTo(0, document.body.scrollHeight);
+}
+
+// Handle command function modification
+function handleCommand(inputField, output, mainInfo) {
+  const command = inputField.value.trim();
+  if (!command) return;
+
+  displayUserInput(output, command);
+  inputField.value = "";
+
+  // Execute command
+  switch (command) {
+    // ... your existing switch cases ...
+  }
+
+  // Force scroll after content update
+  setTimeout(scrollToBottom, 0);
+  
+  // Additional scroll checks for dynamic content
+  setTimeout(scrollToBottom, 100);
+  setTimeout(scrollToBottom, 500);
+}
+
+// Add this to your initializeTerminal function
+function initializeTerminal() {
+  const commandInput = document.getElementById("cmd");
+  const output = document.getElementById("output");
+  const mainInfo = document.getElementById("mainInfo");
+  
+  commandInput.focus();
+  document.getElementById("helpCmdList").innerHTML = helpCmd;
+
+  // Add mutation observer to watch for content changes
+  const observer = new MutationObserver(() => {
+    scrollToBottom();
+  });
+
+  // Start observing output for changes
+  observer.observe(output, {
+    childList: true,
+    subtree: true
+  });
+
+  commandInput.addEventListener("keypress", function (event) {
+    if (event.keyCode === 13) {
+      handleCommand(commandInput, output, mainInfo);
+    }
+  });
+}
+
 // Wait for DOM content to load
 window.addEventListener("DOMContentLoaded", function () {
   initializeTerminal();
@@ -13,6 +66,7 @@ function initializeTerminal() {
   
   commandInput.focus();
   document.getElementById("helpCmdList").innerHTML = helpCmd;
+
 
   commandInput.addEventListener("keypress", function (event) {
     if (event.keyCode === 13) {
@@ -84,8 +138,6 @@ function handleCommand(inputField, output, mainInfo) {
     default:
       output.innerHTML += `<div>Not found</div>`;
   }
-
-  scrollToLatest(output);
 }
 
 /**
@@ -113,14 +165,6 @@ function linkToURL(url) {
 function clearTerminal(output, mainInfo) {
   output.innerHTML = "";
   mainInfo.innerHTML = "";
-}
-
-/**
- * Scrolls the terminal output to the latest entry.
- * @param {HTMLElement} output - The output container.
- */
-function scrollToLatest(output) {
-  output.scrollTop = output.scrollHeight;
 }
 
 /**
@@ -209,6 +253,11 @@ function showResume(output) {
     </div>
   `;
   output.innerHTML += resumeEmbed;
+}
+
+// Function to handle external links in projects
+function linkHref(url) {
+  window.open(url, '_blank');
 }
 
 // Suggestions and command definitions
@@ -318,3 +367,7 @@ let projectCmd = `
   </div>
 `;
 
+// Call initializeTerminal on page load
+window.addEventListener("DOMContentLoaded", function () {
+  initializeTerminal();
+});
