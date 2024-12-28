@@ -12,6 +12,9 @@ const observer = new MutationObserver(() => {
   scrollToBottom();
 });
 
+let commandHistory = [];
+let historyIndex = -1;
+
 function initializeTerminal() {
   const commandInput = document.getElementById("cmd");
   const output = document.getElementById("output");
@@ -26,11 +29,35 @@ function initializeTerminal() {
           handleCommand(commandInput, output, mainInfo);
       }
   });
+
+  commandInput.addEventListener("keydown", function (event) {
+      if (event.keyCode === 38) { // Up arrow key
+          if (historyIndex > 0) {
+              historyIndex--;
+              commandInput.value = commandHistory[historyIndex];
+          } else if (historyIndex === -1 && commandHistory.length > 0) {
+              historyIndex = commandHistory.length - 1;
+              commandInput.value = commandHistory[historyIndex];
+          }
+      } else if (event.keyCode === 40) { // Down arrow key
+          if (historyIndex < commandHistory.length - 1) {
+              historyIndex++;
+              commandInput.value = commandHistory[historyIndex];
+          } else if (historyIndex === commandHistory.length - 1) {
+              historyIndex++;
+              commandInput.value = "";
+          }
+      }
+  });
 }
 
 function handleCommand(inputField, output, mainInfo) {
   const fullCommand = inputField.value.trim();
   if (!fullCommand) return;
+
+  // Add command to history
+  commandHistory.push(fullCommand);
+  historyIndex = commandHistory.length;
 
   const [command, ...args] = fullCommand.split(' ');
   const argument = args.join(' ');
