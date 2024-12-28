@@ -82,13 +82,17 @@ function initializeTerminal() {
  * @param {HTMLElement} mainInfo - The main info container.
  */
 function handleCommand(inputField, output, mainInfo) {
-  const command = inputField.value.trim();
-  if (!command) return;
+  const fullCommand = inputField.value.trim();
+  if (!fullCommand) return;
 
-  displayUserInput(output, command);
+  const [command, ...args] = fullCommand.split(' ');
+  const argument = args.join(' ');
+
+  displayUserInput(output, fullCommand);
   inputField.value = "";
 
-  switch (command) {
+  switch (command.toLowerCase()) {
+    // Existing commands...
     case "skills":
     case "s":
       output.innerHTML += skillsBar;
@@ -135,10 +139,74 @@ function handleCommand(inputField, output, mainInfo) {
     case "cv":
       showResume(output);
       break;
+
+    // Miscellaneous commands
+    case "miscellaneous":
+    case "misc":
+      output.innerHTML += miscCmd;
+      break;
+
+    // Utility commands
+    case "open":
+      if (argument) {
+        const url = argument.startsWith('http') ? argument : `http://${argument}`;
+        linkToURL(url);
+        output.innerHTML += `<div>Opening URL: ${argument}</div>`;
+      } else {
+        output.innerHTML += `<div>Please provide a URL to open.</div>`;
+      }
+      break;
+
+    case "google":
+      if (argument) {
+        linkToURL(`https://www.google.com/search?q=${encodeURIComponent(argument)}`);
+        output.innerHTML += `<div>Searching Google for: ${argument}</div>`;
+      } else {
+        output.innerHTML += `<div>Please provide a search query.</div>`;
+      }
+      break;
+
+    case "yt":
+    case "youtube":
+      if (argument) {
+        linkToURL(`https://www.youtube.com/results?search_query=${encodeURIComponent(argument)}`);
+        output.innerHTML += `<div>Searching YouTube for: ${argument}</div>`;
+      } else {
+        output.innerHTML += `<div>Please provide a search query.</div>`;
+      }
+      break;
+
+    case "wiki":
+    case "wikipedia":
+      if (argument) {
+        linkToURL(`https://wikipedia.org/w/index.php?search=${encodeURIComponent(argument)}`);
+        output.innerHTML += `<div>Searching Wikipedia for: ${argument}</div>`;
+      } else {
+        output.innerHTML += `<div>Please provide a search query.</div>`;
+      }
+      break;
+
+    case "time":
+      const timeNow = new Date().toLocaleTimeString();
+      output.innerHTML += `<div>Current Time: ${timeNow}</div>`;
+      break;
+
+    case "date":
+      const currentDate = new Date().toLocaleDateString();
+      output.innerHTML += `<div>Current Date: ${currentDate}</div>`;
+      break;
+
+    // Add other existing cases...
     default:
-      output.innerHTML += `<div>Not found</div>`;
+      output.innerHTML += `<div>Command not found. Type 'help' for a list of commands.</div>`;
   }
+
+  setTimeout(scrollToBottom, 0);
+  setTimeout(scrollToBottom, 100);
+  setTimeout(scrollToBottom, 500);
 }
+
+
 
 /**
  * Displays user input in the terminal output.
@@ -262,7 +330,8 @@ function linkHref(url) {
 
 // Suggestions and command definitions
 const suggestions = [
-  "resume", "cv", "help", "skills", "clear", "projects", "blog", "tools", "github", "discord", "email", "youtube", "neofetch"
+  "resume", "cv", "help", "skills", "clear", "projects", "blog", "tools", 
+  "github", "discord", "email", "youtube", "neofetch", "miscellaneous", "misc"
 ];
 
 const helpCmd = `
@@ -271,15 +340,26 @@ const helpCmd = `
   [<span class="commandName">projects</span>] or [<span class="commandName">pj</span>]<br />
   [<span class="commandName">resume</span>] or [<span class="commandName">cv</span>]<br />
   [<span class="commandName">blog</span>]<br />
-  [<span class="commandName">neofetch</span>]<br /><br />
+  [<span class="commandName">neofetch</span>]<br />
+  [<span class="commandName">miscellaneous</span>] or [<span class="commandName">misc</span>]<br />
   [<span class="commandName">clear</span>]<br /><br />
-  Contact me: <br />
   
+  Contact me: <br />
   [<span class="commandName">email</span>] <br />
   [<span class="commandName">linkedin</span>] <br />
   [<span class="commandName">github</span>] <br />
   [<span class="commandName">discord</span>] <br />
   [<span class="commandName">youtube</span>]
+`;
+
+const miscCmd = `
+  <br>Utility commands: <br />
+  [<span class="commandName">open</span> URL] - Open a specific URL<br />
+  [<span class="commandName">google</span> query] - Search Google<br />
+  [<span class="commandName">youtube</span> query] - Search YouTube<br />
+  [<span class="commandName">wiki</span> query] - Search Wikipedia<br />
+  [<span class="commandName">time</span>] - Show current time<br />
+  [<span class="commandName">date</span>] - Show current date<br />
 `;
 
 const skillsBar = `
