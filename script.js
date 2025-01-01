@@ -217,21 +217,23 @@ function showNeofetch(output) {
 }
 
 /**
-* Displays the resume embedded in the terminal.
-* @param {HTMLElement} output - The output container.
-*/
+ * Displays the resume embedded in the terminal.
+ * @param {HTMLElement} output - The output container.
+ */
 function showResume(output) {
   const resumeEmbed = `
-      <div class="resume-container" style="text-align: center; margin: 20px 0;">
-          <iframe src="pdfs/Resume.pdf#view=FitH" 
-                  width="80%" 
-                  height="1000px" 
-                  style="border: none;">
-          </iframe>
-      </div>
+    <div class="resume-container" style="text-align: center; margin: 20px 0;">
+      <object data="https://kuberwastaken.github.io/Resume/Resume.pdf" type="application/pdf" 
+              width="80%" 
+              height="1000px" 
+              style="border: none;">
+        <p>Your browser does not support PDFs. <a href="https://kuberwastaken.github.io/Resume/Resume.pdf">Download the PDF</a>.</p>
+      </object>
+    </div>
   `;
   output.innerHTML += resumeEmbed;
 }
+
 
 // Function to handle external links in projects
 function linkHref(url) {
@@ -320,23 +322,6 @@ CPU:          Intel Core i5 1355U
 function showAsciiSelfie(output) {
   const asciiArt = getAsciiArt();
   output.innerHTML += `<div>${asciiArt}</div>`;
-}
-
-/**
- * Displays the resume embedded in the terminal.
- * @param {HTMLElement} output - The output container.
- */
-function showResume(output) {
-  const resumeEmbed = `
-    <div class="resume-container" style="text-align: center; margin: 20px 0;">
-      <iframe src="pdfs/Resume.pdf#view=FitH" 
-              width="80%" 
-              height="1000px" 
-              style="border: none;">
-      </iframe>
-    </div>
-  `;
-  output.innerHTML += resumeEmbed;
 }
 
 // Function to handle external links in projects
