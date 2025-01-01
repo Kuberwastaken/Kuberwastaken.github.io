@@ -433,23 +433,13 @@ const skillsBar = `
 
 let projectCmd = `
   <div class="projectsDiv">
-    <article class="article-wrapper" onclick="linkHref('https://github.com/Kuberwastaken/ROOP-AI-Deepfakes')">
+    <article class="article-wrapper" onclick="linkHref('https://github.com/Kuberwastaken/TREAT-CS50')">
       <div class="project-info">
         <div class="flex-pr">
-          <div class="project-title text-nowrap">ROOP AI Deepfakes</div>
+          <div class="project-title text-nowrap">TREAT-CS50</div>
         </div>
         <div class="flex-pr">
-          <p class="project-description">A deepfake creation tool using AI.</p>
-        </div>
-      </div>
-    </article>
-    <article class="article-wrapper" onclick="linkHref('https://github.com/Kuberwastaken/Miscellaneous-AI-Tools')">
-      <div class="project-info">
-        <div class="flex-pr">
-          <div class="project-title text-nowrap">Miscellaneous AI Tools</div>
-        </div>
-        <div class="flex-pr">
-          <p class="project-description">A collection of jailbreak scripts for LLMs like ChatGPT.</p>
+          <p class="project-description">An AI web application Built with Flask and Python to Analyze Movie and Show scripts for Potential Triggers.</p>
         </div>
       </div>
     </article>
@@ -463,8 +453,29 @@ let projectCmd = `
         </div>
       </div>
     </article>
+    <article class="article-wrapper" onclick="linkHref('https://github.com/Kuberwastaken/ROOP-AI-Deepfakes')">
+      <div class="project-info">
+        <div class="flex-pr">
+          <div class="project-title text-nowrap">ROOP AI Deepfakes</div>
+        </div>
+        <div class="flex-pr">
+          <p class="project-description">A deepfake creation tool using AI.</p>
+        </div>
+      </div>
+    </article>
+    <article class="article-wrapper" onclick="linkHref('https://github.com/Kuberwastaken/Github-Art')">
+      <div class="project-info">
+        <div class="flex-pr">
+          <div class="project-title text-nowrap">Github Art</div>
+        </div>
+        <div class="flex-pr">
+          <p class="project-description">Make Pixel Art in your Github Commit History.</p>
+        </div>
+      </div>
+    </article>
   </div>
 `;
+
 
 // Call initializeTerminal on page load
 window.addEventListener("DOMContentLoaded", function () {
