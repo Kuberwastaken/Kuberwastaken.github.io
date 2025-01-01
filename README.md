@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/8427b829-420b-4ab2-8d0d-c65632d9039f)
+![Kuber's Portfolio Website](https://github.com/user-attachments/assets/01148fed-888e-4981-9a3c-7f0b1f34c828)
 
 # Terminal Inspired Personal Portfolio 🌟
 Welcome to my personal portfolio repository! This project is the fruit of blood, sweat and eye strain to showcase my skills, projects, and professional journey through an interactive terminal-style interface. Dive in and feel free to explore the things that sets my portfolio apart.
@@ -38,7 +38,7 @@ Command History Navigation: Use up and down arrow keys to navigate through previ
 Miscellaneous Tools: Handy utilities like URL opening, Google search, and more, integrated directly into the terminal.
 
 # 📖 Usage Instructions
-Clone the repository: git clone https://github.com/Kuberwastaken/terminal-portfolio.git
+Clone the repository: git clone https://github.com/Kuberwastaken/terminal-portfolio.io
 
 Navigate to the directory: cd terminal-portfolio
 
