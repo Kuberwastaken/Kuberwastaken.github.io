@@ -182,6 +182,7 @@ body {
   text-align: center;
   color: #000;
   text-shadow: 0 0 5px #ffebcd, 0 0 10px #ffebcd, 0 0 15px #ffebcd;
+  margin-bottom: 10px; /* Adds space below the title */
   position: relative; /* Keeps it in its normal flow */
 }
 
@@ -226,7 +227,6 @@ body {
     gap: 10px;
   }
 }
-
 
 /* Container styling for project */
 .container-project {
