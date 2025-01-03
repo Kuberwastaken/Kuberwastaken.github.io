@@ -216,13 +216,9 @@ function showNeofetch(output) {
   output.innerHTML += `<div>${neofetchOutput}</div>`;
 }
 
-/**
- * Displays the resume embedded in the terminal.
- * @param {HTMLElement} output - The output container.
- */
 function showResume(output) {
-  const resumeEmbed = `
-    <div class="resume-container" style="text-align: center; margin: 20px 0;">
+  const resumeEmbedDesktop = `
+    <div class="resume-container desktop-version" style="text-align: center; margin: 20px 0;">
       <object data="https://kuberwastaken.github.io/Resume/Resume.pdf" type="application/pdf" 
               width="80%" 
               height="1000px" 
@@ -231,7 +227,26 @@ function showResume(output) {
       </object>
     </div>
   `;
-  output.innerHTML += resumeEmbed;
+  
+  const resumeEmbedMobile = `
+    <div class="resume-container mobile-version" style="text-align: center; margin: 20px 0;">
+      <object data="https://kuberwastaken.github.io/Resume/Resume.pdf" type="application/pdf" 
+              width="100%" 
+              height="90%" 
+              style="border: none;">
+        <p>Your browser does not support PDFs. <a href="https://kuberwastaken.github.io/Resume/Resume.pdf">Download the PDF</a>.</p>
+      </object>
+    </div>
+  `;
+  
+  // Add both desktop and mobile embeds
+  output.innerHTML = resumeEmbedDesktop + resumeEmbedMobile;
+
+  // Call the toggle function once to set initial visibility
+  toggleResumeView();
+
+  // Listen to window resize events to adjust visibility dynamically
+  window.addEventListener('resize', toggleResumeView);
 }
 
 
