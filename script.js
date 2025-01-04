@@ -433,13 +433,13 @@ const skillsBar = `
 
 let projectCmd = `
   <div class="projectsDiv">
-    <article class="article-wrapper" onclick="linkHref('https://github.com/Kuberwastaken/TREAT-CS50')">
+    <article class="article-wrapper" onclick="linkHref('https://github.com/Kuberwastaken/TREAT')">
       <div class="project-info">
         <div class="flex-pr">
-          <div class="project-title text-nowrap">TREAT-CS50</div>
+          <div class="project-title text-nowrap">TREAT</div>
         </div>
         <div class="flex-pr">
-          <p class="project-description">An AI web application Built with Flask and Python to Analyze Movie and Show scripts for Potential Triggers.</p>
+          <p class="project-description">An AI web application Built with Flask and Python using Llama-3.2-1B to Analyze Movie and Show scripts for Potential Triggers.</p>
         </div>
       </div>
     </article>
