@@ -453,13 +453,13 @@ let projectCmd = `
         </div>
       </div>
     </article>
-    <article class="article-wrapper" onclick="linkHref('https://github.com/Kuberwastaken/ROOP-AI-Deepfakes')">
+    <article class="article-wrapper" onclick="linkHref('https://github.com/Kuberwastaken/ORCUS')">
       <div class="project-info">
         <div class="flex-pr">
-          <div class="project-title text-nowrap">ROOP AI Deepfakes</div>
+          <div class="project-title text-nowrap">ORCUS</div>
         </div>
         <div class="flex-pr">
-          <p class="project-description">A deepfake creation tool using AI.</p>
+          <p class="project-description">A Dual Model AI Based Comment-Analyzer and Flag-Generator for AI generated Social Media Comments, Using Roberta-Base-OpenAI and GPT-2 Models..</p>
         </div>
       </div>
     </article>

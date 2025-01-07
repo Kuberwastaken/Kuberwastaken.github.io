@@ -138,14 +138,14 @@ body {
 /* Projects Styling */
 .projectsDiv {
   display: grid;
-  grid-template-columns: repeat(4, 250px); /* Four columns for desktop */
+  grid-template-columns: repeat(4, 1fr); /* Four columns for desktop */
   gap: 20px;
   margin-top: 20px;
-  width: max-content; /* Prevent unwanted stretching */
+  width: 100%; /* Ensure full width */
 }
 
 .article-wrapper {
-  width: 250px;
+  aspect-ratio: 1 / 1; /* Ensure square shape */
   transition: 0.15s all ease-in-out;
   border-radius: 2px;
   padding: 5px;
