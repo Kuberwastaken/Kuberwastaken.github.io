@@ -1,5 +1,6 @@
 body {
   overflow: hidden;
+  touch-action: none; /* Prevent default touch actions */
 }
 
 .game-2048-container {
@@ -94,7 +95,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.7);
-  color: white;
+  color: #00ff00;
   padding: 20px;
   border-radius: 10px;
   font-size: 24px;
@@ -107,32 +108,41 @@ button {
   padding: 10px 20px;
   font-size: 16px;
   font-weight: bold;
-  background-color: #8f7a66;
-  color: white;
-  border: none;
+  background-color: #000;
+  color: #00ff00;
+  border: 1px solid #00ff00;
   border-radius: 5px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #776e65;
+  background-color: #333;
 }
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
+  .game-2048-container {
+    touch-action: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #faf8ef;
+  }
+
+  .game-2048-grid {
+    max-width: 90vw;
+    margin: 0 auto;
+  }
+
   .scoreboard {
-    font-size: 16px;
-  }
-
-  .game-2048-cell {
-    font-size: 18px;
-  }
-
-  .game-over {
-    font-size: 20px;
-  }
-
-  button {
-    font-size: 14px;
+    max-width: 90vw;
+    margin: 20px auto;
+    padding: 0 10px;
   }
 }
