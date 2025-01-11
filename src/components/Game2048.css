@@ -1,0 +1,105 @@
+body {
+  overflow: hidden;
+}
+
+.game-2048-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.game-2048-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  background-color: #bbada0;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.game-2048-cell {
+  width: 60px;
+  height: 60px;
+  background-color: #cdc1b4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #776e65;
+  border-radius: 5px;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.value-2 { background-color: #eee4da; }
+.value-4 { background-color: #ede0c8; }
+.value-8 { background-color: #f2b179; color: #f9f6f2; }
+.value-16 { background-color: #f59563; color: #f9f6f2; }
+.value-32 { background-color: #f67c5f; color: #f9f6f2; }
+.value-64 { background-color: #f65e3b; color: #f9f6f2; }
+.value-128 { background-color: #edcf72; color: #f9f6f2; }
+.value-256 { background-color: #edcc61; color: #f9f6f2; }
+.value-512 { background-color: #edc850; color: #f9f6f2; }
+.value-1024 { background-color: #edc53f; color: #f9f6f2; }
+.value-2048 { background-color: #edc22e; color: #f9f6f2; }
+
+.tile {
+  position: absolute;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.value-2, .value-4, .value-8, .value-16, .value-32, .value-64, .value-128, .value-256, .value-512, .value-1024, .value-2048 {
+  animation: pop 0.2s ease-in-out;
+}
+
+.game-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  z-index: 10;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #8f7a66;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #776e65;
+}

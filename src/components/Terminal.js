@@ -10,6 +10,7 @@ import HollywoodEffect from './HollywoodEffect'; // Import HollywoodEffect
 import gamesContent from '../constants/gamesContent';
 import SnakeGame from './SnakeGame'; // Import SnakeGame
 import TetrisGame from './TetrisGame'; // Import TetrisGame
+import Game2048 from './Game2048'; // Import 2048Game
 
 const Terminal = () => {
   const [output, setOutput] = useState([]);
@@ -196,6 +197,9 @@ ${isMobile ? smallBanner : largeBanner}
         break;
       case 'tetris':
         setOutput(prev => [...prev, { type: 'component', content: <TetrisGame /> }]);
+        break;
+      case '2048':
+        setOutput(prev => [...prev, { type: 'component', content: <Game2048 /> }]);
         break;
       case 'time':
         setOutput(prev => [...prev, { type: 'output', content: `Current Time: ${new Date().toLocaleTimeString()}` }]);
