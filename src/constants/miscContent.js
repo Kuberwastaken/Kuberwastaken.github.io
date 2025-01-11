@@ -13,7 +13,6 @@ const miscContent = `
     <span style="color: #5abb9a;">[chatgpt query]</span> - Search ChatGPT<br>
     <span style="color: #5abb9a;">[perplexity query]</span> - Search Perplexity<br>
     <span style="color: #5abb9a;">[hackermode]</span> - Toggle Matrix effect<br>
-    <span style="color: #5abb9a;">[snake]</span> - Play Snake Game
   </p>
 </div>`;
 

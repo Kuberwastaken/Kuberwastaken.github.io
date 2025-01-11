@@ -7,7 +7,9 @@ import { getAsciiArt } from '../constants/asciiSelfie';
 import miscContent from '../constants/miscContent';
 import PDFViewer from './PDFViewer';
 import HollywoodEffect from './HollywoodEffect'; // Import HollywoodEffect
+import gamesContent from '../constants/gamesContent';
 import SnakeGame from './SnakeGame'; // Import SnakeGame
+import TetrisGame from './TetrisGame'; // Import TetrisGame
 
 const Terminal = () => {
   const [output, setOutput] = useState([]);
@@ -131,6 +133,10 @@ ${isMobile ? smallBanner : largeBanner}
       case 'c':
         setOutput([]);
         break;
+      case 'games':
+      case 'g':
+        setOutput(prev => [...prev, { type: 'output', content: gamesContent }]);
+        break;
       case 'help':
         setOutput(prev => [...prev, { type: 'output', content: helpContent }]);
         break;
@@ -187,6 +193,9 @@ ${isMobile ? smallBanner : largeBanner}
         break;
       case 'snake':
         setOutput(prev => [...prev, { type: 'component', content: <SnakeGame /> }]);
+        break;
+      case 'tetris':
+        setOutput(prev => [...prev, { type: 'component', content: <TetrisGame /> }]);
         break;
       case 'time':
         setOutput(prev => [...prev, { type: 'output', content: `Current Time: ${new Date().toLocaleTimeString()}` }]);

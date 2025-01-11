@@ -6,6 +6,7 @@ const helpContent = `
     <span style="color: #5abb9a;">[projects] or [pj]</span><br>
     <span style="color: #5abb9a;">[resume] or [cv]</span><br>
     <span style="color: #5abb9a;">[miscellaneous] or [misc]</span><br>
+    <span style="color: #5abb9a;">[games] or [g]</span><br>
     <span style="color: #5abb9a;">[clear]</span>
   </p>
   
