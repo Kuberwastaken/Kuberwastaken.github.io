@@ -1,0 +1,19 @@
+.snake-game-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .snake-game-canvas {
+    background-color: black;
+    border: 2px solid #ffebcd; /* Add a border to the canvas */
+  }
+  
+  .game-over {
+    position: absolute;
+    color: red;
+    font-size: 24px;
+    font-weight: bold;
+  }
