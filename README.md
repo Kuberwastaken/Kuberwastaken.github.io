@@ -18,11 +18,13 @@ This portfolio has:
 
 - **Dynamic Animations:** Enjoy smooth and captivating animations that elevate this portfolio.
 
-- **Responsive Design:** Optimized for seamless viewing and ✨Aesthetics✨.
+- **Responsive Design:** Optimized for seamless viewing on all platforms and ✨Aesthetics✨.
+
+- **A Calculator:** People Build Projects for Calculators, I put Calculators in my portfolio
 
 - **Browsing Capabilities:** Open links, search Google, YouTube, ChatGPT, Perplexity or Wikipedia - directly through the terminal.
 
-- **A Snake Game:** Play snake :)
+- **Games!** Tons of Games to Play :)
 
 - **An ASCII Selfie:** See an ASCII selfie of a really handsome man...
 
@@ -46,7 +48,7 @@ This portfolio has:
 
 - **Miscellaneous Tools:** Handy utilities like URL opening, Google search, and more, integrated directly into the terminal.
 
-- **Snake Game:** Play a classic snake game directly in the terminal.
+- **Games:** Play classic games like snake, tetris, 2048 and more!
 
 - **Hollywood Effect:** Toggle a Matrix-like effect for a hacker vibe.
 

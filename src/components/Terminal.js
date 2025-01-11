@@ -6,12 +6,12 @@ import { showNeofetch } from '../constants/neofetchContent';
 import { getAsciiArt } from '../constants/asciiSelfie';
 import miscContent from '../constants/miscContent';
 import PDFViewer from './PDFViewer';
-import HollywoodEffect from './HollywoodEffect'; // Import HollywoodEffect
+import HollywoodEffect from './HollywoodEffect/HollywoodEffect'; // Import HollywoodEffect
 import gamesContent from '../constants/gamesContent';
-import Calculator from './Calculator';
-import SnakeGame from './SnakeGame'; // Import SnakeGame
-import TetrisGame from './TetrisGame'; // Import TetrisGame
-import Game2048 from './Game2048'; // Import 2048Game
+import Calculator from './Calculator/Calculator';
+import SnakeGame from './SnakeGame/SnakeGame'; // Import SnakeGame
+import TetrisGame from './TetrisGame/TetrisGame'; // Import TetrisGame
+import Game2048 from './Game2048/Game2048'; // Import 2048Game
 
 
 const Terminal = () => {
