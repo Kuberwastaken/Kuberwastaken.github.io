@@ -6,7 +6,7 @@
 Welcome to my personal portfolio repository! This project is the fruit of blood, sweat, and eye strain to showcase my skills, projects, and professional journey through an interactive terminal-style interface. Dive in and feel free to explore the things that set my portfolio apart.
 
 <a href="https://kuberwastaken.github.io/" target="_blank">
-  <img src="https://github.com/user-attachments/assets/e128e434-0ded-4b94-a688-8c74d2a62c07" alt="Portfolio Button Image" width="400" height="70">
+  <img src="https://github.com/Kuberwastaken/Kuberwastaken.github.io/blob/main/src/assets/Portfolio-button.png?raw=true" alt="Portfolio Button Image" width="400" height="70">
 </a>
 </div>
 
