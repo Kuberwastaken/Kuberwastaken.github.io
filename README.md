@@ -1,54 +1,47 @@
 ![Kuber's Portfolio Website](https://github.com/user-attachments/assets/01148fed-888e-4981-9a3c-7f0b1f34c828)
 
 # Terminal Inspired Personal Portfolio 🌟
-Welcome to my personal portfolio repository! This project is the fruit of blood, sweat and eye strain to showcase my skills, projects, and professional journey through an interactive terminal-style interface. Dive in and feel free to explore the things that sets my portfolio apart.
+Welcome to my personal portfolio repository! This project is the fruit of blood, sweat, and eye strain to showcase my skills, projects, and professional journey through an interactive terminal-style interface. Dive in and feel free to explore the things that set my portfolio apart.
 
 # 🌐 Website
 [Check out my portfolio here!](https://kuberwastaken.github.io/)
 
 # 📂 Project Overview
-This portfolio Has:
+This portfolio has:
 
-Terminal-Inspired Interface: Engage with a unique, command-line "inspired" UI that offers an intuitive user experience (or does it?).
+- **Terminal-Inspired Interface:** Engage with a unique, command-line "inspired" UI that offers an intuitive user experience (or does it?).
 
-(Wannabe) Dynamic Animations: Enjoy smooth and captivating animation(s) that elavates this portfolio.
+- **Dynamic Animations:** Enjoy smooth and captivating animations that elevate this portfolio.
 
-Responsive Design: Optimized for seamless viewing and ✨Aesthetics✨.
+- **Responsive Design:** Optimized for seamless viewing and ✨Aesthetics✨.
 
-Browsing Capabilities: Open links, search Google, Youtube or Wikipedia - Directly through the terminal
+- **Browsing Capabilities:** Open links, search Google, YouTube, ChatGPT, Perplexity or Wikipedia - directly through the terminal.
 
-An ASCII selfie of a really handsome man...
+- **A Snake Game:** Play snake :)
+
+- **An ASCII Selfie:** See an ASCII selfie of a really handsome man...
 
 # 🛠️ Tech Stack
-HTML: Structured the content and framework of the website.
+- **React:** Switched to React for a more dynamic and efficient development experience.
 
-CSS: Styled the interface with animations, transitions, and responsive layouts.
+- **HTML:** Structured the content and framework of the website.
 
-JavaScript: Added interactivity and terminal-like functionalities for an engaging user experience.
+- **CSS:** Styled the interface with animations, transitions, and responsive layouts.
+
+- **JavaScript:** Added interactivity and terminal-like functionalities for an engaging user experience.
 
 # 📜 Features
-Interactive Terminal: Navigate the portfolio by typing commands, just like a real terminal.
+- **Interactive Terminal:** Navigate the portfolio by typing commands, just like a real terminal.
 
-Project Showcase: Discover detailed descriptions and dynamic hover effects for various projects.
+- **Project Showcase:** Discover detailed descriptions and dynamic hover effects for various projects.
 
-Animated Skill Bars: Visual representation of my expertise in different technologies, complete with smooth animations.
+- **Animated Skill Bars:** Visual representation of my expertise in different technologies, complete with smooth animations.
 
-Command History Navigation: Use up and down arrow keys to navigate through previously entered commands, making it feel more like a real terminal!
+- **Command History Navigation:** Use up and down arrow keys to navigate through previously entered commands, making it feel more like a real terminal!
 
-Miscellaneous Tools: Handy utilities like URL opening, Google search, and more, integrated directly into the terminal.
+- **Miscellaneous Tools:** Handy utilities like URL opening, Google search, and more, integrated directly into the terminal.
 
-# 📖 Usage Instructions
-Clone the repository: git clone https://github.com/Kuberwastaken/terminal-portfolio.io
+- **Snake Game:** Play a classic snake game directly in the terminal.
 
-Navigate to the directory: cd terminal-portfolio
+- **Hollywood Effect:** Toggle a Matrix-like effect for a hacker vibe.
 
-Open the index.html file in your browser to explore the portfolio locally.
-
-# 📧 Contact
-Feel free to reach out:
-
-[Email](Kuberhob@gmail.com)
-
-[LinkedIn](https://www.linkedin.com/in/kubermehta/)
-
-Or... just find out on the website :P
