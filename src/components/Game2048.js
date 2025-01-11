@@ -197,7 +197,7 @@ const Game2048 = () => {
         {grid.map((row, rIdx) =>
           row.map((cell, cIdx) => (
             <div key={`${rIdx}-${cIdx}`} className={`game-2048-cell value-${cell}`}>
-              {cell !== 0 && cell}
+              <div>{cell !== 0 && cell}</div>
             </div>
           ))
         )}

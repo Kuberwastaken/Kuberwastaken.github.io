@@ -7,6 +7,7 @@ const SnakeGame = () => {
   const [food, setFood] = useState({ x: 15, y: 15 });
   const [direction, setDirection] = useState({ x: 1, y: 0 });
   const [gameOver, setGameOver] = useState(false);
+  const [touchStart, setTouchStart] = useState(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -78,9 +79,38 @@ const SnakeGame = () => {
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
+    const handleTouchStart = (e) => {
+      const touch = e.touches[0];
+      setTouchStart({
+        x: touch.clientX,
+        y: touch.clientY
+      });
+    };
 
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    const handleTouchEnd = (e) => {
+      if (!touchStart) return;
+      const touch = e.changedTouches[0];
+      const dx = touch.clientX - touchStart.x;
+      const dy = touch.clientY - touchStart.y;
+      if (Math.abs(dx) > Math.abs(dy)) {
+        if (dx > 0 && direction.x === 0) setDirection({ x: 1, y: 0 });
+        else if (dx < 0 && direction.x === 0) setDirection({ x: -1, y: 0 });
+      } else {
+        if (dy > 0 && direction.y === 0) setDirection({ x: 0, y: 1 });
+        else if (dy < 0 && direction.y === 0) setDirection({ x: 0, y: -1 });
+      }
+      setTouchStart(null);
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('touchstart', handleTouchStart);
+    window.addEventListener('touchend', handleTouchEnd);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchend', handleTouchEnd);
+    };
   }, [direction]);
 
   return (
