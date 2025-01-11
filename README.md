@@ -1,4 +1,4 @@
-![Kuber's Portfolio Website](https://github.com/user-attachments/assets/01148fed-888e-4981-9a3c-7f0b1f34c828)
+![Portfolio-gif-compressed](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXhyeGFheXAweDVxeDc5bWxsbzFiaXl0NDJyaGRtdTZsZjN5M3NhcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rcSb8JGkY6fVDWDpBS/giphy.gif)
 
 # Terminal Inspired Personal Portfolio 🌟
 Welcome to my personal portfolio repository! This project is the fruit of blood, sweat, and eye strain to showcase my skills, projects, and professional journey through an interactive terminal-style interface. Dive in and feel free to explore the things that set my portfolio apart.
