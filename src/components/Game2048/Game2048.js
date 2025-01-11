@@ -158,6 +158,7 @@ const Game2048 = () => {
   };
 
   const handleTouchStart = (e) => {
+    e.preventDefault(); // Prevent default touch behavior
     const touch = e.touches[0];
     setTouchStart({
       x: touch.clientX,
@@ -165,15 +166,23 @@ const Game2048 = () => {
     });
   };
 
+  const handleTouchMove = (e) => {
+    e.preventDefault(); // Prevent scrolling while swiping
+  };
+
   const handleTouchEnd = (e) => {
+    e.preventDefault(); // Prevent default touch behavior
     if (!touchStart) return;
+    
     const touch = e.changedTouches[0];
     const dx = touch.clientX - touchStart.x;
     const dy = touch.clientY - touchStart.y;
+    
     if (Math.abs(dx) < SWIPE_THRESHOLD && Math.abs(dy) < SWIPE_THRESHOLD) {
       setTouchStart(null);
       return;
     }
+    
     if (Math.abs(dx) > Math.abs(dy)) {
       handleMove(dx > 0 ? 'right' : 'left');
     } else {
@@ -188,7 +197,12 @@ const Game2048 = () => {
   }, [grid, gameOver]);
 
   return (
-    <div className="game-2048-container">
+    <div 
+      className="game-2048-container"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       <div className="scoreboard">
         <div>Score: {score}</div>
         <div>Top Score: {topScore}</div>
