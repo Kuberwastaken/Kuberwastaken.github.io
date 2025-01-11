@@ -8,9 +8,11 @@ import miscContent from '../constants/miscContent';
 import PDFViewer from './PDFViewer';
 import HollywoodEffect from './HollywoodEffect'; // Import HollywoodEffect
 import gamesContent from '../constants/gamesContent';
+import Calculator from './Calculator';
 import SnakeGame from './SnakeGame'; // Import SnakeGame
 import TetrisGame from './TetrisGame'; // Import TetrisGame
 import Game2048 from './Game2048'; // Import 2048Game
+
 
 const Terminal = () => {
   const [output, setOutput] = useState([]);
@@ -42,13 +44,13 @@ const Terminal = () => {
 .##....##..#######..########..########.##.....##........##.....##.########.##.....##....##....##.....##                                                              `;
 
 const smallBanner = `
-.##....##....##.....##
-.##...##.....###...###
-.##..##......####.####
-.#####.......##.###.##
-.##..##......##.....##
-.##...##.....##.....##
-.##....##....##.....##`;
+..##....##....##.....##..
+..##...##.....###...###..
+..##..##......####.####..
+..#####.......##.###.##..
+..##..##......##.....##..
+..##...##.....##.....##..
+..##....##....##.....##..`;
 
     const welcomeMessage = `
       <div style="margin-bottom: 20px;">
@@ -191,6 +193,9 @@ ${isMobile ? smallBanner : largeBanner}
       case 'hackermode':
         setHackermode(prev => !prev);
         setOutput(prev => [...prev, { type: 'output', content: `Hackermode ${hackermode ? 'deactivated' : 'activated'}` }]);
+        break;
+      case 'calculator':
+        setOutput(prev => [...prev, { type: 'component', content: <Calculator /> }]);
         break;
       case 'snake':
         setOutput(prev => [...prev, { type: 'component', content: <SnakeGame /> }]);
