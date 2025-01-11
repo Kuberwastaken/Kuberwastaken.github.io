@@ -13,6 +13,7 @@ const miscContent = `
     <span style="color: #5abb9a;">[perplexity query]</span> - Search Perplexity<br>
     <span style="color: #5abb9a;">[time]</span> - Show current time<br>
     <span style="color: #5abb9a;">[date]</span> - Show current date<br>
+    <span style="color: #5abb9a;">[Theme]</span> - Change current theme<br>    
     <span style="color: #5abb9a;">[hackermode]</span> - Toggle Matrix effect<br>
   </p>
 </div>`;
