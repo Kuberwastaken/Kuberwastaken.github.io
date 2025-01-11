@@ -1,11 +1,11 @@
 import React from 'react';
-import Terminal from './components/Terminal';
 import './App.css';
+import Terminal from './components/Terminal'; // Import your main component
 
 function App() {
   return (
     <div className="App">
-      <Terminal />
+      <Terminal /> {/* Render your main component */}
     </div>
   );
 }

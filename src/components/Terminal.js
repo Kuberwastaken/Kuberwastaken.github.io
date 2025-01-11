@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useTheme } from '../context/ThemeContext';
 import skillsBar from '../constants/skillsBar';
 import projectsContent from '../constants/projectsContent';
 import helpContent from '../constants/helpContent';
@@ -6,13 +7,12 @@ import { showNeofetch } from '../constants/neofetchContent';
 import { getAsciiArt } from '../constants/asciiSelfie';
 import miscContent from '../constants/miscContent';
 import PDFViewer from './PDFViewer';
-import HollywoodEffect from './HollywoodEffect/HollywoodEffect'; // Import HollywoodEffect
+import HollywoodEffect from './HollywoodEffect/HollywoodEffect';
 import gamesContent from '../constants/gamesContent';
 import Calculator from './Calculator/Calculator';
-import SnakeGame from './SnakeGame/SnakeGame'; // Import SnakeGame
-import TetrisGame from './TetrisGame/TetrisGame'; // Import TetrisGame
-import Game2048 from './Game2048/Game2048'; // Import 2048Game
-
+import SnakeGame from './SnakeGame/SnakeGame';
+import TetrisGame from './TetrisGame/TetrisGame';
+import Game2048 from './Game2048/Game2048';
 
 const Terminal = () => {
   const [output, setOutput] = useState([]);
@@ -20,6 +20,7 @@ const Terminal = () => {
   const [historyIndex, setHistoryIndex] = useState(-1);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [hackermode, setHackermode] = useState(false); // State to manage Hollywood effect
+  const { changeBackgroundColor, backgrounds } = useTheme();
   const terminalRef = useRef(null);
   const inputRef = useRef(null);
 
@@ -212,11 +213,33 @@ ${isMobile ? smallBanner : largeBanner}
       case 'date':
         setOutput(prev => [...prev, { type: 'output', content: `Current Date: ${new Date().toLocaleDateString()}` }]);
         break;
-      default:
-        setOutput(prev => [...prev, { type: 'output', content: 'Command not found. Type "help" for a list of commands.' }]);
-        break;
-    }
-  };
+       case 'background':
+       case 'theme':
+       case 'themes':
+       case 'bg':
+       case 'color':
+          if (argument) {
+            const selectedBackground = [...backgrounds.solid, ...backgrounds.gradients].find(bg => bg.name.toLowerCase() === argument.toLowerCase());
+            if (selectedBackground) {
+              changeBackgroundColor(selectedBackground.value);
+              setOutput(prev => [...prev, { type: 'output', content: `Background changed to ${selectedBackground.name}` }]);
+            } else {
+              setOutput(prev => [...prev, { type: 'output', content: 'Invalid background. Please choose from the list.' }]);
+            }
+          } else {
+            const backgroundOptions = [...backgrounds.solid, ...backgrounds.gradients].map(bg => (
+              `<div key="${bg.name}" style="display: inline-block; margin: 5px;">
+                <div style="width: 50px; height: 50px; background: ${bg.value}; cursor: pointer;" onclick="document.dispatchEvent(new CustomEvent('backgroundSelected', { detail: '${bg.name}' }))"></div>
+              </div>`
+            )).join('');
+            setOutput(prev => [...prev, { type: 'output', content: `<div style="display: flex; flex-wrap: wrap;">${backgroundOptions}</div>` }]);
+          }
+          break;
+        default:
+          setOutput(prev => [...prev, { type: 'output', content: 'Command not found. Type "help" for a list of commands.' }]);
+          break;
+      }
+    };
 
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
@@ -248,6 +271,22 @@ ${isMobile ? smallBanner : largeBanner}
       }
     }
   };
+
+  useEffect(() => {
+    const handleBackgroundSelected = (event) => {
+      const selectedBackground = [...backgrounds.solid, ...backgrounds.gradients].find(bg => bg.name === event.detail);
+      if (selectedBackground) {
+        changeBackgroundColor(selectedBackground.value);
+        setOutput(prev => [...prev, { type: 'output', content: `Background changed to ${selectedBackground.name}` }]);
+      }
+    };
+
+    document.addEventListener('backgroundSelected', handleBackgroundSelected);
+
+    return () => {
+      document.removeEventListener('backgroundSelected', handleBackgroundSelected);
+    };
+  }, [backgrounds, changeBackgroundColor]);
 
   return (
     <div id="terminal" className="terminal-container" ref={terminalRef}>

@@ -5,17 +5,21 @@ const Calculator = () => {
   const [input, setInput] = useState('');
   const [result, setResult] = useState('');
 
+  // Handle button click events
   const handleButtonClick = (value) => {
     if (value === '=') {
       try {
+        // Evaluate the expression
         setResult(eval(input)); // Note: eval can be dangerous, consider using a safer alternative
       } catch (error) {
         setResult('Error');
       }
     } else if (value === 'C') {
+      // Clear the input and result
       setInput('');
       setResult('');
     } else {
+      // Append the clicked button value to the input
       setInput(input + value);
     }
   };
