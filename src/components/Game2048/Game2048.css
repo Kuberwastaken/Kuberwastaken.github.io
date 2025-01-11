@@ -121,28 +121,19 @@ button:hover {
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
-  .game-2048-container {
-    touch-action: none;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: #faf8ef;
-  }
-
-  .game-2048-grid {
-    max-width: 90vw;
-    margin: 0 auto;
-  }
-
   .scoreboard {
-    max-width: 90vw;
-    margin: 20px auto;
-    padding: 0 10px;
+    font-size: 16px;
+  }
+
+  .game-2048-cell {
+    font-size: 18px;
+  }
+
+  .game-over {
+    font-size: 20px;
+  }
+
+  button {
+    font-size: 14px;
   }
 }

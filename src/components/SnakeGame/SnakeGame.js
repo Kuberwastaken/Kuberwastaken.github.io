@@ -7,7 +7,6 @@ const SnakeGame = () => {
   const [food, setFood] = useState({ x: 15, y: 15 });
   const [direction, setDirection] = useState({ x: 1, y: 0 });
   const [gameOver, setGameOver] = useState(false);
-  const [touchStart, setTouchStart] = useState(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -79,39 +78,43 @@ const SnakeGame = () => {
       }
     };
 
-    const handleTouchStart = (e) => {
-      const touch = e.touches[0];
-      setTouchStart({
-        x: touch.clientX,
-        y: touch.clientY
-      });
-    };
+    const handleTouch = (e) => {
+      if (gameOver) return;
 
-    const handleTouchEnd = (e) => {
-      if (!touchStart) return;
-      const touch = e.changedTouches[0];
-      const dx = touch.clientX - touchStart.x;
-      const dy = touch.clientY - touchStart.y;
-      if (Math.abs(dx) > Math.abs(dy)) {
-        if (dx > 0 && direction.x === 0) setDirection({ x: 1, y: 0 });
-        else if (dx < 0 && direction.x === 0) setDirection({ x: -1, y: 0 });
-      } else {
-        if (dy > 0 && direction.y === 0) setDirection({ x: 0, y: 1 });
-        else if (dy < 0 && direction.y === 0) setDirection({ x: 0, y: -1 });
+      const canvas = canvasRef.current;
+      const rect = canvas.getBoundingClientRect();
+      const touch = e.touches[0];
+      const relX = touch.clientX - rect.left;
+      const relY = touch.clientY - rect.top;
+
+      const regionWidth = canvas.width / 3;
+      const regionHeight = canvas.height / 3;
+
+      if (relY < regionHeight) {
+        if (direction.y === 0) setDirection({ x: 0, y: -1 });
+      } else if (relY > canvas.height - regionHeight) {
+        if (direction.y === 0) setDirection({ x: 0, y: 1 });
+      } else if (relX < regionWidth) {
+        if (direction.x === 0) setDirection({ x: -1, y: 0 });
+      } else if (relX > canvas.width - regionWidth) {
+        if (direction.x === 0) setDirection({ x: 1, y: 0 });
       }
-      setTouchStart(null);
+
+      e.preventDefault();
     };
 
     window.addEventListener('keydown', handleKeyDown);
-    window.addEventListener('touchstart', handleTouchStart);
-    window.addEventListener('touchend', handleTouchEnd);
+    if (canvasRef.current) {
+      canvasRef.current.addEventListener('touchstart', handleTouch);
+    }
 
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
-      window.removeEventListener('touchstart', handleTouchStart);
-      window.removeEventListener('touchend', handleTouchEnd);
+      if (canvasRef.current) {
+        canvasRef.current.removeEventListener('touchstart', handleTouch);
+      }
     };
-  }, [direction]);
+  }, [direction, gameOver]);
 
   return (
     <div className="snake-game-container">

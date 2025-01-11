@@ -1,19 +1,33 @@
 .snake-game-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
-  
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.snake-game-canvas {
+  background-color: black;
+  border: 2px solid #ffebcd; /* Add a border to the canvas */
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+.game-over {
+  position: absolute;
+  color: red;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
   .snake-game-canvas {
-    background-color: black;
-    border: 2px solid #ffebcd; /* Add a border to the canvas */
+    max-width: 100%;
   }
-  
+
   .game-over {
-    position: absolute;
-    color: red;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 20px;
   }
+}
