@@ -1,60 +1,22 @@
-.tetris-game-container {
+.snake-game-container {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
-    touch-action: none; /* Prevents default touch behaviors */
-}
+  }
   
-.tetris-game-canvas {
+  .snake-game-canvas {
     background-color: black;
     border: 2px solid #ffebcd;
-}
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
   
-.game-over {
+  .game-over {
     position: absolute;
     color: red;
     font-size: 24px;
     font-weight: bold;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    border: 2px solid #ffebcd;
-    z-index: 10;
-}
-
-/* Optional: Add these helper classes to visualize touch regions during development */
-.tetris-game-canvas.debug::before {
-    content: 'ROTATE';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 25%;
-    background: rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid #ffebcd;
-    color: #ffebcd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-}
-
-.tetris-game-canvas.debug::after {
-    content: 'DROP';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 25%;
-    background: rgba(255, 255, 255, 0.1);
-    border-top: 1px solid #ffebcd;
-    color: #ffebcd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-}
+  }
