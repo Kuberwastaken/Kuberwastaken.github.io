@@ -286,6 +286,6 @@ body {
 
   .neofetch-logo pre,
   .neofetch-details pre {
-    font-size: 8px; /* Further adjust font size for smaller screens */
+    font-size: 8px; 
   }
 }

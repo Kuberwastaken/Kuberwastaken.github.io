@@ -158,7 +158,7 @@ const Game2048 = () => {
   };
 
   const handleTouchStart = (e) => {
-    e.preventDefault(); // Prevent default touch behavior
+    e.preventDefault();
     const touch = e.touches[0];
     setTouchStart({
       x: touch.clientX,
@@ -171,7 +171,7 @@ const Game2048 = () => {
   };
 
   const handleTouchEnd = (e) => {
-    e.preventDefault(); // Prevent default touch behavior
+    e.preventDefault(); // Yes somehow defining it TWICE makes it work
     if (!touchStart) return;
     
     const touch = e.changedTouches[0];

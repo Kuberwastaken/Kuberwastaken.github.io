@@ -9,7 +9,7 @@
 
 .tetris-game-canvas {
   background-color: black;
-  border: 4px solid #00ff00; /* Add a green border to indicate the playable area */
+  border: 4px solid #ffffff; 
   width: 100%;
   max-width: 300px;
   height: auto;

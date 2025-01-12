@@ -51,7 +51,7 @@
   border: none;
   padding: 15px;
   border-radius: 5px;
-  color: #5abb9a; /* Updated to match the rest of the project's text color */
+  color: #5abb9a;
   font-size: 1.2em;
   cursor: pointer;
   transition: background-color 0.2s, transform 0.2s;

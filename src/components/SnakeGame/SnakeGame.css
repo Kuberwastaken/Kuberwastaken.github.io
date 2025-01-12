@@ -8,7 +8,7 @@
 
 .snake-game-canvas {
   background-color: black;
-  border: 2px solid #ffebcd; /* Add a border to the canvas */
+  border: 2px solid #ffebcd;
   width: 100%;
   max-width: 400px;
   height: auto;
