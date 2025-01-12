@@ -13,6 +13,7 @@ import Calculator from './Calculator/Calculator';
 import SnakeGame from './SnakeGame/SnakeGame';
 import TetrisGame from './TetrisGame/TetrisGame';
 import Game2048 from './Game2048/Game2048';
+import TerminalFlappyBird from './FlappyBird/TerminalFlappyBird';
 
 const Terminal = () => {
   const [output, setOutput] = useState([]);
@@ -198,6 +199,9 @@ const smallBanner = `
         break;
       case 'calculator':
         setOutput(prev => [...prev, { type: 'component', content: <Calculator /> }]);
+        break;
+      case 'flappybird':
+        setOutput(prev => [...prev, { type: 'component', content: <TerminalFlappyBird /> }]);
         break;
       case 'snake':
         setOutput(prev => [...prev, { type: 'component', content: <SnakeGame /> }]);
