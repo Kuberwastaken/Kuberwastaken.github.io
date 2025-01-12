@@ -19,7 +19,7 @@ const Terminal = () => {
   const [commandHistory, setCommandHistory] = useState([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  const [hackermode, setHackermode] = useState(false); // State to manage Hollywood effect
+  const [hackermode, setHackermode] = useState(false); // Hollywood is here for ref
   const { changeBackgroundColor, backgrounds } = useTheme();
   const terminalRef = useRef(null);
   const inputRef = useRef(null);
@@ -291,7 +291,7 @@ const smallBanner = `
 
   return (
     <div id="terminal" className="terminal-container" ref={terminalRef}>
-      {hackermode && <HollywoodEffect />} {/* Only renders when hackermode is true */}
+      {hackermode && <HollywoodEffect />} {/* MAKE SURE IT HAPPENS WHEN HACKERMODE IS ON */}
       {output.map((item, index) => (
         <div key={index}>
           {item.type === 'input' ? (

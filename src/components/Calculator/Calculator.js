@@ -10,7 +10,7 @@ const Calculator = () => {
     if (value === '=') {
       try {
         // Evaluate the expression
-        setResult(eval(input)); // Note: eval can be dangerous, consider using a safer alternative
+        setResult(eval(input));
       } catch (error) {
         setResult('Error');
       }
