@@ -163,10 +163,40 @@ body {
   }
 }
 
-/* Add this to the existing CSS */
 .terminal-container {
   position: relative;
   z-index: 1;
+}
+
+.rgb-animation {
+  animation: rgbAnimation 10s infinite linear;
+}
+
+@keyframes rgbAnimation {
+  0% { color: #ffb3ba; } /* pastel red */
+  33% { color: #baffc9; } /* pastel green */
+  66% { color: #bae1ff; } /* pastel blue */
+  100% { color: #ffb3ba; } /* pastel red */
+}
+
+.rgb-line-animation {
+  animation: rgbLineAnimation 10s infinite linear;
+}
+
+@keyframes rgbLineAnimation {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 0% 100%; }
+}
+
+.rgb-line {
+  background: linear-gradient(to bottom, #ffb3ba, #baffc9, #bae1ff, #ffb3ba); /* pastel colors */
+  background-size: 100% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  display: inline-block;
+  animation: rgbLineAnimation 10s infinite linear;
 }
 
 /* Neofetch styles */
