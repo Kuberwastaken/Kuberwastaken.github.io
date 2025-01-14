@@ -17,7 +17,6 @@ const helpContent = `
     <span style="color: #5abb9a;">[github]</span><br>
     <span style="color: #5abb9a;">[discord]</span><br>
     <span style="color: #5abb9a;">[youtube]</span><br>
-    <span style="color: #5abb9a;">[blog]</span>
   </p>
 </div>`;
 
