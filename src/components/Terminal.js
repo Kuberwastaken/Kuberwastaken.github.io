@@ -19,11 +19,12 @@ const Terminal = () => {
   const [output, setOutput] = useState([]);
   const [commandHistory, setCommandHistory] = useState([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  const [hackermode, setHackermode] = useState(false); // Hollywood is here for ref
-  const { changeBackgroundColor, backgrounds } = useTheme();
-  const terminalRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [input, setInput] = useState('');
+  const [hackermode, setHackermode] = useState(false);
   const inputRef = useRef(null);
+  const terminalRef = useRef(null);
+  const { theme, changeBackgroundColor, backgrounds } = useTheme();
 
   useEffect(() => {
     const handleResize = () => {
@@ -31,7 +32,11 @@ const Terminal = () => {
     };
 
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   useEffect(() => {
@@ -89,6 +94,42 @@ const smallBanner = `
 
     return () => observer.disconnect();
   }, [isMobile]);
+
+  useEffect(() => {
+    const handleCommandClick = (event) => {
+      if (event.target.classList.contains('command-link')) {
+        const command = event.target.getAttribute('data-command');
+        simulateTyping(command);
+      }
+    };
+
+    document.addEventListener('click', handleCommandClick);
+
+    return () => {
+      document.removeEventListener('click', handleCommandClick);
+    };
+  }, []);
+
+  const simulateTyping = (command) => {
+    let index = 0;
+    setInput('');
+    const interval = setInterval(() => {
+      if (index < command.length) {
+        setInput((prev) => prev + command[index]);
+        index++;
+      } else {
+        clearInterval(interval);
+        executeCommand(command);
+      }
+    }, 100);
+  };
+
+  const executeCommand = (command) => {
+    setCommandHistory([...commandHistory, command]);
+    setHistoryIndex(-1);
+    setInput('');
+    handleCommand(command);
+  };
 
   const handleCommand = (command) => {
     const [cmd, ...args] = command.toLowerCase().trim().split(' ');
@@ -200,18 +241,18 @@ const smallBanner = `
       case 'calculator':
         setOutput(prev => [...prev, { type: 'component', content: <Calculator /> }]);
         break;
-      case 'flappybird':
-        setOutput(prev => [...prev, { type: 'component', content: <TerminalFlappyBird /> }]);
-        break;
-      case 'snake':
-        setOutput(prev => [...prev, { type: 'component', content: <SnakeGame /> }]);
-        break;
-      case 'tetris':
-        setOutput(prev => [...prev, { type: 'component', content: <TetrisGame /> }]);
-        break;
-      case '2048':
-        setOutput(prev => [...prev, { type: 'component', content: <Game2048 /> }]);
-        break;
+        case 'snake':
+          setOutput(prev => [...prev, { type: 'component', content: <SnakeGame /> }]);
+          break;
+        case 'tetris':
+          setOutput(prev => [...prev, { type: 'component', content: <TetrisGame /> }]);
+          break;
+        case '2048':
+          setOutput(prev => [...prev, { type: 'component', content: <Game2048 /> }]);
+          break;
+        case 'flappybird':
+          setOutput(prev => [...prev, { type: 'component', content: <TerminalFlappyBird /> }]);
+          break;
       case 'time':
         setOutput(prev => [...prev, { type: 'output', content: `Current Time: ${new Date().toLocaleTimeString()}` }]);
         break;
@@ -320,6 +361,8 @@ const smallBanner = `
           ref={inputRef}
           type="text"
           className="command-field"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyPress}
           autoComplete="off"
           autoCapitalize="off"
