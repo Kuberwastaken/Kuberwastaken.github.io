@@ -2,21 +2,21 @@ const helpContent = `
 <div style="margin: 20px 0;">
   <h3>Available Commands:</h3>
   <p style="margin: 10px 0;">
-    <span style="color: #5abb9a;">[skills] or [s]</span><br>
-    <span style="color: #5abb9a;">[projects] or [pj]</span><br>
-    <span style="color: #5abb9a;">[resume] or [cv]</span><br>
-    <span style="color: #5abb9a;">[miscellaneous] or [misc]</span><br>
-    <span style="color: #5abb9a;">[games] or [g]</span><br>
-    <span style="color: #5abb9a;">[clear]</span>
+    <span class="command-link" data-command="skills" style="color: #5abb9a;">[skills] or [s]</span><br>
+    <span class="command-link" data-command="projects" style="color: #5abb9a;">[projects] or [pj]</span><br>
+    <span class="command-link" data-command="resume" style="color: #5abb9a;">[resume] or [cv]</span><br>
+    <span class="command-link" data-command="misc" style="color: #5abb9a;">[miscellaneous] or [misc]</span><br>
+    <span class="command-link" data-command="games" style="color: #5abb9a;">[games] or [g]</span><br>
+    <span class="command-link" data-command="clear" style="color: #5abb9a;">[clear]</span>
   </p>
   
   <h3>Contact Me:</h3>
   <p style="margin: 10px 0;">
-    <span style="color: #5abb9a;">[email]</span><br>
-    <span style="color: #5abb9a;">[linkedin]</span><br>
-    <span style="color: #5abb9a;">[github]</span><br>
-    <span style="color: #5abb9a;">[discord]</span><br>
-    <span style="color: #5abb9a;">[youtube]</span><br>
+    <span class="command-link" data-command="email" style="color: #5abb9a;">[email]</span><br>
+    <span class="command-link" data-command="linkedin" style="color: #5abb9a;">[linkedin]</span><br>
+    <span class="command-link" data-command="github" style="color: #5abb9a;">[github]</span><br>
+    <span class="command-link" data-command="discord" style="color: #5abb9a;">[discord]</span><br>
+    <span class="command-link" data-command="youtube" style="color: #5abb9a;">[youtube]</span><br>
   </p>
 </div>`;
 
