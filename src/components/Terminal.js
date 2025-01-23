@@ -6,9 +6,9 @@ import helpContent from '../constants/helpContent';
 import { showNeofetch } from '../constants/neofetchContent';
 import { getAsciiArt } from '../constants/asciiSelfie';
 import miscContent from '../constants/miscContent';
+import gamesContent from '../constants/gamesContent';
 import PDFViewer from './PDFViewer';
 import HollywoodEffect from './HollywoodEffect/HollywoodEffect';
-import gamesContent from '../constants/gamesContent';
 import Calculator from './Calculator/Calculator';
 import SnakeGame from './SnakeGame/SnakeGame';
 import TetrisGame from './TetrisGame/TetrisGame';
@@ -285,6 +285,7 @@ const smallBanner = `
           setOutput(prev => [...prev, { type: 'output', content: 'Command not found. Type "help" for a list of commands.' }]);
           break;
       }
+      setInput(''); // Clear the input field after handling the command
     };
 
   const handleKeyPress = (e) => {
@@ -304,16 +305,16 @@ const smallBanner = `
       e.preventDefault();
       if (historyIndex > 0) {
         setHistoryIndex(prev => prev - 1);
-        e.target.value = commandHistory[historyIndex - 1];
+        setInput(commandHistory[historyIndex - 1]);
       }
     } else if (e.key === 'ArrowDown') {
       e.preventDefault();
       if (historyIndex < commandHistory.length - 1) {
         setHistoryIndex(prev => prev + 1);
-        e.target.value = commandHistory[historyIndex + 1];
+        setInput(commandHistory[historyIndex + 1]);
       } else {
         setHistoryIndex(commandHistory.length);
-        e.target.value = '';
+        setInput('');
       }
     }
   };
