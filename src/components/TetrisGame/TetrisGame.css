@@ -7,6 +7,14 @@
   flex-direction: column;
 }
 
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
 .tetris-game-canvas {
   background-color: black;
   border: 4px solid #ffffff; 
@@ -21,3 +29,4 @@
   font-size: 24px;
   font-weight: bold;
 }
+

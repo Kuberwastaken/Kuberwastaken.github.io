@@ -4,7 +4,14 @@ import './TetrisGame.css';
 const TetrisGame = () => {
   const canvasRef = useRef(null);
   const [gameOver, setGameOver] = useState(false);
+  const [score, setScore] = useState(0);
+  const [topScore, setTopScore] = useState(0);
   const gameStateRef = useRef({ isOver: false });
+
+  useEffect(() => {
+    const savedTopScore = localStorage.getItem('tetrisTopScore');
+    if (savedTopScore) setTopScore(parseInt(savedTopScore));
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -28,6 +35,7 @@ const TetrisGame = () => {
     let nextPiece = getRandomPiece();
     let dropStart = Date.now();
     let gameInterval;
+    let localScore = 0;
 
     function getRandomPiece() {
       const shape = SHAPES[Math.floor(Math.random() * SHAPES.length)];
@@ -132,9 +140,28 @@ const TetrisGame = () => {
     }
 
     function clearLines() {
-      board = board.filter(row => row.some(cell => !cell));
+      let clearedLines = 0;
+      board = board.filter(row => {
+        const isFull = row.every(cell => cell);
+        if (isFull) clearedLines++;
+        return !isFull;
+      });
+      
       while (board.length < ROWS) {
         board.unshift(Array(COLS).fill(0));
+      }
+
+      // Score calculation
+      if (clearedLines > 0) {
+        const scoreMultiplier = [0, 40, 100, 300, 1200];
+        localScore += scoreMultiplier[clearedLines] || 0;
+        setScore(localScore);
+
+        // Check for potential high score update
+        if (localScore > topScore) {
+          setTopScore(localScore);
+          localStorage.setItem('tetrisTopScore', localScore.toString());
+        }
       }
     }
 
@@ -148,6 +175,10 @@ const TetrisGame = () => {
         if (collision(currentPiece)) {
           gameStateRef.current.isOver = true;
           setGameOver(true);
+          if (localScore > topScore) {
+            setTopScore(localScore);
+            localStorage.setItem('tetrisTopScore', localScore.toString());
+          }
           clearInterval(gameInterval);
         }
       }
@@ -227,10 +258,20 @@ const TetrisGame = () => {
       clearInterval(gameInterval);
       gameStateRef.current.isOver = false;
     };
-  }, [gameOver]);
+  }, [gameOver, score, topScore]);
+
+  const resetGame = () => {
+    setGameOver(false);
+    setScore(0);
+    gameStateRef.current.isOver = false;
+  };
 
   return (
     <div className="tetris-game-container">
+      <div className="scoreboard">
+        <div>Score: {score}</div>
+        <div>Top Score: {topScore}</div>
+      </div>
       <canvas 
         ref={canvasRef} 
         width="300" 
@@ -238,6 +279,7 @@ const TetrisGame = () => {
         className="tetris-game-canvas"
       />
       {gameOver && <div className="game-over">Game Over</div>}
+      <button onClick={resetGame}>Restart</button>
     </div>
   );
 };
