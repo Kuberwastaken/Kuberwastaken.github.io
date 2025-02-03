@@ -14,6 +14,7 @@ import SnakeGame from './SnakeGame/SnakeGame';
 import TetrisGame from './TetrisGame/TetrisGame';
 import Game2048 from './Game2048/Game2048';
 import TerminalFlappyBird from './FlappyBird/TerminalFlappyBird';
+import Jarvis from './Jarvis/Jarvis';
 
 const Terminal = () => {
   const [output, setOutput] = useState([]);
@@ -69,7 +70,7 @@ const smallBanner = `
       <div style="margin: 20px 0;">
         <p>Welcome to my personal portfolio! (Version 1.6.9)
         <p style="margin-top: 8px;">Type <span style="color: #5abb9a;">'help'</span> to see the list of available commands.</p>
-        <p style="margin-top: 15px;"><span class="rgb-animation">NEW</span> try <a href="https://kuberwastaken.github.io/blog/" target="_blank" style="color: #5abb9a;">Blog</a> & <a href="https://trytreat.tech/" target="_blank" style="color: #5abb9a;">TREAT Web!</a></p>
+        <p style="margin-top: 15px;"><span class="rgb-animation">NEW</span> try <a href="https://kuberwastaken.github.io/blog/" target="_blank" style="color: #5abb9a;">MindDump</a> & <a href="https://trytreat.tech/" target="_blank" style="color: #5abb9a;">TREAT Web!</a></p>
       </div>
       </div>`;
 
@@ -202,6 +203,9 @@ const smallBanner = `
       case 'resume':
       case 'cv':
         setOutput(prev => [...prev, { type: 'component', content: <PDFViewer /> }]);
+        break;
+      case 'jarvis':
+        setOutput(prev => [...prev, { type: 'component', content: <Jarvis /> }]);
         break;
       case 'google':
         if (argument) {
@@ -343,20 +347,21 @@ const smallBanner = `
     <div id="terminal" className="terminal-container" ref={terminalRef}>
       {hackermode && <HollywoodEffect />} {/* MAKE SURE IT HAPPENS WHEN HACKERMODE IS ON */}
       {output.map((item, index) => (
-        <div key={index}>
-          {item.type === 'input' ? (
+    <div key={index}>
+        {item.type === 'input' ? (
             <div>
-              <span className="ownerTerminal"><b>kuber@profile</b></span>
-              <b>:~$</b> {item.content}
+                <span className="ownerTerminal"><b>kuber@profile</b></span>
+                <b>:~$</b> {item.content}
             </div>
-          ) : item.type === 'component' ? (
+        ) : item.type === 'component' ? (
             <div>{item.content}</div>
-          ) : (
+        ) : (
             <div dangerouslySetInnerHTML={{ __html: item.content }} />
-          )}
-        </div>
-      ))}
-      
+        )}
+    </div>
+))}
+
+
       <div className="command-input">
         <span className="prompt">
           <span className="ownerTerminal"><b>kuber@profile</b></span>

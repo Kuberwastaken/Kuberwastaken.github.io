@@ -1,0 +1,155 @@
+/* Container styles */
+.jarvis-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+}
+  
+/* ASCII Art style */
+.ascii-art {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    color: #ffebcd;
+    font-size: 14px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+  
+/* Chat window styles */
+.chat-window {
+    width: 100%;
+    max-width: 600px;
+    height: 70%;
+    overflow-y: auto;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+  
+/* Individual message styling */
+.message {
+    margin-bottom: 15px;
+}
+  
+/* User's message styling */
+.user-message {
+    color: #ffebcd;
+    margin: 5px 0;
+}
+  
+/* Jarvis' response styling */
+.jarvis-response {
+    color: #5abb9a;
+    margin: 5px 0;
+}
+  
+/* Input form styling */
+.input-form {
+    display: flex;
+    align-items: center;  /* Vertically centers items */
+    width: 100%;
+    max-width: 600px;
+    background-color: #444;
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;  /* Include padding in total width/height */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Adjusted input field styling */
+.query-input {
+    flex-grow: 1;  /* Allow input to take up remaining space */
+    padding: 12px;  /* Adjusted padding for height alignment */
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #333;
+    margin-right: 10px;  /* Spacing between input and button */
+    box-sizing: border-box;  /* Include padding in total width/height */
+}
+
+/* Adjusted send button styling */
+.send-button {
+    padding: 14px;  /* Matching padding to align with input field */
+    background-color: #5abb9a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    min-width: 80px;  /* Consistent button width */
+    box-sizing: border-box;  /* Include padding in total width/height */
+}
+
+.send-button:hover {
+    background-color: #86beab;
+}
+
+  
+/* Loading text style */
+.loading {
+    color: #356857;
+    font-size: 16px;
+    font-weight: bold;
+}
+  
+/* Mobile-friendly: make everything more responsive */
+@media (max-width: 768px) {
+    .chat-window {
+        height: 60%;
+    }
+
+    .input-form {
+        flex-direction: column;
+        align-items: stretch;  /* Full width alignment */
+        padding: 15px;
+    }
+
+    .query-input {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-right: 0;  /* Reset margin for mobile */
+    }
+
+    .send-button {
+        width: 100%;
+        margin-top: 10px;  /* Space between input field and send button */
+    }
+
+    .message {
+        margin-bottom: 10px;
+    }
+
+    .user-message,
+    .jarvis-response {
+        font-size: 16px;
+    }
+
+    .send-button {
+        font-size: 16px;
+    }
+}
+  
+/* Add subtle animation to chat window */
+.chat-window {
+    animation: fadeIn 0.5s ease-in-out;
+}
+  
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
