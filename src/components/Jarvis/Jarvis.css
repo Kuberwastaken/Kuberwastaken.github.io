@@ -1,4 +1,4 @@
-/* Container styles */
+/* General container styling */
 .jarvis-container {
     display: flex;
     flex-direction: column;
@@ -6,190 +6,208 @@
     align-items: center;
     width: 100%;
     height: 100vh;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
     color: #fff;
-    padding: 10px;
+    padding: 15px;
+
     box-sizing: border-box;
 }
-  
-/* ASCII Art style */
-.ascii-art {
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
-    color: #ffebcd;
-    font-size: 14px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-}
-  
-/* Chat window styles */
+
+/* Chat window with smooth scrolling */
 .chat-window {
     width: 100%;
     max-width: 600px;
-    height: 70%;
+    height: 75%;
     overflow-y: auto;
-    background-color: #1e1e1e;
-    border-radius: 8px;
-    padding: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-}
-  
-/* Individual message styling */
-.message {
+    background-color: #1c1c1c;
+    border-radius: 12px;
+    padding: 15px;
     margin-bottom: 15px;
-}
-  
-/* User's message styling */
-.user-message {
-    color: #ffebcd;
-    margin: 5px 0;
-}
-  
-/* Jarvis' response styling */
-.jarvis-response {
-    color: #5abb9a;
-    margin: 5px 0;
-}
-  
-/* Input form styling */
-.input-form {
-    display: flex;
-    align-items: center;  /* Ensures vertical alignment */
-    justify-content: space-between; /* Keeps input and button spaced properly */
-    width: 100%;
-    max-width: 600px;
-    background-color: #444;
-    border-radius: 8px;
-    padding: 5px; /* Reduced padding to prevent misalignment */
-    box-sizing: border-box;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    gap: 8px; /* Ensures space between input and button */
-}
-
-/* Adjusted input field styling */
-.query-input {
-    flex: 1;  /* Takes remaining space */
-    height: 40px;  /* Fixed height */
-    border: none;
-    border-radius: 8px;
-    font-size: 14px;
-    color: #fff;
-    background-color: #333;
-    padding: 10px; /* Ensures proper height inside */
-    box-sizing: border-box;
-}
-
-
-.markdown-content {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
-    gap: 4px;
-  }
-  
-  .markdown-line {
-    line-height: 1.5;
-  }
-  
-  .markdown-line strong {
-    font-weight: bold;
-    color: inherit;
-  }
-  
-  .markdown-line em {
-    font-style: italic;
-    color: inherit;
-  }
-  
-  /* Update existing message styles to accommodate markdown */
-  .user-message,
-  .jarvis-response {
-    display: flex;
-    gap: 8px;
-    align-items: flex-start;
-  }
-  
-  .user-message > strong,
-  .jarvis-response > strong {
-    flex-shrink: 0;
-  }
+    gap: 10px;
+}
 
-/* Adjusted send button styling */
-.send-button {
-    height: 40px; /* Match input field height */
-    padding: 0 15px;
+/* Scrollbar styling */
+.chat-window::-webkit-scrollbar {
+    width: 5px;
+}
+
+.chat-window::-webkit-scrollbar-thumb {
     background-color: #5abb9a;
-    color: white;
+    border-radius: 10px;
+}
+
+/* User message bubble */
+.user-message {
+    align-self: flex-end;
+    background-color: #5abb9a;
+    color: #000;
+    padding: 10px 14px;
+    border-radius: 15px 15px 0 15px;
+    max-width: 80%;
+    word-wrap: break-word;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Jarvis message bubble */
+.jarvis-response {
+    align-self: flex-start;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 15px 15px 15px 0;
+    max-width: 80%;
+    word-wrap: break-word;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Markdown Styling */
+.markdown-line strong {
+    font-weight: bold;
+    color: #ffdd57;
+}
+
+.markdown-line em {
+    font-style: italic;
+    color: #ffab91;
+}
+
+/* Input form */
+.input-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    background-color: #222;
+    border-radius: 8px;
+    padding: 8px;
+    gap: 8px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Input field */
+.query-input {
+    flex: 1;
+    height: 45px;
     border: none;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 15px;
+    color: #fff;
+    background-color: #333;
+    padding: 10px;
+    box-sizing: border-box;
+    outline: none;
+    transition: 0.3s;
+}
+
+.query-input::placeholder {
+    color: #bbb;
+}
+
+.query-input:focus {
+    background-color: #444;
+}
+
+/* Send Button */
+.send-button {
+    height: 100%; /* Match input height */
+    min-width: 60px;
+    padding: 0 20px;
+    margin-bottom: 15px;
+    background: #5abb9a;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
-    min-width: 80px; /* Consistent width */
     display: flex;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
 }
 
+/* Hover effect */
 .send-button:hover {
-    background-color: #86beab;
+    background: linear-gradient(135deg, #48a68d, #3e907b);
+    box-shadow: 0 6px 15px rgba(90, 187, 154, 0.4);
+    transform: translateY(-2px);
 }
 
-  
-/* Loading text style */
+.send-button:active {
+    background: #3e907b;
+    box-shadow: 0 2px 5px rgba(90, 187, 154, 0.2);
+    transform: translateY(1px);
+}
+
+.send-icon {
+    font-size: 18px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between input and button */
+    width: 100%;
+}
+
+.input-field {
+    flex-grow: 1;
+    height: 50px; /* Match button height */
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: #333;
+    color: white;
+    font-size: 14px;
+}
+
+/* Loading animation */
 .loading {
     color: #ffebcd;
     font-size: 16px;
     font-weight: bold;
+    text-align: center;
 }
-  
-/* Mobile-friendly: make everything more responsive */
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .chat-window {
-        height: 60%;
+        height: 65%;
     }
 
     .input-form {
         flex-direction: column;
-        align-items: stretch;  /* Full width alignment */
-        padding: 15px;
+        padding: 12px;
     }
 
     .query-input {
         width: 100%;
-        margin-bottom: 10px;
-        margin-right: 0;  /* Reset margin for mobile */
+        margin-bottom: 8px;
     }
 
     .send-button {
         width: 100%;
         margin-top: 10px;  /* Space between input field and send button */
-    }
-
-    .message {
-        margin-bottom: 10px;
-    }
+        height: 50px;  /* Adjust the height as needed */
+    }    
 
     .user-message,
     .jarvis-response {
-        font-size: 16px;
-    }
-
-    .send-button {
-        font-size: 16px;
-    }
-}
-  
-/* Add subtle animation to chat window */
-.chat-window {
-    animation: fadeIn 0.5s ease-in-out;
-}
-  
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
+        font-size: 15px;
     }
 }
