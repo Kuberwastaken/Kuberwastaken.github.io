@@ -80,6 +80,40 @@
     box-sizing: border-box;
 }
 
+
+.markdown-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .markdown-line {
+    line-height: 1.5;
+  }
+  
+  .markdown-line strong {
+    font-weight: bold;
+    color: inherit;
+  }
+  
+  .markdown-line em {
+    font-style: italic;
+    color: inherit;
+  }
+  
+  /* Update existing message styles to accommodate markdown */
+  .user-message,
+  .jarvis-response {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  
+  .user-message > strong,
+  .jarvis-response > strong {
+    flex-shrink: 0;
+  }
+
 /* Adjusted send button styling */
 .send-button {
     height: 40px; /* Match input field height */

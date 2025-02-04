@@ -1,6 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import './Jarvis.css';
 
+// Utility function to parse markdown-style formatting
+const parseMarkdown = (text) => {
+  if (!text) return '';
+  
+  // Replace bold text: **text** -> <strong>text</strong>
+  let parsed = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  
+  // Replace italic text: *text* -> <em>text</em>
+  parsed = parsed.replace(/\*(.*?)\*/g, '<em>$1</em>');
+  
+  return parsed;
+};
+
 const Jarvis = () => {
   const [response, setResponse] = useState('');
   const [loading, setLoading] = useState(false);
@@ -8,7 +21,10 @@ const Jarvis = () => {
 
   useEffect(() => {
     setMessages([
-      { text: 'Hello, my name is JARVIS. I\'m an AI chatbot designed by Kuber Mehta to assist you!', isJarvis: true }
+      {
+        text: 'Hello, my name is **JARVIS**. I\'m an AI chatbot designed by *Kuber Mehta* to assist you!',
+        isJarvis: true
+      }
     ]);
   }, []);
 
@@ -29,11 +45,7 @@ const Jarvis = () => {
       }
 
       const data = await res.json();
-      const responseText = 
-        data.generated_text || 
-        data.text || 
-        data[0]?.generated_text || 
-        'No response received';
+      const responseText = data.generated_text || data.text || data[0]?.generated_text || 'No response received';
 
       setMessages(prevMessages => [...prevMessages, { text: query, response: responseText }]);
       setResponse(responseText);
@@ -53,14 +65,18 @@ const Jarvis = () => {
     handleJarvisQuery(query);
   };
 
-  // Function to render text with line breaks
   const renderTextWithLineBreaks = (text) => {
-    return text.split('\n').map((line, index, array) => (
-      <React.Fragment key={index}>
-        {line}
-        {index < array.length - 1 && <br />}
-      </React.Fragment>
-    ));
+    const parsedLines = text.split('\n').map((line, index) => {
+      return (
+        <div
+          key={index}
+          dangerouslySetInnerHTML={{ __html: parseMarkdown(line) }}
+          className="markdown-line"
+        />
+      );
+    });
+    
+    return <div className="markdown-content">{parsedLines}</div>;
   };
 
   return (
@@ -90,13 +106,15 @@ const Jarvis = () => {
       </div>
 
       <form onSubmit={handleSubmit} className="input-form">
-        <input 
-          type="text" 
-          name="query" 
-          placeholder="Ask Jarvis something..." 
+        <input
+          type="text"
+          name="query"
+          placeholder="Ask Jarvis something..."
           className="query-input"
         />
-        <button type="submit" className="send-button">Send</button>
+        <button type="submit" className="send-button">
+          Send
+        </button>
       </form>
     </div>
   );
