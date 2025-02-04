@@ -55,40 +55,46 @@
 /* Input form styling */
 .input-form {
     display: flex;
-    align-items: center;  /* Vertically centers items */
+    align-items: center;  /* Ensures vertical alignment */
+    justify-content: space-between; /* Keeps input and button spaced properly */
     width: 100%;
     max-width: 600px;
     background-color: #444;
     border-radius: 8px;
-    padding: 10px;
-    box-sizing: border-box;  /* Include padding in total width/height */
+    padding: 5px; /* Reduced padding to prevent misalignment */
+    box-sizing: border-box;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    gap: 8px; /* Ensures space between input and button */
 }
 
 /* Adjusted input field styling */
 .query-input {
-    flex-grow: 1;  /* Allow input to take up remaining space */
-    padding: 12px;  /* Adjusted padding for height alignment */
+    flex: 1;  /* Takes remaining space */
+    height: 40px;  /* Fixed height */
     border: none;
     border-radius: 8px;
     font-size: 14px;
     color: #fff;
     background-color: #333;
-    margin-right: 10px;  /* Spacing between input and button */
-    box-sizing: border-box;  /* Include padding in total width/height */
+    padding: 10px; /* Ensures proper height inside */
+    box-sizing: border-box;
 }
 
 /* Adjusted send button styling */
 .send-button {
-    padding: 14px;  /* Matching padding to align with input field */
+    height: 40px; /* Match input field height */
+    padding: 0 15px;
     background-color: #5abb9a;
     color: white;
     border: none;
     border-radius: 8px;
     font-size: 14px;
     cursor: pointer;
-    min-width: 80px;  /* Consistent button width */
-    box-sizing: border-box;  /* Include padding in total width/height */
+    min-width: 80px; /* Consistent width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 .send-button:hover {
@@ -98,7 +104,7 @@
   
 /* Loading text style */
 .loading {
-    color: #356857;
+    color: #ffebcd;
     font-size: 16px;
     font-weight: bold;
 }
