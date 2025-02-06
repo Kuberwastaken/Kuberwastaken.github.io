@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/Kuberwastaken/Kuberwastaken.github.io/blob/main/src/assets/Portfolio-gif.gif?raw=true" alt="Portfolio GIF">
+  <img src="https://github.com/Kuberwastaken/Kuberwastaken.github.io/blob/main/public/Portfolio-gif.gif" alt="Portfolio GIF">
 
 
 # Terminal Inspired Personal Portfolio 🌟
