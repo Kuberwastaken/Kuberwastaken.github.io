@@ -70,7 +70,7 @@ const smallBanner = `
       <div style="margin: 20px 0;">
         <p>Welcome to my personal portfolio! (Version 1.6.9)
         <p style="margin-top: 8px;">Type <span style="color: #5abb9a;">'help'</span> to see the list of available commands.</p>
-        <p style="margin-top: 15px;"><span class="rgb-animation">NEW</span> try <a href="https://kuberwastaken.github.io/blog/" target="_blank" style="color: #5abb9a;">MindDump</a> & <a href="https://trytreat.tech/" target="_blank" style="color: #5abb9a;">TREAT Web!</a></p>
+        <p style="margin-top: 15px;"><span class="rgb-animation">NEW</span> try <a href="https://github.com/Kuberwastaken/backdooms" target="_blank" style="color: #5abb9a;">The Backdooms</a> & <a href="https://trytreat.tech/" target="_blank" style="color: #5abb9a;">TREAT Web!</a></p>
       </div>
       </div>`;
 
@@ -178,6 +178,7 @@ const smallBanner = `
         setOutput(prev => [...prev, { type: 'output', content: projectsContent }]);
         break;
       case 'blog':
+      case 'b':
         window.open('https://kuberwastaken.github.io/blog/', '_blank');
         setOutput(prev => [...prev, { type: 'output', content: 'Opening blog...' }]);
         break;
