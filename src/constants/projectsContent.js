@@ -11,13 +11,13 @@ const projectsContent = `
     </div>
   </article>
   
-  <article class="article-wrapper" onclick="linkHref('https://github.com/Kuberwastaken/ORCUS')">
+  <article class="article-wrapper" onclick="linkHref('https://github.com/Kuberwastaken/backdooms')">
     <div class="project-info">
       <div class="flex-pr">
-        <div class="project-title text-nowrap">ORCUS</div>
+        <div class="project-title text-nowrap">The Backdooms</div>
       </div>
       <div class="flex-pr">
-        <p class="project-description">A Dual-Model AI Based Comment-Analyzer for flagging AI generated Social Media Comments.</p>
+        <p class="project-description">A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.6kB in size.</p>
       </div>
     </div>
   </article>
@@ -33,13 +33,13 @@ const projectsContent = `
     </div>
   </article>
   
-  <article class="article-wrapper" onclick="linkHref('https://github.com/Kuberwastaken/Github-Art')">
+  <article class="article-wrapper" onclick="linkHref('https://github.com/Kuberwastaken/ORCUS')">
     <div class="project-info">
       <div class="flex-pr">
-        <div class="project-title text-nowrap">Github Art</div>
+        <div class="project-title text-nowrap">ORCUS</div>
       </div>
       <div class="flex-pr">
-        <p class="project-description">Make Pixel Art in your Github Commit History.</p>
+        <p class="project-description">A Dual-Model AI Based Comment-Analyzer for flagging AI generated Social Media Comments.</p>
       </div>
     </div>
   </article>
