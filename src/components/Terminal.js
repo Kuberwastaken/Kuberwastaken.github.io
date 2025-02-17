@@ -70,7 +70,7 @@ const smallBanner = `
       <div style="margin: 20px 0;">
         <p>Welcome to my personal portfolio! (Version 1.6.9)
         <p style="margin-top: 8px;">Type <span style="color: #5abb9a;">'help'</span> to see the list of available commands.</p>
-        <p style="margin-top: 15px;"><span class="rgb-animation">NEW</span> try <a href="https://github.com/Kuberwastaken/backdooms" target="_blank" style="color: #5abb9a;">The Backdooms</a> & <a href="https://trytreat.tech/" target="_blank" style="color: #5abb9a;">TREAT Web!</a></p>
+        <p style="margin-top: 15px;"><span class="rgb-animation">NEW</span> try <a href="https://kuberwastaken.github.io/backdooms/" target="_blank" style="color: #5abb9a;">The Backdooms</a> & <a href="https://trytreat.tech/" target="_blank" style="color: #5abb9a;">TREAT Web!</a></p>
       </div>
       </div>`;
 
@@ -252,6 +252,11 @@ const smallBanner = `
         break;
         case 'snake':
           setOutput(prev => [...prev, { type: 'component', content: <SnakeGame /> }]);
+          break;
+        case 'backdooms':
+        case 'the backdooms':
+          window.open('https://kuberwastaken.github.io/backdooms/', '_blank');
+          setOutput(prev => [...prev, { type: 'output', content: 'Opening The Backdooms...' }]);
           break;
         case 'tetris':
           setOutput(prev => [...prev, { type: 'component', content: <TetrisGame /> }]);
