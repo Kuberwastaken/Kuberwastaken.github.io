@@ -11,8 +11,6 @@ const miscContent = `
     <span class="command-link" data-command="wiki" style="color: #5abb9a;">[wiki query]</span> - Search Wikipedia<br>
     <span class="command-link" data-command="chatgpt" style="color: #5abb9a;">[chatgpt query]</span> - Search ChatGPT<br>
     <span class="command-link" data-command="perplexity" style="color: #5abb9a;">[perplexity query]</span> - Search Perplexity<br>
-    <span class="command-link" data-command="time" style="color: #5abb9a;">[time]</span> - Show current time<br>
-    <span class="command-link" data-command="date" style="color: #5abb9a;">[date]</span> - Show current date<br>
     <span class="command-link" data-command="theme" style="color: #5abb9a;">[Theme]</span> - Change current theme<br>    
     <span class="command-link" data-command="hackermode" style="color: #5abb9a;">[hackermode]</span> - Toggle Matrix effect<br>
   </p>

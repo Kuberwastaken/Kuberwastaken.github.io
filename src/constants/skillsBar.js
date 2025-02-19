@@ -75,6 +75,15 @@ const skillsBar = `
       </div>
     </div>
 
+    <div style="flex: 1 1 90%;">
+      <div>LUA</div>
+      <div class="skillBar">
+        <div class="skillBarItem" style="--width: 80%;">
+          <span style="margin-left: 10px; color: #ffebcd;">90%</span>
+        </div>
+      </div>
+    </div>
+
     <div style="flex: 1 1 30%;">
       <div>Node.js</div>
       <div class="skillBar">
