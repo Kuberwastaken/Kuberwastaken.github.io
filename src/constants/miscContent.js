@@ -2,7 +2,7 @@ const miscContent = `
 <div style="margin: 20px 0;">
   <h3>Utility Commands:</h3>
   <p style="margin: 10px 0;">
-    <span class="command-link" data-command="jarvis" style="color: #5abb9a;">[jarvis]</span> - Talk to Jarvis AI<br>
+    <span class="command-link" data-command="jarvis" style="color: #5abb9a;">[jarvis]</span> - Talk to Jarvis AI (exhaust my Inference API Tokens)<br>
     <span class="command-link" data-command="ascii-selfie" style="color: #5abb9a;">[ascii-selfie]</span> - See a Selfie of me :)<br>
     <span class="command-link" data-command="calculator" style="color: #5abb9a;">[calculator]</span> - People Build Projects for Calculators, I put Calculators in Projects<br>
     <span class="command-link" data-command="neofetch" style="color: #5abb9a;">[neofetch]</span> - Neofetch<br>
