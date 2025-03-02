@@ -15,6 +15,7 @@ import TetrisGame from './TetrisGame/TetrisGame';
 import Game2048 from './Game2048/Game2048';
 import TerminalFlappyBird from './FlappyBird/TerminalFlappyBird';
 import Jarvis from './Jarvis/Jarvis';
+import whoamiContent from '../constants/whoami';
 
 const Terminal = () => {
   const [output, setOutput] = useState([]);
@@ -216,6 +217,9 @@ const smallBanner = `
           setOutput(prev => [...prev, { type: 'output', content: 'Please provide a search query.' }]);
         }
         break;
+        case 'whoami':
+          setOutput(prev => [...prev, { type: 'output', content: whoamiContent }]);
+          break;
       case 'wiki':
       case 'wikipedia':
         if (argument) {
