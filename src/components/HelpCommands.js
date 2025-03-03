@@ -16,8 +16,6 @@ const HelpCommands = () => {
         <li>[email]</li>
         <li>[linkedin]</li>
         <li>[github]</li>
-        <li>[discord]</li>
-        <li>[youtube]</li>
         <li>[blog]</li>
       </ul>
     </div>

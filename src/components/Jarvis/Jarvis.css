@@ -55,7 +55,7 @@
 .jarvis-response {
     align-self: flex-start;
     background-color: #333;
-    color: #fff;
+    color: #ffebcd;
     padding: 10px 14px;
     border-radius: 15px 15px 15px 0;
     max-width: 80%;
@@ -66,12 +66,12 @@
 /* Markdown Styling */
 .markdown-line strong {
     font-weight: bold;
-    color: #ffdd57;
+    color: #5abb9a;
 }
 
 .markdown-line em {
     font-style: italic;
-    color: #ffab91;
+    color: #5abb9a;
 }
 
 /* Input form */
@@ -94,7 +94,7 @@
     border: none;
     border-radius: 8px;
     font-size: 15px;
-    color: #fff;
+    color: #ffebcd;
     background-color: #333;
     padding: 10px;
     box-sizing: border-box;
