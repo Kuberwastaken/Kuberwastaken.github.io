@@ -207,6 +207,7 @@ const smallBanner = `
         setOutput(prev => [...prev, { type: 'component', content: <PDFViewer /> }]);
         break;
       case 'jarvis':
+      case 'j':
         setOutput(prev => [...prev, { type: 'component', content: <Jarvis /> }]);
         break;
       case 'google':

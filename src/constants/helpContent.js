@@ -9,6 +9,7 @@ const helpContent = `
     <span class="command-link" data-command="misc" style="color: #5abb9a;">[miscellaneous] or [misc]</span><br>
     <span class="command-link" data-command="games" style="color: #5abb9a;">[games] or [g]</span><br>
     <span class="command-link" data-command="blog" style="color: #5abb9a;">[blog] or [b]</span><br>
+    <span class="command-link" data-command="jarvis" style="color: #5abb9a;">[jarvis] or [j]</span><br>
     <span class="command-link" data-command="clear" style="color: #5abb9a;">[clear]</span>
   </p>
   
@@ -17,8 +18,6 @@ const helpContent = `
     <span class="command-link" data-command="email" style="color: #5abb9a;">[email]</span><br>
     <span class="command-link" data-command="linkedin" style="color: #5abb9a;">[linkedin]</span><br>
     <span class="command-link" data-command="github" style="color: #5abb9a;">[github]</span><br>
-    <span class="command-link" data-command="discord" style="color: #5abb9a;">[discord]</span><br>
-    <span class="command-link" data-command="youtube" style="color: #5abb9a;">[youtube]</span><br>
   </p>
 </div>`;
 
