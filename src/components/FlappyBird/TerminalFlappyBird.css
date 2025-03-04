@@ -18,7 +18,7 @@
     margin-bottom: 10px;
     font-size: 18px;
     font-weight: bold;
-    color: #00ff00;
+    color: #ffebcd;
 }
 
 .high-score {
@@ -26,7 +26,7 @@
     top: -30px;
     right: 0;
     font-size: 16px;
-    color: #00ff00;
+    color: #ffebcd;
 }
 
 .game-area {
@@ -36,9 +36,9 @@
     position: relative;
     overflow: hidden;
     background-color: #000;
-    color: #00ff00;
+    color: #5abb9a;
     font-family: monospace;
-    border: 2px solid #00ff00;
+    border: 2px solid #5abb9a;
     padding: 10px;
 }
 
@@ -47,7 +47,7 @@
     left: 50px;
     width: 20px;
     height: 20px;
-    background-color: #00ff00;
+    background-color: #5abb9a;
     border-radius: 50%;
     transition: transform 0.1s;
 }
@@ -55,7 +55,7 @@
 .pipe {
     position: absolute;
     width: 60px;
-    background-color: #00ff00;
+    background-color: #5abb9a;
 }
 
 @media (max-width: 480px) {
