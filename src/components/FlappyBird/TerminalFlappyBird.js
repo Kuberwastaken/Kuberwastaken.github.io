@@ -194,9 +194,9 @@ const TerminalFlappyBird = () => {
             position: 'relative',
             overflow: 'hidden',
             backgroundColor: '#000',
-            color: '#00ff00',
+            color: '#56b494',
             fontFamily: 'monospace',
-            border: '2px solid #00ff00',
+            border: '2px solid #56b494',
             padding: '10px'
           }}
         >
@@ -208,7 +208,7 @@ const TerminalFlappyBird = () => {
               top: `${birdPosition}px`,
               width: isMobile ? '10px' : `${BIRD_SIZE}px`,
               height: isMobile ? '10px' : `${BIRD_SIZE}px`,
-              backgroundColor: '#00ff00',
+              backgroundColor: '#ffebcd',
               borderRadius: '50%',
               transform: `rotate(${velocity * 2}deg)`,
               transition: 'transform 0.1s',
@@ -224,7 +224,7 @@ const TerminalFlappyBird = () => {
                   top: '0',
                   width: isMobile ? '30px' : `${PIPE_WIDTH}px`,
                   height: `${pipe.height}px`,
-                  backgroundColor: '#00ff00',
+                  backgroundColor: '#56b494',
                 }}
               />
               <div 
@@ -234,7 +234,7 @@ const TerminalFlappyBird = () => {
                   top: `${pipe.height + PIPE_GAP}px`,
                   width: isMobile ? '30px' : `${PIPE_WIDTH}px`,
                   height: `${GAME_HEIGHT - (pipe.height + PIPE_GAP)}px`,
-                  backgroundColor: '#00ff00',
+                  backgroundColor: '#56b494',
                 }}
               />
             </React.Fragment>
@@ -252,7 +252,7 @@ const TerminalFlappyBird = () => {
               flexDirection: 'column',
               justifyContent: 'center',
               alignItems: 'center',
-              color: '#00ff00',
+              color: '#56b494',
               fontSize: '24px',
               fontFamily: 'monospace'
             }}>
