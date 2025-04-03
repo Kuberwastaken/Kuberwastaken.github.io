@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './SnakeGame.css';
+// CSS import removed for CSS Naked Day
 
 const SnakeGame = () => {
   const canvasRef = useRef(null);
@@ -117,9 +117,11 @@ const SnakeGame = () => {
   }, [direction, gameOver]);
 
   return (
-    <div className="snake-game-container">
-      <canvas ref={canvasRef} width="400" height="400" className="snake-game-canvas"></canvas>
-      {gameOver && <div className="game-over">Game Over</div>}
+    <div>
+      <h3>Snake Game</h3>
+      <canvas ref={canvasRef} width="400" height="400" border="1"></canvas>
+      {gameOver && <div><strong>Game Over</strong></div>}
+      <p>Use arrow keys to control the snake</p>
     </div>
   );
 };

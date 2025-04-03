@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './TerminalFlappyBird.css';
+// CSS import removed for CSS Naked Day: https://css-naked-day.github.io/
 
 const TerminalFlappyBird = () => {
   const [birdPosition, setBirdPosition] = useState(125); // Adjusted initial position for mobile
@@ -177,15 +177,14 @@ const TerminalFlappyBird = () => {
   };
 
   return (
-    <div className="game-container">
-      <div className="game-content">
-        <div className="scoreboard">
-          <div className="score">Score: {score}</div>
-          <div className="score">High Score: {highScore}</div>
+    <div align="center">
+      <div>
+        <div>
+          <div><strong>Score:</strong> {score}</div>
+          <div><strong>High Score:</strong> {highScore}</div>
         </div>
         
         <div 
-          className="game-area"
           onClick={jump}
           onTouchStart={jump}
           style={{
@@ -193,27 +192,20 @@ const TerminalFlappyBird = () => {
             height: isMobile ? '250px' : `${GAME_HEIGHT}px`,
             position: 'relative',
             overflow: 'hidden',
-            backgroundColor: '#000',
-            color: '#56b494',
-            fontFamily: 'monospace',
-            border: '2px solid #56b494',
+            border: '1px solid black',
             padding: '10px'
           }}
         >
           <div 
-            className="bird"
             style={{ 
               position: 'absolute',
               left: '50px',
               top: `${birdPosition}px`,
               width: isMobile ? '10px' : `${BIRD_SIZE}px`,
               height: isMobile ? '10px' : `${BIRD_SIZE}px`,
-              backgroundColor: '#ffebcd',
-              borderRadius: '50%',
-              transform: `rotate(${velocity * 2}deg)`,
-              transition: 'transform 0.1s',
+              border: '1px solid black'
             }}
-          />
+          >●</div>
           
           {pipes.map(pipe => (
             <React.Fragment key={pipe.id}>
@@ -224,9 +216,9 @@ const TerminalFlappyBird = () => {
                   top: '0',
                   width: isMobile ? '30px' : `${PIPE_WIDTH}px`,
                   height: `${pipe.height}px`,
-                  backgroundColor: '#56b494',
+                  border: '1px solid black'
                 }}
-              />
+              >|</div>
               <div 
                 style={{ 
                   position: 'absolute',
@@ -234,45 +226,31 @@ const TerminalFlappyBird = () => {
                   top: `${pipe.height + PIPE_GAP}px`,
                   width: isMobile ? '30px' : `${PIPE_WIDTH}px`,
                   height: `${GAME_HEIGHT - (pipe.height + PIPE_GAP)}px`,
-                  backgroundColor: '#56b494',
+                  border: '1px solid black'
                 }}
-              />
+              >|</div>
             </React.Fragment>
           ))}
 
           {(gameOver || !gameHasStarted) && (
-            <div style={{
-              position: 'absolute',
-              top: '0',
-              left: '0',
-              right: '0',
-              bottom: '0',
-              backgroundColor: 'rgba(0, 0, 0, 0.7)',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              color: '#56b494',
-              fontSize: '24px',
-              fontFamily: 'monospace'
-            }}>
-              <div style={{ fontSize: '32px', marginBottom: '20px' }}>
+            <div align="center" border="1">
+              <h2>
                 {gameOver ? 'GAME OVER' : 'TERMINAL BIRD'}
-              </div>
+              </h2>
               {gameOver && (
                 <>
-                  <div>Score: {score}</div>
-                  <div>High Score: {highScore}</div>
+                  <div><strong>Score:</strong> {score}</div>
+                  <div><strong>High Score:</strong> {highScore}</div>
                 </>
               )}
-              <div style={{ fontSize: '18px', marginTop: '20px' }}>
-                {isMobile ? "Tap" : "Press SPACE"} to {gameOver ? "play again" : "start"}
+              <div>
+                <em>{isMobile ? "Tap" : "Press SPACE"} to {gameOver ? "play again" : "start"}</em>
               </div>
             </div>
           )}
         </div>
 
-        <div style={{ textAlign: 'center', marginTop: '20px', color: '#666' }}>
+        <div align="center">
           {isMobile 
             ? "Tap anywhere to make the bird jump"
             : " "

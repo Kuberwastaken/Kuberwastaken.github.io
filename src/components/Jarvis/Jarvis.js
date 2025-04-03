@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Jarvis.css';
+// CSS import removed for CSS Naked Day: https://css-naked-day.github.io/
 
 // Utility function to parse markdown-style formatting
 const parseMarkdown = (text) => {
@@ -71,51 +71,56 @@ const Jarvis = () => {
         <div
           key={index}
           dangerouslySetInnerHTML={{ __html: parseMarkdown(line) }}
-          className="markdown-line"
         />
       );
     });
     
-    return <div className="markdown-content">{parsedLines}</div>;
+    return <div>{parsedLines}</div>;
   };
 
   return (
-    <div className="jarvis-container">
-      <div className="chat-window">
-        {messages.map((msg, index) => (
-          <div key={index} className="message">
-            {msg.isJarvis ? (
-              <div className="jarvis-response">
-                <strong>Jarvis:</strong> {renderTextWithLineBreaks(msg.text)}
-              </div>
-            ) : (
-              <>
-                <div className="user-message">
-                  <strong>You:</strong> {renderTextWithLineBreaks(msg.text)}
+    <div>
+      <table border="1" cellpadding="10">
+        <tbody>
+          <tr>
+            <td>
+              {messages.map((msg, index) => (
+                <div key={index}>
+                  {msg.isJarvis ? (
+                    <div>
+                      <strong>Jarvis:</strong> {renderTextWithLineBreaks(msg.text)}
+                    </div>
+                  ) : (
+                    <>
+                      <div>
+                        <strong>You:</strong> {renderTextWithLineBreaks(msg.text)}
+                      </div>
+                      {msg.response && (
+                        <div>
+                          <strong>Jarvis:</strong> {renderTextWithLineBreaks(msg.response)}
+                        </div>
+                      )}
+                    </>
+                  )}
                 </div>
-                {msg.response && (
-                  <div className="jarvis-response">
-                    <strong>Jarvis:</strong> {renderTextWithLineBreaks(msg.response)}
-                  </div>
-                )}
-              </>
-            )}
-          </div>
-        ))}
-        {loading && <div className="loading">Loading...</div>}
-      </div>
+              ))}
+              {loading && <div><em>Loading...</em></div>}
 
-      <form onSubmit={handleSubmit} className="input-form">
-        <input
-          type="text"
-          name="query"
-          placeholder="Ask Jarvis something..."
-          className="query-input"
-        />
-        <button type="submit" className="send-button">
-          Send
-        </button>
-      </form>
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  name="query"
+                  placeholder="Ask Jarvis something..."
+                  size="40"
+                />
+                <button type="submit">
+                  Send
+                </button>
+              </form>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 };

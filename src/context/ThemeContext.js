@@ -27,31 +27,17 @@ const backgrounds = {
 export const ThemeProvider = ({ children }) => {
   const [backgroundColor, setBackgroundColor] = useState('#000000');
 
+  // CSS Naked Day: No styles applied
   useEffect(() => {
-    const style = document.createElement('style');
-    style.id = 'theme-styles';
-    document.head.appendChild(style);
-    
+    // No styles for CSS Naked Day
     return () => {
-      const existingStyle = document.getElementById('theme-styles');
-      if (existingStyle) {
-        existingStyle.remove();
-      }
+      // No cleanup needed
     };
   }, []);
 
   const applyBackground = (color) => {
-    const existingStyle = document.getElementById('theme-styles');
-    if (existingStyle) {
-      existingStyle.textContent = `
-        body {
-          background: ${color};
-          min-height: 100vh;
-          margin: 0;
-          transition: background 0.3s ease;
-        }
-      `;
-    }
+    // CSS Naked Day: No background styles applied
+    console.log('Theme selected (not applied for CSS Naked Day):', color);
   };
 
   const changeBackgroundColor = (color) => {
@@ -68,28 +54,42 @@ export const ThemeProvider = ({ children }) => {
 
 // Modify the Terminal.js component to display backgrounds in rows
 const backgroundOptions = `
-  <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
-    <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
-      ${backgrounds.solid.map(bg => `
-        <div key="${bg.name}" style="text-align: center;">
-          <div style="width: 50px; height: 50px; background: ${bg.value}; cursor: pointer; border-radius: 5px;" 
-               onclick="document.dispatchEvent(new CustomEvent('backgroundSelected', { detail: '${bg.name}' }))">
-          </div>
-          <small style="color: #5abb9a;">${bg.name}</small>
-        </div>
-      `).join('')}
-    </div>
-    <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 20px;">
-      ${backgrounds.gradients.map(bg => `
-        <div key="${bg.name}" style="text-align: center;">
-          <div style="width: 50px; height: 50px; background: ${bg.value}; cursor: pointer; border-radius: 5px;" 
-               onclick="document.dispatchEvent(new CustomEvent('backgroundSelected', { detail: '${bg.name}' }))">
-          </div>
-          <small style="color: #5abb9a;">${bg.name}</small>
-        </div>
-      `).join('')}
-    </div>
-  </div>
+  <table cellpadding="10" cellspacing="0" border="0" align="center">
+    <tr>
+      <td>
+        <table cellpadding="5" cellspacing="0" border="0" align="center">
+          <tr>
+            ${backgrounds.solid.map(bg => `
+              <td align="center">
+                <table width="50" height="50" cellpadding="0" cellspacing="0" border="1" bgcolor="${bg.value}" 
+                     onclick="document.dispatchEvent(new CustomEvent('backgroundSelected', { detail: '${bg.name}' }))">
+                  <tr><td>&nbsp;</td></tr>
+                </table>
+                <small><font color="#5abb9a">${bg.name}</font></small>
+              </td>
+            `).join('')}
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <table cellpadding="5" cellspacing="0" border="0" align="center">
+          <tr>
+            ${backgrounds.gradients.map(bg => `
+              <td align="center">
+                <table width="50" height="50" cellpadding="0" cellspacing="0" border="1" bgcolor="${bg.value}" 
+                     onclick="document.dispatchEvent(new CustomEvent('backgroundSelected', { detail: '${bg.name}' }))">
+                  <tr><td>&nbsp;</td></tr>
+                </table>
+                <small><font color="#5abb9a">${bg.name}</font></small>
+              </td>
+            `).join('')}
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
 `;
 
 export const useTheme = () => {

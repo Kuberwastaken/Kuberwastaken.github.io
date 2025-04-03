@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import './HollywoodEffect.css';
+// CSS import removed for CSS Naked Day: https://css-naked-day.github.io/
 
 const HollywoodEffect = () => {
   const canvasRef = useRef(null);
@@ -33,7 +33,7 @@ const HollywoodEffect = () => {
     return () => clearInterval(interval);
   }, []);
 
-  return <canvas ref={canvasRef} className="hollywood-effect"></canvas>;
+  return <canvas ref={canvasRef} width="100%" height="300" border="1"></canvas>;
 };
 
 export default HollywoodEffect;

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import './Game2048.css';
+// CSS import removed for CSS Naked Day
+// All styling is done with HTML attributes for CSS Naked Day: https://css-naked-day.github.io/
 
 const SIZE = 4;
 const SWIPE_THRESHOLD = 50;
@@ -197,26 +198,31 @@ const Game2048 = () => {
 
   return (
     <div 
-      className="game-2048-container"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      <div className="scoreboard">
+      <h3>2048 Game</h3>
+      <div>
         <div>Score: {score}</div>
         <div>Top Score: {topScore}</div>
       </div>
-      <div className="game-2048-grid">
-        {grid.map((row, rIdx) =>
-          row.map((cell, cIdx) => (
-            <div key={`${rIdx}-${cIdx}`} className={`game-2048-cell value-${cell}`}>
-              <div>{cell !== 0 && cell}</div>
-            </div>
-          ))
-        )}
-      </div>
-      {gameOver && <div className="game-over">Game Over</div>}
+      <table border="1" cellpadding="5">
+        <tbody>
+          {grid.map((row, rIdx) => (
+            <tr key={`row-${rIdx}`}>
+              {row.map((cell, cIdx) => (
+                <td key={`${rIdx}-${cIdx}`} align="center" width="50" height="50">
+                  <strong>{cell !== 0 && cell}</strong>
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      {gameOver && <div><strong>Game Over</strong></div>}
       <button onClick={resetGame}>Restart</button>
+      <p>Use arrow keys or swipe to move tiles</p>
     </div>
   );
 };

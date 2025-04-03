@@ -1,32 +1,3 @@
-.tetris-game-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  flex-direction: column;
-}
-
-.scoreboard {
-  display: flex;
-  justify-content: space-between;
-  width: 300px;
-  margin-bottom: 10px;
-  font-size: 18px;
-}
-
-.tetris-game-canvas {
-  background-color: black;
-  border: 4px solid #ffffff; 
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-}
-
-.game-over {
-  position: absolute;
-  color: red;
-  font-size: 24px;
-  font-weight: bold;
-}
+/* CSS removed for CSS Naked Day */
+/* See https://css-naked-day.github.io/ */
 
