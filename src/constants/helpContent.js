@@ -1,24 +1,35 @@
 const helpContent = `
-<div style="margin: 20px 0;">
-  <h3>Available Commands:</h3>
-  <p style="margin: 10px 0;">
-    <span class="command-link" data-command="whoami" style="color: #5abb9a;">[whoami]</span><br>
-    <span class="command-link" data-command="skills" style="color: #5abb9a;">[skills] or [s]</span><br>
-    <span class="command-link" data-command="projects" style="color: #5abb9a;">[projects] or [pj]</span><br>
-    <span class="command-link" data-command="misc" style="color: #5abb9a;">[miscellaneous] or [misc]</span><br>
-    <span class="command-link" data-command="games" style="color: #5abb9a;">[games] or [g]</span><br>
-    <span class="command-link" data-command="blog" style="color: #5abb9a;">[blog] or [b]</span><br>
-    <span class="command-link" data-command="resume" style="color: #5abb9a;">[resume] or [cv]</span><br>
-    <span class="command-link" data-command="jarvis" style="color: #5abb9a;">[jarvis] or [j]</span><br>
-    <span class="command-link" data-command="clear" style="color: #5abb9a;">[clear]</span>
-  </p>
-  
-  <h3>Contact Me:</h3>
-  <p style="margin: 10px 0;">
-    <span class="command-link" data-command="email" style="color: #5abb9a;">[email]</span><br>
-    <span class="command-link" data-command="linkedin" style="color: #5abb9a;">[linkedin]</span><br>
-    <span class="command-link" data-command="github" style="color: #5abb9a;">[github]</span><br>
-  </p>
-</div>`;
+<table border="0" cellpadding="10" width="100%">
+  <tr>
+    <td align="center"><h3>Available Commands:</h3></td>
+  </tr>
+  <tr>
+    <td>
+      <table border="0" cellpadding="5" width="100%">
+        <tr><td><span data-command="whoami">[whoami]</span></td></tr>
+        <tr><td><span data-command="skills">[skills] or [s]</span></td></tr>
+        <tr><td><span data-command="projects">[projects] or [pj]</span></td></tr>
+        <tr><td><span data-command="misc">[miscellaneous] or [misc]</span></td></tr>
+        <tr><td><span data-command="games">[games] or [g]</span></td></tr>
+        <tr><td><span data-command="blog">[blog] or [b]</span></td></tr>
+        <tr><td><span data-command="resume">[resume] or [cv]</span></td></tr>
+        <tr><td><span data-command="jarvis">[jarvis] or [j]</span></td></tr>
+        <tr><td><span data-command="clear">[clear]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><h3>Contact Me:</h3></td>
+  </tr>
+  <tr>
+    <td>
+      <table border="0" cellpadding="5" width="100%">
+        <tr><td><span data-command="email">[email]</span></td></tr>
+        <tr><td><span data-command="linkedin">[linkedin]</span></td></tr>
+        <tr><td><span data-command="github">[github]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>`;
 
 export default helpContent;

@@ -62,16 +62,16 @@ const smallBanner = `
 ..##....##....##.....##..`;
 
     const welcomeMessage = `
-      <div style="margin-bottom: 20px;">
-      <div class="welcome-banner">
-        <pre style="color: #5abb9a;">
+      <div>
+      <div>
+        <pre>
   ${isMobile ? smallBanner : largeBanner}
         </pre>
       </div>
-      <div style="margin: 20px 0;">
-        <p>Welcome to my personal portfolio! (Version 1.6.9)
-        <p style="margin-top: 8px;">Type <span style="color: #5abb9a;">'help'</span> to see the list of available commands.</p>
-        <p style="margin-top: 15px;"><span class="rgb-animation">NEW</span> try <a href="https://kuberwastaken.github.io/backdooms/" target="_blank" style="color: #5abb9a;">The Backdooms</a> & <a href="https://trytreat.tech/" target="_blank" style="color: #5abb9a;">TREAT Web!</a></p>
+      <div>
+        <p>Welcome to my personal portfolio! (<a href="https://css-naked-day.github.io/" target="_blank">Version CSS-Naked-Day</a>)
+        <p>Type <strong>'help'</strong> to see the list of available commands.</p>
+        <p><strong>NEW</strong> try <a href="https://kuberwastaken.github.io/backdooms/" target="_blank">The Backdooms</a> & <a href="https://trytreat.tech/" target="_blank">TREAT Web!</a></p>
       </div>
       </div>`;
 
@@ -293,11 +293,19 @@ const smallBanner = `
             }
           } else {
             const backgroundOptions = [...backgrounds.solid, ...backgrounds.gradients].map(bg => (
-              `<div key="${bg.name}" style="display: inline-block; margin: 5px;">
-                <div style="width: 50px; height: 50px; background: ${bg.value}; cursor: pointer;" onclick="document.dispatchEvent(new CustomEvent('backgroundSelected', { detail: '${bg.name}' }))"></div>
+              `<div key="${bg.name}">
+                <table cellpadding="5" cellspacing="0" border="0">
+                  <tr>
+                    <td>
+                      <table width="50" height="50" cellpadding="0" cellspacing="0" border="1" bgcolor="${bg.value}" onclick="document.dispatchEvent(new CustomEvent('backgroundSelected', { detail: '${bg.name}' }))">
+                        <tr><td>&nbsp;</td></tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
               </div>`
             )).join('');
-            setOutput(prev => [...prev, { type: 'output', content: `<div style="display: flex; flex-wrap: wrap;">${backgroundOptions}</div>` }]);
+            setOutput(prev => [...prev, { type: 'output', content: `<table cellspacing="0" cellpadding="0" border="0"><tr><td>${backgroundOptions}</td></tr></table>` }]);
           }
           break;
         default:
@@ -355,41 +363,44 @@ const smallBanner = `
   }, [backgrounds, changeBackgroundColor]);
 
   return (
-    <div id="terminal" className="terminal-container" ref={terminalRef}>
+    <div id="terminal" ref={terminalRef}>
       {hackermode && <HollywoodEffect />} {/* MAKE SURE IT HAPPENS WHEN HACKERMODE IS ON */}
-      {output.map((item, index) => (
-    <div key={index}>
-        {item.type === 'input' ? (
-            <div>
-                <span className="ownerTerminal"><b>kuber@profile</b></span>
-                <b>:~$</b> {item.content}
-            </div>
-        ) : item.type === 'component' ? (
-            <div>{item.content}</div>
-        ) : (
-            <div dangerouslySetInnerHTML={{ __html: item.content }} />
-        )}
-    </div>
-))}
-
-
-      <div className="command-input">
-        <span className="prompt">
-          <span className="ownerTerminal"><b>kuber@profile</b></span>
-          <b>:~$</b>
-        </span>
-        <input
-          ref={inputRef}
-          type="text"
-          className="command-field"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={handleKeyPress}
-          autoComplete="off"
-          autoCapitalize="off"
-          spellCheck="false"
-        />
-      </div>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+          {output.map((item, index) => (
+            <tr key={index}>
+              <td>
+                {item.type === 'input' ? (
+                  <pre>
+                    <strong>kuber@profile:~$</strong> {item.content}
+                  </pre>
+                ) : item.type === 'component' ? (
+                  <div>{item.content}</div>
+                ) : (
+                  <div dangerouslySetInnerHTML={{ __html: item.content }} />
+                )}
+              </td>
+            </tr>
+          ))}
+          <tr>
+            <td>
+              <pre>
+                <strong>kuber@profile:~$</strong>
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={handleKeyPress}
+                  autoComplete="off"
+                  autoCapitalize="off"
+                  spellCheck="false"
+                />
+              </pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 };

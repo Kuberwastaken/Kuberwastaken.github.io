@@ -1,10 +1,10 @@
 import React from 'react';
-import './App.css';
+// CSS import removed for CSS Naked Day
 import Terminal from './components/Terminal'; 
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Terminal /> {/* Render your main component */}
     </div>
   );

@@ -1,14 +1,2 @@
-:root {
-  --background-color: #000000;
-  --background-image: none;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #ffffff;
-  background: var(--background-image), var(--background-color);
-}
+/* CSS removed for CSS Naked Day */
+/* See https://css-naked-day.github.io/ */

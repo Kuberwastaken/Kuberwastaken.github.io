@@ -1,13 +1,29 @@
 const gamesContent = `
-<div style="margin: 20px 0;">
-  <h3>Available Games:</h3>
-  <p style="margin: 10px 0;">
-    <span class="command-link" data-command="thebackdooms" style="color: #5abb9a;">[backdooms]</span> - Play The Backdooms<br>
-    <span class="command-link" data-command="snake" style="color: #5abb9a;">[snake]</span> - Play Snake Game<br>
-    <span class="command-link" data-command="tetris" style="color: #5abb9a;">[tetris]</span> - Play Tetris Game<br>
-    <span class="command-link" data-command="2048" style="color: #5abb9a;">[2048]</span> - Play 2048 Game<br>
-    <span class="command-link" data-command="flappybird" style="color: #5abb9a;">[flappybird]</span> - Play Flappy Bird Game<br>
-  </p>
-</div>`;
+<table border="0" cellpadding="10" width="100%">
+  <tr>
+    <td align="center"><h3>Available Games:</h3></td>
+  </tr>
+  <tr>
+    <td>
+      <table border="0" cellpadding="5" width="100%">
+        <tr>
+          <td><span data-command="thebackdooms">[backdooms]</span> - Play The Backdooms</td>
+        </tr>
+        <tr>
+          <td><span data-command="snake">[snake]</span> - Play Snake Game</td>
+        </tr>
+        <tr>
+          <td><span data-command="tetris">[tetris]</span> - Play Tetris Game</td>
+        </tr>
+        <tr>
+          <td><span data-command="2048">[2048]</span> - Play 2048 Game</td>
+        </tr>
+        <tr>
+          <td><span data-command="flappybird">[flappybird]</span> - Play Flappy Bird Game</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>`;
 
 export default gamesContent;

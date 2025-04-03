@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import './index.css';
+// CSS import removed for CSS Naked Day
 import App from './App';
 import { ThemeProvider } from './context/ThemeContext';
 

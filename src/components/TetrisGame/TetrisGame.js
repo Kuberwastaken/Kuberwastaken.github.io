@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './TetrisGame.css';
+// CSS import removed for CSS Naked Day
 
 const TetrisGame = () => {
   const canvasRef = useRef(null);
@@ -267,19 +267,16 @@ const TetrisGame = () => {
   };
 
   return (
-    <div className="tetris-game-container">
-      <div className="scoreboard">
+    <div>
+      <h3>Tetris Game</h3>
+      <div>
         <div>Score: {score}</div>
         <div>Top Score: {topScore}</div>
       </div>
-      <canvas 
-        ref={canvasRef} 
-        width="300" 
-        height="600" 
-        className="tetris-game-canvas"
-      />
-      {gameOver && <div className="game-over">Game Over</div>}
+      <canvas ref={canvasRef} width="300" height="600" border="1"></canvas>
+      {gameOver && <div><strong>Game Over</strong></div>}
       <button onClick={resetGame}>Restart</button>
+      <p>Use arrow keys to move and rotate pieces</p>
     </div>
   );
 };
