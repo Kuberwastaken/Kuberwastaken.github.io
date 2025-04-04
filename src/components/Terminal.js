@@ -26,7 +26,7 @@ const Terminal = () => {
   const [hackermode, setHackermode] = useState(false);
   const inputRef = useRef(null);
   const terminalRef = useRef(null);
-  const { theme, changeBackgroundColor, backgrounds } = useTheme();
+  const { cssNakedDayMessage } = useTheme();
 
   useEffect(() => {
     const handleResize = () => {
@@ -50,7 +50,7 @@ const Terminal = () => {
 .#####....##.....##.########..######...########.........##.###.##.######...#########....##....##.....##
 .##..##...##.....##.##.....##.##.......##...##..........##.....##.##.......##.....##....##....#########
 .##...##..##.....##.##.....##.##.......##....##.........##.....##.##.......##.....##....##....##.....##
-.##....##..#######..########..########.##.....##........##.....##.########.##.....##....##....##.....##                                                              `;
+.##....##..#######..########..########.##.....##........##.....##.########.##.....##....##....##.....##`;
 
 const smallBanner = `
 ..##....##....##.....##..
@@ -62,13 +62,12 @@ const smallBanner = `
 ..##....##....##.....##..`;
 
     const welcomeMessage = `
-      <div>
+      <div align="left">
       <div>
         <pre>
-  ${isMobile ? smallBanner : largeBanner}
-        </pre>
+  ${isMobile ? `<a href="https://x.com/Kuberwastaken" target="_blank"><font color="blue">${smallBanner}</font></a>` : `<a href="https://x.com/Kuberwastaken" target="_blank"><font color="blue">${largeBanner}</font></a>`}</pre>
       </div>
-      <div>
+      <div align="left">
         <p>Welcome to my personal portfolio! (<a href="https://css-naked-day.github.io/" target="_blank">Version CSS-Naked-Day</a>)
         <p>Type <strong>'help'</strong> to see the list of available commands.</p>
         <p><strong>NEW</strong> try <a href="https://kuberwastaken.github.io/backdooms/" target="_blank">The Backdooms</a> & <a href="https://trytreat.tech/" target="_blank">TREAT Web!</a></p>
@@ -99,8 +98,9 @@ const smallBanner = `
 
   useEffect(() => {
     const handleCommandClick = (event) => {
-      if (event.target.classList.contains('command-link')) {
-        const command = event.target.getAttribute('data-command');
+      const commandElement = event.target.closest('[data-command]');
+      if (commandElement) {
+        const command = commandElement.getAttribute('data-command');
         simulateTyping(command);
       }
     };
@@ -183,6 +183,11 @@ const smallBanner = `
         window.open('https://kuberwastaken.github.io/blog/', '_blank');
         setOutput(prev => [...prev, { type: 'output', content: 'Opening blog...' }]);
         break;
+      case 'resume':
+      case 'cv':
+        window.open('https://kuberwastaken.github.io/Resume/', '_blank');
+        setOutput(prev => [...prev, { type: 'output', content: 'Opening resume...' }]);
+        break;
       case 'clear':
       case 'c':
         setOutput([]);
@@ -204,6 +209,9 @@ const smallBanner = `
         break;
       case 'resume':
       case 'cv':
+        window.open('https://kuberwastaken.github.io/Resume/', '_blank');
+        setOutput(prev => [...prev, { type: 'output', content: 'Opening resume...' }]);
+        break;
         setOutput(prev => [...prev, { type: 'component', content: <PDFViewer /> }]);
         break;
       case 'jarvis':
@@ -283,30 +291,7 @@ const smallBanner = `
        case 'themes':
        case 'bg':
        case 'color':
-          if (argument) {
-            const selectedBackground = [...backgrounds.solid, ...backgrounds.gradients].find(bg => bg.name.toLowerCase() === argument.toLowerCase());
-            if (selectedBackground) {
-              changeBackgroundColor(selectedBackground.value);
-              setOutput(prev => [...prev, { type: 'output', content: `Background changed to ${selectedBackground.name}` }]);
-            } else {
-              setOutput(prev => [...prev, { type: 'output', content: 'Invalid background. Please choose from the list.' }]);
-            }
-          } else {
-            const backgroundOptions = [...backgrounds.solid, ...backgrounds.gradients].map(bg => (
-              `<div key="${bg.name}">
-                <table cellpadding="5" cellspacing="0" border="0">
-                  <tr>
-                    <td>
-                      <table width="50" height="50" cellpadding="0" cellspacing="0" border="1" bgcolor="${bg.value}" onclick="document.dispatchEvent(new CustomEvent('backgroundSelected', { detail: '${bg.name}' }))">
-                        <tr><td>&nbsp;</td></tr>
-                      </table>
-                    </td>
-                  </tr>
-                </table>
-              </div>`
-            )).join('');
-            setOutput(prev => [...prev, { type: 'output', content: `<table cellspacing="0" cellpadding="0" border="0"><tr><td>${backgroundOptions}</td></tr></table>` }]);
-          }
+          setOutput(prev => [...prev, { type: 'output', content: cssNakedDayMessage }]);
           break;
         default:
           setOutput(prev => [...prev, { type: 'output', content: 'Command not found. Type "help" for a list of commands.' }]);
@@ -346,21 +331,7 @@ const smallBanner = `
     }
   };
 
-  useEffect(() => {
-    const handleBackgroundSelected = (event) => {
-      const selectedBackground = [...backgrounds.solid, ...backgrounds.gradients].find(bg => bg.name === event.detail);
-      if (selectedBackground) {
-        changeBackgroundColor(selectedBackground.value);
-        setOutput(prev => [...prev, { type: 'output', content: `Background changed to ${selectedBackground.name}` }]);
-      }
-    };
 
-    document.addEventListener('backgroundSelected', handleBackgroundSelected);
-
-    return () => {
-      document.removeEventListener('backgroundSelected', handleBackgroundSelected);
-    };
-  }, [backgrounds, changeBackgroundColor]);
 
   return (
     <div id="terminal" ref={terminalRef}>
@@ -372,12 +343,12 @@ const smallBanner = `
               <td>
                 {item.type === 'input' ? (
                   <pre>
-                    <strong>kuber@profile:~$</strong> {item.content}
+                    <font size="4"><strong>kuber@profile:~$</strong> {item.content}</font>
                   </pre>
                 ) : item.type === 'component' ? (
                   <div>{item.content}</div>
                 ) : (
-                  <div dangerouslySetInnerHTML={{ __html: item.content }} />
+                  <div align="left" dangerouslySetInnerHTML={{ __html: item.content }} />
                 )}
               </td>
             </tr>
@@ -385,7 +356,7 @@ const smallBanner = `
           <tr>
             <td>
               <pre>
-                <strong>kuber@profile:~$</strong>
+                <font size="4"><strong>kuber@profile:~$</strong></font>
                 <input
                   ref={inputRef}
                   type="text"

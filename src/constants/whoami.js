@@ -1,5 +1,5 @@
 const whoamiContent = `
-<table border="0" cellpadding="10" width="100%">
+<table border="0" cellpadding="2" width="100%">
   <tr>
     <td align="center"><h3><strong>Kuber Mehta</strong></h3></td>
   </tr>
