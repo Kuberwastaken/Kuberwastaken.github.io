@@ -1,10 +1,8 @@
 const helpContent = `
-<table border="0" cellpadding="10" width="100%">
+<table border="0" cellpadding="5" width="100%">
   <tr>
-    <td align="center"><h3>Available Commands:</h3></td>
-  </tr>
-  <tr>
-    <td>
+    <td align="left">
+      <h3>Available Commands:</h3>
       <table border="0" cellpadding="5" width="100%">
         <tr><td><span data-command="whoami">[whoami]</span></td></tr>
         <tr><td><span data-command="skills">[skills] or [s]</span></td></tr>
@@ -19,10 +17,8 @@ const helpContent = `
     </td>
   </tr>
   <tr>
-    <td align="center"><h3>Contact Me:</h3></td>
-  </tr>
-  <tr>
-    <td>
+    <td align="left">
+      <h3>Contact Me:</h3>
       <table border="0" cellpadding="5" width="100%">
         <tr><td><span data-command="email">[email]</span></td></tr>
         <tr><td><span data-command="linkedin">[linkedin]</span></td></tr>

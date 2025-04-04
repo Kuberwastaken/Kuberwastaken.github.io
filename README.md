@@ -1,54 +1,70 @@
 <div align="center">
-  <img src="https://github.com/Kuberwastaken/Kuberwastaken.github.io/blob/main/public/Portfolio-gif.gif" alt="Portfolio GIF">
 
+# Terminal Inspired Portfolio - CSS Naked Day Edition 🌟
+<img src="./src/assets/Portfolio-img.png" alt="Portfolio Screenshot">
 
-# Terminal Inspired Personal Portfolio 🌟
-Welcome to my personal portfolio repository! This project is the fruit of blood, sweat, and eye strain to showcase my skills, projects, and professional journey through an interactive terminal-style interface. Dive in and feel free to explore the things that set my portfolio apart.
+---
 
-<a href="https://kuberwastaken.github.io/" target="_blank">
-  <img src="https://github.com/Kuberwastaken/Kuberwastaken.github.io/blob/main/src/assets/Portfolio-button.png?raw=true" alt="Portfolio Button Image" width="400" height="70">
-</a>
+Welcome to my terminal-style portfolio - now participating in [CSS Naked Day](https://css-naked-day.github.io/)! This is a proud celebration of web standards, semantic HTML, and accessible content. You can find my name on the [2025 participants list](https://css-naked-day.github.io/2025.html), continuing a long-standing developer tradition since 2006.
+
+[![Visit the Live Portfolio](https://img.shields.io/badge/Visit%20Portfolio-ffffff?style=for-the-badge&labelColor=ffffff&color=ffffff)](https://kuberwastaken.github.io/)
+
 </div>
 
+## 📂 Project Overview
 
-# 📂 Project Overview
-This portfolio has:
+This portfolio demonstrates that great functionality doesn't need fancy styling. Features include:
 
-- **Terminal-Inspired Interface:** Engage with a unique, command-line "inspired" UI that offers an intuitive user experience (or does it?).
+- **Semantic HTML Structure:** Clean, accessible markup that works perfectly without CSS
+- **Terminal-Style Interface:** Command-line inspired navigation that's both functional and nostalgic
+- **Responsive Design:** Works across all devices, now even more lightweight without CSS!
+- **Accessibility First:** Semantic HTML ensures screen reader compatibility
 
-- **Dynamic Animations:** Enjoy smooth and captivating animations that elevate this portfolio.
+## 🎮 Interactive Features
 
-- **Responsive Design:** Optimized for seamless viewing on all platforms and ✨Aesthetics✨.
+- **AI Assistant (JARVIS):** Chat with an AI assistant about my projects and skills
+- **Classic Games:** 
+  - Snake
+  - Tetris
+  - 2048
+  - Flappy Bird
+  - [The Backdooms](https://kuberwastaken.github.io/backdooms/)
+- **Utility Tools:**
+  - Calculator
+  - Web search integration (Google, Wikipedia, ChatGPT, Perplexity)
+  - ASCII art viewer
+  - Matrix-style "Hollywood Effect"
 
-- **A Calculator:** People Build Projects for Calculators, I put Calculators in my portfolio
+## 🛠️ Tech Stack
 
-- **Browsing Capabilities:** Open links, search Google, YouTube, ChatGPT, Perplexity or Wikipedia - directly through the terminal.
+- **React:** Component-based architecture
+- **Semantic HTML:** Structure without styling
+- **JavaScript:** Interactive features and game logic
+- **Node.js:** Development environment and build tools
+- **CSS:** None lol
 
-- **Games!** Tons of Games to Play :)
+## 🌐 Notable Features
 
-- **An ASCII Selfie:** See an ASCII selfie of a really handsome man...
+- **Command History:** Navigate previous commands using arrow keys
+- **Real-time AI Chat:** Interact with JARVIS for portfolio information
+- **Multiple Search Engines:** Quick access to various search platforms
+- **ASCII Art:** View terminal-style artwork
+- **Game Collection:** Multiple classic games rebuilt in React
+- **Responsive Commands:** Full keyboard and touch support
 
-# 🛠️ Tech Stack
-- **React:** Switched to React for a more dynamic and efficient development experience.
+## 🎯 CSS Naked Day Participation
 
-- **HTML:** Structured the content and framework of the website.
+This portfolio proudly strips away all CSS styling on April 9th each year to participate in CSS Naked Day. This practice:
+- Promotes web standards and semantic HTML
+- Demonstrates the importance of progressive enhancement
+- Shows that good design works even without styling
+- Continues a beloved developer tradition since 2006
 
-- **CSS:** Styled the interface with animations, transitions, and responsive layouts.
+## 📱 Accessibility & Performance
 
-- **JavaScript:** Added interactivity and terminal-like functionalities for an engaging user experience.
-
-# 📜 Features
-- **Interactive Terminal:** Navigate the portfolio by typing commands, just like a real terminal.
-
-- **Project Showcase:** Discover detailed descriptions and dynamic hover effects for various projects.
-
-- **Animated Skill Bars:** Visual representation of my expertise in different technologies, complete with smooth animations.
-
-- **Command History Navigation:** Use up and down arrow keys to navigate through previously entered commands, making it feel more like a real terminal!
-
-- **Miscellaneous Tools:** Handy utilities like URL opening, Google search, and more, integrated directly into the terminal.
-
-- **Games:** Play classic games like snake, tetris, 2048 and more!
-
-- **Hollywood Effect:** Toggle a Matrix-like effect for a hacker vibe.
-
+Without CSS, this portfolio demonstrates:
+- Lightning-fast load times
+- Perfect accessibility scores
+- Semantic structure
+- Universal device compatibility
+- Screen reader optimization
