@@ -17,6 +17,39 @@ import TerminalFlappyBird from './FlappyBird/TerminalFlappyBird';
 import Jarvis from './Jarvis/Jarvis';
 import whoamiContent from '../constants/whoami';
 
+const levenshteinDistance = (str1, str2) => {
+  const m = str1.length;
+  const n = str2.length;
+  const dp = Array.from({ length: m + 1 }, () => Array(n + 1).fill(0));
+
+  for (let i = 0; i <= m; i++) dp[i][0] = i;
+  for (let j = 0; j <= n; j++) dp[0][j] = j;
+
+  for (let i = 1; i <= m; i++) {
+    for (let j = 1; j <= n; j++) {
+      if (str1[i - 1] === str2[j - 1]) {
+        dp[i][j] = dp[i - 1][j - 1];
+      } else {
+        dp[i][j] = 1 + Math.min(dp[i - 1][j], dp[i - 1][j - 1], dp[i][j - 1]);
+      }
+    }
+  }
+  return dp[m][n];
+};
+
+const findSimilarCommands = (input, availableCommands) => {
+  const suggestions = availableCommands
+    .map(cmd => ({
+      command: cmd,
+      distance: levenshteinDistance(input.toLowerCase(), cmd.toLowerCase())
+    }))
+    .filter(({ distance }) => distance <= 2 && distance > 0)
+    .sort((a, b) => a.distance - b.distance)
+    .map(({ command }) => command);
+
+  return suggestions.slice(0, 3); // Return top 3 suggestions
+};
+
 const Terminal = () => {
   const [output, setOutput] = useState([]);
   const [commandHistory, setCommandHistory] = useState([]);
@@ -27,6 +60,16 @@ const Terminal = () => {
   const inputRef = useRef(null);
   const terminalRef = useRef(null);
   const { theme, changeBackgroundColor, backgrounds } = useTheme();
+
+  const availableCommands = [
+    'help', 'skills', 'github', 'gh', 'discord', 'ds', 'email', 'em',
+    'youtube', 'yt', 'linkedin', 'li', 'ascii-selfie', 'projects', 'pj',
+    'blog', 'b', 'clear', 'c', 'games', 'g', 'whoami', 'wiki', 'wikipedia',
+    'chatgpt', 'gpt', 'neofetch', 'nf', 'misc', 'miscellaneous', 'resume',
+    'cv', 'jarvis', 'j', 'google', 'snake', 'backdooms', 'tetris', '2048',
+    'flappybird', 'time', 'date', 'background', 'theme', 'themes', 'bg',
+    'color', 'calculator', 'perplexity', 'perp', 'hackermode'
+  ];
 
   useEffect(() => {
     const handleResize = () => {
@@ -140,6 +183,20 @@ const smallBanner = `
   const handleCommand = (command) => {
     const [cmd, ...args] = command.toLowerCase().trim().split(' ');
     const argument = args.join(' ');
+
+    // Check if command exists in availableCommands
+    if (!availableCommands.includes(cmd)) {
+      const suggestions = findSimilarCommands(cmd, availableCommands);
+      if (suggestions.length > 0) {
+        const suggestionLinks = suggestions
+          .map(suggestion => `<span class="command-link" style="color: #5abb9a; cursor: pointer;" data-command="${suggestion}">${suggestion}</span>`)
+          .join(', ');
+        setOutput(prev => [...prev, 
+          { type: 'output', content: `Command not found. Did you mean: ${suggestionLinks}?` }
+        ]);
+        return;
+      }
+    }
 
     switch (cmd) {
       case 'skills':
