@@ -5,8 +5,13 @@ import './Jarvis.css';
 const parseMarkdown = (text) => {
   if (!text) return '';
   
+  // Replace headers: ## Heading -> <h2>Heading</h2>
+  let parsed = text.replace(/^##\s+(.*?)$/gm, '<h2>$1</h2>');
+  parsed = parsed.replace(/^#\s+(.*?)$/gm, '<h1>$1</h1>');
+  parsed = parsed.replace(/^###\s+(.*?)$/gm, '<h3>$1</h3>');
+  
   // Replace bold text: **text** -> <strong>text</strong>
-  let parsed = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  parsed = parsed.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   
   // Replace italic text: *text* -> <em>text</em>
   parsed = parsed.replace(/\*(.*?)\*/g, '<em>$1</em>');
@@ -19,6 +24,12 @@ const parseMarkdown = (text) => {
   
   // Replace links: [text](url) -> <a href="url">text</a>
   parsed = parsed.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+  
+  // Replace unordered lists: - item -> <li>item</li>
+  parsed = parsed.replace(/^-\s+(.*?)$/gm, '<li>$1</li>');
+  
+  // Replace horizontal rules: --- -> <hr/>
+  parsed = parsed.replace(/^---$/gm, '<hr/>');
   
   return parsed;
 };
