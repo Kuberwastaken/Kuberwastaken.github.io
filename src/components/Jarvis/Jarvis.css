@@ -63,7 +63,7 @@
     animation: fadeIn 0.3s ease-in-out;
 }
 
-/* Markdown Styling */
+/* Adding Markdown Styling */
 .markdown-line strong {
     font-weight: bold;
     color: #5abb9a;
@@ -72,6 +72,70 @@
 .markdown-line em {
     font-style: italic;
     color: #5abb9a;
+}
+
+.markdown-line h1, 
+.markdown-line h2, 
+.markdown-line h3 {
+    margin: 8px 0;
+    color: #5abb9a;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.markdown-line h1 { font-size: 1.5em; }
+.markdown-line h2 { font-size: 1.3em; }
+.markdown-line h3 { font-size: 1.1em; }
+
+.markdown-line code {
+    background-color: #2a2a2a;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: 'Consolas', monospace;
+    font-size: 0.9em;
+}
+
+.markdown-line pre {
+    background-color: #2a2a2a;
+    padding: 10px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 8px 0;
+}
+
+.markdown-line pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+.markdown-line li {
+    margin: 4px 0;
+    list-style-type: none;
+    padding-left: 20px;
+    position: relative;
+}
+
+.markdown-line li:before {
+    content: "•";
+    color: #5abb9a;
+    position: absolute;
+    left: 0;
+}
+
+.markdown-line hr {
+    border: none;
+    border-top: 1px solid #444;
+    margin: 10px 0;
+}
+
+.markdown-line a {
+    color: #5abb9a;
+    text-decoration: none;
+    border-bottom: 1px dotted #5abb9a;
+}
+
+.markdown-line a:hover {
+    border-bottom-style: solid;
 }
 
 /* Input form */
