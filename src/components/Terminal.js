@@ -107,14 +107,14 @@ const smallBanner = `
     const welcomeMessage = `
       <div style="margin-bottom: 20px;">
       <div class="welcome-banner">
-        <pre style="color: #5abb9a;">
-  ${isMobile ? smallBanner : largeBanner}
-        </pre>
+      <pre style="color: #5abb9a;">
+    ${isMobile ? smallBanner : largeBanner}
+      </pre>
       </div>
       <div style="margin: 20px 0;">
-        <p>Welcome to my personal portfolio! (Version 1.6.9)
-        <p style="margin-top: 8px;">Type <span style="color: #5abb9a;">'help'</span> to see the list of available commands.</p>
-        <p style="margin-top: 15px;"><span class="rgb-animation">NEW</span> try <a href="https://kuberwastaken.github.io/backdooms/" target="_blank" style="color: #5abb9a;">The Backdooms</a> & <a href="https://trytreat.tech/" target="_blank" style="color: #5abb9a;">TREAT Web!</a></p>
+      <p>Welcome to my personal portfolio! (Version 1.6.9)
+      <p style="margin-top: 8px;">Type <span style="color: #5abb9a;">'help'</span> to see the list of available commands.</p>
+      <p style="margin-top: 15px;"><span class="rgb-animation">NEW</span> try <a href="https://trytreat.tech/" target="_blank" style="color: #5abb9a;">TREAT</a> & <a href="https://polyth.ink" target="_blank" style="color: #5abb9a;">PolyThink</a></p>
       </div>
       </div>`;
 
