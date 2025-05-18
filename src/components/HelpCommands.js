@@ -5,7 +5,7 @@ const HelpCommands = () => {
     <div>
       <h3>Available commands:</h3>
       <ul>
-        <li>[skills] or [s]</li>
+        <li>[skills] or [sk]</li>
         <li>[projects] or [pj]</li>
         <li>[resume] or [cv]</li>
         <li>[miscellaneous] or [misc]</li>
