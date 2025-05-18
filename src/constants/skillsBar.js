@@ -95,6 +95,7 @@ const skillsBar = `
   position: relative;
   cursor: default;
   transition: all 0.3s ease;
+  z-index: 1;
 }
 
 .skill-item::before {
@@ -116,6 +117,7 @@ const skillsBar = `
 .skill-item:hover {
   transform: translateX(10px);
   color: white;
+  z-index: 20;
 }
 
 /* Tooltip */
