@@ -16,6 +16,7 @@ import Game2048 from './Game2048/Game2048';
 import TerminalFlappyBird from './FlappyBird/TerminalFlappyBird';
 import Jarvis from './Jarvis/Jarvis';
 import whoamiContent from '../constants/whoami';
+import WhoamiCard from './WhoamiCard';
 
 const levenshteinDistance = (str1, str2) => {
   const m = str1.length;
@@ -200,7 +201,7 @@ const smallBanner = `
 
     switch (cmd) {
       case 'skills':
-      case 's':
+      case 'sk':
         setOutput(prev => [...prev, { type: 'output', content: skillsBar }]);
         break;
       case 'github':
@@ -276,7 +277,7 @@ const smallBanner = `
         }
         break;
         case 'whoami':
-          setOutput(prev => [...prev, { type: 'output', content: whoamiContent }]);
+          setOutput(prev => [...prev, { type: 'component', content: <WhoamiCard /> }]);
           break;
       case 'wiki':
       case 'wikipedia':
