@@ -17,6 +17,7 @@ import TerminalFlappyBird from './FlappyBird/TerminalFlappyBird';
 import Jarvis from './Jarvis/Jarvis';
 import whoamiContent from '../constants/whoami';
 import WhoamiCard from './WhoamiCard';
+import ProjectsMasonry from '../constants/projectsContent';
 
 const levenshteinDistance = (str1, str2) => {
   const m = str1.length;
@@ -63,7 +64,7 @@ const Terminal = () => {
   const { theme, changeBackgroundColor, backgrounds } = useTheme();
 
   const availableCommands = [
-    'help', 'skills', 'github', 'gh', 'discord', 'ds', 'email', 'em',
+    'help', 'skills', 's', 'github', 'gh', 'discord', 'ds', 'email', 'em',
     'youtube', 'yt', 'linkedin', 'li', 'ascii-selfie', 'projects', 'pj',
     'blog', 'b', 'clear', 'c', 'games', 'g', 'whoami', 'wiki', 'wikipedia',
     'chatgpt', 'gpt', 'neofetch', 'nf', 'misc', 'miscellaneous', 'resume',
@@ -202,6 +203,7 @@ const smallBanner = `
     switch (cmd) {
       case 'skills':
       case 'sk':
+      case 's':
         setOutput(prev => [...prev, { type: 'output', content: skillsBar }]);
         break;
       case 'github':
@@ -234,7 +236,7 @@ const smallBanner = `
         break;
       case 'projects':
       case 'pj':
-        setOutput(prev => [...prev, { type: 'output', content: projectsContent }]);
+        setOutput(prev => [...prev, { type: 'component', content: <ProjectsMasonry /> }]);
         break;
       case 'blog':
       case 'b':

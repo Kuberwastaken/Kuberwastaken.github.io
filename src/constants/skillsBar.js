@@ -5,7 +5,8 @@ const skillsBar = `
       <div class="skill-list">
         <div class="skill-item" data-tooltip="Versatile scripting & data science">Python</div>
         <div class="skill-item" data-tooltip="Low-level systems programming">C</div>
-        <div class="skill-item" data-tooltip="Modern object-oriented programming">.NET C#</div>
+        <div class="skill-item" data-tooltip="Modern object-oriented programming and enterprise development">.NET</div>
+        <div class="skill-item" data-tooltip="Popular language for .NET and game development">C#</div>
         <div class="skill-item" data-tooltip="Lightweight scripting">Lua</div>
         <div class="skill-item" data-tooltip="Web & full-stack development">JavaScript</div>
         <div class="skill-item" data-tooltip="Type-safe JavaScript">TypeScript</div>
