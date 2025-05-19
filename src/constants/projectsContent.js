@@ -135,7 +135,7 @@ const MobileProjectsCarousel = () => {
     project.title === 'MiniLMs' ? '/kuberwastaken-minilms.png' :
     project.title === 'TREAT' ? '/kuberwastaken-treat.png' :
     project.title === 'MindDump' ? 'https://raw.githubusercontent.com/kuberwastaken/MindDump-Preview-Update/main/screenshot.png' :
-    project.title === 'LifeMap' ? '/kuberwastaken-lifemap.png' :
+    project.title === 'LifeMap' ? '/kuberwastaken-lifemap.jpg' :
     project.title === 'CottagOS' ? '/kuberwastaken-cottagOS.png' :
     null;
   return (
