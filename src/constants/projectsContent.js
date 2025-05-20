@@ -168,9 +168,9 @@ const MobileProjectsCarousel = () => {
                 style={{ width: '100%', minHeight: '100%', objectFit: 'cover', display: 'block' }}
               />
             </div>
-          ) : (project.previewImg || (project.title === 'Backdooms' && '/backdooms/backdooms-gif.gif')) ? (
+          ) : (project.previewImg || (project.title === 'Backdooms' && 'https://cdn.jsdelivr.net/gh/kuberwastaken/backdooms/public/Gameplay-GIF.gif')) ? (
             <img
-              src={project.previewImg || '/backdooms/backdooms-gif.gif'}
+              src={project.previewImg || 'https://cdn.jsdelivr.net/gh/kuberwastaken/backdooms/public/Gameplay-GIF.gif'}
               alt={project.title + ' preview'}
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: 12 }}
             />
@@ -260,7 +260,7 @@ const ProjectsMasonry = () => (
                 className="project-iframe-container"
               >
                 <img
-                  src="/backdooms/backdooms-gif.gif"
+                  src="https://cdn.jsdelivr.net/gh/kuberwastaken/backdooms/public/Gameplay-GIF.gif"
                   alt="Backdooms gameplay preview"
                   style={{
                     width: '100%',
@@ -358,6 +358,7 @@ const ProjectsMasonry = () => (
                   loading="lazy"
                   sandbox="allow-scripts allow-same-origin allow-popups"
                   allowFullScreen={false}
+                  allow={project.title === 'CottagOS' ? "speaker 'none'" : undefined}
                   className="project-iframe"
                 >
                   Your browser does not support iframes or this site does not allow embedding.
