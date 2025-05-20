@@ -127,16 +127,17 @@ const MobileProjectsCarousel = () => {
   const goRight = () => setCurrent((prev) => (prev === total - 1 ? 0 : prev + 1));
   const project = projects[current];
   // Faux webpage image logic for mobile
+  const jsdelivrBase =
+    'https://cdn.jsdelivr.net/gh/Kuberwastaken/Kuberwastaken.github.io/public/';
   const fauxWebImage =
-    project.title === 'ORCUS' ? '/kuberwastaken-orcus.png' :
-    project.title === 'Free Deep Research' ? '/kuberwastaken-freedeepresearch.png' :
-    project.title === 'Books Re-imagined' ? '/kuberwastaken-booksreimagined.png' :
-    project.title === 'PolyThink' ? '/kuberwastaken-polythink.png' :
-    project.title === 'MiniLMs' ? '/kuberwastaken-minilms.png' :
-    project.title === 'TREAT' ? '/kuberwastaken-treat.png' :
-    project.title === 'MindDump' ? 'https://raw.githubusercontent.com/kuberwastaken/MindDump-Preview-Update/main/screenshot.png' :
-    project.title === 'LifeMap' ? '/kuberwastaken-lifemap.jpg' :
-    project.title === 'CottagOS' ? '/kuberwastaken-cottagOS.png' :
+    project.title === 'ORCUS' ? jsdelivrBase + 'kuberwastaken-orcus.png' :
+    project.title === 'Free Deep Research' ? jsdelivrBase + 'kuberwastaken-freedeepresearch.png' :
+    project.title === 'Books Re-imagined' ? jsdelivrBase + 'kuberwastaken-booksreimagined.png' :
+    project.title === 'PolyThink' ? jsdelivrBase + 'kuberwastaken-polythink.png' :
+    project.title === 'MiniLMs' ? jsdelivrBase + 'kuberwastaken-minilms.png' :
+    project.title === 'TREAT' ? jsdelivrBase + 'kuberwastaken-treat.png' :
+    project.title === 'LifeMap' ? jsdelivrBase + 'kuberwastaken-lifemap.jpg' :
+    project.title === 'CottagOS' ? jsdelivrBase + 'kuberwastaken-cottagOS.png' :
     null;
   return (
     <div className="mobile-projects-carousel" style={{ maxWidth: 420, margin: '0 auto', padding: '16px 0' }}>
