@@ -15,12 +15,19 @@ const projects = [
     github: 'https://github.com/Kuberwastaken/AsianMOM',
     previewImg: 'https://github.com/Kuberwastaken/AsianMOM/raw/main/Media/Assets/Readme-Image.jpg',
     extra: [],
-  },
-  {
+  },  {
     title: 'TREAT',
     description: 'TREAT is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable.',
     website: 'https://www.trytreat.tech/',
     github: 'https://github.com/Kuberwastaken/TREAT',
+    extra: [],
+  },
+  {
+    title: 'Engram',
+    description: `The centralized, No BS, Biggest Open-Source Notes and Resources Aggregator for IP University Engineering`,
+    website: 'https://engram.kuber.studio/',
+    github: 'https://github.com/kuberwastaken/engram',
+    showIframe: true,
     extra: [],
   },
   {
@@ -29,11 +36,10 @@ const projects = [
     website: 'https://minilms.kuber.studio/',
     github: 'https://github.com/Kuberwastaken/MiniLMs',
     extra: [],
-  },
-  {
+  },  {
     title: 'ORCUS',
     description: `A dual-model AI tool to detect and flag AI-generated social media comments, especially on LinkedIn. It uses Hugging Face's OpenAI detector and GPT-2 to analyze suspicious content and generate personalized alerts.`,
-    website: 'https://github.com/Kuberwastaken/ORCUS',
+    website: null,
     github: 'https://github.com/Kuberwastaken/ORCUS',
     showIframe: true,
     extra: [],
@@ -52,13 +58,12 @@ const projects = [
     github: null,
     showIframe: true,
     extra: [],
-  },
-  {
+  },  {
     title: 'Free Deep Research',
     description: `My free, open-source version of OpenAI's Deep Research agent. It mimics the capabilities of the original agent, allowing users to run custom deep dives with adjustable breadth, depth, and duration.`,
-    website: 'https://github.com/Kuberwastaken/free-deep-research',
+    website: null,
     github: 'https://github.com/Kuberwastaken/free-deep-research',
-    showIframe: true,
+    showIframe: false,
     extra: [],
   },
   {
@@ -128,14 +133,14 @@ const MobileProjectsCarousel = () => {
   const project = projects[current];
   // Faux webpage image logic for mobile
   const jsdelivrBase =
-    'https://cdn.jsdelivr.net/gh/Kuberwastaken/Kuberwastaken.github.io/public/';
-  const fauxWebImage =
+    'https://cdn.jsdelivr.net/gh/Kuberwastaken/Kuberwastaken.github.io/public/';  const fauxWebImage =
     project.title === 'ORCUS' ? jsdelivrBase + 'kuberwastaken-orcus.png' :
     project.title === 'Free Deep Research' ? jsdelivrBase + 'kuberwastaken-freedeepresearch.png' :
     project.title === 'Books Re-imagined' ? jsdelivrBase + 'kuberwastaken-booksreimagined.png' :
     project.title === 'PolyThink' ? jsdelivrBase + 'kuberwastaken-polythink.png' :
     project.title === 'MiniLMs' ? jsdelivrBase + 'kuberwastaken-minilms.png' :
     project.title === 'TREAT' ? jsdelivrBase + 'kuberwastaken-treat.png' :
+    project.title === 'Engram' ? jsdelivrBase + 'kuberwastaken-engram.png' :
     project.title === 'LifeMap' ? jsdelivrBase + 'kuberwastaken-lifemap.jpg' :
     project.title === 'CottagOS' ? jsdelivrBase + 'kuberwastaken-cottagOS.png' :
     null;
@@ -316,10 +321,10 @@ const ProjectsMasonry = () => (
                 className="project-fauxwebpage-container"
               >
                 <div style={{height: '100%', width: '100%', overflowY: 'auto', overflowX: 'hidden', background: '#fff'}}>
-                  <img
-                    src={
+                  <img                    src={
                       project.title === 'ORCUS' ? '/kuberwastaken-orcus.png' :
                       project.title === 'Free Deep Research' ? '/kuberwastaken-freedeepresearch.png' :
+                      project.title === 'Engram' ? '/kuberwastaken-engram.png' :
                       '/kuberwastaken-booksreimagined.png'
                     }
                     alt={project.title + ' faux webpage'}
@@ -342,8 +347,7 @@ const ProjectsMasonry = () => (
                   overflow: 'hidden',
                 }}
                 className="project-iframe-container"
-              >
-                <iframe
+              >                <iframe
                   src={project.website}
                   title={project.title + ' preview'}
                   style={{
@@ -359,7 +363,7 @@ const ProjectsMasonry = () => (
                   loading="lazy"
                   sandbox="allow-scripts allow-same-origin allow-popups"
                   allowFullScreen={false}
-                  allow={project.title === 'CottagOS' ? "speaker 'none'" : undefined}
+                  allow={project.title === 'CottagOS' ? "autoplay 'none'; microphone 'none'; camera 'none'; speaker 'none'" : undefined}
                   className="project-iframe"
                 >
                   Your browser does not support iframes or this site does not allow embedding.
