@@ -2,7 +2,7 @@
   <h1>The Best Terminal Inspired Portfolio on the Internet™️</h1>
 </div>
 <div align="center">
-  <img src="https://github.com/Kuberwastaken/Kuberwastaken.github.io/blob/main/public/Portfolio-gif.gif" alt="Portfolio GIF">
+  <img src="https://cdn.jsdelivr.net/gh/Kuberwastaken/Kuberwastaken.github.io@main/public/Portfolio-gif.gif" alt="Portfolio GIF">
 
 <p align="center">
   <strong>Half Joking with the title, not really, well, not until proven otherwise atleast...</strong>
@@ -26,27 +26,23 @@
 
 </div>
 
-## 🌟 What Makes This Portfolio Special
+## Welcome to my Personal Portfolio Repository!
 
-This isn't just another portfolio website—it's a **full-fledged terminal emulator** running in your browser, packed with interactive features, games, and tools that showcase not just what I've built, but how I think about user experience and creative problem-solving.
+This project is the fruit of blood, sweat, and eye strain to showcase my skills, projects, and professional journey through an interactive terminal-style interface. Dive in and feel free to explore the things that set my portfolio apart.
 
-### 🎯 Core Philosophy
-- **Functionality over Flash**: Every feature serves a purpose
-- **Accessibility First**: Works seamlessly on mobile and desktop
-- **Progressive Enhancement**: Rich experiences that degrade gracefully
-- **Performance Optimized**: Fast loading, smooth animations, efficient rendering
+Expect me adding a lot other cool stuff and not mentioning this in the README because I prefer to ship stuff and hate documenting it (ugh) and this is one of my favorite personal projects to mess around with.
 
 ---
 
 ## 🛠️ Technical Architecture
 
 ### **Frontend Framework**
-- **React 19.0.0** - Latest React with concurrent features and improved performance
+- **React** - Latest React with concurrent features and improved performance
 - **Custom Hooks & Context** - Efficient state management and theme switching
 - **Component Architecture** - Modular, reusable components with clear separation of concerns
 
 ### **Core Technologies**
-- **HTML5 & Semantic Markup** - Accessible, SEO-friendly structure
+- **HTML5 & Semantic Markup** - Accessible, SEO-friendly structure (thanks [CSS Naked day](https://github.com/Kuberwastaken/Kuberwastaken.github.io/tree/css-naked-day))
 - **CSS3 & Advanced Animations** - Custom CSS grid, flexbox, and smooth transitions
 - **ES6+ JavaScript** - Modern JavaScript with async/await, destructuring, and modules
 - **Local Storage Integration** - Persistent game scores and user preferences
