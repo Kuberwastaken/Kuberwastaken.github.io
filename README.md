@@ -1,9 +1,10 @@
 <div align="center">
   <h1>The Best Terminal Inspired Portfolio on the Internet™️</h1>
 </div>
+
+<div align="center">
+  <img src="https://github.com/Kuberwastaken/Kuberwastaken.github.io/blob/main/public/Portfolio-gif.gif" alt="Portfolio GIF">
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/Kuberwastaken/Kuberwastaken.github.io@main/public/Portfolio-gif.gif" alt="Portfolio GIF" />
-</p>
 
 <p align="center">
   <strong>Half Joking with the title, not really, well, not until proven otherwise atleast...</strong>
