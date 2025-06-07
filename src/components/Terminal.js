@@ -240,7 +240,7 @@ const smallBanner = `
         break;
       case 'blog':
       case 'b':
-        window.open('https://kuberwastaken.github.io/blog/', '_blank');
+        window.open('https://kuber.studio/blog/', '_blank');
         setOutput(prev => [...prev, { type: 'output', content: 'Opening blog...' }]);
         break;
       case 'clear':
@@ -320,7 +320,7 @@ const smallBanner = `
           break;
         case 'backdooms':
         case 'the backdooms':
-          window.open('https://kuberwastaken.github.io/backdooms/', '_blank');
+          window.open('https://kuber.studio/backdooms/', '_blank');
           setOutput(prev => [...prev, { type: 'output', content: 'Opening The Backdooms...' }]);
           break;
         case 'tetris':

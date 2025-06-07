@@ -9,7 +9,7 @@ const PDFViewer = () => {
       padding: '20px'
     }}>
       <iframe
-        src="https://kuberwastaken.github.io/Resume/Resume.pdf"
+        src="https://resume.kuber.studio/Resume.pdf"
         title="Resume PDF"
         width="100%"
         height="800px"

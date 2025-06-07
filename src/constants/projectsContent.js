@@ -130,10 +130,9 @@ const MobileProjectsCarousel = () => {
   const total = projects.length;
   const goLeft = () => setCurrent((prev) => (prev === 0 ? total - 1 : prev - 1));
   const goRight = () => setCurrent((prev) => (prev === total - 1 ? 0 : prev + 1));
-  const project = projects[current];
-  // Faux webpage image logic for mobile
+  const project = projects[current];  // Faux webpage image logic for mobile
   const jsdelivrBase =
-    'https://cdn.jsdelivr.net/gh/Kuberwastaken/Kuberwastaken.github.io/public/';  const fauxWebImage =
+    'https://cdn.jsdelivr.net/gh/Kuberwastaken/Kuberwastaken.github.io/public/';const fauxWebImage =
     project.title === 'ORCUS' ? jsdelivrBase + 'kuberwastaken-orcus.png' :
     project.title === 'Free Deep Research' ? jsdelivrBase + 'kuberwastaken-freedeepresearch.png' :
     project.title === 'Books Re-imagined' ? jsdelivrBase + 'kuberwastaken-booksreimagined.png' :
