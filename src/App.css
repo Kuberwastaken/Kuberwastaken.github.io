@@ -224,6 +224,14 @@ body {
 
 /* Mobile responsiveness */
 @media screen and (max-width: 1024px) {
+  .App {
+    font-size: 19px;
+  }
+
+  .command-field {
+    font-size: 19px;
+  }
+
   .projectsDiv {
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
@@ -240,11 +248,19 @@ body {
 
   .neofetch-logo pre,
   .neofetch-details pre {
-    font-size: 12px; /* Adjust font size for smaller screens */
+    font-size: 11px; /* Adjust font size for smaller screens */
   }
 }
 
 @media screen and (max-width: 768px) {
+  .App {
+    font-size: 18px;
+  }
+
+  .command-field {
+    font-size: 18px;
+  }
+
   .projectsDiv {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
@@ -261,11 +277,19 @@ body {
 
   .neofetch-logo pre,
   .neofetch-details pre {
-    font-size: 10px; /* Further adjust font size for smaller screens */
+    font-size: 9px; /* Further adjust font size for smaller screens */
   }
 }
 
 @media screen and (max-width: 480px) {
+  .App {
+    font-size: 17px;
+  }
+
+  .command-field {
+    font-size: 17px;
+  }
+
   .projectsDiv {
     grid-template-columns: 1fr;
     gap: 5px;
@@ -290,7 +314,7 @@ body {
 
   .neofetch-logo pre,
   .neofetch-details pre {
-    font-size: 8px; 
+    font-size: 7px; 
   }
 }
 
