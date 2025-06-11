@@ -18,7 +18,7 @@ const WhoamiCard = () => (
         <p><b>TREAT</b> — <a href="https://www.trytreat.tech/" target="_blank" rel="noopener noreferrer" style={{ color: '#5abb9a', textDecoration: 'underline' }}>TREAT</a> is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable.</p>
       </div>
       <div className="whoami-section whoami-mobile-hide">
-        <p>Currently a Perplexity AI Business Fellow, I'm pursuing a dual academic path with a BSc in Computer Science at BITS Pilani and a BTech in AI & Data Science at Indraprastha University. My academic focus includes programming, AI, and advanced data analysis.</p>
+        <p>Currently a Perplexity AI Business Fellow, I'm soon in a dual academic path with a BSc in Computer Science at BITS Pilani and a BTech in AI & Data Science at Indraprastha University. My academic focus includes programming, AI, and advanced data analysis.</p>
       </div>
       <div className="whoami-section whoami-mobile-hide">
         <p>My technical toolkit includes Python, SQL, R, and Tableau, along with hands-on experience in large language models (<span className="command-link" data-command="skills" style={{ color: '#5abb9a', cursor: 'pointer', textDecoration: 'underline' }}>Type Skills or S for more information</span>). I've applied AI to automate workflows, analyze media, and create interactive applications.</p>
