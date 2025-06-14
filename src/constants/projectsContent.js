@@ -9,13 +9,13 @@ const projects = [
     extra: [],
   },
   {
-    title: 'AsianMOM',
-    description: 'A WebML-based Vision-Language App that roasts you like an Asian Mom. Runs entirely in your browser using WebGPU and ONNX.',
-    website: 'https://asianmom.kuber.studio/',
-    github: 'https://github.com/Kuberwastaken/AsianMOM',
-    previewImg: 'https://github.com/Kuberwastaken/AsianMOM/raw/main/Media/Assets/Readme-Image.jpg',
+    title: 'MiniLMs',
+    description: `My ongoing study learning about AI Models architecturally and making fun little chatbots from it. Currently finished development of SYNEVA - a <3kb Markov Chain type Chatbot inspired by ELIZA that is actually fun to talk to and passively working on 15ABELLA, a 15Kb tiny Neural Network chatbot.`,
+    website: 'https://minilms.kuber.studio/',
+    github: 'https://github.com/Kuberwastaken/MiniLMs',
     extra: [],
-  },  {
+  },
+  {
     title: 'TREAT',
     description: 'TREAT is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable.',
     website: 'https://www.trytreat.tech/',
@@ -23,46 +23,10 @@ const projects = [
     extra: [],
   },
   {
-    title: 'Engram',
-    description: `The centralized, No BS, Biggest Open-Source Notes and Resources Aggregator for IP University Engineering`,
-    website: 'https://engram.kuber.studio/',
-    github: 'https://github.com/kuberwastaken/engram',
-    showIframe: true,
-    extra: [],
-  },
-  {
-    title: 'MiniLMs',
-    description: `My ongoing study learning about AI Models architecturally and making fun little chatbots from it. Currently finished development of SYNEVA - a <3kb Markov Chain type Chatbot inspired by ELIZA that is actually fun to talk to and passively working on 15ABELLA, a 15Kb tiny Neural Network chatbot.`,
-    website: 'https://minilms.kuber.studio/',
-    github: 'https://github.com/Kuberwastaken/MiniLMs',
-    extra: [],
-  },  {
-    title: 'ORCUS',
-    description: `A dual-model AI tool to detect and flag AI-generated social media comments, especially on LinkedIn. It uses Hugging Face's OpenAI detector and GPT-2 to analyze suspicious content and generate personalized alerts.`,
+    title: 'MEOW',
+    description: 'The most Purr-fect Image File Format for your AI workflows, PNG on steroids.',
     website: null,
-    github: 'https://github.com/Kuberwastaken/ORCUS',
-    showIframe: true,
-    extra: [],
-  },
-  {
-    title: 'MindDump',
-    description: `My Blog website that I made that syncs from my Obsidian Vault! It's extremely customizable and a corner of the internet where I can truly share my thoughts freely.`,
-    website: 'https://kuber.studio/blog/',
-    github: 'https://github.com/Kuberwastaken/blog',
-    extra: [],
-  },
-  {
-    title: 'Books Re-imagined',
-    description: `An AI tool that transforms the narrative perspective of popular literature. In this case, it retells Diary of a Wimpy Kid: Rodrick Rules from Rodrick's point of view using Google Gemini 1.5.`,
-    website: 'https://www.kaggle.com/code/kubermehta/books-reimagined-diary-of-a-wimpy-kid-by-rodrick',
-    github: null,
-    showIframe: true,
-    extra: [],
-  },  {
-    title: 'Free Deep Research',
-    description: `My free, open-source version of OpenAI's Deep Research agent. It mimics the capabilities of the original agent, allowing users to run custom deep dives with adjustable breadth, depth, and duration.`,
-    website: null,
-    github: 'https://github.com/Kuberwastaken/free-deep-research',
+    github: 'https://github.com/Kuberwastaken/meow',
     showIframe: false,
     extra: [],
   },
@@ -74,10 +38,17 @@ const projects = [
     extra: [],
   },
   {
-    title: 'LifeMap',
-    description: `LifeMap is a web application for creating and visualizing personal networks. Add nodes representing aspects of your life - education, work, hobbies, dreams, and family and connect them to see relationships and dependencies to answer the true questions in life.`,
-    website: 'https://lifemap.kuber.studio',
-    github: 'https://github.com/Kuberwastaken/LifeMap',
+    title: 'MindDump',
+    description: `My Blog website that I made that syncs from my Obsidian Vault! It's extremely customizable and a corner of the internet where I can truly share my thoughts freely.`,
+    website: 'https://kuber.studio/blog/',
+    github: 'https://github.com/Kuberwastaken/blog',
+    extra: [],
+  },
+  {
+    title: 'Engram',
+    description: `The centralized, No BS, Biggest Open-Source Notes and Resources Aggregator for IP University Engineering`,
+    website: 'https://engram.kuber.studio/',
+    github: 'https://github.com/kuberwastaken/engram',
     showIframe: true,
     extra: [],
   },
@@ -86,6 +57,46 @@ const projects = [
     description: `Won first place at Hack Club SiteJam!\nCottagOS is a lovingly crafted, interactive desktop experience inspired by the aesthetics of cottagecore and the magic of enchanted forests. It simulates a cozy OS environment, complete with draggable windows, animated desktop, and a suite of charming mini-apps—all wrapped in a warm, nature-inspired UI.`,
     website: 'https://cottagos.kuber.studio/',
     github: 'https://github.com/Kuberwastaken/CottagOS',
+    showIframe: true,
+    extra: [],
+  },
+  {
+    title: 'Free Deep Research',
+    description: `My free, open-source version of OpenAI's Deep Research agent. It mimics the capabilities of the original agent, allowing users to run custom deep dives with adjustable breadth, depth, and duration.`,
+    website: null,
+    github: 'https://github.com/Kuberwastaken/free-deep-research',
+    showIframe: false,
+    extra: [],
+  },
+  {
+    title: 'AsianMOM',
+    description: 'A WebML-based Vision-Language App that roasts you like an Asian Mom. Runs entirely in your browser using WebGPU and ONNX.',
+    website: 'https://asianmom.kuber.studio/',
+    github: 'https://github.com/Kuberwastaken/AsianMOM',
+    previewImg: 'https://github.com/Kuberwastaken/AsianMOM/raw/main/Media/Assets/Readme-Image.jpg',
+    extra: [],
+  },
+  {
+    title: 'ORCUS',
+    description: `A dual-model AI tool to detect and flag AI-generated social media comments, especially on LinkedIn. It uses Hugging Face's OpenAI detector and GPT-2 to analyze suspicious content and generate personalized alerts.`,
+    website: null,
+    github: 'https://github.com/Kuberwastaken/ORCUS',
+    showIframe: true,
+    extra: [],
+  },
+  {
+    title: 'LifeMap',
+    description: `LifeMap is a web application for creating and visualizing personal networks. Add nodes representing aspects of your life - education, work, hobbies, dreams, and family and connect them to see relationships and dependencies to answer the true questions in life.`,
+    website: 'https://lifemap.kuber.studio',
+    github: 'https://github.com/Kuberwastaken/LifeMap',
+    showIframe: true,
+    extra: [],
+  },
+  {
+    title: 'Books Re-imagined',
+    description: `An AI tool that transforms the narrative perspective of popular literature. In this case, it retells Diary of a Wimpy Kid: Rodrick Rules from Rodrick's point of view using Google Gemini 1.5.`,
+    website: 'https://www.kaggle.com/code/kubermehta/books-reimagined-diary-of-a-wimpy-kid-by-rodrick',
+    github: null,
     showIframe: true,
     extra: [],
   },
@@ -142,6 +153,7 @@ const MobileProjectsCarousel = () => {
     project.title === 'Engram' ? jsdelivrBase + 'kuberwastaken-engram.png' :
     project.title === 'LifeMap' ? jsdelivrBase + 'kuberwastaken-lifemap.jpg' :
     project.title === 'CottagOS' ? jsdelivrBase + 'kuberwastaken-cottagOS.png' :
+    project.title === 'MEOW' ? jsdelivrBase + 'kuberwastaken-meow.png' :
     null;
   return (
     <div className="mobile-projects-carousel" style={{ maxWidth: 420, margin: '0 auto', padding: '16px 0' }}>
@@ -302,7 +314,7 @@ const ProjectsMasonry = () => (
                   }}
                 />
       </div>
-            ) : (['ORCUS', 'Free Deep Research', 'Books Re-imagined'].includes(project.title)) ? (
+            ) : (['ORCUS', 'Free Deep Research', 'Books Re-imagined', 'MEOW'].includes(project.title)) ? (
               <div
                 style={{
                   marginBottom: 16,
@@ -319,11 +331,11 @@ const ProjectsMasonry = () => (
                 }}
                 className="project-fauxwebpage-container"
               >
-                <div style={{height: '100%', width: '100%', overflowY: 'auto', overflowX: 'hidden', background: '#fff'}}>
-                  <img                    src={
+                <div style={{height: '100%', width: '100%', overflowY: 'auto', overflowX: 'hidden', background: '#fff'}}>                  <img                    src={
                       project.title === 'ORCUS' ? '/kuberwastaken-orcus.png' :
                       project.title === 'Free Deep Research' ? '/kuberwastaken-freedeepresearch.png' :
                       project.title === 'Engram' ? '/kuberwastaken-engram.png' :
+                      project.title === 'MEOW' ? '/kuberwastaken-meow.png' :
                       '/kuberwastaken-booksreimagined.png'
                     }
                     alt={project.title + ' faux webpage'}
