@@ -63,5 +63,5 @@ CPU:          Intel Core i5 1355U
       </div>
     </div>
   `;
-  addOutput(prev => [...prev, { type: 'output', content: neofetchOutput }]);
+  addOutput({ type: 'output', content: neofetchOutput });
 }
