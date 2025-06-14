@@ -1,0 +1,143 @@
+{
+  "name": "Kuber Mehta",
+  "title": "AI Developer & Full Stack Engineer",
+  "age": 18,
+  "location": "New Delhi, India",
+  "email": "kuberhob@gmail.com",
+  "website": "https://kuber.studio",
+  "github": "https://github.com/Kuberwastaken",
+  "linkedin": "https://www.linkedin.com/in/kubermehta/",
+  "blog": "https://kuber.studio/blog/",
+  "youtube": "https://www.youtube.com/@Kuberwastaken",
+    "current_role": {
+    "position": "Perplexity AI Business Fellow & OpenAI Asia-Pacific Developer Advisor",
+    "company": "Perplexity AI / OpenAI",
+    "focus": "AI development, business applications, and advising on SOTA open-weight models",
+    "note": "Recently collaborated with the OpenAI team including Sam Altman on a call as part of a small group of Asia-Pacific developers advising their upcoming SOTA open-weight model"
+  },
+  
+  "education": [
+    {
+      "degree": "BSc Computer Science",
+      "institution": "BITS Pilani",
+      "status": "Current"
+    },
+    {
+      "degree": "BTech AI & Data Science", 
+      "institution": "Indraprastha University",
+      "status": "Current"
+    }
+  ],
+  
+  "skills": {
+    "programming_languages": [
+      "Python", "JavaScript", "TypeScript", "C", "C#", ".NET", 
+      "Lua", "R", "HTML", "CSS", "SCSS"
+    ],
+    "frameworks": [
+      "React", "Next.js", "Flask", "Node.js", "TensorFlow", 
+      "PyTorch", "Express", "Vite"
+    ],
+    "databases": ["SQL", "MongoDB", "PostgreSQL", "BigQuery"],
+    "tools": [
+      "Git", "Docker", "AWS", "Tableau", "LaTeX", "Gradio",
+      "Jupyter", "VS Code", "Figma", "Blender"
+    ],
+    "specializations": [
+      "Artificial Intelligence", "Machine Learning", "Multi-agent AI Systems",
+      "Computer Vision", "Natural Language Processing", "Web Development",
+      "Data Science", "Full Stack Development"
+    ]
+  },
+  
+  "featured_projects": [
+    {
+      "name": "PolyThink",
+      "description": "Multi-agent AI system where multiple models collaborate and fact-check each other",
+      "url": "https://www.polyth.ink/",
+      "technologies": ["Multi-agent AI", "LLMs", "Python"],
+      "status": "Active"
+    },
+    {
+      "name": "TREAT",
+      "description": "AI-powered platform for trigger recognition in movies and TV content",
+      "url": "https://www.trytreat.tech/",
+      "github": "https://github.com/Kuberwastaken/TREAT",
+      "technologies": ["AI/ML", "Python", "Web Development"],
+      "status": "Active"
+    },
+    {
+      "name": "MiniLMs",
+      "description": "Lightweight chatbot models including SYNEVA and 15ABELLA",
+      "url": "https://minilms.kuber.studio/",
+      "github": "https://github.com/Kuberwastaken/MiniLMs",
+      "technologies": ["Neural Networks", "JavaScript", "AI"],
+      "status": "Active"
+    },
+    {
+      "name": "AsianMOM",
+      "description": "WebML-based Vision-Language App running in browser with WebGPU",
+      "url": "https://asianmom.kuber.studio/",
+      "github": "https://github.com/Kuberwastaken/AsianMOM",
+      "technologies": ["WebML", "WebGPU", "ONNX", "Computer Vision"],
+      "status": "Active"
+    },    {
+      "name": "CottagOS",
+      "description": "Interactive desktop environment with cottagecore aesthetics",
+      "url": "https://cottagos.kuber.studio/",
+      "github": "https://github.com/Kuberwastaken/CottagOS",
+      "technologies": ["JavaScript", "CSS", "Web APIs"],
+      "award": "First Place at Hack Club SiteJam",
+      "status": "Active"
+    },
+    {
+      "name": "Backdooms",
+      "description": "Making DOOM run inside a QR code (most popular project)",
+      "url": "https://kuber.studio/backdooms/",
+      "github": "https://github.com/Kuberwastaken/backdooms",
+      "technologies": ["JavaScript", "Game Development", "QR Code"],
+      "status": "Active",
+      "note": "Most popular project"
+    },
+    {
+      "name": "MEOW",
+      "description": "A new and innovative image file format for our modern AI era, PNG on steroids",
+      "github": "https://github.com/Kuberwastaken/meow",
+      "technologies": ["File Format", "AI", "Image Processing"],
+      "status": "Active",
+      "note": "Innovative image format for AI workflows"
+    }
+  ],
+    "achievements": [
+    "Perplexity AI Business Fellow",
+    "OpenAI Asia-Pacific Developer Advisor",
+    "Collaborated with OpenAI team including Sam Altman",
+    "First Place at Hack Club SiteJam",
+    "Creator of 10+ AI/ML projects",
+    "6+ years of 3D modeling experience",
+    "100+ 3D renders for gaming environments"
+  ],
+  
+  "interests": [
+    "AI in media and recommendation algorithms",
+    "Multi-agent AI systems", 
+    "Creative technology and interactive experiences",
+    "Gaming and virtual environments",
+    "Open source development"
+  ],
+  
+  "portfolio_features": {
+    "type": "Interactive Terminal",
+    "technologies": ["React", "JavaScript", "CSS"],
+    "features": [
+      "30+ terminal commands",
+      "Built-in games (Snake, Tetris, 2048, Flappy Bird)",
+      "AI assistant (JARVIS)",
+      "Calculator and utilities",
+      "Dynamic theming system",
+      "Mobile responsive design"
+    ]
+  },
+  
+  "last_updated": "2025-06-14"
+}
