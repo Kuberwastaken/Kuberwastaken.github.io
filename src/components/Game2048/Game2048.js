@@ -221,4 +221,4 @@ const Game2048 = () => {
   );
 };
 
-export default Game2048;
+export default React.memo(Game2048);

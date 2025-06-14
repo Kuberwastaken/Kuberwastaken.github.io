@@ -1,15 +1,22 @@
 import React, { useEffect, useRef } from 'react';
 import './HollywoodEffect.css';
 
-const HollywoodEffect = () => {
+const HollywoodEffect = React.memo(() => {
   const canvasRef = useRef(null);
+  const intervalRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    if (!canvas) return;
+    
     const ctx = canvas.getContext('2d');
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const updateCanvasSize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    
+    updateCanvasSize();
 
     const letters = Array(256).join(1).split('');
     const fontSize = 10;
@@ -28,12 +35,23 @@ const HollywoodEffect = () => {
       });
     };
 
-    const interval = setInterval(draw, 33);
+    intervalRef.current = setInterval(draw, 33);
 
-    return () => clearInterval(interval);
+    // Handle window resize
+    const handleResize = () => {
+      updateCanvasSize();
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
-
   return <canvas ref={canvasRef} className="hollywood-effect"></canvas>;
-};
+});
 
 export default HollywoodEffect;

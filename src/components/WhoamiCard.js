@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 
-const WhoamiCard = () => (
+const WhoamiCard = React.memo(() => (
   <div className="whoami-glass-card whoami-landscape">
     <div className="whoami-profile-col">
       <h3 className="whoami-title">Kuber Mehta</h3>
@@ -34,9 +34,8 @@ const WhoamiCard = () => (
       </div>
       <div className="whoami-footer">
         <p>Type <span className="command-link" data-command="github" style={{ color: '#5abb9a', cursor: 'pointer', textDecoration: 'underline' }}>github</span>, <span className="command-link" data-command="linkedin" style={{ color: '#5abb9a', cursor: 'pointer', textDecoration: 'underline' }}>linkedin</span>, or <span className="command-link" data-command="email" style={{ color: '#5abb9a', cursor: 'pointer', textDecoration: 'underline' }}>email</span> to connect with me.</p>
-      </div>
-    </div>
+      </div>    </div>
   </div>
-);
+));
 
-export default WhoamiCard; 
+export default WhoamiCard;

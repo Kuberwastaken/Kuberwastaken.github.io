@@ -3,6 +3,7 @@ import './SnakeGame.css';
 
 const SnakeGame = () => {
   const canvasRef = useRef(null);
+  const intervalRef = useRef(null);
   const [snake, setSnake] = useState([{ x: 10, y: 10 }]);
   const [food, setFood] = useState({ x: 15, y: 15 });
   const [direction, setDirection] = useState({ x: 1, y: 0 });
@@ -10,6 +11,8 @@ const SnakeGame = () => {
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    if (!canvas) return;
+    
     const ctx = canvas.getContext('2d');
     const scale = 20;
     const rows = canvas.height / scale;
@@ -53,9 +56,13 @@ const SnakeGame = () => {
       setSnake(newSnake);
     };
 
-    const interval = setInterval(draw, 100);
+    intervalRef.current = setInterval(draw, 100);
 
-    return () => clearInterval(interval);
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
   }, [snake, food, direction, gameOver]);
 
   useEffect(() => {
@@ -124,4 +131,4 @@ const SnakeGame = () => {
   );
 };
 
-export default SnakeGame;
+export default React.memo(SnakeGame);

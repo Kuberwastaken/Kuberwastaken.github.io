@@ -1,7 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, Suspense, lazy, useCallback, useMemo } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import skillsBar from '../constants/skillsBar';
-import projectsContent from '../constants/projectsContent';
 import helpContent from '../constants/helpContent';
 import { showNeofetch } from '../constants/neofetchContent';
 import { getAsciiArt } from '../constants/asciiSelfie';
@@ -9,16 +8,18 @@ import miscContent from '../constants/miscContent';
 import gamesContent from '../constants/gamesContent';
 import PDFViewer from './PDFViewer';
 import HollywoodEffect from './HollywoodEffect/HollywoodEffect';
-import Calculator from './Calculator/Calculator';
-import SnakeGame from './SnakeGame/SnakeGame';
-import TetrisGame from './TetrisGame/TetrisGame';
-import Game2048 from './Game2048/Game2048';
-import TerminalFlappyBird from './FlappyBird/TerminalFlappyBird';
-import Jarvis from './Jarvis/Jarvis';
-import whoamiContent from '../constants/whoami';
 import WhoamiCard from './WhoamiCard';
 import ProjectsMasonry from '../constants/projectsContent';
 
+// Lazy load heavy game components
+const Calculator = lazy(() => import('./Calculator/Calculator'));
+const SnakeGame = lazy(() => import('./SnakeGame/SnakeGame'));
+const TetrisGame = lazy(() => import('./TetrisGame/TetrisGame'));
+const Game2048 = lazy(() => import('./Game2048/Game2048'));
+const TerminalFlappyBird = lazy(() => import('./FlappyBird/TerminalFlappyBird'));
+const Jarvis = lazy(() => import('./Jarvis/Jarvis'));
+
+// Memoized Levenshtein distance calculation
 const levenshteinDistance = (str1, str2) => {
   const m = str1.length;
   const n = str2.length;
@@ -39,6 +40,7 @@ const levenshteinDistance = (str1, str2) => {
   return dp[m][n];
 };
 
+// Memoized command similarity finder
 const findSimilarCommands = (input, availableCommands) => {
   const suggestions = availableCommands
     .map(cmd => ({
@@ -61,9 +63,10 @@ const Terminal = () => {
   const [hackermode, setHackermode] = useState(false);
   const inputRef = useRef(null);
   const terminalRef = useRef(null);
-  const { theme, changeBackgroundColor, backgrounds } = useTheme();
+  const { changeBackgroundColor, backgrounds } = useTheme();
 
-  const availableCommands = [
+  // Memoized available commands array
+  const availableCommands = useMemo(() => [
     'help', 'skills', 's', 'github', 'gh', 'discord', 'ds', 'email', 'em',
     'youtube', 'yt', 'linkedin', 'li', 'ascii-selfie', 'projects', 'pj',
     'blog', 'b', 'clear', 'c', 'games', 'g', 'whoami', 'wiki', 'wikipedia',
@@ -71,7 +74,277 @@ const Terminal = () => {
     'cv', 'jarvis', 'j', 'google', 'snake', 'backdooms', 'tetris', '2048',
     'flappybird', 'time', 'date', 'background', 'theme', 'themes', 'bg',
     'color', 'calculator', 'perplexity', 'perp', 'hackermode'
-  ];
+  ], []);
+
+  // Memoized banners to avoid recreation on every render
+  const banners = useMemo(() => ({
+    large: `
+ 
+.##....##.##.....##.########..########.########.........##.....##.########.##.....##.########....###...
+.##...##..##.....##.##.....##.##.......##.....##........###...###.##.......##.....##....##......##.##..
+.##..##...##.....##.##.....##.##.......##.....##........####.####.##.......##.....##....##.....##...##.
+.#####....##.....##.########..######...########.........##.###.##.######...#########....##....##.....##
+.##..##...##.....##.##.....##.##.......##...##..........##.....##.##.......##.....##....##....#########
+.##...##..##.....##.##.....##.##.......##....##.........##.....##.##.......##.....##....##....##.....##
+.##....##..#######..########..########.##.....##........##.....##.########.##.....##....##....##.....##                                                              `,
+    small: `
+..##....##....##.....##..
+..##...##.....###...###..
+..##..##......####.####..
+..#####.......##.###.##..
+..##..##......##.....##..
+..##...##.....##.....##..
+..##....##....##.....##..`
+  }), []);
+
+  // Memoized add to output function
+  const addToOutput = useCallback((newEntry) => {
+    setOutput(prev => {
+      const updated = [...prev, newEntry];
+      // Keep only the last 100 entries to prevent memory bloat
+      return updated.length > 100 ? updated.slice(-100) : updated;
+    });
+  }, []);
+
+  // Memoized similar commands finder
+  const getSimilarCommands = useCallback((input) => {
+    return findSimilarCommands(input, availableCommands);
+  }, [availableCommands]);
+
+  // Memoized command handler (defined early to avoid dependency issues)
+  const handleCommand = useCallback((command) => {
+    const [cmd, ...args] = command.toLowerCase().trim().split(' ');
+    const argument = args.join(' ');
+
+    // Check if command exists in availableCommands
+    if (!availableCommands.includes(cmd)) {
+      const suggestions = getSimilarCommands(cmd);
+      if (suggestions.length > 0) {
+        const suggestionLinks = suggestions
+          .map(suggestion => `<span class="command-link" style="color: #5abb9a; cursor: pointer;" data-command="${suggestion}">${suggestion}</span>`)
+          .join(', ');
+        addToOutput({ type: 'output', content: `Command not found. Did you mean: ${suggestionLinks}?` });
+        return;
+      }
+    }
+
+    switch (cmd) {
+      case 'skills':
+      case 'sk':
+      case 's':
+        addToOutput({ type: 'output', content: skillsBar });
+        break;
+      case 'github':
+      case 'gh':
+        window.open('https://github.com/Kuberwastaken', '_blank');
+        addToOutput({ type: 'output', content: 'Opening GitHub profile...' });
+        break;
+      case 'discord':
+      case 'ds':
+        window.open('https://discord.com/users/1296085958374068316', '_blank');
+        addToOutput({ type: 'output', content: 'Opening Discord profile...' });
+        break;
+      case 'email':
+      case 'em':
+        window.open('mailto:kuberhob@gmail.com', '_blank');
+        addToOutput({ type: 'output', content: 'Opening email client...' });
+        break;
+      case 'youtube':
+      case 'yt':
+        window.open('https://www.youtube.com/@Kuberwastaken', '_blank');
+        addToOutput({ type: 'output', content: 'Opening YouTube channel...' });
+        break;
+      case 'linkedin':
+      case 'li':
+        window.open('https://www.linkedin.com/in/kubermehta/', '_blank');
+        addToOutput({ type: 'output', content: 'Opening LinkedIn profile...' });
+        break;
+      case 'ascii-selfie':
+        addToOutput({ type: 'output', content: getAsciiArt() });
+        break;
+      case 'projects':
+      case 'pj':
+        addToOutput({ type: 'component', content: <ProjectsMasonry /> });
+        break;
+      case 'blog':
+      case 'b':
+        window.open('https://kuber.studio/blog/', '_blank');
+        addToOutput({ type: 'output', content: 'Opening blog...' });
+        break;
+      case 'clear':
+      case 'c':
+        setOutput([]);
+        break;
+      case 'games':
+      case 'g':
+        addToOutput({ type: 'output', content: gamesContent });
+        break;
+      case 'help':
+        addToOutput({ type: 'output', content: helpContent });
+        break;
+      case "neofetch":
+      case "nf":
+        showNeofetch(addToOutput);
+        break;
+      case 'misc':
+      case 'miscellaneous':
+        addToOutput({ type: 'output', content: miscContent });
+        break;
+      case 'resume':
+      case 'cv':
+        addToOutput({ type: 'component', content: <PDFViewer /> });
+        break;
+      case 'jarvis':
+      case 'j':
+        addToOutput({ type: 'component', content: (
+          <Suspense fallback={<div>Loading Jarvis...</div>}>
+            <Jarvis />
+          </Suspense>
+        ) });
+        break;
+      case 'google':
+        if (argument) {
+          window.open(`https://www.google.com/search?q=${encodeURIComponent(argument)}`, '_blank');
+          addToOutput({ type: 'output', content: `Searching Google for: ${argument}` });
+        } else {
+          addToOutput({ type: 'output', content: 'Please provide a search query.' });
+        }
+        break;
+        case 'whoami':
+          addToOutput({ type: 'component', content: <WhoamiCard /> });
+          break;
+      case 'wiki':
+      case 'wikipedia':
+        if (argument) {
+          window.open(`https://wikipedia.org/w/index.php?search=${encodeURIComponent(argument)}`, '_blank');
+          addToOutput({ type: 'output', content: `Searching Wikipedia for: ${argument}` });
+        } else {
+          addToOutput({ type: 'output', content: 'Please provide a search query.' });
+        }
+        break;
+      case 'chatgpt':
+      case 'gpt':
+        if (argument) {
+          window.open(`https://chatgpt.com/?q=${encodeURIComponent(argument)}`, '_blank');
+          addToOutput({ type: 'output', content: `Searching ChatGPT for: ${argument}` });
+        } else {
+          addToOutput({ type: 'output', content: 'Please provide a search query.' });
+        }
+        break;
+      case 'perplexity':
+      case 'perp':
+        if (argument) {
+          window.open(`https://www.perplexity.ai/?q=${encodeURIComponent(argument)}`, '_blank');
+          addToOutput({ type: 'output', content: `Searching Perplexity for: ${argument}` });
+        } else {
+          addToOutput({ type: 'output', content: 'Please provide a search query.' });
+        }
+        break;
+      case 'hackermode':
+        setHackermode(prev => !prev);
+        addToOutput({ type: 'output', content: `Hackermode ${hackermode ? 'deactivated' : 'activated'}` });
+        break;
+      case 'calculator':
+        addToOutput({ type: 'component', content: (
+          <Suspense fallback={<div>Loading calculator...</div>}>
+            <Calculator />
+          </Suspense>
+        ) });
+        break;
+        case 'snake':
+          addToOutput({ type: 'component', content: (
+            <Suspense fallback={<div>Loading Snake game...</div>}>
+              <SnakeGame />
+            </Suspense>
+          ) });
+          break;
+        case 'backdooms':
+        case 'the backdooms':
+          window.open('https://kuber.studio/backdooms/', '_blank');
+          addToOutput({ type: 'output', content: 'Opening The Backdooms...' });
+          break;
+        case 'tetris':
+          addToOutput({ type: 'component', content: (
+            <Suspense fallback={<div>Loading Tetris game...</div>}>
+              <TetrisGame />
+            </Suspense>
+          ) });
+          break;
+        case '2048':
+          addToOutput({ type: 'component', content: (
+            <Suspense fallback={<div>Loading 2048 game...</div>}>
+              <Game2048 />
+            </Suspense>
+          ) });
+          break;
+        case 'flappybird':
+          addToOutput({ type: 'component', content: (
+            <Suspense fallback={<div>Loading Flappy Bird game...</div>}>
+              <TerminalFlappyBird />
+            </Suspense>
+          ) });
+          break;
+      case 'time':
+        addToOutput({ type: 'output', content: `Current Time: ${new Date().toLocaleTimeString()}` });
+        break;
+      case 'date':
+        addToOutput({ type: 'output', content: `Current Date: ${new Date().toLocaleDateString()}` });
+        break;
+       case 'background':
+       case 'theme':
+       case 'themes':
+       case 'bg':
+       case 'color':
+          if (argument) {
+            const selectedBackground = [...backgrounds.solid, ...backgrounds.gradients].find(bg => bg.name.toLowerCase() === argument.toLowerCase());
+            if (selectedBackground) {
+              changeBackgroundColor(selectedBackground.value);
+              addToOutput({ type: 'output', content: `Background changed to ${selectedBackground.name}` });
+            } else {
+              addToOutput({ type: 'output', content: 'Invalid background. Please choose from the list.' });
+            }
+          } else {
+            const backgroundOptions = [...backgrounds.solid, ...backgrounds.gradients].map(bg => (
+              `<div key="${bg.name}" style="display: inline-block; margin: 5px;">
+                <div style="width: 50px; height: 50px; background: ${bg.value}; cursor: pointer;" onclick="document.dispatchEvent(new CustomEvent('backgroundSelected', { detail: '${bg.name}' }))"></div>
+              </div>`
+            )).join('');
+            addToOutput({ type: 'output', content: `<div style="display: flex; flex-wrap: wrap;">${backgroundOptions}</div>` });
+          }
+          break;
+        default:
+          addToOutput({ type: 'output', content: 'Command not found. Type "help" for a list of commands.' });
+          break;
+      }
+      setInput(''); // Clear the input field after handling the command
+  }, [availableCommands, getSimilarCommands, addToOutput, hackermode, setHackermode, backgrounds, changeBackgroundColor]);
+
+  // Memoized command execution function
+  const executeCommand = useCallback((command) => {
+    setCommandHistory(prev => [...prev, command]);
+    setHistoryIndex(-1);
+    setInput('');
+    handleCommand(command);
+  }, [handleCommand]);
+
+  // Memoized typing simulation function
+  const simulateTyping = useCallback((command) => {
+    if (!command || typeof command !== 'string') {
+      console.error('Invalid command:', command);
+      return;
+    }
+    let index = 0;
+    setInput(''); // Clear input
+    const interval = setInterval(() => {
+      if (index < command.length) {
+        setInput((prev) => prev + command[index]); // Add each character
+        index++;
+      } else {
+        clearInterval(interval);
+        executeCommand(command.trim()); // Ensure no trailing or invalid characters
+      }
+    }, 100);
+  }, [executeCommand]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -87,30 +360,11 @@ const Terminal = () => {
   }, []);
 
   useEffect(() => {
-    const largeBanner = `
- 
-.##....##.##.....##.########..########.########.........##.....##.########.##.....##.########....###...
-.##...##..##.....##.##.....##.##.......##.....##........###...###.##.......##.....##....##......##.##..
-.##..##...##.....##.##.....##.##.......##.....##........####.####.##.......##.....##....##.....##...##.
-.#####....##.....##.########..######...########.........##.###.##.######...#########....##....##.....##
-.##..##...##.....##.##.....##.##.......##...##..........##.....##.##.......##.....##....##....#########
-.##...##..##.....##.##.....##.##.......##....##.........##.....##.##.......##.....##....##....##.....##
-.##....##..#######..########..########.##.....##........##.....##.########.##.....##....##....##.....##                                                              `;
-
-const smallBanner = `
-..##....##....##.....##..
-..##...##.....###...###..
-..##..##......####.####..
-..#####.......##.###.##..
-..##..##......##.....##..
-..##...##.....##.....##..
-..##....##....##.....##..`;
-
     const welcomeMessage = `
       <div style="margin-bottom: 20px;">
       <div class="welcome-banner">
       <pre style="color: #5abb9a;">
-    ${isMobile ? smallBanner : largeBanner}
+    ${isMobile ? banners.small : banners.large}
       </pre>
       </div>
       <div style="margin: 20px 0;">
@@ -140,7 +394,7 @@ const smallBanner = `
     }
 
     return () => observer.disconnect();
-  }, [isMobile]);
+  }, [isMobile, banners.small, banners.large]);
 
   useEffect(() => {
     const handleCommandClick = (event) => {
@@ -155,217 +409,7 @@ const smallBanner = `
     return () => {
       document.removeEventListener('click', handleCommandClick);
     };
-  }, []);
-
-  const simulateTyping = (command) => {
-    if (!command || typeof command !== 'string') {
-      console.error('Invalid command:', command);
-      return;
-    }
-    let index = 0;
-    setInput(''); // Clear input
-    const interval = setInterval(() => {
-      if (index < command.length) {
-        setInput((prev) => prev + command[index]); // Add each character
-        index++;
-      } else {
-        clearInterval(interval);
-        executeCommand(command.trim()); // Ensure no trailing or invalid characters
-      }
-    }, 100);
-  };
-
-  const executeCommand = (command) => {
-    setCommandHistory([...commandHistory, command]);
-    setHistoryIndex(-1);
-    setInput('');
-    handleCommand(command);
-  };
-
-  const handleCommand = (command) => {
-    const [cmd, ...args] = command.toLowerCase().trim().split(' ');
-    const argument = args.join(' ');
-
-    // Check if command exists in availableCommands
-    if (!availableCommands.includes(cmd)) {
-      const suggestions = findSimilarCommands(cmd, availableCommands);
-      if (suggestions.length > 0) {
-        const suggestionLinks = suggestions
-          .map(suggestion => `<span class="command-link" style="color: #5abb9a; cursor: pointer;" data-command="${suggestion}">${suggestion}</span>`)
-          .join(', ');
-        setOutput(prev => [...prev, 
-          { type: 'output', content: `Command not found. Did you mean: ${suggestionLinks}?` }
-        ]);
-        return;
-      }
-    }
-
-    switch (cmd) {
-      case 'skills':
-      case 'sk':
-      case 's':
-        setOutput(prev => [...prev, { type: 'output', content: skillsBar }]);
-        break;
-      case 'github':
-      case 'gh':
-        window.open('https://github.com/Kuberwastaken', '_blank');
-        setOutput(prev => [...prev, { type: 'output', content: 'Opening GitHub profile...' }]);
-        break;
-      case 'discord':
-      case 'ds':
-        window.open('https://discord.com/users/1296085958374068316', '_blank');
-        setOutput(prev => [...prev, { type: 'output', content: 'Opening Discord profile...' }]);
-        break;
-      case 'email':
-      case 'em':
-        window.open('mailto:kuberhob@gmail.com', '_blank');
-        setOutput(prev => [...prev, { type: 'output', content: 'Opening email client...' }]);
-        break;
-      case 'youtube':
-      case 'yt':
-        window.open('https://www.youtube.com/@Kuberwastaken', '_blank');
-        setOutput(prev => [...prev, { type: 'output', content: 'Opening YouTube channel...' }]);
-        break;
-      case 'linkedin':
-      case 'li':
-        window.open('https://www.linkedin.com/in/kubermehta/', '_blank');
-        setOutput(prev => [...prev, { type: 'output', content: 'Opening LinkedIn profile...' }]);
-        break;
-      case 'ascii-selfie':
-        setOutput(prev => [...prev, { type: 'output', content: getAsciiArt() }]);
-        break;
-      case 'projects':
-      case 'pj':
-        setOutput(prev => [...prev, { type: 'component', content: <ProjectsMasonry /> }]);
-        break;
-      case 'blog':
-      case 'b':
-        window.open('https://kuber.studio/blog/', '_blank');
-        setOutput(prev => [...prev, { type: 'output', content: 'Opening blog...' }]);
-        break;
-      case 'clear':
-      case 'c':
-        setOutput([]);
-        break;
-      case 'games':
-      case 'g':
-        setOutput(prev => [...prev, { type: 'output', content: gamesContent }]);
-        break;
-      case 'help':
-        setOutput(prev => [...prev, { type: 'output', content: helpContent }]);
-        break;
-      case "neofetch":
-      case "nf":
-        showNeofetch(setOutput);
-        break;
-      case 'misc':
-      case 'miscellaneous':
-        setOutput(prev => [...prev, { type: 'output', content: miscContent }]);
-        break;
-      case 'resume':
-      case 'cv':
-        setOutput(prev => [...prev, { type: 'component', content: <PDFViewer /> }]);
-        break;
-      case 'jarvis':
-      case 'j':
-        setOutput(prev => [...prev, { type: 'component', content: <Jarvis /> }]);
-        break;
-      case 'google':
-        if (argument) {
-          window.open(`https://www.google.com/search?q=${encodeURIComponent(argument)}`, '_blank');
-          setOutput(prev => [...prev, { type: 'output', content: `Searching Google for: ${argument}` }]);
-        } else {
-          setOutput(prev => [...prev, { type: 'output', content: 'Please provide a search query.' }]);
-        }
-        break;
-        case 'whoami':
-          setOutput(prev => [...prev, { type: 'component', content: <WhoamiCard /> }]);
-          break;
-      case 'wiki':
-      case 'wikipedia':
-        if (argument) {
-          window.open(`https://wikipedia.org/w/index.php?search=${encodeURIComponent(argument)}`, '_blank');
-          setOutput(prev => [...prev, { type: 'output', content: `Searching Wikipedia for: ${argument}` }]);
-        } else {
-          setOutput(prev => [...prev, { type: 'output', content: 'Please provide a search query.' }]);
-        }
-        break;
-      case 'chatgpt':
-      case 'gpt':
-        if (argument) {
-          window.open(`https://chatgpt.com/?q=${encodeURIComponent(argument)}`, '_blank');
-          setOutput(prev => [...prev, { type: 'output', content: `Searching ChatGPT for: ${argument}` }]);
-        } else {
-          setOutput(prev => [...prev, { type: 'output', content: 'Please provide a search query.' }]);
-        }
-        break;
-      case 'perplexity':
-      case 'perp':
-        if (argument) {
-          window.open(`https://www.perplexity.ai/?q=${encodeURIComponent(argument)}`, '_blank');
-          setOutput(prev => [...prev, { type: 'output', content: `Searching Perplexity for: ${argument}` }]);
-        } else {
-          setOutput(prev => [...prev, { type: 'output', content: 'Please provide a search query.' }]);
-        }
-        break;
-      case 'hackermode':
-        setHackermode(prev => !prev);
-        setOutput(prev => [...prev, { type: 'output', content: `Hackermode ${hackermode ? 'deactivated' : 'activated'}` }]);
-        break;
-      case 'calculator':
-        setOutput(prev => [...prev, { type: 'component', content: <Calculator /> }]);
-        break;
-        case 'snake':
-          setOutput(prev => [...prev, { type: 'component', content: <SnakeGame /> }]);
-          break;
-        case 'backdooms':
-        case 'the backdooms':
-          window.open('https://kuber.studio/backdooms/', '_blank');
-          setOutput(prev => [...prev, { type: 'output', content: 'Opening The Backdooms...' }]);
-          break;
-        case 'tetris':
-          setOutput(prev => [...prev, { type: 'component', content: <TetrisGame /> }]);
-          break;
-        case '2048':
-          setOutput(prev => [...prev, { type: 'component', content: <Game2048 /> }]);
-          break;
-        case 'flappybird':
-          setOutput(prev => [...prev, { type: 'component', content: <TerminalFlappyBird /> }]);
-          break;
-      case 'time':
-        setOutput(prev => [...prev, { type: 'output', content: `Current Time: ${new Date().toLocaleTimeString()}` }]);
-        break;
-      case 'date':
-        setOutput(prev => [...prev, { type: 'output', content: `Current Date: ${new Date().toLocaleDateString()}` }]);
-        break;
-       case 'background':
-       case 'theme':
-       case 'themes':
-       case 'bg':
-       case 'color':
-          if (argument) {
-            const selectedBackground = [...backgrounds.solid, ...backgrounds.gradients].find(bg => bg.name.toLowerCase() === argument.toLowerCase());
-            if (selectedBackground) {
-              changeBackgroundColor(selectedBackground.value);
-              setOutput(prev => [...prev, { type: 'output', content: `Background changed to ${selectedBackground.name}` }]);
-            } else {
-              setOutput(prev => [...prev, { type: 'output', content: 'Invalid background. Please choose from the list.' }]);
-            }
-          } else {
-            const backgroundOptions = [...backgrounds.solid, ...backgrounds.gradients].map(bg => (
-              `<div key="${bg.name}" style="display: inline-block; margin: 5px;">
-                <div style="width: 50px; height: 50px; background: ${bg.value}; cursor: pointer;" onclick="document.dispatchEvent(new CustomEvent('backgroundSelected', { detail: '${bg.name}' }))"></div>
-              </div>`
-            )).join('');
-            setOutput(prev => [...prev, { type: 'output', content: `<div style="display: flex; flex-wrap: wrap;">${backgroundOptions}</div>` }]);
-          }
-          break;
-        default:
-          setOutput(prev => [...prev, { type: 'output', content: 'Command not found. Type "help" for a list of commands.' }]);
-          break;
-      }
-      setInput(''); // Clear the input field after handling the command
-    };
+  }, [simulateTyping]);
 
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
@@ -373,10 +417,7 @@ const smallBanner = `
       if (command) {
         setCommandHistory(prev => [...prev, command]);
         setHistoryIndex(prev => prev + 1);
-        setOutput(prev => [
-          ...prev,
-          { type: 'input', content: command }
-        ]);
+        addToOutput({ type: 'input', content: command });
         handleCommand(command);
         e.target.value = '';
       }
@@ -403,7 +444,7 @@ const smallBanner = `
       const selectedBackground = [...backgrounds.solid, ...backgrounds.gradients].find(bg => bg.name === event.detail);
       if (selectedBackground) {
         changeBackgroundColor(selectedBackground.value);
-        setOutput(prev => [...prev, { type: 'output', content: `Background changed to ${selectedBackground.name}` }]);
+        addToOutput({ type: 'output', content: `Background changed to ${selectedBackground.name}` });
       }
     };
 
@@ -412,11 +453,11 @@ const smallBanner = `
     return () => {
       document.removeEventListener('backgroundSelected', handleBackgroundSelected);
     };
-  }, [backgrounds, changeBackgroundColor]);
+  }, [backgrounds, changeBackgroundColor, addToOutput]);
 
   return (
     <div id="terminal" className="terminal-container" ref={terminalRef}>
-      {hackermode && <HollywoodEffect />} {/* MAKE SURE IT HAPPENS WHEN HACKERMODE IS ON */}
+      {hackermode && <HollywoodEffect />}
       {output.map((item, index) => (
     <div key={index}>
         {item.type === 'input' ? (
@@ -431,7 +472,6 @@ const smallBanner = `
         )}
     </div>
 ))}
-
 
       <div className="command-input">
         <span className="prompt">
