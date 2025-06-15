@@ -1,7 +1,11 @@
 {
-  "name": "portfolio-react",
+  "name": "kuber-mehta-portfolio",
   "homepage": "https://kuber.studio",
-  "version": "0.1.0",
+  "version": "1.6.9",
+  "description": "Kuber Mehta's Portfolio - AI Developer & Full Stack Engineer showcase featuring terminal-style interface, interactive games, and innovative projects",
+  "keywords": ["portfolio", "react", "ai-developer", "full-stack", "terminal", "kuber-mehta", "javascript", "web-development"],
+  "author": "Kuber Mehta <contact@kuber.studio>",
+  "license": "GNU LESSER GENERAL PUBLIC LICENSE",
   "private": true,
   "dependencies": {
     "@react-pdf-viewer/core": "^3.12.0",
