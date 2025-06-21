@@ -341,15 +341,26 @@ const Terminal = () => {
       console.error('Invalid command:', command);
       return;
     }
+    
+    // Clean the command string to ensure no undefined characters
+    const cleanCommand = command.trim();
+    if (!cleanCommand) {
+      console.error('Empty command after trimming:', command);
+      return;
+    }
+    
     let index = 0;
     setInput(''); // Clear input
     const interval = setInterval(() => {
-      if (index < command.length) {
-        setInput((prev) => prev + command[index]); // Add each character
+      if (index < cleanCommand.length) {
+        const char = cleanCommand[index];
+        if (char !== undefined && char !== null) {
+          setInput((prev) => prev + char); // Add each character
+        }
         index++;
       } else {
         clearInterval(interval);
-        executeCommand(command.trim()); // Ensure no trailing or invalid characters
+        executeCommand(cleanCommand);
       }
     }, 100);
   }, [executeCommand]);
@@ -408,7 +419,11 @@ const Terminal = () => {
     const handleCommandClick = (event) => {
       if (event.target.classList.contains('command-link')) {
         const command = event.target.getAttribute('data-command');
-        simulateTyping(command);
+        if (command && command.trim()) {
+          simulateTyping(command.trim());
+        } else {
+          console.error('Invalid command from click:', command);
+        }
       }
     };
 
