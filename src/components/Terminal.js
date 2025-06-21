@@ -17,6 +17,7 @@ const SnakeGame = lazy(() => import('./SnakeGame/SnakeGame'));
 const TetrisGame = lazy(() => import('./TetrisGame/TetrisGame'));
 const Game2048 = lazy(() => import('./Game2048/Game2048'));
 const TerminalFlappyBird = lazy(() => import('./FlappyBird/TerminalFlappyBird'));
+const GameOfLife = lazy(() => import('./GameOfLife/GameOfLife'));
 const Jarvis = lazy(() => import('./Jarvis/Jarvis'));
 
 // Memoized Levenshtein distance calculation
@@ -72,7 +73,7 @@ const Terminal = () => {
     'blog', 'b', 'clear', 'c', 'games', 'g', 'whoami', 'wiki', 'wikipedia',
     'chatgpt', 'gpt', 'neofetch', 'nf', 'misc', 'miscellaneous', 'resume',
     'cv', 'jarvis', 'j', 'google', 'snake', 'backdooms', 'tetris', '2048',
-    'flappybird', 'time', 'date', 'background', 'theme', 'themes', 'bg',
+    'flappybird', 'gameoflife', 'time', 'date', 'background', 'theme', 'themes', 'bg',
     'color', 'calculator', 'perplexity', 'perp', 'hackermode'
   ], []);
 
@@ -281,6 +282,13 @@ const Terminal = () => {
           addToOutput({ type: 'component', content: (
             <Suspense fallback={<div>Loading Flappy Bird game...</div>}>
               <TerminalFlappyBird />
+            </Suspense>
+          ) });
+          break;
+        case 'gameoflife':
+          addToOutput({ type: 'component', content: (
+            <Suspense fallback={<div>Loading Game of Life...</div>}>
+              <GameOfLife />
             </Suspense>
           ) });
           break;
