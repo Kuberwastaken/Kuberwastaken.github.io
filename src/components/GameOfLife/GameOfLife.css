@@ -1,0 +1,250 @@
+.gameoflife-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  background: rgba(30, 30, 30, 0.95);
+  border-radius: 12px;
+  border: 1px solid rgba(90, 187, 154, 0.3);
+  margin: 10px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.gameoflife-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.gameoflife-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.gameoflife-btn {
+  background: rgba(90, 187, 154, 0.1);
+  color: #5abb9a;
+  border: 1px solid #5abb9a;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.gameoflife-btn:hover {
+  background: rgba(90, 187, 154, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(90, 187, 154, 0.2);
+}
+
+.gameoflife-btn:active {
+  transform: translateY(0);
+}
+
+.gameoflife-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.gameoflife-settings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.speed-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.gameoflife-speed-btn {
+  background: rgba(255, 235, 205, 0.1);
+  color: #ffebcd;
+  border: 1px solid rgba(255, 235, 205, 0.3);
+  padding: 4px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  transition: all 0.3s ease;
+}
+
+.gameoflife-speed-btn:hover {
+  background: rgba(255, 235, 205, 0.2);
+}
+
+.gameoflife-speed-btn.active {
+  background: #5abb9a;
+  color: #000;
+  border-color: #5abb9a;
+}
+
+.grid-toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.grid-toggle input[type="checkbox"] {
+  accent-color: #5abb9a;
+  margin-right: 5px;
+}
+
+.gameoflife-stats {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.gameoflife-canvas {
+  background-color: #0a0a0a;
+  border: 2px solid #5abb9a;
+  border-radius: 8px;
+  cursor: crosshair;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  touch-action: none;
+}
+
+.gameoflife-canvas:hover {
+  border-color: #6bcca8;
+  box-shadow: 0 0 15px rgba(90, 187, 154, 0.3);
+}
+
+.gameoflife-instructions {
+  max-width: 600px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .gameoflife-container {
+    padding: 15px;
+    margin: 5px;
+  }
+
+  .gameoflife-canvas {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .gameoflife-controls {
+    gap: 8px;
+  }
+
+  .gameoflife-btn {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+
+  .gameoflife-settings {
+    gap: 15px;
+  }
+
+  .gameoflife-stats {
+    gap: 15px;
+    font-size: 12px;
+  }
+
+  .gameoflife-instructions p {
+    font-size: 11px;
+  }
+
+  .speed-controls {
+    gap: 3px;
+  }
+
+  .gameoflife-speed-btn {
+    padding: 3px 8px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gameoflife-container {
+    padding: 10px;
+  }
+
+  .gameoflife-canvas {
+    max-width: 280px;
+  }
+
+  .gameoflife-controls {
+    gap: 5px;
+  }
+
+  .gameoflife-btn {
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+
+  .gameoflife-header h3 {
+    font-size: 16px;
+  }
+
+  .gameoflife-header p {
+    font-size: 12px;
+  }
+
+  .gameoflife-stats {
+    flex-direction: column;
+    gap: 5px;
+    font-size: 11px;
+  }
+}
+
+/* Animation for cell changes */
+@keyframes cellBirth {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.gameoflife-canvas.animating {
+  animation: pulse 0.1s ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+  100% { transform: scale(1); }
+}
+
+/* Custom scrollbar for container if needed */
+.gameoflife-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.gameoflife-container::-webkit-scrollbar-track {
+  background: rgba(255, 235, 205, 0.1);
+  border-radius: 3px;
+}
+
+.gameoflife-container::-webkit-scrollbar-thumb {
+  background: #5abb9a;
+  border-radius: 3px;
+}
+
+.gameoflife-container::-webkit-scrollbar-thumb:hover {
+  background: #6bcca8;
+} 

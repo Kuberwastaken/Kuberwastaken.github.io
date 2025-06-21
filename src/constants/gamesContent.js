@@ -7,6 +7,7 @@ const gamesContent = `
     <span class="command-link" data-command="tetris" style="color: #5abb9a;">[tetris]</span> - Play Tetris Game<br>
     <span class="command-link" data-command="2048" style="color: #5abb9a;">[2048]</span> - Play 2048 Game<br>
     <span class="command-link" data-command="flappybird" style="color: #5abb9a;">[flappybird]</span> - Play Flappy Bird Game<br>
+    <span class="command-link" data-command="gameoflife" style="color: #5abb9a;">[gameoflife]</span> - Play Kuber's Game of Life<br>
   </p>
 </div>`;
 
