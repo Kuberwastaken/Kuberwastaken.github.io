@@ -144,12 +144,14 @@
   }
 
   .gameoflife-controls {
-    gap: 8px;
+    gap: 12px;
   }
 
   .gameoflife-btn {
-    padding: 6px 12px;
-    font-size: 11px;
+    padding: 12px 18px;
+    font-size: 14px;
+    min-height: 44px;
+    min-width: 80px;
   }
 
   .gameoflife-settings {
@@ -157,54 +159,90 @@
   }
 
   .gameoflife-stats {
-    gap: 15px;
-    font-size: 12px;
+    gap: 20px;
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
   }
 
   .gameoflife-instructions p {
-    font-size: 11px;
+    font-size: 13px;
   }
 
   .speed-controls {
-    gap: 3px;
+    gap: 8px;
   }
 
   .gameoflife-speed-btn {
-    padding: 3px 8px;
-    font-size: 10px;
+    padding: 8px 12px;
+    font-size: 12px;
+    min-height: 36px;
   }
 }
 
 @media (max-width: 480px) {
   .gameoflife-container {
-    padding: 10px;
+    padding: 15px;
   }
 
   .gameoflife-canvas {
-    max-width: 280px;
+    max-width: 300px;
   }
 
   .gameoflife-controls {
-    gap: 5px;
+    gap: 10px;
+    justify-content: center;
   }
 
   .gameoflife-btn {
-    padding: 5px 10px;
-    font-size: 10px;
+    padding: 14px 20px;
+    font-size: 14px;
+    min-height: 48px;
+    min-width: 90px;
+    flex: 1;
+    max-width: 120px;
   }
 
   .gameoflife-header h3 {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .gameoflife-header p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .gameoflife-stats {
-    flex-direction: column;
-    gap: 5px;
-    font-size: 11px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .gameoflife-stats > div {
+    flex: 1;
+    text-align: center;
+    min-width: 120px;
+  }
+
+  .gameoflife-settings {
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .speed-controls {
+    gap: 10px;
+  }
+
+  .gameoflife-speed-btn {
+    padding: 10px 14px;
+    font-size: 13px;
+    min-height: 40px;
+  }
+
+  .gameoflife-instructions p {
+    font-size: 14px;
   }
 }
 
