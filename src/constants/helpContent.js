@@ -10,6 +10,7 @@ const helpContent = `
     <span class="command-link" data-command="blog" style="color: #5abb9a;">[blog] or [b]</span><br>
     <span class="command-link" data-command="resume" style="color: #5abb9a;">[resume] or [cv]</span><br>
     <span class="command-link" data-command="jarvis" style="color: #5abb9a;">[jarvis] or [j]</span><br>
+    <span class="command-link" data-command="tos" style="color: #5abb9a;">[tos]</span><br>
     <span class="command-link" data-command="clear" style="color: #5abb9a;">[clear]</span>
   </p>
   

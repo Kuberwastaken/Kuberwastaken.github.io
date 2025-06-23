@@ -3,7 +3,16 @@
   "homepage": "https://kuber.studio",
   "version": "1.6.9",
   "description": "Kuber Mehta's Portfolio - AI Developer & Full Stack Engineer showcase featuring terminal-style interface, interactive games, and innovative projects",
-  "keywords": ["portfolio", "react", "ai-developer", "full-stack", "terminal", "kuber-mehta", "javascript", "web-development"],
+  "keywords": [
+    "portfolio",
+    "react",
+    "ai-developer",
+    "full-stack",
+    "terminal",
+    "kuber-mehta",
+    "javascript",
+    "web-development"
+  ],
   "author": "Kuber Mehta <contact@kuber.studio>",
   "license": "GNU LESSER GENERAL PUBLIC LICENSE",
   "private": true,
@@ -13,6 +22,7 @@
     "cra-template": "1.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-router-dom": "^7.6.2",
     "react-scripts": "^5.0.1",
     "web-vitals": "^4.2.4"
   },

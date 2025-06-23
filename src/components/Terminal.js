@@ -74,7 +74,7 @@ const Terminal = () => {
     'chatgpt', 'gpt', 'neofetch', 'nf', 'misc', 'miscellaneous', 'resume',
     'cv', 'jarvis', 'j', 'google', 'snake', 'backdooms', 'tetris', '2048',
     'flappybird', 'gameoflife', 'time', 'date', 'background', 'theme', 'themes', 'bg',
-    'color', 'calculator', 'perplexity', 'perp', 'hackermode'
+    'color', 'calculator', 'perplexity', 'perp', 'hackermode', 'tos'
   ], []);
 
   // Memoized banners to avoid recreation on every render
@@ -319,6 +319,10 @@ const Terminal = () => {
             )).join('');
             addToOutput({ type: 'output', content: `<div style="display: flex; flex-wrap: wrap;">${backgroundOptions}</div>` });
           }
+          break;
+        case 'tos':
+          window.open('/tos', '_blank');
+          addToOutput({ type: 'output', content: 'Opening Terms of Service...' });
           break;
         default:
           addToOutput({ type: 'output', content: 'Command not found. Type "help" for a list of commands.' });
