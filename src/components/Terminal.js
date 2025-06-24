@@ -74,7 +74,7 @@ const Terminal = () => {
     'chatgpt', 'gpt', 'neofetch', 'nf', 'misc', 'miscellaneous', 'resume',
     'cv', 'jarvis', 'j', 'google', 'snake', 'backdooms', 'tetris', '2048',
     'flappybird', 'gameoflife', 'time', 'date', 'background', 'theme', 'themes', 'bg',
-    'color', 'calculator', 'perplexity', 'perp', 'hackermode', 'tos'
+    'color', 'calculator', 'perplexity', 'perp', 'hackermode'
   ], []);
 
   // Memoized banners to avoid recreation on every render
