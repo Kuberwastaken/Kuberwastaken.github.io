@@ -4,6 +4,9 @@ const miscContent = `
   <p style="margin: 10px 0;">
     <span class="command-link" data-command="ascii-selfie" style="color: #5abb9a;">[ascii-selfie]</span> - See a Selfie of me :)<br>
     <span class="command-link" data-command="calculator" style="color: #5abb9a;">[calculator]</span> - People Build Projects for Calculators, I put Calculators in Projects<br>
+    <span class="command-link" data-command="qr-generator" style="color: #5abb9a;">[qr-generator]</span> - Generate QR codes for text/URLs<br>
+    <span class="command-link" data-command="password-generator" style="color: #5abb9a;">[password-generator]</span> - Secure password generation<br>
+    <span class="command-link" data-command="github-feed" style="color: #5abb9a;">[github-feed]</span> - Live updates from my GitHub repositories<br>
     <span class="command-link" data-command="neofetch" style="color: #5abb9a;">[neofetch]</span> - Neofetch<br>
     <span class="command-link" data-command="google" style="color: #5abb9a;">[google query]</span> - Search Google<br>
     <span class="command-link" data-command="youtube" style="color: #5abb9a;">[youtube query]</span> - Search YouTube<br>

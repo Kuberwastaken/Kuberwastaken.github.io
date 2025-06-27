@@ -20,6 +20,11 @@ const TerminalFlappyBird = lazy(() => import('./FlappyBird/TerminalFlappyBird'))
 const GameOfLife = lazy(() => import('./GameOfLife/GameOfLife'));
 const Jarvis = lazy(() => import('./Jarvis/Jarvis'));
 
+// Lazy load utility components
+const QRGenerator = lazy(() => import('./QRGenerator/QRGenerator'));
+const PasswordGenerator = lazy(() => import('./PasswordGenerator/PasswordGenerator'));
+const GitHubFeed = lazy(() => import('./GitHubFeed/GitHubFeed'));
+
 // Memoized Levenshtein distance calculation
 const levenshteinDistance = (str1, str2) => {
   const m = str1.length;
@@ -74,7 +79,8 @@ const Terminal = () => {
     'chatgpt', 'gpt', 'neofetch', 'nf', 'misc', 'miscellaneous', 'resume',
     'cv', 'jarvis', 'j', 'google', 'snake', 'backdooms', 'tetris', '2048',
     'flappybird', 'gameoflife', 'time', 'date', 'background', 'theme', 'themes', 'bg',
-    'color', 'calculator', 'perplexity', 'perp', 'hackermode'
+    'color', 'calculator', 'perplexity', 'perp', 'hackermode', 'qr-generator', 
+    'password-generator', 'github-feed'
   ], []);
 
   // Memoized banners to avoid recreation on every render
@@ -245,10 +251,31 @@ const Terminal = () => {
         setHackermode(prev => !prev);
         addToOutput({ type: 'output', content: `Hackermode ${hackermode ? 'deactivated' : 'activated'}` });
         break;
-      case 'calculator':
+              case 'calculator':
         addToOutput({ type: 'component', content: (
           <Suspense fallback={<div>Loading calculator...</div>}>
             <Calculator />
+          </Suspense>
+        ) });
+        break;
+      case 'qr-generator':
+        addToOutput({ type: 'component', content: (
+          <Suspense fallback={<div>Loading QR Generator...</div>}>
+            <QRGenerator />
+          </Suspense>
+        ) });
+        break;
+      case 'password-generator':
+        addToOutput({ type: 'component', content: (
+          <Suspense fallback={<div>Loading Password Generator...</div>}>
+            <PasswordGenerator />
+          </Suspense>
+        ) });
+        break;
+      case 'github-feed':
+        addToOutput({ type: 'component', content: (
+          <Suspense fallback={<div>Loading GitHub Feed...</div>}>
+            <GitHubFeed />
           </Suspense>
         ) });
         break;
