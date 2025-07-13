@@ -2,7 +2,7 @@ const helpContent = `
 <div style="margin: 20px 0;">
   <h3>Available Commands:</h3>
   <p style="margin: 10px 0;">
-    <span class="command-link" data-command="whoami" style="color: #5abb9a;">[whoami]</span><br>
+    <span class="command-link" data-command="who" style="color: #5abb9a;">[who] or [w]</span><br>
     <span class="command-link" data-command="skills" style="color: #5abb9a;">[skills] or [s]</span><br>
     <span class="command-link" data-command="projects" style="color: #5abb9a;">[projects] or [pj]</span><br>
     <span class="command-link" data-command="misc" style="color: #5abb9a;">[miscellaneous] or [misc]</span><br>

@@ -75,7 +75,7 @@ const Terminal = () => {
   const availableCommands = useMemo(() => [
     'help', 'skills', 's', 'github', 'gh', 'discord', 'ds', 'email', 'em',
     'youtube', 'yt', 'linkedin', 'li', 'ascii-selfie', 'projects', 'pj',
-    'blog', 'b', 'clear', 'c', 'games', 'g', 'whoami', 'wiki', 'wikipedia',
+    'blog', 'b', 'clear', 'c', 'games', 'g', 'who', 'w', 'wiki', 'wikipedia',
     'chatgpt', 'gpt', 'neofetch', 'nf', 'misc', 'miscellaneous', 'resume',
     'cv', 'jarvis', 'j', 'google', 'snake', 'backdooms', 'tetris', '2048',
     'flappybird', 'gameoflife', 'time', 'date', 'background', 'theme', 'themes', 'bg',
@@ -217,7 +217,8 @@ const Terminal = () => {
           addToOutput({ type: 'output', content: 'Please provide a search query.' });
         }
         break;
-        case 'whoami':
+        case 'who':
+        case 'w':
           addToOutput({ type: 'component', content: <WhoamiCard /> });
           break;
       case 'wiki':
