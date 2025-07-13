@@ -191,7 +191,7 @@ Try it out yourself 🙃
 ### **Available Commands** (30+ total)
 ```bash
 # Navigation & Information
-help, whoami, skills, projects, resume, blog
+help, who, skills, projects, resume, blog
 
 # Games & Entertainment  
 games, snake, tetris, 2048, flappybird, backdooms
