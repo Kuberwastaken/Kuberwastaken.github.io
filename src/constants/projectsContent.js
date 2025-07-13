@@ -2,8 +2,15 @@ import React, { useState } from 'react';
 
 const projects = [
   {
+    title: 'GitHub View Counter',
+    description: "My GitHub Profile View Counter with 100k+ visits went down, so I made my own which looks way better, has multiple themes and won't ever be down, all for free.",
+    website: 'https://counter.kuber.studio/',
+    github: null,
+    extra: [],
+  },
+  {
     title: 'PolyThink',
-    description: `PolyThink is a multi-agent AI system where multiple models collaborate and fact-check each other to eliminate hallucinations and provide reliable answers.`,
+    description: `A multi-agent AI system where multiple models collaborate and fact-check each other to eliminate hallucinations and provide reliable answers.`,
     website: 'https://www.polyth.ink/',
     github: null,
     extra: [],
@@ -32,7 +39,7 @@ const projects = [
   },
   {
     title: 'Backdooms',
-    description: `A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.6kB in size.`,
+    description: `A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.6kB in size, using a custom, NASA Scientist cited web compression algorithm.`,
     website: 'https://kuber.studio/backdooms/',
     github: 'https://github.com/Kuberwastaken/backdooms',
     extra: [],
@@ -143,7 +150,8 @@ const MobileProjectsCarousel = () => {
   const goRight = () => setCurrent((prev) => (prev === total - 1 ? 0 : prev + 1));
   const project = projects[current];  // Faux webpage image logic for mobile
   const jsdelivrBase =
-    'https://cdn.jsdelivr.net/gh/Kuberwastaken/Kuberwastaken.github.io/public/';const fauxWebImage =
+    'https://cdn.jsdelivr.net/gh/Kuberwastaken/Kuberwastaken.github.io/public/';  const fauxWebImage =
+    project.title === 'GitHub View Counter' ? jsdelivrBase + 'kuberwastaken-counter.png' :
     project.title === 'ORCUS' ? jsdelivrBase + 'kuberwastaken-orcus.png' :
     project.title === 'Free Deep Research' ? jsdelivrBase + 'kuberwastaken-freedeepresearch.png' :
     project.title === 'Books Re-imagined' ? jsdelivrBase + 'kuberwastaken-booksreimagined.png' :
@@ -314,7 +322,7 @@ const ProjectsMasonry = () => (
                   }}
                 />
       </div>
-            ) : (['ORCUS', 'Free Deep Research', 'Books Re-imagined', 'MEOW'].includes(project.title)) ? (
+            ) : (['GitHub View Counter', 'ORCUS', 'Free Deep Research', 'Books Re-imagined', 'MEOW'].includes(project.title)) ? (
               <div
                 style={{
                   marginBottom: 16,
@@ -332,6 +340,7 @@ const ProjectsMasonry = () => (
                 className="project-fauxwebpage-container"
               >
                 <div style={{height: '100%', width: '100%', overflowY: 'auto', overflowX: 'hidden', background: '#fff'}}>                  <img                    src={
+                      project.title === 'GitHub View Counter' ? '/kuberwastaken-counter.png' :
                       project.title === 'ORCUS' ? '/kuberwastaken-orcus.png' :
                       project.title === 'Free Deep Research' ? '/kuberwastaken-freedeepresearch.png' :
                       project.title === 'Engram' ? '/kuberwastaken-engram.png' :
