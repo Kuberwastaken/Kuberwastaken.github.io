@@ -1,5 +1,23 @@
 import React, { useState } from 'react';
 
+// Convert simple markdown links and newlines in descriptions to safe HTML
+const formatDescriptionToHtml = (raw) => {
+  if (!raw || typeof raw !== 'string') return '';
+  // Escape HTML
+  const escaped = raw
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/\"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+  // Convert [text](url)
+  const withLinks = escaped.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, (_m, text, url) => {
+    return `<a href="${url}" target="_blank" rel="noopener noreferrer" style="color: #5abb9a; text-decoration: underline;">${text}</a>`;
+  });
+  // Convert newlines to <br/>
+  return withLinks.replace(/\n/g, '<br/>');
+};
+
 const projects = [
   {
     title: 'GitHub View Counter',
@@ -13,6 +31,14 @@ const projects = [
     description: `A multi-agent AI system where multiple models collaborate and fact-check each other to eliminate hallucinations and provide reliable answers.`,
     website: 'https://www.polyth.ink/',
     github: null,
+    extra: [],
+  },
+  {
+    title: 'SecondYou',
+    description: `A Private, Local-First AI that Thinks and Writes like You, runs on a finetuned version of Gemma3N made to embody you with access to your texts, emails, blogs, social media and more to create your AI persona. Ideated during the Nas Daily AI Summer Residency.`,
+    website: 'https://www.secondyou.app/',
+    github: null,
+    showIframe: true,
     extra: [],
   },
   {
@@ -31,7 +57,7 @@ const projects = [
   },
   {
     title: 'MEOW',
-    description: 'The most Purr-fect Image File Format for your AI workflows, PNG on steroids.',
+    description: 'Top Show-HN for 3 days, became a memecoin that reached $200k and went viral on Web-3 Circles on X \n\n The most Purr-fect Image File Format for your AI workflows, PNG on steroids.',
     website: null,
     github: 'https://github.com/Kuberwastaken/meow',
     showIframe: false,
@@ -39,7 +65,7 @@ const projects = [
   },
   {
     title: 'Backdooms',
-    description: `A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.6kB in size, using a custom, NASA Scientist cited web compression algorithm.`,
+    description: `One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. \n\n A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.4kB in size, using a custom, NASA Scientist cited web compression algorithm.`,
     website: 'https://kuber.studio/backdooms/',
     github: 'https://github.com/Kuberwastaken/backdooms',
     extra: [],
@@ -52,6 +78,14 @@ const projects = [
     extra: [],
   },
   {
+    title: 'PrayGo',
+    description: `Main project for the Nas Daily AI Residency - DuoLingo for Religion. The world's first AI-powered religious education platform. Experience personalized, gamified lessons that adapt to your learning style while exploring world religions with respect and authenticity.`,
+    website: 'https://www.sacredsteps.app/',
+    github: null,
+    showIframe: true,
+    extra: [],
+  },
+  {
     title: 'Engram',
     description: `The centralized, No BS, Biggest Open-Source Notes and Resources Aggregator for IP University Engineering`,
     website: 'https://engram.kuber.studio/',
@@ -61,7 +95,7 @@ const projects = [
   },
   {
     title: 'CottagOS',
-    description: `Won first place at Hack Club SiteJam!\nCottagOS is a lovingly crafted, interactive desktop experience inspired by the aesthetics of cottagecore and the magic of enchanted forests. It simulates a cozy OS environment, complete with draggable windows, animated desktop, and a suite of charming mini-apps—all wrapped in a warm, nature-inspired UI.`,
+    description: `Won first place at Hack Club SiteJam!\n\nCottagOS is a lovingly crafted, interactive desktop experience inspired by the aesthetics of cottagecore and the magic of enchanted forests. It simulates a cozy OS environment, complete with draggable windows, animated desktop, and a suite of charming mini-apps—all wrapped in a warm, nature-inspired UI.`,
     website: 'https://cottagos.kuber.studio/',
     github: 'https://github.com/Kuberwastaken/CottagOS',
     showIframe: true,
@@ -101,7 +135,7 @@ const projects = [
   },
   {
     title: 'Books Re-imagined',
-    description: `An AI tool that transforms the narrative perspective of popular literature. In this case, it retells Diary of a Wimpy Kid: Rodrick Rules from Rodrick's point of view using Google Gemini 1.5.`,
+    description: `Top 10 Google x Kaggle Long Context AI Hackathon \n\n An AI tool that transforms the narrative perspective of popular literature. In this case, it retells Diary of a Wimpy Kid: Rodrick Rules from Rodrick's point of view using Google Gemini 1.5.`,
     website: 'https://www.kaggle.com/code/kubermehta/books-reimagined-diary-of-a-wimpy-kid-by-rodrick',
     github: null,
     showIframe: true,
@@ -160,7 +194,9 @@ const MobileProjectsCarousel = () => {
     project.title === 'TREAT' ? jsdelivrBase + 'kuberwastaken-treat.png' :
     project.title === 'Engram' ? jsdelivrBase + 'kuberwastaken-engram.png' :
     project.title === 'LifeMap' ? jsdelivrBase + 'kuberwastaken-lifemap.jpg' :
-    project.title === 'CottagOS' ? jsdelivrBase + 'kuberwastaken-cottagOS.png' :
+    project.title === 'SecondYou' ? jsdelivrBase + 'kuberwastaken-secondyou.png' :
+    project.title === 'PrayGo' ? jsdelivrBase + 'kuberwastaken-praygo.png' :
+    project.title === 'CottagOS' ? jsdelivrBase + 'kuberwastaken-cottagos.png' :
     project.title === 'MEOW' ? jsdelivrBase + 'kuberwastaken-meow.png' :
     null;
   return (
@@ -204,7 +240,10 @@ const MobileProjectsCarousel = () => {
         {/* Title */}
         <div style={{ fontWeight: 700, fontSize: '1.18em', color: '#5abb9a', marginBottom: 10, textAlign: 'center' }}>{project.title}</div>
         {/* Description */}
-        <div style={{ fontSize: '1em', marginBottom: 16, textAlign: 'center', lineHeight: 1.5 }}>{project.description}</div>
+        <div
+          style={{ fontSize: '1em', marginBottom: 16, textAlign: 'center', lineHeight: 1.5 }}
+          dangerouslySetInnerHTML={{ __html: formatDescriptionToHtml(project.description) }}
+        />
         {/* Badges */}
         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: 10, marginBottom: 8 }}>
           {badgeLinks(project)}
@@ -322,7 +361,7 @@ const ProjectsMasonry = () => (
                   }}
                 />
       </div>
-            ) : (['GitHub View Counter', 'ORCUS', 'Free Deep Research', 'Books Re-imagined', 'MEOW'].includes(project.title)) ? (
+            ) : (['GitHub View Counter', 'ORCUS', 'Free Deep Research', 'Books Re-imagined', 'MEOW', 'CottagOS', 'SecondYou', 'PrayGo'].includes(project.title)) ? (
               <div
                 style={{
                   marginBottom: 16,
@@ -344,7 +383,10 @@ const ProjectsMasonry = () => (
                       project.title === 'ORCUS' ? '/kuberwastaken-orcus.png' :
                       project.title === 'Free Deep Research' ? '/kuberwastaken-freedeepresearch.png' :
                       project.title === 'Engram' ? '/kuberwastaken-engram.png' :
+                      project.title === 'CottagOS' ? '/kuberwastaken-cottagos.png' :
                       project.title === 'MEOW' ? '/kuberwastaken-meow.png' :
+                      project.title === 'SecondYou' ? '/kuberwastaken-secondyou.png' :
+                      project.title === 'PrayGo' ? '/kuberwastaken-praygo.png' :
                       '/kuberwastaken-booksreimagined.png'
                     }
                     alt={project.title + ' faux webpage'}
@@ -391,7 +433,10 @@ const ProjectsMasonry = () => (
     </div>
             ) : null}
             <div style={{ fontWeight: 700, fontSize: '1.25em', marginBottom: 8, color: '#5abb9a' }}>{project.title}</div>
-            <div style={{ fontSize: '1em', marginBottom: 16, whiteSpace: 'pre-line' }}>{project.description}</div>
+            <div
+              style={{ fontSize: '1em', marginBottom: 16 }}
+              dangerouslySetInnerHTML={{ __html: formatDescriptionToHtml(project.description) }}
+            />
             <div className="project-badges" style={{ marginTop: 8, display: 'flex', flexWrap: 'wrap' }}>
               {badgeLinks(project)}
       </div>
