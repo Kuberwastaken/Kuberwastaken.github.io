@@ -18,7 +18,7 @@ const formatDescriptionToHtml = (raw) => {
   return withLinks.replace(/\n/g, '<br/>');
 };
 
-const projects = [
+const projectsBase = [
   {
     title: 'GitHub View Counter',
     description: "My GitHub Profile View Counter with 100k+ visits went down, so I made my own which looks way better, has multiple themes and won't ever be down, all for free.",
@@ -65,7 +65,7 @@ const projects = [
   },
   {
     title: 'Backdooms',
-    description: `One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. \n\n A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.4kB in size, using a custom, NASA Scientist cited web compression algorithm.`,
+    description: `One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. \n\n A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.4kB in size, using a custom compression algorithm using GZip with Zlib Headers.`,
     website: 'https://kuber.studio/backdooms/',
     github: 'https://github.com/Kuberwastaken/backdooms',
     extra: [],
@@ -142,6 +142,30 @@ const projects = [
     extra: [],
   },
 ];
+
+// Enforce explicit horizontal-first order on desktop and same order on mobile
+const projectOrder = [
+  'Backdooms',
+  'SecondYou',
+  'PolyThink',
+  'MEOW',
+  'MindDump',
+  'PrayGo',
+  'Engram',
+  'GitHub View Counter',
+  'LifeMap',
+  'AsianMOM',
+  'ORCUS',
+  'CottagOS',
+  'MiniLMs',
+  'TREAT',
+  'Free Deep Research',
+  'Books Re-imagined',
+];
+
+const projects = projectOrder
+  .map(title => projectsBase.find(p => p.title === title))
+  .filter(Boolean);
 
 const badgeLinks = (project) => {
   const badges = [];
@@ -259,7 +283,7 @@ const MobileProjectsCarousel = () => {
       <style>{`
         @media (max-width: 700px) {
           .mobile-projects-carousel { display: block; }
-          .project-masonry-card, div[style*='columnCount'] { display: none !important; }
+          .project-masonry-card, .projects-grid { display: none !important; }
         }
         @media (min-width: 701px) {
           .mobile-projects-carousel { display: none !important; }
@@ -272,9 +296,11 @@ const MobileProjectsCarousel = () => {
 const ProjectsMasonry = () => (
   <>
     <div
+      className="projects-grid"
       style={{
-        columnCount: 3,
-        columnGap: '32px',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+        gap: '32px',
         maxWidth: 1300,
         margin: '0 auto',
         padding: '40px 0',
@@ -474,16 +500,16 @@ const ProjectsMasonry = () => (
           100% { background-position: 100% 100%; }
         }
         @media (max-width: 1300px) {
-          div[style*='columnCount'] {
-            column-count: 2 !important;
+          .projects-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
           }
         }
         @media (max-width: 900px) {
           .project-iframe-container, .project-iframe {
             display: none !important;
           }
-          div[style*='columnCount'] {
-            column-count: 1 !important;
+          .projects-grid {
+            grid-template-columns: 1fr !important;
           }
         }
         @media (max-width: 700px) {
@@ -501,8 +527,8 @@ const ProjectsMasonry = () => (
           .project-masonry-card .project-iframe-container {
             display: none !important;
           }
-          div[style*='columnCount'] {
-            column-count: 1 !important;
+          .projects-grid {
+            grid-template-columns: 1fr !important;
             padding: 0 1vw !important;
           }
           .project-badges {
