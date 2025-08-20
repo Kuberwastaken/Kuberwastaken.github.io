@@ -69,6 +69,8 @@ const Terminal = () => {
   const [hackermode, setHackermode] = useState(false);
   const inputRef = useRef(null);
   const terminalRef = useRef(null);
+  const suppressAutoScrollRef = useRef(false);
+  const pendingScrollOffsetRef = useRef(0);
   const { changeBackgroundColor, backgrounds } = useTheme();
 
   // Memoized available commands array
@@ -171,7 +173,12 @@ const Terminal = () => {
         break;
       case 'projects':
       case 'pj':
+        // Temporarily disable full autoscroll and request a tiny partial scroll
+        suppressAutoScrollRef.current = true;
+        pendingScrollOffsetRef.current = Math.round((terminalRef.current?.clientHeight || 0) * 0.8) || 450;
         addToOutput({ type: 'component', content: <ProjectsMasonry /> });
+        // Re-enable autoscroll shortly after render settles
+        setTimeout(() => { suppressAutoScrollRef.current = false; }, 600);
         break;
       case 'blog':
       case 'b':
@@ -432,9 +439,19 @@ const Terminal = () => {
     inputRef.current?.focus();
 
     const observer = new MutationObserver(() => {
-      if (terminalRef.current) {
-        terminalRef.current.scrollTo({
-          top: terminalRef.current.scrollHeight,
+      const el = terminalRef.current;
+      if (!el) return;
+
+      if (pendingScrollOffsetRef.current) {
+        const newTop = Math.min(el.scrollHeight, el.scrollTop + pendingScrollOffsetRef.current);
+        el.scrollTo({ top: newTop, behavior: 'smooth' });
+        pendingScrollOffsetRef.current = 0;
+        return;
+      }
+
+      if (!suppressAutoScrollRef.current) {
+        el.scrollTo({
+          top: el.scrollHeight,
           behavior: 'smooth'
         });
       }
