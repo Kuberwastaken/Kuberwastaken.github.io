@@ -18,7 +18,6 @@ const TetrisGame = lazy(() => import('./TetrisGame/TetrisGame'));
 const Game2048 = lazy(() => import('./Game2048/Game2048'));
 const TerminalFlappyBird = lazy(() => import('./FlappyBird/TerminalFlappyBird'));
 const GameOfLife = lazy(() => import('./GameOfLife/GameOfLife'));
-const Jarvis = lazy(() => import('./Jarvis/Jarvis'));
 
 // Lazy load utility components
 const QRGenerator = lazy(() => import('./QRGenerator/QRGenerator'));
@@ -79,7 +78,7 @@ const Terminal = () => {
     'youtube', 'yt', 'linkedin', 'li', 'ascii-selfie', 'projects', 'pj',
     'blog', 'b', 'clear', 'c', 'games', 'g', 'who', 'w', 'wiki', 'wikipedia',
     'chatgpt', 'gpt', 'neofetch', 'nf', 'misc', 'miscellaneous', 'resume',
-    'cv', 'jarvis', 'j', 'google', 'snake', 'backdooms', 'tetris', '2048',
+    'cv', 'google', 'snake', 'backdooms', 'tetris', '2048',
     'flappybird', 'gameoflife', 'time', 'date', 'background', 'theme', 'themes', 'bg',
     'color', 'calculator', 'perplexity', 'perp', 'hackermode', 'qr-generator', 
     'password-generator', 'github-feed'
@@ -207,14 +206,6 @@ const Terminal = () => {
       case 'resume':
       case 'cv':
         addToOutput({ type: 'component', content: <PDFViewer /> });
-        break;
-      case 'jarvis':
-      case 'j':
-        addToOutput({ type: 'component', content: (
-          <Suspense fallback={<div>Loading Jarvis...</div>}>
-            <Jarvis />
-          </Suspense>
-        ) });
         break;
       case 'google':
         if (argument) {
