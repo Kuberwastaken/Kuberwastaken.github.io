@@ -32,14 +32,14 @@ const projectsBase = [
     website: 'https://www.thiswebsiteisnot.online/',
     github: 'https://github.com/Kuberwastaken/thiswebsiteisnotonline',
     showIframe: true,
-    extra: [],
+    extra: 'https://www.linkedin.com/posts/kubermehta_ai-sundayproject-webdev-activity-7365365947773149184-fWe',
   },
   {
     title: 'PolyThink',
     description: `A multi-agent AI system where multiple models collaborate and fact-check each other to eliminate hallucinations and provide reliable answers.`,
     website: 'https://www.polyth.ink/',
     github: null,
-    extra: [],
+    extra: 'https://x.com/polythinkai',
   },
   {
     title: 'SecondYou',
@@ -51,17 +51,17 @@ const projectsBase = [
   },
   {
     title: 'MiniLMs',
-    description: `My ongoing study learning about AI Models architecturally and making fun little chatbots from it. \n\n Currently finished development of SYNEVA - a <3kb Markov Chain type Chatbot inspired by ELIZA that is actually fun to talk to and passively working on 15ABELLA, a 15Kb tiny Neural Network chatbot.`,
+    description: `My ongoing study learning about AI Models architecturally and making fun little chatbots from it. \n\n Currently finished development of SYNEVA - a <3kb Markov Chain type Chatbot inspired by ELIZA that is actually fun to talk to and can tell how many r's are in strawberry (makes for some amazing X replies) and passively working on 15ABELLA, a 15Kb tiny Neural Network chatbot.`,
     website: 'https://minilms.kuber.studio/',
     github: 'https://github.com/Kuberwastaken/MiniLMs',
-    extra: [],
+    extra: 'https://x.com/Kuberwastaken/status/1965035092600062268',
   },
   {
     title: 'TREAT',
     description: 'TREAT is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable.',
     website: 'https://www.trytreat.tech/',
     github: 'https://github.com/Kuberwastaken/TREAT',
-    extra: [],
+    extra: 'https://huggingface.co/spaces/Agents-MCP-Hackathon/TREAT-CHOCOSYRUP',
   },
   {
     title: 'MEOW',
@@ -118,11 +118,11 @@ const projectsBase = [
   },
   {
     title: 'AsianMOM',
-    description: 'A WebML-based Vision-Language App that roasts you like an Asian Mom. Runs entirely in your browser using WebGPU and ONNX.',
+    description: 'A WebML-based Vision-Language App that roasts you like an Asian Mom. Runs entirely in your browser using Transformers.js, WebGPU and ONNX.',
     website: 'https://asianmom.kuber.studio/',
     github: 'https://github.com/Kuberwastaken/AsianMOM',
     previewImg: 'https://github.com/Kuberwastaken/AsianMOM/raw/main/Media/Assets/Readme-Image.jpg',
-    extra: [],
+    extra: 'https://www.linkedin.com/posts/kubermehta_webml-ai-visionllm-activity-7329456582650482688-mUYX/',
   },
   {
     title: 'ORCUS',
@@ -336,9 +336,10 @@ const ProjectsMasonry = () => (
     <div
       className="projects-grid"
       style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
-        gap: '32px',
+        // Masonry-style multi-column layout to avoid fixed gaps below shorter cards
+        columnCount: 3,
+        columnGap: '32px',
+        alignItems: 'start',
         maxWidth: 1300,
         margin: '0 auto',
         padding: '40px 0',
@@ -350,6 +351,8 @@ const ProjectsMasonry = () => (
           className="project-masonry-card"
           style={{
             breakInside: 'avoid',
+            display: 'inline-block',
+            width: '100%',
             background: 'linear-gradient(135deg, rgba(30,30,30,0.95) 60%, rgba(90,187,154,0.10) 100%)',
             borderRadius: 18,
             marginBottom: 32,
@@ -360,6 +363,7 @@ const ProjectsMasonry = () => (
             position: 'relative',
             border: '1.5px solid rgba(90,187,154,0.13)',
             transition: 'transform 0.18s, box-shadow 0.18s',
+            alignSelf: 'start',
           }}
           onMouseOver={e => {
             e.currentTarget.style.transform = 'scale(1.025)';
@@ -540,7 +544,7 @@ const ProjectsMasonry = () => (
         }
         @media (max-width: 1300px) {
           .projects-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
+            column-count: 2 !important;
           }
         }
         @media (max-width: 900px) {
@@ -548,7 +552,7 @@ const ProjectsMasonry = () => (
             display: none !important;
           }
           .projects-grid {
-            grid-template-columns: 1fr !important;
+            column-count: 1 !important;
           }
         }
         @media (max-width: 700px) {
@@ -567,7 +571,7 @@ const ProjectsMasonry = () => (
             display: none !important;
           }
           .projects-grid {
-            grid-template-columns: 1fr !important;
+            column-count: 1 !important;
             padding: 0 1vw !important;
           }
           .project-badges {
