@@ -97,14 +97,7 @@ A fully functional terminal interface with:
 - QR code integration for viral sharing
 - Backrooms aesthetic with 3D-like gameplay
 
-### **🤖 AI Integration - JARVIS**
-- **Custom AI Assistant** - Built with backend integration
-- **Session Management** - Persistent conversations across page reloads
-- **Markdown Support** - Rich text formatting in responses
-- **Portfolio Intelligence** - AI trained on portfolio content for accurate responses
-- **Error Handling** - Graceful degradation when API is unavailable
-
-### **🧮 Advanced Calculator**
+### ** Advanced Calculator**
 - Full mathematical expression parsing
 - Support for parentheses and complex operations
 - Scientific notation and advanced functions
@@ -119,16 +112,6 @@ A fully functional terminal interface with:
 - **Branded Themes** - Special themes inspired by projects (ORCUS, GitHub Art)
 - **Gradient Support** - Complex linear gradients including Deep Space, Cherry Blossom
 - **Dynamic Injection** - Runtime CSS injection for seamless theme changes
-
-### **🤖 JARVIS AI Integration Details**
-- **Backend Architecture** - Node.js backend with session management
-- **Session Persistence** - Conversations persist across page reloads
-- **Markdown Rendering** - Full markdown support with custom parser
-- **Error Handling** - Graceful degradation when backend is unavailable
-- **Real-time Chat** - WebSocket-like experience with HTTP polling
-- **Portfolio Intelligence** - AI trained specifically on portfolio content
-- **Response Formatting** - Rich text with links, lists, and code blocks
-- **Mobile Optimization** - Touch-friendly chat interface with responsive design
 
 ### **🔍 Integrated Search Capabilities**
 Direct search integration for:
@@ -188,7 +171,7 @@ Try it out yourself 🙃
 
 ## 🎯 Command System Architecture
 
-### **Available Commands** (30+ total)
+### **Available Commands** (28+ total)
 ```bash
 # Navigation & Information
 help, who, skills, projects, resume, blog
@@ -208,9 +191,6 @@ theme [name], background [name], hackermode
 
 # Social & Contact
 github, linkedin, email, discord, youtube
-
-# AI Assistant
-jarvis [query]
 
 # System
 clear, misc
