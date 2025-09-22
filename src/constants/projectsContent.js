@@ -24,13 +24,13 @@ const projectsBase = [
     description: "My GitHub Profile View Counter with 100k+ visits went down, so I made my own which looks way better, has multiple themes and won't ever be down, all for free.",
     website: 'https://counter.kuber.studio/',
     github: null,
-    extra: [],
+    extra: 'https://www.linkedin.com/posts/kubermehta_glassmorphism-terminal-cats-activity-7349445969790259200-_SKK',
   },
   {
     title: 'ThisWebsiteIsNotOnline',
-    description: 'An AI powered website where every single URL you can think exists.',
+    description: 'An AI powered website where every single URL you can think of exists.',
     website: 'https://www.thiswebsiteisnot.online/',
-    github: null,
+    github: 'https://github.com/Kuberwastaken/thiswebsiteisnotonline',
     showIframe: true,
     extra: [],
   },
@@ -43,15 +43,15 @@ const projectsBase = [
   },
   {
     title: 'SecondYou',
-    description: `A Private, Local-First AI that Thinks and Writes like You, runs on a finetuned version of Gemma3N made to embody you with access to your texts, emails, blogs, social media and more to create your AI persona. Ideated during the Nas Daily AI Summer Residency.`,
+    description: `A Private, Local-First AI that Thinks and Writes like You, runs on a finetuned version of Gemma3N made to embody you. \n\n Has access to your texts, emails, blogs, social media and more to create your AI persona. Ideated during the Nas Daily AI Summer Residency.`,
     website: 'https://www.secondyou.app/',
     github: null,
     showIframe: true,
-    extra: [],
+    extra: 'https://www.kaggle.com/competitions/google-gemma-3n-hackathon/writeups/secondyou-your-external-brain',
   },
   {
     title: 'MiniLMs',
-    description: `My ongoing study learning about AI Models architecturally and making fun little chatbots from it. Currently finished development of SYNEVA - a <3kb Markov Chain type Chatbot inspired by ELIZA that is actually fun to talk to and passively working on 15ABELLA, a 15Kb tiny Neural Network chatbot.`,
+    description: `My ongoing study learning about AI Models architecturally and making fun little chatbots from it. \n\n Currently finished development of SYNEVA - a <3kb Markov Chain type Chatbot inspired by ELIZA that is actually fun to talk to and passively working on 15ABELLA, a 15Kb tiny Neural Network chatbot.`,
     website: 'https://minilms.kuber.studio/',
     github: 'https://github.com/Kuberwastaken/MiniLMs',
     extra: [],
@@ -65,33 +65,33 @@ const projectsBase = [
   },
   {
     title: 'MEOW',
-    description: 'Top Show-HN for 3 days, became a memecoin that reached $200k and went viral on Web-3 Circles on X \n\n The most Purr-fect Image File Format for your AI workflows, PNG on steroids.',
+    description: 'Top Show-HN for 3 days, became a memecoin that reached $200k and went viral on Web-3 Circles on X, helped me pay for my entire college tuition. \n\n The most Purr-fect Image File Format for your AI workflows, PNG on steroids.',
     website: null,
     github: 'https://github.com/Kuberwastaken/meow',
     showIframe: false,
-    extra: [],
+    extra: 'https://www.linkedin.com/feed/update/urn:li:activity:7338855560810770433/',
   },
   {
     title: 'Backdooms',
     description: `One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. \n\n A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.4kB in size, using a custom compression algorithm using GZip with Zlib Headers.`,
     website: 'https://kuber.studio/backdooms/',
     github: 'https://github.com/Kuberwastaken/backdooms',
-    extra: [],
+    extra: 'https://news.ycombinator.com/item?id=43729683',
   },
   {
     title: 'MindDump',
-    description: `My Blog website that I made that syncs from my Obsidian Vault! It's extremely customizable and a corner of the internet where I can truly share my thoughts freely.`,
+    description: `My Blog website that syncs from my Obsidian Vault! Made from a folked version of Quartz \n\n It's extremely customizable and a lil corner of the internet where I can express my thoughts freely.`,
     website: 'https://kuber.studio/blog/',
     github: 'https://github.com/Kuberwastaken/blog',
     extra: [],
   },
   {
     title: 'PrayGo',
-    description: `Main project for the Nas Daily AI Residency - DuoLingo for Religion. The world's first AI-powered religious education platform. Experience personalized, gamified lessons that adapt to your learning style while exploring world religions with respect and authenticity.`,
+    description: `Main project for the Nas Daily AI Residency - DuoLingo for Religion. \n\n The world's first AI-powered religious education platform. Experience personalized, gamified lessons that adapt to your learning style while exploring world religions with respect and authenticity.`,
     website: 'https://www.sacredsteps.app/',
     github: null,
     showIframe: true,
-    extra: [],
+    extra: 'https://www.instagram.com/nasdaily/reel/DMLLKzMSuEK/',
   },
   {
     title: 'Engram',
@@ -99,7 +99,7 @@ const projectsBase = [
     website: 'https://engram.kuber.studio/',
     github: 'https://github.com/kuberwastaken/engram',
     showIframe: true,
-    extra: [],
+    extra: 'https://www.linkedin.com/feed/update/urn:li:activity:7335997841179348993/',
   },
   {
     title: 'CottagOS',
@@ -114,7 +114,6 @@ const projectsBase = [
     description: `My free, open-source version of OpenAI's Deep Research agent. It mimics the capabilities of the original agent, allowing users to run custom deep dives with adjustable breadth, depth, and duration.`,
     website: null,
     github: 'https://github.com/Kuberwastaken/free-deep-research',
-    showIframe: false,
     extra: [],
   },
   {
@@ -131,7 +130,7 @@ const projectsBase = [
     website: null,
     github: 'https://github.com/Kuberwastaken/ORCUS',
     showIframe: true,
-    extra: [],
+    extra: 'https://www.linkedin.com/in/orcus-ai/',
   },
   {
     title: 'LifeMap',
@@ -178,12 +177,13 @@ const projects = projectOrder
 
 const badgeLinks = (project) => {
   const badges = [];
+
+  // Built-in badges first (keep behavior/appearance unchanged)
   if (project.website) {
     badges.push({
       href: project.website,
       alt: 'Website',
       src: 'https://cdn.simpleicons.org/googlechrome/ffebcd',
-      imgStyle: { width: 18, background: '#5abb9a', borderRadius: 6, padding: 2 }
     });
   }
   if (project.github) {
@@ -191,12 +191,36 @@ const badgeLinks = (project) => {
       href: project.github,
       alt: 'GitHub',
       src: 'https://cdn.simpleicons.org/github/ffebcd',
-      imgStyle: { width: 18, background: '#24292e', borderRadius: 6, padding: 2 }
     });
   }
-  if (project.extra && Array.isArray(project.extra)) {
-    project.extra.forEach((link) => badges.push(link));
-  }
+
+  // Normalize `extra` into an array of link objects using a default globe icon
+  const normalizeExtra = (extra) => {
+    if (!extra) return [];
+    const arr = Array.isArray(extra) ? extra : [extra];
+    return arr
+      .map((item) => {
+        if (!item) return null;
+        if (typeof item === 'string') {
+          return { href: item, alt: 'Post', src: '/globe.svg' };
+        }
+        if (typeof item === 'object') {
+          const href = item.href || item.url;
+          if (!href) return null;
+          return {
+            href,
+            alt: item.alt || 'Post',
+            src: item.src || '/globe.svg',
+          };
+        }
+        return null;
+      })
+      .filter(Boolean);
+  };
+
+  // Append extras at the end so they are always last
+  badges.push(...normalizeExtra(project.extra));
+
   return badges.map((badge, i) => (
     <a
       key={badge.href + i}
@@ -205,7 +229,11 @@ const badgeLinks = (project) => {
       rel="noopener noreferrer"
       style={{ marginRight: 10, marginBottom: 6, display: 'inline-block' }}
     >
-      <img src={badge.src} alt={badge.alt} style={{ height: 32, borderRadius: 6, boxShadow: '0 1px 4px #0002' }} />
+      <img
+        src={badge.src}
+        alt={badge.alt}
+        style={{ height: 32, borderRadius: 6, boxShadow: '0 1px 4px #0002' }}
+      />
     </a>
   ));
 };
