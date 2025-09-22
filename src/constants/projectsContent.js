@@ -80,7 +80,7 @@ const projectsBase = [
   },
   {
     title: 'MindDump',
-    description: `My Blog website that syncs from my Obsidian Vault! Made from a folked version of Quartz \n\n It's extremely customizable and a lil corner of the internet where I can express my thoughts freely.`,
+    description: `My Blog website that syncs from my Obsidian Vault! Made from a forked, custom version of Quartz \n\n It's extremely customizable and a little corner of the internet where I can express my thoughts freely.`,
     website: 'https://kuber.studio/blog/',
     github: 'https://github.com/Kuberwastaken/blog',
     extra: [],
@@ -126,7 +126,7 @@ const projectsBase = [
   },
   {
     title: 'ORCUS',
-    description: `A dual-model AI tool to detect and flag AI-generated social media comments, especially on LinkedIn. It uses Hugging Face's OpenAI detector and GPT-2 to analyze suspicious content and generate personalized alerts.`,
+    description: `A dual-model AI tool to detect and flag AI-generated social media comments, especially on LinkedIn. \n\n It uses Hugging Face's OpenAI detector and GPT-2 to analyze suspicious content and generate personalized alerts. Ran as an experiment for a couple days, but stopped due to Linkedin TOS`,
     website: null,
     github: 'https://github.com/Kuberwastaken/ORCUS',
     showIframe: true,
@@ -148,11 +148,21 @@ const projectsBase = [
     showIframe: true,
     extra: [],
   },
+  {
+    title: 'Berghain Challenge Algorithms',
+    description: `My Algorithms, tweaks and Solutions that got me to #16 in the Berghain Challenge by Listenlabs \n\n The prize for the Most Optimised solution for the Linear Programming Problem was an all-expenses paid Berlin Trip, Berghain guest list and an interview at a hypergrowth SF startup against 30,000+ of the World's finest engineers.`,
+    website: 'https://berghain.challenges.listenlabs.ai/',
+    github: 'https://github.com/Kuberwastaken/Berghain',
+    previewImg: '/kuberwastaken-berghain.png',
+    showIframe: false,
+    extra: 'https://kuber.studio/blog/Projects/How-I-Spent-Three-Nights-Solving-Listen-Labs-Berghain-Challenge',
+  },
 ];
 
 // Enforce explicit horizontal-first order on desktop and same order on mobile
 const projectOrder = [
   'Backdooms',
+  'Berghain Challenge Algorithms',
   'ThisWebsiteIsNotOnline',
   'PolyThink',
   'MEOW',
