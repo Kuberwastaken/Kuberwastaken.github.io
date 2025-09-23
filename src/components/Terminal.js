@@ -75,7 +75,8 @@ const Terminal = () => {
   // Memoized available commands array
   const availableCommands = useMemo(() => [
     'help', 'skills', 's', 'github', 'gh', 'discord', 'ds', 'email', 'em',
-    'youtube', 'yt', 'linkedin', 'li', 'ascii-selfie', 'projects', 'pj',
+    'youtube', 'yt', 'linkedin', 'li', 'twitter',
+    'ascii-selfie', 'projects', 'pj',
     'blog', 'b', 'clear', 'c', 'games', 'g', 'who', 'w', 'wiki', 'wikipedia',
     'chatgpt', 'gpt', 'neofetch', 'nf', 'misc', 'miscellaneous', 'resume',
     'cv', 'google', 'snake', 'backdooms', 'tetris', '2048',
@@ -166,6 +167,10 @@ const Terminal = () => {
       case 'li':
         window.open('https://www.linkedin.com/in/kubermehta/', '_blank');
         addToOutput({ type: 'output', content: 'Opening LinkedIn profile...' });
+        break;
+      case 'twitter':
+        window.open('https://x.com/Kuberwastaken', '_blank');
+        addToOutput({ type: 'output', content: 'I refuse to call it X lol' });
         break;
       case 'ascii-selfie':
         addToOutput({ type: 'output', content: getAsciiArt() });

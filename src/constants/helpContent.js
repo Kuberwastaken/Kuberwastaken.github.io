@@ -16,6 +16,7 @@ const helpContent = `
   <p style="margin: 10px 0;">
     <span class="command-link" data-command="email" style="color: #5abb9a;">[email]</span><br>
     <span class="command-link" data-command="linkedin" style="color: #5abb9a;">[linkedin]</span><br>
+    <span class="command-link" data-command="twitter" style="color: #5abb9a;">[twitter]</span><br>
     <span class="command-link" data-command="github" style="color: #5abb9a;">[github]</span><br>
   </p>
 </div>`;
