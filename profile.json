@@ -35,7 +35,7 @@
       "Lua", "R", "HTML", "CSS", "SCSS"
     ],
     "frameworks": [
-      "React", "Next.js", "Flask", "Node.js", "TensorFlow", 
+      "React", "Next.js", "Flask", "Node.js", "Transformers.js", "TensorFlow", 
       "PyTorch", "Express", "Vite"
     ],
     "databases": ["SQL", "MongoDB", "PostgreSQL", "BigQuery"],
