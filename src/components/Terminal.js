@@ -70,6 +70,7 @@ const Terminal = () => {
   const terminalRef = useRef(null);
   const suppressAutoScrollRef = useRef(false);
   const pendingScrollOffsetRef = useRef(0);
+  const lastHandledHashRef = useRef('');
   const { changeBackgroundColor, backgrounds } = useTheme();
 
   // Memoized available commands array
@@ -400,6 +401,76 @@ const Terminal = () => {
     }, 100);
   }, [executeCommand]);
 
+  // Convert URL hash to a terminal command and auto-execute
+  useEffect(() => {
+    const parseHashToCommand = (hash) => {
+      if (!hash) return null;
+      // remove leading # or #/
+      const cleaned = hash.replace(/^#\/?/, '');
+      if (!cleaned) return null;
+      const parts = cleaned.split('/').filter(Boolean).map(p => {
+        try { return decodeURIComponent(p); } catch { return p; }
+      });
+      if (parts.length === 0) return null;
+      const head = (parts[0] || '').toLowerCase();
+      const tail = parts.slice(1);
+      const joinTail = tail.join(' ');
+
+      // Map hash paths to commands
+      switch (head) {
+        case 'projects':
+          return 'projects';
+        case 'who':
+          return 'who';
+        case 'help':
+          return 'help';
+        case 'misc':
+          // e.g., #/misc/calculator -> 'calculator'
+          return tail.length ? joinTail.toLowerCase() : 'misc';
+        case 'games':
+          // e.g., #/games/snake -> 'snake'
+          return tail.length ? tail[0].toLowerCase() : 'games';
+        case 'google':
+        case 'youtube':
+        case 'wiki':
+        case 'wikipedia':
+        case 'chatgpt':
+        case 'perplexity':
+          // e.g., #/google/hello%20world -> 'google hello world'
+          return tail.length ? `${head} ${joinTail}` : head;
+        case 'background':
+        case 'theme':
+        case 'themes':
+        case 'bg':
+        case 'color':
+          return tail.length ? `${head} ${joinTail}` : head;
+        default: {
+          // Direct command passthrough if supported
+          // Examples: #/resume, #/cv, #/calculator, #/snake, #/2048
+          const direct = [head, ...tail].join(' ').trim();
+          return direct || null;
+        }
+      }
+    };
+
+    const maybeRunFromHash = () => {
+      const { hash } = window.location;
+      if (!hash || hash === '#' || hash === lastHandledHashRef.current) return;
+      const cmd = parseHashToCommand(hash);
+      if (cmd && typeof cmd === 'string') {
+        lastHandledHashRef.current = hash;
+        // Mirror typed input line for consistency and add to history
+        addToOutput({ type: 'input', content: cmd });
+        executeCommand(cmd);
+      }
+    };
+
+    // Run on initial load (after a microtask so React mount settles)
+    Promise.resolve().then(maybeRunFromHash);
+    window.addEventListener('hashchange', maybeRunFromHash);
+    return () => window.removeEventListener('hashchange', maybeRunFromHash);
+  }, [addToOutput, executeCommand]);
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -428,10 +499,15 @@ const Terminal = () => {
       </div>
       </div>`;
 
-    setOutput([
-      { type: 'output', content: welcomeMessage },
-      { type: 'output', content: helpContent }
-    ]);
+    // Only set the welcome/help content if nothing has been printed yet.
+    // This avoids overwriting deep-linked commands executed earlier in the mount cycle.
+    setOutput(prev => (prev && prev.length)
+      ? prev
+      : [
+          { type: 'output', content: welcomeMessage },
+          { type: 'output', content: helpContent }
+        ]
+    );
     inputRef.current?.focus();
 
     const observer = new MutationObserver(() => {
