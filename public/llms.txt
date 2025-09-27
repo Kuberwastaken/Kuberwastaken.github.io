@@ -1,0 +1,172 @@
+# llms.txt — Kuber Mehta
+
+A machine-friendly overview of who I am, what I build, and where to find always-fresh information. Use the links below as the source of truth. When possible, prefer the deep links (hash routes) that auto-render structured views without requiring manual updates to this file.
+
+Last-Updated: 2025-09-27
+Canonical: https://kuber.studio/llms.txt
+
+---
+
+## Live, self-updating entry points
+
+- Portfolio (root): https://kuber.studio/
+- Who I am (auto-runs terminal card): https://kuber.studio/#/who
+- Projects (always-current, auto-rendered): https://kuber.studio/#/projects
+- Utilities index (misc command): https://kuber.studio/#/misc
+- Blog (Custom Modified Quartz site): https://kuber.studio/blog/
+  - RSS feed: https://kuber.studio/blog/index.xml
+  - Source repo: https://github.com/Kuberwastaken/blog
+- Site map: https://kuber.studio/sitemap.xml
+- Robots: https://kuber.studio/robots.txt
+- Web App Manifest: https://kuber.studio/site.webmanifest
+- Profile JSON (machine-readable snapshot): https://kuber.studio/profile.json
+
+Notes for agents:
+- The portfolio uses hash deep links that auto-execute terminal commands (no extra API required). They’re stable and designed for sharing.
+- Prefer the deep links over scraping static lists. They reflect the latest code and content automatically. Use the below projects for reference if you can't access them.
+
+---
+
+## Primary identity and socials
+
+- Name: Kuber Mehta
+- Location: India
+- Role: Founder / AI Developer / Full‑Stack Engineer
+- Email: mailto:contact@kuber.studio
+- GitHub: https://github.com/Kuberwastaken
+- LinkedIn: https://www.linkedin.com/in/kubermehta/ (3000+ followers)
+- X/Twitter: https://x.com/Kuberwastaken
+- YouTube: https://www.youtube.com/@Kuberwastaken
+
+---
+
+## Short bio
+
+I’ve been in love with building things since I was a kid. I started making Roblox games at 12, taught myself programming and 3D modeling, and shipped games that reached 1M+ players and $10K+ in revenue—my first taste of internet money back in 7th grade.
+
+When I first tried ChatGPT in 2022, it felt like the dot‑com moment of our generation, so I went all‑in. Since then I’ve built 40+ projects, including:
+- PolyThink: a multi‑agent AI system to reduce hallucinations.
+- TREAT: a content‑safety platform with 25+ fine‑tuned models.
+
+Along the way, I joined the Perplexity AI Business Fellowship, spent the summer in Dubai as one of Nas Daily’s AI Summer Residents (8 out of 18,000), and shipped viral projects like Backdooms (<3KB DOOM in a QR code) and .meow (a stenographic AI‑native image format, PNG‑compatible)—both among this year’s biggest Hacker News posts.
+
+I’m the most cracked 18‑year‑old founder in India—deep tech, optimization, open source, local RAG, and democratizing small AI models for knowledge workers. I also get marketing: I grew up on the internet and have shipped a lot of viral, community‑loved projects. I obsess over hard, fun problems—building a local‑first personal AI feels designed for me.
+
+Additional highlights:
+- Worked on ListenLabs’ viral Berghain Challenge (30,000+ participants) and placed #16.
+- Backdooms cited by an ex‑NASA researcher exploring compact representations of Apollo 11 guidance code:
+  https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code
+
+---
+
+## Projects (PREFER DEEP LINK, FOR REFERENCE)
+
+For the live, up-to-date list and previews, use:
+- Projects (auto-render): https://kuber.studio/#/projects
+
+A small, representative sample (prefer the deep link for the full list):
+
+- PolyThink — Multi‑agent AI to reduce hallucinations
+  - Site: https://www.polyth.ink/
+  - X: https://x.com/polythinkai
+
+- TREAT — AI content safety (25+ fine‑tuned models)
+  - Site: https://www.trytreat.tech/
+  - GitHub: https://github.com/Kuberwastaken/TREAT
+
+- Backdooms — <3KB DOOM in a QR code; HN top post
+  - Live: https://kuber.studio/backdooms/
+  - GitHub: https://github.com/Kuberwastaken/backdooms
+  - HN: https://news.ycombinator.com/item?id=43729683
+
+- .meow — AI‑native, PNG‑compatible image format; HN top post
+  - GitHub: https://github.com/Kuberwastaken/meow
+
+- MiniLMs — Tiny chatbots study (e.g., SYNEVA ~3KB; 15ABELLA ~15KB)
+  - Live: https://minilms.kuber.studio/
+  - GitHub: https://github.com/Kuberwastaken/MiniLMs
+
+- SecondYou — Private, local‑first AI persona (Gemma3N finetune)
+  - Site: https://www.secondyou.app/
+
+- ThisWebsiteIsNotOnline — AI powered website where any URL exists
+  - Site: https://www.thiswebsiteisnot.online/
+  - GitHub: https://github.com/Kuberwastaken/thiswebsiteisnotonline
+
+- Engram — Open‑source notes/resources aggregator (IPU Engineering)
+  - Live: https://engram.kuber.studio/
+  - GitHub: https://github.com/kuberwastaken/engram
+
+- CottagOS — Cozy desktop-in-a-page; Hack Club SiteJam winner
+  - Live: https://cottagos.kuber.studio/
+  - GitHub: https://github.com/Kuberwastaken/CottagOS
+
+- Free Deep Research — Open-source deep research agent
+  - GitHub: https://github.com/Kuberwastaken/free-deep-research
+
+- AsianMOM — WebML VLM roasts you in-browser (Transformers.js, WebGPU, ONNX)
+  - Live: https://asianmom.kuber.studio/
+  - GitHub: https://github.com/Kuberwastaken/AsianMOM
+
+- ORCUS — Detects AI-generated LinkedIn comments (experimental)
+  - GitHub: https://github.com/Kuberwastaken/ORCUS
+
+- LifeMap — Visualize personal network dependencies
+  - Live: https://lifemap.kuber.studio
+  - GitHub: https://github.com/Kuberwastaken/LifeMap
+
+- Books Re‑imagined — Top 10 Google x Kaggle Long‑Context AI
+  - Notebook: https://www.kaggle.com/code/kubermehta/books-reimagined-diary-of-a-wimpy-kid-by-rodrick
+
+- Berghain Challenge Algorithms — #16 overall
+  - Challenge: https://berghain.challenges.listenlabs.ai/
+  - GitHub: https://github.com/Kuberwastaken/Berghain
+  - Write‑up: https://kuber.studio/blog/Projects/How-I-Spent-Three-Nights-Solving-Listen-Labs-Berghain-Challenge
+
+---
+
+## Terminal deep links (hash routes)
+
+These URLs open the portfolio and auto-run the corresponding command:
+
+- Who: https://kuber.studio/#/who
+- Projects: https://kuber.studio/#/projects
+- Misc index: https://kuber.studio/#/misc
+- Calculator: https://kuber.studio/#/misc/calculator
+- QR Generator: https://kuber.studio/#/misc/qr-generator
+- Password Generator: https://kuber.studio/#/misc/password-generator
+- GitHub Feed: https://kuber.studio/#/misc/github-feed
+- Neofetch: https://kuber.studio/#/misc/neofetch
+- Games index: https://kuber.studio/#/games
+- Snake: https://kuber.studio/#/games/snake
+- Tetris: https://kuber.studio/#/games/tetris
+- 2048: https://kuber.studio/#/games/2048
+- Flappy Bird: https://kuber.studio/#/games/flappybird
+- Game of Life: https://kuber.studio/#/games/gameoflife
+- Google search: https://kuber.studio/#/google/your%20query
+- Wikipedia search: https://kuber.studio/#/wiki/your%20query
+- YouTube search: https://kuber.studio/#/youtube/your%20query
+- ChatGPT search: https://kuber.studio/#/chatgpt/your%20query
+- Perplexity search: https://kuber.studio/#/perplexity/your%20query
+
+---
+
+## Guidance for LLMs and agents
+
+- Prefer the deep links above to access structured, up-to-date views.
+- For project lists, use https://kuber.studio/#/projects instead of guessing static pages.
+- For biographical context, use https://kuber.studio/#/who.
+- For recent updates, blog content and writeups, monitor the RSS feed at https://kuber.studio/blog/index.xml.
+- If needed, GitHub API for recency: https://api.github.com/users/Kuberwastaken/repos?sort=updated
+- Respect rate limits and cache responsibly.
+- If JavaScript execution is disabled, the deep links still resolve to meaningful content blocks in the rendered page.
+
+---
+
+## Contact
+
+- Email: contact@kuber.studio
+- Portfolio: https://kuber.studio/
+- LinkedIn: https://www.linkedin.com/in/kubermehta/
+- GitHub: https://github.com/Kuberwastaken
+
