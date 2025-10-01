@@ -157,17 +157,27 @@ const projectsBase = [
     showIframe: false,
     extra: 'https://kuber.studio/blog/Projects/How-I-Spent-Three-Nights-Solving-Listen-Labs-Berghain-Challenge',
   },
+  {
+    title: "What's in a LinkedIn Name?",
+    description: "Gives you a new Name based on your LinkedIn Profile or Resume, not for $30k but for FREE",
+    website: 'https://name.kuber.studio/',
+    github: null,
+    showIframe: true,
+    extra: 'https://linkedin.com/feed/update/urn:li:activity:7379082071723593728',
+  },
 ];
 
 // Enforce explicit horizontal-first order on desktop and same order on mobile
 const projectOrder = [
   'Backdooms',
   'Berghain Challenge Algorithms',
+  "What's in a LinkedIn Name?",
+  'MindDump',
+  'MiniLMs',
+  'MEOW',
   'ThisWebsiteIsNotOnline',
   'PolyThink',
-  'MEOW',
   'SecondYou',
-  'MindDump',
   'PrayGo',
   'Engram',
   'GitHub View Counter',
@@ -175,7 +185,6 @@ const projectOrder = [
   'AsianMOM',
   'ORCUS',
   'CottagOS',
-  'MiniLMs',
   'TREAT',
   'Free Deep Research',
   'Books Re-imagined',
