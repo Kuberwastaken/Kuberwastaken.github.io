@@ -9,28 +9,28 @@ const WhoamiCard = React.memo(() => (
     </div>
     <div className="whoami-info-col">
       <div className="whoami-section">
-        <p>I'm an 18-year-old developer from New Delhi, India, currently focused on building multi-agent AI systems that push the boundaries of reliability and creativity. Here are my two main ones:</p>
+        <p>Hey! I'm an 18 year old AI dev & Tech Enthusiast from New Delhi, India</p>
+      </div>
+      <div className="whoami-section whoami-mobile-hide">
+        <p>I'm doing two degrees - Computer Science from BITS Pilani and AI & Data Science from Indraprastha University and run <a href="https://www.polyth.ink/" target="_blank" rel="noopener noreferrer" style={{ color: '#5abb9a', textDecoration: 'underline' }}>PolyThink</a> and <a href="https://www.trytreat.tech/" target="_blank" rel="noopener noreferrer" style={{ color: '#5abb9a', textDecoration: 'underline' }}>TREAT AI</a>.</p>
       </div>
       <div className="whoami-section">
-        <p><b>PolyThink</b> — <a href="https://www.polyth.ink/" target="_blank" rel="noopener noreferrer" style={{ color: '#5abb9a', textDecoration: 'underline' }}>PolyThink</a> is a multi-agent AI system that uses multiple AI models to eliminate hallucinations and provide consensus-based, accurate answers.</p>
-      </div>
-      <div className="whoami-section">
-        <p><b>TREAT</b> — <a href="https://www.trytreat.tech/" target="_blank" rel="noopener noreferrer" style={{ color: '#5abb9a', textDecoration: 'underline' }}>TREAT</a> is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable.</p>
+        <p>I've built and shipped 40+ projects (28+ AI Based) in the past year, run <span className="command-link" data-command="projects" style={{ color: '#5abb9a', cursor: 'pointer', textDecoration: 'underline' }}>Projects</span> to see some of my favourites (that I'm allowed to show)</p>
       </div>
       <div className="whoami-section whoami-mobile-hide">
-        <p>Currently a Perplexity AI Business Fellow, I'm soon in a dual academic path with a BSc in Computer Science at BITS Pilani and a BTech in AI & Data Science at Indraprastha University. My academic focus includes programming, AI, and advanced data analysis.</p>
+        <p>Currently, I'm trying to democratize SLMs with superior context for non-intensive (over 70%) AI usage, <a href="https://x.com/kuberwastaken/status/1972594854715961570" target="_blank" rel="noopener noreferrer" style={{ color: '#5abb9a', textDecoration: 'underline' }}>check this tweet for more information</a>.</p>
       </div>
       <div className="whoami-section whoami-mobile-hide">
-        <p>My technical toolkit includes Python, SQL, R, and Tableau, along with hands-on experience in large language models (<span className="command-link" data-command="skills" style={{ color: '#5abb9a', cursor: 'pointer', textDecoration: 'underline' }}>Type Skills or S for more information</span>). I've applied AI to automate workflows, analyze media, and create interactive applications.</p>
+        <p>I design agentic LLM pipelines, post-train models, optimise local RAG systems and play around with resource constrained projects like <a href="https://github.com/kuberwastaken/backdooms" target="_blank" rel="noopener noreferrer" style={{ color: '#5abb9a', textDecoration: 'underline' }}>The Backdooms</a> and <a href="https://minilms.kuber.studio/" target="_blank" rel="noopener noreferrer" style={{ color: '#5abb9a', textDecoration: 'underline' }}>MiniLMs</a>, but to know more about the languages and tools I know run <span className="command-link" data-command="skills" style={{ color: '#5abb9a', cursor: 'pointer', textDecoration: 'underline' }}>Skills</span> </p>
       </div>
       <div className="whoami-section whoami-mobile-hide">
-        <p>With over six years of 3D modeling experience, I've designed 100+ renders for gaming and virtual environments, blending technical precision with creative aesthetics.</p>
+        <p>Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai), Virtual Intern @ JP Morgan Chase, AI Agents Websocket Framework LEAD Intern @ HTMX</p>
       </div>
       <div className="whoami-section whoami-mobile-hide">
-        <p>I'm particularly intrigued by AI in media—especially how platforms like YouTube and TikTok refine their recommendation algorithms to shape user engagement.</p>
+        <p>Fun Fact: I started programming when I was 12 by making games on roblox and became a Roblox millionaire at 14, at 16 I got into 3D modelling semi-early and won India's biggest 3D modelling contest, before going all-in into AI at 17</p>
       </div>
       <div className="whoami-section whoami-mobile-hide">
-        <p>At my core, I love experimenting, building, and pushing the boundaries of technology. If that sounds like something you're into—let's connect!</p>
+        <p>At my core, I love making (and breaking) things and new AI apps are like Christmas morning presents to me, If that sounds like something you're into, let's talk!</p>
       </div>
       <div className="whoami-footer">
         <p>Type <span className="command-link" data-command="github" style={{ color: '#5abb9a', cursor: 'pointer', textDecoration: 'underline' }}>github</span>, <span className="command-link" data-command="linkedin" style={{ color: '#5abb9a', cursor: 'pointer', textDecoration: 'underline' }}>linkedin</span>, or <span className="command-link" data-command="email" style={{ color: '#5abb9a', cursor: 'pointer', textDecoration: 'underline' }}>email</span> to connect with me.</p>
