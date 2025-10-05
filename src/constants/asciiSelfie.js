@@ -1,7 +1,6 @@
 export function getAsciiArt() {
     return `
       <pre>
-        // Hello selfie stalker lol
 GGGGGGGPPP55555555555GB#BB######BBBBGB##B#B#######&#GPGGGPPPPP5555J7777?7?~!!!!7J7!!!!7777GGGGGBBGGB
 PPPPPPPPPPP55555YYYP#&&###############B########&&&&&##BB#BBGGPP55Y?77777?7~~~~~7J!~!!!!!!?GPGGGBBGGB
 PPPPPPPPPPPPP5555Y5###############&&&&####BB##&&&&&&###BBB###GGGPY?777777~~~~~~??~~~~!!!~YGPPGGBGGGG

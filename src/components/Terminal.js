@@ -63,7 +63,7 @@ const Terminal = () => {
   const [output, setOutput] = useState([]);
   const [commandHistory, setCommandHistory] = useState([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 768);
   const [input, setInput] = useState('');
   const [hackermode, setHackermode] = useState(false);
   const inputRef = useRef(null);
