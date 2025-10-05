@@ -409,4 +409,10 @@ body {
   .whoami-mobile-hide {
     display: none !important;
   }
+  .whoami-section {
+    font-size: 0.95rem;
+  }
+  .whoami-footer {
+    font-size: 0.9rem;
+  }
 }
