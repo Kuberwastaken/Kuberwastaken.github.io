@@ -19,7 +19,8 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build --cname kuber.studio",
-    "build": "react-scripts build",
+    "build": "npm run update-metadata && react-scripts build && npm run update-metadata",
+    "update-metadata": "node scripts/update-metadata.js",
     "start": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

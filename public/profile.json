@@ -9,13 +9,12 @@
   "linkedin": "https://www.linkedin.com/in/kubermehta/",
   "blog": "https://kuber.studio/blog/",
   "youtube": "https://www.youtube.com/@Kuberwastaken",
-    "current_role": {
+  "current_role": {
     "position": "Perplexity AI Business Fellow & OpenAI Asia-Pacific Developer Advisor",
     "company": "Perplexity AI / OpenAI",
     "focus": "AI development, business applications, and advising on SOTA open-weight models",
     "note": "Recently collaborated with the OpenAI team including Sam Altman on a call as part of a small group of Asia-Pacific developers advising their upcoming SOTA open-weight model"
   },
-  
   "education": [
     {
       "degree": "BSc Computer Science",
@@ -23,112 +22,175 @@
       "status": "Current"
     },
     {
-      "degree": "BTech AI & Data Science", 
+      "degree": "BTech AI & Data Science",
       "institution": "Indraprastha University",
       "status": "Current"
     }
   ],
-  
   "skills": {
     "programming_languages": [
-      "Python", "JavaScript", "TypeScript", "C", "C#", ".NET", 
-      "Lua", "R", "HTML", "CSS", "SCSS"
+      "Python",
+      "JavaScript",
+      "TypeScript",
+      "C",
+      "C#",
+      ".NET",
+      "Lua",
+      "R",
+      "HTML",
+      "CSS",
+      "SCSS"
     ],
     "frameworks": [
-      "React", "Next.js", "Flask", "Node.js", "Transformers.js", "TensorFlow", 
-      "PyTorch", "Express", "Vite"
+      "React",
+      "Next.js",
+      "Flask",
+      "Node.js",
+      "Transformers.js",
+      "TensorFlow",
+      "PyTorch",
+      "Express",
+      "Vite"
     ],
-    "databases": ["SQL", "MongoDB", "PostgreSQL", "BigQuery"],
+    "databases": [
+      "SQL",
+      "MongoDB",
+      "PostgreSQL",
+      "BigQuery"
+    ],
     "tools": [
-      "Git", "Docker", "AWS", "Tableau", "LaTeX", "Gradio",
-      "Jupyter", "VS Code", "Figma", "Blender"
+      "Git",
+      "Docker",
+      "AWS",
+      "Tableau",
+      "LaTeX",
+      "Gradio",
+      "Jupyter",
+      "VS Code",
+      "Figma",
+      "Blender"
     ],
     "specializations": [
-      "Artificial Intelligence", "Machine Learning", "Multi-agent AI Systems",
-      "Computer Vision", "Natural Language Processing", "Web Development",
-      "Data Science", "Full Stack Development"
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Multi-agent AI Systems",
+      "Computer Vision",
+      "Natural Language Processing",
+      "Web Development",
+      "Data Science",
+      "Full Stack Development"
     ]
   },
-  
   "featured_projects": [
     {
+      "name": "Sweeta",
+      "status": "Active",
+      "description": "Made an Open-Source tool to remove Sora 2 Watermarks in Less than 72 Hours of it",
+      "github": "https://github.com/Kuberwastaken/sweeta",
+      "technologies": [
+        "LaMA",
+        "Computer Vision",
+        "Python"
+      ]
+    },
+    {
       "name": "PolyThink",
-      "description": "Multi-agent AI system where multiple models collaborate and fact-check each other",
+      "status": "Active",
+      "description": "A multi-agent AI system where multiple models collaborate and fact-check each other to eliminate hallucinations and provide reliable answers.",
       "url": "https://www.polyth.ink/",
-      "technologies": ["Multi-agent AI", "LLMs", "Python"],
-      "status": "Active"
+      "technologies": [
+        "AI/ML",
+        "Multi-agent AI",
+        "LLMs"
+      ]
     },
     {
       "name": "TREAT",
-      "description": "AI-powered platform for trigger recognition in movies and TV content",
+      "status": "Active",
+      "description": "TREAT is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable.",
       "url": "https://www.trytreat.tech/",
       "github": "https://github.com/Kuberwastaken/TREAT",
-      "technologies": ["AI/ML", "Python", "Web Development"],
-      "status": "Active"
-    },
-    {
-      "name": "MiniLMs",
-      "description": "Lightweight chatbot models including SYNEVA and 15ABELLA",
-      "url": "https://minilms.kuber.studio/",
-      "github": "https://github.com/Kuberwastaken/MiniLMs",
-      "technologies": ["Neural Networks", "JavaScript", "AI"],
-      "status": "Active"
-    },
-    {
-      "name": "AsianMOM",
-      "description": "WebML-based Vision-Language App running in browser with WebGPU",
-      "url": "https://asianmom.kuber.studio/",
-      "github": "https://github.com/Kuberwastaken/AsianMOM",
-      "technologies": ["WebML", "WebGPU", "ONNX", "Computer Vision"],
-      "status": "Active"
-    },    {
-      "name": "CottagOS",
-      "description": "Interactive desktop environment with cottagecore aesthetics",
-      "url": "https://cottagos.kuber.studio/",
-      "github": "https://github.com/Kuberwastaken/CottagOS",
-      "technologies": ["JavaScript", "CSS", "Web APIs"],
-      "award": "First Place at Hack Club SiteJam",
-      "status": "Active"
+      "technologies": [
+        "AI/ML"
+      ]
     },
     {
       "name": "Backdooms",
-      "description": "Making DOOM run inside a QR code (most popular project)",
+      "status": "Active",
+      "description": "One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code",
       "url": "https://kuber.studio/backdooms/",
       "github": "https://github.com/Kuberwastaken/backdooms",
-      "technologies": ["JavaScript", "Game Development", "QR Code"],
+      "technologies": [
+        "Game Development",
+        "QR Code",
+        "JavaScript"
+      ]
+    },
+    {
+      "name": "MiniLMs",
       "status": "Active",
-      "note": "Most popular project"
+      "description": "My ongoing study learning about AI Models architecturally and making fun little chatbots from it. Currently finished development of SYNEVA - a <3kb Markov Chain type Chatbot inspired by ELIZA that is ",
+      "url": "https://minilms.kuber.studio/",
+      "github": "https://github.com/Kuberwastaken/MiniLMs",
+      "technologies": [
+        "AI/ML"
+      ]
+    },
+    {
+      "name": "SecondYou",
+      "status": "Active",
+      "description": "A Private, Local-First AI that Thinks and Writes like You, runs on a finetuned version of Gemma3N made to embody you. Has access to your texts, emails, blogs, social media and more to create your AI p",
+      "url": "https://www.secondyou.app/",
+      "technologies": [
+        "AI/ML"
+      ]
+    },
+    {
+      "name": "ThisWebsiteIsNotOnline",
+      "status": "Active",
+      "description": "An AI powered website where every single URL you can think of exists.",
+      "url": "https://www.thiswebsiteisnot.online/",
+      "github": "https://github.com/Kuberwastaken/thiswebsiteisnotonline",
+      "technologies": [
+        "AI/ML",
+        "Web Development"
+      ]
     },
     {
       "name": "MEOW",
-      "description": "A new and innovative image file format for our modern AI era, PNG on steroids",
-      "github": "https://github.com/Kuberwastaken/meow",
-      "technologies": ["File Format", "AI", "Image Processing"],
       "status": "Active",
-      "note": "Innovative image format for AI workflows"
+      "description": "Top Show-HN for 3 days, became a memecoin that reached $200k and went viral on Web-3 Circles on X, helped me pay for my entire college tuition. The most Purr-fect Image File Format for your AI workflo",
+      "github": "https://github.com/Kuberwastaken/meow",
+      "technologies": [
+        "AI/ML",
+        "Web Development",
+        "Computer Vision"
+      ]
     }
   ],
-    "achievements": [
+  "achievements": [
     "Perplexity AI Business Fellow",
     "OpenAI Asia-Pacific Developer Advisor",
     "Collaborated with OpenAI team including Sam Altman",
     "First Place at Hack Club SiteJam",
-    "Creator of 10+ AI/ML projects",
+    "Creator of 40+ AI/ML projects",
     "6+ years of 3D modeling experience",
     "100+ 3D renders for gaming environments"
   ],
-  
   "interests": [
     "AI in media and recommendation algorithms",
-    "Multi-agent AI systems", 
+    "Multi-agent AI systems",
     "Creative technology and interactive experiences",
     "Gaming and virtual environments",
     "Open source development"
   ],
-  
   "portfolio_features": {
     "type": "Interactive Terminal",
-    "technologies": ["React", "JavaScript", "CSS"],
+    "technologies": [
+      "React",
+      "JavaScript",
+      "CSS"
+    ],
     "features": [
       "30+ terminal commands",
       "Built-in games (Snake, Tetris, 2048, Flappy Bird)",
@@ -138,6 +200,5 @@
       "Mobile responsive design"
     ]
   },
-  
-  "last_updated": "2025-06-14"
+  "last_updated": "2025-10-08"
 }
