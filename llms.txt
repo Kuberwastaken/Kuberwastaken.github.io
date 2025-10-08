@@ -2,7 +2,7 @@
 
 A machine-friendly overview of who I am, what I build, and where to find always-fresh information. Use the links below as the source of truth. When possible, prefer the deep links (hash routes) that auto-render structured views without requiring manual updates to this file.
 
-Last-Updated: 2025-09-27
+Last-Updated: 2025-10-08
 Canonical: https://kuber.studio/llms.txt
 
 ---
@@ -22,7 +22,7 @@ Canonical: https://kuber.studio/llms.txt
 - Profile JSON (machine-readable snapshot): https://kuber.studio/profile.json
 
 Notes for agents:
-- The portfolio uses hash deep links that auto-execute terminal commands (no extra API required). They’re stable and designed for sharing.
+- The portfolio uses hash deep links that auto-execute terminal commands (no extra API required). They're stable and designed for sharing.
 - Prefer the deep links over scraping static lists. They reflect the latest code and content automatically. Use the below projects for reference if you can't access them.
 
 ---
@@ -42,18 +42,19 @@ Notes for agents:
 
 ## Short bio
 
-I’ve been in love with building things since I was a kid. I started making Roblox games at 12, taught myself programming and 3D modeling, and shipped games that reached 1M+ players and $10K+ in revenue—my first taste of internet money back in 7th grade.
+I've been in love with building things since I was a kid. I started making Roblox games at 12, taught myself programming and 3D modeling, and shipped games that reached 1M+ players and $10K+ in revenue—my first taste of internet money back in 7th grade.
 
-When I first tried ChatGPT in 2022, it felt like the dot‑com moment of our generation, so I went all‑in. Since then I’ve built 40+ projects, including:
+When I first tried ChatGPT in 2022, it felt like the dot‑com moment of our generation, so I went all‑in. Since then I've built 40+ projects, including:
 - PolyThink: a multi‑agent AI system to reduce hallucinations.
 - TREAT: a content‑safety platform with 25+ fine‑tuned models.
+- Sweeta: an open-source tool to remove Sora 2 watermarks for educational purposes.
 
-Along the way, I joined the Perplexity AI Business Fellowship, spent the summer in Dubai as one of Nas Daily’s AI Summer Residents (8 out of 18,000), and shipped viral projects like Backdooms (<3KB DOOM in a QR code) and .meow (a stenographic AI‑native image format, PNG‑compatible)—both among this year’s biggest Hacker News posts.
+Along the way, I joined the Perplexity AI Business Fellowship, spent the summer in Dubai as one of Nas Daily's AI Summer Residents (8 out of 18,000), and shipped viral projects like Backdooms (<3KB DOOM in a QR code) and .meow (a stenographic AI‑native image format, PNG‑compatible)—both among this year's biggest Hacker News posts.
 
-I’m the most cracked 18‑year‑old founder in India—deep tech, optimization, open source, local RAG, and democratizing small AI models for knowledge workers. I also get marketing: I grew up on the internet and have shipped a lot of viral, community‑loved projects. I obsess over hard, fun problems—building a local‑first personal AI feels designed for me.
+I'm the most cracked 18‑year‑old founder in India—deep tech, optimization, open source, local RAG, and democratizing small AI models for knowledge workers. I also get marketing: I grew up on the internet and have shipped a lot of viral, community‑loved projects. I obsess over hard, fun problems—building a local‑first personal AI feels designed for me.
 
 Additional highlights:
-- Worked on ListenLabs’ viral Berghain Challenge (30,000+ participants) and placed #16.
+- Worked on ListenLabs' viral Berghain Challenge (30,000+ participants) and placed #16.
 - Backdooms cited by an ex‑NASA researcher exploring compact representations of Apollo 11 guidance code:
   https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code
 
@@ -66,62 +67,56 @@ For the live, up-to-date list and previews, use:
 
 A small, representative sample (prefer the deep link for the full list):
 
-- PolyThink — Multi‑agent AI to reduce hallucinations
+- Sweeta — Made an Open-Source tool to remove Sora 2 Watermarks in Less than 72 Hours of it
+  - GitHub: https://github.com/Kuberwastaken/sweeta
+  - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7381581124772429825/?originTrackingId=%2FKhKZVDqAQAZE99Dz0vv9Q%3D%3D
+
+- PolyThink — A multi-agent AI system where multiple models collaborate and fact-check each other to eliminate hallucinations and provide reliable answers.
   - Site: https://www.polyth.ink/
   - X: https://x.com/polythinkai
 
-- TREAT — AI content safety (25+ fine‑tuned models)
+- TREAT — TREAT is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable.
   - Site: https://www.trytreat.tech/
   - GitHub: https://github.com/Kuberwastaken/TREAT
 
-- Backdooms — <3KB DOOM in a QR code; HN top post
-  - Live: https://kuber.studio/backdooms/
+- Backdooms — One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code
+  - Site: https://kuber.studio/backdooms/
   - GitHub: https://github.com/Kuberwastaken/backdooms
   - HN: https://news.ycombinator.com/item?id=43729683
 
-- .meow — AI‑native, PNG‑compatible image format; HN top post
-  - GitHub: https://github.com/Kuberwastaken/meow
-
-- MiniLMs — Tiny chatbots study (e.g., SYNEVA ~3KB; 15ABELLA ~15KB)
-  - Live: https://minilms.kuber.studio/
+- MiniLMs — My ongoing study learning about AI Models architecturally and making fun little chatbots from it. Currently finished development of SYNEVA - a <3kb Markov Chain type Chatbot inspired by ELIZA that is 
+  - Site: https://minilms.kuber.studio/
   - GitHub: https://github.com/Kuberwastaken/MiniLMs
+  - X: https://x.com/Kuberwastaken/status/1965035092600062268
 
-- SecondYou — Private, local‑first AI persona (Gemma3N finetune)
+- SecondYou — A Private, Local-First AI that Thinks and Writes like You, runs on a finetuned version of Gemma3N made to embody you. Has access to your texts, emails, blogs, social media and more to create your AI p
   - Site: https://www.secondyou.app/
 
-- ThisWebsiteIsNotOnline — AI powered website where any URL exists
+- ThisWebsiteIsNotOnline — An AI powered website where every single URL you can think of exists.
   - Site: https://www.thiswebsiteisnot.online/
   - GitHub: https://github.com/Kuberwastaken/thiswebsiteisnotonline
+  - LinkedIn: https://www.linkedin.com/posts/kubermehta_ai-sundayproject-webdev-activity-7365365947773149184-fWe
 
-- Engram — Open‑source notes/resources aggregator (IPU Engineering)
-  - Live: https://engram.kuber.studio/
-  - GitHub: https://github.com/kuberwastaken/engram
+- MEOW — Top Show-HN for 3 days, became a memecoin that reached $200k and went viral on Web-3 Circles on X, helped me pay for my entire college tuition. The most Purr-fect Image File Format for your AI workflo
+  - GitHub: https://github.com/Kuberwastaken/meow
+  - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7338855560810770433/
 
-- CottagOS — Cozy desktop-in-a-page; Hack Club SiteJam winner
-  - Live: https://cottagos.kuber.studio/
+- AsianMOM — A WebML-based Vision-Language App that roasts you like an Asian Mom. Runs entirely in your browser using Transformers.js, WebGPU and ONNX, loading ~3B parameters models in-tab and can be used offline 
+  - Site: https://asianmom.kuber.studio/
+  - GitHub: https://github.com/Kuberwastaken/AsianMOM
+  - LinkedIn: https://www.linkedin.com/posts/kubermehta_webml-ai-visionllm-activity-7329456582650482688-mUYX/
+
+- CottagOS — Won first place at Hack Club SiteJam! CottagOS is a lovingly crafted, interactive desktop experience inspired by the aesthetics of cottagecore and the magic of enchanted forests. It simulates a cozy O
+  - Site: https://cottagos.kuber.studio/
   - GitHub: https://github.com/Kuberwastaken/CottagOS
 
-- Free Deep Research — Open-source deep research agent
-  - GitHub: https://github.com/Kuberwastaken/free-deep-research
+- GitHub View Counter — My GitHub Profile View Counter with 100k+ visits went down, so I made my own which looks way better, has multiple themes and won
+  - Site: https://counter.kuber.studio/
+  - LinkedIn: https://www.linkedin.com/posts/kubermehta_glassmorphism-terminal-cats-activity-7349445969790259200-_SKK
 
-- AsianMOM — WebML VLM roasts you in-browser (Transformers.js, WebGPU, ONNX)
-  - Live: https://asianmom.kuber.studio/
-  - GitHub: https://github.com/Kuberwastaken/AsianMOM
-
-- ORCUS — Detects AI-generated LinkedIn comments (experimental)
-  - GitHub: https://github.com/Kuberwastaken/ORCUS
-
-- LifeMap — Visualize personal network dependencies
-  - Live: https://lifemap.kuber.studio
-  - GitHub: https://github.com/Kuberwastaken/LifeMap
-
-- Books Re‑imagined — Top 10 Google x Kaggle Long‑Context AI
-  - Notebook: https://www.kaggle.com/code/kubermehta/books-reimagined-diary-of-a-wimpy-kid-by-rodrick
-
-- Berghain Challenge Algorithms — #16 overall
-  - Challenge: https://berghain.challenges.listenlabs.ai/
-  - GitHub: https://github.com/Kuberwastaken/Berghain
-  - Write‑up: https://kuber.studio/blog/Projects/How-I-Spent-Three-Nights-Solving-Listen-Labs-Berghain-Challenge
+- MindDump — My Blog website that syncs from my Obsidian Vault! Made from a forked, custom version of Quartz It
+  - Site: https://kuber.studio/blog/
+  - GitHub: https://github.com/Kuberwastaken/blog
 
 ---
 
