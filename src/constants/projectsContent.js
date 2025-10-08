@@ -27,6 +27,13 @@ const projectsBase = [
     extra: 'https://www.linkedin.com/posts/kubermehta_glassmorphism-terminal-cats-activity-7349445969790259200-_SKK',
   },
   {
+    title: 'Sweeta',
+    description: "Made an Open-Source tool to remove Sora 2 Watermarks in Less than 72 Hours of it's release.\n\nFor educational and research use only, urging OpenAI to be harsher with visual watermarks, uses LaMA inpainting and intelligent detection algorithms to remove watermarks without losing quality.",
+    website: null,
+    github: 'https://github.com/Kuberwastaken/sweeta',
+    extra: 'https://www.linkedin.com/feed/update/urn:li:activity:7381581124772429825/?originTrackingId=%2FKhKZVDqAQAZE99Dz0vv9Q%3D%3D',
+  },
+  {
     title: 'ThisWebsiteIsNotOnline',
     description: 'An AI powered website where every single URL you can think of exists.',
     website: 'https://www.thiswebsiteisnot.online/',
@@ -170,6 +177,7 @@ const projectsBase = [
 // Enforce explicit horizontal-first order on desktop and same order on mobile
 const projectOrder = [
   'Backdooms',
+  'Sweeta',
   'Berghain Challenge Algorithms',
   "ThisWebsiteIsNotOnline",
   'SecondYou',
@@ -310,9 +318,17 @@ const MobileProjectsCarousel = () => {
                 style={{ width: '100%', minHeight: '100%', objectFit: 'cover', display: 'block' }}
               />
             </div>
+          ) : project.title === 'Sweeta' ? (
+            <div style={{ width: '100%', height: '100%', overflowY: 'auto', overflowX: 'hidden', background: '#fff', borderRadius: 12 }}>
+              <img
+                src="kuberwastaken-sweeta.png"
+                alt="Sweeta watermark removal tool preview"
+                style={{ width: '100%', height: 'auto', display: 'block' }}
+              />
+            </div>
           ) : (project.previewImg || (project.title === 'Backdooms' && 'https://cdn.jsdelivr.net/gh/kuberwastaken/backdooms/public/Gameplay-GIF.gif')) ? (
             <img
-              src={project.previewImg || 'https://cdn.jsdelivr.net/gh/kuberwastaken/backdooms/public/Gameplay-GIF.gif'}
+              src={project.previewImg || (project.title === 'Backdooms' ? 'https://cdn.jsdelivr.net/gh/kuberwastaken/backdooms/public/Gameplay-GIF.gif' : '')}
               alt={project.title + ' preview'}
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: 12 }}
             />
@@ -420,7 +436,35 @@ const ProjectsMasonry = () => (
                     display: 'block',
                   }}
                 />
-      </div>
+              </div>
+            ) : project.title === 'Sweeta' ? (
+              <div
+                style={{
+                  marginBottom: 16,
+                  borderRadius: 12,
+                  overflow: 'hidden',
+                  border: '1.5px solid rgba(90,187,154,0.18)',
+                  boxShadow: '0 2px 16px 0 rgba(90,187,154,0.10)',
+                  background: '#181818',
+                  height: 225,
+                  maxWidth: '100%',
+                  display: 'block',
+                  position: 'relative',
+                }}
+                className="project-fauxwebpage-container"
+              >
+                <div style={{height: '100%', width: '100%', overflowY: 'auto', overflowX: 'hidden', background: '#fff'}}>
+                  <img
+                    src="kuberwastaken-sweeta.png"
+                    alt="Sweeta watermark removal tool preview"
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                      display: 'block',
+                    }}
+                  />
+                </div>
+              </div>
             ) : project.previewImg ? (
               <div
                 style={{
