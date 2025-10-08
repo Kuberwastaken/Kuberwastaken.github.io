@@ -4,7 +4,7 @@
   "version": "1.6.9",
   "description": "Kuber Mehta's Portfolio - AI Developer & Full Stack Engineer showcase featuring terminal-style interface, interactive games, and innovative projects",
   "keywords": ["portfolio", "react", "ai-developer", "full-stack", "terminal", "kuber-mehta", "javascript", "web-development"],
-  "author": "Kuber Mehta <contact@kuber.studio>",
+  "author": "Kuber Mehta <kuberhob@gmail.com>",
   "license": "GNU LESSER GENERAL PUBLIC LICENSE",
   "private": true,
   "dependencies": {
