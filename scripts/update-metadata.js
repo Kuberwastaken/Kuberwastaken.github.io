@@ -53,7 +53,7 @@ Notes for agents:
 - Name: Kuber Mehta
 - Location: India
 - Role: Founder / AI Developer / Full‑Stack Engineer
-- Email: mailto:contact@kuber.studio
+- Email: mailto:kuberhob@gmail.com
 - GitHub: https://github.com/Kuberwastaken
 - LinkedIn: https://www.linkedin.com/in/kubermehta/ (3000+ followers)
 - X/Twitter: https://x.com/Kuberwastaken
@@ -132,7 +132,7 @@ These URLs open the portfolio and auto-run the corresponding command:
 
 ## Contact
 
-- Email: contact@kuber.studio
+- Email: kuberhob@gmail.com
 - Portfolio: https://kuber.studio/
 - LinkedIn: https://www.linkedin.com/in/kubermehta/
 - GitHub: https://github.com/Kuberwastaken
