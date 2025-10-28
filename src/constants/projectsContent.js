@@ -172,12 +172,21 @@ const projectsBase = [
     showIframe: true,
     extra: 'https://linkedin.com/feed/update/urn:li:activity:7379082071723593728',
   },
+  {
+    title: 'NoGreeting',
+    description: `I was tired of people dmming me saying just "hi" or "yo" and then waiting for me to answer so I made this website - just go, put in the greeting and the person's name and copy the link\n\nThey get a friendly explanation of why leading with context matters. I save 10 minutes. Everyone wins.`,
+    website: 'https://nogreeting.kuber.studio/',
+    github: 'https://github.com/kuberwastaken/nogreeting',
+    showIframe: true,
+    extra: 'https://www.linkedin.com/feed/update/urn:li:activity:7388816819316260864/',
+  },
 ];
 
 // Enforce explicit horizontal-first order on desktop and same order on mobile
 const projectOrder = [
   'Backdooms',
   'Sweeta',
+  'NoGreeting',
   'Berghain Challenge Algorithms',
   "ThisWebsiteIsNotOnline",
   'SecondYou',
