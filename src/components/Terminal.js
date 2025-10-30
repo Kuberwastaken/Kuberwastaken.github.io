@@ -495,7 +495,7 @@ const Terminal = () => {
       <div style="margin: 20px 0;">
       <p>Welcome to my personal portfolio! (Version 1.6.9)
       <p style="margin-top: 8px;">Type <span style="color: #5abb9a;">'help'</span> to see the list of available commands.</p>
-      <p style="margin-top: 15px;"><span class="rgb-animation">NEW</span> try <a href="https://trytreat.tech/" target="_blank" style="color: #5abb9a;">TREAT</a> & <a href="https://polyth.ink" target="_blank" style="color: #5abb9a;">PolyThink</a></p>
+      <p style="margin-top: 15px;"><span class="rgb-animation">NEW</span> try <a href="https://www.secondyou.app/" target="_blank" style="color: #5abb9a;">SecondYou</a> & <a href="https://polyth.ink" target="_blank" style="color: #5abb9a;">PolyThink</a></p>
       </div>
       </div>`;
 
