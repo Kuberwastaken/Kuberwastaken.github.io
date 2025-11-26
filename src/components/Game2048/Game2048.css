@@ -1,6 +1,7 @@
 body {
   overflow: hidden;
-  touch-action: none; /* I have no clue why this works, but this does work */
+  touch-action: none;
+  /* I have no clue why this works, but this does work */
 }
 
 .game-2048-container {
@@ -20,6 +21,7 @@ body {
   margin-bottom: 10px;
   font-size: 18px;
   font-weight: bold;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .game-2048-grid {
@@ -36,7 +38,7 @@ body {
 
 .game-2048-cell {
   width: 100%;
-  padding-top: 100%; 
+  padding-top: 100%;
   position: relative;
   background-color: #cdc1b4;
   display: flex;
@@ -46,9 +48,10 @@ body {
   font-weight: bold;
   color: #776e65;
   border-radius: 5px;
+  font-family: 'JetBrains Mono', monospace;
 }
 
-.game-2048-cell > div {
+.game-2048-cell>div {
   position: absolute;
   top: 0;
   right: 0;
@@ -59,17 +62,58 @@ body {
   align-items: center;
 }
 
-.value-2 { background-color: #eee4da; }
-.value-4 { background-color: #ede0c8; }
-.value-8 { background-color: #f2b179; color: #f9f6f2; }
-.value-16 { background-color: #f59563; color: #f9f6f2; }
-.value-32 { background-color: #f67c5f; color: #f9f6f2; }
-.value-64 { background-color: #f65e3b; color: #f9f6f2; }
-.value-128 { background-color: #edcf72; color: #f9f6f2; }
-.value-256 { background-color: #edcc61; color: #f9f6f2; }
-.value-512 { background-color: #edc850; color: #f9f6f2; }
-.value-1024 { background-color: #edc53f; color: #f9f6f2; }
-.value-2048 { background-color: #edc22e; color: #f9f6f2; }
+.value-2 {
+  background-color: #eee4da;
+}
+
+.value-4 {
+  background-color: #ede0c8;
+}
+
+.value-8 {
+  background-color: #f2b179;
+  color: #f9f6f2;
+}
+
+.value-16 {
+  background-color: #f59563;
+  color: #f9f6f2;
+}
+
+.value-32 {
+  background-color: #f67c5f;
+  color: #f9f6f2;
+}
+
+.value-64 {
+  background-color: #f65e3b;
+  color: #f9f6f2;
+}
+
+.value-128 {
+  background-color: #edcf72;
+  color: #f9f6f2;
+}
+
+.value-256 {
+  background-color: #edcc61;
+  color: #f9f6f2;
+}
+
+.value-512 {
+  background-color: #edc850;
+  color: #f9f6f2;
+}
+
+.value-1024 {
+  background-color: #edc53f;
+  color: #f9f6f2;
+}
+
+.value-2048 {
+  background-color: #edc22e;
+  color: #f9f6f2;
+}
 
 .tile {
   position: absolute;
@@ -80,12 +124,23 @@ body {
   0% {
     transform: scale(0.5);
   }
+
   100% {
     transform: scale(1);
   }
 }
 
-.value-2, .value-4, .value-8, .value-16, .value-32, .value-64, .value-128, .value-256, .value-512, .value-1024, .value-2048 {
+.value-2,
+.value-4,
+.value-8,
+.value-16,
+.value-32,
+.value-64,
+.value-128,
+.value-256,
+.value-512,
+.value-1024,
+.value-2048 {
   animation: pop 0.2s ease-in-out;
 }
 

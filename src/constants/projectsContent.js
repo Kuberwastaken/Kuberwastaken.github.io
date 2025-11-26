@@ -148,7 +148,7 @@ const MobileProjectsCarousel = () => {
           boxShadow: '0 8px 32px 0 rgba(31,38,135,0.18)',
           padding: '24px 12px',
           color: '#ffebcd',
-          fontFamily: 'JetBrains Mono, monospace',
+          fontFamily: "'JetBrains Mono', monospace",
           border: '1.5px solid rgba(90,187,154,0.13)',
           position: 'relative',
           minHeight: 420,
@@ -196,8 +196,8 @@ const MobileProjectsCarousel = () => {
         </div>
         {/* Navigation buttons */}
         <div style={{ display: 'flex', justifyContent: 'center', gap: 32, marginTop: 10 }}>
-          <button onClick={goLeft} style={{ background: '#111', color: '#5abb9a', border: '1.5px solid #333', borderRadius: 6, fontFamily: 'JetBrains Mono, monospace', fontSize: 22, width: 44, height: 44, cursor: 'pointer', boxShadow: '0 1px 4px #0002' }}>&lt;</button>
-          <button onClick={goRight} style={{ background: '#111', color: '#5abb9a', border: '1.5px solid #333', borderRadius: 6, fontFamily: 'JetBrains Mono, monospace', fontSize: 22, width: 44, height: 44, cursor: 'pointer', boxShadow: '0 1px 4px #0002' }}>&gt;</button>
+          <button onClick={goLeft} style={{ background: '#111', color: '#5abb9a', border: '1.5px solid #333', borderRadius: 6, fontFamily: "'JetBrains Mono', monospace", fontSize: 22, width: 44, height: 44, cursor: 'pointer', boxShadow: '0 1px 4px #0002' }}>&lt;</button>
+          <button onClick={goRight} style={{ background: '#111', color: '#5abb9a', border: '1.5px solid #333', borderRadius: 6, fontFamily: "'JetBrains Mono', monospace", fontSize: 22, width: 44, height: 44, cursor: 'pointer', boxShadow: '0 1px 4px #0002' }}>&gt;</button>
         </div>
         {/* Card index indicator */}
         <div style={{ marginTop: 8, fontSize: '0.92em', color: '#5abb9a', textAlign: 'center' }}>{current + 1} / {total}</div>
@@ -243,7 +243,7 @@ const ProjectsMasonry = () => (
             boxShadow: '0 8px 32px 0 rgba(31,38,135,0.18)',
             padding: '24px 20px',
             color: '#ffebcd',
-            fontFamily: 'JetBrains Mono, monospace',
+            fontFamily: "'JetBrains Mono', monospace",
             position: 'relative',
             border: '1.5px solid rgba(90,187,154,0.13)',
             transition: 'transform 0.18s, box-shadow 0.18s',

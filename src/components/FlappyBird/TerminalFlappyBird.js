@@ -9,7 +9,7 @@ const TerminalFlappyBird = () => {
   const [highScore, setHighScore] = useState(0);
   const [velocity, setVelocity] = useState(0);
   const [pipes, setPipes] = useState([]);
-  
+
   const isMobile = window.innerWidth <= 768;
   const GRAVITY = isMobile ? 0.4 : 0.8; // Adjusted gravity for mobile
   const JUMP_FORCE = isMobile ? -6 : -12; // Adjusted jump force for mobile
@@ -34,7 +34,7 @@ const TerminalFlappyBird = () => {
         jump();
       }
     };
-    
+
     window.addEventListener('keydown', handleSpacebar);
     return () => window.removeEventListener('keydown', handleSpacebar);
   }, []);
@@ -43,7 +43,7 @@ const TerminalFlappyBird = () => {
   useEffect(() => {
     let frameId;
     let pipeSpawnTimer = 0;
-    
+
     const gameLoop = () => {
       if (!gameHasStarted || gameOver) {
         return;
@@ -53,12 +53,12 @@ const TerminalFlappyBird = () => {
       setVelocity(v => v + GRAVITY);
       setBirdPosition(pos => {
         const newPos = pos + velocity;
-        
+
         if (newPos > GAME_HEIGHT - BIRD_SIZE || newPos < 0) {
           endGame();
           return pos;
         }
-        
+
         return newPos;
       });
 
@@ -73,8 +73,8 @@ const TerminalFlappyBird = () => {
           .filter(pipe => pipe.x > -PIPE_WIDTH);
 
         // Check if we need to spawn a new pipe
-        if (currentPipes.length === 0 || 
-            currentPipes[currentPipes.length - 1].x < GAME_WIDTH - 300) {
+        if (currentPipes.length === 0 ||
+          currentPipes[currentPipes.length - 1].x < GAME_WIDTH - 300) {
           const newHeight = Math.random() * (GAME_HEIGHT - PIPE_GAP - 100) + 50;
           updatedPipes.push({
             id: Date.now(),
@@ -118,8 +118,8 @@ const TerminalFlappyBird = () => {
           bottom: GAME_HEIGHT
         };
 
-        if (checkCollision(birdRect, upperPipeRect) || 
-            checkCollision(birdRect, lowerPipeRect)) {
+        if (checkCollision(birdRect, upperPipeRect) ||
+          checkCollision(birdRect, lowerPipeRect)) {
           endGame();
         }
       });
@@ -140,9 +140,9 @@ const TerminalFlappyBird = () => {
 
   const checkCollision = (rect1, rect2) => {
     return rect1.left < rect2.right &&
-           rect1.right > rect2.left &&
-           rect1.top < rect2.bottom &&
-           rect1.bottom > rect2.top;
+      rect1.right > rect2.left &&
+      rect1.top < rect2.bottom &&
+      rect1.bottom > rect2.top;
   };
 
   const jump = () => {
@@ -150,11 +150,11 @@ const TerminalFlappyBird = () => {
       resetGame();
       return;
     }
-    
+
     if (!gameHasStarted) {
       setGameHasStarted(true);
     }
-    
+
     setVelocity(JUMP_FORCE);
   };
 
@@ -183,8 +183,8 @@ const TerminalFlappyBird = () => {
           <div className="score">Score: {score}</div>
           <div className="score">High Score: {highScore}</div>
         </div>
-        
-        <div 
+
+        <div
           className="game-area"
           onClick={jump}
           onTouchStart={jump}
@@ -195,14 +195,14 @@ const TerminalFlappyBird = () => {
             overflow: 'hidden',
             backgroundColor: '#000',
             color: '#56b494',
-            fontFamily: 'monospace',
+            fontFamily: "'JetBrains Mono', monospace",
             border: '2px solid #56b494',
             padding: '10px'
           }}
         >
-          <div 
+          <div
             className="bird"
-            style={{ 
+            style={{
               position: 'absolute',
               left: '50px',
               top: `${birdPosition}px`,
@@ -214,11 +214,11 @@ const TerminalFlappyBird = () => {
               transition: 'transform 0.1s',
             }}
           />
-          
+
           {pipes.map(pipe => (
             <React.Fragment key={pipe.id}>
-              <div 
-                style={{ 
+              <div
+                style={{
                   position: 'absolute',
                   left: `${pipe.x}px`,
                   top: '0',
@@ -227,8 +227,8 @@ const TerminalFlappyBird = () => {
                   backgroundColor: '#56b494',
                 }}
               />
-              <div 
-                style={{ 
+              <div
+                style={{
                   position: 'absolute',
                   left: `${pipe.x}px`,
                   top: `${pipe.height + PIPE_GAP}px`,
@@ -254,7 +254,7 @@ const TerminalFlappyBird = () => {
               alignItems: 'center',
               color: '#56b494',
               fontSize: '24px',
-              fontFamily: 'monospace'
+              fontFamily: "'JetBrains Mono', monospace"
             }}>
               <div style={{ fontSize: '32px', marginBottom: '20px' }}>
                 {gameOver ? 'GAME OVER' : 'TERMINAL BIRD'}
@@ -273,7 +273,7 @@ const TerminalFlappyBird = () => {
         </div>
 
         <div style={{ textAlign: 'center', marginTop: '20px', color: '#666' }}>
-          {isMobile 
+          {isMobile
             ? "Tap anywhere to make the bird jump"
             : " "
           }

@@ -220,7 +220,7 @@
     align-items: center;
   }
 
-  .gameoflife-stats > div {
+  .gameoflife-stats>div {
     flex: 1;
     text-align: center;
     min-width: 120px;
@@ -252,6 +252,7 @@
     transform: scale(0);
     opacity: 0;
   }
+
   to {
     transform: scale(1);
     opacity: 1;
@@ -263,9 +264,17 @@
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.01); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.01);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* Custom scrollbar for container if needed */
@@ -285,4 +294,4 @@
 
 .gameoflife-container::-webkit-scrollbar-thumb:hover {
   background: #6bcca8;
-} 
+}

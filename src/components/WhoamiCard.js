@@ -14,7 +14,7 @@ const WhoamiCard = React.memo(() => (
         style={{
           fontSize: '0.3rem',
           lineHeight: '0.4rem',
-          fontFamily: 'monospace',
+          fontFamily: "'JetBrains Mono', monospace",
           color: '#5abb9a',
           opacity: 0.7,
           overflow: 'hidden',

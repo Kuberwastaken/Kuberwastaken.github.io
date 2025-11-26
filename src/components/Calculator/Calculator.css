@@ -7,7 +7,7 @@
   padding: 20px;
   border-radius: 10px;
   color: #00ff00;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'JetBrains Mono', monospace;
   max-width: 400px;
   width: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -81,9 +81,12 @@
 
 /* Animation for the display screen */
 @keyframes screenAnimation {
-  0%, 100% {
+
+  0%,
+  100% {
     background-color: #a3c293;
   }
+
   50% {
     background-color: #b5d3a7;
   }
