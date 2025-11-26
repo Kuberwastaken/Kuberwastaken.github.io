@@ -371,12 +371,125 @@ function updateProfileJson() {
   }
 }
 
+function updateSitemap() {
+  const currentDate = new Date().toISOString().split('T')[0];
+  const baseUrl = 'https://kuber.studio';
+
+  // 1. Static Routes
+  const staticRoutes = [
+    { loc: '/', priority: '1.0', changefreq: 'weekly' },
+    { loc: 'https://kuber.studio/blog/sitemap.xml', priority: '0.8', changefreq: 'weekly' },
+    { loc: '/profile.json', priority: '0.8', changefreq: 'weekly' },
+    { loc: '/profile.md', priority: '0.8', changefreq: 'weekly' },
+  ];
+
+  // 2. Hash Routes (Commands)
+  const hashRoutes = [
+    'who', 'projects', 'skills', 'misc',
+    'misc/calculator', 'misc/qr-generator', 'misc/password-generator', 'misc/github-feed', 'misc/neofetch',
+    'games', 'games/snake', 'games/tetris', 'games/2048', 'games/flappybird', 'games/gameoflife'
+  ].map(route => ({
+    loc: `/#/${route}`,
+    priority: '0.7',
+    changefreq: 'monthly'
+  }));
+
+  // 3. Project Routes (Subdomains or paths)
+  const projectRoutes = [];
+  projectsData.forEach(project => {
+    if (project.website) {
+      // Check if it's a subdomain of kuber.studio or a path
+      if (project.website.includes('kuber.studio')) {
+        // Skip blog as it's handled in staticRoutes with a specific sitemap link
+        if (project.website.includes('/blog')) return;
+
+        projectRoutes.push({
+          loc: project.website,
+          priority: '0.7',
+          changefreq: 'monthly'
+        });
+      }
+    }
+  });
+
+  // Combine all routes
+  const allRoutes = [...staticRoutes, ...hashRoutes, ...projectRoutes];
+  const uniqueRoutes = [];
+  const seenUrls = new Set();
+
+  allRoutes.forEach(route => {
+    let url = route.loc;
+    if (!url.startsWith('http')) {
+      url = baseUrl + url;
+    }
+
+    // Normalize URL for deduplication (remove trailing slash)
+    const normalizedUrl = url.endsWith('/') ? url.slice(0, -1) : url;
+
+    if (!seenUrls.has(normalizedUrl)) {
+      seenUrls.add(normalizedUrl);
+
+      // Use the original URL for the sitemap
+      uniqueRoutes.push({ ...route, loc: url });
+    }
+  });
+
+  // Generate XML
+  let sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">`;
+
+  uniqueRoutes.forEach(route => {
+    const url = route.loc;
+
+    // Add image for root
+    let imageXml = '';
+    if (route.loc === '/' || route.loc === 'https://kuber.studio/') {
+      imageXml = `
+    <image:image>
+      <image:loc>https://kuber.studio/embed-image.png</image:loc>
+      <image:title>Kuber Mehta - AI Developer Portfolio</image:title>
+      <image:caption>Interactive terminal-style portfolio showcasing AI development projects and skills</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kuber.studio/Portfolio-gif.gif</image:loc>
+      <image:title>Portfolio Demo Animation</image:title>
+      <image:caption>Animated demonstration of terminal-based portfolio interface</image:caption>
+    </image:image>`;
+    }
+
+    sitemapXml += `
+  <url>
+    <loc>${url}</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>${route.changefreq}</changefreq>
+    <priority>${route.priority}</priority>${imageXml}
+  </url>`;
+  });
+
+  sitemapXml += `
+</urlset>`;
+
+  // Write to both public and build directories
+  const publicPath = path.join(__dirname, '../public/sitemap.xml');
+  const buildPath = path.join(__dirname, '../build/sitemap.xml');
+
+  fs.writeFileSync(publicPath, sitemapXml);
+  console.log('✅ Updated public/sitemap.xml');
+
+  // Also update build directory if it exists
+  if (fs.existsSync(path.dirname(buildPath))) {
+    fs.writeFileSync(buildPath, sitemapXml);
+    console.log('✅ Updated build/sitemap.xml');
+  }
+}
+
 function main() {
   console.log('🔄 Updating metadata files...');
 
   try {
     updateLlmsTxt();
     updateProfileJson();
+    updateSitemap();
     console.log('✅ All metadata files updated successfully!');
   } catch (error) {
     console.error('❌ Error updating metadata files:', error);
@@ -389,4 +502,4 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { updateLlmsTxt, updateProfileJson };
+module.exports = { updateLlmsTxt, updateProfileJson, updateSitemap };
