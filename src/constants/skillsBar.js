@@ -1,41 +1,20 @@
-const skillsBar = `
+import profileData from '../data/profile.json';
+
+const generateSkillsHTML = () => {
+  const categories = Object.entries(profileData.skills).map(([category, skills]) => `
+    <div class="skill-category" data-category="${category}">
+      <div class="skill-list">
+        ${skills.map(skill => `
+          <div class="skill-item" data-tooltip="${skill.desc}">${skill.name}</div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+
+  return `
 <div class="skills-container">
   <div class="skills-grid">
-    <div class="skill-category" data-category="Languages">
-      <div class="skill-list">
-        <div class="skill-item" data-tooltip="Versatile scripting & data science">Python</div>
-        <div class="skill-item" data-tooltip="Low-level systems programming">C</div>
-        <div class="skill-item" data-tooltip="Modern object-oriented programming and enterprise development">.NET</div>
-        <div class="skill-item" data-tooltip="Popular language for .NET and game development">C#</div>
-        <div class="skill-item" data-tooltip="Lightweight scripting">Lua</div>
-        <div class="skill-item" data-tooltip="Web & full-stack development">JavaScript</div>
-        <div class="skill-item" data-tooltip="Type-safe JavaScript">TypeScript</div>
-        <div class="skill-item" data-tooltip="Statistical computing">R</div>
-        <div class="skill-item" data-tooltip="Web structure">HTML</div>
-        <div class="skill-item" data-tooltip="Web styling">CSS</div>
-        <div class="skill-item" data-tooltip="Advanced CSS preprocessing">SCSS</div>
-      </div>
-    </div>
-    <div class="skill-category" data-category="Frameworks">
-      <div class="skill-list">
-        <div class="skill-item" data-tooltip="Component-based UI library">React</div>
-        <div class="skill-item" data-tooltip="Full-stack React framework">Next.js</div>
-        <div class="skill-item" data-tooltip="Lightweight web framework">Flask</div>
-        <div class="skill-item" data-tooltip="Server-side JavaScript runtime">Node.js</div>
-        <div class="skill-item" data-tooltip="Deep learning framework">TensorFlow</div>
-        <div class="skill-item" data-tooltip="Machine learning framework">PyTorch</div>
-      </div>
-    </div>
-    <div class="skill-category" data-category="Tools">
-      <div class="skill-list">
-        <div class="skill-item" data-tooltip="Version control system">Git</div>
-        <div class="skill-item" data-tooltip="Database management">SQL</div>
-        <div class="skill-item" data-tooltip="Cloud data warehouse">BigQuery</div>
-        <div class="skill-item" data-tooltip="Data visualization">Tableau</div>
-        <div class="skill-item" data-tooltip="Document preparation">LaTeX</div>
-        <div class="skill-item" data-tooltip="Machine learning interfaces">Gradio</div>
-      </div>
-    </div>
+    ${categories}
   </div>
 </div>
 
@@ -161,5 +140,8 @@ const skillsBar = `
   }
 }
 </style>`;
+};
+
+const skillsBar = generateSkillsHTML();
 
 export default skillsBar;
