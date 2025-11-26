@@ -12,7 +12,7 @@
     },
     "bio": {
         "intro": "Hey! I'm an AI dev & Tech Enthusiast from New Delhi, India",
-        "education": "I'm studying Computer Science from BITS Pilani and AI & Data Science from GGSIPU and build <a href=\"https://www.polyth.ink/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #5abb9a; text-decoration: underline;\">PolyThink</a> and <a href=\"https://www.trytreat.tech/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #5abb9a; text-decoration: underline;\">TREAT AI</a>.",
+        "education": "I'm studying Computer Science from BITS Pilani and AI & Data Science from GGSIPU and building <a href=\"https://www.polyth.ink/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #5abb9a; text-decoration: underline;\">PolyThink</a> and <a href=\"https://www.trytreat.tech/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #5abb9a; text-decoration: underline;\">TREAT AI</a>.",
         "projects_highlight": "I've built and shipped 53+ projects (38+ AI Based) in the past year, run <span class=\"command-link\" data-command=\"projects\" style=\"color: #5abb9a; cursor: pointer; text-decoration: underline;\">Projects</span> to see some of my favourites (that I'm allowed to show)",
         "blog_highlight": "I also <span class=\"command-link\" data-command=\"projects\" style=\"color: #5abb9a; cursor: pointer; text-decoration: underline;\">write a blog called MindDump</span> with 80-100k readers a month.",
         "current_work": "Currently working on Democratizing private, local SLMs with superior context as your External Brain @ <a href=\"https://secondyou.app\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #5abb9a; text-decoration: underline;\">SecondYou</a>, to know more read <a href=\"https://x.com/kuberwastaken/status/1972594854715961570\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #5abb9a; text-decoration: underline;\">this tweet</a>.",
@@ -121,4 +121,5 @@
             }
         ]
     }
+
 }
