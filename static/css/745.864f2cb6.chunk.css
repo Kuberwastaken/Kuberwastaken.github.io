@@ -1,2 +1,0 @@
-.snake-game-container{align-items:center;display:flex;height:100%;justify-content:center;position:relative}.snake-game-canvas{background-color:#000;border:2px solid #ffebcd;height:auto;max-width:400px;width:100%}.game-over{color:red;font-size:24px;font-weight:700;position:absolute}@media (max-width:600px){.snake-game-canvas{max-width:100%}.game-over{font-size:20px}}
-/*# sourceMappingURL=745.864f2cb6.chunk.css.map*/
