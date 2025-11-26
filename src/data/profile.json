@@ -1,0 +1,124 @@
+{
+    "name": "Kuber Mehta",
+    "title": "AI Developer & Full Stack Engineer",
+    "age": 19,
+    "location": "New Delhi, India",
+    "email": "kuberhob@gmail.com",
+    "socials": {
+        "github": "https://github.com/Kuberwastaken",
+        "linkedin": "https://www.linkedin.com/in/kubermehta/",
+        "twitter": "https://x.com/Kuberwastaken",
+        "youtube": "https://www.youtube.com/@Kuberwastaken"
+    },
+    "bio": {
+        "intro": "Hey! I'm an AI dev & Tech Enthusiast from New Delhi, India",
+        "education": "I'm studying Computer Science from BITS Pilani and AI & Data Science from GGSIPU and build <a href=\"https://www.polyth.ink/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #5abb9a; text-decoration: underline;\">PolyThink</a> and <a href=\"https://www.trytreat.tech/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #5abb9a; text-decoration: underline;\">TREAT AI</a>.",
+        "projects_highlight": "I've built and shipped 53+ projects (38+ AI Based) in the past year, run <span class=\"command-link\" data-command=\"projects\" style=\"color: #5abb9a; cursor: pointer; text-decoration: underline;\">Projects</span> to see some of my favourites (that I'm allowed to show)",
+        "blog_highlight": "I also <span class=\"command-link\" data-command=\"projects\" style=\"color: #5abb9a; cursor: pointer; text-decoration: underline;\">write a blog called MindDump</span> with 80-100k readers a month.",
+        "current_work": "Currently working on Democratizing private, local SLMs with superior context as your External Brain @ <a href=\"https://secondyou.app\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #5abb9a; text-decoration: underline;\">SecondYou</a>, to know more read <a href=\"https://x.com/kuberwastaken/status/1972594854715961570\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #5abb9a; text-decoration: underline;\">this tweet</a>.",
+        "skills_highlight": "I design agentic LLM pipelines, post-train models, optimise local RAG systems and play around with resource constrained projects like <a href=\"https://github.com/kuberwastaken/backdooms\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #5abb9a; text-decoration: underline;\">The Backdooms</a> and <a href=\"https://minilms.kuber.studio/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #5abb9a; text-decoration: underline;\">MiniLMs</a>, but to know more about the languages and tools I know run <span class=\"command-link\" data-command=\"skills\" style=\"color: #5abb9a; cursor: pointer; text-decoration: underline;\">Skills</span>",
+        "history": "Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai), AI Agents Websocket Framework LEAD Intern @ HTMX (thanks Twitter)",
+        "fun_fact": "Fun Fact: I started programming when I was 12 on Roblox, became a Roblox millionaire at 14 as a freelance dev, at 16 I got into 3D modelling and won India's biggest student contest for it, but almost went to culinary school at 17 because I suck at math - glad it worked out though :)",
+        "outro": "At my core, I love Building (& Breaking) things, so if you're making something cool and ambitious, let's talk!"
+    },
+    "skills": {
+        "Languages": [
+            {
+                "name": "Python",
+                "desc": "Versatile scripting & data science"
+            },
+            {
+                "name": "C",
+                "desc": "Low-level systems programming"
+            },
+            {
+                "name": ".NET",
+                "desc": "Modern object-oriented programming and enterprise development"
+            },
+            {
+                "name": "C#",
+                "desc": "Popular language for .NET and game development"
+            },
+            {
+                "name": "Lua",
+                "desc": "Lightweight scripting"
+            },
+            {
+                "name": "JavaScript",
+                "desc": "Web & full-stack development"
+            },
+            {
+                "name": "TypeScript",
+                "desc": "Type-safe JavaScript"
+            },
+            {
+                "name": "R",
+                "desc": "Statistical computing"
+            },
+            {
+                "name": "HTML",
+                "desc": "Web structure"
+            },
+            {
+                "name": "CSS",
+                "desc": "Web styling"
+            },
+            {
+                "name": "SCSS",
+                "desc": "Advanced CSS preprocessing"
+            }
+        ],
+        "Frameworks": [
+            {
+                "name": "React",
+                "desc": "Component-based UI library"
+            },
+            {
+                "name": "Next.js",
+                "desc": "Full-stack React framework"
+            },
+            {
+                "name": "Flask",
+                "desc": "Lightweight web framework"
+            },
+            {
+                "name": "Node.js",
+                "desc": "Server-side JavaScript runtime"
+            },
+            {
+                "name": "TensorFlow",
+                "desc": "Deep learning framework"
+            },
+            {
+                "name": "PyTorch",
+                "desc": "Machine learning framework"
+            }
+        ],
+        "Tools": [
+            {
+                "name": "Git",
+                "desc": "Version control system"
+            },
+            {
+                "name": "SQL",
+                "desc": "Database management"
+            },
+            {
+                "name": "BigQuery",
+                "desc": "Cloud data warehouse"
+            },
+            {
+                "name": "Tableau",
+                "desc": "Data visualization"
+            },
+            {
+                "name": "LaTeX",
+                "desc": "Document preparation"
+            },
+            {
+                "name": "Gradio",
+                "desc": "Machine learning interfaces"
+            }
+        ]
+    }
+}

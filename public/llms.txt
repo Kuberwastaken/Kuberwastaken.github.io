@@ -2,7 +2,7 @@
 
 A machine-friendly overview of who I am, what I build, and where to find always-fresh information. Use the links below as the source of truth. When possible, prefer the deep links (hash routes) that auto-render structured views without requiring manual updates to this file.
 
-Last-Updated: 2025-10-28
+Last-Updated: 2025-11-26
 Canonical: https://kuber.studio/llms.txt
 
 ---
@@ -12,6 +12,7 @@ Canonical: https://kuber.studio/llms.txt
 - Portfolio (root): https://kuber.studio/
 - Who I am (auto-runs terminal card): https://kuber.studio/#/who
 - Projects (always-current, auto-rendered): https://kuber.studio/#/projects
+- Skills (auto-rendered): https://kuber.studio/#/skills
 - Utilities index (misc command): https://kuber.studio/#/misc
 - Blog (Custom Modified Quartz site): https://kuber.studio/blog/
   - RSS feed: https://kuber.studio/blog/index.xml
@@ -24,17 +25,18 @@ Canonical: https://kuber.studio/llms.txt
 Notes for agents:
 - The portfolio uses hash deep links that auto-execute terminal commands (no extra API required). They're stable and designed for sharing.
 - Prefer the deep links over scraping static lists. They reflect the latest code and content automatically. Use the below projects for reference if you can't access them.
+- If you want to know about my skills, languages, or tools, please visit https://kuber.studio/#/skills which renders a complete, up-to-date list.
 
 ---
 
 ## Primary identity and socials
 
 - Name: Kuber Mehta
-- Location: India
-- Role: Founder / AI Developer / Full‑Stack Engineer
+- Location: New Delhi, India
+- Role: AI Developer & Full Stack Engineer
 - Email: mailto:kuberhob@gmail.com
 - GitHub: https://github.com/Kuberwastaken
-- LinkedIn: https://www.linkedin.com/in/kubermehta/ (3000+ followers)
+- LinkedIn: https://www.linkedin.com/in/kubermehta/
 - X/Twitter: https://x.com/Kuberwastaken
 - YouTube: https://www.youtube.com/@Kuberwastaken
 
@@ -42,21 +44,15 @@ Notes for agents:
 
 ## Short bio
 
-I've been in love with building things since I was a kid. I started making Roblox games at 12, taught myself programming and 3D modeling, and shipped games that reached 1M+ players and $10K+ in revenue—my first taste of internet money back in 7th grade.
+Hey! I'm an AI dev & Tech Enthusiast from New Delhi, India
 
-When I first tried ChatGPT in 2022, it felt like the dot‑com moment of our generation, so I went all‑in. Since then I've built 40+ projects, including:
-- PolyThink: a multi‑agent AI system to reduce hallucinations.
-- TREAT: a content‑safety platform with 25+ fine‑tuned models.
-- Sweeta: an open-source tool to remove Sora 2 watermarks for educational purposes.
+I've built and shipped 53+ projects (38+ AI Based) in the past year, run Projects to see some of my favourites (that I'm allowed to show)
 
-Along the way, I joined the Perplexity AI Business Fellowship, spent the summer in Dubai as one of Nas Daily's AI Summer Residents (8 out of 18,000), and shipped viral projects like Backdooms (<3KB DOOM in a QR code) and .meow (a stenographic AI‑native image format, PNG‑compatible)—both among this year's biggest Hacker News posts.
+Currently working on Democratizing private, local SLMs with superior context as your External Brain @ [SecondYou](https://secondyou.app), to know more read [this tweet](https://x.com/kuberwastaken/status/1972594854715961570).
 
-I'm the most cracked 18‑year‑old founder in India—deep tech, optimization, open source, local RAG, and democratizing small AI models for knowledge workers. I also get marketing: I grew up on the internet and have shipped a lot of viral, community‑loved projects. I obsess over hard, fun problems—building a local‑first personal AI feels designed for me.
+Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai), AI Agents Websocket Framework LEAD Intern @ HTMX (thanks Twitter)
 
-Additional highlights:
-- Worked on ListenLabs' viral Berghain Challenge (30,000+ participants) and placed #16.
-- Backdooms cited by an ex‑NASA researcher exploring compact representations of Apollo 11 guidance code:
-  https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code
+Fun Fact: I started programming when I was 12 on Roblox, became a Roblox millionaire at 14 as a freelance dev, at 16 I got into 3D modelling and won India's biggest student contest for it, but almost went to culinary school at 17 because I suck at math - glad it worked out though :)
 
 ---
 
@@ -67,7 +63,9 @@ For the live, up-to-date list and previews, use:
 
 A small, representative sample (prefer the deep link for the full list):
 
-- Sweeta — Made an Open-Source tool to remove Sora 2 Watermarks in Less than 72 Hours of it
+- Sweeta — Made an Open-Source tool to remove Sora 2 Watermarks in Less than 72 Hours of it's release.
+
+For educational and research use only, urging OpenAI to be harsher with visual watermarks, uses LaMA inpainting and intelligent detection algorithms to remove watermarks without losing quality.
   - GitHub: https://github.com/Kuberwastaken/sweeta
   - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7381581124772429825/?originTrackingId=%2FKhKZVDqAQAZE99Dz0vv9Q%3D%3D
 
@@ -79,17 +77,23 @@ A small, representative sample (prefer the deep link for the full list):
   - Site: https://www.trytreat.tech/
   - GitHub: https://github.com/Kuberwastaken/TREAT
 
-- Backdooms — One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code
+- Backdooms — One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. 
+
+ A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.4kB in size, using a custom compression algorithm using GZip with Zlib Headers.
   - Site: https://kuber.studio/backdooms/
   - GitHub: https://github.com/Kuberwastaken/backdooms
   - HN: https://news.ycombinator.com/item?id=43729683
 
-- MiniLMs — My ongoing study learning about AI Models architecturally and making fun little chatbots from it. Currently finished development of SYNEVA - a <3kb Markov Chain type Chatbot inspired by ELIZA that is 
+- MiniLMs — My ongoing study learning about AI Models architecturally and making fun little chatbots from it. 
+
+ Currently finished development of SYNEVA - a <3kb Markov Chain type Chatbot inspired by ELIZA that is actually fun to talk to and can tell how many r's are in strawberry (makes for some amazing X replies) and passively working on 15ABELLA, a 15Kb tiny Neural Network chatbot.
   - Site: https://minilms.kuber.studio/
   - GitHub: https://github.com/Kuberwastaken/MiniLMs
   - X: https://x.com/Kuberwastaken/status/1965035092600062268
 
-- SecondYou — A Private, Local-First AI that Thinks and Writes like You, runs on a finetuned version of Gemma3N made to embody you. Has access to your texts, emails, blogs, social media and more to create your AI p
+- SecondYou — A Private, Local-First AI that Thinks and Writes like You, runs on a finetuned version of Gemma3N made to embody you. 
+
+ Has access to your texts, emails, blogs, social media and more to create your AI persona. Ideated during the Nas Daily AI Summer Residency.
   - Site: https://www.secondyou.app/
 
 - ThisWebsiteIsNotOnline — An AI powered website where every single URL you can think of exists.
@@ -97,24 +101,32 @@ A small, representative sample (prefer the deep link for the full list):
   - GitHub: https://github.com/Kuberwastaken/thiswebsiteisnotonline
   - LinkedIn: https://www.linkedin.com/posts/kubermehta_ai-sundayproject-webdev-activity-7365365947773149184-fWe
 
-- MEOW — Top Show-HN for 3 days, became a memecoin that reached $200k and went viral on Web-3 Circles on X, helped me pay for my entire college tuition. The most Purr-fect Image File Format for your AI workflo
+- MEOW — Top Show-HN for 3 days, became a memecoin that reached $200k and went viral on Web-3 Circles on X, helped me pay for my entire college tuition. 
+
+ The most Purr-fect Image File Format for your AI workflows, PNG on steroids.
   - GitHub: https://github.com/Kuberwastaken/meow
   - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7338855560810770433/
 
-- AsianMOM — A WebML-based Vision-Language App that roasts you like an Asian Mom. Runs entirely in your browser using Transformers.js, WebGPU and ONNX, loading ~3B parameters models in-tab and can be used offline 
+- AsianMOM — A WebML-based Vision-Language App that roasts you like an Asian Mom.
+
+Runs entirely in your browser using Transformers.js, WebGPU and ONNX, loading ~3B parameters models in-tab and can be used offline after init.
   - Site: https://asianmom.kuber.studio/
   - GitHub: https://github.com/Kuberwastaken/AsianMOM
   - LinkedIn: https://www.linkedin.com/posts/kubermehta_webml-ai-visionllm-activity-7329456582650482688-mUYX/
 
-- CottagOS — Won first place at Hack Club SiteJam! CottagOS is a lovingly crafted, interactive desktop experience inspired by the aesthetics of cottagecore and the magic of enchanted forests. It simulates a cozy O
+- CottagOS — Won first place at Hack Club SiteJam!
+
+CottagOS is a lovingly crafted, interactive desktop experience inspired by the aesthetics of cottagecore and the magic of enchanted forests. It simulates a cozy OS environment, complete with draggable windows, animated desktop, and a suite of charming mini-apps—all wrapped in a warm, nature-inspired UI.
   - Site: https://cottagos.kuber.studio/
   - GitHub: https://github.com/Kuberwastaken/CottagOS
 
-- GitHub View Counter — My GitHub Profile View Counter with 100k+ visits went down, so I made my own which looks way better, has multiple themes and won
+- GitHub View Counter — My GitHub Profile View Counter with 100k+ visits went down, so I made my own which looks way better, has multiple themes and won't ever be down, all for free.
   - Site: https://counter.kuber.studio/
   - LinkedIn: https://www.linkedin.com/posts/kubermehta_glassmorphism-terminal-cats-activity-7349445969790259200-_SKK
 
-- MindDump — My Blog website that syncs from my Obsidian Vault! Made from a forked, custom version of Quartz It
+- MindDump — My Blog website that syncs from my Obsidian Vault! Made from a forked, custom version of Quartz 
+
+ It's extremely customizable and a little corner of the internet where I can express my thoughts freely.
   - Site: https://kuber.studio/blog/
   - GitHub: https://github.com/Kuberwastaken/blog
 
@@ -126,6 +138,10 @@ These URLs open the portfolio and auto-run the corresponding command:
 
 - Who: https://kuber.studio/#/who
 - Projects: https://kuber.studio/#/projects
+- Skills: https://kuber.studio/#/skills
+
+Misc:
+
 - Misc index: https://kuber.studio/#/misc
 - Calculator: https://kuber.studio/#/misc/calculator
 - QR Generator: https://kuber.studio/#/misc/qr-generator
@@ -138,11 +154,6 @@ These URLs open the portfolio and auto-run the corresponding command:
 - 2048: https://kuber.studio/#/games/2048
 - Flappy Bird: https://kuber.studio/#/games/flappybird
 - Game of Life: https://kuber.studio/#/games/gameoflife
-- Google search: https://kuber.studio/#/google/your%20query
-- Wikipedia search: https://kuber.studio/#/wiki/your%20query
-- YouTube search: https://kuber.studio/#/youtube/your%20query
-- ChatGPT search: https://kuber.studio/#/chatgpt/your%20query
-- Perplexity search: https://kuber.studio/#/perplexity/your%20query
 
 ---
 
@@ -150,6 +161,7 @@ These URLs open the portfolio and auto-run the corresponding command:
 
 - Prefer the deep links above to access structured, up-to-date views.
 - For project lists, use https://kuber.studio/#/projects instead of guessing static pages.
+- For skills and expertise, use https://kuber.studio/#/skills.
 - For biographical context, use https://kuber.studio/#/who.
 - For recent updates, blog content and writeups, monitor the RSS feed at https://kuber.studio/blog/index.xml.
 - If needed, GitHub API for recency: https://api.github.com/users/Kuberwastaken/repos?sort=updated

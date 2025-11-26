@@ -1,7 +1,7 @@
 {
   "name": "Kuber Mehta",
   "title": "AI Developer & Full Stack Engineer",
-  "age": 18,
+  "age": 19,
   "location": "New Delhi, India",
   "email": "kuberhob@gmail.com",
   "website": "https://kuber.studio",
@@ -28,66 +28,113 @@
     }
   ],
   "skills": {
-    "programming_languages": [
-      "Python",
-      "JavaScript",
-      "TypeScript",
-      "C",
-      "C#",
-      ".NET",
-      "Lua",
-      "R",
-      "HTML",
-      "CSS",
-      "SCSS"
+    "Languages": [
+      {
+        "name": "Python",
+        "desc": "Versatile scripting & data science"
+      },
+      {
+        "name": "C",
+        "desc": "Low-level systems programming"
+      },
+      {
+        "name": ".NET",
+        "desc": "Modern object-oriented programming and enterprise development"
+      },
+      {
+        "name": "C#",
+        "desc": "Popular language for .NET and game development"
+      },
+      {
+        "name": "Lua",
+        "desc": "Lightweight scripting"
+      },
+      {
+        "name": "JavaScript",
+        "desc": "Web & full-stack development"
+      },
+      {
+        "name": "TypeScript",
+        "desc": "Type-safe JavaScript"
+      },
+      {
+        "name": "R",
+        "desc": "Statistical computing"
+      },
+      {
+        "name": "HTML",
+        "desc": "Web structure"
+      },
+      {
+        "name": "CSS",
+        "desc": "Web styling"
+      },
+      {
+        "name": "SCSS",
+        "desc": "Advanced CSS preprocessing"
+      }
     ],
-    "frameworks": [
-      "React",
-      "Next.js",
-      "Flask",
-      "Node.js",
-      "Transformers.js",
-      "TensorFlow",
-      "PyTorch",
-      "Express",
-      "Vite"
+    "Frameworks": [
+      {
+        "name": "React",
+        "desc": "Component-based UI library"
+      },
+      {
+        "name": "Next.js",
+        "desc": "Full-stack React framework"
+      },
+      {
+        "name": "Flask",
+        "desc": "Lightweight web framework"
+      },
+      {
+        "name": "Node.js",
+        "desc": "Server-side JavaScript runtime"
+      },
+      {
+        "name": "TensorFlow",
+        "desc": "Deep learning framework"
+      },
+      {
+        "name": "PyTorch",
+        "desc": "Machine learning framework"
+      }
     ],
-    "databases": [
-      "SQL",
-      "MongoDB",
-      "PostgreSQL",
-      "BigQuery"
-    ],
-    "tools": [
-      "Git",
-      "Docker",
-      "AWS",
-      "Tableau",
-      "LaTeX",
-      "Gradio",
-      "Jupyter",
-      "VS Code",
-      "Figma",
-      "Blender"
-    ],
-    "specializations": [
-      "Artificial Intelligence",
-      "Machine Learning",
-      "Multi-agent AI Systems",
-      "Computer Vision",
-      "Natural Language Processing",
-      "Web Development",
-      "Data Science",
-      "Full Stack Development"
+    "Tools": [
+      {
+        "name": "Git",
+        "desc": "Version control system"
+      },
+      {
+        "name": "SQL",
+        "desc": "Database management"
+      },
+      {
+        "name": "BigQuery",
+        "desc": "Cloud data warehouse"
+      },
+      {
+        "name": "Tableau",
+        "desc": "Data visualization"
+      },
+      {
+        "name": "LaTeX",
+        "desc": "Document preparation"
+      },
+      {
+        "name": "Gradio",
+        "desc": "Machine learning interfaces"
+      }
     ]
   },
   "featured_projects": [
     {
       "name": "Sweeta",
       "status": "Active",
-      "description": "Made an Open-Source tool to remove Sora 2 Watermarks in Less than 72 Hours of it",
+      "description": "Made an Open-Source tool to remove Sora 2 Watermarks in Less than 72 Hours of it's release.\n\nFor educational and research use only, urging OpenAI to be harsher with visual watermarks, uses LaMA inpainting and intelligent detection algorithms to remove watermarks without losing quality.",
       "github": "https://github.com/Kuberwastaken/sweeta",
       "technologies": [
+        "AI/ML",
         "LaMA",
         "Computer Vision",
         "Python"
@@ -117,7 +164,7 @@
     {
       "name": "Backdooms",
       "status": "Active",
-      "description": "One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code",
+      "description": "One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. \n\n A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.4kB in size, using a custom compression algorithm using GZip with Zlib Headers.",
       "url": "https://kuber.studio/backdooms/",
       "github": "https://github.com/Kuberwastaken/backdooms",
       "technologies": [
@@ -129,7 +176,7 @@
     {
       "name": "MiniLMs",
       "status": "Active",
-      "description": "My ongoing study learning about AI Models architecturally and making fun little chatbots from it. Currently finished development of SYNEVA - a <3kb Markov Chain type Chatbot inspired by ELIZA that is ",
+      "description": "My ongoing study learning about AI Models architecturally and making fun little chatbots from it. \n\n Currently finished development of SYNEVA - a <3kb Markov Chain type Chatbot inspired by ELIZA that is actually fun to talk to and can tell how many r's are in strawberry (makes for some amazing X replies) and passively working on 15ABELLA, a 15Kb tiny Neural Network chatbot.",
       "url": "https://minilms.kuber.studio/",
       "github": "https://github.com/Kuberwastaken/MiniLMs",
       "technologies": [
@@ -139,7 +186,7 @@
     {
       "name": "SecondYou",
       "status": "Active",
-      "description": "A Private, Local-First AI that Thinks and Writes like You, runs on a finetuned version of Gemma3N made to embody you. Has access to your texts, emails, blogs, social media and more to create your AI p",
+      "description": "A Private, Local-First AI that Thinks and Writes like You, runs on a finetuned version of Gemma3N made to embody you. \n\n Has access to your texts, emails, blogs, social media and more to create your AI persona. Ideated during the Nas Daily AI Summer Residency.",
       "url": "https://www.secondyou.app/",
       "technologies": [
         "AI/ML"
@@ -159,7 +206,7 @@
     {
       "name": "MEOW",
       "status": "Active",
-      "description": "Top Show-HN for 3 days, became a memecoin that reached $200k and went viral on Web-3 Circles on X, helped me pay for my entire college tuition. The most Purr-fect Image File Format for your AI workflo",
+      "description": "Top Show-HN for 3 days, became a memecoin that reached $200k and went viral on Web-3 Circles on X, helped me pay for my entire college tuition. \n\n The most Purr-fect Image File Format for your AI workflows, PNG on steroids.",
       "github": "https://github.com/Kuberwastaken/meow",
       "technologies": [
         "AI/ML",
@@ -200,5 +247,5 @@
       "Mobile responsive design"
     ]
   },
-  "last_updated": "2025-10-28"
+  "last_updated": "2025-11-26"
 }

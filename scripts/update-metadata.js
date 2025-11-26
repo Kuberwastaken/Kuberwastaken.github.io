@@ -7,19 +7,167 @@
 
 const fs = require('fs');
 const path = require('path');
-const { 
-  extractProjectsFromSource, 
-  getTopProjects, 
-  formatProjectForLlmsTxt, 
-  formatProjectForProfileJson 
-} = require('./extract-projects');
+
+// Import data directly
+const profileData = require('../src/data/profile.json');
+const projectsData = require('../src/data/projects.json');
+
+// Helper functions (formerly in extract-projects.js)
+function getTopProjects(projects, count = 10) {
+  // Define priority order for top projects
+  const priorityOrder = [
+    'Sweeta',
+    'PolyThink',
+    'TREAT',
+    'Backdooms',
+    'MiniLMs',
+    'SecondYou',
+    'ThisWebsiteIsNotOnline',
+    'MEOW',
+    'AsianMOM',
+    'CottagOS'
+  ];
+
+  const sortedProjects = [];
+
+  // Add priority projects first
+  priorityOrder.forEach(title => {
+    const project = projects.find(p => p.title === title);
+    if (project) {
+      sortedProjects.push(project);
+    }
+  });
+
+  // Add remaining projects
+  projects.forEach(project => {
+    if (!priorityOrder.includes(project.title)) {
+      sortedProjects.push(project);
+    }
+  });
+
+  return sortedProjects.slice(0, count);
+}
+
+function formatProjectForLlmsTxt(project) {
+  let formatted = `- ${project.title}`;
+
+  if (project.description) {
+    // Strip HTML tags if any (though description in JSON is mostly text)
+    const cleanDesc = project.description.replace(/<[^>]*>/g, '');
+    formatted += ` — ${cleanDesc}`;
+  }
+
+  const links = [];
+  if (project.website) links.push(`Site: ${project.website}`);
+  if (project.github) links.push(`GitHub: ${project.github}`);
+
+  // Handle extra links
+  if (project.extra) {
+    const extras = Array.isArray(project.extra) ? project.extra : [project.extra];
+    extras.forEach(extra => {
+      if (!extra) return;
+      const url = typeof extra === 'string' ? extra : (extra.href || extra.url);
+      if (!url) return;
+
+      if (url.includes('news.ycombinator.com')) {
+        links.push(`HN: ${url}`);
+      } else if (url.includes('x.com')) {
+        links.push(`X: ${url}`);
+      } else if (url.includes('linkedin.com')) {
+        links.push(`LinkedIn: ${url}`);
+      }
+    });
+  }
+
+  if (links.length > 0) {
+    formatted += '\n  - ' + links.join('\n  - ');
+  }
+
+  return formatted;
+}
+
+function formatProjectForProfileJson(project) {
+  const formatted = {
+    name: project.title,
+    status: "Active"
+  };
+
+  if (project.description) {
+    formatted.description = project.description;
+  }
+
+  if (project.website) {
+    formatted.url = project.website;
+  }
+
+  if (project.github) {
+    formatted.github = project.github;
+  }
+
+  // Infer technologies based on project name/description
+  const technologies = [];
+  const desc = (project.description || '').toLowerCase();
+  const title = project.title.toLowerCase();
+
+  if (desc.includes('ai') || desc.includes('llm') || desc.includes('machine learning')) {
+    technologies.push('AI/ML');
+  }
+  if (desc.includes('react') || desc.includes('javascript') || desc.includes('web')) {
+    technologies.push('Web Development');
+  }
+  if (desc.includes('python')) {
+    technologies.push('Python');
+  }
+  if (desc.includes('computer vision') || desc.includes('image')) {
+    technologies.push('Computer Vision');
+  }
+
+  // Project-specific technologies
+  if (title.includes('sweeta')) {
+    technologies.push('LaMA', 'Computer Vision', 'Python');
+  } else if (title.includes('polythink')) {
+    technologies.push('Multi-agent AI', 'LLMs');
+  } else if (title.includes('backdooms')) {
+    technologies.push('Game Development', 'QR Code', 'JavaScript');
+  }
+
+  if (technologies.length > 0) {
+    formatted.technologies = [...new Set(technologies)]; // Remove duplicates
+  }
+
+  return formatted;
+}
+
+// Convert HTML links to Markdown and strip other tags
+function formatHtmlToMarkdown(html) {
+  if (!html) return '';
+
+  // Replace <a href="...">text</a> with [text](url)
+  let markdown = html.replace(/<a\s+(?:[^>]*?\s+)?href="([^"]*)"[^>]*>(.*?)<\/a>/gi, '[$2]($1)');
+
+  // Replace <span ...>text</span> with just text (for command links)
+  markdown = markdown.replace(/<span[^>]*>(.*?)<\/span>/gi, '$1');
+
+  // Strip any remaining HTML tags
+  markdown = markdown.replace(/<[^>]*>/g, '');
+
+  return markdown;
+}
 
 function updateLlmsTxt() {
   const currentDate = new Date().toISOString().split('T')[0];
-  const allProjects = extractProjectsFromSource();
-  const topProjects = getTopProjects(allProjects, 12);
-  
-  const llmsContent = `# llms.txt — Kuber Mehta
+  const topProjects = getTopProjects(projectsData, 12);
+
+  // Construct Bio from profileData using Markdown formatting for links
+  const bioText = [
+    profileData.bio.intro,
+    formatHtmlToMarkdown(profileData.bio.projects_highlight),
+    formatHtmlToMarkdown(profileData.bio.current_work),
+    formatHtmlToMarkdown(profileData.bio.history),
+    formatHtmlToMarkdown(profileData.bio.fun_fact)
+  ].join('\n\n');
+
+  const llmsContent = `# llms.txt — ${profileData.name}
 
 A machine-friendly overview of who I am, what I build, and where to find always-fresh information. Use the links below as the source of truth. When possible, prefer the deep links (hash routes) that auto-render structured views without requiring manual updates to this file.
 
@@ -33,6 +181,7 @@ Canonical: https://kuber.studio/llms.txt
 - Portfolio (root): https://kuber.studio/
 - Who I am (auto-runs terminal card): https://kuber.studio/#/who
 - Projects (always-current, auto-rendered): https://kuber.studio/#/projects
+- Skills (auto-rendered): https://kuber.studio/#/skills
 - Utilities index (misc command): https://kuber.studio/#/misc
 - Blog (Custom Modified Quartz site): https://kuber.studio/blog/
   - RSS feed: https://kuber.studio/blog/index.xml
@@ -45,39 +194,26 @@ Canonical: https://kuber.studio/llms.txt
 Notes for agents:
 - The portfolio uses hash deep links that auto-execute terminal commands (no extra API required). They're stable and designed for sharing.
 - Prefer the deep links over scraping static lists. They reflect the latest code and content automatically. Use the below projects for reference if you can't access them.
+- If you want to know about my skills, languages, or tools, please visit https://kuber.studio/#/skills which renders a complete, up-to-date list.
 
 ---
 
 ## Primary identity and socials
 
-- Name: Kuber Mehta
-- Location: India
-- Role: Founder / AI Developer / Full‑Stack Engineer
-- Email: mailto:kuberhob@gmail.com
-- GitHub: https://github.com/Kuberwastaken
-- LinkedIn: https://www.linkedin.com/in/kubermehta/ (3000+ followers)
-- X/Twitter: https://x.com/Kuberwastaken
-- YouTube: https://www.youtube.com/@Kuberwastaken
+- Name: ${profileData.name}
+- Location: ${profileData.location}
+- Role: ${profileData.title}
+- Email: mailto:${profileData.email}
+- GitHub: ${profileData.socials.github}
+- LinkedIn: ${profileData.socials.linkedin}
+- X/Twitter: ${profileData.socials.twitter}
+- YouTube: ${profileData.socials.youtube}
 
 ---
 
 ## Short bio
 
-I've been in love with building things since I was a kid. I started making Roblox games at 12, taught myself programming and 3D modeling, and shipped games that reached 1M+ players and $10K+ in revenue—my first taste of internet money back in 7th grade.
-
-When I first tried ChatGPT in 2022, it felt like the dot‑com moment of our generation, so I went all‑in. Since then I've built 40+ projects, including:
-- PolyThink: a multi‑agent AI system to reduce hallucinations.
-- TREAT: a content‑safety platform with 25+ fine‑tuned models.
-- Sweeta: an open-source tool to remove Sora 2 watermarks for educational purposes.
-
-Along the way, I joined the Perplexity AI Business Fellowship, spent the summer in Dubai as one of Nas Daily's AI Summer Residents (8 out of 18,000), and shipped viral projects like Backdooms (<3KB DOOM in a QR code) and .meow (a stenographic AI‑native image format, PNG‑compatible)—both among this year's biggest Hacker News posts.
-
-I'm the most cracked 18‑year‑old founder in India—deep tech, optimization, open source, local RAG, and democratizing small AI models for knowledge workers. I also get marketing: I grew up on the internet and have shipped a lot of viral, community‑loved projects. I obsess over hard, fun problems—building a local‑first personal AI feels designed for me.
-
-Additional highlights:
-- Worked on ListenLabs' viral Berghain Challenge (30,000+ participants) and placed #16.
-- Backdooms cited by an ex‑NASA researcher exploring compact representations of Apollo 11 guidance code:
-  https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code
+${bioText}
 
 ---
 
@@ -98,6 +234,10 @@ These URLs open the portfolio and auto-run the corresponding command:
 
 - Who: https://kuber.studio/#/who
 - Projects: https://kuber.studio/#/projects
+- Skills: https://kuber.studio/#/skills
+
+Misc:
+
 - Misc index: https://kuber.studio/#/misc
 - Calculator: https://kuber.studio/#/misc/calculator
 - QR Generator: https://kuber.studio/#/misc/qr-generator
@@ -110,11 +250,6 @@ These URLs open the portfolio and auto-run the corresponding command:
 - 2048: https://kuber.studio/#/games/2048
 - Flappy Bird: https://kuber.studio/#/games/flappybird
 - Game of Life: https://kuber.studio/#/games/gameoflife
-- Google search: https://kuber.studio/#/google/your%20query
-- Wikipedia search: https://kuber.studio/#/wiki/your%20query
-- YouTube search: https://kuber.studio/#/youtube/your%20query
-- ChatGPT search: https://kuber.studio/#/chatgpt/your%20query
-- Perplexity search: https://kuber.studio/#/perplexity/your%20query
 
 ---
 
@@ -122,6 +257,7 @@ These URLs open the portfolio and auto-run the corresponding command:
 
 - Prefer the deep links above to access structured, up-to-date views.
 - For project lists, use https://kuber.studio/#/projects instead of guessing static pages.
+- For skills and expertise, use https://kuber.studio/#/skills.
 - For biographical context, use https://kuber.studio/#/who.
 - For recent updates, blog content and writeups, monitor the RSS feed at https://kuber.studio/blog/index.xml.
 - If needed, GitHub API for recency: https://api.github.com/users/Kuberwastaken/repos?sort=updated
@@ -132,20 +268,20 @@ These URLs open the portfolio and auto-run the corresponding command:
 
 ## Contact
 
-- Email: kuberhob@gmail.com
+- Email: ${profileData.email}
 - Portfolio: https://kuber.studio/
-- LinkedIn: https://www.linkedin.com/in/kubermehta/
-- GitHub: https://github.com/Kuberwastaken
+- LinkedIn: ${profileData.socials.linkedin}
+- GitHub: ${profileData.socials.github}
 
 `;
 
   // Write to both public and build directories
   const publicPath = path.join(__dirname, '../public/llms.txt');
   const buildPath = path.join(__dirname, '../build/llms.txt');
-  
+
   fs.writeFileSync(publicPath, llmsContent);
   console.log('✅ Updated public/llms.txt');
-  
+
   // Also update build directory if it exists
   if (fs.existsSync(path.dirname(buildPath))) {
     fs.writeFileSync(buildPath, llmsContent);
@@ -155,20 +291,19 @@ These URLs open the portfolio and auto-run the corresponding command:
 
 function updateProfileJson() {
   const currentDate = new Date().toISOString().split('T')[0];
-  const allProjects = extractProjectsFromSource();
-  const featuredProjects = getTopProjects(allProjects, 8).map(project => formatProjectForProfileJson(project));
-  
-  const profileData = {
-    "name": "Kuber Mehta",
-    "title": "AI Developer & Full Stack Engineer",
-    "age": 18,
-    "location": "New Delhi, India",
-    "email": "kuberhob@gmail.com",
+  const featuredProjects = getTopProjects(projectsData, 8).map(project => formatProjectForProfileJson(project));
+
+  const profileJsonData = {
+    "name": profileData.name,
+    "title": profileData.title,
+    "age": profileData.age,
+    "location": profileData.location,
+    "email": profileData.email,
     "website": "https://kuber.studio",
-    "github": "https://github.com/Kuberwastaken",
-    "linkedin": "https://www.linkedin.com/in/kubermehta/",
+    "github": profileData.socials.github,
+    "linkedin": profileData.socials.linkedin,
     "blog": "https://kuber.studio/blog/",
-    "youtube": "https://www.youtube.com/@Kuberwastaken",
+    "youtube": profileData.socials.youtube,
     "current_role": {
       "position": "Perplexity AI Business Fellow & OpenAI Asia-Pacific Developer Advisor",
       "company": "Perplexity AI / OpenAI",
@@ -182,31 +317,12 @@ function updateProfileJson() {
         "status": "Current"
       },
       {
-        "degree": "BTech AI & Data Science", 
+        "degree": "BTech AI & Data Science",
         "institution": "Indraprastha University",
         "status": "Current"
       }
     ],
-    "skills": {
-      "programming_languages": [
-        "Python", "JavaScript", "TypeScript", "C", "C#", ".NET", 
-        "Lua", "R", "HTML", "CSS", "SCSS"
-      ],
-      "frameworks": [
-        "React", "Next.js", "Flask", "Node.js", "Transformers.js", "TensorFlow", 
-        "PyTorch", "Express", "Vite"
-      ],
-      "databases": ["SQL", "MongoDB", "PostgreSQL", "BigQuery"],
-      "tools": [
-        "Git", "Docker", "AWS", "Tableau", "LaTeX", "Gradio",
-        "Jupyter", "VS Code", "Figma", "Blender"
-      ],
-      "specializations": [
-        "Artificial Intelligence", "Machine Learning", "Multi-agent AI Systems",
-        "Computer Vision", "Natural Language Processing", "Web Development",
-        "Data Science", "Full Stack Development"
-      ]
-    },
+    "skills": profileData.skills,
     "featured_projects": featuredProjects,
     "achievements": [
       "Perplexity AI Business Fellow",
@@ -219,7 +335,7 @@ function updateProfileJson() {
     ],
     "interests": [
       "AI in media and recommendation algorithms",
-      "Multi-agent AI systems", 
+      "Multi-agent AI systems",
       "Creative technology and interactive experiences",
       "Gaming and virtual environments",
       "Open source development"
@@ -239,15 +355,15 @@ function updateProfileJson() {
     "last_updated": currentDate
   };
 
-  const profileJson = JSON.stringify(profileData, null, 2);
-  
+  const profileJson = JSON.stringify(profileJsonData, null, 2);
+
   // Write to both public and build directories
   const publicPath = path.join(__dirname, '../public/profile.json');
   const buildPath = path.join(__dirname, '../build/profile.json');
-  
+
   fs.writeFileSync(publicPath, profileJson);
   console.log('✅ Updated public/profile.json');
-  
+
   // Also update build directory if it exists
   if (fs.existsSync(path.dirname(buildPath))) {
     fs.writeFileSync(buildPath, profileJson);
@@ -257,7 +373,7 @@ function updateProfileJson() {
 
 function main() {
   console.log('🔄 Updating metadata files...');
-  
+
   try {
     updateLlmsTxt();
     updateProfileJson();

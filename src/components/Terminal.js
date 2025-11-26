@@ -18,6 +18,7 @@ const TetrisGame = lazy(() => import('./TetrisGame/TetrisGame'));
 const Game2048 = lazy(() => import('./Game2048/Game2048'));
 const TerminalFlappyBird = lazy(() => import('./FlappyBird/TerminalFlappyBird'));
 const GameOfLife = lazy(() => import('./GameOfLife/GameOfLife'));
+const RickrollAnimation = lazy(() => import('./RickrollAnimation'));
 
 // Lazy load utility components
 const QRGenerator = lazy(() => import('./QRGenerator/QRGenerator'));
@@ -82,7 +83,7 @@ const Terminal = () => {
     'chatgpt', 'gpt', 'neofetch', 'nf', 'misc', 'miscellaneous', 'resume',
     'cv', 'google', 'snake', 'backdooms', 'tetris', '2048',
     'flappybird', 'gameoflife', 'time', 'date', 'background', 'theme', 'themes', 'bg',
-    'color', 'calculator', 'perplexity', 'perp', 'hackermode', 'qr-generator', 
+    'color', 'calculator', 'perplexity', 'perp', 'hackermode', 'qr-generator',
     'password-generator', 'github-feed'
   ], []);
 
@@ -221,10 +222,10 @@ const Terminal = () => {
           addToOutput({ type: 'output', content: 'Please provide a search query.' });
         }
         break;
-        case 'who':
-        case 'w':
-          addToOutput({ type: 'component', content: <WhoamiCard /> });
-          break;
+      case 'who':
+      case 'w':
+        addToOutput({ type: 'component', content: <WhoamiCard /> });
+        break;
       case 'wiki':
       case 'wikipedia':
         if (argument) {
@@ -256,111 +257,138 @@ const Terminal = () => {
         setHackermode(prev => !prev);
         addToOutput({ type: 'output', content: `Hackermode ${hackermode ? 'deactivated' : 'activated'}` });
         break;
-              case 'calculator':
-        addToOutput({ type: 'component', content: (
-          <Suspense fallback={<div>Loading calculator...</div>}>
-            <Calculator />
-          </Suspense>
-        ) });
+      case 'calculator':
+        addToOutput({
+          type: 'component', content: (
+            <Suspense fallback={<div>Loading calculator...</div>}>
+              <Calculator />
+            </Suspense>
+          )
+        });
         break;
       case 'qr-generator':
-        addToOutput({ type: 'component', content: (
-          <Suspense fallback={<div>Loading QR Generator...</div>}>
-            <QRGenerator />
-          </Suspense>
-        ) });
+        addToOutput({
+          type: 'component', content: (
+            <Suspense fallback={<div>Loading QR Generator...</div>}>
+              <QRGenerator />
+            </Suspense>
+          )
+        });
         break;
       case 'password-generator':
-        addToOutput({ type: 'component', content: (
-          <Suspense fallback={<div>Loading Password Generator...</div>}>
-            <PasswordGenerator />
-          </Suspense>
-        ) });
+        addToOutput({
+          type: 'component', content: (
+            <Suspense fallback={<div>Loading Password Generator...</div>}>
+              <PasswordGenerator />
+            </Suspense>
+          )
+        });
         break;
       case 'github-feed':
-        addToOutput({ type: 'component', content: (
-          <Suspense fallback={<div>Loading GitHub Feed...</div>}>
-            <GitHubFeed />
-          </Suspense>
-        ) });
+        addToOutput({
+          type: 'component', content: (
+            <Suspense fallback={<div>Loading GitHub Feed...</div>}>
+              <GitHubFeed />
+            </Suspense>
+          )
+        });
         break;
-        case 'snake':
-          addToOutput({ type: 'component', content: (
+      case 'snake':
+        addToOutput({
+          type: 'component', content: (
             <Suspense fallback={<div>Loading Snake game...</div>}>
               <SnakeGame />
             </Suspense>
-          ) });
-          break;
-        case 'backdooms':
-        case 'the backdooms':
-          window.open('https://kuber.studio/backdooms/', '_blank');
-          addToOutput({ type: 'output', content: 'Opening The Backdooms...' });
-          break;
-        case 'tetris':
-          addToOutput({ type: 'component', content: (
+          )
+        });
+        break;
+      case 'backdooms':
+      case 'the backdooms':
+        window.open('https://kuber.studio/backdooms/', '_blank');
+        addToOutput({ type: 'output', content: 'Opening The Backdooms...' });
+        break;
+      case 'tetris':
+        addToOutput({
+          type: 'component', content: (
             <Suspense fallback={<div>Loading Tetris game...</div>}>
               <TetrisGame />
             </Suspense>
-          ) });
-          break;
-        case '2048':
-          addToOutput({ type: 'component', content: (
+          )
+        });
+        break;
+      case '2048':
+        addToOutput({
+          type: 'component', content: (
             <Suspense fallback={<div>Loading 2048 game...</div>}>
               <Game2048 />
             </Suspense>
-          ) });
-          break;
-        case 'flappybird':
-          addToOutput({ type: 'component', content: (
+          )
+        });
+        break;
+      case 'flappybird':
+        addToOutput({
+          type: 'component', content: (
             <Suspense fallback={<div>Loading Flappy Bird game...</div>}>
               <TerminalFlappyBird />
             </Suspense>
-          ) });
-          break;
-        case 'gameoflife':
-          addToOutput({ type: 'component', content: (
+          )
+        });
+        break;
+      case 'gameoflife':
+        addToOutput({
+          type: 'component', content: (
             <Suspense fallback={<div>Loading Game of Life...</div>}>
               <GameOfLife />
             </Suspense>
-          ) });
-          break;
+          )
+        });
+        break;
+      case 'secret':
+        addToOutput({
+          type: 'component', content: (
+            <Suspense fallback={<div>Loading secret...</div>}>
+              <RickrollAnimation />
+            </Suspense>
+          )
+        });
+        break;
       case 'time':
         addToOutput({ type: 'output', content: `Current Time: ${new Date().toLocaleTimeString()}` });
         break;
       case 'date':
         addToOutput({ type: 'output', content: `Current Date: ${new Date().toLocaleDateString()}` });
         break;
-       case 'background':
-       case 'theme':
-       case 'themes':
-       case 'bg':
-       case 'color':
-          if (argument) {
-            const selectedBackground = [...backgrounds.solid, ...backgrounds.gradients].find(bg => bg.name.toLowerCase() === argument.toLowerCase());
-            if (selectedBackground) {
-              changeBackgroundColor(selectedBackground.value);
-              addToOutput({ type: 'output', content: `Background changed to ${selectedBackground.name}` });
-            } else {
-              addToOutput({ type: 'output', content: 'Invalid background. Please choose from the list.' });
-            }
+      case 'background':
+      case 'theme':
+      case 'themes':
+      case 'bg':
+      case 'color':
+        if (argument) {
+          const selectedBackground = [...backgrounds.solid, ...backgrounds.gradients].find(bg => bg.name.toLowerCase() === argument.toLowerCase());
+          if (selectedBackground) {
+            changeBackgroundColor(selectedBackground.value);
+            addToOutput({ type: 'output', content: `Background changed to ${selectedBackground.name}` });
           } else {
-            const backgroundOptions = [...backgrounds.solid, ...backgrounds.gradients].map(bg => (
-              `<div key="${bg.name}" style="display: inline-block; margin: 5px;">
+            addToOutput({ type: 'output', content: 'Invalid background. Please choose from the list.' });
+          }
+        } else {
+          const backgroundOptions = [...backgrounds.solid, ...backgrounds.gradients].map(bg => (
+            `<div key="${bg.name}" style="display: inline-block; margin: 5px;">
                 <div style="width: 50px; height: 50px; background: ${bg.value}; cursor: pointer;" onclick="document.dispatchEvent(new CustomEvent('backgroundSelected', { detail: '${bg.name}' }))"></div>
               </div>`
-            )).join('');
-            addToOutput({ type: 'output', content: `<div style="display: flex; flex-wrap: wrap;">${backgroundOptions}</div>` });
-          }
-          break;
-        case 'tos':
-          window.open('/tos', '_blank');
-          addToOutput({ type: 'output', content: 'Opening Terms of Service...' });
-          break;
-        default:
-          addToOutput({ type: 'output', content: 'Command not found. Type "help" for a list of commands.' });
-          break;
-      }
-      setInput(''); // Clear the input field after handling the command
+          )).join('');
+          addToOutput({ type: 'output', content: `<div style="display: flex; flex-wrap: wrap;">${backgroundOptions}</div>` });
+        }
+        break;
+      case 'tos':
+        window.open('/tos', '_blank');
+        addToOutput({ type: 'output', content: 'Opening Terms of Service...' });
+        break;
+      default:
+        addToOutput({ type: 'output', content: 'Command not found. Type "help" for a list of commands.' });
+        break;
+    }
+    setInput(''); // Clear the input field after handling the command
   }, [availableCommands, getSimilarCommands, addToOutput, hackermode, setHackermode, backgrounds, changeBackgroundColor]);
 
   // Memoized command execution function
@@ -377,14 +405,14 @@ const Terminal = () => {
       console.error('Invalid command:', command);
       return;
     }
-    
+
     // Clean the command string to ensure no undefined characters
     const cleanCommand = command.trim();
     if (!cleanCommand) {
       console.error('Empty command after trimming:', command);
       return;
     }
-    
+
     let index = 0;
     setInput(''); // Clear input
     const interval = setInterval(() => {
@@ -504,9 +532,9 @@ const Terminal = () => {
     setOutput(prev => (prev && prev.length)
       ? prev
       : [
-          { type: 'output', content: welcomeMessage },
-          { type: 'output', content: helpContent }
-        ]
+        { type: 'output', content: welcomeMessage },
+        { type: 'output', content: helpContent }
+      ]
     );
     inputRef.current?.focus();
 
@@ -603,19 +631,19 @@ const Terminal = () => {
     <div id="terminal" className="terminal-container" ref={terminalRef}>
       {hackermode && <HollywoodEffect />}
       {output.map((item, index) => (
-    <div key={index}>
-        {item.type === 'input' ? (
+        <div key={index}>
+          {item.type === 'input' ? (
             <div>
-                <span className="ownerTerminal"><b>kuber@profile</b></span>
-                <b>:~$</b> {item.content}
+              <span className="ownerTerminal"><b>kuber@profile</b></span>
+              <b>:~$</b> {item.content}
             </div>
-        ) : item.type === 'component' ? (
+          ) : item.type === 'component' ? (
             <div>{item.content}</div>
-        ) : (
+          ) : (
             <div dangerouslySetInnerHTML={{ __html: item.content }} />
-        )}
-    </div>
-))}
+          )}
+        </div>
+      ))}
 
       <div className="command-input">
         <span className="prompt">
