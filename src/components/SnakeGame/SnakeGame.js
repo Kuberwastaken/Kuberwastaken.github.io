@@ -8,6 +8,7 @@ const SnakeGame = () => {
   const [food, setFood] = useState({ x: 15, y: 15 });
   const [direction, setDirection] = useState({ x: 1, y: 0 });
   const [gameOver, setGameOver] = useState(false);
+  const [score, setScore] = useState(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -23,10 +24,12 @@ const SnakeGame = () => {
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      ctx.fillStyle = 'red';
+      // Draw food with theme color
+      ctx.fillStyle = '#5abb9a';
       ctx.fillRect(food.x * scale, food.y * scale, scale, scale);
 
-      ctx.fillStyle = 'green';
+      // Draw snake with theme color
+      ctx.fillStyle = '#ffebcd';
       snake.forEach(segment => {
         ctx.fillRect(segment.x * scale, segment.y * scale, scale, scale);
       });
@@ -39,6 +42,7 @@ const SnakeGame = () => {
           x: Math.floor(Math.random() * columns),
           y: Math.floor(Math.random() * rows)
         });
+        setScore(prev => prev + 1);
       } else {
         newSnake.pop();
       }
@@ -70,15 +74,19 @@ const SnakeGame = () => {
       switch (e.key) {
         case 'ArrowUp':
           if (direction.y === 0) setDirection({ x: 0, y: -1 });
+          e.preventDefault();
           break;
         case 'ArrowDown':
           if (direction.y === 0) setDirection({ x: 0, y: 1 });
+          e.preventDefault();
           break;
         case 'ArrowLeft':
           if (direction.x === 0) setDirection({ x: -1, y: 0 });
+          e.preventDefault();
           break;
         case 'ArrowRight':
           if (direction.x === 0) setDirection({ x: 1, y: 0 });
+          e.preventDefault();
           break;
         default:
           break;
@@ -111,22 +119,39 @@ const SnakeGame = () => {
     };
 
     window.addEventListener('keydown', handleKeyDown);
-    if (canvasRef.current) {
-      canvasRef.current.addEventListener('touchstart', handleTouch);
+    const canvas = canvasRef.current;
+    if (canvas) {
+      canvas.addEventListener('touchstart', handleTouch);
     }
 
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
-      if (canvasRef.current) {
-        canvasRef.current.removeEventListener('touchstart', handleTouch);
+      if (canvas) {
+        canvas.removeEventListener('touchstart', handleTouch);
       }
     };
   }, [direction, gameOver]);
 
+  const resetGame = () => {
+    setSnake([{ x: 10, y: 10 }]);
+    setFood({ x: 15, y: 15 });
+    setDirection({ x: 1, y: 0 });
+    setGameOver(false);
+    setScore(0);
+  };
+
   return (
     <div className="snake-game-container">
+      <div className="scoreboard">
+        <div>Score: {score}</div>
+      </div>
       <canvas ref={canvasRef} width="400" height="400" className="snake-game-canvas"></canvas>
-      {gameOver && <div className="game-over">Game Over</div>}
+      {gameOver && (
+        <div className="game-over-overlay">
+          <div className="game-over">Game Over! Score: {score}</div>
+        </div>
+      )}
+      <button className="restart-button" onClick={resetGame}>Restart</button>
     </div>
   );
 };
