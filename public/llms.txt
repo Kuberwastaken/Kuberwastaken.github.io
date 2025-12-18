@@ -2,7 +2,7 @@
 
 A machine-friendly overview of who I am, what I build, and where to find always-fresh information. Use the links below as the source of truth. When possible, prefer the deep links (hash routes) that auto-render structured views without requiring manual updates to this file.
 
-Last-Updated: 2025-11-26
+Last-Updated: 2025-12-18
 Canonical: https://kuber.studio/llms.txt
 
 ---
