@@ -69,7 +69,7 @@ For educational and research use only, urging OpenAI to be harsher with visual w
   - GitHub: https://github.com/Kuberwastaken/sweeta
   - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7381581124772429825/?originTrackingId=%2FKhKZVDqAQAZE99Dz0vv9Q%3D%3D
 
-- PolyThink — A multi-agent AI system where multiple models collaborate and fact-check each other to eliminate hallucinations and provide reliable answers.
+- PolyThink — Building Generative UI for LLMs
   - Site: https://www.polyth.ink/
   - X: https://x.com/polythinkai
 
