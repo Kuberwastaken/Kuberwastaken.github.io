@@ -305,10 +305,10 @@ function updateProfileJson() {
     "blog": "https://kuber.studio/blog/",
     "youtube": profileData.socials.youtube,
     "current_role": {
-      "position": "Perplexity AI Business Fellow & OpenAI Asia-Pacific Developer Advisor",
-      "company": "Perplexity AI / OpenAI",
-      "focus": "AI development, business applications, and advising on SOTA open-weight models",
-      "note": "Recently collaborated with the OpenAI team including Sam Altman on a call as part of a small group of Asia-Pacific developers advising their upcoming SOTA open-weight model"
+      "position": "Perplexity AI Business Fellow & GitHub Copilot Backstage Pass Member",
+      "company": "Perplexity AI / GitHub",
+      "focus": "AI development, business applications, and providing feedback on pre-release AI tools",
+      "note": "Provided feedback to OpenAI on GPT OSS as part of a small group of Asia-Pacific developers. Part of GitHub Copilot Backstage Pass Program — an invite-only exclusive channel with direct access to VS Code, GitHub, & Copilot engineering teams to test new models and features and provide feedback on pre-release applications."
     },
     "education": [
       {
@@ -326,8 +326,8 @@ function updateProfileJson() {
     "featured_projects": featuredProjects,
     "achievements": [
       "Perplexity AI Business Fellow",
-      "OpenAI Asia-Pacific Developer Advisor",
-      "Collaborated with OpenAI team including Sam Altman",
+      "GitHub Copilot Backstage Pass Member",
+      "Provided feedback to OpenAI on GPT OSS",
       "First Place at Hack Club SiteJam",
       "Creator of 40+ AI/ML projects",
       "6+ years of 3D modeling experience",
