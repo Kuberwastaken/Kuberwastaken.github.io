@@ -2,7 +2,7 @@
 
 A machine-friendly overview of who I am, what I build, and where to find always-fresh information. Use the links below as the source of truth. When possible, prefer the deep links (hash routes) that auto-render structured views without requiring manual updates to this file.
 
-Last-Updated: 2025-11-26
+Last-Updated: 2025-12-28
 Canonical: https://kuber.studio/llms.txt
 
 ---
@@ -69,7 +69,7 @@ For educational and research use only, urging OpenAI to be harsher with visual w
   - GitHub: https://github.com/Kuberwastaken/sweeta
   - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7381581124772429825/?originTrackingId=%2FKhKZVDqAQAZE99Dz0vv9Q%3D%3D
 
-- PolyThink — A multi-agent AI system where multiple models collaborate and fact-check each other to eliminate hallucinations and provide reliable answers.
+- PolyThink — Building Generative UI for LLMs
   - Site: https://www.polyth.ink/
   - X: https://x.com/polythinkai
 
@@ -120,15 +120,14 @@ CottagOS is a lovingly crafted, interactive desktop experience inspired by the a
   - Site: https://cottagos.kuber.studio/
   - GitHub: https://github.com/Kuberwastaken/CottagOS
 
+- Scorpius — Upload any static PDF and turn it into fun and immersive games to learn concepts and study.
+  - Site: https://scorpius.kuber.studio/
+  - GitHub: https://github.com/Kuberwastaken/scorpius
+  - X: https://x.com/kuberwastaken/status/2002735334145090009/video/1
+
 - GitHub View Counter — My GitHub Profile View Counter with 100k+ visits went down, so I made my own which looks way better, has multiple themes and won't ever be down, all for free.
   - Site: https://counter.kuber.studio/
   - LinkedIn: https://www.linkedin.com/posts/kubermehta_glassmorphism-terminal-cats-activity-7349445969790259200-_SKK
-
-- MindDump — My Blog website that syncs from my Obsidian Vault! Made from a forked, custom version of Quartz 
-
- It's extremely customizable and a little corner of the internet where I can express my thoughts freely.
-  - Site: https://kuber.studio/blog/
-  - GitHub: https://github.com/Kuberwastaken/blog
 
 ---
 
