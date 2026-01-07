@@ -2,7 +2,7 @@
 
 A machine-friendly overview of who I am, what I build, and where to find always-fresh information. Use the links below as the source of truth. When possible, prefer the deep links (hash routes) that auto-render structured views without requiring manual updates to this file.
 
-Last-Updated: 2025-12-28
+Last-Updated: 2026-01-07
 Canonical: https://kuber.studio/llms.txt
 
 ---
@@ -79,7 +79,7 @@ For educational and research use only, urging OpenAI to be harsher with visual w
 
 - Backdooms — One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. 
 
- A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.4kB in size, using a custom compression algorithm using GZip with Zlib Headers.
+ A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.4kB in size, using a custom compression pipeline using GZip with Zlib Headers.
   - Site: https://kuber.studio/backdooms/
   - GitHub: https://github.com/Kuberwastaken/backdooms
   - HN: https://news.ycombinator.com/item?id=43729683
@@ -120,14 +120,16 @@ CottagOS is a lovingly crafted, interactive desktop experience inspired by the a
   - Site: https://cottagos.kuber.studio/
   - GitHub: https://github.com/Kuberwastaken/CottagOS
 
-- Scorpius — Upload any static PDF and turn it into fun and immersive games to learn concepts and study.
-  - Site: https://scorpius.kuber.studio/
-  - GitHub: https://github.com/Kuberwastaken/scorpius
-  - X: https://x.com/kuberwastaken/status/2002735334145090009/video/1
+- Silverilla — A Three.JS based 100 Men vs 1 Gorilla game - coded from scratch.
 
-- GitHub View Counter — My GitHub Profile View Counter with 100k+ visits went down, so I made my own which looks way better, has multiple themes and won't ever be down, all for free.
-  - Site: https://counter.kuber.studio/
-  - LinkedIn: https://www.linkedin.com/posts/kubermehta_glassmorphism-terminal-cats-activity-7349445969790259200-_SKK
+Seed based map generation, custom NPC behaviors and multiple crafting and attack sequences powered by Gemini 3 Pro.
+  - Site: https://silverilla.kuber.studio/
+  - X: https://x.com/kuberwastaken/status/2002013125688889852
+
+- DOOMme — Running DOOM (1993) in a GitHub Readme.
+
+A DIY stateless engine with 8000+ markdown files and WebP images linked together with graphs programmatically mapping out every position in the E1M1 map in all 4 directions.
+  - GitHub: https://github.com/Kuberwastaken/DoomMe
 
 ---
 
