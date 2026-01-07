@@ -10,10 +10,10 @@
   "blog": "https://kuber.studio/blog/",
   "youtube": "https://www.youtube.com/@Kuberwastaken",
   "current_role": {
-    "position": "Perplexity AI Business Fellow & OpenAI Asia-Pacific Developer Advisor",
-    "company": "Perplexity AI / OpenAI",
-    "focus": "AI development, business applications, and advising on SOTA open-weight models",
-    "note": "Recently collaborated with the OpenAI team including Sam Altman on a call as part of a small group of Asia-Pacific developers advising their upcoming SOTA open-weight model"
+    "position": "Perplexity AI Business Fellow & GitHub Copilot Backstage Pass Member",
+    "company": "Perplexity AI / GitHub",
+    "focus": "AI development, business applications, and providing feedback on pre-release AI tools",
+    "note": "Provided feedback to OpenAI on GPT OSS as part of a small group of Asia-Pacific developers. Part of GitHub Copilot Backstage Pass Program — an invite-only exclusive channel with direct access to VS Code, GitHub, & Copilot engineering teams to test new models and features and provide feedback on pre-release applications."
   },
   "education": [
     {
@@ -164,7 +164,7 @@
     {
       "name": "Backdooms",
       "status": "Active",
-      "description": "One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. \n\n A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.4kB in size, using a custom compression algorithm using GZip with Zlib Headers.",
+      "description": "One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. \n\n A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.4kB in size, using a custom compression pipeline using GZip with Zlib Headers.",
       "url": "https://kuber.studio/backdooms/",
       "github": "https://github.com/Kuberwastaken/backdooms",
       "technologies": [
@@ -217,8 +217,8 @@
   ],
   "achievements": [
     "Perplexity AI Business Fellow",
-    "OpenAI Asia-Pacific Developer Advisor",
-    "Collaborated with OpenAI team including Sam Altman",
+    "GitHub Copilot Backstage Pass Member",
+    "Provided feedback to OpenAI on GPT OSS",
     "First Place at Hack Club SiteJam",
     "Creator of 40+ AI/ML projects",
     "6+ years of 3D modeling experience",
@@ -247,5 +247,5 @@
       "Mobile responsive design"
     ]
   },
-  "last_updated": "2025-11-26"
+  "last_updated": "2026-01-07"
 }
