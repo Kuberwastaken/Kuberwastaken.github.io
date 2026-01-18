@@ -1,5 +1,31 @@
 [
     {
+        "title": "Silverilla",
+        "description": "A Three.JS based 100 Men vs 1 Gorilla game - coded from scratch.\n\nSeed based map generation, custom NPC behaviors and multiple crafting and attack sequences powered by Gemini 3 Pro.",
+        "website": "https://silverilla.kuber.studio/",
+        "github": null,
+        "showIframe": true,
+        "extra": "https://x.com/kuberwastaken/status/2002013125688889852"
+    },
+    {
+        "title": "DOOMme",
+        "description": "Running DOOM (1993) in a GitHub Readme.\n\nA DIY stateless engine with 8000+ markdown files and WebP images linked together with graphs programmatically mapping out every position in the E1M1 map in all 4 directions.",
+        "website": null,
+        "github": "https://github.com/Kuberwastaken/DoomMe",
+        "previewImg": "/images/kuberwastaken-doomme.gif",
+        "showIframe": false,
+        "extra": "https://kuber.studio/blog/Projects/How-I-Made-DOOM-Run-Inside-a-GitHub-Readme"
+    },
+    {
+        "title": "Scorpius",
+        "description": "Upload any static PDF and turn it into fun and immersive games to learn concepts and study.",
+        "website": "https://scorpius.kuber.studio/",
+        "github": "https://github.com/Kuberwastaken/scorpius",
+        "image": "kuberwastaken-scorpius.png",
+        "showIframe": true,
+        "extra": "https://x.com/kuberwastaken/status/2002735334145090009/video/1"
+    },
+    {
         "title": "GitHub View Counter",
         "description": "My GitHub Profile View Counter with 100k+ visits went down, so I made my own which looks way better, has multiple themes and won't ever be down, all for free.",
         "website": "https://counter.kuber.studio/",
@@ -23,7 +49,7 @@
     },
     {
         "title": "PolyThink",
-        "description": "A multi-agent AI system where multiple models collaborate and fact-check each other to eliminate hallucinations and provide reliable answers.",
+        "description": "Building Generative UI for LLMs",
         "website": "https://www.polyth.ink/",
         "github": null,
         "extra": "https://x.com/polythinkai"
@@ -60,7 +86,7 @@
     },
     {
         "title": "Backdooms",
-        "description": "One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. \n\n A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.4kB in size, using a custom compression algorithm using GZip with Zlib Headers.",
+        "description": "One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. \n\n A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.4kB in size, using a custom compression pipeline using GZip with Zlib Headers.",
         "website": "https://kuber.studio/backdooms/",
         "github": "https://github.com/Kuberwastaken/backdooms",
         "extra": "https://news.ycombinator.com/item?id=43729683"
