@@ -19,7 +19,7 @@ const TetrisGame = () => {
     const COLS = 10;
     const ROWS = 20;
     const BLOCK_SIZE = 30;
-    const COLORS = ['cyan', 'blue', 'orange', 'yellow', 'green', 'purple', 'red'];
+    const COLORS = ['#5abb9a', '#ffebcd', '#d4b99c', '#7fffd4', '#bae1ff', '#baffc9', '#ffb3ba'];
     const SHAPES = [
       [[1, 1, 1, 1]],
       [[1, 1, 1], [0, 1, 0]],
@@ -201,15 +201,19 @@ const TetrisGame = () => {
       switch (e.key) {
         case 'ArrowLeft':
           movePiece(currentPiece, -1, 0);
+          e.preventDefault();
           break;
         case 'ArrowRight':
           movePiece(currentPiece, 1, 0);
+          e.preventDefault();
           break;
         case 'ArrowDown':
           dropPiece();
+          e.preventDefault();
           break;
         case 'ArrowUp':
           rotatePiece(currentPiece);
+          e.preventDefault();
           break;
         default:
           break;
@@ -252,11 +256,13 @@ const TetrisGame = () => {
     canvas.addEventListener('touchstart', handleTouch);
     gameInterval = setInterval(update, 50);
 
+    const currentGameState = gameStateRef.current;
+
     return () => {
       window.removeEventListener('keydown', handleKeyPress);
       canvas.removeEventListener('touchstart', handleTouch);
       clearInterval(gameInterval);
-      gameStateRef.current.isOver = false;
+      currentGameState.isOver = false;
     };
   }, [gameOver, score, topScore]);
 
@@ -272,14 +278,14 @@ const TetrisGame = () => {
         <div>Score: {score}</div>
         <div>Top Score: {topScore}</div>
       </div>
-      <canvas 
-        ref={canvasRef} 
-        width="300" 
-        height="600" 
+      <canvas
+        ref={canvasRef}
+        width="300"
+        height="600"
         className="tetris-game-canvas"
       />
-      {gameOver && <div className="game-over">Game Over</div>}
-      <button onClick={resetGame}>Restart</button>
+      {gameOver && <div className="game-over">Game Over! Score: {score}</div>}
+      <button className="restart-button" onClick={resetGame}>Restart</button>
     </div>
   );
 };
