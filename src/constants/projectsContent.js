@@ -22,26 +22,30 @@ const formatDescriptionToHtml = (raw) => {
 
 
 // Enforce explicit horizontal-first order on desktop and same order on mobile
+const JSDELIVR_BASE = 'https://cdn.jsdelivr.net/gh/Kuberwastaken/Kuberwastaken.github.io/public/images/';
 const projectOrder = [
-  'Backdooms',
+  'MiniLMs',
+  'GitHub View Counter',
+  'Silverilla',
+  'DOOMme',
   'Sweeta',
   'NoGreeting',
   'Fuzzy Redirect',
   'Berghain Challenge Algorithms',
   "ThisWebsiteIsNotOnline",
   'SecondYou',
-  'MiniLMs',
+  'MEOW',
   'CottagOS',
   "What's in a LinkedIn Name?",
   'PolyThink',
   'MindDump',
   'PrayGo',
   'LifeMap',
-  'GitHub View Counter',
+  'Backdooms',
   'Engram',
   'AsianMOM',
   'ORCUS',
-  'MEOW',
+  'Scorpius',
   'TREAT',
   'Free Deep Research',
   'Books Re-imagined',
@@ -120,23 +124,24 @@ const MobileProjectsCarousel = () => {
   const goLeft = () => setCurrent((prev) => (prev === 0 ? total - 1 : prev - 1));
   const goRight = () => setCurrent((prev) => (prev === total - 1 ? 0 : prev + 1));
   const project = projects[current];  // Faux webpage image logic for mobile
-  const jsdelivrBase =
-    'https://cdn.jsdelivr.net/gh/Kuberwastaken/Kuberwastaken.github.io/public/images/'; const fauxWebImage =
-      project.title === 'GitHub View Counter' ? jsdelivrBase + 'kuberwastaken-counter.png' :
-        project.title === 'ThisWebsiteIsNotOnline' ? jsdelivrBase + 'kuberwastaken-twino.png' :
-          project.title === 'ORCUS' ? jsdelivrBase + 'kuberwastaken-orcus.png' :
-            project.title === 'Free Deep Research' ? jsdelivrBase + 'kuberwastaken-freedeepresearch.png' :
-              project.title === 'Books Re-imagined' ? jsdelivrBase + 'kuberwastaken-booksreimagined.png' :
-                project.title === 'PolyThink' ? jsdelivrBase + 'kuberwastaken-polythink.png' :
-                  project.title === 'MiniLMs' ? jsdelivrBase + 'kuberwastaken-minilms.png' :
-                    project.title === 'TREAT' ? jsdelivrBase + 'kuberwastaken-treat.png' :
-                      project.title === 'Engram' ? jsdelivrBase + 'kuberwastaken-engram.png' :
-                        project.title === 'LifeMap' ? jsdelivrBase + 'kuberwastaken-lifemap.jpg' :
-                          project.title === 'SecondYou' ? jsdelivrBase + 'kuberwastaken-secondyou.png' :
-                            project.title === 'PrayGo' ? jsdelivrBase + 'kuberwastaken-praygo.png' :
-                              project.title === 'CottagOS' ? jsdelivrBase + 'kuberwastaken-cottagos.png' :
-                                project.title === 'MEOW' ? jsdelivrBase + 'kuberwastaken-meow.png' :
-                                  null;
+  const fauxWebImage =
+    project.title === 'Silverilla' ? JSDELIVR_BASE + 'kuberwastaken-silverilla.png' :
+      project.title === 'DOOMme' ? JSDELIVR_BASE + 'kuberwastaken-doomme.gif' :
+        project.title === 'GitHub View Counter' ? JSDELIVR_BASE + 'kuberwastaken-counter.png' :
+          project.title === 'ThisWebsiteIsNotOnline' ? JSDELIVR_BASE + 'kuberwastaken-twino.png' :
+            project.title === 'ORCUS' ? JSDELIVR_BASE + 'kuberwastaken-orcus.png' :
+              project.title === 'Free Deep Research' ? JSDELIVR_BASE + 'kuberwastaken-freedeepresearch.png' :
+                project.title === 'Books Re-imagined' ? JSDELIVR_BASE + 'kuberwastaken-booksreimagined.png' :
+                  project.title === 'PolyThink' ? JSDELIVR_BASE + 'kuberwastaken-polythink.png' :
+                    project.title === 'MiniLMs' ? JSDELIVR_BASE + 'kuberwastaken-minilms.png' :
+                      project.title === 'TREAT' ? JSDELIVR_BASE + 'kuberwastaken-treat.png' :
+                        project.title === 'Engram' ? JSDELIVR_BASE + 'kuberwastaken-engram.png' :
+                          project.title === 'LifeMap' ? JSDELIVR_BASE + 'kuberwastaken-lifemap.jpg' :
+                            project.title === 'SecondYou' ? JSDELIVR_BASE + 'kuberwastaken-secondyou.png' :
+                              project.title === 'PrayGo' ? JSDELIVR_BASE + 'kuberwastaken-praygo.png' :
+                                project.title === 'CottagOS' ? JSDELIVR_BASE + 'kuberwastaken-cottagos.png' :
+                                  project.title === 'MEOW' ? JSDELIVR_BASE + 'kuberwastaken-meow.png' :
+                                    null;
   return (
     <div className="mobile-projects-carousel" style={{ maxWidth: 420, margin: '0 auto', padding: '16px 0' }}>
       <div
@@ -170,7 +175,7 @@ const MobileProjectsCarousel = () => {
           ) : project.title === 'Sweeta' ? (
             <div style={{ width: '100%', height: '100%', overflowY: 'auto', overflowX: 'hidden', background: '#fff', borderRadius: 12 }}>
               <img
-                src="/images/kuberwastaken-sweeta.png"
+                src={JSDELIVR_BASE + 'kuberwastaken-sweeta.png'}
                 alt="Sweeta watermark removal tool preview"
                 style={{ width: '100%', height: 'auto', display: 'block' }}
               />
@@ -304,7 +309,7 @@ const ProjectsMasonry = () => (
               >
                 <div style={{ height: '100%', width: '100%', overflowY: 'auto', overflowX: 'hidden', background: '#fff' }}>
                   <img
-                    src="/images/kuberwastaken-sweeta.png"
+                    src={JSDELIVR_BASE + 'kuberwastaken-sweeta.png'}
                     alt="Sweeta watermark removal tool preview"
                     style={{
                       width: '100%',
@@ -331,7 +336,7 @@ const ProjectsMasonry = () => (
                 className="project-iframe-container"
               >
                 <img
-                  src={project.previewImg}
+                  src={project.previewImg.startsWith('/images/') ? JSDELIVR_BASE + project.previewImg.replace('/images/', '') : project.previewImg}
                   alt={project.title + ' preview'}
                   style={{
                     width: '100%',
@@ -341,7 +346,7 @@ const ProjectsMasonry = () => (
                   }}
                 />
               </div>
-            ) : (['GitHub View Counter', 'ThisWebsiteIsNotOnline', 'ORCUS', 'Free Deep Research', 'Books Re-imagined', 'MEOW', 'CottagOS', 'SecondYou', 'PrayGo'].includes(project.title)) ? (
+            ) : (['Silverilla', 'DOOMme', 'GitHub View Counter', 'ThisWebsiteIsNotOnline', 'ORCUS', 'Free Deep Research', 'Books Re-imagined', 'MEOW', 'CottagOS', 'SecondYou', 'PrayGo'].includes(project.title)) ? (
               <div
                 style={{
                   marginBottom: 16,
@@ -359,16 +364,18 @@ const ProjectsMasonry = () => (
                 className="project-fauxwebpage-container"
               >
                 <div style={{ height: '100%', width: '100%', overflowY: 'auto', overflowX: 'hidden', background: '#fff' }}>                  <img src={
-                  project.title === 'GitHub View Counter' ? '/images/kuberwastaken-counter.png' :
-                    project.title === 'ThisWebsiteIsNotOnline' ? '/images/kuberwastaken-twino.png' :
-                      project.title === 'ORCUS' ? '/images/kuberwastaken-orcus.png' :
-                        project.title === 'Free Deep Research' ? '/images/kuberwastaken-freedeepresearch.png' :
-                          project.title === 'Engram' ? '/images/kuberwastaken-engram.png' :
-                            project.title === 'CottagOS' ? '/images/kuberwastaken-cottagos.png' :
-                              project.title === 'MEOW' ? '/images/kuberwastaken-meow.png' :
-                                project.title === 'SecondYou' ? '/images/kuberwastaken-secondyou.png' :
-                                  project.title === 'PrayGo' ? '/images/kuberwastaken-praygo.png' :
-                                    '/images/kuberwastaken-booksreimagined.png'
+                  project.title === 'Silverilla' ? JSDELIVR_BASE + 'kuberwastaken-silverilla.png' :
+                    project.title === 'DOOMme' ? JSDELIVR_BASE + 'kuberwastaken-doomme.gif' :
+                      project.title === 'GitHub View Counter' ? JSDELIVR_BASE + 'kuberwastaken-counter.png' :
+                        project.title === 'ThisWebsiteIsNotOnline' ? JSDELIVR_BASE + 'kuberwastaken-twino.png' :
+                          project.title === 'ORCUS' ? JSDELIVR_BASE + 'kuberwastaken-orcus.png' :
+                            project.title === 'Free Deep Research' ? JSDELIVR_BASE + 'kuberwastaken-freedeepresearch.png' :
+                              project.title === 'Engram' ? JSDELIVR_BASE + 'kuberwastaken-engram.png' :
+                                project.title === 'CottagOS' ? JSDELIVR_BASE + 'kuberwastaken-cottagos.png' :
+                                  project.title === 'MEOW' ? JSDELIVR_BASE + 'kuberwastaken-meow.png' :
+                                    project.title === 'SecondYou' ? JSDELIVR_BASE + 'kuberwastaken-secondyou.png' :
+                                      project.title === 'PrayGo' ? JSDELIVR_BASE + 'kuberwastaken-praygo.png' :
+                                        JSDELIVR_BASE + 'kuberwastaken-booksreimagined.png'
                 }
                   alt={project.title + ' faux webpage'}
                   style={{ width: '100%', minHeight: '100%', objectFit: 'cover', display: 'block' }}
