@@ -1,7 +1,7 @@
 # Kuber Mehta - AI Developer
 
 ## Overview
-19-year-old AI developer, Perplexity Business Fellow, and OpenAI Asia-Pacific developer advisor from New Delhi, India. Recently collaborated with the OpenAI team including Sam Altman on a call as part of a small group of Asia-Pacific developers advising their upcoming SOTA open-weight model. Creator of innovative AI solutions including multi-agent systems, trigger detection platforms, and interactive web applications.
+19-year-old AI developer, Perplexity Business Fellow, and participant in OpenAI Asia-Pacific Developer Discussion from New Delhi, India. Recently participated in a call with Sam Altman and the OpenAI team as a part of Asia Pacific developers to discuss about their open-weight models (GPT OSS 20B, 120B) before release. Creator of innovative AI solutions including multi-agent systems, trigger detection platforms, and interactive web applications.
 
 ## Current Role
 - **Perplexity AI Business Fellow** - Specializing in AI development and business applications
@@ -91,8 +91,7 @@ Interactive desktop experience inspired by cottagecore aesthetics. Winner of fir
 
 ## Notable Achievements
 - Perplexity AI Business Fellow
-- OpenAI Asia-Pacific Developer Advisor
-- Collaborated with OpenAI team including Sam Altman
+- Participated in OpenAI Asia-Pacific Developer Discussion regarding open-weight models
 - First Place at Hack Club SiteJam (CottagOS project)
 - Creator of 10+ AI/ML projects
 - 6+ years of 3D modeling experience
