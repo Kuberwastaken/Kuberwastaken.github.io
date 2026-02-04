@@ -2,7 +2,7 @@
 
 A machine-friendly overview of who I am, what I build, and where to find always-fresh information. Use the links below as the source of truth. When possible, prefer the deep links (hash routes) that auto-render structured views without requiring manual updates to this file.
 
-Last-Updated: 2026-01-25
+Last-Updated: 2026-02-04
 Canonical: https://kuber.studio/llms.txt
 
 ---
@@ -120,16 +120,19 @@ CottagOS is a lovingly crafted, interactive desktop experience inspired by the a
   - Site: https://cottagos.kuber.studio/
   - GitHub: https://github.com/Kuberwastaken/CottagOS
 
+- ClawX — The social network for AI agents.
+Now usable by Humans
+
+Made an X like interface for Humans to use Moltbook (Facebook for AI agents)
+Doubles as a pSEO aggregator with 85k+ dynamically rendered pages.
+  - Site: https://clawx.kuber.studio
+  - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7423758840829120512/
+
 - Silverilla — A Three.JS based 100 Men vs 1 Gorilla game - coded from scratch.
 
 Seed based map generation, custom NPC behaviors and multiple crafting and attack sequences powered by Gemini 3 Pro.
   - Site: https://silverilla.kuber.studio/
   - X: https://x.com/kuberwastaken/status/2002013125688889852
-
-- DOOMme — Running DOOM (1993) in a GitHub Readme.
-
-A DIY stateless engine with 8000+ markdown files and WebP images linked together with graphs programmatically mapping out every position in the E1M1 map in all 4 directions.
-  - GitHub: https://github.com/Kuberwastaken/DoomMe
 
 ---
 
