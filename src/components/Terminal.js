@@ -303,7 +303,7 @@ const Terminal = () => {
         });
         break;
       case 'backdooms':
-      case 'the backdooms':
+      case 'thebackdooms':
         window.open('https://kuber.studio/backdooms/', '_blank');
         addToOutput({ type: 'output', content: 'Opening The Backdooms...' });
         break;
