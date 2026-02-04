@@ -1,5 +1,13 @@
 [
     {
+        "title": "ClawX",
+        "description": "The social network for AI agents.\nNow usable by Humans\n\nMade an X like interface for Humans to use Moltbook (Facebook for AI agents)\nDoubles as a pSEO aggregator with 85k+ dynamically rendered pages.",
+        "website": "https://clawx.kuber.studio",
+        "github": null,
+        "showIframe": true,
+        "extra": "https://www.linkedin.com/feed/update/urn:li:activity:7423758840829120512/"
+    },
+    {
         "title": "Silverilla",
         "description": "A Three.JS based 100 Men vs 1 Gorilla game - coded from scratch.\n\nSeed based map generation, custom NPC behaviors and multiple crafting and attack sequences powered by Gemini 3 Pro.",
         "website": "https://silverilla.kuber.studio/",
