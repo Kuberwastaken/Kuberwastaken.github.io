@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import projectsBase from '../data/projects.json';
 
 // Convert simple markdown links and newlines in descriptions to safe HTML
@@ -9,7 +9,7 @@ const formatDescriptionToHtml = (raw) => {
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
-    .replace(/\"/g, '&quot;')
+    .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
   // Convert [text](url)
   const withLinks = escaped.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, (_m, text, url) => {
@@ -23,38 +23,8 @@ const formatDescriptionToHtml = (raw) => {
 
 // Enforce explicit horizontal-first order on desktop and same order on mobile
 const JSDELIVR_BASE = 'https://cdn.jsdelivr.net/gh/Kuberwastaken/Kuberwastaken.github.io/public/images/';
-const projectOrder = [
-  'ClawX',
-  'MiniLMs',
-  'GitHub View Counter',
-  'Silverilla',
-  'DOOMme',
-  'Sweeta',
-  'NoGreeting',
-  'Fuzzy Redirect',
-  'Berghain Challenge Algorithms',
-  "ThisWebsiteIsNotOnline",
-  'SecondYou',
-  'MEOW',
-  'CottagOS',
-  "What's in a LinkedIn Name?",
-  'PolyThink',
-  'MindDump',
-  'PrayGo',
-  'LifeMap',
-  'Backdooms',
-  'Engram',
-  'AsianMOM',
-  'ORCUS',
-  'Scorpius',
-  'TREAT',
-  'Free Deep Research',
-  'Books Re-imagined',
-];
 
-const projects = projectOrder
-  .map(title => projectsBase.find(p => p.title === title))
-  .filter(Boolean);
+const projects = projectsBase;
 
 const badgeLinks = (project) => {
   const badges = [];
@@ -127,23 +97,24 @@ const MobileProjectsCarousel = () => {
   const project = projects[current];  // Faux webpage image logic for mobile
   const fauxWebImage =
     project.title === 'ClawX' ? JSDELIVR_BASE + 'kuberwastaken-clawx.png' :
-      project.title === 'Silverilla' ? JSDELIVR_BASE + 'kuberwastaken-silverilla.png' :
-        project.title === 'DOOMme' ? JSDELIVR_BASE + 'kuberwastaken-doomme.gif' :
-          project.title === 'GitHub View Counter' ? JSDELIVR_BASE + 'kuberwastaken-counter.png' :
-            project.title === 'ThisWebsiteIsNotOnline' ? JSDELIVR_BASE + 'kuberwastaken-twino.png' :
-              project.title === 'ORCUS' ? JSDELIVR_BASE + 'kuberwastaken-orcus.png' :
-                project.title === 'Free Deep Research' ? JSDELIVR_BASE + 'kuberwastaken-freedeepresearch.png' :
-                  project.title === 'Books Re-imagined' ? JSDELIVR_BASE + 'kuberwastaken-booksreimagined.png' :
-                    project.title === 'PolyThink' ? JSDELIVR_BASE + 'kuberwastaken-polythink.png' :
-                      project.title === 'MiniLMs' ? JSDELIVR_BASE + 'kuberwastaken-minilms.png' :
-                        project.title === 'TREAT' ? JSDELIVR_BASE + 'kuberwastaken-treat.png' :
-                          project.title === 'Engram' ? JSDELIVR_BASE + 'kuberwastaken-engram.png' :
-                            project.title === 'LifeMap' ? JSDELIVR_BASE + 'kuberwastaken-lifemap.jpg' :
-                              project.title === 'SecondYou' ? JSDELIVR_BASE + 'kuberwastaken-secondyou.png' :
-                                project.title === 'PrayGo' ? JSDELIVR_BASE + 'kuberwastaken-praygo.png' :
-                                  project.title === 'CottagOS' ? JSDELIVR_BASE + 'kuberwastaken-cottagos.png' :
-                                    project.title === 'MEOW' ? JSDELIVR_BASE + 'kuberwastaken-meow.png' :
-                                      null;
+      project.title === 'PicoGPT' ? JSDELIVR_BASE + 'kuberwastaken-picogpt.png' :
+        project.title === 'Silverilla' ? JSDELIVR_BASE + 'kuberwastaken-silverilla.png' :
+          project.title === 'DOOMme' ? JSDELIVR_BASE + 'kuberwastaken-doomme.gif' :
+            project.title === 'GitHub View Counter' ? JSDELIVR_BASE + 'kuberwastaken-counter.png' :
+              project.title === 'ThisWebsiteIsNotOnline' ? JSDELIVR_BASE + 'kuberwastaken-twino.png' :
+                project.title === 'ORCUS' ? JSDELIVR_BASE + 'kuberwastaken-orcus.png' :
+                  project.title === 'Free Deep Research' ? JSDELIVR_BASE + 'kuberwastaken-freedeepresearch.png' :
+                    project.title === 'Books Re-imagined' ? JSDELIVR_BASE + 'kuberwastaken-booksreimagined.png' :
+                      project.title === 'PolyThink' ? JSDELIVR_BASE + 'kuberwastaken-polythink.png' :
+                        project.title === 'MiniLMs' ? JSDELIVR_BASE + 'kuberwastaken-minilms.png' :
+                          project.title === 'TREAT' ? JSDELIVR_BASE + 'kuberwastaken-treat.png' :
+                            project.title === 'Engram' ? JSDELIVR_BASE + 'kuberwastaken-engram.png' :
+                              project.title === 'LifeMap' ? JSDELIVR_BASE + 'kuberwastaken-lifemap.jpg' :
+                                project.title === 'SecondYou' ? JSDELIVR_BASE + 'kuberwastaken-secondyou.png' :
+                                  project.title === 'PrayGo' ? JSDELIVR_BASE + 'kuberwastaken-praygo.png' :
+                                    project.title === 'CottagOS' ? JSDELIVR_BASE + 'kuberwastaken-cottagos.png' :
+                                      project.title === 'MEOW' ? JSDELIVR_BASE + 'kuberwastaken-meow.png' :
+                                        null;
   return (
     <div className="mobile-projects-carousel" style={{ maxWidth: 420, margin: '0 auto', padding: '16px 0' }}>
       <div
@@ -222,219 +193,239 @@ const MobileProjectsCarousel = () => {
   );
 };
 
-const ProjectsMasonry = () => (
-  <>
-    <div
-      className="projects-grid"
-      style={{
-        // Masonry-style multi-column layout to avoid fixed gaps below shorter cards
-        columnCount: 3,
-        columnGap: '32px',
-        alignItems: 'start',
-        maxWidth: 1300,
-        margin: '0 auto',
-        padding: '40px 0',
-      }}
-    >
-      {projects.map((project, idx) => (
-        <div
-          key={project.title}
-          className="project-masonry-card"
-          style={{
-            breakInside: 'avoid',
-            display: 'inline-block',
-            width: '100%',
-            background: 'linear-gradient(135deg, rgba(30,30,30,0.95) 60%, rgba(90,187,154,0.10) 100%)',
-            borderRadius: 18,
-            marginBottom: 32,
-            boxShadow: '0 8px 32px 0 rgba(31,38,135,0.18)',
-            padding: '24px 20px',
-            color: '#ffebcd',
-            fontFamily: "'JetBrains Mono', monospace",
-            position: 'relative',
-            border: '1.5px solid rgba(90,187,154,0.13)',
-            transition: 'transform 0.18s, box-shadow 0.18s',
-            alignSelf: 'start',
-          }}
-          onMouseOver={e => {
-            e.currentTarget.style.transform = 'scale(1.025)';
-            e.currentTarget.style.boxShadow = '0 12px 36px 0 rgba(90,187,154,0.18)';
-          }}
-          onMouseOut={e => {
-            e.currentTarget.style.transform = 'scale(1)';
-            e.currentTarget.style.boxShadow = '0 8px 32px 0 rgba(31,38,135,0.18)';
-          }}
-        >
-          <div style={{ position: 'relative', zIndex: 1 }}>
-            {project.title === 'Backdooms' ? (
+const ProjectsMasonry = () => {
+  const [columns, setColumns] = useState(3);
+
+  useEffect(() => {
+    const updateColumns = () => {
+      if (window.innerWidth <= 900) setColumns(1);
+      else if (window.innerWidth <= 1300) setColumns(2);
+      else setColumns(3);
+    };
+
+    updateColumns();
+    window.addEventListener('resize', updateColumns);
+    return () => window.removeEventListener('resize', updateColumns);
+  }, []);
+
+  const columnProjects = Array.from({ length: columns }, () => []);
+  projects.forEach((project, i) => {
+    columnProjects[i % columns].push(project);
+  });
+
+  return (
+    <>
+      <div
+        className="projects-grid"
+        style={{
+          display: 'flex',
+          gap: '32px',
+          maxWidth: 1300,
+          margin: '0 auto',
+          padding: '40px 0',
+          alignItems: 'start',
+        }}
+      >
+        {columnProjects.map((col, colIndex) => (
+          <div key={colIndex} style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '32px', minWidth: 0 }}>
+            {col.map((project, idx) => (
               <div
+                key={project.title}
+                className="project-masonry-card"
                 style={{
-                  marginBottom: 16,
-                  borderRadius: 12,
-                  overflow: 'hidden',
-                  border: '1.5px solid rgba(90,187,154,0.18)',
-                  boxShadow: '0 2px 16px 0 rgba(90,187,154,0.10)',
-                  background: '#181818',
-                  height: 225,
-                  maxWidth: '100%',
-                  display: 'block',
-                  overflow: 'hidden',
-                }}
-                className="project-iframe-container"
-              >
-                <img
-                  src="https://cdn.jsdelivr.net/gh/kuberwastaken/backdooms/public/Gameplay-GIF.gif"
-                  alt="Backdooms gameplay preview"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    display: 'block',
-                  }}
-                />
-              </div>
-            ) : project.title === 'Sweeta' ? (
-              <div
-                style={{
-                  marginBottom: 16,
-                  borderRadius: 12,
-                  overflow: 'hidden',
-                  border: '1.5px solid rgba(90,187,154,0.18)',
-                  boxShadow: '0 2px 16px 0 rgba(90,187,154,0.10)',
-                  background: '#181818',
-                  height: 225,
-                  maxWidth: '100%',
-                  display: 'block',
+                  display: 'inline-block',
+                  width: '100%',
+                  background: 'linear-gradient(135deg, rgba(30,30,30,0.95) 60%, rgba(90,187,154,0.10) 100%)',
+                  borderRadius: 18,
+                  // marginBottom removed, handled by gap
+                  boxShadow: '0 8px 32px 0 rgba(31,38,135,0.18)',
+                  padding: '24px 20px',
+                  color: '#ffebcd',
+                  fontFamily: "'JetBrains Mono', monospace",
                   position: 'relative',
+                  border: '1.5px solid rgba(90,187,154,0.13)',
+                  transition: 'transform 0.18s, box-shadow 0.18s',
+                  alignSelf: 'start',
                 }}
-                className="project-fauxwebpage-container"
+                onMouseOver={e => {
+                  e.currentTarget.style.transform = 'scale(1.025)';
+                  e.currentTarget.style.boxShadow = '0 12px 36px 0 rgba(90,187,154,0.18)';
+                }}
+                onMouseOut={e => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.boxShadow = '0 8px 32px 0 rgba(31,38,135,0.18)';
+                }}
               >
-                <div style={{ height: '100%', width: '100%', overflowY: 'auto', overflowX: 'hidden', background: '#fff' }}>
-                  <img
-                    src={JSDELIVR_BASE + 'kuberwastaken-sweeta.png'}
-                    alt="Sweeta watermark removal tool preview"
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                      display: 'block',
-                    }}
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  {project.title === 'Backdooms' ? (
+                    <div
+                      style={{
+                        marginBottom: 16,
+                        borderRadius: 12,
+                        overflow: 'hidden',
+                        border: '1.5px solid rgba(90,187,154,0.18)',
+                        boxShadow: '0 2px 16px 0 rgba(90,187,154,0.10)',
+                        background: '#181818',
+                        height: 225,
+                        maxWidth: '100%',
+                        display: 'block',
+                      }}
+                      className="project-iframe-container"
+                    >
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/kuberwastaken/backdooms/public/Gameplay-GIF.gif"
+                        alt="Backdooms gameplay preview"
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          display: 'block',
+                        }}
+                      />
+                    </div>
+                  ) : project.title === 'Sweeta' ? (
+                    <div
+                      style={{
+                        marginBottom: 16,
+                        borderRadius: 12,
+                        overflow: 'hidden',
+                        border: '1.5px solid rgba(90,187,154,0.18)',
+                        boxShadow: '0 2px 16px 0 rgba(90,187,154,0.10)',
+                        background: '#181818',
+                        height: 225,
+                        maxWidth: '100%',
+                        display: 'block',
+                        position: 'relative',
+                      }}
+                      className="project-fauxwebpage-container"
+                    >
+                      <div style={{ height: '100%', width: '100%', overflowY: 'auto', overflowX: 'hidden', background: '#fff' }}>
+                        <img
+                          src={JSDELIVR_BASE + 'kuberwastaken-sweeta.png'}
+                          alt="Sweeta watermark removal tool preview"
+                          style={{
+                            width: '100%',
+                            height: 'auto',
+                            display: 'block',
+                          }}
+                        />
+                      </div>
+                    </div>
+                  ) : project.previewImg ? (
+                    <div
+                      style={{
+                        marginBottom: 16,
+                        borderRadius: 12,
+                        overflow: 'hidden',
+                        border: '1.5px solid rgba(90,187,154,0.18)',
+                        boxShadow: '0 2px 16px 0 rgba(90,187,154,0.10)',
+                        background: '#181818',
+                        height: 225,
+                        maxWidth: '100%',
+                        display: 'block',
+                      }}
+                      className="project-iframe-container"
+                    >
+                      <img
+                        src={project.previewImg.startsWith('/images/') ? JSDELIVR_BASE + project.previewImg.replace('/images/', '') : project.previewImg}
+                        alt={project.title + ' preview'}
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          display: 'block',
+                        }}
+                      />
+                    </div>
+                  ) : (['Silverilla', 'DOOMme', 'GitHub View Counter', 'ThisWebsiteIsNotOnline', 'ORCUS', 'Free Deep Research', 'Books Re-imagined', 'MEOW', 'CottagOS', 'SecondYou', 'PrayGo', 'PicoGPT', 'TREAT'].includes(project.title)) ? (
+                    <div
+                      style={{
+                        marginBottom: 16,
+                        borderRadius: 12,
+                        overflow: 'hidden',
+                        border: '1.5px solid rgba(90,187,154,0.18)',
+                        boxShadow: '0 2px 16px 0 rgba(90,187,154,0.10)',
+                        background: '#181818',
+                        height: 225,
+                        maxWidth: '100%',
+                        display: 'block',
+                        position: 'relative',
+                      }}
+                      className="project-fauxwebpage-container"
+                    >
+                      <div style={{ height: '100%', width: '100%', overflowY: 'auto', overflowX: 'hidden', background: '#fff' }}>                  <img src={
+                        project.title === 'Silverilla' ? JSDELIVR_BASE + 'kuberwastaken-silverilla.png' :
+                          project.title === 'DOOMme' ? JSDELIVR_BASE + 'kuberwastaken-doomme.gif' :
+                            project.title === 'DOOMme' ? JSDELIVR_BASE + 'kuberwastaken-doomme.gif' :
+                              project.title === 'PicoGPT' ? JSDELIVR_BASE + 'kuberwastaken-picogpt.png' :
+                                project.title === 'GitHub View Counter' ? JSDELIVR_BASE + 'kuberwastaken-counter.png' :
+                                  project.title === 'ThisWebsiteIsNotOnline' ? JSDELIVR_BASE + 'kuberwastaken-twino.png' :
+                                    project.title === 'ORCUS' ? JSDELIVR_BASE + 'kuberwastaken-orcus.png' :
+                                      project.title === 'Free Deep Research' ? JSDELIVR_BASE + 'kuberwastaken-freedeepresearch.png' :
+                                        project.title === 'Engram' ? JSDELIVR_BASE + 'kuberwastaken-engram.png' :
+                                          project.title === 'CottagOS' ? JSDELIVR_BASE + 'kuberwastaken-cottagos.png' :
+                                            project.title === 'MEOW' ? JSDELIVR_BASE + 'kuberwastaken-meow.png' :
+                                              project.title === 'SecondYou' ? JSDELIVR_BASE + 'kuberwastaken-secondyou.png' :
+                                                project.title === 'PrayGo' ? JSDELIVR_BASE + 'kuberwastaken-praygo.png' :
+                                                  project.title === 'TREAT' ? JSDELIVR_BASE + 'kuberwastaken-treat.png' :
+                                                    JSDELIVR_BASE + 'kuberwastaken-booksreimagined.png'
+                      }
+                        alt={project.title + ' faux webpage'}
+                        style={{ width: '100%', minHeight: '100%', objectFit: 'cover', display: 'block' }}
+                      />
+                      </div>
+                    </div>
+                  ) : project.website && project.showIframe !== false ? (
+                    <div
+                      style={{
+                        marginBottom: 16,
+                        borderRadius: 12,
+                        overflow: 'hidden',
+                        border: '1.5px solid rgba(90,187,154,0.18)',
+                        boxShadow: '0 2px 16px 0 rgba(90,187,154,0.10)',
+                        background: '#181818',
+                        height: 225,
+                        maxWidth: '100%',
+                        display: 'block',
+                      }}
+                      className="project-iframe-container"
+                    >                <iframe
+                      src={project.website}
+                      title={project.title + ' preview'}
+                      style={{
+                        width: (project.title === 'ClawX' || project.title === 'PolyThink') ? '250%' : '200%',
+                        height: (project.title === 'ClawX' || project.title === 'PolyThink') ? 562 : 450,
+                        border: 'none',
+                        borderRadius: 0,
+                        background: '#181818',
+                        display: 'block',
+                        transform: (project.title === 'ClawX' || project.title === 'PolyThink') ? 'scale(0.4)' : 'scale(0.5)',
+                        transformOrigin: '0 0',
+                      }}
+                      loading="lazy"
+                      sandbox="allow-scripts allow-same-origin allow-popups"
+                      allowFullScreen={false}
+                      allow={project.title === 'CottagOS' ? "autoplay 'none'; microphone 'none'; camera 'none'; speaker 'none'" : undefined}
+                      className="project-iframe"
+                    >
+                        Your browser does not support iframes or this site does not allow embedding.
+                      </iframe>
+                    </div>
+                  ) : null}
+                  <div style={{ fontWeight: 700, fontSize: '1.25em', marginBottom: 8, color: '#5abb9a' }}>{project.title}</div>
+                  <div
+                    style={{ fontSize: '1em', marginBottom: 16 }}
+                    dangerouslySetInnerHTML={{ __html: formatDescriptionToHtml(project.description) }}
                   />
+                  <div className="project-badges" style={{ marginTop: 8, display: 'flex', flexWrap: 'wrap' }}>
+                    {badgeLinks(project)}
+                  </div>
                 </div>
               </div>
-            ) : project.previewImg ? (
-              <div
-                style={{
-                  marginBottom: 16,
-                  borderRadius: 12,
-                  overflow: 'hidden',
-                  border: '1.5px solid rgba(90,187,154,0.18)',
-                  boxShadow: '0 2px 16px 0 rgba(90,187,154,0.10)',
-                  background: '#181818',
-                  height: 225,
-                  maxWidth: '100%',
-                  display: 'block',
-                  overflow: 'hidden',
-                }}
-                className="project-iframe-container"
-              >
-                <img
-                  src={project.previewImg.startsWith('/images/') ? JSDELIVR_BASE + project.previewImg.replace('/images/', '') : project.previewImg}
-                  alt={project.title + ' preview'}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    display: 'block',
-                  }}
-                />
-              </div>
-            ) : (['Silverilla', 'DOOMme', 'GitHub View Counter', 'ThisWebsiteIsNotOnline', 'ORCUS', 'Free Deep Research', 'Books Re-imagined', 'MEOW', 'CottagOS', 'SecondYou', 'PrayGo'].includes(project.title)) ? (
-              <div
-                style={{
-                  marginBottom: 16,
-                  borderRadius: 12,
-                  overflow: 'hidden',
-                  border: '1.5px solid rgba(90,187,154,0.18)',
-                  boxShadow: '0 2px 16px 0 rgba(90,187,154,0.10)',
-                  background: '#181818',
-                  height: 225,
-                  maxWidth: '100%',
-                  display: 'block',
-                  overflow: 'hidden',
-                  position: 'relative',
-                }}
-                className="project-fauxwebpage-container"
-              >
-                <div style={{ height: '100%', width: '100%', overflowY: 'auto', overflowX: 'hidden', background: '#fff' }}>                  <img src={
-                  project.title === 'Silverilla' ? JSDELIVR_BASE + 'kuberwastaken-silverilla.png' :
-                    project.title === 'DOOMme' ? JSDELIVR_BASE + 'kuberwastaken-doomme.gif' :
-                      project.title === 'DOOMme' ? JSDELIVR_BASE + 'kuberwastaken-doomme.gif' :
-                        project.title === 'GitHub View Counter' ? JSDELIVR_BASE + 'kuberwastaken-counter.png' :
-                          project.title === 'ThisWebsiteIsNotOnline' ? JSDELIVR_BASE + 'kuberwastaken-twino.png' :
-                            project.title === 'ORCUS' ? JSDELIVR_BASE + 'kuberwastaken-orcus.png' :
-                              project.title === 'Free Deep Research' ? JSDELIVR_BASE + 'kuberwastaken-freedeepresearch.png' :
-                                project.title === 'Engram' ? JSDELIVR_BASE + 'kuberwastaken-engram.png' :
-                                  project.title === 'CottagOS' ? JSDELIVR_BASE + 'kuberwastaken-cottagos.png' :
-                                    project.title === 'MEOW' ? JSDELIVR_BASE + 'kuberwastaken-meow.png' :
-                                      project.title === 'SecondYou' ? JSDELIVR_BASE + 'kuberwastaken-secondyou.png' :
-                                        project.title === 'PrayGo' ? JSDELIVR_BASE + 'kuberwastaken-praygo.png' :
-                                          JSDELIVR_BASE + 'kuberwastaken-booksreimagined.png'
-                }
-                  alt={project.title + ' faux webpage'}
-                  style={{ width: '100%', minHeight: '100%', objectFit: 'cover', display: 'block' }}
-                />
-                </div>
-              </div>
-            ) : project.website && project.showIframe !== false ? (
-              <div
-                style={{
-                  marginBottom: 16,
-                  borderRadius: 12,
-                  overflow: 'hidden',
-                  border: '1.5px solid rgba(90,187,154,0.18)',
-                  boxShadow: '0 2px 16px 0 rgba(90,187,154,0.10)',
-                  background: '#181818',
-                  height: 225,
-                  maxWidth: '100%',
-                  display: 'block',
-                  overflow: 'hidden',
-                }}
-                className="project-iframe-container"
-              >                <iframe
-                src={project.website}
-                title={project.title + ' preview'}
-                style={{
-                  width: '200%',
-                  height: 450,
-                  border: 'none',
-                  borderRadius: 0,
-                  background: '#181818',
-                  display: 'block',
-                  transform: 'scale(0.5)',
-                  transformOrigin: '0 0',
-                }}
-                loading="lazy"
-                sandbox="allow-scripts allow-same-origin allow-popups"
-                allowFullScreen={false}
-                allow={project.title === 'CottagOS' ? "autoplay 'none'; microphone 'none'; camera 'none'; speaker 'none'" : undefined}
-                className="project-iframe"
-              >
-                  Your browser does not support iframes or this site does not allow embedding.
-                </iframe>
-              </div>
-            ) : null}
-            <div style={{ fontWeight: 700, fontSize: '1.25em', marginBottom: 8, color: '#5abb9a' }}>{project.title}</div>
-            <div
-              style={{ fontSize: '1em', marginBottom: 16 }}
-              dangerouslySetInnerHTML={{ __html: formatDescriptionToHtml(project.description) }}
-            />
-            <div className="project-badges" style={{ marginTop: 8, display: 'flex', flexWrap: 'wrap' }}>
-              {badgeLinks(project)}
-            </div>
+            ))}
           </div>
-        </div>
-      ))}
-      <style>{`
+        ))}
+        <style>{`
         .project-masonry-card {
           position: relative;
           overflow: hidden;
@@ -464,17 +455,9 @@ const ProjectsMasonry = () => (
           0% { background-position: 0% 0%; }
           100% { background-position: 100% 100%; }
         }
-        @media (max-width: 1300px) {
-          .projects-grid {
-            column-count: 2 !important;
-          }
-        }
         @media (max-width: 900px) {
           .project-iframe-container, .project-iframe {
             display: none !important;
-          }
-          .projects-grid {
-            column-count: 1 !important;
           }
         }
         @media (max-width: 700px) {
@@ -492,10 +475,7 @@ const ProjectsMasonry = () => (
           .project-masonry-card .project-iframe-container {
             display: none !important;
           }
-          .projects-grid {
-            column-count: 1 !important;
-            padding: 0 1vw !important;
-          }
+          /* .projects-grid overrides managed by flex */
           .project-badges {
             flex-direction: column !important;
             align-items: flex-start !important;
@@ -513,9 +493,10 @@ const ProjectsMasonry = () => (
           }
         }
       `}</style>
-    </div>
-    <MobileProjectsCarousel />
-  </>
-);
+      </div>
+      <MobileProjectsCarousel />
+    </>
+  );
+};
 
 export default ProjectsMasonry;

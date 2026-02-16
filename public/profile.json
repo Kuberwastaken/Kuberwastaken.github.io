@@ -155,7 +155,6 @@
       "name": "TREAT",
       "status": "Active",
       "description": "TREAT is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable.",
-      "url": "https://www.trytreat.tech/",
       "github": "https://github.com/Kuberwastaken/TREAT",
       "technologies": [
         "AI/ML"
@@ -164,7 +163,7 @@
     {
       "name": "Backdooms",
       "status": "Active",
-      "description": "One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. \n\n A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.4kB in size, using a custom compression pipeline using GZip with Zlib Headers.",
+      "description": "One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. \n\n A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.4kB in size, using a custom compression pipeline and the DecompressionStream browser API",
       "url": "https://kuber.studio/backdooms/",
       "github": "https://github.com/Kuberwastaken/backdooms",
       "technologies": [
@@ -186,11 +185,8 @@
     {
       "name": "SecondYou",
       "status": "Active",
-      "description": "A Private, Local-First AI that Thinks and Writes like You, runs on a finetuned version of Gemma3N made to embody you. \n\n Has access to your texts, emails, blogs, social media and more to create your AI persona. Ideated during the Nas Daily AI Summer Residency.",
-      "url": "https://www.secondyou.app/",
-      "technologies": [
-        "AI/ML"
-      ]
+      "description": "Democratizing SLMs for the masses, one computer at a time",
+      "url": "https://www.secondyou.app/"
     },
     {
       "name": "ThisWebsiteIsNotOnline",
@@ -206,11 +202,10 @@
     {
       "name": "MEOW",
       "status": "Active",
-      "description": "Top Show-HN for 3 days, became a memecoin that reached $200k and went viral on Web-3 Circles on X, helped me pay for my entire college tuition. \n\n The most Purr-fect Image File Format for your AI workflows, PNG on steroids.",
+      "description": "The most Purr-fect Image File Format for your AI workflows, PNG on steroids.",
       "github": "https://github.com/Kuberwastaken/meow",
       "technologies": [
         "AI/ML",
-        "Web Development",
         "Computer Vision"
       ]
     }
@@ -247,5 +242,5 @@
       "Mobile responsive design"
     ]
   },
-  "last_updated": "2026-01-07"
+  "last_updated": "2026-02-16"
 }
