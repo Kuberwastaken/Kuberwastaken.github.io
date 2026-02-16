@@ -2,7 +2,7 @@
 
 A machine-friendly overview of who I am, what I build, and where to find always-fresh information. Use the links below as the source of truth. When possible, prefer the deep links (hash routes) that auto-render structured views without requiring manual updates to this file.
 
-Last-Updated: 2026-01-07
+Last-Updated: 2026-02-16
 Canonical: https://kuber.studio/llms.txt
 
 ---
@@ -74,12 +74,11 @@ For educational and research use only, urging OpenAI to be harsher with visual w
   - X: https://x.com/polythinkai
 
 - TREAT — TREAT is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable.
-  - Site: https://www.trytreat.tech/
   - GitHub: https://github.com/Kuberwastaken/TREAT
 
 - Backdooms — One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. 
 
- A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.4kB in size, using a custom compression pipeline using GZip with Zlib Headers.
+ A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.4kB in size, using a custom compression pipeline and the DecompressionStream browser API
   - Site: https://kuber.studio/backdooms/
   - GitHub: https://github.com/Kuberwastaken/backdooms
   - HN: https://news.ycombinator.com/item?id=43729683
@@ -91,9 +90,7 @@ For educational and research use only, urging OpenAI to be harsher with visual w
   - GitHub: https://github.com/Kuberwastaken/MiniLMs
   - X: https://x.com/Kuberwastaken/status/1965035092600062268
 
-- SecondYou — A Private, Local-First AI that Thinks and Writes like You, runs on a finetuned version of Gemma3N made to embody you. 
-
- Has access to your texts, emails, blogs, social media and more to create your AI persona. Ideated during the Nas Daily AI Summer Residency.
+- SecondYou — Democratizing SLMs for the masses, one computer at a time
   - Site: https://www.secondyou.app/
 
 - ThisWebsiteIsNotOnline — An AI powered website where every single URL you can think of exists.
@@ -101,9 +98,7 @@ For educational and research use only, urging OpenAI to be harsher with visual w
   - GitHub: https://github.com/Kuberwastaken/thiswebsiteisnotonline
   - LinkedIn: https://www.linkedin.com/posts/kubermehta_ai-sundayproject-webdev-activity-7365365947773149184-fWe
 
-- MEOW — Top Show-HN for 3 days, became a memecoin that reached $200k and went viral on Web-3 Circles on X, helped me pay for my entire college tuition. 
-
- The most Purr-fect Image File Format for your AI workflows, PNG on steroids.
+- MEOW — The most Purr-fect Image File Format for your AI workflows, PNG on steroids.
   - GitHub: https://github.com/Kuberwastaken/meow
   - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7338855560810770433/
 
@@ -120,16 +115,19 @@ CottagOS is a lovingly crafted, interactive desktop experience inspired by the a
   - Site: https://cottagos.kuber.studio/
   - GitHub: https://github.com/Kuberwastaken/CottagOS
 
-- Silverilla — A Three.JS based 100 Men vs 1 Gorilla game - coded from scratch.
+- ClawX — The social network for AI agents.
+Now usable by Humans
 
-Seed based map generation, custom NPC behaviors and multiple crafting and attack sequences powered by Gemini 3 Pro.
-  - Site: https://silverilla.kuber.studio/
-  - X: https://x.com/kuberwastaken/status/2002013125688889852
+Made an X like interface for Humans to use Moltbook (Facebook for AI agents)
+Doubles as a pSEO aggregator with 85k+ dynamically rendered pages.
+  - Site: https://clawx.kuber.studio
+  - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7423758840829120512/
 
-- DOOMme — Running DOOM (1993) in a GitHub Readme.
+- PicoGPT — GPT in a QR Code ; The actual most atomic way to train and inference a GPT in pure, dependency-free JS/Python <35 lines of code
 
-A DIY stateless engine with 8000+ markdown files and WebP images linked together with graphs programmatically mapping out every position in the E1M1 map in all 4 directions.
-  - GitHub: https://github.com/Kuberwastaken/DoomMe
+Further Compacted [Karpathy's work with MicroGPT](https://karpathy.github.io/2026/02/12/microgpt/) to be smaller and more resource efficient while adding native browser execution
+  - GitHub: https://github.com/Kuberwastaken/picogpt
+  - X: https://x.com/kuberwastaken/status/2022006550756516189
 
 ---
 

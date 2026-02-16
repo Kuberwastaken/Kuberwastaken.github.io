@@ -8,12 +8,13 @@
         "extra": "https://www.linkedin.com/feed/update/urn:li:activity:7423758840829120512/"
     },
     {
-        "title": "Silverilla",
-        "description": "A Three.JS based 100 Men vs 1 Gorilla game - coded from scratch.\n\nSeed based map generation, custom NPC behaviors and multiple crafting and attack sequences powered by Gemini 3 Pro.",
-        "website": "https://silverilla.kuber.studio/",
-        "github": null,
-        "showIframe": true,
-        "extra": "https://x.com/kuberwastaken/status/2002013125688889852"
+        "title": "PicoGPT",
+        "description": "GPT in a QR Code ; The actual most atomic way to train and inference a GPT in pure, dependency-free JS/Python <35 lines of code\n\nFurther Compacted [Karpathy's work with MicroGPT](https://karpathy.github.io/2026/02/12/microgpt/) to be smaller and more resource efficient while adding native browser execution",
+        "website": null,
+        "github": "https://github.com/Kuberwastaken/picogpt",
+        "image": "kuberwastaken/picogpt",
+        "showIframe": false,
+        "extra": "https://x.com/kuberwastaken/status/2022006550756516189"
     },
     {
         "title": "DOOMme",
@@ -25,8 +26,62 @@
         "extra": "https://kuber.studio/blog/Projects/How-I-Made-DOOM-Run-Inside-a-GitHub-Readme"
     },
     {
+        "title": "Sweeta",
+        "description": "Made an Open-Source tool to remove Sora 2 Watermarks in Less than 72 Hours of it's release.\n\nFor educational and research use only, urging OpenAI to be harsher with visual watermarks, uses LaMA inpainting and intelligent detection algorithms to remove watermarks without losing quality.",
+        "website": null,
+        "github": "https://github.com/Kuberwastaken/sweeta",
+        "extra": "https://www.linkedin.com/feed/update/urn:li:activity:7381581124772429825/?originTrackingId=%2FKhKZVDqAQAZE99Dz0vv9Q%3D%3D"
+    },
+    {
+        "title": "PolyThink",
+        "description": "Building Generative UI for LLMs",
+        "website": "https://www.polyth.ink/",
+        "github": null,
+        "extra": "https://x.com/polythinkai"
+    },
+    {
+        "title": "Backdooms",
+        "description": "One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. \n\n A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.4kB in size, using a custom compression pipeline and the DecompressionStream browser API",
+        "website": "https://kuber.studio/backdooms/",
+        "github": "https://github.com/Kuberwastaken/backdooms",
+        "extra": "https://news.ycombinator.com/item?id=43729683"
+    },
+    {
+        "title": "Silverilla",
+        "description": "A Three.JS based 100 Men vs 1 Gorilla game - coded from scratch.\n\nSeed based map generation, custom NPC behaviors and multiple crafting and attack sequences powered by Gemini 3 Pro.",
+        "website": "https://silverilla.kuber.studio/",
+        "github": null,
+        "showIframe": true,
+        "extra": "https://x.com/kuberwastaken/status/2002013125688889852"
+    },
+    {
+        "title": "Free Deep Research",
+        "description": "My free, open-source version of OpenAI's Deep Research agent.\n\nIt mimics the capabilities of the original agent, allowing users to run custom deep dives with adjustable breadth, depth, and duration.",
+        "website": null,
+        "github": "https://github.com/Kuberwastaken/free-deep-research",
+        "extra": []
+    },
+    {
+        "title": "Berghain Challenge Algorithms",
+        "description": "My Algorithms, tweaks and Solutions that got me to #16/30,000+ in the viral Berghain Challenge by Listenlabs",
+        "website": "https://berghain.challenges.listenlabs.ai/",
+        "github": "https://github.com/Kuberwastaken/Berghain",
+        "previewImg": "/images/kuberwastaken-berghain.png",
+        "showIframe": false,
+        "extra": "https://kuber.studio/blog/Projects/How-I-Spent-Three-Nights-Solving-Listen-Labs-Berghain-Challenge"
+    },
+    {
+        "title": "Fuzzy Redirect",
+        "description": "Autocorrect for your website URLs \n\n Plug and Play Levenshtein Distance Fuzzy URL matching and redirection for React and Next.js applications",
+        "website": "https://www.npmjs.com/package/fuzzy-redirect",
+        "github": "https://github.com/Kuberwastaken/fuzzy-redirect/",
+        "previewImg": "/images/kuberwastaken-fuzzy-redirect.png",
+        "showIframe": false,
+        "extra": []
+    },
+    {
         "title": "Scorpius",
-        "description": "Upload any static PDF and turn it into fun and immersive games to learn concepts and study.",
+        "description": "Upload any static PDF and turn it into fun and immersive games to learn concepts and study. \n\nPowered by Gemini 3 Pro and further support for local LLMs for supporting education in low resource locations",
         "website": "https://scorpius.kuber.studio/",
         "github": "https://github.com/Kuberwastaken/scorpius",
         "image": "kuberwastaken-scorpius.png",
@@ -41,13 +96,6 @@
         "extra": "https://www.linkedin.com/posts/kubermehta_glassmorphism-terminal-cats-activity-7349445969790259200-_SKK"
     },
     {
-        "title": "Sweeta",
-        "description": "Made an Open-Source tool to remove Sora 2 Watermarks in Less than 72 Hours of it's release.\n\nFor educational and research use only, urging OpenAI to be harsher with visual watermarks, uses LaMA inpainting and intelligent detection algorithms to remove watermarks without losing quality.",
-        "website": null,
-        "github": "https://github.com/Kuberwastaken/sweeta",
-        "extra": "https://www.linkedin.com/feed/update/urn:li:activity:7381581124772429825/?originTrackingId=%2FKhKZVDqAQAZE99Dz0vv9Q%3D%3D"
-    },
-    {
         "title": "ThisWebsiteIsNotOnline",
         "description": "An AI powered website where every single URL you can think of exists.",
         "website": "https://www.thiswebsiteisnot.online/",
@@ -56,15 +104,8 @@
         "extra": "https://www.linkedin.com/posts/kubermehta_ai-sundayproject-webdev-activity-7365365947773149184-fWe"
     },
     {
-        "title": "PolyThink",
-        "description": "Building Generative UI for LLMs",
-        "website": "https://www.polyth.ink/",
-        "github": null,
-        "extra": "https://x.com/polythinkai"
-    },
-    {
         "title": "SecondYou",
-        "description": "A Private, Local-First AI that Thinks and Writes like You, runs on a finetuned version of Gemma3N made to embody you. \n\n Has access to your texts, emails, blogs, social media and more to create your AI persona. Ideated during the Nas Daily AI Summer Residency.",
+        "description": "Democratizing SLMs for the masses, one computer at a time",
         "website": "https://www.secondyou.app/",
         "github": null,
         "showIframe": true,
@@ -80,24 +121,17 @@
     {
         "title": "TREAT",
         "description": "TREAT is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable.",
-        "website": "https://www.trytreat.tech/",
+        "website": null,
         "github": "https://github.com/Kuberwastaken/TREAT",
         "extra": "https://huggingface.co/spaces/Agents-MCP-Hackathon/TREAT-CHOCOSYRUP"
     },
     {
         "title": "MEOW",
-        "description": "Top Show-HN for 3 days, became a memecoin that reached $200k and went viral on Web-3 Circles on X, helped me pay for my entire college tuition. \n\n The most Purr-fect Image File Format for your AI workflows, PNG on steroids.",
+        "description": "The most Purr-fect Image File Format for your AI workflows, PNG on steroids.",
         "website": null,
         "github": "https://github.com/Kuberwastaken/meow",
         "showIframe": false,
         "extra": "https://www.linkedin.com/feed/update/urn:li:activity:7338855560810770433/"
-    },
-    {
-        "title": "Backdooms",
-        "description": "One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. \n\n A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.4kB in size, using a custom compression pipeline using GZip with Zlib Headers.",
-        "website": "https://kuber.studio/backdooms/",
-        "github": "https://github.com/Kuberwastaken/backdooms",
-        "extra": "https://news.ycombinator.com/item?id=43729683"
     },
     {
         "title": "MindDump",
@@ -107,35 +141,12 @@
         "extra": []
     },
     {
-        "title": "PrayGo",
-        "description": "Main project for the Nas Daily AI Residency - DuoLingo for Religion. \n\n The world's first AI-powered religious education platform. Experience personalized, gamified lessons that adapt to your learning style while exploring world religions with respect and authenticity.",
-        "website": "https://www.sacredsteps.app/",
-        "github": null,
-        "showIframe": true,
-        "extra": "https://www.instagram.com/nasdaily/reel/DMLLKzMSuEK/"
-    },
-    {
         "title": "Engram",
         "description": "The centralized, No BS, Biggest Open-Source Notes and Resources Aggregator for IP University Engineering",
         "website": "https://engram.kuber.studio/",
         "github": "https://github.com/kuberwastaken/engram",
         "showIframe": true,
         "extra": "https://www.linkedin.com/feed/update/urn:li:activity:7335997841179348993/"
-    },
-    {
-        "title": "CottagOS",
-        "description": "Won first place at Hack Club SiteJam!\n\nCottagOS is a lovingly crafted, interactive desktop experience inspired by the aesthetics of cottagecore and the magic of enchanted forests. It simulates a cozy OS environment, complete with draggable windows, animated desktop, and a suite of charming mini-apps—all wrapped in a warm, nature-inspired UI.",
-        "website": "https://cottagos.kuber.studio/",
-        "github": "https://github.com/Kuberwastaken/CottagOS",
-        "showIframe": true,
-        "extra": []
-    },
-    {
-        "title": "Free Deep Research",
-        "description": "My free, open-source version of OpenAI's Deep Research agent. It mimics the capabilities of the original agent, allowing users to run custom deep dives with adjustable breadth, depth, and duration.",
-        "website": null,
-        "github": "https://github.com/Kuberwastaken/free-deep-research",
-        "extra": []
     },
     {
         "title": "AsianMOM",
@@ -147,36 +158,11 @@
     },
     {
         "title": "ORCUS",
-        "description": "A dual-model AI tool to detect and flag AI-generated social media comments, especially on LinkedIn. \n\n It uses Hugging Face's OpenAI detector and GPT-2 to analyze suspicious content and generate personalized alerts. Ran as an experiment for a couple days, but stopped due to Linkedin TOS",
+        "description": "A dual-model AI tool to detect and flag AI-generated social media comments, especially on LinkedIn. \n\n Ran as an experiment for a couple days, but stopped due to Linkedin TOS",
         "website": null,
         "github": "https://github.com/Kuberwastaken/ORCUS",
         "showIframe": true,
         "extra": "https://www.linkedin.com/in/orcus-ai/"
-    },
-    {
-        "title": "LifeMap",
-        "description": "LifeMap is a web application for creating and visualizing personal networks. Add nodes representing aspects of your life - education, work, hobbies, dreams, and family and connect them to see relationships and dependencies to answer the true questions in life.",
-        "website": "https://lifemap.kuber.studio",
-        "github": "https://github.com/Kuberwastaken/LifeMap",
-        "showIframe": true,
-        "extra": []
-    },
-    {
-        "title": "Books Re-imagined",
-        "description": "Top 10 Google x Kaggle Long Context AI Hackathon \n\n An AI tool that transforms the narrative perspective of popular literature. In this case, it retells Diary of a Wimpy Kid: Rodrick Rules from Rodrick's point of view using Google Gemini 1.5.",
-        "website": "https://www.kaggle.com/code/kubermehta/books-reimagined-diary-of-a-wimpy-kid-by-rodrick",
-        "github": null,
-        "showIframe": true,
-        "extra": []
-    },
-    {
-        "title": "Berghain Challenge Algorithms",
-        "description": "My Algorithms, tweaks and Solutions that got me to #16 in the Berghain Challenge by Listenlabs \n\n The prize for the Most Optimised solution for the Linear Programming Problem was an all-expenses paid Berlin Trip, Berghain guest list and an interview at a hypergrowth SF startup against 30,000+ of the World's finest engineers.",
-        "website": "https://berghain.challenges.listenlabs.ai/",
-        "github": "https://github.com/Kuberwastaken/Berghain",
-        "previewImg": "/images/kuberwastaken-berghain.png",
-        "showIframe": false,
-        "extra": "https://kuber.studio/blog/Projects/How-I-Spent-Three-Nights-Solving-Listen-Labs-Berghain-Challenge"
     },
     {
         "title": "What's in a LinkedIn Name?",
@@ -187,6 +173,22 @@
         "extra": "https://linkedin.com/feed/update/urn:li:activity:7379082071723593728"
     },
     {
+        "title": "LifeMap",
+        "description": "Analyse your life's networks digitally",
+        "website": "https://lifemap.kuber.studio",
+        "github": "https://github.com/Kuberwastaken/LifeMap",
+        "showIframe": true,
+        "extra": []
+    },
+    {
+        "title": "PrayGo",
+        "description": "Main project for the Nas Daily AI Residency - DuoLingo for Religion. \n\n The world's first AI-powered religious education platform. Experience personalized, gamified lessons that adapt to your learning style while exploring world religions with respect and authenticity.",
+        "website": "https://www.sacredsteps.app/",
+        "github": null,
+        "showIframe": true,
+        "extra": "https://www.instagram.com/nasdaily/reel/DMLLKzMSuEK/"
+    },
+    {
         "title": "NoGreeting",
         "description": "I was tired of people dmming me saying just \"hi\" or \"yo\" and then waiting for me to answer so I made this website - just go, put in the greeting and the person's name and copy the link\n\nThey get a friendly explanation of why leading with context matters. I save 10 minutes. Everyone wins.",
         "website": "https://nogreeting.kuber.studio/",
@@ -195,12 +197,19 @@
         "extra": "https://www.linkedin.com/feed/update/urn:li:activity:7388816819316260864/"
     },
     {
-        "title": "Fuzzy Redirect",
-        "description": "Autocorrect for your website URLs \n\n Plug and Play Levenshtein Distance Fuzzy URL matching and redirection for React and Next.js applications",
-        "website": "https://www.npmjs.com/package/fuzzy-redirect",
-        "github": "https://github.com/Kuberwastaken/fuzzy-redirect/",
-        "previewImg": "/images/kuberwastaken-fuzzy-redirect.png",
-        "showIframe": false,
+        "title": "Books Re-imagined",
+        "description": "Top 10 Google x Kaggle Long Context AI Hackathon \n\n An AI tool that transforms the narrative perspective of popular literature. In this case, it retells Diary of a Wimpy Kid: Rodrick Rules from Rodrick's point of view using Google Gemini 1.5.",
+        "website": "https://www.kaggle.com/code/kubermehta/books-reimagined-diary-of-a-wimpy-kid-by-rodrick",
+        "github": null,
+        "showIframe": true,
+        "extra": []
+    },
+    {
+        "title": "CottagOS",
+        "description": "Won first place at Hack Club SiteJam!\n\nCottagOS is a lovingly crafted, interactive desktop experience inspired by the aesthetics of cottagecore and the magic of enchanted forests. It simulates a cozy OS environment, complete with draggable windows, animated desktop, and a suite of charming mini-apps—all wrapped in a warm, nature-inspired UI.",
+        "website": "https://cottagos.kuber.studio/",
+        "github": "https://github.com/Kuberwastaken/CottagOS",
+        "showIframe": true,
         "extra": []
     }
 ]
