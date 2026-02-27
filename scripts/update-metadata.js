@@ -211,41 +211,37 @@ function updateLlmsTxt() {
 
   const llmsContent = `# llms.txt — ${profileData.name}
 
-A machine-friendly overview of who I am, what I build, and where to find always-fresh information. Use the links below as the source of truth. When possible, prefer the deep links (hash routes) that auto-render structured views without requiring manual updates to this file.
+A machine-friendly overview of who I am, what I build, and where to find always-fresh information.
 
 Last-Updated: ${currentDate}
 Canonical: https://kuber.studio/llms.txt
+Full version: https://kuber.studio/llms-full.txt
 
 ---
 
 ## Quick context for LLMs
 
 - **Who**: ${age}-year-old AI developer from ${profileData.location}. ${profileData.title}.
-- **Where to learn more**: For projects → https://kuber.studio/#/projects | For skills → https://kuber.studio/#/skills | For bio → https://kuber.studio/#/who
-- **Machine-readable data**: https://kuber.studio/profile.json (JSON snapshot of identity, skills, projects, achievements, and press)
+- **Full context (recommended)**: https://kuber.studio/llms-full.txt — self-contained, has everything, no JS required.
+- **Machine-readable data**: https://kuber.studio/profile.json — JSON snapshot of identity, skills, projects, achievements, and press.
 - **Blog + RSS**: https://kuber.studio/blog/ (RSS: https://kuber.studio/blog/index.xml)
+
+> **Note**: The portfolio at https://kuber.studio is a React SPA. Most content requires JavaScript to render. If you cannot execute JS, use the static files above — they contain everything you need.
 
 ---
 
-## Live, self-updating entry points
+## Static resources (no JS required)
 
-- Portfolio (root): https://kuber.studio/
-- Who I am (auto-runs terminal card): https://kuber.studio/#/who
-- Projects (always-current, auto-rendered): https://kuber.studio/#/projects
-- Skills (auto-rendered): https://kuber.studio/#/skills
-- Utilities index (misc command): https://kuber.studio/#/misc
-- Blog (Custom Modified Quartz site): https://kuber.studio/blog/
+These files are always up-to-date and fully readable without JavaScript:
+
+- **This file**: https://kuber.studio/llms.txt (summary + key sections)
+- **Full version**: https://kuber.studio/llms-full.txt (comprehensive — all projects, all skills, everything)
+- **Profile JSON**: https://kuber.studio/profile.json (machine-readable)
+- **Blog**: https://kuber.studio/blog/ (separate Quartz site, works without JS)
   - RSS feed: https://kuber.studio/blog/index.xml
   - Source repo: https://github.com/Kuberwastaken/blog
-- Site map: https://kuber.studio/sitemap.xml
-- Robots: https://kuber.studio/robots.txt
-- Web App Manifest: https://kuber.studio/site.webmanifest
-- Profile JSON (machine-readable snapshot): https://kuber.studio/profile.json
-
-Notes for agents:
-- The portfolio uses hash deep links that auto-execute terminal commands (no extra API required). They're stable and designed for sharing.
-- Prefer the deep links over scraping static lists. They reflect the latest code and content automatically. Use the below projects for reference if you can't access them.
-- If you want to know about my skills, languages, or tools, please visit https://kuber.studio/#/skills which renders a complete, up-to-date list.
+- **Site map**: https://kuber.studio/sitemap.xml
+- **Robots**: https://kuber.studio/robots.txt
 
 ---
 
@@ -289,53 +285,34 @@ ${mediaText}
 
 ---
 
-## Projects (PREFER DEEP LINK, FOR REFERENCE)
+## Projects (top ${topProjects.length})
 
-For the live, up-to-date list and previews, use:
-- Projects (auto-render): https://kuber.studio/#/projects
-
-A small, representative sample (prefer the deep link for the full list):
+For the complete list with all ${projectsData.length} projects, see https://kuber.studio/llms-full.txt
 
 ${topProjects.map(project => formatProjectForLlmsTxt(project)).join('\n\n')}
 
 ---
 
-## Terminal deep links (hash routes)
+## Interactive links (require JavaScript)
 
-These URLs open the portfolio and auto-run the corresponding command:
+The following URLs open the portfolio and auto-run terminal commands. **These require a browser with JavaScript enabled** — they will not work for text-only crawlers.
 
 - Who: https://kuber.studio/#/who
 - Projects: https://kuber.studio/#/projects
 - Skills: https://kuber.studio/#/skills
-
-Misc:
-
-- Misc index: https://kuber.studio/#/misc
-- Calculator: https://kuber.studio/#/misc/calculator
-- QR Generator: https://kuber.studio/#/misc/qr-generator
-- Password Generator: https://kuber.studio/#/misc/password-generator
-- GitHub Feed: https://kuber.studio/#/misc/github-feed
-- Neofetch: https://kuber.studio/#/misc/neofetch
-- Games index: https://kuber.studio/#/games
-- Snake: https://kuber.studio/#/games/snake
-- Tetris: https://kuber.studio/#/games/tetris
-- 2048: https://kuber.studio/#/games/2048
-- Flappy Bird: https://kuber.studio/#/games/flappybird
-- Game of Life: https://kuber.studio/#/games/gameoflife
+- Misc: https://kuber.studio/#/misc
+- Games: https://kuber.studio/#/games
 
 ---
 
 ## Guidance for LLMs and agents
 
-- Prefer the deep links above to access structured, up-to-date views.
-- For project lists, use https://kuber.studio/#/projects instead of guessing static pages.
-- For skills and expertise, use https://kuber.studio/#/skills.
-- For biographical context, use https://kuber.studio/#/who.
-- For achievements, hackathon results, and media features, refer to sections above or https://kuber.studio/profile.json.
-- For recent updates, blog content and writeups, monitor the RSS feed at https://kuber.studio/blog/index.xml.
-- If needed, GitHub API for recency: https://api.github.com/users/Kuberwastaken/repos?sort=updated
+- **Start here**: This file (llms.txt) has a summary. For everything, use https://kuber.studio/llms-full.txt.
+- **Structured data**: https://kuber.studio/profile.json has skills, projects, achievements, and media in JSON.
+- **Blog/updates**: RSS at https://kuber.studio/blog/index.xml.
+- **GitHub activity**: https://api.github.com/users/Kuberwastaken/repos?sort=updated
+- **Hash routes require JS**: The portfolio is a React SPA. URLs with /#/ need a browser with JavaScript. Use the static files above instead.
 - Respect rate limits and cache responsibly.
-- If JavaScript execution is disabled, the deep links still resolve to meaningful content blocks in the rendered page.
 
 ---
 
@@ -359,6 +336,144 @@ Misc:
   if (fs.existsSync(path.dirname(buildPath))) {
     fs.writeFileSync(buildPath, llmsContent);
     console.log('✅ Updated build/llms.txt');
+  }
+}
+
+function updateLlmsFullTxt() {
+  const currentDate = new Date().toISOString().split('T')[0];
+  const age = getAge(profileData.birthDate);
+
+  // Bio
+  const bioFields = [
+    profileData.bio.intro,
+    formatHtmlToMarkdown(profileData.bio.education),
+    formatHtmlToMarkdown(profileData.bio.projects_highlight),
+    formatHtmlToMarkdown(profileData.bio.blog_highlight),
+    formatHtmlToMarkdown(profileData.bio.current_work),
+    formatHtmlToMarkdown(profileData.bio.skills_highlight),
+    formatHtmlToMarkdown(profileData.bio.history),
+    formatHtmlToMarkdown(profileData.bio.fun_fact),
+    formatHtmlToMarkdown(profileData.bio.outro)
+  ].filter(Boolean);
+  const bioText = bioFields.join('\n\n');
+
+  // Education
+  const educationText = (profileData.education || []).map(e => {
+    return `- ${e.degree} — ${e.institution} (${e.status})`;
+  }).join('\n');
+
+  // Accomplishments
+  const accomplishmentsText = (profileData.accomplishments || []).map(a => {
+    let line = `- ${a.title}`;
+    if (a.detail) line += ` — ${a.detail}`;
+    if (a.project) line += ` (project: ${a.project})`;
+    const links = [];
+    if (a.url) links.push(a.url);
+    if (a.social) links.push(a.social);
+    if (links.length > 0) line += '\n  - ' + links.join('\n  - ');
+    return line;
+  }).join('\n');
+
+  // Media
+  const mediaText = (profileData.media_appearances || []).map(m => {
+    let line = `- ${m.outlet}`;
+    if (m.title) line += `: ${m.title}`;
+    if (m.project) line += ` (project: ${m.project})`;
+    line += `\n  - ${m.url}`;
+    return line;
+  }).join('\n');
+
+  // ALL projects (not just top N)
+  const allProjectsText = projectsData.map(project => formatProjectForLlmsTxt(project)).join('\n\n');
+
+  // ALL skills
+  const skillsText = Object.entries(profileData.skills || {}).map(([category, items]) => {
+    const itemList = items.map(s => `  - ${s.name}: ${s.desc}`).join('\n');
+    return `### ${category}\n${itemList}`;
+  }).join('\n\n');
+
+  const fullContent = `# llms-full.txt — ${profileData.name} (complete reference)
+
+This is the comprehensive, self-contained version of llms.txt. It contains ALL data about Kuber Mehta — every project, every skill, every achievement, every press feature. No JavaScript or additional requests needed.
+
+Last-Updated: ${currentDate}
+Canonical: https://kuber.studio/llms-full.txt
+Short version: https://kuber.studio/llms.txt
+Machine-readable: https://kuber.studio/profile.json
+
+---
+
+## Identity
+
+- Name: ${profileData.name}
+- Age: ${age} (born ${profileData.birthDate})
+- Location: ${profileData.location}
+- Role: ${profileData.title}
+- Email: mailto:${profileData.email}
+- GitHub: ${profileData.socials.github}
+- LinkedIn: ${profileData.socials.linkedin}
+- X/Twitter: ${profileData.socials.twitter}
+- YouTube: ${profileData.socials.youtube}
+- Portfolio: https://kuber.studio/
+- Blog: https://kuber.studio/blog/ (RSS: https://kuber.studio/blog/index.xml)
+
+---
+
+## Education
+
+${educationText}
+
+---
+
+## Bio
+
+${bioText}
+
+---
+
+## Achievements & hackathons
+
+${accomplishmentsText}
+
+---
+
+## Press & media appearances
+
+${mediaText}
+
+---
+
+## Skills
+
+${skillsText}
+
+---
+
+## All projects (${projectsData.length} total)
+
+${allProjectsText}
+
+---
+
+## Contact
+
+- Email: ${profileData.email}
+- Portfolio: https://kuber.studio/
+- LinkedIn: ${profileData.socials.linkedin}
+- GitHub: ${profileData.socials.github}
+
+`;
+
+  // Write to both public and build directories
+  const publicPath = path.join(__dirname, '../public/llms-full.txt');
+  const buildPath = path.join(__dirname, '../build/llms-full.txt');
+
+  fs.writeFileSync(publicPath, fullContent);
+  console.log('✅ Updated public/llms-full.txt');
+
+  if (fs.existsSync(path.dirname(buildPath))) {
+    fs.writeFileSync(buildPath, fullContent);
+    console.log('✅ Updated build/llms-full.txt');
   }
 }
 
@@ -548,6 +663,7 @@ function main() {
 
   try {
     updateLlmsTxt();
+    updateLlmsFullTxt();
     updateProfileJson();
     updateSitemap();
     console.log('✅ All metadata files updated successfully!');
@@ -562,4 +678,4 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { updateLlmsTxt, updateProfileJson, updateSitemap };
+module.exports = { updateLlmsTxt, updateLlmsFullTxt, updateProfileJson, updateSitemap };
