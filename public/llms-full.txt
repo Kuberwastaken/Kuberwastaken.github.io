@@ -40,7 +40,7 @@ I'm studying Computer Science & AI from BITS Pilani and AI & Data Science from G
 
 I've built and shipped 53+ projects (38+ AI Based) in the past year, run Projects to see some of my favourites (that I'm allowed to show)
 
-I also write a blog called MindDump with 80-100k readers a month.
+I also write a blog called MindDump with 10-20k readers a month.
 
 Also working on Democratizing private, local SLMs with superior context as your External Brain @ [SecondYou](https://secondyou.app), to know more read [this tweet](https://x.com/kuberwastaken/status/1972594854715961570).
 
