@@ -1,8 +1,19 @@
+import profileData from '../data/profile.json';
+
+function getAge() {
+  const birth = new Date(profileData.birthDate);
+  const now = new Date();
+  let age = now.getFullYear() - birth.getFullYear();
+  const m = now.getMonth() - birth.getMonth();
+  if (m < 0 || (m === 0 && now.getDate() < birth.getDate())) age--;
+  return age;
+}
+
 const whoamiContent = `
 <div class="whoami-glass-card">
   <h3 class="whoami-title">Kuber Mehta</h3>
   <div class="whoami-section">
-    <p>I'm an 18-year-old developer from New Delhi, India, passionate about building AI-driven applications that blend creativity with real-world impact. My expertise spans full-stack development, generative AI, and data science.</p>
+    <p>I'm a ${getAge()}-year-old developer from New Delhi, India, passionate about building AI-driven applications that blend creativity with real-world impact. My expertise spans full-stack development, generative AI, and data science.</p>
   </div>
   <div class="whoami-section">
     <p>Founder of TREAT AI, a web app that detects triggering content in movie and TV scripts, leveraging 15+ AI models, including custom-trained versions of Llama 3.2, DeepSeek R1, and GPT-4.</p>

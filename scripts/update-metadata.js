@@ -12,6 +12,16 @@ const path = require('path');
 const profileData = require('../src/data/profile.json');
 const projectsData = require('../src/data/projects.json');
 
+// Compute age from birthDate
+function getAge(birthDateStr) {
+  const birth = new Date(birthDateStr);
+  const now = new Date();
+  let age = now.getFullYear() - birth.getFullYear();
+  const m = now.getMonth() - birth.getMonth();
+  if (m < 0 || (m === 0 && now.getDate() < birth.getDate())) age--;
+  return age;
+}
+
 // Helper functions (formerly in extract-projects.js)
 function getTopProjects(projects, count = 10) {
   // Define priority order for top projects
@@ -156,16 +166,48 @@ function formatHtmlToMarkdown(html) {
 
 function updateLlmsTxt() {
   const currentDate = new Date().toISOString().split('T')[0];
+  const age = getAge(profileData.birthDate);
   const topProjects = getTopProjects(projectsData, 12);
 
-  // Construct Bio from profileData using Markdown formatting for links
-  const bioText = [
+  // Construct full Bio from profileData using Markdown formatting for links
+  const bioFields = [
     profileData.bio.intro,
+    formatHtmlToMarkdown(profileData.bio.education),
     formatHtmlToMarkdown(profileData.bio.projects_highlight),
+    formatHtmlToMarkdown(profileData.bio.blog_highlight),
     formatHtmlToMarkdown(profileData.bio.current_work),
+    formatHtmlToMarkdown(profileData.bio.skills_highlight),
     formatHtmlToMarkdown(profileData.bio.history),
-    formatHtmlToMarkdown(profileData.bio.fun_fact)
-  ].join('\n\n');
+    formatHtmlToMarkdown(profileData.bio.fun_fact),
+    formatHtmlToMarkdown(profileData.bio.outro)
+  ].filter(Boolean);
+  const bioText = bioFields.join('\n\n');
+
+  // Format accomplishments
+  const accomplishmentsText = (profileData.accomplishments || []).map(a => {
+    let line = `- ${a.title}`;
+    if (a.detail) line += ` — ${a.detail}`;
+    if (a.project) line += ` (project: ${a.project})`;
+    const links = [];
+    if (a.url) links.push(a.url);
+    if (a.social) links.push(a.social);
+    if (links.length > 0) line += '\n  - ' + links.join('\n  - ');
+    return line;
+  }).join('\n');
+
+  // Format media appearances
+  const mediaText = (profileData.media_appearances || []).map(m => {
+    let line = `- ${m.outlet}`;
+    if (m.title) line += `: ${m.title}`;
+    if (m.project) line += ` (project: ${m.project})`;
+    line += `\n  - ${m.url}`;
+    return line;
+  }).join('\n');
+
+  // Format education
+  const educationText = (profileData.education || []).map(e => {
+    return `- ${e.degree} — ${e.institution} (${e.status})`;
+  }).join('\n');
 
   const llmsContent = `# llms.txt — ${profileData.name}
 
@@ -173,6 +215,15 @@ A machine-friendly overview of who I am, what I build, and where to find always-
 
 Last-Updated: ${currentDate}
 Canonical: https://kuber.studio/llms.txt
+
+---
+
+## Quick context for LLMs
+
+- **Who**: ${age}-year-old AI developer from ${profileData.location}. ${profileData.title}.
+- **Where to learn more**: For projects → https://kuber.studio/#/projects | For skills → https://kuber.studio/#/skills | For bio → https://kuber.studio/#/who
+- **Machine-readable data**: https://kuber.studio/profile.json (JSON snapshot of identity, skills, projects, achievements, and press)
+- **Blog + RSS**: https://kuber.studio/blog/ (RSS: https://kuber.studio/blog/index.xml)
 
 ---
 
@@ -201,6 +252,7 @@ Notes for agents:
 ## Primary identity and socials
 
 - Name: ${profileData.name}
+- Age: ${age}
 - Location: ${profileData.location}
 - Role: ${profileData.title}
 - Email: mailto:${profileData.email}
@@ -211,9 +263,29 @@ Notes for agents:
 
 ---
 
+## Education
+
+${educationText}
+
+---
+
 ## Short bio
 
 ${bioText}
+
+---
+
+## Achievements & hackathons
+
+${accomplishmentsText}
+
+---
+
+## Press & media appearances
+
+Featured in the following publications:
+
+${mediaText}
 
 ---
 
@@ -259,6 +331,7 @@ Misc:
 - For project lists, use https://kuber.studio/#/projects instead of guessing static pages.
 - For skills and expertise, use https://kuber.studio/#/skills.
 - For biographical context, use https://kuber.studio/#/who.
+- For achievements, hackathon results, and media features, refer to sections above or https://kuber.studio/profile.json.
 - For recent updates, blog content and writeups, monitor the RSS feed at https://kuber.studio/blog/index.xml.
 - If needed, GitHub API for recency: https://api.github.com/users/Kuberwastaken/repos?sort=updated
 - Respect rate limits and cache responsibly.
@@ -293,10 +366,17 @@ function updateProfileJson() {
   const currentDate = new Date().toISOString().split('T')[0];
   const featuredProjects = getTopProjects(projectsData, 8).map(project => formatProjectForProfileJson(project));
 
+  // Build achievements list from accomplishments + extras
+  const achievements = (profileData.accomplishments || []).map(a => {
+    let text = a.title;
+    if (a.detail) text += ` — ${a.detail}`;
+    return text;
+  });
+
   const profileJsonData = {
     "name": profileData.name,
     "title": profileData.title,
-    "age": profileData.age,
+    "age": getAge(profileData.birthDate),
     "location": profileData.location,
     "email": profileData.email,
     "website": "https://kuber.studio",
@@ -305,34 +385,14 @@ function updateProfileJson() {
     "blog": "https://kuber.studio/blog/",
     "youtube": profileData.socials.youtube,
     "current_role": {
-      "position": "Perplexity AI Business Fellow & GitHub Copilot Backstage Pass Member",
-      "company": "Perplexity AI / GitHub",
-      "focus": "AI development, business applications, and providing feedback on pre-release AI tools",
-      "note": "Provided feedback to OpenAI on GPT OSS as part of a small group of Asia-Pacific developers. Part of GitHub Copilot Backstage Pass Program — an invite-only exclusive channel with direct access to VS Code, GitHub, & Copilot engineering teams to test new models and features and provide feedback on pre-release applications."
+      "position": formatHtmlToMarkdown(profileData.bio.history),
+      "education": formatHtmlToMarkdown(profileData.bio.education)
     },
-    "education": [
-      {
-        "degree": "BSc Computer Science",
-        "institution": "BITS Pilani",
-        "status": "Current"
-      },
-      {
-        "degree": "BTech AI & Data Science",
-        "institution": "Indraprastha University",
-        "status": "Current"
-      }
-    ],
+    "education": profileData.education,
     "skills": profileData.skills,
     "featured_projects": featuredProjects,
-    "achievements": [
-      "Perplexity AI Business Fellow",
-      "GitHub Copilot Backstage Pass Member",
-      "Provided feedback to OpenAI on GPT OSS",
-      "First Place at Hack Club SiteJam",
-      "Creator of 40+ AI/ML projects",
-      "6+ years of 3D modeling experience",
-      "100+ 3D renders for gaming environments"
-    ],
+    "achievements": achievements,
+    "media_appearances": profileData.media_appearances,
     "interests": [
       "AI in media and recommendation algorithms",
       "Multi-agent AI systems",
