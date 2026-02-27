@@ -10,10 +10,8 @@
   "blog": "https://kuber.studio/blog/",
   "youtube": "https://www.youtube.com/@Kuberwastaken",
   "current_role": {
-    "position": "Perplexity AI Business Fellow & GitHub Copilot Backstage Pass Member",
-    "company": "Perplexity AI / GitHub",
-    "focus": "AI development, business applications, and providing feedback on pre-release AI tools",
-    "note": "Provided feedback to OpenAI on GPT OSS as part of a small group of Asia-Pacific developers. Part of GitHub Copilot Backstage Pass Program — an invite-only exclusive channel with direct access to VS Code, GitHub, & Copilot engineering teams to test new models and features and provide feedback on pre-release applications."
+    "position": "Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai), AI Agents Websocket Framework LEAD Intern @ HTMX (thanks Twitter)",
+    "education": "I'm studying Computer Science & AI from BITS Pilani and AI & Data Science from GGSIPU and building generative UI for LLMs @ [PolyThink](https://www.polyth.ink/)."
   },
   "education": [
     {
@@ -23,7 +21,7 @@
     },
     {
       "degree": "BTech AI & Data Science",
-      "institution": "Indraprastha University",
+      "institution": "Indraprastha University (GGSIPU)",
       "status": "Current"
     }
   ],
@@ -211,13 +209,50 @@
     }
   ],
   "achievements": [
+    "Won Nothing Essential Lab S1 Hackathon — Awarded a Nothing Phone 3",
+    "4th Place — Unsloth x AMD RL Hackathon at IIT Delhi",
+    "First Place at Hack Club SiteJam",
+    "Top 10 — Google x Kaggle Long Context AI Hackathon",
     "Perplexity AI Business Fellow",
     "GitHub Copilot Backstage Pass Member",
-    "Provided feedback to OpenAI on GPT OSS",
-    "First Place at Hack Club SiteJam",
-    "Creator of 40+ AI/ML projects",
-    "6+ years of 3D modeling experience",
-    "100+ 3D renders for gaming environments"
+    "Provided feedback to OpenAI on GPT OSS — Part of small group of Asia-Pacific developers",
+    "20+ hackathons participated"
+  ],
+  "media_appearances": [
+    {
+      "outlet": "The Independent",
+      "title": "ClawX / Moltbook coverage",
+      "url": "https://www.independent.co.uk/tech/moltbook-ai-reddit-social-media-chat-b2915460.html",
+      "project": "ClawX"
+    },
+    {
+      "outlet": "PC Gamer",
+      "title": "Backdooms coverage",
+      "url": "https://www.pcgamer.com/hardware/behold-a-single-qr-code-containing-a-miniaturized-take-on-doom-literally-the-entire-game/",
+      "project": "Backdooms"
+    },
+    {
+      "outlet": "Yahoo News / Yahoo Tech",
+      "title": "Backdooms coverage",
+      "url": "https://tech.yahoo.com/gaming/articles/behold-single-qr-code-containing-135737181.html",
+      "project": "Backdooms"
+    },
+    {
+      "outlet": "Boing Boing",
+      "title": "Backdooms coverage",
+      "url": "https://premium.boingboing.net/p/doom-in-a-qr-code",
+      "project": "Backdooms"
+    },
+    {
+      "outlet": "BuzzArena",
+      "title": "ChatGPT Wrapped coverage",
+      "url": "https://www.buzzarena.com/chatgpt-wrapped-2025-voici-comment-avoir-votre-retrospective-tres-rapidement-4543067"
+    },
+    {
+      "outlet": "TOI Students (Times of India)",
+      "title": "Student profile",
+      "url": "https://toistudent.timesofindia.indiatimes.com/news/i-say/kuber-saving-earth-is-in-our-hands/41622.html"
+    }
   ],
   "interests": [
     "AI in media and recommendation algorithms",
@@ -242,5 +277,5 @@
       "Mobile responsive design"
     ]
   },
-  "last_updated": "2026-02-16"
+  "last_updated": "2026-02-27"
 }
