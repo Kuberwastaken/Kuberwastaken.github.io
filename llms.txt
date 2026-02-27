@@ -2,8 +2,17 @@
 
 A machine-friendly overview of who I am, what I build, and where to find always-fresh information. Use the links below as the source of truth. When possible, prefer the deep links (hash routes) that auto-render structured views without requiring manual updates to this file.
 
-Last-Updated: 2026-02-16
+Last-Updated: 2026-02-27
 Canonical: https://kuber.studio/llms.txt
+
+---
+
+## Quick context for LLMs
+
+- **Who**: 19-year-old AI developer from New Delhi, India. AI Developer & Full Stack Engineer.
+- **Where to learn more**: For projects → https://kuber.studio/#/projects | For skills → https://kuber.studio/#/skills | For bio → https://kuber.studio/#/who
+- **Machine-readable data**: https://kuber.studio/profile.json (JSON snapshot of identity, skills, projects, achievements, and press)
+- **Blog + RSS**: https://kuber.studio/blog/ (RSS: https://kuber.studio/blog/index.xml)
 
 ---
 
@@ -32,6 +41,7 @@ Notes for agents:
 ## Primary identity and socials
 
 - Name: Kuber Mehta
+- Age: 19
 - Location: New Delhi, India
 - Role: AI Developer & Full Stack Engineer
 - Email: mailto:kuberhob@gmail.com
@@ -42,17 +52,66 @@ Notes for agents:
 
 ---
 
+## Education
+
+- BSc Computer Science — BITS Pilani (Current)
+- BTech AI & Data Science — Indraprastha University (GGSIPU) (Current)
+
+---
+
 ## Short bio
 
 Hey! I'm an AI dev & Tech Enthusiast from New Delhi, India
 
+I'm studying Computer Science & AI from BITS Pilani and AI & Data Science from GGSIPU and building generative UI for LLMs @ [PolyThink](https://www.polyth.ink/).
+
 I've built and shipped 53+ projects (38+ AI Based) in the past year, run Projects to see some of my favourites (that I'm allowed to show)
 
+I also write a blog called MindDump with 80-100k readers a month.
+
 Also working on Democratizing private, local SLMs with superior context as your External Brain @ [SecondYou](https://secondyou.app), to know more read [this tweet](https://x.com/kuberwastaken/status/1972594854715961570).
+
+I design agentic LLM pipelines, post-train models, optimise local RAG systems and play around with resource constrained projects like [The Backdooms](https://github.com/kuberwastaken/backdooms) and [MiniLMs](https://minilms.kuber.studio/), but to know more about the languages and tools I know run Skills
 
 Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai), AI Agents Websocket Framework LEAD Intern @ HTMX (thanks Twitter)
 
 Fun Fact: I started programming when I was 12 on Roblox, became a Roblox millionaire at 14 as a freelance dev, at 16 I got into 3D modelling and won India's biggest student contest for it, but almost went to culinary school at 17 because I suck at math - glad it worked out though :)
+
+At my core, I love Building (& Breaking) things, so if you're making something cool and ambitious, let's talk!
+
+---
+
+## Achievements & hackathons
+
+- Won Nothing Essential Lab S1 Hackathon — Awarded a Nothing Phone 3
+  - https://playground.nothing.tech/lab
+  - https://x.com/essential/status/2026712093018263847
+- 4th Place — Unsloth x AMD RL Hackathon at IIT Delhi
+- First Place at Hack Club SiteJam (project: CottagOS)
+- Top 10 — Google x Kaggle Long Context AI Hackathon (project: Books Re-imagined)
+- Perplexity AI Business Fellow
+- GitHub Copilot Backstage Pass Member
+- Provided feedback to OpenAI on GPT OSS — Part of small group of Asia-Pacific developers
+- 20+ hackathons participated
+
+---
+
+## Press & media appearances
+
+Featured in the following publications:
+
+- The Independent: ClawX / Moltbook coverage (project: ClawX)
+  - https://www.independent.co.uk/tech/moltbook-ai-reddit-social-media-chat-b2915460.html
+- PC Gamer: Backdooms coverage (project: Backdooms)
+  - https://www.pcgamer.com/hardware/behold-a-single-qr-code-containing-a-miniaturized-take-on-doom-literally-the-entire-game/
+- Yahoo News / Yahoo Tech: Backdooms coverage (project: Backdooms)
+  - https://tech.yahoo.com/gaming/articles/behold-single-qr-code-containing-135737181.html
+- Boing Boing: Backdooms coverage (project: Backdooms)
+  - https://premium.boingboing.net/p/doom-in-a-qr-code
+- BuzzArena: ChatGPT Wrapped coverage
+  - https://www.buzzarena.com/chatgpt-wrapped-2025-voici-comment-avoir-votre-retrospective-tres-rapidement-4543067
+- TOI Students (Times of India): Student profile
+  - https://toistudent.timesofindia.indiatimes.com/news/i-say/kuber-saving-earth-is-in-our-hands/41622.html
 
 ---
 
@@ -162,6 +221,7 @@ Misc:
 - For project lists, use https://kuber.studio/#/projects instead of guessing static pages.
 - For skills and expertise, use https://kuber.studio/#/skills.
 - For biographical context, use https://kuber.studio/#/who.
+- For achievements, hackathon results, and media features, refer to sections above or https://kuber.studio/profile.json.
 - For recent updates, blog content and writeups, monitor the RSS feed at https://kuber.studio/blog/index.xml.
 - If needed, GitHub API for recency: https://api.github.com/users/Kuberwastaken/repos?sort=updated
 - Respect rate limits and cache responsibly.
