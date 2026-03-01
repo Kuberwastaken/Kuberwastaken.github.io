@@ -115,12 +115,6 @@ Featured in the following publications:
 
 For the complete list with all 27 projects, see https://kuber.studio/llms-full.txt
 
-- Sweeta — Made an Open-Source tool to remove Sora 2 Watermarks in Less than 72 Hours of it's release.
-
-For educational and research use only, urging OpenAI to be harsher with visual watermarks, uses LaMA inpainting and intelligent detection algorithms to remove watermarks without losing quality.
-  - GitHub: https://github.com/Kuberwastaken/sweeta
-  - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7381581124772429825/?originTrackingId=%2FKhKZVDqAQAZE99Dz0vv9Q%3D%3D
-
 - PolyThink — Building Generative UI for LLMs
   - Site: https://www.polyth.ink/
   - X: https://x.com/polythinkai
@@ -180,6 +174,11 @@ Doubles as a pSEO aggregator with 85k+ dynamically rendered pages.
 Further Compacted [Karpathy's work with MicroGPT](https://karpathy.github.io/2026/02/12/microgpt/) to be smaller and more resource efficient while adding native browser execution
   - GitHub: https://github.com/Kuberwastaken/picogpt
   - X: https://x.com/kuberwastaken/status/2022006550756516189
+
+- DOOMme — Running DOOM (1993) in a GitHub Readme.
+
+A DIY stateless engine with 8000+ markdown files and WebP images linked together with graphs programmatically mapping out every position in the E1M1 map in all 4 directions.
+  - GitHub: https://github.com/Kuberwastaken/DoomMe
 
 ---
 

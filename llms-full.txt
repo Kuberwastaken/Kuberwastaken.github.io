@@ -140,11 +140,13 @@ Further Compacted [Karpathy's work with MicroGPT](https://karpathy.github.io/202
 A DIY stateless engine with 8000+ markdown files and WebP images linked together with graphs programmatically mapping out every position in the E1M1 map in all 4 directions.
   - GitHub: https://github.com/Kuberwastaken/DoomMe
 
-- Sweeta — Made an Open-Source tool to remove Sora 2 Watermarks in Less than 72 Hours of it's release.
+- HN-Digest — Winner @ [Nothing Essential Lab S1 Hackathon](https://playground.nothing.tech/detail/app/pDCVJNrJVYHj5PxM)
 
-For educational and research use only, urging OpenAI to be harsher with visual watermarks, uses LaMA inpainting and intelligent detection algorithms to remove watermarks without losing quality.
-  - GitHub: https://github.com/Kuberwastaken/sweeta
-  - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7381581124772429825/?originTrackingId=%2FKhKZVDqAQAZE99Dz0vv9Q%3D%3D
+I was tired of the Hacker News mobile experience so I built my own as an Essential App (Nothing Widgets)
+
+Refreshing every 30 minutes with official HN and Algolia API, I see the Top, Show and Ask front pages from the comfort of my home screen
+  - Site: https://playground.nothing.tech/detail/app/pDCVJNrJVYHj5PxM
+  - X: https://x.com/essential/status/2026712093018263847
 
 - PolyThink — Building Generative UI for LLMs
   - Site: https://www.polyth.ink/

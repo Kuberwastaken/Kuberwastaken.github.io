@@ -127,18 +127,6 @@
   },
   "featured_projects": [
     {
-      "name": "Sweeta",
-      "status": "Active",
-      "description": "Made an Open-Source tool to remove Sora 2 Watermarks in Less than 72 Hours of it's release.\n\nFor educational and research use only, urging OpenAI to be harsher with visual watermarks, uses LaMA inpainting and intelligent detection algorithms to remove watermarks without losing quality.",
-      "github": "https://github.com/Kuberwastaken/sweeta",
-      "technologies": [
-        "AI/ML",
-        "LaMA",
-        "Computer Vision",
-        "Python"
-      ]
-    },
-    {
       "name": "PolyThink",
       "status": "Active",
       "description": "Building Generative UI for LLMs",
@@ -205,6 +193,16 @@
       "technologies": [
         "AI/ML",
         "Computer Vision"
+      ]
+    },
+    {
+      "name": "AsianMOM",
+      "status": "Active",
+      "description": "A WebML-based Vision-Language App that roasts you like an Asian Mom.\n\nRuns entirely in your browser using Transformers.js, WebGPU and ONNX, loading ~3B parameters models in-tab and can be used offline after init.",
+      "url": "https://asianmom.kuber.studio/",
+      "github": "https://github.com/Kuberwastaken/AsianMOM",
+      "technologies": [
+        "Web Development"
       ]
     }
   ],
