@@ -26,11 +26,12 @@
         "extra": "https://kuber.studio/blog/Projects/How-I-Made-DOOM-Run-Inside-a-GitHub-Readme"
     },
     {
-        "title": "Sweeta",
-        "description": "Made an Open-Source tool to remove Sora 2 Watermarks in Less than 72 Hours of it's release.\n\nFor educational and research use only, urging OpenAI to be harsher with visual watermarks, uses LaMA inpainting and intelligent detection algorithms to remove watermarks without losing quality.",
-        "website": null,
-        "github": "https://github.com/Kuberwastaken/sweeta",
-        "extra": "https://www.linkedin.com/feed/update/urn:li:activity:7381581124772429825/?originTrackingId=%2FKhKZVDqAQAZE99Dz0vv9Q%3D%3D"
+        "title": "HN-Digest",
+        "description": "Winner @ [Nothing Essential Lab S1 Hackathon](https://playground.nothing.tech/detail/app/pDCVJNrJVYHj5PxM)\n\nI was tired of the Hacker News mobile experience so I built my own as an Essential App (Nothing Widgets)\n\nRefreshing every 30 minutes with official HN and Algolia API, I see the Top, Show and Ask front pages from the comfort of my home screen",
+        "website": "https://playground.nothing.tech/detail/app/pDCVJNrJVYHj5PxM",
+        "github": null,
+        "showIframe": false,
+        "extra": "https://x.com/essential/status/2026712093018263847"
     },
     {
         "title": "PolyThink",
