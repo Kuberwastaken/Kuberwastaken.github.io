@@ -114,7 +114,8 @@ const MobileProjectsCarousel = () => {
                                   project.title === 'PrayGo' ? JSDELIVR_BASE + 'kuberwastaken-praygo.png' :
                                     project.title === 'CottagOS' ? JSDELIVR_BASE + 'kuberwastaken-cottagos.png' :
                                       project.title === 'MEOW' ? JSDELIVR_BASE + 'kuberwastaken-meow.png' :
-                                        null;
+                                        project.title === 'HN-Digest' ? JSDELIVR_BASE + 'kuberwastaken-hn-digest.png' :
+                                          null;
   return (
     <div className="mobile-projects-carousel" style={{ maxWidth: 420, margin: '0 auto', padding: '16px 0' }}>
       <div
@@ -145,11 +146,11 @@ const MobileProjectsCarousel = () => {
                 style={{ width: '100%', minHeight: '100%', objectFit: 'cover', display: 'block' }}
               />
             </div>
-          ) : project.title === 'Sweeta' ? (
-            <div style={{ width: '100%', height: '100%', overflowY: 'auto', overflowX: 'hidden', background: '#fff', borderRadius: 12 }}>
+          ) : project.title === 'HN-Digest' ? (
+            <div style={{ width: '100%', height: '100%', overflowY: 'auto', overflowX: 'hidden', background: '#181818', borderRadius: 12 }}>
               <img
-                src={JSDELIVR_BASE + 'kuberwastaken-sweeta.png'}
-                alt="Sweeta watermark removal tool preview"
+                src={JSDELIVR_BASE + 'kuberwastaken-hn-digest.png'}
+                alt="HN-Digest preview"
                 style={{ width: '100%', height: 'auto', display: 'block' }}
               />
             </div>
@@ -283,7 +284,7 @@ const ProjectsMasonry = () => {
                         }}
                       />
                     </div>
-                  ) : project.title === 'Sweeta' ? (
+                  ) : project.title === 'HN-Digest' ? (
                     <div
                       style={{
                         marginBottom: 16,
@@ -299,10 +300,10 @@ const ProjectsMasonry = () => {
                       }}
                       className="project-fauxwebpage-container"
                     >
-                      <div style={{ height: '100%', width: '100%', overflowY: 'auto', overflowX: 'hidden', background: '#fff' }}>
+                      <div style={{ height: '100%', width: '100%', overflowY: 'auto', overflowX: 'hidden', background: '#181818' }}>
                         <img
-                          src={JSDELIVR_BASE + 'kuberwastaken-sweeta.png'}
-                          alt="Sweeta watermark removal tool preview"
+                          src={JSDELIVR_BASE + 'kuberwastaken-hn-digest.png'}
+                          alt="HN-Digest preview"
                           style={{
                             width: '100%',
                             height: 'auto',
@@ -337,7 +338,7 @@ const ProjectsMasonry = () => {
                         }}
                       />
                     </div>
-                  ) : (['Silverilla', 'DOOMme', 'GitHub View Counter', 'ThisWebsiteIsNotOnline', 'ORCUS', 'Free Deep Research', 'Books Re-imagined', 'MEOW', 'CottagOS', 'SecondYou', 'PrayGo', 'PicoGPT', 'TREAT'].includes(project.title)) ? (
+                  ) : (['Silverilla', 'DOOMme', 'GitHub View Counter', 'ThisWebsiteIsNotOnline', 'ORCUS', 'Free Deep Research', 'Books Re-imagined', 'MEOW', 'CottagOS', 'SecondYou', 'PrayGo', 'PicoGPT', 'TREAT', 'HN-Digest'].includes(project.title)) ? (
                     <div
                       style={{
                         marginBottom: 16,
@@ -368,7 +369,8 @@ const ProjectsMasonry = () => {
                                               project.title === 'SecondYou' ? JSDELIVR_BASE + 'kuberwastaken-secondyou.png' :
                                                 project.title === 'PrayGo' ? JSDELIVR_BASE + 'kuberwastaken-praygo.png' :
                                                   project.title === 'TREAT' ? JSDELIVR_BASE + 'kuberwastaken-treat.png' :
-                                                    JSDELIVR_BASE + 'kuberwastaken-booksreimagined.png'
+                                                    project.title === 'HN-Digest' ? JSDELIVR_BASE + 'kuberwastaken-hn-digest.png' :
+                                                      JSDELIVR_BASE + 'kuberwastaken-booksreimagined.png'
                       }
                         alt={project.title + ' faux webpage'}
                         style={{ width: '100%', minHeight: '100%', objectFit: 'cover', display: 'block' }}
