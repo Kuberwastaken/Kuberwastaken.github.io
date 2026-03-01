@@ -114,8 +114,7 @@ const MobileProjectsCarousel = () => {
                                   project.title === 'PrayGo' ? JSDELIVR_BASE + 'kuberwastaken-praygo.png' :
                                     project.title === 'CottagOS' ? JSDELIVR_BASE + 'kuberwastaken-cottagos.png' :
                                       project.title === 'MEOW' ? JSDELIVR_BASE + 'kuberwastaken-meow.png' :
-                                        project.title === 'HN-Digest' ? JSDELIVR_BASE + 'kuberwastaken-hn-digest.png' :
-                                          null;
+                                        null;
   return (
     <div className="mobile-projects-carousel" style={{ maxWidth: 420, margin: '0 auto', padding: '16px 0' }}>
       <div
@@ -146,20 +145,14 @@ const MobileProjectsCarousel = () => {
                 style={{ width: '100%', minHeight: '100%', objectFit: 'cover', display: 'block' }}
               />
             </div>
-          ) : project.title === 'HN-Digest' ? (
-            <div style={{ width: '100%', height: '100%', overflowY: 'auto', overflowX: 'hidden', background: '#181818', borderRadius: 12 }}>
+          ) : (project.previewImg || (project.title === 'Backdooms' && 'https://cdn.jsdelivr.net/gh/kuberwastaken/backdooms/public/Gameplay-GIF.gif')) ? (
+            <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: project.title === 'HN-Digest' ? '#000' : 'transparent' }}>
               <img
-                src={JSDELIVR_BASE + 'kuberwastaken-hn-digest.png'}
-                alt="HN-Digest preview"
-                style={{ width: '100%', height: 'auto', display: 'block' }}
+                src={project.previewImg.startsWith('/images/') ? JSDELIVR_BASE + project.previewImg.replace('/images/', '') : (project.previewImg || (project.title === 'Backdooms' ? 'https://cdn.jsdelivr.net/gh/kuberwastaken/backdooms/public/Gameplay-GIF.gif' : ''))}
+                alt={project.title + ' preview'}
+                style={{ width: '100%', height: '100%', objectFit: project.title === 'HN-Digest' ? 'contain' : 'cover', display: 'block', borderRadius: 12 }}
               />
             </div>
-          ) : (project.previewImg || (project.title === 'Backdooms' && 'https://cdn.jsdelivr.net/gh/kuberwastaken/backdooms/public/Gameplay-GIF.gif')) ? (
-            <img
-              src={project.previewImg || (project.title === 'Backdooms' ? 'https://cdn.jsdelivr.net/gh/kuberwastaken/backdooms/public/Gameplay-GIF.gif' : '')}
-              alt={project.title + ' preview'}
-              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: 12 }}
-            />
           ) : null}
         </div>
         {/* Title */}
@@ -284,34 +277,6 @@ const ProjectsMasonry = () => {
                         }}
                       />
                     </div>
-                  ) : project.title === 'HN-Digest' ? (
-                    <div
-                      style={{
-                        marginBottom: 16,
-                        borderRadius: 12,
-                        overflow: 'hidden',
-                        border: '1.5px solid rgba(90,187,154,0.18)',
-                        boxShadow: '0 2px 16px 0 rgba(90,187,154,0.10)',
-                        background: '#181818',
-                        height: 225,
-                        maxWidth: '100%',
-                        display: 'block',
-                        position: 'relative',
-                      }}
-                      className="project-fauxwebpage-container"
-                    >
-                      <div style={{ height: '100%', width: '100%', overflowY: 'auto', overflowX: 'hidden', background: '#181818' }}>
-                        <img
-                          src={JSDELIVR_BASE + 'kuberwastaken-hn-digest.png'}
-                          alt="HN-Digest preview"
-                          style={{
-                            width: '100%',
-                            height: 'auto',
-                            display: 'block',
-                          }}
-                        />
-                      </div>
-                    </div>
                   ) : project.previewImg ? (
                     <div
                       style={{
@@ -320,10 +285,12 @@ const ProjectsMasonry = () => {
                         overflow: 'hidden',
                         border: '1.5px solid rgba(90,187,154,0.18)',
                         boxShadow: '0 2px 16px 0 rgba(90,187,154,0.10)',
-                        background: '#181818',
-                        height: 225,
+                        background: project.title === 'HN-Digest' ? '#000' : '#181818',
+                        height: project.title === 'HN-Digest' ? 140 : 225,
                         maxWidth: '100%',
-                        display: 'block',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
                       }}
                       className="project-iframe-container"
                     >
@@ -333,12 +300,12 @@ const ProjectsMasonry = () => {
                         style={{
                           width: '100%',
                           height: '100%',
-                          objectFit: 'cover',
+                          objectFit: project.title === 'HN-Digest' ? 'contain' : 'cover',
                           display: 'block',
                         }}
                       />
                     </div>
-                  ) : (['Silverilla', 'DOOMme', 'GitHub View Counter', 'ThisWebsiteIsNotOnline', 'ORCUS', 'Free Deep Research', 'Books Re-imagined', 'MEOW', 'CottagOS', 'SecondYou', 'PrayGo', 'PicoGPT', 'TREAT', 'HN-Digest'].includes(project.title)) ? (
+                  ) : (['Silverilla', 'DOOMme', 'GitHub View Counter', 'ThisWebsiteIsNotOnline', 'ORCUS', 'Free Deep Research', 'Books Re-imagined', 'MEOW', 'CottagOS', 'SecondYou', 'PrayGo', 'PicoGPT', 'TREAT'].includes(project.title)) ? (
                     <div
                       style={{
                         marginBottom: 16,
@@ -369,8 +336,7 @@ const ProjectsMasonry = () => {
                                               project.title === 'SecondYou' ? JSDELIVR_BASE + 'kuberwastaken-secondyou.png' :
                                                 project.title === 'PrayGo' ? JSDELIVR_BASE + 'kuberwastaken-praygo.png' :
                                                   project.title === 'TREAT' ? JSDELIVR_BASE + 'kuberwastaken-treat.png' :
-                                                    project.title === 'HN-Digest' ? JSDELIVR_BASE + 'kuberwastaken-hn-digest.png' :
-                                                      JSDELIVR_BASE + 'kuberwastaken-booksreimagined.png'
+                                                    JSDELIVR_BASE + 'kuberwastaken-booksreimagined.png'
                       }
                         alt={project.title + ' faux webpage'}
                         style={{ width: '100%', minHeight: '100%', objectFit: 'cover', display: 'block' }}
