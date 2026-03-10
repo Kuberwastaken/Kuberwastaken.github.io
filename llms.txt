@@ -2,7 +2,7 @@
 
 A machine-friendly overview of who I am, what I build, and where to find always-fresh information.
 
-Last-Updated: 2026-03-01
+Last-Updated: 2026-03-10
 Canonical: https://kuber.studio/llms.txt
 Full version: https://kuber.studio/llms-full.txt
 
