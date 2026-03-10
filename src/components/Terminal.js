@@ -84,7 +84,7 @@ const Terminal = () => {
     'cv', 'google', 'snake', 'backdooms', 'tetris', '2048',
     'flappybird', 'gameoflife', 'time', 'date', 'background', 'theme', 'themes', 'bg',
     'color', 'calculator', 'perplexity', 'perp', 'hackermode', 'qr-generator',
-    'password-generator', 'github-feed'
+    'password-generator', 'github-feed', 'rm', 'sudo'
   ], []);
 
   // Memoized banners to avoid recreation on every render
@@ -383,6 +383,58 @@ const Terminal = () => {
       case 'tos':
         window.open('/tos', '_blank');
         addToOutput({ type: 'output', content: 'Opening Terms of Service...' });
+        break;
+      case 'rm':
+        if (argument === '-rf /') {
+          addToOutput({ type: 'output', content: 'Deleting root filesystem... just kidding, goodbye!' });
+          setHackermode(true);
+          const allBgs = [...backgrounds.solid, ...backgrounds.gradients];
+          let bgIndex = 0;
+          document.body.style.transition = 'none'; // skip CSS transition
+          const bgInterval = setInterval(() => {
+            const currentBg = allBgs[bgIndex].value;
+            changeBackgroundColor(currentBg);
+            document.body.style.background = currentBg;
+            bgIndex = (bgIndex + 1) % allBgs.length;
+          }, 50);
+
+          setTimeout(() => {
+            clearInterval(bgInterval);
+            window.close();
+            // Fallback if window.close() fails due to browser security
+            document.body.style.background = '#000';
+            document.body.style.transition = '';
+            document.body.innerHTML = '<div style="background:#000;color:#0f0;height:100vh;display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:24px;">Connection closed.</div>';
+          }, 4500);
+        } else {
+          addToOutput({ type: 'output', content: `rm: cannot remove '${argument}': No such file or directory` });
+        }
+        break;
+      case 'sudo':
+        if (argument === 'rm -rf /') {
+          addToOutput({ type: 'output', content: '[sudo] password for kuber: *******\nDeleting root filesystem... goodbye!' });
+          setHackermode(true);
+          const allBgs = [...backgrounds.solid, ...backgrounds.gradients];
+          let bgIndex = 0;
+          document.body.style.transition = 'none'; // skip CSS transition
+          const bgInterval = setInterval(() => {
+            const currentBg = allBgs[bgIndex].value;
+            changeBackgroundColor(currentBg);
+            document.body.style.background = currentBg;
+            bgIndex = (bgIndex + 1) % allBgs.length;
+          }, 50);
+
+          setTimeout(() => {
+            clearInterval(bgInterval);
+            window.close();
+            // Fallback if window.close() fails due to browser security
+            document.body.style.background = '#000';
+            document.body.style.transition = '';
+            document.body.innerHTML = '<div style="background:#000;color:#0f0;height:100vh;display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:24px;">Connection closed.</div>';
+          }, 4500);
+        } else {
+          addToOutput({ type: 'output', content: `sudo: ${argument}: command not found` });
+        }
         break;
       default:
         addToOutput({ type: 'output', content: 'Command not found. Type "help" for a list of commands.' });
