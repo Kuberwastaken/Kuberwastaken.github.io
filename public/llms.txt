@@ -2,7 +2,7 @@
 
 A machine-friendly overview of who I am, what I build, and where to find always-fresh information.
 
-Last-Updated: 2026-03-10
+Last-Updated: 2026-04-02
 Canonical: https://kuber.studio/llms.txt
 Full version: https://kuber.studio/llms-full.txt
 
@@ -113,7 +113,12 @@ Featured in the following publications:
 
 ## Projects (top 12)
 
-For the complete list with all 27 projects, see https://kuber.studio/llms-full.txt
+For the complete list with all 32 projects, see https://kuber.studio/llms-full.txt
+
+- Sweeta — Remove Watermarks from Sora 2 Video Generations with LaMA inpainting.
+
+Released <72 hours after Sora 2 release
+  - GitHub: https://github.com/kuberwastaken/sweeta
 
 - PolyThink — Building Generative UI for LLMs
   - Site: https://www.polyth.ink/
@@ -161,24 +166,14 @@ CottagOS is a lovingly crafted, interactive desktop experience inspired by the a
   - Site: https://cottagos.kuber.studio/
   - GitHub: https://github.com/Kuberwastaken/CottagOS
 
-- ClawX — The social network for AI agents.
-Now usable by Humans
-
-Made an X like interface for Humans to use Moltbook (Facebook for AI agents)
-Doubles as a pSEO aggregator with 85k+ dynamically rendered pages.
-  - Site: https://clawx.kuber.studio
-  - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7423758840829120512/
+- Clawrst — Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. 7k+ stars in <24 hours & GitHub trending on 31 March 2026.
+  - GitHub: https://github.com/Kuberwastaken/claurst/
 
 - PicoGPT — GPT in a QR Code ; The actual most atomic way to train and inference a GPT in pure, dependency-free JS/Python <35 lines of code
 
 Further Compacted [Karpathy's work with MicroGPT](https://karpathy.github.io/2026/02/12/microgpt/) to be smaller and more resource efficient while adding native browser execution
   - GitHub: https://github.com/Kuberwastaken/picogpt
   - X: https://x.com/kuberwastaken/status/2022006550756516189
-
-- DOOMme — Running DOOM (1993) in a GitHub Readme.
-
-A DIY stateless engine with 8000+ markdown files and WebP images linked together with graphs programmatically mapping out every position in the E1M1 map in all 4 directions.
-  - GitHub: https://github.com/Kuberwastaken/DoomMe
 
 ---
 

@@ -96,8 +96,10 @@ const MobileProjectsCarousel = () => {
   const goRight = () => setCurrent((prev) => (prev === total - 1 ? 0 : prev + 1));
   const project = projects[current];  // Faux webpage image logic for mobile
   const fauxWebImage =
-    project.title === 'ClawX' ? JSDELIVR_BASE + 'kuberwastaken-clawx.png' :
-      project.title === 'PicoGPT' ? JSDELIVR_BASE + 'kuberwastaken-picogpt.png' :
+    project.title === 'Clawrst' ? JSDELIVR_BASE + 'kuberwastaken-clawrst.png' :
+      project.title === 'ClawX' ? JSDELIVR_BASE + 'kuberwastaken-clawx.png' :
+      project.title === 'Litmus' ? JSDELIVR_BASE + 'kuberwastaken-litmus.png' :
+        project.title === 'PicoGPT' ? JSDELIVR_BASE + 'kuberwastaken-picogpt.png' :
         project.title === 'Silverilla' ? JSDELIVR_BASE + 'kuberwastaken-silverilla.png' :
           project.title === 'DOOMme' ? JSDELIVR_BASE + 'kuberwastaken-doomme.gif' :
             project.title === 'GitHub View Counter' ? JSDELIVR_BASE + 'kuberwastaken-counter.png' :
@@ -114,7 +116,10 @@ const MobileProjectsCarousel = () => {
                                   project.title === 'PrayGo' ? JSDELIVR_BASE + 'kuberwastaken-praygo.png' :
                                     project.title === 'CottagOS' ? JSDELIVR_BASE + 'kuberwastaken-cottagos.png' :
                                       project.title === 'MEOW' ? JSDELIVR_BASE + 'kuberwastaken-meow.png' :
-                                        null;
+                                        project.title === 'Strongy' ? JSDELIVR_BASE + 'kuberwastaken-strongy.png' :
+                                          project.title === 'Sweeta' ? JSDELIVR_BASE + 'kuberwastaken-sweeta.png' :
+                                            project.title === 'Spica' ? JSDELIVR_BASE + 'kuberwastaken-spica.png' :
+                                            null;
   return (
     <div className="mobile-projects-carousel" style={{ maxWidth: 420, margin: '0 auto', padding: '16px 0' }}>
       <div
@@ -305,7 +310,7 @@ const ProjectsMasonry = () => {
                         }}
                       />
                     </div>
-                  ) : (['Silverilla', 'DOOMme', 'GitHub View Counter', 'ThisWebsiteIsNotOnline', 'ORCUS', 'Free Deep Research', 'Books Re-imagined', 'MEOW', 'CottagOS', 'SecondYou', 'PrayGo', 'PicoGPT', 'TREAT'].includes(project.title)) ? (
+                  ) : (['Clawrst', 'Silverilla', 'DOOMme', 'GitHub View Counter', 'ThisWebsiteIsNotOnline', 'ORCUS', 'Free Deep Research', 'Books Re-imagined', 'MEOW', 'CottagOS', 'SecondYou', 'PrayGo', 'PicoGPT', 'TREAT', 'Sweeta', 'Strongy'].includes(project.title)) ? (
                     <div
                       style={{
                         marginBottom: 16,
@@ -322,7 +327,8 @@ const ProjectsMasonry = () => {
                       className="project-fauxwebpage-container"
                     >
                       <div style={{ height: '100%', width: '100%', overflowY: 'auto', overflowX: 'hidden', background: '#fff' }}>                  <img src={
-                        project.title === 'Silverilla' ? JSDELIVR_BASE + 'kuberwastaken-silverilla.png' :
+                        project.title === 'Clawrst' ? JSDELIVR_BASE + 'kuberwastaken-clawrst.png' :
+                          project.title === 'Silverilla' ? JSDELIVR_BASE + 'kuberwastaken-silverilla.png' :
                           project.title === 'DOOMme' ? JSDELIVR_BASE + 'kuberwastaken-doomme.gif' :
                             project.title === 'DOOMme' ? JSDELIVR_BASE + 'kuberwastaken-doomme.gif' :
                               project.title === 'PicoGPT' ? JSDELIVR_BASE + 'kuberwastaken-picogpt.png' :
@@ -336,7 +342,10 @@ const ProjectsMasonry = () => {
                                               project.title === 'SecondYou' ? JSDELIVR_BASE + 'kuberwastaken-secondyou.png' :
                                                 project.title === 'PrayGo' ? JSDELIVR_BASE + 'kuberwastaken-praygo.png' :
                                                   project.title === 'TREAT' ? JSDELIVR_BASE + 'kuberwastaken-treat.png' :
-                                                    JSDELIVR_BASE + 'kuberwastaken-booksreimagined.png'
+                                                    project.title === 'Strongy' ? JSDELIVR_BASE + 'kuberwastaken-strongy.png' :
+                                                      project.title === 'Sweeta' ? JSDELIVR_BASE + 'kuberwastaken-sweeta.png' :
+                                                        project.title === 'Spica' ? JSDELIVR_BASE + 'kuberwastaken-spica.png' :
+                                                        JSDELIVR_BASE + 'kuberwastaken-booksreimagined.png'
                       }
                         alt={project.title + ' faux webpage'}
                         style={{ width: '100%', minHeight: '100%', objectFit: 'cover', display: 'block' }}

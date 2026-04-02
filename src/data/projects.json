@@ -1,11 +1,11 @@
 [
     {
-        "title": "ClawX",
-        "description": "The social network for AI agents.\nNow usable by Humans\n\nMade an X like interface for Humans to use Moltbook (Facebook for AI agents)\nDoubles as a pSEO aggregator with 85k+ dynamically rendered pages.",
-        "website": "https://clawx.kuber.studio",
-        "github": null,
-        "showIframe": true,
-        "extra": "https://www.linkedin.com/feed/update/urn:li:activity:7423758840829120512/"
+        "title": "Clawrst",
+        "description": "Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. 7k+ stars in <24 hours & GitHub trending on 31 March 2026.",
+        "website": null,
+        "github": "https://github.com/Kuberwastaken/claurst/",
+        "showIframe": false,
+        "extra": "https://kuber.studio/blog/AI/Claude-Code's-Entire-Source-Code-Got-Leaked-via-a-Sourcemap-in-npm,-Let's-Talk-About-it"
     },
     {
         "title": "PicoGPT",
@@ -35,11 +35,12 @@
         "extra": "https://x.com/essential/status/2026712093018263847"
     },
     {
-        "title": "PolyThink",
-        "description": "Building Generative UI for LLMs",
-        "website": "https://www.polyth.ink/",
-        "github": null,
-        "extra": "https://x.com/polythinkai"
+        "title": "Litmus",
+        "description": "Run a Parallel Autonomous ML Research Organization on your OpenClaw instance. Shipped <12 Hours, MIT License",
+        "website": "https://litmus.kuber.studio/",
+        "github": "https://github.com/kuberwastaken/litmus",
+        "showIframe": true,
+        "extra": "https://clawhub.ai/kuberwastaken/litmus"
     },
     {
         "title": "Backdooms",
@@ -47,6 +48,29 @@
         "website": "https://kuber.studio/backdooms/",
         "github": "https://github.com/Kuberwastaken/backdooms",
         "extra": "https://news.ycombinator.com/item?id=43729683"
+    },
+    {
+        "title": "ClawX",
+        "description": "The social network for AI agents.\nNow usable by Humans\n\nMade an X like interface for Humans to use Moltbook (Facebook for AI agents)\nDoubles as a pSEO aggregator with 85k+ dynamically rendered pages.",
+        "website": "https://clawx.kuber.studio",
+        "github": null,
+        "showIframe": true,
+        "extra": "https://www.linkedin.com/feed/update/urn:li:activity:7423758840829120512/"
+    },
+    {
+        "title": "PolyThink",
+        "description": "Building Generative UI for LLMs",
+        "website": "https://www.polyth.ink/",
+        "github": null,
+        "extra": "https://x.com/polythinkai"
+    },
+    {
+        "title": "Strongy",
+        "description": "[WIP] A prettier, faster, themable Minecraft stronghold calculator — built on top of Ninjabrain-Bot for speedrunners & streamers.",
+        "website": null,
+        "github": "https://github.com/Kuberwastaken/strongy",
+        "showIframe": false,
+        "extra": []
     },
     {
         "title": "Silverilla",
@@ -57,11 +81,12 @@
         "extra": "https://x.com/kuberwastaken/status/2002013125688889852"
     },
     {
-        "title": "Free Deep Research",
-        "description": "My free, open-source version of OpenAI's Deep Research agent.\n\nIt mimics the capabilities of the original agent, allowing users to run custom deep dives with adjustable breadth, depth, and duration.",
+        "title": "MEOW",
+        "description": "The most Purr-fect Image File Format for your AI workflows, PNG on steroids.",
         "website": null,
-        "github": "https://github.com/Kuberwastaken/free-deep-research",
-        "extra": []
+        "github": "https://github.com/Kuberwastaken/meow",
+        "showIframe": false,
+        "extra": "https://www.linkedin.com/feed/update/urn:li:activity:7338855560810770433/"
     },
     {
         "title": "Berghain Challenge Algorithms",
@@ -128,12 +153,27 @@
         "extra": "https://huggingface.co/spaces/Agents-MCP-Hackathon/TREAT-CHOCOSYRUP"
     },
     {
-        "title": "MEOW",
-        "description": "The most Purr-fect Image File Format for your AI workflows, PNG on steroids.",
+        "title": "Free Deep Research",
+        "description": "My free, open-source version of OpenAI's Deep Research agent.\n\nIt mimics the capabilities of the original agent, allowing users to run custom deep dives with adjustable breadth, depth, and duration.",
         "website": null,
-        "github": "https://github.com/Kuberwastaken/meow",
+        "github": "https://github.com/Kuberwastaken/free-deep-research",
+        "extra": []
+    },
+    {
+        "title": "Sweeta",
+        "description": "Remove Watermarks from Sora 2 Video Generations with LaMA inpainting.\n\nReleased <72 hours after Sora 2 release",
+        "website": null,
+        "github": "https://github.com/kuberwastaken/sweeta",
         "showIframe": false,
-        "extra": "https://www.linkedin.com/feed/update/urn:li:activity:7338855560810770433/"
+        "extra": "https://colab.research.google.com/github/Kuberwastaken/sweeta/blob/main/colab_file/Sweeta_Colab.ipynb"
+    },
+    {
+        "title": "Spica",
+        "description": "Endlessly extend AI Video Generation from last-frame extraction prompting techniques.\n\nReleased <72 hours after Sora 2 release",
+        "website": "https://spica.kuber.studio",
+        "github": "https://github.com/kuberwastaken/spica",
+        "showIframe": true,
+        "extra": []
     },
     {
         "title": "MindDump",
