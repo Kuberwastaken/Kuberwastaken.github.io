@@ -9,6 +9,12 @@
 
 ## Key Projects
 
+### Clawrst
+Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. The fastest growing repo in GitHub history with 7k+ stars in under 24 hours.
+- **GitHub**: https://github.com/Kuberwastaken/claurst/
+- **Technologies**: Rust, AI
+- **Note**: Reached #1 GitHub Trending on March 31, 2026. Wide media coverage included Yahoo Tech and YouTube videos.
+
 ### PolyThink
 Multi-agent AI system where multiple models collaborate and fact-check each other to eliminate hallucinations and provide reliable answers.
 - **URL**: https://www.polyth.ink/
