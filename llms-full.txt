@@ -2,7 +2,7 @@
 
 This is the comprehensive, self-contained version of llms.txt. It contains ALL data about Kuber Mehta — every project, every skill, every achievement, every press feature. No JavaScript or additional requests needed.
 
-Last-Updated: 2026-03-10
+Last-Updated: 2026-04-02
 Canonical: https://kuber.studio/llms-full.txt
 Short version: https://kuber.studio/llms.txt
 Machine-readable: https://kuber.studio/profile.json
@@ -119,15 +119,10 @@ At my core, I love Building (& Breaking) things, so if you're making something c
 
 ---
 
-## All projects (27 total)
+## All projects (32 total)
 
-- ClawX — The social network for AI agents.
-Now usable by Humans
-
-Made an X like interface for Humans to use Moltbook (Facebook for AI agents)
-Doubles as a pSEO aggregator with 85k+ dynamically rendered pages.
-  - Site: https://clawx.kuber.studio
-  - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7423758840829120512/
+- Clawrst — Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. 7k+ stars in <24 hours & GitHub trending on 31 March 2026.
+  - GitHub: https://github.com/Kuberwastaken/claurst/
 
 - PicoGPT — GPT in a QR Code ; The actual most atomic way to train and inference a GPT in pure, dependency-free JS/Python <35 lines of code
 
@@ -148,9 +143,9 @@ Refreshing every 30 minutes with official HN and Algolia API, I see the Top, Sho
   - Site: https://playground.nothing.tech/detail/app/pDCVJNrJVYHj5PxM
   - X: https://x.com/essential/status/2026712093018263847
 
-- PolyThink — Building Generative UI for LLMs
-  - Site: https://www.polyth.ink/
-  - X: https://x.com/polythinkai
+- Litmus — Run a Parallel Autonomous ML Research Organization on your OpenClaw instance. Shipped <12 Hours, MIT License
+  - Site: https://litmus.kuber.studio/
+  - GitHub: https://github.com/kuberwastaken/litmus
 
 - Backdooms — One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. 
 
@@ -159,16 +154,30 @@ Refreshing every 30 minutes with official HN and Algolia API, I see the Top, Sho
   - GitHub: https://github.com/Kuberwastaken/backdooms
   - HN: https://news.ycombinator.com/item?id=43729683
 
+- ClawX — The social network for AI agents.
+Now usable by Humans
+
+Made an X like interface for Humans to use Moltbook (Facebook for AI agents)
+Doubles as a pSEO aggregator with 85k+ dynamically rendered pages.
+  - Site: https://clawx.kuber.studio
+  - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7423758840829120512/
+
+- PolyThink — Building Generative UI for LLMs
+  - Site: https://www.polyth.ink/
+  - X: https://x.com/polythinkai
+
+- Strongy — [WIP] A prettier, faster, themable Minecraft stronghold calculator — built on top of Ninjabrain-Bot for speedrunners & streamers.
+  - GitHub: https://github.com/Kuberwastaken/strongy
+
 - Silverilla — A Three.JS based 100 Men vs 1 Gorilla game - coded from scratch.
 
 Seed based map generation, custom NPC behaviors and multiple crafting and attack sequences powered by Gemini 3 Pro.
   - Site: https://silverilla.kuber.studio/
   - X: https://x.com/kuberwastaken/status/2002013125688889852
 
-- Free Deep Research — My free, open-source version of OpenAI's Deep Research agent.
-
-It mimics the capabilities of the original agent, allowing users to run custom deep dives with adjustable breadth, depth, and duration.
-  - GitHub: https://github.com/Kuberwastaken/free-deep-research
+- MEOW — The most Purr-fect Image File Format for your AI workflows, PNG on steroids.
+  - GitHub: https://github.com/Kuberwastaken/meow
+  - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7338855560810770433/
 
 - Berghain Challenge Algorithms — My Algorithms, tweaks and Solutions that got me to #16/30,000+ in the viral Berghain Challenge by Listenlabs
   - Site: https://berghain.challenges.listenlabs.ai/
@@ -209,9 +218,21 @@ Powered by Gemini 3 Pro and further support for local LLMs for supporting educat
 - TREAT — TREAT is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable.
   - GitHub: https://github.com/Kuberwastaken/TREAT
 
-- MEOW — The most Purr-fect Image File Format for your AI workflows, PNG on steroids.
-  - GitHub: https://github.com/Kuberwastaken/meow
-  - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7338855560810770433/
+- Free Deep Research — My free, open-source version of OpenAI's Deep Research agent.
+
+It mimics the capabilities of the original agent, allowing users to run custom deep dives with adjustable breadth, depth, and duration.
+  - GitHub: https://github.com/Kuberwastaken/free-deep-research
+
+- Sweeta — Remove Watermarks from Sora 2 Video Generations with LaMA inpainting.
+
+Released <72 hours after Sora 2 release
+  - GitHub: https://github.com/kuberwastaken/sweeta
+
+- Spica — Endlessly extend AI Video Generation from last-frame extraction prompting techniques.
+
+Released <72 hours after Sora 2 release
+  - Site: https://spica.kuber.studio
+  - GitHub: https://github.com/kuberwastaken/spica
 
 - MindDump — My Blog website that syncs from my Obsidian Vault! Made from a forked, custom version of Quartz 
 
