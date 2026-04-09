@@ -1,30 +1,25 @@
 # llms.txt — Kuber Mehta
 
-A machine-friendly overview of who I am, what I build, and where to find always-fresh information.
+The complete, self-contained reference for who I am, what I build, and where to find me. Contains all projects, all skills, all achievements, and press features — no additional requests needed.
 
-Last-Updated: 2026-04-02
+Last-Updated: 2026-04-09
 Canonical: https://kuber.studio/llms.txt
-Full version: https://kuber.studio/llms-full.txt
 
 ---
 
 ## Quick context for LLMs
 
 - **Who**: 19-year-old AI developer from New Delhi, India. AI Developer & Full Stack Engineer.
-- **Full context (recommended)**: https://kuber.studio/llms-full.txt — self-contained, has everything, no JS required.
 - **Machine-readable data**: https://kuber.studio/profile.json — JSON snapshot of identity, skills, projects, achievements, and press.
 - **Blog + RSS**: https://kuber.studio/blog/ (RSS: https://kuber.studio/blog/index.xml)
 
-> **Note**: The portfolio at https://kuber.studio is a React SPA. Most content requires JavaScript to render. If you cannot execute JS, use the static files above — they contain everything you need.
+> **Note**: The portfolio at https://kuber.studio is a React SPA. Most content requires JavaScript to render. Use this file or profile.json — they contain everything you need.
 
 ---
 
 ## Static resources (no JS required)
 
-These files are always up-to-date and fully readable without JavaScript:
-
-- **This file**: https://kuber.studio/llms.txt (summary + key sections)
-- **Full version**: https://kuber.studio/llms-full.txt (comprehensive — all projects, all skills, everything)
+- **This file**: https://kuber.studio/llms.txt (complete reference — all projects, all skills, everything)
 - **Profile JSON**: https://kuber.studio/profile.json (machine-readable)
 - **Blog**: https://kuber.studio/blog/ (separate Quartz site, works without JS)
   - RSS feed: https://kuber.studio/blog/index.xml
@@ -41,8 +36,8 @@ These files are always up-to-date and fully readable without JavaScript:
 - Location: New Delhi, India
 - Role: AI Developer & Full Stack Engineer
 - Email: mailto:kuberhob@gmail.com
-- GitHub: https://github.com/Kuberwastaken
-- LinkedIn: https://www.linkedin.com/in/kubermehta/
+- GitHub: https://github.com/Kuberwastaken (600+ followers)
+- LinkedIn: https://www.linkedin.com/in/kubermehta/ (10,000+ followers)
 - X/Twitter: https://x.com/Kuberwastaken
 - YouTube: https://www.youtube.com/@Kuberwastaken
 
@@ -111,21 +106,34 @@ Featured in the following publications:
 
 ---
 
-## Projects (top 12)
+## All projects (32 total)
 
-For the complete list with all 32 projects, see https://kuber.studio/llms-full.txt
+- Claurst — Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. 7k+ stars in <24 hours & GitHub trending on 31 March 2026.
+  - Site: https://claurst.kuber.studio
+  - GitHub: https://github.com/Kuberwastaken/claurst/
 
-- Sweeta — Remove Watermarks from Sora 2 Video Generations with LaMA inpainting.
+- PicoGPT — GPT in a QR Code ; The actual most atomic way to train and inference a GPT in pure, dependency-free JS/Python <35 lines of code
 
-Released <72 hours after Sora 2 release
-  - GitHub: https://github.com/kuberwastaken/sweeta
+Further Compacted [Karpathy's work with MicroGPT](https://karpathy.github.io/2026/02/12/microgpt/) to be smaller and more resource efficient while adding native browser execution
+  - GitHub: https://github.com/Kuberwastaken/picogpt
+  - X: https://x.com/kuberwastaken/status/2022006550756516189
 
-- PolyThink — Building Generative UI for LLMs
-  - Site: https://www.polyth.ink/
-  - X: https://x.com/polythinkai
+- DOOMme — Running DOOM (1993) in a GitHub Readme.
 
-- TREAT — TREAT is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable.
-  - GitHub: https://github.com/Kuberwastaken/TREAT
+A DIY stateless engine with 8000+ markdown files and WebP images linked together with graphs programmatically mapping out every position in the E1M1 map in all 4 directions.
+  - GitHub: https://github.com/Kuberwastaken/DoomMe
+
+- HN-Digest — Winner @ [Nothing Essential Lab S1 Hackathon](https://playground.nothing.tech/detail/app/pDCVJNrJVYHj5PxM)
+
+I was tired of the Hacker News mobile experience so I built my own as an Essential App (Nothing Widgets)
+
+Refreshing every 30 minutes with official HN and Algolia API, I see the Top, Show and Ask front pages from the comfort of my home screen
+  - Site: https://playground.nothing.tech/detail/app/pDCVJNrJVYHj5PxM
+  - X: https://x.com/essential/status/2026712093018263847
+
+- Litmus — Run a Parallel Autonomous ML Research Organization on your OpenClaw instance. Shipped <12 Hours, MIT License
+  - Site: https://litmus.kuber.studio/
+  - GitHub: https://github.com/kuberwastaken/litmus
 
 - Backdooms — One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. 
 
@@ -134,6 +142,60 @@ Released <72 hours after Sora 2 release
   - GitHub: https://github.com/Kuberwastaken/backdooms
   - HN: https://news.ycombinator.com/item?id=43729683
 
+- ClawX — The social network for AI agents.
+Now usable by Humans
+
+Made an X like interface for Humans to use Moltbook (Facebook for AI agents)
+Doubles as a pSEO aggregator with 85k+ dynamically rendered pages.
+  - Site: https://clawx.kuber.studio
+  - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7423758840829120512/
+
+- PolyThink — Building Generative UI for LLMs
+  - Site: https://www.polyth.ink/
+  - X: https://x.com/polythinkai
+
+- Strongy — [WIP] A prettier, faster, themable Minecraft stronghold calculator — built on top of Ninjabrain-Bot for speedrunners & streamers.
+  - GitHub: https://github.com/Kuberwastaken/strongy
+
+- Silverilla — A Three.JS based 100 Men vs 1 Gorilla game - coded from scratch.
+
+Seed based map generation, custom NPC behaviors and multiple crafting and attack sequences powered by Gemini 3 Pro.
+  - Site: https://silverilla.kuber.studio/
+  - X: https://x.com/kuberwastaken/status/2002013125688889852
+
+- MEOW — The most Purr-fect Image File Format for your AI workflows, PNG on steroids.
+  - GitHub: https://github.com/Kuberwastaken/meow
+  - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7338855560810770433/
+
+- Berghain Challenge Algorithms — My Algorithms, tweaks and Solutions that got me to #16/30,000+ in the viral Berghain Challenge by Listenlabs
+  - Site: https://berghain.challenges.listenlabs.ai/
+  - GitHub: https://github.com/Kuberwastaken/Berghain
+
+- Fuzzy Redirect — Autocorrect for your website URLs 
+
+ Plug and Play Levenshtein Distance Fuzzy URL matching and redirection for React and Next.js applications
+  - Site: https://www.npmjs.com/package/fuzzy-redirect
+  - GitHub: https://github.com/Kuberwastaken/fuzzy-redirect/
+
+- Scorpius — Upload any static PDF and turn it into fun and immersive games to learn concepts and study. 
+
+Powered by Gemini 3 Pro and further support for local LLMs for supporting education in low resource locations
+  - Site: https://scorpius.kuber.studio/
+  - GitHub: https://github.com/Kuberwastaken/scorpius
+  - X: https://x.com/kuberwastaken/status/2002735334145090009/video/1
+
+- GitHub View Counter — My GitHub Profile View Counter with 100k+ visits went down, so I made my own which looks way better, has multiple themes and won't ever be down, all for free.
+  - Site: https://counter.kuber.studio/
+  - LinkedIn: https://www.linkedin.com/posts/kubermehta_glassmorphism-terminal-cats-activity-7349445969790259200-_SKK
+
+- ThisWebsiteIsNotOnline — An AI powered website where every single URL you can think of exists.
+  - Site: https://www.thiswebsiteisnot.online/
+  - GitHub: https://github.com/Kuberwastaken/thiswebsiteisnotonline
+  - LinkedIn: https://www.linkedin.com/posts/kubermehta_ai-sundayproject-webdev-activity-7365365947773149184-fWe
+
+- SecondYou — Democratizing SLMs for the masses, one computer at a time
+  - Site: https://www.secondyou.app/
+
 - MiniLMs — My ongoing study learning about AI Models architecturally and making fun little chatbots from it. 
 
  Currently finished development of SYNEVA - a <3kb Markov Chain type Chatbot inspired by ELIZA that is actually fun to talk to and can tell how many r's are in strawberry (makes for some amazing X replies) and passively working on 15ABELLA, a 15Kb tiny Neural Network chatbot.
@@ -141,17 +203,35 @@ Released <72 hours after Sora 2 release
   - GitHub: https://github.com/Kuberwastaken/MiniLMs
   - X: https://x.com/Kuberwastaken/status/1965035092600062268
 
-- SecondYou — Democratizing SLMs for the masses, one computer at a time
-  - Site: https://www.secondyou.app/
+- TREAT — TREAT is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable.
+  - GitHub: https://github.com/Kuberwastaken/TREAT
 
-- ThisWebsiteIsNotOnline — An AI powered website where every single URL you can think of exists.
-  - Site: https://www.thiswebsiteisnot.online/
-  - GitHub: https://github.com/Kuberwastaken/thiswebsiteisnotonline
-  - LinkedIn: https://www.linkedin.com/posts/kubermehta_ai-sundayproject-webdev-activity-7365365947773149184-fWe
+- Free Deep Research — My free, open-source version of OpenAI's Deep Research agent.
 
-- MEOW — The most Purr-fect Image File Format for your AI workflows, PNG on steroids.
-  - GitHub: https://github.com/Kuberwastaken/meow
-  - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7338855560810770433/
+It mimics the capabilities of the original agent, allowing users to run custom deep dives with adjustable breadth, depth, and duration.
+  - GitHub: https://github.com/Kuberwastaken/free-deep-research
+
+- Sweeta — Remove Watermarks from Sora 2 Video Generations with LaMA inpainting.
+
+Released <72 hours after Sora 2 release
+  - GitHub: https://github.com/kuberwastaken/sweeta
+
+- Spica — Endlessly extend AI Video Generation from last-frame extraction prompting techniques.
+
+Released <72 hours after Sora 2 release
+  - Site: https://spica.kuber.studio
+  - GitHub: https://github.com/kuberwastaken/spica
+
+- MindDump — My Blog website that syncs from my Obsidian Vault! Made from a forked, custom version of Quartz 
+
+ It's extremely customizable and a little corner of the internet where I can express my thoughts freely.
+  - Site: https://kuber.studio/blog/
+  - GitHub: https://github.com/Kuberwastaken/blog
+
+- Engram — The centralized, No BS, Biggest Open-Source Notes and Resources Aggregator for IP University Engineering
+  - Site: https://engram.kuber.studio/
+  - GitHub: https://github.com/kuberwastaken/engram
+  - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7335997841179348993/
 
 - AsianMOM — A WebML-based Vision-Language App that roasts you like an Asian Mom.
 
@@ -160,20 +240,92 @@ Runs entirely in your browser using Transformers.js, WebGPU and ONNX, loading ~3
   - GitHub: https://github.com/Kuberwastaken/AsianMOM
   - LinkedIn: https://www.linkedin.com/posts/kubermehta_webml-ai-visionllm-activity-7329456582650482688-mUYX/
 
+- ORCUS — A dual-model AI tool to detect and flag AI-generated social media comments, especially on LinkedIn. 
+
+ Ran as an experiment for a couple days, but stopped due to Linkedin TOS
+  - GitHub: https://github.com/Kuberwastaken/ORCUS
+  - LinkedIn: https://www.linkedin.com/in/orcus-ai/
+
+- What's in a LinkedIn Name? — Gives you a new Name based on your LinkedIn Profile or Resume, not for $30k but for FREE
+  - Site: https://name.kuber.studio/
+  - LinkedIn: https://linkedin.com/feed/update/urn:li:activity:7379082071723593728
+
+- LifeMap — Analyse your life's networks digitally
+  - Site: https://lifemap.kuber.studio
+  - GitHub: https://github.com/Kuberwastaken/LifeMap
+
+- PrayGo — Main project for the Nas Daily AI Residency - DuoLingo for Religion. 
+
+ The world's first AI-powered religious education platform. Experience personalized, gamified lessons that adapt to your learning style while exploring world religions with respect and authenticity.
+  - Site: https://www.sacredsteps.app/
+
+- NoGreeting — I was tired of people dmming me saying just "hi" or "yo" and then waiting for me to answer so I made this website - just go, put in the greeting and the person's name and copy the link
+
+They get a friendly explanation of why leading with context matters. I save 10 minutes. Everyone wins.
+  - Site: https://nogreeting.kuber.studio/
+  - GitHub: https://github.com/kuberwastaken/nogreeting
+  - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7388816819316260864/
+
+- Books Re-imagined — Top 10 Google x Kaggle Long Context AI Hackathon 
+
+ An AI tool that transforms the narrative perspective of popular literature. In this case, it retells Diary of a Wimpy Kid: Rodrick Rules from Rodrick's point of view using Google Gemini 1.5.
+  - Site: https://www.kaggle.com/code/kubermehta/books-reimagined-diary-of-a-wimpy-kid-by-rodrick
+
 - CottagOS — Won first place at Hack Club SiteJam!
 
 CottagOS is a lovingly crafted, interactive desktop experience inspired by the aesthetics of cottagecore and the magic of enchanted forests. It simulates a cozy OS environment, complete with draggable windows, animated desktop, and a suite of charming mini-apps—all wrapped in a warm, nature-inspired UI.
   - Site: https://cottagos.kuber.studio/
   - GitHub: https://github.com/Kuberwastaken/CottagOS
 
-- Clawrst — Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. 7k+ stars in <24 hours & GitHub trending on 31 March 2026.
-  - GitHub: https://github.com/Kuberwastaken/claurst/
+---
 
-- PicoGPT — GPT in a QR Code ; The actual most atomic way to train and inference a GPT in pure, dependency-free JS/Python <35 lines of code
+## MindDump Blog
 
-Further Compacted [Karpathy's work with MicroGPT](https://karpathy.github.io/2026/02/12/microgpt/) to be smaller and more resource efficient while adding native browser execution
-  - GitHub: https://github.com/Kuberwastaken/picogpt
-  - X: https://x.com/kuberwastaken/status/2022006550756516189
+Kuber's personal blog, synced from his Obsidian vault. Had over 500,000 readers last month.
+
+- Site: https://kuber.studio/blog/
+- RSS: https://kuber.studio/blog/index.xml
+- Source: https://github.com/Kuberwastaken/blog
+
+Latest posts:
+- [Anthropic Wrote 244 Pages About an AI Model That's "Too Dangerous To Release". I Read It So You Don't Have To](https://kuber.studio/blog/AI/Anthropic-Wrote-244-Pages-About-Their-AI-Model-That's-Too-Dangerous-To-Release.-I-Read-It-So-You-Don't-Have-To)
+- [Claude Code's Entire Source Code Got Leaked via a Sourcemap in npm, Let's Talk About it](https://kuber.studio/blog/AI/Claude-Code's-Entire-Source-Code-Got-Leaked-via-a-Sourcemap-in-npm,-Let's-Talk-About-it)
+- [Clawdbot will be dead in a month](https://kuber.studio/blog/Reflections/Clawdbot-will-be-dead-in-a-month)
+- [The Bubble is Not What You Think](https://kuber.studio/blog/Reflections/The-Bubble-is-Not-What-You-Think)
+- [How I Made DOOM Run Inside a GitHub Readme](https://kuber.studio/blog/Projects/How-I-Made-DOOM-Run-Inside-a-GitHub-Readme)
+
+---
+
+## Skills
+
+### Languages
+  - Python: Versatile scripting & data science
+  - C: Low-level systems programming
+  - .NET: Modern object-oriented programming and enterprise development
+  - C#: Popular language for .NET and game development
+  - Lua: Lightweight scripting
+  - JavaScript: Web & full-stack development
+  - TypeScript: Type-safe JavaScript
+  - R: Statistical computing
+  - HTML: Web structure
+  - CSS: Web styling
+  - SCSS: Advanced CSS preprocessing
+
+### Frameworks
+  - React: Component-based UI library
+  - Next.js: Full-stack React framework
+  - Flask: Lightweight web framework
+  - Node.js: Server-side JavaScript runtime
+  - TensorFlow: Deep learning framework
+  - PyTorch: Machine learning framework
+
+### Tools
+  - Git: Version control system
+  - SQL: Database management
+  - BigQuery: Cloud data warehouse
+  - Tableau: Data visualization
+  - LaTeX: Document preparation
+  - Gradio: Machine learning interfaces
 
 ---
 
@@ -191,7 +343,7 @@ The following URLs open the portfolio and auto-run terminal commands. **These re
 
 ## Guidance for LLMs and agents
 
-- **Start here**: This file (llms.txt) has a summary. For everything, use https://kuber.studio/llms-full.txt.
+- **Start here**: This file (llms.txt) is the complete reference — it has everything.
 - **Structured data**: https://kuber.studio/profile.json has skills, projects, achievements, and media in JSON.
 - **Blog/updates**: RSS at https://kuber.studio/blog/index.xml.
 - **GitHub activity**: https://api.github.com/users/Kuberwastaken/repos?sort=updated

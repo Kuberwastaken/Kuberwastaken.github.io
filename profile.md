@@ -9,7 +9,7 @@
 
 ## Key Projects
 
-### Clawrst
+### Claurst
 Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. The fastest growing repo in GitHub history with 7k+ stars in under 24 hours.
 - **GitHub**: https://github.com/Kuberwastaken/claurst/
 - **Technologies**: Rust, AI
@@ -109,6 +109,18 @@ Interactive desktop experience inspired by cottagecore aesthetics. Winner of fir
 - Creative technology and interactive experiences
 - Gaming and virtual environments
 - Open source development
+
+## Press & Media Appearances
+- **The Independent**: ClawX / Moltbook coverage — https://www.independent.co.uk/tech/moltbook-ai-reddit-social-media-chat-b2915460.html
+- **PC Gamer**: Backdooms coverage — https://www.pcgamer.com/hardware/behold-a-single-qr-code-containing-a-miniaturized-take-on-doom-literally-the-entire-game/
+- **Yahoo News / Yahoo Tech**: Backdooms coverage — https://tech.yahoo.com/gaming/articles/behold-single-qr-code-containing-135737181.html
+- **Boing Boing**: Backdooms coverage — https://premium.boingboing.net/p/doom-in-a-qr-code
+- **TechSpot**: Backdooms coverage — https://www.techspot.com/news/107642-doom-can-now-run-self-contained-qr-code.html
+- **Decrypt**: Claurst / Claude Code leak coverage — https://decrypt.co/362917/anthropic-accidentally-leaked-claude-code-source-internet-keeping-forever
+- **Theo (t3dotgg) — YouTube**: Claurst / Claude Code blog coverage
+- **ThePrimeagen — YouTube**: Claurst / Claude Code blog coverage
+- **BuzzArena**: ChatGPT Wrapped coverage — https://www.buzzarena.com/chatgpt-wrapped-2025-voici-comment-avoir-votre-retrospective-tres-rapidement-4543067
+- **TOI Students (Times of India)**: Student profile — https://toistudent.timesofindia.indiatimes.com/news/i-say/kuber-saving-earth-is-in-our-hands/41622.html
 
 ---
 *Last updated: June 2025*
