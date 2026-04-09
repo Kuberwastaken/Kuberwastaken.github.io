@@ -96,7 +96,7 @@ const MobileProjectsCarousel = () => {
   const goRight = () => setCurrent((prev) => (prev === total - 1 ? 0 : prev + 1));
   const project = projects[current];  // Faux webpage image logic for mobile
   const fauxWebImage =
-    project.title === 'Clawrst' ? JSDELIVR_BASE + 'kuberwastaken-clawrst.png' :
+    project.title === 'Claurst' ? JSDELIVR_BASE + 'kuberwastaken-claurst.png' :
       project.title === 'ClawX' ? JSDELIVR_BASE + 'kuberwastaken-clawx.png' :
       project.title === 'Litmus' ? JSDELIVR_BASE + 'kuberwastaken-litmus.png' :
         project.title === 'PicoGPT' ? JSDELIVR_BASE + 'kuberwastaken-picogpt.png' :
@@ -310,7 +310,7 @@ const ProjectsMasonry = () => {
                         }}
                       />
                     </div>
-                  ) : (['Clawrst', 'Silverilla', 'DOOMme', 'GitHub View Counter', 'ThisWebsiteIsNotOnline', 'ORCUS', 'Free Deep Research', 'Books Re-imagined', 'MEOW', 'CottagOS', 'SecondYou', 'PrayGo', 'PicoGPT', 'TREAT', 'Sweeta', 'Strongy'].includes(project.title)) ? (
+                  ) : (['Claurst', 'Silverilla', 'DOOMme', 'GitHub View Counter', 'ThisWebsiteIsNotOnline', 'ORCUS', 'Free Deep Research', 'Books Re-imagined', 'MEOW', 'CottagOS', 'SecondYou', 'PrayGo', 'PicoGPT', 'TREAT', 'Sweeta', 'Strongy'].includes(project.title)) ? (
                     <div
                       style={{
                         marginBottom: 16,
@@ -327,7 +327,7 @@ const ProjectsMasonry = () => {
                       className="project-fauxwebpage-container"
                     >
                       <div style={{ height: '100%', width: '100%', overflowY: 'auto', overflowX: 'hidden', background: '#fff' }}>                  <img src={
-                        project.title === 'Clawrst' ? JSDELIVR_BASE + 'kuberwastaken-clawrst.png' :
+                        project.title === 'Claurst' ? JSDELIVR_BASE + 'kuberwastaken-claurst.png' :
                           project.title === 'Silverilla' ? JSDELIVR_BASE + 'kuberwastaken-silverilla.png' :
                           project.title === 'DOOMme' ? JSDELIVR_BASE + 'kuberwastaken-doomme.gif' :
                             project.title === 'DOOMme' ? JSDELIVR_BASE + 'kuberwastaken-doomme.gif' :

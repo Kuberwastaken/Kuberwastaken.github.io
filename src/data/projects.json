@@ -1,8 +1,8 @@
 [
     {
-        "title": "Clawrst",
+        "title": "Claurst",
         "description": "Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. 7k+ stars in <24 hours & GitHub trending on 31 March 2026.",
-        "website": null,
+        "website": "https://claurst.kuber.studio",
         "github": "https://github.com/Kuberwastaken/claurst/",
         "showIframe": false,
         "extra": "https://kuber.studio/blog/AI/Claude-Code's-Entire-Source-Code-Got-Leaked-via-a-Sourcemap-in-npm,-Let's-Talk-About-it"

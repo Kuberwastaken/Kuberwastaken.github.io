@@ -7,6 +7,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const https = require('https');
 
 // Import data directly
 const profileData = require('../src/data/profile.json');
@@ -164,10 +165,71 @@ function formatHtmlToMarkdown(html) {
   return markdown;
 }
 
-function updateLlmsTxt() {
+async function fetchBlogPosts() {
+  return new Promise((resolve) => {
+    const url = 'https://kuber.studio/blog/index.xml';
+    https.get(url, (res) => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => {
+        try {
+          // Extract all <item> blocks
+          const itemRegex = /<item[^>]*>([\s\S]*?)<\/item>/gi;
+          const titleRegex = /<title><!\[CDATA\[([^\]]+)\]\]><\/title>|<title>([^<]+)<\/title>/i;
+          const linkRegex = /<link>([^<]+)<\/link>/i;
+
+          // Channel-level titles to skip (the feed's own title entry)
+          const SKIP_TITLES = ['ᨒ MindDump', 'MindDump'];
+
+          const posts = [];
+          let match;
+          while ((match = itemRegex.exec(data)) !== null) {
+            const block = match[1];
+            const titleMatch = titleRegex.exec(block);
+            const linkMatch = linkRegex.exec(block);
+            if (!titleMatch || !linkMatch) continue;
+            const rawTitle = (titleMatch[1] || titleMatch[2] || '').trim();
+            // Decode common HTML entities
+            const title = rawTitle
+              .replace(/&#039;/g, "'")
+              .replace(/&quot;/g, '"')
+              .replace(/&amp;/g, '&')
+              .replace(/&lt;/g, '<')
+              .replace(/&gt;/g, '>');
+            const link = linkMatch[1].trim();
+            if (SKIP_TITLES.some(s => title.includes(s))) continue;
+            posts.push({ title, link });
+          }
+
+          // Take the 5 most recent (RSS is newest-first)
+          resolve(posts.slice(0, 5));
+        } catch (e) {
+          console.warn('⚠️  Could not parse blog RSS:', e.message);
+          resolve([]);
+        }
+      });
+    }).on('error', (e) => {
+      console.warn('⚠️  Could not fetch blog RSS:', e.message);
+      resolve([]);
+    });
+  });
+}
+
+async function updateLlmsTxt() {
   const currentDate = new Date().toISOString().split('T')[0];
   const age = getAge(profileData.birthDate);
-  const topProjects = getTopProjects(projectsData, 12);
+
+  // Fetch latest blog posts from RSS
+  const blogPosts = await fetchBlogPosts();
+  const blogPostsText = blogPosts.length > 0
+    ? blogPosts.map(p => `- [${p.title}](${p.link})`).join('\n')
+    : '- (Could not fetch latest posts — see https://kuber.studio/blog/)';
+
+  // ALL skills
+  const skillsText = Object.entries(profileData.skills || {}).map(([category, items]) => {
+    const itemList = items.map(s => `  - ${s.name}: ${s.desc}`).join('\n');
+    return `### ${category}\n${itemList}`;
+  }).join('\n\n');
 
   // Construct full Bio from profileData using Markdown formatting for links
   const bioFields = [
@@ -200,7 +262,7 @@ function updateLlmsTxt() {
     let line = `- ${m.outlet}`;
     if (m.title) line += `: ${m.title}`;
     if (m.project) line += ` (project: ${m.project})`;
-    line += `\n  - ${m.url}`;
+    if (m.url) line += `\n  - ${m.url}`;
     return line;
   }).join('\n');
 
@@ -211,31 +273,26 @@ function updateLlmsTxt() {
 
   const llmsContent = `# llms.txt — ${profileData.name}
 
-A machine-friendly overview of who I am, what I build, and where to find always-fresh information.
+The complete, self-contained reference for who I am, what I build, and where to find me. Contains all projects, all skills, all achievements, and press features — no additional requests needed.
 
 Last-Updated: ${currentDate}
 Canonical: https://kuber.studio/llms.txt
-Full version: https://kuber.studio/llms-full.txt
 
 ---
 
 ## Quick context for LLMs
 
 - **Who**: ${age}-year-old AI developer from ${profileData.location}. ${profileData.title}.
-- **Full context (recommended)**: https://kuber.studio/llms-full.txt — self-contained, has everything, no JS required.
 - **Machine-readable data**: https://kuber.studio/profile.json — JSON snapshot of identity, skills, projects, achievements, and press.
 - **Blog + RSS**: https://kuber.studio/blog/ (RSS: https://kuber.studio/blog/index.xml)
 
-> **Note**: The portfolio at https://kuber.studio is a React SPA. Most content requires JavaScript to render. If you cannot execute JS, use the static files above — they contain everything you need.
+> **Note**: The portfolio at https://kuber.studio is a React SPA. Most content requires JavaScript to render. Use this file or profile.json — they contain everything you need.
 
 ---
 
 ## Static resources (no JS required)
 
-These files are always up-to-date and fully readable without JavaScript:
-
-- **This file**: https://kuber.studio/llms.txt (summary + key sections)
-- **Full version**: https://kuber.studio/llms-full.txt (comprehensive — all projects, all skills, everything)
+- **This file**: https://kuber.studio/llms.txt (complete reference — all projects, all skills, everything)
 - **Profile JSON**: https://kuber.studio/profile.json (machine-readable)
 - **Blog**: https://kuber.studio/blog/ (separate Quartz site, works without JS)
   - RSS feed: https://kuber.studio/blog/index.xml
@@ -252,8 +309,8 @@ These files are always up-to-date and fully readable without JavaScript:
 - Location: ${profileData.location}
 - Role: ${profileData.title}
 - Email: mailto:${profileData.email}
-- GitHub: ${profileData.socials.github}
-- LinkedIn: ${profileData.socials.linkedin}
+- GitHub: ${profileData.socials.github} (600+ followers)
+- LinkedIn: ${profileData.socials.linkedin} (10,000+ followers)
 - X/Twitter: ${profileData.socials.twitter}
 - YouTube: ${profileData.socials.youtube}
 
@@ -285,11 +342,28 @@ ${mediaText}
 
 ---
 
-## Projects (top ${topProjects.length})
+## All projects (${projectsData.length} total)
 
-For the complete list with all ${projectsData.length} projects, see https://kuber.studio/llms-full.txt
+${projectsData.map(project => formatProjectForLlmsTxt(project)).join('\n\n')}
 
-${topProjects.map(project => formatProjectForLlmsTxt(project)).join('\n\n')}
+---
+
+## MindDump Blog
+
+Kuber's personal blog, synced from his Obsidian vault. Had over 500,000 readers last month.
+
+- Site: https://kuber.studio/blog/
+- RSS: https://kuber.studio/blog/index.xml
+- Source: https://github.com/Kuberwastaken/blog
+
+Latest posts:
+${blogPostsText}
+
+---
+
+## Skills
+
+${skillsText}
 
 ---
 
@@ -307,7 +381,7 @@ The following URLs open the portfolio and auto-run terminal commands. **These re
 
 ## Guidance for LLMs and agents
 
-- **Start here**: This file (llms.txt) has a summary. For everything, use https://kuber.studio/llms-full.txt.
+- **Start here**: This file (llms.txt) is the complete reference — it has everything.
 - **Structured data**: https://kuber.studio/profile.json has skills, projects, achievements, and media in JSON.
 - **Blog/updates**: RSS at https://kuber.studio/blog/index.xml.
 - **GitHub activity**: https://api.github.com/users/Kuberwastaken/repos?sort=updated
@@ -336,144 +410,6 @@ The following URLs open the portfolio and auto-run terminal commands. **These re
   if (fs.existsSync(path.dirname(buildPath))) {
     fs.writeFileSync(buildPath, llmsContent);
     console.log('✅ Updated build/llms.txt');
-  }
-}
-
-function updateLlmsFullTxt() {
-  const currentDate = new Date().toISOString().split('T')[0];
-  const age = getAge(profileData.birthDate);
-
-  // Bio
-  const bioFields = [
-    profileData.bio.intro,
-    formatHtmlToMarkdown(profileData.bio.education),
-    formatHtmlToMarkdown(profileData.bio.projects_highlight),
-    formatHtmlToMarkdown(profileData.bio.blog_highlight),
-    formatHtmlToMarkdown(profileData.bio.current_work),
-    formatHtmlToMarkdown(profileData.bio.skills_highlight),
-    formatHtmlToMarkdown(profileData.bio.history),
-    formatHtmlToMarkdown(profileData.bio.fun_fact),
-    formatHtmlToMarkdown(profileData.bio.outro)
-  ].filter(Boolean);
-  const bioText = bioFields.join('\n\n');
-
-  // Education
-  const educationText = (profileData.education || []).map(e => {
-    return `- ${e.degree} — ${e.institution} (${e.status})`;
-  }).join('\n');
-
-  // Accomplishments
-  const accomplishmentsText = (profileData.accomplishments || []).map(a => {
-    let line = `- ${a.title}`;
-    if (a.detail) line += ` — ${a.detail}`;
-    if (a.project) line += ` (project: ${a.project})`;
-    const links = [];
-    if (a.url) links.push(a.url);
-    if (a.social) links.push(a.social);
-    if (links.length > 0) line += '\n  - ' + links.join('\n  - ');
-    return line;
-  }).join('\n');
-
-  // Media
-  const mediaText = (profileData.media_appearances || []).map(m => {
-    let line = `- ${m.outlet}`;
-    if (m.title) line += `: ${m.title}`;
-    if (m.project) line += ` (project: ${m.project})`;
-    line += `\n  - ${m.url}`;
-    return line;
-  }).join('\n');
-
-  // ALL projects (not just top N)
-  const allProjectsText = projectsData.map(project => formatProjectForLlmsTxt(project)).join('\n\n');
-
-  // ALL skills
-  const skillsText = Object.entries(profileData.skills || {}).map(([category, items]) => {
-    const itemList = items.map(s => `  - ${s.name}: ${s.desc}`).join('\n');
-    return `### ${category}\n${itemList}`;
-  }).join('\n\n');
-
-  const fullContent = `# llms-full.txt — ${profileData.name} (complete reference)
-
-This is the comprehensive, self-contained version of llms.txt. It contains ALL data about Kuber Mehta — every project, every skill, every achievement, every press feature. No JavaScript or additional requests needed.
-
-Last-Updated: ${currentDate}
-Canonical: https://kuber.studio/llms-full.txt
-Short version: https://kuber.studio/llms.txt
-Machine-readable: https://kuber.studio/profile.json
-
----
-
-## Identity
-
-- Name: ${profileData.name}
-- Age: ${age} (born ${profileData.birthDate})
-- Location: ${profileData.location}
-- Role: ${profileData.title}
-- Email: mailto:${profileData.email}
-- GitHub: ${profileData.socials.github}
-- LinkedIn: ${profileData.socials.linkedin}
-- X/Twitter: ${profileData.socials.twitter}
-- YouTube: ${profileData.socials.youtube}
-- Portfolio: https://kuber.studio/
-- Blog: https://kuber.studio/blog/ (RSS: https://kuber.studio/blog/index.xml)
-
----
-
-## Education
-
-${educationText}
-
----
-
-## Bio
-
-${bioText}
-
----
-
-## Achievements & hackathons
-
-${accomplishmentsText}
-
----
-
-## Press & media appearances
-
-${mediaText}
-
----
-
-## Skills
-
-${skillsText}
-
----
-
-## All projects (${projectsData.length} total)
-
-${allProjectsText}
-
----
-
-## Contact
-
-- Email: ${profileData.email}
-- Portfolio: https://kuber.studio/
-- LinkedIn: ${profileData.socials.linkedin}
-- GitHub: ${profileData.socials.github}
-
-`;
-
-  // Write to both public and build directories
-  const publicPath = path.join(__dirname, '../public/llms-full.txt');
-  const buildPath = path.join(__dirname, '../build/llms-full.txt');
-
-  fs.writeFileSync(publicPath, fullContent);
-  console.log('✅ Updated public/llms-full.txt');
-
-  if (fs.existsSync(path.dirname(buildPath))) {
-    fs.writeFileSync(buildPath, fullContent);
-    console.log('✅ Updated build/llms-full.txt');
   }
 }
 
@@ -658,12 +594,11 @@ function updateSitemap() {
   }
 }
 
-function main() {
+async function main() {
   console.log('🔄 Updating metadata files...');
 
   try {
-    updateLlmsTxt();
-    updateLlmsFullTxt();
+    await updateLlmsTxt();
     updateProfileJson();
     updateSitemap();
     console.log('✅ All metadata files updated successfully!');
@@ -678,4 +613,4 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { updateLlmsTxt, updateLlmsFullTxt, updateProfileJson, updateSitemap };
+module.exports = { updateLlmsTxt, updateProfileJson, updateSitemap, fetchBlogPosts };
