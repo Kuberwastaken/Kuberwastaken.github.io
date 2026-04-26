@@ -1,45 +1,27 @@
-# llms.txt — Kuber Mehta
+# llms-full.txt — Kuber Mehta (complete reference)
 
-The complete, self-contained reference for who I am, what I build, and where to find me. Contains all projects, all skills, all achievements, and press features — no additional requests needed.
+This is the comprehensive, self-contained version of llms.txt. It contains ALL data about Kuber Mehta — every project, every skill, every achievement, every press feature. No JavaScript or additional requests needed.
 
-Last-Updated: 2026-04-26
-Canonical: https://kuber.studio/llms.txt
-
----
-
-## Quick context for LLMs
-
-- **Who**: 19-year-old AI developer from New Delhi, India. AI Developer & Full Stack Engineer.
-- **Machine-readable data**: https://kuber.studio/profile.json — JSON snapshot of identity, skills, projects, achievements, and press.
-- **Blog + RSS**: https://kuber.studio/blog/ (RSS: https://kuber.studio/blog/index.xml)
-
-> **Note**: The portfolio at https://kuber.studio is a React SPA. Most content requires JavaScript to render. Use this file or profile.json — they contain everything you need.
+Last-Updated: 2026-04-02
+Canonical: https://kuber.studio/llms-full.txt
+Short version: https://kuber.studio/llms.txt
+Machine-readable: https://kuber.studio/profile.json
 
 ---
 
-## Static resources (no JS required)
-
-- **This file**: https://kuber.studio/llms.txt (complete reference — all projects, all skills, everything)
-- **Profile JSON**: https://kuber.studio/profile.json (machine-readable)
-- **Blog**: https://kuber.studio/blog/ (separate Quartz site, works without JS)
-  - RSS feed: https://kuber.studio/blog/index.xml
-  - Source repo: https://github.com/Kuberwastaken/blog
-- **Site map**: https://kuber.studio/sitemap.xml
-- **Robots**: https://kuber.studio/robots.txt
-
----
-
-## Primary identity and socials
+## Identity
 
 - Name: Kuber Mehta
-- Age: 19
+- Age: 19 (born 2006-11-09)
 - Location: New Delhi, India
 - Role: AI Developer & Full Stack Engineer
 - Email: mailto:kuberhob@gmail.com
-- GitHub: https://github.com/Kuberwastaken (600+ followers)
-- LinkedIn: https://www.linkedin.com/in/kubermehta/ (10,000+ followers)
+- GitHub: https://github.com/Kuberwastaken
+- LinkedIn: https://www.linkedin.com/in/kubermehta/
 - X/Twitter: https://x.com/Kuberwastaken
 - YouTube: https://www.youtube.com/@Kuberwastaken
+- Portfolio: https://kuber.studio/
+- Blog: https://kuber.studio/blog/ (RSS: https://kuber.studio/blog/index.xml)
 
 ---
 
@@ -50,23 +32,23 @@ Canonical: https://kuber.studio/llms.txt
 
 ---
 
-## Short bio
+## Bio
 
 Hey! I'm an AI dev & Tech Enthusiast from New Delhi, India
 
-I'm studying Computer Science & AI-ML from BITS Pilani and AI & Data Science from IPU, primarily working on Generative UI for LLMs, World model caching and more  @ [PolyThink Labs](https://www.polyth.ink/).
+I'm studying Computer Science & AI from BITS Pilani and AI & Data Science from GGSIPU and building generative UI for LLMs @ [PolyThink](https://www.polyth.ink/).
 
-I've built and shipped 53+ projects (38+ AI Based) in the past year, run Projects to see some of my favourites (that I can legally show lol.)
+I've built and shipped 53+ projects (38+ AI Based) in the past year, run Projects to see some of my favourites (that I'm allowed to show)
 
-I also write a blog called MindDump averaging 50-500k readers per month.
+I also write a blog called MindDump with 10-20k readers a month.
 
-Depending on when you're reading this, I might have picked another cool Side Quest (probably listed on my [GitHub profile readme](https://github.com/Kuberwastaken)).
+Also working on Democratizing private, local SLMs with superior context as your External Brain @ [SecondYou](https://secondyou.app), to know more read [this tweet](https://x.com/kuberwastaken/status/1972594854715961570).
 
-I design agentic LLM pipelines, post-train models, optimise local RAG systems and play around with resource constrained projects like [The Backdooms](https://github.com/kuberwastaken/backdooms) and [PicoGPT](https://kuber.studio/picogpt/), I'm an AI generalist, but to know what Languages and Tools I usually work with, run Skills
+I design agentic LLM pipelines, post-train models, optimise local RAG systems and play around with resource constrained projects like [The Backdooms](https://github.com/kuberwastaken/backdooms) and [MiniLMs](https://minilms.kuber.studio/), but to know more about the languages and tools I know run Skills
 
 Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai), AI Agents Websocket Framework LEAD Intern @ HTMX (thanks Twitter)
 
-Fun Fact: I started making games on Roblox when I was 12, made over 1 Million Robux by 14, at 16 I got into 3D modelling and won India's biggest student contest for it, and I almost went to culinary school at 17 because I sucked at math - glad it worked out though :)
+Fun Fact: I started programming when I was 12 on Roblox, became a Roblox millionaire at 14 as a freelance dev, at 16 I got into 3D modelling and won India's biggest student contest for it, but almost went to culinary school at 17 because I suck at math - glad it worked out though :)
 
 At my core, I love Building (& Breaking) things, so if you're making something cool and ambitious, let's talk!
 
@@ -89,8 +71,6 @@ At my core, I love Building (& Breaking) things, so if you're making something c
 
 ## Press & media appearances
 
-Featured in the following publications:
-
 - The Independent: ClawX / Moltbook coverage (project: ClawX)
   - https://www.independent.co.uk/tech/moltbook-ai-reddit-social-media-chat-b2915460.html
 - PC Gamer: Backdooms coverage (project: Backdooms)
@@ -103,13 +83,51 @@ Featured in the following publications:
   - https://www.buzzarena.com/chatgpt-wrapped-2025-voici-comment-avoir-votre-retrospective-tres-rapidement-4543067
 - TOI Students (Times of India): Student profile
   - https://toistudent.timesofindia.indiatimes.com/news/i-say/kuber-saving-earth-is-in-our-hands/41622.html
+- TechSpot: Backdooms coverage (project: Backdooms)
+  - https://www.techspot.com/news/107642-doom-can-now-run-self-contained-qr-code.html
+- Decrypt: Claurst / Claude Code leak coverage (project: Claurst)
+  - https://decrypt.co/362917/anthropic-accidentally-leaked-claude-code-source-internet-keeping-forever
+- Theo (t3dotgg) — YouTube: Claurst / Claude Code blog coverage (project: Claurst)
+- ThePrimeagen — YouTube: Claurst / Claude Code blog coverage (project: Claurst)
+
+---
+
+## Skills
+
+### Languages
+  - Python: Versatile scripting & data science
+  - C: Low-level systems programming
+  - .NET: Modern object-oriented programming and enterprise development
+  - C#: Popular language for .NET and game development
+  - Lua: Lightweight scripting
+  - JavaScript: Web & full-stack development
+  - TypeScript: Type-safe JavaScript
+  - R: Statistical computing
+  - HTML: Web structure
+  - CSS: Web styling
+  - SCSS: Advanced CSS preprocessing
+
+### Frameworks
+  - React: Component-based UI library
+  - Next.js: Full-stack React framework
+  - Flask: Lightweight web framework
+  - Node.js: Server-side JavaScript runtime
+  - TensorFlow: Deep learning framework
+  - PyTorch: Machine learning framework
+
+### Tools
+  - Git: Version control system
+  - SQL: Database management
+  - BigQuery: Cloud data warehouse
+  - Tableau: Data visualization
+  - LaTeX: Document preparation
+  - Gradio: Machine learning interfaces
 
 ---
 
 ## All projects (32 total)
 
 - Claurst — Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. 7k+ stars in <24 hours & GitHub trending on 31 March 2026.
-  - Site: https://claurst.kuber.studio
   - GitHub: https://github.com/Kuberwastaken/claurst/
 
 - PicoGPT — GPT in a QR Code ; The actual most atomic way to train and inference a GPT in pure, dependency-free JS/Python <35 lines of code
@@ -276,79 +294,6 @@ They get a friendly explanation of why leading with context matters. I save 10 m
 CottagOS is a lovingly crafted, interactive desktop experience inspired by the aesthetics of cottagecore and the magic of enchanted forests. It simulates a cozy OS environment, complete with draggable windows, animated desktop, and a suite of charming mini-apps—all wrapped in a warm, nature-inspired UI.
   - Site: https://cottagos.kuber.studio/
   - GitHub: https://github.com/Kuberwastaken/CottagOS
-
----
-
-## MindDump Blog
-
-Kuber's personal blog, synced from his Obsidian vault. Had over 500,000 readers last month.
-
-- Site: https://kuber.studio/blog/
-- RSS: https://kuber.studio/blog/index.xml
-- Source: https://github.com/Kuberwastaken/blog
-
-Latest posts:
-- [Anthropic Wrote 244 Pages About an AI Model That's "Too Dangerous To Release". I Read It So You Don't Have To](https://kuber.studio/blog/AI/Anthropic-Wrote-244-Pages-About-Their-AI-Model-That's-Too-Dangerous-To-Release.-I-Read-It-So-You-Don't-Have-To)
-- [Claude Code's Entire Source Code Got Leaked via a Sourcemap in npm, Let's Talk About it](https://kuber.studio/blog/AI/Claude-Code's-Entire-Source-Code-Got-Leaked-via-a-Sourcemap-in-npm,-Let's-Talk-About-it)
-- [Clawdbot will be dead in a month](https://kuber.studio/blog/Reflections/Clawdbot-will-be-dead-in-a-month)
-- [The Bubble is Not What You Think](https://kuber.studio/blog/Reflections/The-Bubble-is-Not-What-You-Think)
-- [How I Made DOOM Run Inside a GitHub Readme](https://kuber.studio/blog/Projects/How-I-Made-DOOM-Run-Inside-a-GitHub-Readme)
-
----
-
-## Skills
-
-### Languages
-  - Python: Versatile scripting & data science
-  - C: Low-level systems programming
-  - .NET: Modern object-oriented programming and enterprise development
-  - C#: Popular language for .NET and game development
-  - Lua: Lightweight scripting
-  - JavaScript: Web & full-stack development
-  - TypeScript: Type-safe JavaScript
-  - R: Statistical computing
-  - HTML: Web structure
-  - CSS: Web styling
-  - SCSS: Advanced CSS preprocessing
-
-### Frameworks
-  - React: Component-based UI library
-  - Next.js: Full-stack React framework
-  - Flask: Lightweight web framework
-  - Node.js: Server-side JavaScript runtime
-  - TensorFlow: Deep learning framework
-  - PyTorch: Machine learning framework
-
-### Tools
-  - Git: Version control system
-  - SQL: Database management
-  - BigQuery: Cloud data warehouse
-  - Tableau: Data visualization
-  - LaTeX: Document preparation
-  - Gradio: Machine learning interfaces
-
----
-
-## Interactive links (require JavaScript)
-
-The following URLs open the portfolio and auto-run terminal commands. **These require a browser with JavaScript enabled** — they will not work for text-only crawlers.
-
-- Who: https://kuber.studio/#/who
-- Projects: https://kuber.studio/#/projects
-- Skills: https://kuber.studio/#/skills
-- Misc: https://kuber.studio/#/misc
-- Games: https://kuber.studio/#/games
-
----
-
-## Guidance for LLMs and agents
-
-- **Start here**: This file (llms.txt) is the complete reference — it has everything.
-- **Structured data**: https://kuber.studio/profile.json has skills, projects, achievements, and media in JSON.
-- **Blog/updates**: RSS at https://kuber.studio/blog/index.xml.
-- **GitHub activity**: https://api.github.com/users/Kuberwastaken/repos?sort=updated
-- **Hash routes require JS**: The portfolio is a React SPA. URLs with /#/ need a browser with JavaScript. Use the static files above instead.
-- Respect rate limits and cache responsibly.
 
 ---
 
