@@ -11,7 +11,7 @@
   "youtube": "https://www.youtube.com/@Kuberwastaken",
   "current_role": {
     "position": "Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai), AI Agents Websocket Framework LEAD Intern @ HTMX (thanks Twitter)",
-    "education": "I'm studying Computer Science & AI from BITS Pilani and AI & Data Science from GGSIPU and building generative UI for LLMs @ [PolyThink](https://www.polyth.ink/)."
+    "education": "I'm studying Computer Science & AI-ML from BITS Pilani and AI & Data Science from IPU, primarily working on Generative UI for LLMs, World model caching and more  @ [PolyThink Labs](https://www.polyth.ink/)."
   },
   "education": [
     {
@@ -277,5 +277,5 @@
       "Mobile responsive design"
     ]
   },
-  "last_updated": "2026-04-09"
+  "last_updated": "2026-04-26"
 }
