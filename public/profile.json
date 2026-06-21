@@ -10,8 +10,8 @@
   "blog": "https://kuber.studio/blog/",
   "youtube": "https://www.youtube.com/@Kuberwastaken",
   "current_role": {
-    "position": "Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai), AI Agents Websocket Framework LEAD Intern @ HTMX (thanks Twitter)",
-    "education": "I'm studying Computer Science & AI from BITS Pilani and AI & Data Science from GGSIPU and building generative UI for LLMs @ [PolyThink](https://www.polyth.ink/)."
+    "position": "Currently: working on AI Initiatives @ Razorpay (YC W15) this Summer 2026. Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai), AI Agents Websocket Framework LEAD Intern @ HTMX (thanks Twitter)",
+    "education": "I'm studying Computer Science & AI-ML from BITS Pilani and AI & Data Science from IPU, primarily working on Generative UI for LLMs, World model caching and more  @ [PolyThink Labs](https://www.polyth.ink/)."
   },
   "education": [
     {
@@ -209,6 +209,7 @@
     }
   ],
   "achievements": [
+    "AI Initiatives @ Razorpay (YC W15) — Summer 2026",
     "Won Nothing Essential Lab S1 Hackathon — Awarded a Nothing Phone 3",
     "4th Place — Unsloth x AMD RL Hackathon at IIT Delhi",
     "First Place at Hack Club SiteJam",
@@ -277,5 +278,5 @@
       "Mobile responsive design"
     ]
   },
-  "last_updated": "2026-04-09"
+  "last_updated": "2026-04-27"
 }

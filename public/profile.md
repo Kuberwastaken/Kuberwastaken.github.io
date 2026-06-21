@@ -1,9 +1,10 @@
 # Kuber Mehta - AI Developer
 
 ## Overview
-19-year-old AI developer, Perplexity Business Fellow, and participant in OpenAI Asia-Pacific Developer Discussion from New Delhi, India. Recently participated in a call with Sam Altman and the OpenAI team as a part of Asia Pacific developers to discuss about their open-weight models (GPT OSS 20B, 120B) before release. Creator of innovative AI solutions including multi-agent systems, trigger detection platforms, and interactive web applications.
+19-year-old AI developer, working on AI Initiatives @ Razorpay (YC W15) this summer, Perplexity Business Fellow, and participant in OpenAI Asia-Pacific Developer Discussion from New Delhi, India. Recently participated in a call with Sam Altman and the OpenAI team as a part of Asia Pacific developers to discuss about their open-weight models (GPT OSS 20B, 120B) before release. Creator of innovative AI solutions including multi-agent systems, trigger detection platforms, and interactive web applications.
 
 ## Current Role
+- **AI Initiatives @ Razorpay (YC W15)** - Working on AI initiatives during Summer 2026
 - **Perplexity AI Business Fellow** - Specializing in AI development and business applications
 - **Student** - BSc Computer Science at BITS Pilani & BTech AI & Data Science at Indraprastha University
 
@@ -96,6 +97,7 @@ Interactive desktop experience inspired by cottagecore aesthetics. Winner of fir
 - **Location**: New Delhi, India
 
 ## Notable Achievements
+- AI Initiatives @ Razorpay (YC W15) — Summer 2026
 - Perplexity AI Business Fellow
 - Participated in OpenAI Asia-Pacific Developer Discussion regarding open-weight models
 - First Place at Hack Club SiteJam (CottagOS project)
