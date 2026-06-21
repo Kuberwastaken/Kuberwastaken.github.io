@@ -2,7 +2,7 @@
 
 The complete, self-contained reference for who I am, what I build, and where to find me. Contains all projects, all skills, all achievements, and press features — no additional requests needed.
 
-Last-Updated: 2026-04-09
+Last-Updated: 2026-04-27
 Canonical: https://kuber.studio/llms.txt
 
 ---
@@ -54,19 +54,21 @@ Canonical: https://kuber.studio/llms.txt
 
 Hey! I'm an AI dev & Tech Enthusiast from New Delhi, India
 
-I'm studying Computer Science & AI from BITS Pilani and AI & Data Science from GGSIPU and building generative UI for LLMs @ [PolyThink](https://www.polyth.ink/).
+I'm studying Computer Science & AI-ML from BITS Pilani and AI & Data Science from IPU, primarily working on Generative UI for LLMs, World model caching and more  @ [PolyThink Labs](https://www.polyth.ink/).
 
-I've built and shipped 53+ projects (38+ AI Based) in the past year, run Projects to see some of my favourites (that I'm allowed to show)
+I've built and shipped 53+ projects (38+ AI Based) in the past year, run Projects to see some of my favourites (that I can legally show lol.)
 
-I also write a blog called MindDump with 10-20k readers a month.
+I also write a blog called MindDump averaging 50-500k readers per month.
 
-Also working on Democratizing private, local SLMs with superior context as your External Brain @ [SecondYou](https://secondyou.app), to know more read [this tweet](https://x.com/kuberwastaken/status/1972594854715961570).
+Depending on when you're reading this, I might have picked another cool Side Quest (probably listed on my [GitHub profile readme](https://github.com/Kuberwastaken)).
 
-I design agentic LLM pipelines, post-train models, optimise local RAG systems and play around with resource constrained projects like [The Backdooms](https://github.com/kuberwastaken/backdooms) and [MiniLMs](https://minilms.kuber.studio/), but to know more about the languages and tools I know run Skills
+I design agentic LLM pipelines, post-train models, optimise local RAG systems and play around with resource constrained projects like [The Backdooms](https://github.com/kuberwastaken/backdooms) and [PicoGPT](https://kuber.studio/picogpt/), I'm an AI generalist, but to know what Languages and Tools I usually work with, run Skills
+
+This summer I'm working on AI Initiatives @ Razorpay (YC W15).
 
 Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai), AI Agents Websocket Framework LEAD Intern @ HTMX (thanks Twitter)
 
-Fun Fact: I started programming when I was 12 on Roblox, became a Roblox millionaire at 14 as a freelance dev, at 16 I got into 3D modelling and won India's biggest student contest for it, but almost went to culinary school at 17 because I suck at math - glad it worked out though :)
+Fun Fact: I started making games on Roblox when I was 12, made over 1 Million Robux by 14, at 16 I got into 3D modelling and won India's biggest student contest for it, and I almost went to culinary school at 17 because I sucked at math - glad it worked out though :)
 
 At my core, I love Building (& Breaking) things, so if you're making something cool and ambitious, let's talk!
 
@@ -80,6 +82,7 @@ At my core, I love Building (& Breaking) things, so if you're making something c
 - 4th Place — Unsloth x AMD RL Hackathon at IIT Delhi
 - First Place at Hack Club SiteJam (project: CottagOS)
 - Top 10 — Google x Kaggle Long Context AI Hackathon (project: Books Re-imagined)
+- AI Initiatives @ Razorpay (YC W15) — Summer 2026
 - Perplexity AI Business Fellow
 - GitHub Copilot Backstage Pass Member
 - Provided feedback to OpenAI on GPT OSS — Part of small group of Asia-Pacific developers
