@@ -2,7 +2,7 @@
 
 The complete, self-contained reference for who I am, what I build, and where to find me. Contains all projects, all skills, all achievements, and press features — no additional requests needed.
 
-Last-Updated: 2026-04-27
+Last-Updated: 2026-06-21
 Canonical: https://kuber.studio/llms.txt
 
 ---
@@ -288,11 +288,11 @@ Kuber's personal blog, synced from his Obsidian vault. Had over 500,000 readers 
 - Source: https://github.com/Kuberwastaken/blog
 
 Latest posts:
+- [Roblox Released the Biggest AI World Model in Gaming. Everyone Hates It.](https://kuber.studio/blog/AI/Roblox-Released-the-Biggest-AI-World-Model-in-Gaming.-Everyone-Hates-It.)
+- [Ageusia](https://kuber.studio/blog/Reflections/Ageusia)
+- [AI Can Hang Up Now, It Still Takes the Abuse](https://kuber.studio/blog/AI/AI-Can-Hang-Up-Now-It-Still-Takes-the-Abuse)
+- [I'm Scared About Biological Computing](https://kuber.studio/blog/Reflections/I'm-Scared-About-Biological-Computing)
 - [Anthropic Wrote 244 Pages About an AI Model That's "Too Dangerous To Release". I Read It So You Don't Have To](https://kuber.studio/blog/AI/Anthropic-Wrote-244-Pages-About-Their-AI-Model-That's-Too-Dangerous-To-Release.-I-Read-It-So-You-Don't-Have-To)
-- [Claude Code's Entire Source Code Got Leaked via a Sourcemap in npm, Let's Talk About it](https://kuber.studio/blog/AI/Claude-Code's-Entire-Source-Code-Got-Leaked-via-a-Sourcemap-in-npm,-Let's-Talk-About-it)
-- [Clawdbot will be dead in a month](https://kuber.studio/blog/Reflections/Clawdbot-will-be-dead-in-a-month)
-- [The Bubble is Not What You Think](https://kuber.studio/blog/Reflections/The-Bubble-is-Not-What-You-Think)
-- [How I Made DOOM Run Inside a GitHub Readme](https://kuber.studio/blog/Projects/How-I-Made-DOOM-Run-Inside-a-GitHub-Readme)
 
 ---
 

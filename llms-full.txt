@@ -46,6 +46,8 @@ Also working on Democratizing private, local SLMs with superior context as your 
 
 I design agentic LLM pipelines, post-train models, optimise local RAG systems and play around with resource constrained projects like [The Backdooms](https://github.com/kuberwastaken/backdooms) and [MiniLMs](https://minilms.kuber.studio/), but to know more about the languages and tools I know run Skills
 
+This summer I'm working on AI Initiatives @ Razorpay (YC W15).
+
 Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai), AI Agents Websocket Framework LEAD Intern @ HTMX (thanks Twitter)
 
 Fun Fact: I started programming when I was 12 on Roblox, became a Roblox millionaire at 14 as a freelance dev, at 16 I got into 3D modelling and won India's biggest student contest for it, but almost went to culinary school at 17 because I suck at math - glad it worked out though :)
@@ -62,6 +64,7 @@ At my core, I love Building (& Breaking) things, so if you're making something c
 - 4th Place — Unsloth x AMD RL Hackathon at IIT Delhi
 - First Place at Hack Club SiteJam (project: CottagOS)
 - Top 10 — Google x Kaggle Long Context AI Hackathon (project: Books Re-imagined)
+- AI Initiatives @ Razorpay (YC W15) — Summer 2026
 - Perplexity AI Business Fellow
 - GitHub Copilot Backstage Pass Member
 - Provided feedback to OpenAI on GPT OSS — Part of small group of Asia-Pacific developers
