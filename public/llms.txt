@@ -106,6 +106,12 @@ Featured in the following publications:
   - https://www.buzzarena.com/chatgpt-wrapped-2025-voici-comment-avoir-votre-retrospective-tres-rapidement-4543067
 - TOI Students (Times of India): Student profile
   - https://toistudent.timesofindia.indiatimes.com/news/i-say/kuber-saving-earth-is-in-our-hands/41622.html
+- TechSpot: Backdooms coverage (project: Backdooms)
+  - https://www.techspot.com/news/107642-doom-can-now-run-self-contained-qr-code.html
+- Decrypt: Claurst / Claude Code leak coverage (project: Claurst)
+  - https://decrypt.co/362917/anthropic-accidentally-leaked-claude-code-source-internet-keeping-forever
+- Theo (t3dotgg) — YouTube: Claurst / Claude Code blog coverage (project: Claurst)
+- ThePrimeagen — YouTube: Claurst / Claude Code blog coverage (project: Claurst)
 
 ---
 
@@ -329,6 +335,29 @@ Latest posts:
   - Tableau: Data visualization
   - LaTeX: Document preparation
   - Gradio: Machine learning interfaces
+
+---
+
+## Interests
+
+- AI in media and recommendation algorithms
+- Multi-agent AI systems
+- Creative technology and interactive experiences
+- Gaming and virtual environments
+- Open source development
+
+---
+
+## The portfolio (kuber.studio)
+
+An Interactive Terminal-style React SPA built with React, JavaScript, CSS. Capabilities:
+
+- 30+ terminal commands
+- Built-in games (Snake, Tetris, 2048, Flappy Bird)
+- AI assistant (JARVIS)
+- Calculator and utilities
+- Dynamic theming system
+- Mobile responsive design
 
 ---
 
