@@ -253,6 +253,28 @@
       "outlet": "TOI Students (Times of India)",
       "title": "Student profile",
       "url": "https://toistudent.timesofindia.indiatimes.com/news/i-say/kuber-saving-earth-is-in-our-hands/41622.html"
+    },
+    {
+      "outlet": "TechSpot",
+      "title": "Backdooms coverage",
+      "url": "https://www.techspot.com/news/107642-doom-can-now-run-self-contained-qr-code.html",
+      "project": "Backdooms"
+    },
+    {
+      "outlet": "Decrypt",
+      "title": "Claurst / Claude Code leak coverage",
+      "url": "https://decrypt.co/362917/anthropic-accidentally-leaked-claude-code-source-internet-keeping-forever",
+      "project": "Claurst"
+    },
+    {
+      "outlet": "Theo (t3dotgg) — YouTube",
+      "title": "Claurst / Claude Code blog coverage",
+      "project": "Claurst"
+    },
+    {
+      "outlet": "ThePrimeagen — YouTube",
+      "title": "Claurst / Claude Code blog coverage",
+      "project": "Claurst"
     }
   ],
   "interests": [
