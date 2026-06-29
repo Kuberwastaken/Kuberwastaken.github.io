@@ -272,6 +272,15 @@ async function updateLlmsTxt() {
     return `- ${e.degree} — ${e.institution} (${e.status})`;
   }).join('\n');
 
+  // Interests
+  const interestsText = (profileData.interests || []).map(i => `- ${i}`).join('\n');
+
+  // Portfolio / site capabilities
+  const pf = profileData.portfolio_features || {};
+  const portfolioType = pf.type || 'Interactive Terminal';
+  const portfolioTech = (pf.technologies || []).join(', ');
+  const portfolioFeaturesText = (pf.features || []).map(f => `- ${f}`).join('\n');
+
   const llmsContent = `# llms.txt — ${profileData.name}
 
 The complete, self-contained reference for who I am, what I build, and where to find me. Contains all projects, all skills, all achievements, and press features — no additional requests needed.
@@ -368,6 +377,20 @@ ${skillsText}
 
 ---
 
+## Interests
+
+${interestsText}
+
+---
+
+## The portfolio (kuber.studio)
+
+An ${portfolioType}-style React SPA built with ${portfolioTech}. Capabilities:
+
+${portfolioFeaturesText}
+
+---
+
 ## Interactive links (require JavaScript)
 
 The following URLs open the portfolio and auto-run terminal commands. **These require a browser with JavaScript enabled** — they will not work for text-only crawlers.
@@ -448,25 +471,8 @@ function updateProfileJson() {
     "featured_projects": featuredProjects,
     "achievements": achievements,
     "media_appearances": profileData.media_appearances,
-    "interests": [
-      "AI in media and recommendation algorithms",
-      "Multi-agent AI systems",
-      "Creative technology and interactive experiences",
-      "Gaming and virtual environments",
-      "Open source development"
-    ],
-    "portfolio_features": {
-      "type": "Interactive Terminal",
-      "technologies": ["React", "JavaScript", "CSS"],
-      "features": [
-        "30+ terminal commands",
-        "Built-in games (Snake, Tetris, 2048, Flappy Bird)",
-        "AI assistant (JARVIS)",
-        "Calculator and utilities",
-        "Dynamic theming system",
-        "Mobile responsive design"
-      ]
-    },
+    "interests": profileData.interests || [],
+    "portfolio_features": profileData.portfolio_features || {},
     "last_updated": currentDate
   };
 
