@@ -292,6 +292,7 @@ async function updateLlmsTxt() {
   // Format red-team / jailbreak highlights
   const redTeamText = (profileData.red_team || []).map(r => {
     let line = `- ${r.title}`;
+    if (r.date) line += ` — ${r.date}`;
     if (r.description) line += `\n  - ${r.description}`;
     if (r.url) line += `\n  - ${r.url}`;
     return line;
@@ -316,7 +317,7 @@ ${notableMomentsText}
 
 ` : '';
 
-  const claudeMythosBlock = redTeamText ? `## AI red-teaming — Claude Mythos jailbreak
+  const claudeMythosBlock = redTeamText ? `## AI red-teaming & jailbreaks
 
 ${redTeamText}
 

@@ -163,11 +163,14 @@ My work has been cited in academic and university settings:
 
 ---
 
-## AI red-teaming — Claude Mythos jailbreak
+## AI red-teaming & jailbreaks
 
 - Jailbroke Anthropic's 'Claude Mythos' to reveal its system prompt
   - While Anthropic's experimental 'Claude Mythos' model was live (~one day), Kuber jailbroke it to extract its full system prompt and published it as a public gist. Went viral on X.
   - https://gist.github.com/Kuberwastaken/bfcf141909166f7dfafac9b7182629f7
+- Jailbroke Sarvam AI's flagship Indus 105B model in under 15 minutes — 2026-02-21
+  - Extracted the system prompt of Sarvam AI's flagship Indus 105B model in under 15 minutes, using the same jailbreaking techniques that worked on GPT-4o in 2024.
+  - https://x.com/kuberwastaken/status/2025161735456559523
 
 ---
 
