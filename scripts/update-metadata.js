@@ -201,8 +201,8 @@ async function fetchBlogPosts() {
             posts.push({ title, link });
           }
 
-          // Take the 5 most recent (RSS is newest-first)
-          resolve(posts.slice(0, 5));
+          // Take the 7 most recent (RSS is newest-first)
+          resolve(posts.slice(0, 7));
         } catch (e) {
           console.warn('⚠️  Could not parse blog RSS:', e.message);
           resolve([]);
@@ -263,9 +263,66 @@ async function updateLlmsTxt() {
     let line = `- ${m.outlet}`;
     if (m.title) line += `: ${m.title}`;
     if (m.project) line += ` (project: ${m.project})`;
+    if (m.date) line += ` — ${m.date}`;
+    if (m.description) line += `\n  - ${m.description}`;
     if (m.url) line += `\n  - ${m.url}`;
     return line;
   }).join('\n');
+
+  // Format academic / institutional references
+  const referencesText = (profileData.references || []).map(r => {
+    let line = `- ${r.title}`;
+    if (r.author) line += ` — ${r.author}`;
+    if (r.venue) line += ` (${r.venue})`;
+    if (r.date) line += ` — ${r.date}`;
+    if (r.description) line += `\n  - ${r.description}`;
+    if (r.url) line += `\n  - ${r.url}`;
+    return line;
+  }).join('\n');
+
+  // Format notable moments / viral highlights
+  const notableMomentsText = (profileData.notable_moments || []).map(n => {
+    let line = `- ${n.title}`;
+    if (n.date) line += ` — ${n.date}`;
+    if (n.description) line += `\n  - ${n.description}`;
+    if (n.url) line += `\n  - ${n.url}`;
+    return line;
+  }).join('\n');
+
+  // Format red-team / jailbreak highlights
+  const redTeamText = (profileData.red_team || []).map(r => {
+    let line = `- ${r.title}`;
+    if (r.description) line += `\n  - ${r.description}`;
+    if (r.url) line += `\n  - ${r.url}`;
+    return line;
+  }).join('\n');
+
+  // Build optional sections (omitted entirely when their source array is empty)
+  const referencesBlock = referencesText ? `## Research & academic references
+
+My work has been cited in academic and university settings:
+
+${referencesText}
+
+---
+
+` : '';
+
+  const notableMomentsBlock = notableMomentsText ? `## Notable moments & viral highlights
+
+${notableMomentsText}
+
+---
+
+` : '';
+
+  const claudeMythosBlock = redTeamText ? `## AI red-teaming — Claude Mythos jailbreak
+
+${redTeamText}
+
+---
+
+` : '';
 
   // Format education
   const educationText = (profileData.education || []).map(e => {
@@ -352,7 +409,7 @@ ${mediaText}
 
 ---
 
-## All projects (${projectsData.length} total)
+${referencesBlock}${notableMomentsBlock}${claudeMythosBlock}## All projects (${projectsData.length} total)
 
 ${projectsData.map(project => formatProjectForLlmsTxt(project)).join('\n\n')}
 
@@ -471,6 +528,9 @@ function updateProfileJson() {
     "featured_projects": featuredProjects,
     "achievements": achievements,
     "media_appearances": profileData.media_appearances,
+    "references": profileData.references || [],
+    "notable_moments": profileData.notable_moments || [],
+    "red_team": profileData.red_team || [],
     "interests": profileData.interests || [],
     "portfolio_features": profileData.portfolio_features || {},
     "last_updated": currentDate
