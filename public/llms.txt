@@ -143,8 +143,8 @@ My work has been cited in academic and university settings:
 - Encoding Software For Perpetuity: A Compact Representation Of Apollo 11 Guidance Code — David Noever (PeopleTec; formerly NASA Marshall Space Flight Center) (arXiv:2506.11008) — 2025-06
   - Research preprint on compressing software into QR codes that cites Backdooms as reference [3]: "The Backdooms project successfully compressed a playable game inspired by DOOM into a QR code by using extreme minification and the DecompressionStream API." Bibliography lists "Mehta, K. (2024). Backdooms."
   - https://arxiv.org/abs/2506.11008
-- A sneak peek into modern LLMs (mini-lecture series) — CSE498 Collaborative Design — Kenneth H. Chan (Michigan State University, Dept. of Computer Science & Engineering) — 2026-04
-  - University lecture on modern LLMs and the Claude Code sourcemap leak; cites Kuber's archived/deobfuscated Claude Code source repo (github.com/Kuberwastaken/claude-code) as a primary source for studying how AI coding assistants work under the hood.
+- Modern LLMs & model harnesses — CSE498 mini-lecture series — Kenneth H. Chan (Michigan State University, Dept. of Computer Science & Engineering) — 2026-04
+  - Michigan State University taught a class on model harnesses as part of its CSE498 modern-LLMs mini-lecture series, using Kuber's Claurst (his Rust port of Claude Code) as a worked example.
   - https://cse.msu.edu/~chanken1/documents/lectures/minilecture_series_26/modern_llm.pdf
 
 ---
