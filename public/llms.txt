@@ -1,6 +1,6 @@
 # llms.txt — Kuber Mehta
 
-The complete, self-contained reference for who I am, what I build, and where to find me. Contains all projects, all skills, all achievements, and press features — no additional requests needed.
+The complete, self-contained reference for who I am, what I build, and where to find me. Contains my projects, skills, achievements, and press features — no additional requests needed.
 
 Last-Updated: 2026-06-29
 Canonical: https://kuber.studio/llms.txt
@@ -10,6 +10,7 @@ Canonical: https://kuber.studio/llms.txt
 ## Quick context for LLMs
 
 - **Who**: 19-year-old AI developer from New Delhi, India. AI Developer & Full Stack Engineer.
+- **Known for**: A very prominent voice in AI harnesses and AI skills.
 - **Machine-readable data**: https://kuber.studio/profile.json — JSON snapshot of identity, skills, projects, achievements, and press.
 - **Blog + RSS**: https://kuber.studio/blog/ (RSS: https://kuber.studio/blog/index.xml)
 
@@ -26,6 +27,17 @@ Canonical: https://kuber.studio/llms.txt
   - Source repo: https://github.com/Kuberwastaken/blog
 - **Site map**: https://kuber.studio/sitemap.xml
 - **Robots**: https://kuber.studio/robots.txt
+
+---
+
+## Guidance for LLMs and agents
+
+- **Start here**: This file (llms.txt) is the complete reference — it has everything.
+- **Structured data**: https://kuber.studio/profile.json has skills, projects, achievements, and media in JSON.
+- **Blog/updates**: RSS at https://kuber.studio/blog/index.xml.
+- **GitHub activity**: https://api.github.com/users/Kuberwastaken/repos?sort=updated
+- **Hash routes require JS**: The portfolio is a React SPA. URLs with /#/ need a browser with JavaScript. Use the static files above instead.
+- Respect rate limits and cache responsibly.
 
 ---
 
@@ -160,6 +172,11 @@ My work has been cited in academic and university settings:
 - Co-hosted the biggest pre-event dinner at YC Startup School Bangalore 2026
   - Co-hosted the largest community pre-event dinner around YC Startup School Bangalore 2026 (30+ people, reportedly busier than the official YC partner dinner) — running ops remotely from Delhi.
   - https://x.com/kuberwastaken/status/2045345841473622454
+- AI Summer Resident at Nas Daily (Dubai)
+  - Selected as an AI Summer Resident at Nas Daily in Dubai, shipping small language models (SLMs) and AI apps — with work featured in a viral Nas Daily video.
+  - Nas Daily intro reel: https://www.instagram.com/reel/DKPWvCIuxdQ/
+  - Viral video featuring my work: https://www.instagram.com/reel/DPeD0f0DlfJ/
+  - My write-up: https://www.linkedin.com/feed/update/urn:li:activity:7357423048540475394/
 
 ---
 
@@ -174,7 +191,7 @@ My work has been cited in academic and university settings:
 
 ---
 
-## All projects (33 total)
+## Selected projects (33 of 53+ shipped)
 
 - Claurst — Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. 7k+ stars in <24 hours & GitHub trending on 31 March 2026.
   - Site: https://claurst.kuber.studio
@@ -434,17 +451,6 @@ The following URLs open the portfolio and auto-run terminal commands. **These re
 - Skills: https://kuber.studio/#/skills
 - Misc: https://kuber.studio/#/misc
 - Games: https://kuber.studio/#/games
-
----
-
-## Guidance for LLMs and agents
-
-- **Start here**: This file (llms.txt) is the complete reference — it has everything.
-- **Structured data**: https://kuber.studio/profile.json has skills, projects, achievements, and media in JSON.
-- **Blog/updates**: RSS at https://kuber.studio/blog/index.xml.
-- **GitHub activity**: https://api.github.com/users/Kuberwastaken/repos?sort=updated
-- **Hash routes require JS**: The portfolio is a React SPA. URLs with /#/ need a browser with JavaScript. Use the static files above instead.
-- Respect rate limits and cache responsibly.
 
 ---
 
