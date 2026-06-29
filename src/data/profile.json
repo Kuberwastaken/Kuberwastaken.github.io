@@ -16,6 +16,7 @@
         "projects_highlight": "I've built and shipped 53+ projects (38+ AI Based) in the past year, run <span class=\"command-link\" data-command=\"projects\" style=\"color: #5abb9a; cursor: pointer; text-decoration: underline;\">Projects</span> to see some of my favourites (that I can legally show lol.)",
         "blog_highlight": "I also <span class=\"command-link\" data-command=\"projects\" style=\"color: #5abb9a; cursor: pointer; text-decoration: underline;\">write a blog called MindDump</span> averaging 50-500k readers per month.",
         "current_work": "Depending on when you're reading this, I might have picked another cool Side Quest (probably listed on my <a href=\"https://github.com/Kuberwastaken\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #5abb9a; text-decoration: underline;\">GitHub profile readme</a>).",
+        "current_role": "This summer I'm working on central AI Initiatives @ <a href=\"https://razorpay.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #5abb9a; text-decoration: underline;\">Razorpay</a> (YC W15) — a 5-person mini AI lab reporting directly to CEO Harshil Mathur. We train foundational models and build large-scale internal and external AI applications on top of massive databases, at a company with 3500+ employees serving millions of merchants and billions of transactions.",
         "skills_highlight": "I design agentic LLM pipelines, post-train models, optimise local RAG systems and play around with resource constrained projects like <a href=\"https://github.com/kuberwastaken/backdooms\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #5abb9a; text-decoration: underline;\">The Backdooms</a> and <a href=\"https://kuber.studio/picogpt/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #5abb9a; text-decoration: underline;\">PicoGPT</a>, I'm an AI generalist, but to know what Languages and Tools I usually work with, run <span class=\"command-link\" data-command=\"skills\" style=\"color: #5abb9a; cursor: pointer; text-decoration: underline;\">Skills</span>",
         "history": "Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai), AI Agents Websocket Framework LEAD Intern @ HTMX (thanks Twitter)",
         "fun_fact": "Fun Fact: I started making games on Roblox when I was 12, made over 1 Million Robux by 14, at 16 I got into 3D modelling and won India's biggest student contest for it, and I almost went to culinary school at 17 because I sucked at math - glad it worked out though :)",
@@ -134,6 +135,10 @@
         }
     ],
     "accomplishments": [
+        {
+            "title": "AI Initiatives @ Razorpay (YC W15)",
+            "detail": "Summer 2026 — central AI lab of 5, reporting directly to CEO Harshil Mathur; training foundational models and shipping large-scale internal & external AI applications on massive databases for a company with 3500+ employees, millions of merchants, and billions of transactions"
+        },
         {
             "title": "Won Nothing Essential Lab S1 Hackathon",
             "detail": "Awarded a Nothing Phone 3",

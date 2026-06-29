@@ -239,6 +239,7 @@ async function updateLlmsTxt() {
     formatHtmlToMarkdown(profileData.bio.blog_highlight),
     formatHtmlToMarkdown(profileData.bio.current_work),
     formatHtmlToMarkdown(profileData.bio.skills_highlight),
+    formatHtmlToMarkdown(profileData.bio.current_role),
     formatHtmlToMarkdown(profileData.bio.history),
     formatHtmlToMarkdown(profileData.bio.fun_fact),
     formatHtmlToMarkdown(profileData.bio.outro)
@@ -436,7 +437,10 @@ function updateProfileJson() {
     "blog": "https://kuber.studio/blog/",
     "youtube": profileData.socials.youtube,
     "current_role": {
-      "position": formatHtmlToMarkdown(profileData.bio.history),
+      "position": [
+        formatHtmlToMarkdown(profileData.bio.current_role),
+        formatHtmlToMarkdown(profileData.bio.history)
+      ].filter(Boolean).join(' '),
       "education": formatHtmlToMarkdown(profileData.bio.education)
     },
     "education": profileData.education,
