@@ -10,7 +10,7 @@
   "blog": "https://kuber.studio/blog/",
   "youtube": "https://www.youtube.com/@Kuberwastaken",
   "current_role": {
-    "position": "Currently: working on AI Initiatives @ Razorpay (YC W15) this Summer 2026. Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai), AI Agents Websocket Framework LEAD Intern @ HTMX (thanks Twitter)",
+    "position": "This summer I'm working on central AI Initiatives @ [Razorpay](https://razorpay.com) (YC W15) — a 5-person mini AI lab reporting directly to CEO Harshil Mathur. We train foundational models and build large-scale internal and external AI applications on top of massive databases, at a company with 3500+ employees serving millions of merchants and billions of transactions. Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai), AI Agents Websocket Framework LEAD Intern @ HTMX (thanks Twitter)",
     "education": "I'm studying Computer Science & AI-ML from BITS Pilani and AI & Data Science from IPU, primarily working on Generative UI for LLMs, World model caching and more  @ [PolyThink Labs](https://www.polyth.ink/)."
   },
   "education": [
@@ -209,7 +209,7 @@
     }
   ],
   "achievements": [
-    "AI Initiatives @ Razorpay (YC W15) — Summer 2026",
+    "AI Initiatives @ Razorpay (YC W15) — Summer 2026 — central AI lab of 5, reporting directly to CEO Harshil Mathur; training foundational models and shipping large-scale internal & external AI applications on massive databases for a company with 3500+ employees, millions of merchants, and billions of transactions",
     "Won Nothing Essential Lab S1 Hackathon — Awarded a Nothing Phone 3",
     "4th Place — Unsloth x AMD RL Hackathon at IIT Delhi",
     "First Place at Hack Club SiteJam",
@@ -278,5 +278,5 @@
       "Mobile responsive design"
     ]
   },
-  "last_updated": "2026-04-27"
+  "last_updated": "2026-06-29"
 }

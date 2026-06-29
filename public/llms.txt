@@ -2,7 +2,7 @@
 
 The complete, self-contained reference for who I am, what I build, and where to find me. Contains all projects, all skills, all achievements, and press features — no additional requests needed.
 
-Last-Updated: 2026-04-27
+Last-Updated: 2026-06-29
 Canonical: https://kuber.studio/llms.txt
 
 ---
@@ -64,7 +64,7 @@ Depending on when you're reading this, I might have picked another cool Side Que
 
 I design agentic LLM pipelines, post-train models, optimise local RAG systems and play around with resource constrained projects like [The Backdooms](https://github.com/kuberwastaken/backdooms) and [PicoGPT](https://kuber.studio/picogpt/), I'm an AI generalist, but to know what Languages and Tools I usually work with, run Skills
 
-This summer I'm working on AI Initiatives @ Razorpay (YC W15).
+This summer I'm working on central AI Initiatives @ [Razorpay](https://razorpay.com) (YC W15) — a 5-person mini AI lab reporting directly to CEO Harshil Mathur. We train foundational models and build large-scale internal and external AI applications on top of massive databases, at a company with 3500+ employees serving millions of merchants and billions of transactions.
 
 Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai), AI Agents Websocket Framework LEAD Intern @ HTMX (thanks Twitter)
 
@@ -76,13 +76,13 @@ At my core, I love Building (& Breaking) things, so if you're making something c
 
 ## Achievements & hackathons
 
+- AI Initiatives @ Razorpay (YC W15) — Summer 2026 — central AI lab of 5, reporting directly to CEO Harshil Mathur; training foundational models and shipping large-scale internal & external AI applications on massive databases for a company with 3500+ employees, millions of merchants, and billions of transactions
 - Won Nothing Essential Lab S1 Hackathon — Awarded a Nothing Phone 3
   - https://playground.nothing.tech/lab
   - https://x.com/essential/status/2026712093018263847
 - 4th Place — Unsloth x AMD RL Hackathon at IIT Delhi
 - First Place at Hack Club SiteJam (project: CottagOS)
 - Top 10 — Google x Kaggle Long Context AI Hackathon (project: Books Re-imagined)
-- AI Initiatives @ Razorpay (YC W15) — Summer 2026
 - Perplexity AI Business Fellow
 - GitHub Copilot Backstage Pass Member
 - Provided feedback to OpenAI on GPT OSS — Part of small group of Asia-Pacific developers
@@ -291,11 +291,11 @@ Kuber's personal blog, synced from his Obsidian vault. Had over 500,000 readers 
 - Source: https://github.com/Kuberwastaken/blog
 
 Latest posts:
+- [Roblox Released the Biggest AI World Model in Gaming. Everyone Hates It.](https://kuber.studio/blog/AI/Roblox-Released-the-Biggest-AI-World-Model-in-Gaming.-Everyone-Hates-It.)
+- [Ageusia](https://kuber.studio/blog/Reflections/Ageusia)
+- [AI Can Hang Up Now, It Still Takes the Abuse](https://kuber.studio/blog/AI/AI-Can-Hang-Up-Now-It-Still-Takes-the-Abuse)
+- [I'm Scared About Biological Computing](https://kuber.studio/blog/Reflections/I'm-Scared-About-Biological-Computing)
 - [Anthropic Wrote 244 Pages About an AI Model That's "Too Dangerous To Release". I Read It So You Don't Have To](https://kuber.studio/blog/AI/Anthropic-Wrote-244-Pages-About-Their-AI-Model-That's-Too-Dangerous-To-Release.-I-Read-It-So-You-Don't-Have-To)
-- [Claude Code's Entire Source Code Got Leaked via a Sourcemap in npm, Let's Talk About it](https://kuber.studio/blog/AI/Claude-Code's-Entire-Source-Code-Got-Leaked-via-a-Sourcemap-in-npm,-Let's-Talk-About-it)
-- [Clawdbot will be dead in a month](https://kuber.studio/blog/Reflections/Clawdbot-will-be-dead-in-a-month)
-- [The Bubble is Not What You Think](https://kuber.studio/blog/Reflections/The-Bubble-is-Not-What-You-Think)
-- [How I Made DOOM Run Inside a GitHub Readme](https://kuber.studio/blog/Projects/How-I-Made-DOOM-Run-Inside-a-GitHub-Readme)
 
 ---
 
