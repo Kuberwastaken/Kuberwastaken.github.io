@@ -4,6 +4,11 @@ Allow: /
 # Sitemap location
 Sitemap: https://kuber.studio/sitemap.xml
 
+# AI / LLM context files (for agents & crawlers)
+# Full context:     https://kuber.studio/llms.txt
+# Machine-readable:  https://kuber.studio/profile.json
+# Concise profile:   https://kuber.studio/profile.md
+
 # Optimized for search engines
 User-agent: Googlebot
 Allow: /

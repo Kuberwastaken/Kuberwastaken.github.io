@@ -651,6 +651,7 @@ function updateSitemap() {
   // 1. Static Routes
   const staticRoutes = [
     { loc: '/', priority: '1.0', changefreq: 'weekly' },
+    { loc: '/llms.txt', priority: '0.9', changefreq: 'weekly' },
     { loc: 'https://kuber.studio/blog/sitemap.xml', priority: '0.8', changefreq: 'weekly' },
     { loc: '/profile.json', priority: '0.8', changefreq: 'weekly' },
     { loc: '/profile.md', priority: '0.8', changefreq: 'weekly' },
