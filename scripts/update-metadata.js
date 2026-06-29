@@ -553,6 +553,97 @@ function updateProfileJson() {
   }
 }
 
+function updateProfileMd() {
+  const currentDate = new Date().toISOString().split('T')[0];
+  const age = getAge(profileData.birthDate);
+
+  // Concise key projects (priority order), one line each
+  const projectsMd = getTopProjects(projectsData, 10).map(p => {
+    const desc = (p.description || '').replace(/<[^>]*>/g, '').split('\n')[0].trim();
+    const links = [];
+    if (p.website) links.push(`[site](${p.website})`);
+    if (p.github) links.push(`[code](${p.github})`);
+    let line = `- **${p.title}** — ${desc}`;
+    if (links.length) line += ` (${links.join(', ')})`;
+    return line;
+  }).join('\n');
+
+  const skillsMd = Object.entries(profileData.skills || {})
+    .map(([cat, items]) => `- **${cat}**: ${items.map(s => s.name).join(', ')}`)
+    .join('\n');
+
+  const achievementsMd = (profileData.accomplishments || [])
+    .map(a => `- ${a.title}${a.detail ? ` — ${a.detail}` : ''}`)
+    .join('\n');
+
+  const pressMd = (profileData.media_appearances || [])
+    .map(m => `- **${m.outlet}**${m.title ? `: ${m.title}` : ''}${m.url ? ` — ${m.url}` : ''}`)
+    .join('\n');
+
+  const referencesMd = (profileData.references || [])
+    .map(r => `- **${r.title}**${r.author ? ` — ${r.author}` : ''}${r.url ? ` — ${r.url}` : ''}`)
+    .join('\n');
+
+  const educationMd = (profileData.education || [])
+    .map(e => `- ${e.degree} — ${e.institution} (${e.status})`)
+    .join('\n');
+
+  const content = `# ${profileData.name} — ${profileData.title}
+
+> Concise profile, auto-generated from source data. For the complete, machine-readable references see https://kuber.studio/llms.txt and https://kuber.studio/profile.json
+
+${age}-year-old AI developer from ${profileData.location}.
+
+${profileData.bio.intro}
+
+${formatHtmlToMarkdown(profileData.bio.education)}
+
+## Current role
+${formatHtmlToMarkdown(profileData.bio.current_role)}
+
+${formatHtmlToMarkdown(profileData.bio.history)}
+
+## Education
+${educationMd}
+
+## Key projects
+${projectsMd}
+
+## Skills
+${skillsMd}
+
+## Achievements
+${achievementsMd}
+
+## Press & media
+${pressMd}
+
+## Research & academic references
+${referencesMd}
+
+## Links
+- Portfolio: https://kuber.studio/
+- GitHub: ${profileData.socials.github}
+- LinkedIn: ${profileData.socials.linkedin}
+- X/Twitter: ${profileData.socials.twitter}
+- YouTube: ${profileData.socials.youtube}
+- Blog: https://kuber.studio/blog/
+
+_Last updated: ${currentDate}_
+`;
+
+  const publicPath = path.join(__dirname, '../public/profile.md');
+  const buildPath = path.join(__dirname, '../build/profile.md');
+
+  fs.writeFileSync(publicPath, content);
+  console.log('✅ Updated public/profile.md');
+
+  if (fs.existsSync(path.dirname(buildPath))) {
+    fs.writeFileSync(buildPath, content);
+    console.log('✅ Updated build/profile.md');
+  }
+}
+
 function updateSitemap() {
   const currentDate = new Date().toISOString().split('T')[0];
   const baseUrl = 'https://kuber.studio';
@@ -671,6 +762,7 @@ async function main() {
   try {
     await updateLlmsTxt();
     updateProfileJson();
+    updateProfileMd();
     updateSitemap();
     console.log('✅ All metadata files updated successfully!');
   } catch (error) {
@@ -684,4 +776,4 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { updateLlmsTxt, updateProfileJson, updateSitemap, fetchBlogPosts };
+module.exports = { updateLlmsTxt, updateProfileJson, updateProfileMd, updateSitemap, fetchBlogPosts };

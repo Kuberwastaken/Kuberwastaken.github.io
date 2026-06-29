@@ -26,6 +26,14 @@
         "extra": "https://kuber.studio/blog/Projects/How-I-Made-DOOM-Run-Inside-a-GitHub-Readme"
     },
     {
+        "title": "DIY Fitbit Air",
+        "description": "Reverse-engineered the BLE protocol of a ~$30 Huawei smart band to make Google's new Health/Fitbit app recognize it as a 'Fitbit Air' — turning a cheap band with great sensors into a first-class citizen of Google's fitness ecosystem. Went viral on X.",
+        "website": null,
+        "github": null,
+        "showIframe": false,
+        "extra": "https://x.com/kuberwastaken/status/2059306990774714715"
+    },
+    {
         "title": "HN-Digest",
         "description": "Winner @ [Nothing Essential Lab S1 Hackathon](https://playground.nothing.tech/detail/app/pDCVJNrJVYHj5PxM)\n\nI was tired of the Hacker News mobile experience so I built my own as an Essential App (Nothing Widgets)\n\nRefreshing every 30 minutes with official HN and Algolia API, I see the Top, Show and Ask front pages from the comfort of my home screen",
         "website": "https://playground.nothing.tech/detail/app/pDCVJNrJVYHj5PxM",
