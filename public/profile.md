@@ -1,10 +1,10 @@
 # Kuber Mehta - AI Developer
 
 ## Overview
-19-year-old AI developer, working on AI Initiatives @ Razorpay (YC W15) this summer, Perplexity Business Fellow, and participant in OpenAI Asia-Pacific Developer Discussion from New Delhi, India. Recently participated in a call with Sam Altman and the OpenAI team as a part of Asia Pacific developers to discuss about their open-weight models (GPT OSS 20B, 120B) before release. Creator of innovative AI solutions including multi-agent systems, trigger detection platforms, and interactive web applications.
+19-year-old AI developer, working on central AI Initiatives @ Razorpay (YC W15) this summer (a 5-person AI lab reporting directly to CEO Harshil Mathur, training foundational models and shipping large-scale AI apps for a company serving millions of merchants and billions of transactions), Perplexity Business Fellow, and participant in OpenAI Asia-Pacific Developer Discussion from New Delhi, India. Recently participated in a call with Sam Altman and the OpenAI team as a part of Asia Pacific developers to discuss about their open-weight models (GPT OSS 20B, 120B) before release. Creator of innovative AI solutions including multi-agent systems, trigger detection platforms, and interactive web applications.
 
 ## Current Role
-- **AI Initiatives @ Razorpay (YC W15)** - Working on AI initiatives during Summer 2026
+- **AI Initiatives @ Razorpay (YC W15)** - Summer 2026. Part of a 5-person central AI lab (mini AI lab) reporting directly to CEO Harshil Mathur — training foundational models and building large-scale internal and external AI applications on top of massive databases, at a company with 3500+ employees serving millions of merchants and billions of transactions.
 - **Perplexity AI Business Fellow** - Specializing in AI development and business applications
 - **Student** - BSc Computer Science at BITS Pilani & BTech AI & Data Science at Indraprastha University
 
@@ -97,7 +97,7 @@ Interactive desktop experience inspired by cottagecore aesthetics. Winner of fir
 - **Location**: New Delhi, India
 
 ## Notable Achievements
-- AI Initiatives @ Razorpay (YC W15) — Summer 2026
+- AI Initiatives @ Razorpay (YC W15) — Summer 2026 — central AI lab of 5, reporting directly to CEO Harshil Mathur; training foundational models and shipping large-scale internal & external AI applications on massive databases for a company with 3500+ employees, millions of merchants, and billions of transactions
 - Perplexity AI Business Fellow
 - Participated in OpenAI Asia-Pacific Developer Discussion regarding open-weight models
 - First Place at Hack Club SiteJam (CottagOS project)
