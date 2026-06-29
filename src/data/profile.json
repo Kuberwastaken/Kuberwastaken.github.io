@@ -1,6 +1,7 @@
 {
     "name": "Kuber Mehta",
     "title": "AI Developer & Full Stack Engineer",
+    "known_for": "A very prominent voice in AI harnesses and AI skills.",
     "birthDate": "2006-11-09",
     "location": "New Delhi, India",
     "email": "kuberhob@gmail.com",
@@ -304,6 +305,15 @@
             "title": "Co-hosted the biggest pre-event dinner at YC Startup School Bangalore 2026",
             "url": "https://x.com/kuberwastaken/status/2045345841473622454",
             "description": "Co-hosted the largest community pre-event dinner around YC Startup School Bangalore 2026 (30+ people, reportedly busier than the official YC partner dinner) — running ops remotely from Delhi."
+        },
+        {
+            "title": "AI Summer Resident at Nas Daily (Dubai)",
+            "description": "Selected as an AI Summer Resident at Nas Daily in Dubai, shipping small language models (SLMs) and AI apps — with work featured in a viral Nas Daily video.",
+            "links": [
+                { "label": "Nas Daily intro reel", "url": "https://www.instagram.com/reel/DKPWvCIuxdQ/" },
+                { "label": "Viral video featuring my work", "url": "https://www.instagram.com/reel/DPeD0f0DlfJ/" },
+                { "label": "My write-up", "url": "https://www.linkedin.com/feed/update/urn:li:activity:7357423048540475394/" }
+            ]
         }
     ],
     "red_team": [
