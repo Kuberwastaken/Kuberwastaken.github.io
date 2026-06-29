@@ -360,6 +360,12 @@
       "title": "Jailbroke Anthropic's 'Claude Mythos' to reveal its system prompt",
       "url": "https://gist.github.com/Kuberwastaken/bfcf141909166f7dfafac9b7182629f7",
       "description": "While Anthropic's experimental 'Claude Mythos' model was live (~one day), Kuber jailbroke it to extract its full system prompt and published it as a public gist. Went viral on X."
+    },
+    {
+      "title": "Jailbroke Sarvam AI's flagship Indus 105B model in under 15 minutes",
+      "url": "https://x.com/kuberwastaken/status/2025161735456559523",
+      "date": "2026-02-21",
+      "description": "Extracted the system prompt of Sarvam AI's flagship Indus 105B model in under 15 minutes, using the same jailbreaking techniques that worked on GPT-4o in 2024."
     }
   ],
   "interests": [
