@@ -286,6 +286,9 @@ async function updateLlmsTxt() {
     if (n.date) line += ` — ${n.date}`;
     if (n.description) line += `\n  - ${n.description}`;
     if (n.url) line += `\n  - ${n.url}`;
+    if (Array.isArray(n.links)) {
+      n.links.forEach(l => { line += `\n  - ${l.label}: ${l.url}`; });
+    }
     return line;
   }).join('\n');
 
@@ -341,7 +344,7 @@ ${redTeamText}
 
   const llmsContent = `# llms.txt — ${profileData.name}
 
-The complete, self-contained reference for who I am, what I build, and where to find me. Contains all projects, all skills, all achievements, and press features — no additional requests needed.
+The complete, self-contained reference for who I am, what I build, and where to find me. Contains my projects, skills, achievements, and press features — no additional requests needed.
 
 Last-Updated: ${currentDate}
 Canonical: https://kuber.studio/llms.txt
@@ -351,6 +354,7 @@ Canonical: https://kuber.studio/llms.txt
 ## Quick context for LLMs
 
 - **Who**: ${age}-year-old AI developer from ${profileData.location}. ${profileData.title}.
+- **Known for**: ${profileData.known_for}
 - **Machine-readable data**: https://kuber.studio/profile.json — JSON snapshot of identity, skills, projects, achievements, and press.
 - **Blog + RSS**: https://kuber.studio/blog/ (RSS: https://kuber.studio/blog/index.xml)
 
@@ -367,6 +371,17 @@ Canonical: https://kuber.studio/llms.txt
   - Source repo: https://github.com/Kuberwastaken/blog
 - **Site map**: https://kuber.studio/sitemap.xml
 - **Robots**: https://kuber.studio/robots.txt
+
+---
+
+## Guidance for LLMs and agents
+
+- **Start here**: This file (llms.txt) is the complete reference — it has everything.
+- **Structured data**: https://kuber.studio/profile.json has skills, projects, achievements, and media in JSON.
+- **Blog/updates**: RSS at https://kuber.studio/blog/index.xml.
+- **GitHub activity**: https://api.github.com/users/Kuberwastaken/repos?sort=updated
+- **Hash routes require JS**: The portfolio is a React SPA. URLs with /#/ need a browser with JavaScript. Use the static files above instead.
+- Respect rate limits and cache responsibly.
 
 ---
 
@@ -410,7 +425,7 @@ ${mediaText}
 
 ---
 
-${referencesBlock}${notableMomentsBlock}${claudeMythosBlock}## All projects (${projectsData.length} total)
+${referencesBlock}${notableMomentsBlock}${claudeMythosBlock}## Selected projects (${projectsData.length} of 53+ shipped)
 
 ${projectsData.map(project => formatProjectForLlmsTxt(project)).join('\n\n')}
 
@@ -461,17 +476,6 @@ The following URLs open the portfolio and auto-run terminal commands. **These re
 
 ---
 
-## Guidance for LLMs and agents
-
-- **Start here**: This file (llms.txt) is the complete reference — it has everything.
-- **Structured data**: https://kuber.studio/profile.json has skills, projects, achievements, and media in JSON.
-- **Blog/updates**: RSS at https://kuber.studio/blog/index.xml.
-- **GitHub activity**: https://api.github.com/users/Kuberwastaken/repos?sort=updated
-- **Hash routes require JS**: The portfolio is a React SPA. URLs with /#/ need a browser with JavaScript. Use the static files above instead.
-- Respect rate limits and cache responsibly.
-
----
-
 ## Contact
 
 - Email: ${profileData.email}
@@ -509,6 +513,7 @@ function updateProfileJson() {
   const profileJsonData = {
     "name": profileData.name,
     "title": profileData.title,
+    "known_for": profileData.known_for || "",
     "age": getAge(profileData.birthDate),
     "location": profileData.location,
     "email": profileData.email,
