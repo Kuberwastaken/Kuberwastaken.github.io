@@ -174,7 +174,7 @@ My work has been cited in academic and university settings:
 
 ---
 
-## All projects (32 total)
+## All projects (33 total)
 
 - Claurst — Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. 7k+ stars in <24 hours & GitHub trending on 31 March 2026.
   - Site: https://claurst.kuber.studio
@@ -190,6 +190,9 @@ Further Compacted [Karpathy's work with MicroGPT](https://karpathy.github.io/202
 
 A DIY stateless engine with 8000+ markdown files and WebP images linked together with graphs programmatically mapping out every position in the E1M1 map in all 4 directions.
   - GitHub: https://github.com/Kuberwastaken/DoomMe
+
+- DIY Fitbit Air — Reverse-engineered the BLE protocol of a ~$30 Huawei smart band to make Google's new Health/Fitbit app recognize it as a 'Fitbit Air' — turning a cheap band with great sensors into a first-class citizen of Google's fitness ecosystem. Went viral on X.
+  - X: https://x.com/kuberwastaken/status/2059306990774714715
 
 - HN-Digest — Winner @ [Nothing Essential Lab S1 Hackathon](https://playground.nothing.tech/detail/app/pDCVJNrJVYHj5PxM)
 
