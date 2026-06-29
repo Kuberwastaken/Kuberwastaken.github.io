@@ -46,7 +46,7 @@ Also working on Democratizing private, local SLMs with superior context as your 
 
 I design agentic LLM pipelines, post-train models, optimise local RAG systems and play around with resource constrained projects like [The Backdooms](https://github.com/kuberwastaken/backdooms) and [MiniLMs](https://minilms.kuber.studio/), but to know more about the languages and tools I know run Skills
 
-This summer I'm working on AI Initiatives @ Razorpay (YC W15).
+This summer I'm working on central AI Initiatives @ [Razorpay](https://razorpay.com) (YC W15) — a 5-person mini AI lab reporting directly to CEO Harshil Mathur. We train foundational models and build large-scale internal and external AI applications on top of massive databases, at a company with 3500+ employees serving millions of merchants and billions of transactions.
 
 Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai), AI Agents Websocket Framework LEAD Intern @ HTMX (thanks Twitter)
 
@@ -64,7 +64,7 @@ At my core, I love Building (& Breaking) things, so if you're making something c
 - 4th Place — Unsloth x AMD RL Hackathon at IIT Delhi
 - First Place at Hack Club SiteJam (project: CottagOS)
 - Top 10 — Google x Kaggle Long Context AI Hackathon (project: Books Re-imagined)
-- AI Initiatives @ Razorpay (YC W15) — Summer 2026
+- AI Initiatives @ Razorpay (YC W15) — Summer 2026 — central AI lab of 5, reporting directly to CEO Harshil Mathur; training foundational models and shipping large-scale internal & external AI applications on massive databases for a company with 3500+ employees, millions of merchants, and billions of transactions
 - Perplexity AI Business Fellow
 - GitHub Copilot Backstage Pass Member
 - Provided feedback to OpenAI on GPT OSS — Part of small group of Asia-Pacific developers
