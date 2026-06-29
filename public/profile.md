@@ -1,128 +1,75 @@
-# Kuber Mehta - AI Developer
+# Kuber Mehta — AI Developer & Full Stack Engineer
 
-## Overview
-19-year-old AI developer, working on central AI Initiatives @ Razorpay (YC W15) this summer (a 5-person AI lab reporting directly to CEO Harshil Mathur, training foundational models and shipping large-scale AI apps for a company serving millions of merchants and billions of transactions), Perplexity Business Fellow, and participant in OpenAI Asia-Pacific Developer Discussion from New Delhi, India. Recently participated in a call with Sam Altman and the OpenAI team as a part of Asia Pacific developers to discuss about their open-weight models (GPT OSS 20B, 120B) before release. Creator of innovative AI solutions including multi-agent systems, trigger detection platforms, and interactive web applications.
+> Concise profile, auto-generated from source data. For the complete, machine-readable references see https://kuber.studio/llms.txt and https://kuber.studio/profile.json
 
-## Current Role
-- **AI Initiatives @ Razorpay (YC W15)** - Summer 2026. Part of a 5-person central AI lab (mini AI lab) reporting directly to CEO Harshil Mathur — training foundational models and building large-scale internal and external AI applications on top of massive databases, at a company with 3500+ employees serving millions of merchants and billions of transactions.
-- **Perplexity AI Business Fellow** - Specializing in AI development and business applications
-- **Student** - BSc Computer Science at BITS Pilani & BTech AI & Data Science at Indraprastha University
+19-year-old AI developer from New Delhi, India.
 
-## Key Projects
+Hey! I'm an AI dev & Tech Enthusiast from New Delhi, India
 
-### Claurst
-Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. The fastest growing repo in GitHub history with 7k+ stars in under 24 hours.
-- **GitHub**: https://github.com/Kuberwastaken/claurst/
-- **Technologies**: Rust, AI
-- **Note**: Reached #1 GitHub Trending on March 31, 2026. Wide media coverage included Yahoo Tech and YouTube videos.
+I'm studying Computer Science & AI-ML from BITS Pilani and AI & Data Science from IPU, primarily working on Generative UI for LLMs, World model caching and more  @ [PolyThink Labs](https://www.polyth.ink/).
 
-### PolyThink
-Multi-agent AI system where multiple models collaborate and fact-check each other to eliminate hallucinations and provide reliable answers.
-- **URL**: https://www.polyth.ink/
-- **Technologies**: Multi-agent AI, LLMs, Python
+## Current role
+This summer I'm working on central AI Initiatives @ [Razorpay](https://razorpay.com) (YC W15) — a 5-person mini AI lab reporting directly to CEO Harshil Mathur. We train foundational models and build large-scale internal and external AI applications on top of massive databases, at a company with 3500+ employees serving millions of merchants and billions of transactions.
 
-### TREAT
-AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable.
-- **URL**: https://www.trytreat.tech/
-- **GitHub**: https://github.com/Kuberwastaken/TREAT
-- **Technologies**: AI/ML, Python, Web Development
-
-### MiniLMs
-Lightweight chatbot models including SYNEVA (3kb Markov Chain chatbot) and 15ABELLA (15Kb neural network chatbot).
-- **URL**: https://minilms.kuber.studio/
-- **GitHub**: https://github.com/Kuberwastaken/MiniLMs
-- **Technologies**: Neural Networks, JavaScript, AI
-
-### AsianMOM
-WebML-based Vision-Language App that runs entirely in browser using WebGPU and ONNX.
-- **URL**: https://asianmom.kuber.studio/
-- **GitHub**: https://github.com/Kuberwastaken/AsianMOM
-- **Technologies**: WebML, WebGPU, ONNX, Computer Vision
-
-### Backdooms
-Making DOOM run inside a QR code (most popular project).
-- **URL**: https://kuber.studio/backdooms/
-- **GitHub**: https://github.com/Kuberwastaken/backdooms
-- **Technologies**: JavaScript, Game Development, QR Code
-- **Note**: Most popular project
-
-### MEOW
-A new and innovative image file format for our modern AI era, PNG on steroids.
-- **GitHub**: https://github.com/Kuberwastaken/meow
-- **Technologies**: File Format, AI, Image Processing
-- **Note**: Innovative image format designed for AI workflows
-
-### CottagOS
-Interactive desktop experience inspired by cottagecore aesthetics. Winner of first place at Hack Club SiteJam.
-- **URL**: https://cottagos.kuber.studio/
-- **GitHub**: https://github.com/Kuberwastaken/CottagOS
-- **Award**: First Place at Hack Club SiteJam
-- **Technologies**: JavaScript, CSS, Web APIs
-
-## Technical Skills
-
-### Programming Languages
-- **Primary**: Python, JavaScript, TypeScript
-- **Secondary**: C, C#, .NET, Lua, R, HTML, CSS, SCSS
-
-### Frameworks & Libraries
-- **Frontend**: React, Next.js, Vite
-- **Backend**: Flask, Node.js, Express
-- **AI/ML**: TensorFlow, PyTorch, Hugging Face
-- **Data**: Pandas, NumPy, Matplotlib
-
-### Tools & Technologies
-- **Development**: Git, Docker, VS Code, Jupyter
-- **Databases**: SQL, MongoDB, PostgreSQL
-- **Cloud**: AWS, Vercel, GitHub Pages
-- **Design**: Figma, Adobe Suite, Blender (3D modeling)
-
-### Specialized Areas
-- **Artificial Intelligence**: Multi-agent systems, LLMs, Neural Networks
-- **Machine Learning**: Deep Learning, Computer Vision, NLP
-- **Web Development**: Full-stack development, Progressive Web Apps
-- **Data Science**: Statistical analysis, Data visualization, Research
-
-## Contact Information
-- **Website**: https://kuber.studio
-- **Email**: kuberhob@gmail.com
-- **GitHub**: https://github.com/Kuberwastaken
-- **LinkedIn**: https://www.linkedin.com/in/kubermehta/
-- **Blog**: https://kuber.studio/blog/
-- **YouTube**: https://www.youtube.com/@Kuberwastaken
+Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai), AI Agents Websocket Framework LEAD Intern @ HTMX (thanks Twitter)
 
 ## Education
-- **BITS Pilani** - BSc Computer Science (Current)
-- **Indraprastha University** - BTech AI & Data Science (Current)
-- **Location**: New Delhi, India
+- BSc Computer Science — BITS Pilani (Current)
+- BTech AI & Data Science — Indraprastha University (GGSIPU) (Current)
 
-## Notable Achievements
+## Key projects
+- **Sweeta** — Remove Watermarks from Sora 2 Video Generations with LaMA inpainting. ([code](https://github.com/kuberwastaken/sweeta))
+- **PolyThink** — Building Generative UI for LLMs ([site](https://www.polyth.ink/))
+- **TREAT** — TREAT is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable. ([code](https://github.com/Kuberwastaken/TREAT))
+- **Backdooms** — One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. ([site](https://kuber.studio/backdooms/), [code](https://github.com/Kuberwastaken/backdooms))
+- **MiniLMs** — My ongoing study learning about AI Models architecturally and making fun little chatbots from it. ([site](https://minilms.kuber.studio/), [code](https://github.com/Kuberwastaken/MiniLMs))
+- **SecondYou** — Democratizing SLMs for the masses, one computer at a time ([site](https://www.secondyou.app/))
+- **ThisWebsiteIsNotOnline** — An AI powered website where every single URL you can think of exists. ([site](https://www.thiswebsiteisnot.online/), [code](https://github.com/Kuberwastaken/thiswebsiteisnotonline))
+- **MEOW** — The most Purr-fect Image File Format for your AI workflows, PNG on steroids. ([code](https://github.com/Kuberwastaken/meow))
+- **AsianMOM** — A WebML-based Vision-Language App that roasts you like an Asian Mom. ([site](https://asianmom.kuber.studio/), [code](https://github.com/Kuberwastaken/AsianMOM))
+- **CottagOS** — Won first place at Hack Club SiteJam! ([site](https://cottagos.kuber.studio/), [code](https://github.com/Kuberwastaken/CottagOS))
+
+## Skills
+- **Languages**: Python, C, .NET, C#, Lua, JavaScript, TypeScript, R, HTML, CSS, SCSS
+- **Frameworks**: React, Next.js, Flask, Node.js, TensorFlow, PyTorch
+- **Tools**: Git, SQL, BigQuery, Tableau, LaTeX, Gradio
+
+## Achievements
 - AI Initiatives @ Razorpay (YC W15) — Summer 2026 — central AI lab of 5, reporting directly to CEO Harshil Mathur; training foundational models and shipping large-scale internal & external AI applications on massive databases for a company with 3500+ employees, millions of merchants, and billions of transactions
+- Won Nothing Essential Lab S1 Hackathon — Awarded a Nothing Phone 3
+- 4th Place — Unsloth x AMD RL Hackathon at IIT Delhi
+- First Place at Hack Club SiteJam
+- Top 10 — Google x Kaggle Long Context AI Hackathon
 - Perplexity AI Business Fellow
-- Participated in OpenAI Asia-Pacific Developer Discussion regarding open-weight models
-- First Place at Hack Club SiteJam (CottagOS project)
-- Creator of 10+ AI/ML projects
-- 6+ years of 3D modeling experience
-- 100+ 3D renders for gaming environments
+- GitHub Copilot Backstage Pass Member
+- Provided feedback to OpenAI on GPT OSS — Part of small group of Asia-Pacific developers
+- 20+ hackathons participated
 
-## Interests
-- AI in media and recommendation algorithms
-- Multi-agent AI systems
-- Creative technology and interactive experiences
-- Gaming and virtual environments
-- Open source development
+## Press & media
+- **Decrypt**: Anthropic Accidentally Leaked Claude Code's Source — The Internet Is Keeping It Forever — https://decrypt.co/362917/anthropic-accidentally-leaked-claude-code-source-internet-keeping-forever
+- **Prism News**: Developers Race to Build Rust Ports After Claude Code Source Leak — https://www.prismnews.com/hobbies/rust-programming/developers-race-to-build-rust-ports-after-claude-code
+- **The Independent**: AIs are chatting with each other in the weirdest corner of the internet. Or are they? — https://www.independent.co.uk/tech/moltbook-ai-reddit-social-media-chat-b2915460.html
+- **PC Gamer**: Behold! A single QR code containing a miniaturized take on Doom: 'literally the entire game' — https://www.pcgamer.com/hardware/behold-a-single-qr-code-containing-a-miniaturized-take-on-doom-literally-the-entire-game/
+- **TechSpot**: Doom can now run in a self-contained QR code. Sort of — https://www.techspot.com/news/107642-doom-can-now-run-self-contained-qr-code.html
+- **Boing Boing**: Doom in a QR code — https://boingboing.net/2025/04/18/doom-in-a-qr-code.html
+- **Total Apex Gaming**: A Single QR Code Contains Doom…Sort Of — https://totalapexgaming.com/news/a-single-qr-code-contains-doom-kinda/
+- **Yahoo Tech**: Behold! A single QR code containing a miniaturized take on Doom: 'literally the entire game' — https://tech.yahoo.com/gaming/articles/behold-single-qr-code-containing-135737181.html
+- **BuzzArena**: ChatGPT Wrapped 2025 : voici comment avoir votre rétrospective très facilement — https://www.buzzarena.com/chatgpt-wrapped-2025-voici-comment-avoir-votre-retrospective-tres-rapidement-4543067
+- **Times of India — TOI Students**: Kuber: Saving earth is in our hands — https://toistudent.timesofindia.indiatimes.com/news/i-say/kuber-saving-earth-is-in-our-hands/41622.html
+- **LOADING_ — YouTube**: [Harness Review] claurst: Rust-based clean-room port of the leaked Claude Code — https://www.youtube.com/watch?v=7_d2IxlHa7Q
+- **Theo (t3.gg) — YouTube**: BREAKING: Claude Code source leaked — https://www.youtube.com/watch?v=Wvj1mTqyzsQ
+- **ThePrimeagen — YouTube**: Claude Code got leaked — https://www.youtube.com/watch?v=GdgRpiQRsis
 
-## Press & Media Appearances
-- **The Independent**: ClawX / Moltbook coverage — https://www.independent.co.uk/tech/moltbook-ai-reddit-social-media-chat-b2915460.html
-- **PC Gamer**: Backdooms coverage — https://www.pcgamer.com/hardware/behold-a-single-qr-code-containing-a-miniaturized-take-on-doom-literally-the-entire-game/
-- **Yahoo News / Yahoo Tech**: Backdooms coverage — https://tech.yahoo.com/gaming/articles/behold-single-qr-code-containing-135737181.html
-- **Boing Boing**: Backdooms coverage — https://premium.boingboing.net/p/doom-in-a-qr-code
-- **TechSpot**: Backdooms coverage — https://www.techspot.com/news/107642-doom-can-now-run-self-contained-qr-code.html
-- **Decrypt**: Claurst / Claude Code leak coverage — https://decrypt.co/362917/anthropic-accidentally-leaked-claude-code-source-internet-keeping-forever
-- **Theo (t3dotgg) — YouTube**: Claurst / Claude Code blog coverage
-- **ThePrimeagen — YouTube**: Claurst / Claude Code blog coverage
-- **BuzzArena**: ChatGPT Wrapped coverage — https://www.buzzarena.com/chatgpt-wrapped-2025-voici-comment-avoir-votre-retrospective-tres-rapidement-4543067
-- **TOI Students (Times of India)**: Student profile — https://toistudent.timesofindia.indiatimes.com/news/i-say/kuber-saving-earth-is-in-our-hands/41622.html
+## Research & academic references
+- **Encoding Software For Perpetuity: A Compact Representation Of Apollo 11 Guidance Code** — David Noever (PeopleTec; formerly NASA Marshall Space Flight Center) — https://arxiv.org/abs/2506.11008
+- **Modern LLMs & model harnesses — CSE498 mini-lecture series** — Kenneth H. Chan — https://cse.msu.edu/~chanken1/documents/lectures/minilecture_series_26/modern_llm.pdf
 
----
-*Last updated: June 2025*
+## Links
+- Portfolio: https://kuber.studio/
+- GitHub: https://github.com/Kuberwastaken
+- LinkedIn: https://www.linkedin.com/in/kubermehta/
+- X/Twitter: https://x.com/Kuberwastaken
+- YouTube: https://www.youtube.com/@Kuberwastaken
+- Blog: https://kuber.studio/blog/
+
+_Last updated: 2026-06-29_
