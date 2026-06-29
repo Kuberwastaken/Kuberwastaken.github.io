@@ -204,6 +204,47 @@
             "outlet": "TOI Students (Times of India)",
             "title": "Student profile",
             "url": "https://toistudent.timesofindia.indiatimes.com/news/i-say/kuber-saving-earth-is-in-our-hands/41622.html"
+        },
+        {
+            "outlet": "TechSpot",
+            "title": "Backdooms coverage",
+            "url": "https://www.techspot.com/news/107642-doom-can-now-run-self-contained-qr-code.html",
+            "project": "Backdooms"
+        },
+        {
+            "outlet": "Decrypt",
+            "title": "Claurst / Claude Code leak coverage",
+            "url": "https://decrypt.co/362917/anthropic-accidentally-leaked-claude-code-source-internet-keeping-forever",
+            "project": "Claurst"
+        },
+        {
+            "outlet": "Theo (t3dotgg) — YouTube",
+            "title": "Claurst / Claude Code blog coverage",
+            "project": "Claurst"
+        },
+        {
+            "outlet": "ThePrimeagen — YouTube",
+            "title": "Claurst / Claude Code blog coverage",
+            "project": "Claurst"
         }
-    ]
+    ],
+    "interests": [
+        "AI in media and recommendation algorithms",
+        "Multi-agent AI systems",
+        "Creative technology and interactive experiences",
+        "Gaming and virtual environments",
+        "Open source development"
+    ],
+    "portfolio_features": {
+        "type": "Interactive Terminal",
+        "technologies": ["React", "JavaScript", "CSS"],
+        "features": [
+            "30+ terminal commands",
+            "Built-in games (Snake, Tetris, 2048, Flappy Bird)",
+            "AI assistant (JARVIS)",
+            "Calculator and utilities",
+            "Dynamic theming system",
+            "Mobile responsive design"
+        ]
+    }
 }
