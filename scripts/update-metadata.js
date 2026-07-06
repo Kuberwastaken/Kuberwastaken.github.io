@@ -215,12 +215,12 @@ async function fetchBlogPosts() {
   });
 }
 
-async function updateLlmsTxt() {
+async function updateLlmsTxt(blogPostsArg) {
   const currentDate = new Date().toISOString().split('T')[0];
   const age = getAge(profileData.birthDate);
 
-  // Fetch latest blog posts from RSS
-  const blogPosts = await fetchBlogPosts();
+  // Fetch latest blog posts from RSS (or reuse an already-fetched list)
+  const blogPosts = blogPostsArg || await fetchBlogPosts();
   const blogPostsText = blogPosts.length > 0
     ? blogPosts.map(p => `- [${p.title}](${p.link})`).join('\n')
     : '- (Could not fetch latest posts — see https://kuber.studio/blog/)';
@@ -393,7 +393,7 @@ Canonical: https://kuber.studio/llms.txt
 - Role: ${profileData.title}
 - Email: mailto:${profileData.email}
 - GitHub: ${profileData.socials.github} (600+ followers)
-- LinkedIn: ${profileData.socials.linkedin} (10,000+ followers)
+- LinkedIn: ${profileData.socials.linkedin} (14,000+ followers)
 - X/Twitter: ${profileData.socials.twitter}
 - YouTube: ${profileData.socials.youtube}
 
@@ -649,6 +649,237 @@ _Last updated: ${currentDate}_
   }
 }
 
+// ---------------------------------------------------------------------------
+// Static no-JS fallback for public/index.html
+//
+// Generates a plain-HTML version of the whole portfolio (bio, projects, press,
+// skills, contact) from the same source data as llms.txt and injects it between
+// STATIC_FALLBACK markers inside <div id="root">. Crawlers and no-JS visitors
+// get real content; when JS runs, an html.js class hides it before first paint
+// and React replaces it on mount, so the interactive experience is unchanged.
+// ---------------------------------------------------------------------------
+
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+// Convert bio-style source HTML into clean fallback HTML: keep <a> links
+// (rebuilt without inline styles), keep inner text of spans, escape the rest.
+function formatHtmlToStaticHtml(html) {
+  if (!html) return '';
+  const anchors = [];
+  let out = html.replace(/<a\s+(?:[^>]*?\s+)?href="([^"]*)"[^>]*>([\s\S]*?)<\/a>/gi, (m, href, text) => {
+    anchors.push({ href, text: text.replace(/<[^>]*>/g, '') });
+    return `@@A${anchors.length - 1}@@`;
+  });
+  out = out.replace(/<[^>]*>/g, ''); // strip remaining tags, keep their text
+  out = escapeHtml(out);
+  out = out.replace(/@@A(\d+)@@/g, (m, i) => {
+    const a = anchors[Number(i)];
+    return `<a href="${escapeHtml(a.href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(a.text)}</a>`;
+  });
+  return out;
+}
+
+// Plain text (possibly with markdown links) -> fallback HTML
+function textToStaticHtml(text) {
+  if (!text) return '';
+  let out = escapeHtml(text);
+  out = out.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g,
+    (m, label, url) => `<a href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`);
+  return out.replace(/\n{2,}/g, '<br><br>').replace(/\n/g, '<br>');
+}
+
+function staticLink(href, label) {
+  return `<a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a>`;
+}
+
+function buildStaticFallbackHtml(blogPosts) {
+  const age = getAge(profileData.birthDate);
+
+  const bioHtml = [
+    profileData.bio.intro,
+    profileData.bio.education,
+    profileData.bio.projects_highlight,
+    profileData.bio.blog_highlight,
+    profileData.bio.current_work,
+    profileData.bio.skills_highlight,
+    profileData.bio.current_role,
+    profileData.bio.history,
+    profileData.bio.fun_fact,
+    profileData.bio.outro
+  ].filter(Boolean).map(f => `<p>${formatHtmlToStaticHtml(f)}</p>`).join('\n      ');
+
+  const educationHtml = (profileData.education || [])
+    .map(e => `<li>${escapeHtml(e.degree)} — ${escapeHtml(e.institution)} (${escapeHtml(e.status)})</li>`)
+    .join('\n        ');
+
+  const projectsHtml = projectsData.map(p => {
+    const links = [];
+    if (p.website) links.push(staticLink(p.website, 'site'));
+    if (p.github) links.push(staticLink(p.github, 'code'));
+    if (p.extra) {
+      const extras = Array.isArray(p.extra) ? p.extra : [p.extra];
+      extras.forEach(extra => {
+        if (!extra) return;
+        const url = typeof extra === 'string' ? extra : (extra.href || extra.url);
+        if (!url) return;
+        if (url.includes('news.ycombinator.com')) links.push(staticLink(url, 'hn'));
+        else if (url.includes('x.com')) links.push(staticLink(url, 'x'));
+        else if (url.includes('linkedin.com')) links.push(staticLink(url, 'linkedin'));
+      });
+    }
+    return `<article>
+        <h3>${escapeHtml(p.title)}</h3>
+        <p>${textToStaticHtml(p.description || '')}</p>${links.length ? `
+        <p class="fb-links">[ ${links.join(' | ')} ]</p>` : ''}
+      </article>`;
+  }).join('\n      ');
+
+  const achievementsHtml = (profileData.accomplishments || []).map(a => {
+    let item = escapeHtml(a.title);
+    if (a.detail) item += ` — ${escapeHtml(a.detail)}`;
+    if (a.project) item += ` (project: ${escapeHtml(a.project)})`;
+    if (a.url) item += ` ${staticLink(a.url, '[link]')}`;
+    return `<li>${item}</li>`;
+  }).join('\n        ');
+
+  const pressHtml = (profileData.media_appearances || []).map(m => {
+    const label = `${m.outlet}${m.title ? ` — ${m.title}` : ''}`;
+    const body = m.url ? staticLink(m.url, label) : escapeHtml(label);
+    return `<li>${body}${m.project ? ` (${escapeHtml(m.project)})` : ''}</li>`;
+  }).join('\n        ');
+
+  const referencesHtml = (profileData.references || []).map(r => {
+    const label = `${r.title}${r.author ? ` — ${r.author}` : ''}${r.venue ? ` (${r.venue})` : ''}`;
+    return `<li>${r.url ? staticLink(r.url, label) : escapeHtml(label)}</li>`;
+  }).join('\n        ');
+
+  const momentsHtml = (profileData.notable_moments || []).map(n => {
+    let item = n.url ? staticLink(n.url, n.title) : escapeHtml(n.title);
+    if (n.description) item += ` — ${escapeHtml(n.description)}`;
+    if (Array.isArray(n.links)) {
+      item += ' ' + n.links.map(l => staticLink(l.url, `[${l.label}]`)).join(' ');
+    }
+    return `<li>${item}</li>`;
+  }).join('\n        ');
+
+  const skillsHtml = Object.entries(profileData.skills || {})
+    .map(([cat, items]) => `<p><strong>${escapeHtml(cat)}:</strong> ${items.map(s => escapeHtml(s.name)).join(', ')}</p>`)
+    .join('\n      ');
+
+  const blogPostsHtml = (blogPosts || []).length
+    ? `<ul>
+        ${blogPosts.map(p => `<li>${staticLink(p.link, p.title)}</li>`).join('\n        ')}
+      </ul>`
+    : '';
+
+  return `<div id="static-fallback">
+      <style>
+        #static-fallback { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; font-family: 'JetBrains Mono', monospace; color: #d6d6d6; line-height: 1.65; }
+        #static-fallback h1 { color: #ffffff; font-size: 1.5em; }
+        #static-fallback h2 { color: #ffffff; font-size: 1.15em; margin-top: 2.4em; border-bottom: 1px solid #2a2a2a; padding-bottom: 6px; }
+        #static-fallback h2::before { content: "$ "; color: #5abb9a; }
+        #static-fallback h3 { color: #ffffff; font-size: 1em; margin-bottom: 0.3em; }
+        #static-fallback h3::before { content: "> "; color: #5abb9a; }
+        #static-fallback a { color: #5abb9a; }
+        #static-fallback ul { padding-left: 1.3em; }
+        #static-fallback li { margin-bottom: 0.4em; }
+        #static-fallback article { margin-bottom: 1.6em; }
+        #static-fallback article p { margin: 0.2em 0; }
+        #static-fallback .fb-links { font-size: 0.9em; }
+        #static-fallback .fb-note { border: 1px dashed #444; padding: 10px 14px; color: #999; font-size: 0.85em; }
+      </style>
+      <main>
+        <p class="fb-note">JavaScript is off, so you're reading the static version of this site. Enable
+          JavaScript for the interactive terminal — 30+ commands, games, and JARVIS. AI agents: this same
+          content is at <a href="https://kuber.studio/llms.txt">kuber.studio/llms.txt</a>.</p>
+
+        <h1>Kuber Mehta — ${escapeHtml(profileData.title)}</h1>
+        <p>${age}-year-old AI developer from ${escapeHtml(profileData.location)}. ${escapeHtml(profileData.known_for || '')}</p>
+
+        <h2>whoami</h2>
+        ${bioHtml}
+
+        <h2>education</h2>
+        <ul>
+        ${educationHtml}
+        </ul>
+
+        <h2>projects</h2>
+        ${projectsHtml}
+
+        <h2>achievements</h2>
+        <ul>
+        ${achievementsHtml}
+        </ul>
+
+        <h2>press</h2>
+        <ul>
+        ${pressHtml}
+        </ul>
+
+        <h2>references</h2>
+        <p>Citations of my work in academic and university settings:</p>
+        <ul>
+        ${referencesHtml}
+        </ul>
+
+        <h2>notable moments</h2>
+        <ul>
+        ${momentsHtml}
+        </ul>
+
+        <h2>blog</h2>
+        <p>I write ${staticLink('https://kuber.studio/blog/', 'MindDump')}, a blog synced from my Obsidian
+          vault (${staticLink('https://kuber.studio/blog/index.xml', 'RSS feed')}). Latest posts:</p>
+        ${blogPostsHtml}
+
+        <h2>skills</h2>
+      ${skillsHtml}
+
+        <h2>contact</h2>
+        <ul>
+        <li>Email: <a href="mailto:${escapeHtml(profileData.email)}">${escapeHtml(profileData.email)}</a></li>
+        <li>GitHub: ${staticLink(profileData.socials.github, 'github.com/Kuberwastaken')}</li>
+        <li>LinkedIn: ${staticLink(profileData.socials.linkedin, 'linkedin.com/in/kubermehta')}</li>
+        <li>X/Twitter: ${staticLink(profileData.socials.twitter, 'x.com/Kuberwastaken')}</li>
+        <li>YouTube: ${staticLink(profileData.socials.youtube, 'youtube.com/@Kuberwastaken')}</li>
+        </ul>
+        <p class="fb-links">Machine-readable: <a href="/llms.txt">llms.txt</a> · <a href="/profile.json">profile.json</a> · <a href="/profile.md">profile.md</a></p>
+      </main>
+    </div>`;
+}
+
+async function updateStaticFallback(blogPostsArg) {
+  const blogPosts = blogPostsArg || await fetchBlogPosts();
+  const fallbackHtml = buildStaticFallbackHtml(blogPosts);
+
+  const marker = /<!-- STATIC_FALLBACK_START -->[\s\S]*?<!-- STATIC_FALLBACK_END -->/;
+  const targets = [
+    path.join(__dirname, '../public/index.html'),
+    path.join(__dirname, '../build/index.html')
+  ];
+
+  targets.forEach(filePath => {
+    if (!fs.existsSync(filePath)) return;
+    const html = fs.readFileSync(filePath, 'utf8');
+    if (!marker.test(html)) {
+      // Build output is minified and loses the comment markers; the fallback is
+      // already baked in from public/index.html at build time, so skip quietly.
+      return;
+    }
+    const updated = html.replace(marker, () =>
+      `<!-- STATIC_FALLBACK_START -->\n    ${fallbackHtml}\n    <!-- STATIC_FALLBACK_END -->`);
+    fs.writeFileSync(filePath, updated);
+    console.log(`✅ Updated static fallback in ${path.relative(path.join(__dirname, '..'), filePath)}`);
+  });
+}
+
 function updateSitemap() {
   const currentDate = new Date().toISOString().split('T')[0];
   const baseUrl = 'https://kuber.studio';
@@ -766,10 +997,12 @@ async function main() {
   console.log('🔄 Updating metadata files...');
 
   try {
-    await updateLlmsTxt();
+    const blogPosts = await fetchBlogPosts();
+    await updateLlmsTxt(blogPosts);
     updateProfileJson();
     updateProfileMd();
     updateSitemap();
+    await updateStaticFallback(blogPosts);
     console.log('✅ All metadata files updated successfully!');
   } catch (error) {
     console.error('❌ Error updating metadata files:', error);
@@ -782,4 +1015,4 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { updateLlmsTxt, updateProfileJson, updateProfileMd, updateSitemap, fetchBlogPosts };
+module.exports = { updateLlmsTxt, updateProfileJson, updateProfileMd, updateSitemap, updateStaticFallback, fetchBlogPosts };
