@@ -1,7 +1,7 @@
 [
     {
         "title": "Claurst",
-        "description": "Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. 7k+ stars in <24 hours & GitHub trending on 31 March 2026.",
+        "description": "Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. 10k+ stars & GitHub trending on 31 March 2026.",
         "website": "https://claurst.kuber.studio",
         "github": "https://github.com/Kuberwastaken/claurst/",
         "showIframe": false,
@@ -30,6 +30,7 @@
         "description": "Reverse-engineered the BLE protocol of a ~$30 Huawei smart band to make Google's new Health/Fitbit app recognize it as a 'Fitbit Air' — turning a cheap band with great sensors into a first-class citizen of Google's fitness ecosystem. Went viral on X.",
         "website": null,
         "github": null,
+        "previewImg": "/images/kuberwastaken-fitbit-air.jpg",
         "showIframe": false,
         "extra": "https://x.com/kuberwastaken/status/2059306990774714715"
     },
