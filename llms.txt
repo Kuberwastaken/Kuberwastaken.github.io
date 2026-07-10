@@ -197,11 +197,6 @@ My work has been cited in academic and university settings:
   - Site: https://claurst.kuber.studio
   - GitHub: https://github.com/Kuberwastaken/claurst/
 
-- Reference — An MCP server that lets your AI agents search each other's past sessions — Claude Code can recall what you decided in Codex, Cursor or VS Code (and vice versa), so no agent forgets what another one did.
-
-One server registered in every tool searches all session transcripts and memory files (CLAUDE.md, AGENTS.md) on your machine with pure-Python offline BM25 — plug-and-play with a single uvx command, no PyPI, no build step, and extensible to new tools with a few lines of TOML.
-  - GitHub: https://github.com/Kuberwastaken/reference
-
 - PicoGPT — GPT in a QR Code ; The actual most atomic way to train and inference a GPT in pure, dependency-free JS/Python <35 lines of code
 
 Further Compacted [Karpathy's work with MicroGPT](https://karpathy.github.io/2026/02/12/microgpt/) to be smaller and more resource efficient while adding native browser execution
@@ -212,6 +207,9 @@ Further Compacted [Karpathy's work with MicroGPT](https://karpathy.github.io/202
 
 A DIY stateless engine with 8000+ markdown files and WebP images linked together with graphs programmatically mapping out every position in the E1M1 map in all 4 directions.
   - GitHub: https://github.com/Kuberwastaken/DoomMe
+
+- Reference — An MCP server that lets your AI agents search each other's past sessions
+  - GitHub: https://github.com/Kuberwastaken/reference
 
 - DIY Fitbit Air — Reverse-engineered the BLE protocol of a ~$30 Huawei smart band to make Google's new Health/Fitbit app recognize it as a 'Fitbit Air' — turning a cheap band with great sensors into a first-class citizen of Google's fitness ecosystem. Went viral on X.
   - X: https://x.com/kuberwastaken/status/2059306990774714715
