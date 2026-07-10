@@ -2,7 +2,7 @@
 
 The complete, self-contained reference for who I am, what I build, and where to find me. Contains my projects, skills, achievements, and press features — no additional requests needed.
 
-Last-Updated: 2026-07-06
+Last-Updated: 2026-07-10
 Canonical: https://kuber.studio/llms.txt
 
 ---
@@ -191,11 +191,16 @@ My work has been cited in academic and university settings:
 
 ---
 
-## Selected projects (33 of 53+ shipped)
+## Selected projects (34 of 53+ shipped)
 
 - Claurst — Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. 10k+ stars & GitHub trending on 31 March 2026.
   - Site: https://claurst.kuber.studio
   - GitHub: https://github.com/Kuberwastaken/claurst/
+
+- Reference — An MCP server that lets your AI agents search each other's past sessions — Claude Code can recall what you decided in Codex, Cursor or VS Code (and vice versa), so no agent forgets what another one did.
+
+One server registered in every tool searches all session transcripts and memory files (CLAUDE.md, AGENTS.md) on your machine with pure-Python offline BM25 — plug-and-play with a single uvx command, no PyPI, no build step, and extensible to new tools with a few lines of TOML.
+  - GitHub: https://github.com/Kuberwastaken/reference
 
 - PicoGPT — GPT in a QR Code ; The actual most atomic way to train and inference a GPT in pure, dependency-free JS/Python <35 lines of code
 
