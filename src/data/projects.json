@@ -8,13 +8,6 @@
         "extra": "https://kuber.studio/blog/AI/Claude-Code's-Entire-Source-Code-Got-Leaked-via-a-Sourcemap-in-npm,-Let's-Talk-About-it"
     },
     {
-        "title": "Reference",
-        "description": "An MCP server that lets your AI agents search each other's past sessions — Claude Code can recall what you decided in Codex, Cursor or VS Code (and vice versa), so no agent forgets what another one did.\n\nOne server registered in every tool searches all session transcripts and memory files (CLAUDE.md, AGENTS.md) on your machine with pure-Python offline BM25 — plug-and-play with a single uvx command, no PyPI, no build step, and extensible to new tools with a few lines of TOML.",
-        "website": null,
-        "github": "https://github.com/Kuberwastaken/reference",
-        "showIframe": false
-    },
-    {
         "title": "PicoGPT",
         "description": "GPT in a QR Code ; The actual most atomic way to train and inference a GPT in pure, dependency-free JS/Python <35 lines of code\n\nFurther Compacted [Karpathy's work with MicroGPT](https://karpathy.github.io/2026/02/12/microgpt/) to be smaller and more resource efficient while adding native browser execution",
         "website": null,
@@ -31,6 +24,13 @@
         "previewImg": "/images/kuberwastaken-doomme.gif",
         "showIframe": false,
         "extra": "https://kuber.studio/blog/Projects/How-I-Made-DOOM-Run-Inside-a-GitHub-Readme"
+    },
+    {
+        "title": "Reference",
+        "description": "An MCP server that lets your AI agents search each other's past sessions",
+        "website": null,
+        "github": "https://github.com/Kuberwastaken/reference",
+        "showIframe": false
     },
     {
         "title": "DIY Fitbit Air",
