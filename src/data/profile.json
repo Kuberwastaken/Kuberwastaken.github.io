@@ -1,7 +1,6 @@
 {
     "name": "Kuber Mehta",
     "title": "AI Developer & Full Stack Engineer",
-    "known_for": "A very prominent voice in AI harnesses and AI skills.",
     "birthDate": "2006-11-09",
     "location": "New Delhi, India",
     "email": "kuberhob@gmail.com",
@@ -15,7 +14,7 @@
         "intro": "Hey! I'm an AI dev & Tech Enthusiast from New Delhi, India",
         "education": "I'm studying Computer Science & AI-ML from BITS Pilani and AI & Data Science from IPU, primarily working on Generative UI for LLMs, World model caching and more  @ <a href=\"https://www.polyth.ink/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #5abb9a; text-decoration: underline;\">PolyThink Labs</a>.",
         "projects_highlight": "I've built and shipped 53+ projects (38+ AI Based) in the past year, run <span class=\"command-link\" data-command=\"projects\" style=\"color: #5abb9a; cursor: pointer; text-decoration: underline;\">Projects</span> to see some of my favourites (that I can legally show lol.)",
-        "blog_highlight": "I also <span class=\"command-link\" data-command=\"projects\" style=\"color: #5abb9a; cursor: pointer; text-decoration: underline;\">write a blog called MindDump</span> averaging 50-500k readers per month.",
+        "blog_highlight": "I also <span class=\"command-link\" data-command=\"projects\" style=\"color: #5abb9a; cursor: pointer; text-decoration: underline;\">write a blog called MindDump</span> now at 50-100k readers per month.",
         "current_work": "Depending on when you're reading this, I might have picked another cool Side Quest (probably listed on my <a href=\"https://github.com/Kuberwastaken\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #5abb9a; text-decoration: underline;\">GitHub profile readme</a>).",
         "current_role": "This summer I'm working on central AI Initiatives @ <a href=\"https://razorpay.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #5abb9a; text-decoration: underline;\">Razorpay</a> (YC W15) — a 5-person mini AI lab reporting directly to CEO Harshil Mathur. We train foundational models and build large-scale internal and external AI applications on top of massive databases, at a company with 3500+ employees serving millions of merchants and billions of transactions.",
         "skills_highlight": "I design agentic LLM pipelines, post-train models, optimise local RAG systems and play around with resource constrained projects like <a href=\"https://github.com/kuberwastaken/backdooms\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #5abb9a; text-decoration: underline;\">The Backdooms</a> and <a href=\"https://kuber.studio/picogpt/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #5abb9a; text-decoration: underline;\">PicoGPT</a>, I'm an AI generalist, but to know what Languages and Tools I usually work with, run <span class=\"command-link\" data-command=\"skills\" style=\"color: #5abb9a; cursor: pointer; text-decoration: underline;\">Skills</span>",

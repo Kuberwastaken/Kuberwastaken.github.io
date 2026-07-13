@@ -1,7 +1,7 @@
 [
     {
         "title": "Claurst",
-        "description": "Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. 10k+ stars & GitHub trending on 31 March 2026.",
+        "description": "Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. Hit 7k stars in its first week (10k+ now) & GitHub trending on 31 March 2026.",
         "website": "https://claurst.kuber.studio",
         "github": "https://github.com/Kuberwastaken/claurst/",
         "showIframe": false,
@@ -98,7 +98,7 @@
     },
     {
         "title": "MEOW",
-        "description": "The most Purr-fect Image File Format for your AI workflows, PNG on steroids.",
+        "description": "The most Purr-fect Image File Format for your AI workflows, PNG on steroids.\n\nThe royalties paid for my college tuition.",
         "website": null,
         "github": "https://github.com/Kuberwastaken/meow",
         "showIframe": false,
@@ -163,7 +163,7 @@
     },
     {
         "title": "TREAT",
-        "description": "TREAT is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable.",
+        "description": "TREAT is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable.\n\nAcquired.",
         "website": null,
         "github": "https://github.com/Kuberwastaken/TREAT",
         "extra": "https://huggingface.co/spaces/Agents-MCP-Hackathon/TREAT-CHOCOSYRUP"
@@ -193,7 +193,7 @@
     },
     {
         "title": "MindDump",
-        "description": "My Blog website that syncs from my Obsidian Vault! Made from a forked, custom version of Quartz \n\n It's extremely customizable and a little corner of the internet where I can express my thoughts freely.",
+        "description": "My Blog website that syncs from my Obsidian Vault! Made from a forked, custom version of Quartz \n\n It's extremely customizable and a little corner of the internet where I can express my thoughts freely. Now at 50-100k readers per month.",
         "website": "https://kuber.studio/blog/",
         "github": "https://github.com/Kuberwastaken/blog",
         "extra": []
