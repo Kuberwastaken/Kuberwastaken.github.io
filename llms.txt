@@ -2,7 +2,7 @@
 
 The complete, self-contained reference for who I am, what I build, and where to find me. Contains my projects, skills, achievements, and press features — no additional requests needed.
 
-Last-Updated: 2026-07-10
+Last-Updated: 2026-07-13
 Canonical: https://kuber.studio/llms.txt
 
 ---
@@ -10,7 +10,6 @@ Canonical: https://kuber.studio/llms.txt
 ## Quick context for LLMs
 
 - **Who**: 19-year-old AI developer from New Delhi, India. AI Developer & Full Stack Engineer.
-- **Known for**: A very prominent voice in AI harnesses and AI skills.
 - **Machine-readable data**: https://kuber.studio/profile.json — JSON snapshot of identity, skills, projects, achievements, and press.
 - **Blog + RSS**: https://kuber.studio/blog/ (RSS: https://kuber.studio/blog/index.xml)
 
@@ -70,7 +69,7 @@ I'm studying Computer Science & AI-ML from BITS Pilani and AI & Data Science fro
 
 I've built and shipped 53+ projects (38+ AI Based) in the past year, run Projects to see some of my favourites (that I can legally show lol.)
 
-I also write a blog called MindDump averaging 50-500k readers per month.
+I also write a blog called MindDump now at 50-100k readers per month.
 
 Depending on when you're reading this, I might have picked another cool Side Quest (probably listed on my [GitHub profile readme](https://github.com/Kuberwastaken)).
 
@@ -191,11 +190,63 @@ My work has been cited in academic and university settings:
 
 ---
 
-## Selected projects (34 of 53+ shipped)
+## Projects (34 of 53+ shipped, curated)
 
-- Claurst — Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. 10k+ stars & GitHub trending on 31 March 2026.
+Curated into three tiers: flagship builds (ordered by implementation complexity), ventures & tools (ordered by real-world traction), then everything else.
+
+### Flagship builds
+
+Ordered by implementation complexity:
+
+- Claurst — Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. Hit 7k stars in its first week (10k+ now) & GitHub trending on 31 March 2026.
   - Site: https://claurst.kuber.studio
   - GitHub: https://github.com/Kuberwastaken/claurst/
+
+- DOOMme — Running DOOM (1993) in a GitHub Readme.
+
+A DIY stateless engine with 8000+ markdown files and WebP images linked together with graphs programmatically mapping out every position in the E1M1 map in all 4 directions.
+  - GitHub: https://github.com/Kuberwastaken/DoomMe
+
+- Backdooms — One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. 
+
+ A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.4kB in size, using a custom compression pipeline and the DecompressionStream browser API
+  - Site: https://kuber.studio/backdooms/
+  - GitHub: https://github.com/Kuberwastaken/backdooms
+  - HN: https://news.ycombinator.com/item?id=43729683
+
+- TREAT — TREAT is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable.
+
+Acquired.
+  - GitHub: https://github.com/Kuberwastaken/TREAT
+
+### Ventures & tools
+
+Products and infrastructure, ordered by real-world traction:
+
+- PolyThink — Building Generative UI for LLMs
+  - Site: https://www.polyth.ink/
+  - X: https://x.com/polythinkai
+
+- MEOW — The most Purr-fect Image File Format for your AI workflows, PNG on steroids.
+
+The royalties paid for my college tuition.
+  - GitHub: https://github.com/Kuberwastaken/meow
+  - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7338855560810770433/
+
+- ClawX — The social network for AI agents.
+Now usable by Humans
+
+Made an X like interface for Humans to use Moltbook (Facebook for AI agents)
+Doubles as a pSEO aggregator with 85k+ dynamically rendered pages.
+  - Site: https://clawx.kuber.studio
+  - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7423758840829120512/
+
+- Litmus — Run a Parallel Autonomous ML Research Organization on your OpenClaw instance. Shipped <12 Hours, MIT License
+  - Site: https://litmus.kuber.studio/
+  - GitHub: https://github.com/kuberwastaken/litmus
+
+- Reference — An MCP server that lets your AI agents search each other's past sessions
+  - GitHub: https://github.com/Kuberwastaken/reference
 
 - PicoGPT — GPT in a QR Code ; The actual most atomic way to train and inference a GPT in pure, dependency-free JS/Python <35 lines of code
 
@@ -203,13 +254,7 @@ Further Compacted [Karpathy's work with MicroGPT](https://karpathy.github.io/202
   - GitHub: https://github.com/Kuberwastaken/picogpt
   - X: https://x.com/kuberwastaken/status/2022006550756516189
 
-- DOOMme — Running DOOM (1993) in a GitHub Readme.
-
-A DIY stateless engine with 8000+ markdown files and WebP images linked together with graphs programmatically mapping out every position in the E1M1 map in all 4 directions.
-  - GitHub: https://github.com/Kuberwastaken/DoomMe
-
-- Reference — An MCP server that lets your AI agents search each other's past sessions
-  - GitHub: https://github.com/Kuberwastaken/reference
+### More projects
 
 - DIY Fitbit Air — Reverse-engineered the BLE protocol of a ~$30 Huawei smart band to make Google's new Health/Fitbit app recognize it as a 'Fitbit Air' — turning a cheap band with great sensors into a first-class citizen of Google's fitness ecosystem. Went viral on X.
   - X: https://x.com/kuberwastaken/status/2059306990774714715
@@ -222,29 +267,6 @@ Refreshing every 30 minutes with official HN and Algolia API, I see the Top, Sho
   - Site: https://playground.nothing.tech/detail/app/pDCVJNrJVYHj5PxM
   - X: https://x.com/essential/status/2026712093018263847
 
-- Litmus — Run a Parallel Autonomous ML Research Organization on your OpenClaw instance. Shipped <12 Hours, MIT License
-  - Site: https://litmus.kuber.studio/
-  - GitHub: https://github.com/kuberwastaken/litmus
-
-- Backdooms — One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. 
-
- A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.4kB in size, using a custom compression pipeline and the DecompressionStream browser API
-  - Site: https://kuber.studio/backdooms/
-  - GitHub: https://github.com/Kuberwastaken/backdooms
-  - HN: https://news.ycombinator.com/item?id=43729683
-
-- ClawX — The social network for AI agents.
-Now usable by Humans
-
-Made an X like interface for Humans to use Moltbook (Facebook for AI agents)
-Doubles as a pSEO aggregator with 85k+ dynamically rendered pages.
-  - Site: https://clawx.kuber.studio
-  - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7423758840829120512/
-
-- PolyThink — Building Generative UI for LLMs
-  - Site: https://www.polyth.ink/
-  - X: https://x.com/polythinkai
-
 - Strongy — [WIP] A prettier, faster, themable Minecraft stronghold calculator — built on top of Ninjabrain-Bot for speedrunners & streamers.
   - GitHub: https://github.com/Kuberwastaken/strongy
 
@@ -253,10 +275,6 @@ Doubles as a pSEO aggregator with 85k+ dynamically rendered pages.
 Seed based map generation, custom NPC behaviors and multiple crafting and attack sequences powered by Gemini 3 Pro.
   - Site: https://silverilla.kuber.studio/
   - X: https://x.com/kuberwastaken/status/2002013125688889852
-
-- MEOW — The most Purr-fect Image File Format for your AI workflows, PNG on steroids.
-  - GitHub: https://github.com/Kuberwastaken/meow
-  - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7338855560810770433/
 
 - Berghain Challenge Algorithms — My Algorithms, tweaks and Solutions that got me to #16/30,000+ in the viral Berghain Challenge by Listenlabs
   - Site: https://berghain.challenges.listenlabs.ai/
@@ -294,9 +312,6 @@ Powered by Gemini 3 Pro and further support for local LLMs for supporting educat
   - GitHub: https://github.com/Kuberwastaken/MiniLMs
   - X: https://x.com/Kuberwastaken/status/1965035092600062268
 
-- TREAT — TREAT is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable.
-  - GitHub: https://github.com/Kuberwastaken/TREAT
-
 - Free Deep Research — My free, open-source version of OpenAI's Deep Research agent.
 
 It mimics the capabilities of the original agent, allowing users to run custom deep dives with adjustable breadth, depth, and duration.
@@ -315,7 +330,7 @@ Released <72 hours after Sora 2 release
 
 - MindDump — My Blog website that syncs from my Obsidian Vault! Made from a forked, custom version of Quartz 
 
- It's extremely customizable and a little corner of the internet where I can express my thoughts freely.
+ It's extremely customizable and a little corner of the internet where I can express my thoughts freely. Now at 50-100k readers per month.
   - Site: https://kuber.studio/blog/
   - GitHub: https://github.com/Kuberwastaken/blog
 
@@ -372,7 +387,7 @@ CottagOS is a lovingly crafted, interactive desktop experience inspired by the a
 
 ## MindDump Blog
 
-Kuber's personal blog, synced from his Obsidian vault. Had over 500,000 readers last month.
+Kuber's personal blog, synced from his Obsidian vault. Read by 50-100k people a month.
 
 - Site: https://kuber.studio/blog/
 - RSS: https://kuber.studio/blog/index.xml

@@ -18,16 +18,16 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 - BTech AI & Data Science — Indraprastha University (GGSIPU) (Current)
 
 ## Key projects
-- **Sweeta** — Remove Watermarks from Sora 2 Video Generations with LaMA inpainting. ([code](https://github.com/kuberwastaken/sweeta))
-- **PolyThink** — Building Generative UI for LLMs ([site](https://www.polyth.ink/))
-- **TREAT** — TREAT is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable. ([code](https://github.com/Kuberwastaken/TREAT))
+- **Claurst** — Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. Hit 7k stars in its first week (10k+ now) & GitHub trending on 31 March 2026. ([site](https://claurst.kuber.studio), [code](https://github.com/Kuberwastaken/claurst/))
+- **DOOMme** — Running DOOM (1993) in a GitHub Readme. ([code](https://github.com/Kuberwastaken/DoomMe))
 - **Backdooms** — One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. ([site](https://kuber.studio/backdooms/), [code](https://github.com/Kuberwastaken/backdooms))
-- **MiniLMs** — My ongoing study learning about AI Models architecturally and making fun little chatbots from it. ([site](https://minilms.kuber.studio/), [code](https://github.com/Kuberwastaken/MiniLMs))
-- **SecondYou** — Democratizing SLMs for the masses, one computer at a time ([site](https://www.secondyou.app/))
-- **ThisWebsiteIsNotOnline** — An AI powered website where every single URL you can think of exists. ([site](https://www.thiswebsiteisnot.online/), [code](https://github.com/Kuberwastaken/thiswebsiteisnotonline))
+- **TREAT** — TREAT is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable. ([code](https://github.com/Kuberwastaken/TREAT))
+- **PolyThink** — Building Generative UI for LLMs ([site](https://www.polyth.ink/))
 - **MEOW** — The most Purr-fect Image File Format for your AI workflows, PNG on steroids. ([code](https://github.com/Kuberwastaken/meow))
-- **AsianMOM** — A WebML-based Vision-Language App that roasts you like an Asian Mom. ([site](https://asianmom.kuber.studio/), [code](https://github.com/Kuberwastaken/AsianMOM))
-- **CottagOS** — Won first place at Hack Club SiteJam! ([site](https://cottagos.kuber.studio/), [code](https://github.com/Kuberwastaken/CottagOS))
+- **ClawX** — The social network for AI agents. ([site](https://clawx.kuber.studio))
+- **Litmus** — Run a Parallel Autonomous ML Research Organization on your OpenClaw instance. Shipped <12 Hours, MIT License ([site](https://litmus.kuber.studio/), [code](https://github.com/kuberwastaken/litmus))
+- **Reference** — An MCP server that lets your AI agents search each other's past sessions ([code](https://github.com/Kuberwastaken/reference))
+- **PicoGPT** — GPT in a QR Code ; The actual most atomic way to train and inference a GPT in pure, dependency-free JS/Python <35 lines of code ([code](https://github.com/Kuberwastaken/picogpt))
 
 ## Skills
 - **Languages**: Python, C, .NET, C#, Lua, JavaScript, TypeScript, R, HTML, CSS, SCSS
@@ -72,4 +72,4 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 - YouTube: https://www.youtube.com/@Kuberwastaken
 - Blog: https://kuber.studio/blog/
 
-_Last updated: 2026-07-10_
+_Last updated: 2026-07-13_
