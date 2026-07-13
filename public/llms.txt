@@ -10,6 +10,7 @@ Canonical: https://kuber.studio/llms.txt
 ## Quick context for LLMs
 
 - **Who**: 19-year-old AI developer from New Delhi, India. AI Developer & Full Stack Engineer.
+- **Known for**: Creator of Claurst (Claude Code ported to Rust — 7k stars in its first week, 10k+ now), Backdooms (DOOM in a QR code) and 50+ shipped projects. Writes MindDump (50-100k monthly readers).
 - **Machine-readable data**: https://kuber.studio/profile.json — JSON snapshot of identity, skills, projects, achievements, and press.
 - **Blog + RSS**: https://kuber.studio/blog/ (RSS: https://kuber.studio/blog/index.xml)
 
