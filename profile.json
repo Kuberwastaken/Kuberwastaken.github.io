@@ -1,7 +1,6 @@
 {
   "name": "Kuber Mehta",
   "title": "AI Developer & Full Stack Engineer",
-  "known_for": "A very prominent voice in AI harnesses and AI skills.",
   "age": 19,
   "location": "New Delhi, India",
   "email": "kuberhob@gmail.com",
@@ -128,35 +127,20 @@
   },
   "featured_projects": [
     {
-      "name": "Sweeta",
+      "name": "Claurst",
       "status": "Active",
-      "description": "Remove Watermarks from Sora 2 Video Generations with LaMA inpainting.\n\nReleased <72 hours after Sora 2 release",
-      "github": "https://github.com/kuberwastaken/sweeta",
-      "technologies": [
-        "AI/ML",
-        "LaMA",
-        "Computer Vision",
-        "Python"
-      ]
+      "description": "Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. Hit 7k stars in its first week (10k+ now) & GitHub trending on 31 March 2026.",
+      "url": "https://claurst.kuber.studio",
+      "github": "https://github.com/Kuberwastaken/claurst/"
     },
     {
-      "name": "PolyThink",
+      "name": "DOOMme",
       "status": "Active",
-      "description": "Building Generative UI for LLMs",
-      "url": "https://www.polyth.ink/",
+      "description": "Running DOOM (1993) in a GitHub Readme.\n\nA DIY stateless engine with 8000+ markdown files and WebP images linked together with graphs programmatically mapping out every position in the E1M1 map in all 4 directions.",
+      "github": "https://github.com/Kuberwastaken/DoomMe",
       "technologies": [
-        "AI/ML",
-        "Multi-agent AI",
-        "LLMs"
-      ]
-    },
-    {
-      "name": "TREAT",
-      "status": "Active",
-      "description": "TREAT is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable.",
-      "github": "https://github.com/Kuberwastaken/TREAT",
-      "technologies": [
-        "AI/ML"
+        "Web Development",
+        "Computer Vision"
       ]
     },
     {
@@ -172,41 +156,50 @@
       ]
     },
     {
-      "name": "MiniLMs",
+      "name": "TREAT",
       "status": "Active",
-      "description": "My ongoing study learning about AI Models architecturally and making fun little chatbots from it. \n\n Currently finished development of SYNEVA - a <3kb Markov Chain type Chatbot inspired by ELIZA that is actually fun to talk to and can tell how many r's are in strawberry (makes for some amazing X replies) and passively working on 15ABELLA, a 15Kb tiny Neural Network chatbot.",
-      "url": "https://minilms.kuber.studio/",
-      "github": "https://github.com/Kuberwastaken/MiniLMs",
+      "description": "TREAT is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable.\n\nAcquired.",
+      "github": "https://github.com/Kuberwastaken/TREAT",
       "technologies": [
         "AI/ML"
       ]
     },
     {
-      "name": "SecondYou",
+      "name": "PolyThink",
       "status": "Active",
-      "description": "Democratizing SLMs for the masses, one computer at a time",
-      "url": "https://www.secondyou.app/"
-    },
-    {
-      "name": "ThisWebsiteIsNotOnline",
-      "status": "Active",
-      "description": "An AI powered website where every single URL you can think of exists.",
-      "url": "https://www.thiswebsiteisnot.online/",
-      "github": "https://github.com/Kuberwastaken/thiswebsiteisnotonline",
+      "description": "Building Generative UI for LLMs",
+      "url": "https://www.polyth.ink/",
       "technologies": [
         "AI/ML",
-        "Web Development"
+        "Multi-agent AI",
+        "LLMs"
       ]
     },
     {
       "name": "MEOW",
       "status": "Active",
-      "description": "The most Purr-fect Image File Format for your AI workflows, PNG on steroids.",
+      "description": "The most Purr-fect Image File Format for your AI workflows, PNG on steroids.\n\nThe royalties paid for my college tuition.",
       "github": "https://github.com/Kuberwastaken/meow",
       "technologies": [
         "AI/ML",
         "Computer Vision"
       ]
+    },
+    {
+      "name": "ClawX",
+      "status": "Active",
+      "description": "The social network for AI agents.\nNow usable by Humans\n\nMade an X like interface for Humans to use Moltbook (Facebook for AI agents)\nDoubles as a pSEO aggregator with 85k+ dynamically rendered pages.",
+      "url": "https://clawx.kuber.studio",
+      "technologies": [
+        "AI/ML"
+      ]
+    },
+    {
+      "name": "Litmus",
+      "status": "Active",
+      "description": "Run a Parallel Autonomous ML Research Organization on your OpenClaw instance. Shipped <12 Hours, MIT License",
+      "url": "https://litmus.kuber.studio/",
+      "github": "https://github.com/kuberwastaken/litmus"
     }
   ],
   "achievements": [
@@ -410,5 +403,5 @@
       "Mobile responsive design"
     ]
   },
-  "last_updated": "2026-07-10"
+  "last_updated": "2026-07-13"
 }
