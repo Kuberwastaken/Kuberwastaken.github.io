@@ -23,21 +23,25 @@ function getAge(birthDateStr) {
   return age;
 }
 
+// Curated project tiers. Flagship is ordered by implementation complexity,
+// ventures & tools by real-world traction. Everything else keeps its
+// projects.json order in a "more projects" tier.
+const FLAGSHIP_TITLES = ['Claurst', 'DOOMme', 'Backdooms', 'TREAT'];
+const VENTURE_TITLES = ['PolyThink', 'MEOW', 'ClawX', 'Litmus', 'Reference', 'PicoGPT'];
+
+function curateProjects(projects) {
+  const byTitle = title => projects.find(p => p.title === title);
+  const flagship = FLAGSHIP_TITLES.map(byTitle).filter(Boolean);
+  const ventures = VENTURE_TITLES.map(byTitle).filter(Boolean);
+  const curated = new Set([...FLAGSHIP_TITLES, ...VENTURE_TITLES]);
+  const more = projects.filter(p => !curated.has(p.title));
+  return { flagship, ventures, more };
+}
+
 // Helper functions (formerly in extract-projects.js)
 function getTopProjects(projects, count = 10) {
-  // Define priority order for top projects
-  const priorityOrder = [
-    'Sweeta',
-    'PolyThink',
-    'TREAT',
-    'Backdooms',
-    'MiniLMs',
-    'SecondYou',
-    'ThisWebsiteIsNotOnline',
-    'MEOW',
-    'AsianMOM',
-    'CottagOS'
-  ];
+  // Curated tiers first: flagship, then ventures & tools
+  const priorityOrder = [...FLAGSHIP_TITLES, ...VENTURE_TITLES];
 
   const sortedProjects = [];
 
@@ -342,6 +346,15 @@ ${redTeamText}
   const portfolioTech = (pf.technologies || []).join(', ');
   const portfolioFeaturesText = (pf.features || []).map(f => `- ${f}`).join('\n');
 
+  // Optional "Known for" line (omitted entirely when not set)
+  const knownForLine = profileData.known_for ? `\n- **Known for**: ${profileData.known_for}` : '';
+
+  // Curated project tiers
+  const { flagship, ventures, more } = curateProjects(projectsData);
+  const flagshipText = flagship.map(formatProjectForLlmsTxt).join('\n\n');
+  const venturesText = ventures.map(formatProjectForLlmsTxt).join('\n\n');
+  const moreProjectsText = more.map(formatProjectForLlmsTxt).join('\n\n');
+
   const llmsContent = `# llms.txt — ${profileData.name}
 
 The complete, self-contained reference for who I am, what I build, and where to find me. Contains my projects, skills, achievements, and press features — no additional requests needed.
@@ -353,8 +366,7 @@ Canonical: https://kuber.studio/llms.txt
 
 ## Quick context for LLMs
 
-- **Who**: ${age}-year-old AI developer from ${profileData.location}. ${profileData.title}.
-- **Known for**: ${profileData.known_for}
+- **Who**: ${age}-year-old AI developer from ${profileData.location}. ${profileData.title}.${knownForLine}
 - **Machine-readable data**: https://kuber.studio/profile.json — JSON snapshot of identity, skills, projects, achievements, and press.
 - **Blog + RSS**: https://kuber.studio/blog/ (RSS: https://kuber.studio/blog/index.xml)
 
@@ -425,15 +437,31 @@ ${mediaText}
 
 ---
 
-${referencesBlock}${notableMomentsBlock}${claudeMythosBlock}## Selected projects (${projectsData.length} of 53+ shipped)
+${referencesBlock}${notableMomentsBlock}${claudeMythosBlock}## Projects (${projectsData.length} of 53+ shipped, curated)
 
-${projectsData.map(project => formatProjectForLlmsTxt(project)).join('\n\n')}
+Curated into three tiers: flagship builds (ordered by implementation complexity), ventures & tools (ordered by real-world traction), then everything else.
+
+### Flagship builds
+
+Ordered by implementation complexity:
+
+${flagshipText}
+
+### Ventures & tools
+
+Products and infrastructure, ordered by real-world traction:
+
+${venturesText}
+
+### More projects
+
+${moreProjectsText}
 
 ---
 
 ## MindDump Blog
 
-Kuber's personal blog, synced from his Obsidian vault. Had over 500,000 readers last month.
+Kuber's personal blog, synced from his Obsidian vault. Read by 50-100k people a month.
 
 - Site: https://kuber.studio/blog/
 - RSS: https://kuber.studio/blog/index.xml
@@ -513,7 +541,7 @@ function updateProfileJson() {
   const profileJsonData = {
     "name": profileData.name,
     "title": profileData.title,
-    "known_for": profileData.known_for || "",
+    ...(profileData.known_for ? { "known_for": profileData.known_for } : {}),
     "age": getAge(profileData.birthDate),
     "location": profileData.location,
     "email": profileData.email,
@@ -718,7 +746,7 @@ function buildStaticFallbackHtml(blogPosts) {
     .map(e => `<li>${escapeHtml(e.degree)} — ${escapeHtml(e.institution)} (${escapeHtml(e.status)})</li>`)
     .join('\n        ');
 
-  const projectsHtml = projectsData.map(p => {
+  const projectToArticle = p => {
     const links = [];
     if (p.website) links.push(staticLink(p.website, 'site'));
     if (p.github) links.push(staticLink(p.github, 'code'));
@@ -738,7 +766,12 @@ function buildStaticFallbackHtml(blogPosts) {
         <p>${textToStaticHtml(p.description || '')}</p>${links.length ? `
         <p class="fb-links">[ ${links.join(' | ')} ]</p>` : ''}
       </article>`;
-  }).join('\n      ');
+  };
+
+  const { flagship, ventures, more } = curateProjects(projectsData);
+  const flagshipHtml = flagship.map(projectToArticle).join('\n      ');
+  const venturesHtml = ventures.map(projectToArticle).join('\n      ');
+  const moreProjectsHtml = more.map(projectToArticle).join('\n      ');
 
   const achievementsHtml = (profileData.accomplishments || []).map(a => {
     let item = escapeHtml(a.title);
@@ -800,7 +833,7 @@ function buildStaticFallbackHtml(blogPosts) {
           content is at <a href="https://kuber.studio/llms.txt">kuber.studio/llms.txt</a>.</p>
 
         <h1>Kuber Mehta — ${escapeHtml(profileData.title)}</h1>
-        <p>${age}-year-old AI developer from ${escapeHtml(profileData.location)}. ${escapeHtml(profileData.known_for || '')}</p>
+        <p>${age}-year-old AI developer from ${escapeHtml(profileData.location)}.${profileData.known_for ? ' ' + escapeHtml(profileData.known_for) : ''}</p>
 
         <h2>whoami</h2>
         ${bioHtml}
@@ -810,8 +843,16 @@ function buildStaticFallbackHtml(blogPosts) {
         ${educationHtml}
         </ul>
 
-        <h2>projects</h2>
-        ${projectsHtml}
+        <h2>flagship projects</h2>
+        <p>A curated cut of what I've shipped, ordered by implementation complexity:</p>
+        ${flagshipHtml}
+
+        <h2>ventures &amp; tools</h2>
+        <p>Products and infrastructure, ordered by real-world traction:</p>
+        ${venturesHtml}
+
+        <h2>more projects</h2>
+        ${moreProjectsHtml}
 
         <h2>achievements</h2>
         <ul>
