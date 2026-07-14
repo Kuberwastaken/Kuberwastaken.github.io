@@ -156,7 +156,7 @@ const MobileProjectsCarousel = () => {
               <img
                 src={project.previewImg?.startsWith('/images/') ? JSDELIVR_BASE + project.previewImg.replace('/images/', '') : (project.previewImg || (project.title === 'Backdooms' ? 'https://cdn.jsdelivr.net/gh/kuberwastaken/backdooms/public/Gameplay-GIF.gif' : ''))}
                 alt={project.title + ' preview'}
-                style={{ width: '100%', height: '100%', objectFit: project.title === 'HN-Digest' ? 'contain' : 'cover', display: 'block', borderRadius: 12 }}
+                style={{ width: '100%', height: '100%', objectFit: project.title === 'HN-Digest' ? 'contain' : 'cover', objectPosition: project.title === 'Megaphone' ? 'top' : 'center', display: 'block', borderRadius: 12 }}
               />
             </div>
           ) : null}
@@ -307,6 +307,7 @@ const ProjectsMasonry = () => {
                           width: '100%',
                           height: '100%',
                           objectFit: project.title === 'HN-Digest' ? 'contain' : 'cover',
+                          objectPosition: project.title === 'Megaphone' ? 'top' : 'center',
                           display: 'block',
                         }}
                       />
