@@ -191,7 +191,7 @@ My work has been cited in academic and university settings:
 
 ---
 
-## Projects (35 of 53+ shipped, curated)
+## Projects (34 of 53+ shipped, curated)
 
 Curated into three tiers: flagship builds (ordered by implementation complexity), ventures & tools (ordered by real-world traction), then everything else.
 
@@ -323,14 +323,8 @@ It mimics the capabilities of the original agent, allowing users to run custom d
 
 - Sweeta — Remove Watermarks from Sora 2 Video Generations with LaMA inpainting.
 
-Released <72 hours after Sora 2 release
+Released with Spica to extend AI video generation endlessly, both Released <72 hours after Sora 2 release
   - GitHub: https://github.com/kuberwastaken/sweeta
-
-- Spica — Endlessly extend AI Video Generation from last-frame extraction prompting techniques.
-
-Released <72 hours after Sora 2 release
-  - Site: https://spica.kuber.studio
-  - GitHub: https://github.com/kuberwastaken/spica
 
 - MindDump — My Blog website that syncs from my Obsidian Vault! Made from a forked, custom version of Quartz 
 

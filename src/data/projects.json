@@ -186,19 +186,11 @@
     },
     {
         "title": "Sweeta",
-        "description": "Remove Watermarks from Sora 2 Video Generations with LaMA inpainting.\n\nReleased <72 hours after Sora 2 release",
+        "description": "Remove Watermarks from Sora 2 Video Generations with LaMA inpainting.\n\nReleased with Spica to extend AI video generation endlessly, both Released <72 hours after Sora 2 release",
         "website": null,
         "github": "https://github.com/kuberwastaken/sweeta",
         "showIframe": false,
         "extra": "https://colab.research.google.com/github/Kuberwastaken/sweeta/blob/main/colab_file/Sweeta_Colab.ipynb"
-    },
-    {
-        "title": "Spica",
-        "description": "Endlessly extend AI Video Generation from last-frame extraction prompting techniques.\n\nReleased <72 hours after Sora 2 release",
-        "website": "https://spica.kuber.studio",
-        "github": "https://github.com/kuberwastaken/spica",
-        "showIframe": true,
-        "extra": []
     },
     {
         "title": "MindDump",
