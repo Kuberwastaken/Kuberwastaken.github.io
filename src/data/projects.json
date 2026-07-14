@@ -26,11 +26,13 @@
         "extra": "https://kuber.studio/blog/Projects/How-I-Made-DOOM-Run-Inside-a-GitHub-Readme"
     },
     {
-        "title": "Reference",
-        "description": "An MCP server that lets your AI agents search each other's past sessions",
+        "title": "Megaphone",
+        "description": "A free, open-source dictation app for macOS that runs entirely on your Mac, powered by Apple's SpeechAnalyzer and Foundation Models frameworks.",
         "website": null,
-        "github": "https://github.com/Kuberwastaken/reference",
-        "showIframe": false
+        "github": "https://github.com/Kuberwastaken/megaphone",
+        "previewImg": "https://cdn.jsdelivr.net/gh/Kuberwastaken/megaphone@main/Resources/demo.gif",
+        "showIframe": false,
+        "extra": []
     },
     {
         "title": "DIY Fitbit Air",
@@ -87,6 +89,13 @@
         "github": "https://github.com/Kuberwastaken/strongy",
         "showIframe": false,
         "extra": []
+    },
+    {
+        "title": "Reference",
+        "description": "An MCP server that lets your AI agents search each other's past sessions",
+        "website": null,
+        "github": "https://github.com/Kuberwastaken/reference",
+        "showIframe": false
     },
     {
         "title": "Silverilla",

@@ -2,7 +2,7 @@
 
 The complete, self-contained reference for who I am, what I build, and where to find me. Contains my projects, skills, achievements, and press features — no additional requests needed.
 
-Last-Updated: 2026-07-13
+Last-Updated: 2026-07-14
 Canonical: https://kuber.studio/llms.txt
 
 ---
@@ -191,7 +191,7 @@ My work has been cited in academic and university settings:
 
 ---
 
-## Projects (34 of 53+ shipped, curated)
+## Projects (35 of 53+ shipped, curated)
 
 Curated into three tiers: flagship builds (ordered by implementation complexity), ventures & tools (ordered by real-world traction), then everything else.
 
@@ -256,6 +256,9 @@ Further Compacted [Karpathy's work with MicroGPT](https://karpathy.github.io/202
   - X: https://x.com/kuberwastaken/status/2022006550756516189
 
 ### More projects
+
+- Megaphone — A free, open-source dictation app for macOS that runs entirely on your Mac, powered by Apple's SpeechAnalyzer and Foundation Models frameworks.
+  - GitHub: https://github.com/Kuberwastaken/megaphone
 
 - DIY Fitbit Air — Reverse-engineered the BLE protocol of a ~$30 Huawei smart band to make Google's new Health/Fitbit app recognize it as a 'Fitbit Air' — turning a cheap band with great sensors into a first-class citizen of Google's fitness ecosystem. Went viral on X.
   - X: https://x.com/kuberwastaken/status/2059306990774714715
