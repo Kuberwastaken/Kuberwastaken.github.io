@@ -169,6 +169,83 @@ function formatHtmlToMarkdown(html) {
   return markdown;
 }
 
+// Heading that delimits the generated blog archive inside llms.txt, so a failed
+// RSS fetch can fall back to the previously published list.
+const BLOG_INDEX_HEADING = 'All posts, newest first within each section:';
+
+function previousBlogIndex() {
+  try {
+    const existing = fs.readFileSync(path.join(__dirname, '../public/llms.txt'), 'utf8');
+    const start = existing.indexOf(BLOG_INDEX_HEADING);
+    if (start === -1) return null;
+    const body = existing.slice(start + BLOG_INDEX_HEADING.length);
+    const end = body.indexOf('\n---');
+    return (end === -1 ? body : body.slice(0, end)).trim() || null;
+  } catch {
+    return null;
+  }
+}
+
+function decodeEntities(str) {
+  return str
+    .replace(/&#039;/g, "'")
+    .replace(/&#39;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&');
+}
+
+// Sections the blog keeps out of its own published index — hidden from its
+// explorer and disallowed in its robots.txt, but still present in the RSS feed.
+// Mirrors `excludeFolders` in the blog's llms.txt emitter; keep the two in sync.
+const EXCLUDED_BLOG_SECTIONS = ['BITS'];
+
+// Posts live at /blog/<Section>/.../<Title>, so the first folder is the section.
+// Note the nesting is not always one level deep — BITS material sits several
+// folders down, which is why this walks the path rather than matching two segments.
+function blogSection(link) {
+  const match = link.match(/\/blog\/(.+)$/);
+  if (!match) return 'Other';
+  const parts = match[1].split('/').filter(Boolean);
+  if (parts.length === 0) return 'Other';
+  const top = decodeURIComponent(parts[0]);
+  if (EXCLUDED_BLOG_SECTIONS.includes(top)) return top;
+  // A single segment is a root-level page rather than a sectioned post.
+  return parts.length > 1 ? top : 'Other';
+}
+
+function prettySection(section) {
+  return section.replace(/-/g, ' ');
+}
+
+/**
+ * Render the blog archive grouped by section.
+ *
+ * Previously this listed the 7 most recent posts as a flat list, which meant an
+ * LLM reading llms.txt saw a fraction of the archive and no indication the rest
+ * existed — the blog was effectively invisible to anything that trusted this file
+ * to be complete.
+ */
+function renderBlogIndex(posts) {
+  const bySection = new Map();
+  for (const post of posts) {
+    const bucket = bySection.get(post.section) || [];
+    bucket.push(post);
+    bySection.set(post.section, bucket);
+  }
+
+  const sections = [...bySection.keys()].sort((a, b) => a.localeCompare(b));
+  return sections.map(section => {
+    const entries = bySection.get(section).map(post => {
+      const day = post.date ? post.date.toISOString().slice(0, 10) : null;
+      const notes = [day, post.description].filter(Boolean).join(' — ');
+      return `- [${post.title}](${post.link})${notes ? `: ${notes}` : ''}`;
+    }).join('\n');
+    return `### ${prettySection(section)}\n\n${entries}`;
+  }).join('\n\n');
+}
+
 async function fetchBlogPosts() {
   return new Promise((resolve) => {
     const url = 'https://kuber.studio/blog/index.xml';
@@ -181,6 +258,9 @@ async function fetchBlogPosts() {
           const itemRegex = /<item[^>]*>([\s\S]*?)<\/item>/gi;
           const titleRegex = /<title><!\[CDATA\[([^\]]+)\]\]><\/title>|<title>([^<]+)<\/title>/i;
           const linkRegex = /<link>([^<]+)<\/link>/i;
+          const pubDateRegex = /<pubDate>([^<]+)<\/pubDate>/i;
+          const descRegex = /<description><!\[CDATA\[([\s\S]*?)\]\]><\/description>|<description>([\s\S]*?)<\/description>/i;
+          const categoryRegex = /<category>([^<]+)<\/category>/gi;
 
           // Channel-level titles to skip (the feed's own title entry)
           const SKIP_TITLES = ['ᨒ MindDump', 'MindDump'];
@@ -192,21 +272,42 @@ async function fetchBlogPosts() {
             const titleMatch = titleRegex.exec(block);
             const linkMatch = linkRegex.exec(block);
             if (!titleMatch || !linkMatch) continue;
-            const rawTitle = (titleMatch[1] || titleMatch[2] || '').trim();
-            // Decode common HTML entities
-            const title = rawTitle
-              .replace(/&#039;/g, "'")
-              .replace(/&quot;/g, '"')
-              .replace(/&amp;/g, '&')
-              .replace(/&lt;/g, '<')
-              .replace(/&gt;/g, '>');
+            const title = decodeEntities((titleMatch[1] || titleMatch[2] || '').trim());
             const link = linkMatch[1].trim();
             if (SKIP_TITLES.some(s => title.includes(s))) continue;
-            posts.push({ title, link });
+
+            const section = blogSection(link);
+            if (EXCLUDED_BLOG_SECTIONS.includes(section)) continue;
+
+            const pubDateMatch = pubDateRegex.exec(block);
+            const descMatch = descRegex.exec(block);
+            const categories = [];
+            let catMatch;
+            categoryRegex.lastIndex = 0;
+            while ((catMatch = categoryRegex.exec(block)) !== null) {
+              categories.push(decodeEntities(catMatch[1].trim()));
+            }
+
+            const parsedDate = pubDateMatch ? new Date(pubDateMatch[1].trim()) : null;
+            posts.push({
+              title,
+              link,
+              date: parsedDate && !isNaN(parsedDate.getTime()) ? parsedDate : null,
+              description: descMatch
+                ? decodeEntities((descMatch[1] || descMatch[2] || ''))
+                    .replace(/<[^>]*>/g, '')
+                    .replace(/\s+/g, ' ')
+                    .trim()
+                : '',
+              tags: categories,
+              section,
+            });
           }
 
-          // Take the 7 most recent (RSS is newest-first)
-          resolve(posts.slice(0, 7));
+          // Newest first. Every post is returned — an LLM that reads this file
+          // should see the whole archive, not a sample of it.
+          posts.sort((a, b) => (b.date ? b.date.getTime() : 0) - (a.date ? a.date.getTime() : 0));
+          resolve(posts);
         } catch (e) {
           console.warn('⚠️  Could not parse blog RSS:', e.message);
           resolve([]);
@@ -223,11 +324,16 @@ async function updateLlmsTxt(blogPostsArg) {
   const currentDate = new Date().toISOString().split('T')[0];
   const age = getAge(profileData.birthDate);
 
-  // Fetch latest blog posts from RSS (or reuse an already-fetched list)
+  // Fetch the blog archive from RSS (or reuse an already-fetched list)
   const blogPosts = blogPostsArg || await fetchBlogPosts();
+  // A failed fetch must not silently delete the archive from llms.txt — reuse
+  // whatever was published last time instead of shipping a placeholder.
   const blogPostsText = blogPosts.length > 0
-    ? blogPosts.map(p => `- [${p.title}](${p.link})`).join('\n')
-    : '- (Could not fetch latest posts — see https://kuber.studio/blog/)';
+    ? renderBlogIndex(blogPosts)
+    : (previousBlogIndex() || '- (Post index unavailable at build time — see https://kuber.studio/blog/llms.txt)');
+  if (blogPosts.length === 0) {
+    console.warn('⚠️  Blog RSS returned no posts; reused the previously published index.');
+  }
 
   // ALL skills
   const skillsText = Object.entries(profileData.skills || {}).map(([category, items]) => {
@@ -368,7 +474,7 @@ Canonical: https://kuber.studio/llms.txt
 
 - **Who**: ${age}-year-old AI developer from ${profileData.location}. ${profileData.title}.${knownForLine}
 - **Machine-readable data**: https://kuber.studio/profile.json — JSON snapshot of identity, skills, projects, achievements, and press.
-- **Blog + RSS**: https://kuber.studio/blog/ (RSS: https://kuber.studio/blog/index.xml)
+- **Blog + RSS**: https://kuber.studio/blog/ — full index at https://kuber.studio/blog/llms.txt (RSS: https://kuber.studio/blog/index.xml)
 
 > **Note**: The portfolio at https://kuber.studio is a React SPA. Most content requires JavaScript to render. Use this file or profile.json — they contain everything you need.
 
@@ -379,7 +485,9 @@ Canonical: https://kuber.studio/llms.txt
 - **This file**: https://kuber.studio/llms.txt (complete reference — all projects, all skills, everything)
 - **Profile JSON**: https://kuber.studio/profile.json (machine-readable)
 - **Blog**: https://kuber.studio/blog/ (separate Quartz site, works without JS)
+  - Complete post index: https://kuber.studio/blog/llms.txt (every post, grouped by section, with dates and summaries)
   - RSS feed: https://kuber.studio/blog/index.xml
+  - Sitemap: https://kuber.studio/blog/sitemap.xml
   - Source repo: https://github.com/Kuberwastaken/blog
 - **Site map**: https://kuber.studio/sitemap.xml
 - **Robots**: https://kuber.studio/robots.txt
@@ -390,7 +498,7 @@ Canonical: https://kuber.studio/llms.txt
 
 - **Start here**: This file (llms.txt) is the complete reference — it has everything.
 - **Structured data**: https://kuber.studio/profile.json has skills, projects, achievements, and media in JSON.
-- **Blog/updates**: RSS at https://kuber.studio/blog/index.xml.
+- **Blog/updates**: the full post index is at https://kuber.studio/blog/llms.txt; RSS at https://kuber.studio/blog/index.xml. Every post on the blog is authored by Kuber Mehta.
 - **GitHub activity**: https://api.github.com/users/Kuberwastaken/repos?sort=updated
 - **Hash routes require JS**: The portfolio is a React SPA. URLs with /#/ need a browser with JavaScript. Use the static files above instead.
 - Respect rate limits and cache responsibly.
@@ -461,13 +569,16 @@ ${moreProjectsText}
 
 ## MindDump Blog
 
-Kuber's personal blog, synced from his Obsidian vault. Read by 50-100k people a month.
+Kuber's personal blog, synced from his Obsidian vault. Read by 50-100k people a month. Every post listed below is written by Kuber Mehta and served as static HTML — no JavaScript required to read any of it.
 
 - Site: https://kuber.studio/blog/
+- Complete machine-readable index: https://kuber.studio/blog/llms.txt
 - RSS: https://kuber.studio/blog/index.xml
+- Sitemap: https://kuber.studio/blog/sitemap.xml
 - Source: https://github.com/Kuberwastaken/blog
 
-Latest posts:
+${BLOG_INDEX_HEADING}
+
 ${blogPostsText}
 
 ---
@@ -805,10 +916,16 @@ function buildStaticFallbackHtml(blogPosts) {
     .map(([cat, items]) => `<p><strong>${escapeHtml(cat)}:</strong> ${items.map(s => escapeHtml(s.name)).join(', ')}</p>`)
     .join('\n      ');
 
-  const blogPostsHtml = (blogPosts || []).length
+  // The fetch returns the whole archive; the homepage fallback shows a recent
+  // slice and points crawlers at the complete index rather than inlining 36 links.
+  const FALLBACK_POST_LIMIT = 12;
+  const allPosts = blogPosts || [];
+  const blogPostsHtml = allPosts.length
     ? `<ul>
-        ${blogPosts.map(p => `<li>${staticLink(p.link, p.title)}</li>`).join('\n        ')}
-      </ul>`
+        ${allPosts.slice(0, FALLBACK_POST_LIMIT).map(p => `<li>${staticLink(p.link, p.title)}</li>`).join('\n        ')}
+      </ul>${allPosts.length > FALLBACK_POST_LIMIT
+        ? `\n      <p>All ${allPosts.length} posts: ${staticLink('https://kuber.studio/blog/', 'kuber.studio/blog')} (${staticLink('https://kuber.studio/blog/llms.txt', 'full index')}).</p>`
+        : ''}`
     : '';
 
   return `<div id="static-fallback">
@@ -929,7 +1046,10 @@ function updateSitemap() {
   const staticRoutes = [
     { loc: '/', priority: '1.0', changefreq: 'weekly' },
     { loc: '/llms.txt', priority: '0.9', changefreq: 'weekly' },
-    { loc: 'https://kuber.studio/blog/sitemap.xml', priority: '0.8', changefreq: 'weekly' },
+    // A sitemap lists pages, not other sitemaps — the blog's sitemap is declared
+    // in robots.txt instead. Link the blog itself and its machine-readable index.
+    { loc: 'https://kuber.studio/blog/', priority: '0.9', changefreq: 'weekly' },
+    { loc: 'https://kuber.studio/blog/llms.txt', priority: '0.8', changefreq: 'weekly' },
     { loc: '/profile.json', priority: '0.8', changefreq: 'weekly' },
     { loc: '/profile.md', priority: '0.8', changefreq: 'weekly' },
   ];
