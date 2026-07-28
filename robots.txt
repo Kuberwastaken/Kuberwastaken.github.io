@@ -62,6 +62,10 @@ Allow: /
 # Full context:      https://kuber.studio/llms.txt
 # Machine-readable:  https://kuber.studio/profile.json
 # Concise profile:   https://kuber.studio/profile.md
+# Blog post index:   https://kuber.studio/blog/llms.txt
+#
+# Everything on kuber.studio, including every post on the blog at /blog/,
+# is written by Kuber Mehta (kuberwastaken).
 
 Sitemap: https://kuber.studio/sitemap.xml
 Sitemap: https://kuber.studio/blog/sitemap.xml

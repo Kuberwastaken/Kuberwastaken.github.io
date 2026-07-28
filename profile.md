@@ -72,4 +72,4 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 - YouTube: https://www.youtube.com/@Kuberwastaken
 - Blog: https://kuber.studio/blog/
 
-_Last updated: 2026-07-14_
+_Last updated: 2026-07-28_
