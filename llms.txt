@@ -2,7 +2,7 @@
 
 The complete, self-contained reference for who I am, what I build, and where to find me. Contains my projects, skills, achievements, and press features — no additional requests needed.
 
-Last-Updated: 2026-07-14
+Last-Updated: 2026-07-28
 Canonical: https://kuber.studio/llms.txt
 
 ---
@@ -12,7 +12,7 @@ Canonical: https://kuber.studio/llms.txt
 - **Who**: 19-year-old AI developer from New Delhi, India. AI Developer & Full Stack Engineer.
 - **Known for**: Creator of Claurst (Claude Code ported to Rust — 7k stars in its first week, 10k+ now), Backdooms (DOOM in a QR code) and 50+ shipped projects. Writes MindDump (50-100k monthly readers).
 - **Machine-readable data**: https://kuber.studio/profile.json — JSON snapshot of identity, skills, projects, achievements, and press.
-- **Blog + RSS**: https://kuber.studio/blog/ (RSS: https://kuber.studio/blog/index.xml)
+- **Blog + RSS**: https://kuber.studio/blog/ — full index at https://kuber.studio/blog/llms.txt (RSS: https://kuber.studio/blog/index.xml)
 
 > **Note**: The portfolio at https://kuber.studio is a React SPA. Most content requires JavaScript to render. Use this file or profile.json — they contain everything you need.
 
@@ -23,7 +23,9 @@ Canonical: https://kuber.studio/llms.txt
 - **This file**: https://kuber.studio/llms.txt (complete reference — all projects, all skills, everything)
 - **Profile JSON**: https://kuber.studio/profile.json (machine-readable)
 - **Blog**: https://kuber.studio/blog/ (separate Quartz site, works without JS)
+  - Complete post index: https://kuber.studio/blog/llms.txt (every post, grouped by section, with dates and summaries)
   - RSS feed: https://kuber.studio/blog/index.xml
+  - Sitemap: https://kuber.studio/blog/sitemap.xml
   - Source repo: https://github.com/Kuberwastaken/blog
 - **Site map**: https://kuber.studio/sitemap.xml
 - **Robots**: https://kuber.studio/robots.txt
@@ -34,7 +36,7 @@ Canonical: https://kuber.studio/llms.txt
 
 - **Start here**: This file (llms.txt) is the complete reference — it has everything.
 - **Structured data**: https://kuber.studio/profile.json has skills, projects, achievements, and media in JSON.
-- **Blog/updates**: RSS at https://kuber.studio/blog/index.xml.
+- **Blog/updates**: the full post index is at https://kuber.studio/blog/llms.txt; RSS at https://kuber.studio/blog/index.xml. Every post on the blog is authored by Kuber Mehta.
 - **GitHub activity**: https://api.github.com/users/Kuberwastaken/repos?sort=updated
 - **Hash routes require JS**: The portfolio is a React SPA. URLs with /#/ need a browser with JavaScript. Use the static files above instead.
 - Respect rate limits and cache responsibly.
@@ -385,20 +387,75 @@ CottagOS is a lovingly crafted, interactive desktop experience inspired by the a
 
 ## MindDump Blog
 
-Kuber's personal blog, synced from his Obsidian vault. Read by 50-100k people a month.
+Kuber's personal blog, synced from his Obsidian vault. Read by 50-100k people a month. Every post listed below is written by Kuber Mehta and served as static HTML — no JavaScript required to read any of it.
 
 - Site: https://kuber.studio/blog/
+- Complete machine-readable index: https://kuber.studio/blog/llms.txt
 - RSS: https://kuber.studio/blog/index.xml
+- Sitemap: https://kuber.studio/blog/sitemap.xml
 - Source: https://github.com/Kuberwastaken/blog
 
-Latest posts:
-- [Roblox Released the Biggest AI World Model in Gaming. Everyone Hates It.](https://kuber.studio/blog/AI/Roblox-Released-the-Biggest-AI-World-Model-in-Gaming.-Everyone-Hates-It.)
-- [Ageusia](https://kuber.studio/blog/Reflections/Ageusia)
-- [AI Can Hang Up Now, It Still Takes the Abuse](https://kuber.studio/blog/AI/AI-Can-Hang-Up-Now-It-Still-Takes-the-Abuse)
-- [I'm Scared About Biological Computing](https://kuber.studio/blog/Reflections/I'm-Scared-About-Biological-Computing)
-- [Anthropic Wrote 244 Pages About an AI Model That's "Too Dangerous To Release". I Read It So You Don't Have To](https://kuber.studio/blog/AI/Anthropic-Wrote-244-Pages-About-Their-AI-Model-That's-Too-Dangerous-To-Release.-I-Read-It-So-You-Don't-Have-To)
-- [Claude Code's Entire Source Code Got Leaked via a Sourcemap in npm, Let's Talk About it](https://kuber.studio/blog/AI/Claude-Code's-Entire-Source-Code-Got-Leaked-via-a-Sourcemap-in-npm,-Let's-Talk-About-it)
-- [Clawdbot will be dead in a month](https://kuber.studio/blog/Reflections/Clawdbot-will-be-dead-in-a-month)
+All posts, newest first within each section:
+
+### AI
+
+- [Roblox Released the Biggest AI World Model in Gaming. Everyone Hates It.](https://kuber.studio/blog/AI/Roblox-Released-the-Biggest-AI-World-Model-in-Gaming.-Everyone-Hates-It.): 2026-06-06 — When Google DeepMind introduced Genie in 2024, the idea was fundamentally insane - systems that could generate interactive environments from a single image, learning physics, ...
+- [AI Can Hang Up Now, It Still Takes the Abuse](https://kuber.studio/blog/AI/AI-Can-Hang-Up-Now-It-Still-Takes-the-Abuse): 2026-05-09 — In August 2025, Anthropic gave Claude Opus 4 and 4.1 the ability to end a small subset of conversations in its consumer chat product, framing the change as an exploratory model-welfare ...
+- [Anthropic Wrote 244 Pages About an AI Model That's "Too Dangerous To Release". I Read It So You Don't Have To](https://kuber.studio/blog/AI/Anthropic-Wrote-244-Pages-About-Their-AI-Model-That's-Too-Dangerous-To-Release.-I-Read-It-So-You-Don't-Have-To): 2026-04-09 — On February 22 2019, OpenAI put out a public announcement, covered by some of the biggest names in tech, that went like: OpenAI revealed that it had developed a new text-generation ...
+- [Claude Code's Entire Source Code Got Leaked via a Sourcemap in npm, Let's Talk About it](https://kuber.studio/blog/AI/Claude-Code's-Entire-Source-Code-Got-Leaked-via-a-Sourcemap-in-npm,-Let's-Talk-About-it): 2026-03-31 — Earlier today (March 31st, 2026) - Chaofan Shou on X discovered something that Anthropic probably didn’t want the world to see: the entire source code of Claude Code, Anthropic’s ...
+- [How People use ChatGPT and Why You Should Care](https://kuber.studio/blog/AI/How-People-use-ChatGPT-and-Why-You-Should-Care): 2025-09-25 — OpenAI just put out a very detailed paper and post covering what in my opinion is one of the most important pieces of information for anybody using or building with AI How do People use ...
+- [OpenAI CEO Draws Line Between 'Regular Cute' and 'Gay Cute' for AI Models](https://kuber.studio/blog/AI/OpenAI-CEO-Draws-Line-Between-'Regular-Cute'-and-'Gay-Cute'-for-AI-Models): 2025-04-23 — This is a clickbait title. Here’s what he actually said: Yes, it’s intended to be that way so people read it and react to it. I know it, so does everyone that writes articles like these.
+- [I Got Early Access to Manus AI - Let's Talk About it!](https://kuber.studio/blog/AI/I-Got-Early-Access-to-Manus-AI---Let's-Talk-About-it): 2025-04-11 — Most AI assistants still feel like they need too much hand-holding. You ask for something slightly complex and suddenly you are stuck answering clarifying questions, breaking the task into smaller parts, fixing missing context, and checking whether it understood the basics.
+- [Turn this into Ghibli - How OpenAI commited the largest identity theft in the entire history of art](https://kuber.studio/blog/AI/Turn-this-into-Ghibli---How-OpenAI-commited-the-largest-identity-theft-in-the-entire-history-of-art): 2025-03-28 — For a few days, the entire internet looked like it had been passed through a Studio Ghibli filter. Selfies became soft watercolor portraits. Memes suddenly had warm lighting and emotional depth.
+- [OpenAI vs DeepSeek - The Battle for AI Dominance and the Meaning of "Open"](https://kuber.studio/blog/AI/OpenAI-vs-DeepSeek---The-Battle-for-AI-Dominance-and-the-Meaning-of-Open): 2025-03-16 — In the rapidly evolving landscape of artificial intelligence, a new rivalry has emerged that’s reshaping the entire industry. OpenAI, once the poster child for open-source AI research, has taken a controversial stance by proposing that the U.S.
+- [The AI Models Race to The Bottom in 2025](https://kuber.studio/blog/AI/The-AI-Models-Race-to-The-Bottom-in-2025): 2025-03-10 — If you don’t care to read this entire thing and just want the verdict - The Price of Intelligence Is Going to Zero. This piece is largely inspired by watching multiple of Theo’s videos on AI pricing, model quality, and the weird economics of this whole space.
+- [Roy Lee’s Interview Coder: Cheating or a Wake Up Call?](https://kuber.studio/blog/AI/Roy-Lee's-Interview-Coder---Cheating-or-a-Wake-Up-Call): 2025-03-04 — Coding interviews have been broken for a while. For years, companies have treated LeetCode-style questions like the gold standard for hiring engineers.
+- [How Google Gemini 2.0 Caught Up in the AI Race](https://kuber.studio/blog/AI/How-Google-Gemini-2.0-Caught-Up-in-the-AI-Race): 2025-02-09 — Remember when searching the web meant sifting through 10 pages of results? Google changed that forever. Now, they’re doing it again with artificial intelligence – although slowly (and definitely because of DeepSeek ) and this time, it’s not just about search.
+- [DeepSeek vs. ChatGPT - The AI Chess Showdown That Broke the Internet](https://kuber.studio/blog/AI/DeepSeek-vs.-ChatGPT---The-AI-Chess-Showdown-That-Broke-the-Internet): 2025-02-05 — This game is one of the funniest examples of what happens when language models try to play chess without properly tracking the board. The match was covered by GothamChess on YouTube.
+- [Generative AI and the Copyright System - The Legal Gray Area](https://kuber.studio/blog/AI/Generative-AI-and-the-Copyright-System---The-Legal-Gray-Area): 2024-12-20 — Introduction Who owns AI-generated content? Is it the creator who utilizes the tool, the platform that designed the AI, or the incomprehensible amount and sources of data used to ...
+
+### Gaming
+
+- [Undertale Genocide - How to Make the Player Feel Bad For Their Choices](https://kuber.studio/blog/Gaming/Undertale-Genocide---How-to-Make-the-Player-Feel-Bad-For-Their-Choices): 2025-02-07 — Undertale is a game so iconic that it feels impossible not to know about it. It is also, my favorite game. It’s a turn-based RPG that stands out with its unique mechanics, lovable characters, a masterful soundtrack, and deep lore.
+
+### Post Extended
+
+- [How to Statistically Never Lose in Wordle Again](https://kuber.studio/blog/Post-Extended/How-to-Statistically-Never-Lose-in-Wordle-Again): 2025-12-29 — The Wordle game that started it all I recently restarted playing Wordle each morning because it’s a fun exercise but I just lost my week long streak because the word was… COLIC So I rage ...
+- [I Read Sam Bhagwat's AI Agents Bible So You Don't Have To (But Probably Should)](https://kuber.studio/blog/Post-Extended/I-Read-Sam-Bhagwat's-AI-Agents-Bible-So-You-Don't-Have-To): 2025-11-11 — So Sam Bhagwat recently dropped a 150-page book on building AI agents, and it’s all around the internet. He sent me a copy too and honestly? It’s actually kinda good (well until 2025 ends at least) Whenever someone asks me how do they “Learn AI”, my standard answer is always FAFO (F around and Find out) And it’s still very relevant! By the time someone launches a course or writes a book (which usually suck btw) - and by the time you finish it, it’s already outdated.
+
+### Projects
+
+- [How I Made DOOM Run Inside a GitHub Readme](https://kuber.studio/blog/Projects/How-I-Made-DOOM-Run-Inside-a-GitHub-Readme): 2026-01-04 — Yes, this is literally DOOM, Click to Play You know how GitHub allows you to embed markdown GIFs on your profile README for the longest time - I had a super Mario programming themed GIF ...
+- [How I Spent Three Nights Solving Listen Labs Berghain Challenge](https://kuber.studio/blog/Projects/How-I-Spent-Three-Nights-Solving-Listen-Labs-Berghain-Challenge): 2025-09-21 — When a cryptic billboard led to the most addictive coding challenge of 2025 Optimization problems are quite literally digital crack cocaine. Once you get a taste of turning 1,200 rejections into 1,150, then 1,000, then watching that number drop digit by agonizing digit - you’re hooked (even when each run takes ~40 minutes).
+- [AsianMOM: A WebGPU-Powered AI That Roasts You Like an Asian Mother](https://kuber.studio/blog/Projects/AsianMOM---A-WebGPU-Powered-AI-That-Roasts-You-Like-an-Asian-Mother): 2025-05-27 — People are making AI apps that contribute to the society or make others’ lives easier. I was bored of that. So I made an AI app that roasts you with the sharp-witted, no-nonsense energy of an Asian mom, and I had the perfect, most creative name for it -AsianMOM (well technically it’s Artificial Surveillance with Interactive Analysis and Nagging Maternal Oversight Model) This isn’t the most crazy part though, the crazy part is, it runs on YOUR browser.
+- [How I Managed To Make HTML Game Compression So Much Better](https://kuber.studio/blog/Projects/How-I-Managed-To-Make-HTML-Game-Compression-So-Much-Better): 2025-02-14 — Yesterday, I launched my game The Backdooms - my game inspired by DOOM and The Backrooms (read more about it here) based on my week-long web experiment that packs entire minified HTML ...
+- [How I Managed To Get Doom In A QR Code](https://kuber.studio/blog/Projects/How-I-Managed-To-Get-Doom-In-A-QR-Code): 2025-02-13 — Yes, this is literally the entire game. Scan it and play if you want to. DOOM is a game known for running everywhere because of the ports it has had since 1993, there have been memes on "It Runs Doom" on Tumbler since over a decade ago.
+- [Tackling AI-Generated Spam in LinkedIn Comments with ORCUS AI](https://kuber.studio/blog/Projects/Tackling-AI-Generated-Spam-in-LinkedIn-Comments-with-ORCUS-AI): 2025-01-07 — Introduction: The Growing Problem of AI-Generated Spam on LinkedIn LinkedIn today has evolved into what is one of the biggest networking platforms in the world ...
+
+### Reflections
+
+- [Ageusia](https://kuber.studio/blog/Reflections/Ageusia): 2026-05-30 — For a long time, the hard part of making things on the internet was making them at all. If you wanted a website, you learned HTML and CSS. If you wanted it to do something, you learned JavaScript.
+- [I'm Scared About Biological Computing](https://kuber.studio/blog/Reflections/I'm-Scared-About-Biological-Computing): 2026-05-05 — I’ve been in the AI space since ChatGPT first dropped. I’ve toyed around with a lot of Language Models, built random side projects, built a couple from scratch and I’ve spent hours looking at the math behind it all.
+- [Clawdbot will be dead in a month](https://kuber.studio/blog/Reflections/Clawdbot-will-be-dead-in-a-month): 2026-01-28 — Your timeline knows it’s great. Every demo is really cool. None of that matters because running it costs $30+ a day to run and 99% of the people geeking over it are not going to pay that (me included) We’re in a really fun phase with AI right now, as the subsidization for model costs decreases further, you’re going to notice this pattern.
+- [The Bubble is Not What You Think](https://kuber.studio/blog/Reflections/The-Bubble-is-Not-What-You-Think): 2026-01-14 — If you’ve been on Twitter lately, you’ve seen Anthropic enforcing people to use Claude Code for their subscriptions, blocking tools like opencode from using it ...
+- [Prompting People](https://kuber.studio/blog/Reflections/Prompting-People): 2026-01-02 — I just gave my final end semester exam a couple days ago when I bumped into an old friend and we got into talking and discussing some important topics for the test ...
+
+### Social Media
+
+- [Studying the Twitter Algorithm and Virality](https://kuber.studio/blog/Social-Media/Studying-the-Twitter-Algorithm-and-Virality): 2026-01-04 — The actual architecture of X's recommendation system PS: I worked on this blog extensively before the recent major shifts to the algorithm (funnily finished it a day before ...
+- [r/Place - The Internet's Greatest Communal Art Experiment](https://kuber.studio/blog/Social-Media/rPlace---The-Internet's-Greatest-Communal-Art-Experiment): 2025-02-10 — In 2017, Reddit unleashed r/Place - a massive online canvas where users could paint just one pixel every 10 minutes. What followed was one of the internet’s most chaotic, creative, and oddly beautiful experiments in communal art.
+- [Hello World](https://kuber.studio/blog/Social-Media/Hello-World): 2025-01-25 — This is my very first blog :).
+
+### Technology
+
+- [Why I Switched to the Nothing Phone 3a Pro and Can’t Stop Talking About It](https://kuber.studio/blog/Technology/Why-I-Switched-to-the-Nothing-Phone-3a-Pro-and-Can%E2%80%99t-Stop-Talking-About-It): 2025-03-27 — Why I Switched to the Nothing Phone 3a Pro and Can’t Stop Talking About It Caption: Unboxing my phone, and yes I still use BeReal A few days ago, I ditched my old phone for the Nothing Phone ...
+- [QR Codes and Malware - The Hidden Dangers in 2025](https://kuber.studio/blog/Technology/QR-Codes-and-Malware---The-Hidden-Dangers-in-2025): 2025-02-24 — QR codes have revolutionized everyday interactions, from restaurant menus to contactless payments. Yet beneath their simple, pixelated exterior lies a VERY complex world of data encoding, error correction, and potential vulnerabilities ripe for exploitation.
+- [I Used a Firefox Based Browser for a Week and I Hated it](https://kuber.studio/blog/Technology/I-Used-a-Firefox-Based-Browser-for-a-Week-and-I-Hated-it): 2025-02-12 — Image: Zen Browser Introduction: My Complicated History With Firefox As a Pro Open-Source guy, I owe Firefox a debt of gratitude. Like many, I still remember using Firefox on school computers to escape the clutches of Internet Explorer.
+- [Why Using Machine Learning for Stock Market isn't a Great Idea](https://kuber.studio/blog/Technology/Why-Using-Machine-Learning-for-Stock-Market-isn't-a-Great-Idea): 2025-02-06 — So, you want to use machine learning (ML) to predict stock prices and build an AI Warren Buffett? Don’t. (But since you’re already here, let’s unpack why this is a terrible idea usually disguised as a genius one.) 🧠 A Classical case of the Time-Series Prediction Yes, Machine learning models like LSTMs and Transformers are amazing at predicting the next item in a sequence.
+
+### Tutorials
+
+- [Character Conversions with AI - Wan 2.2 Animate](https://kuber.studio/blog/Tutorials/Character-Conversions-with-AI---Wan-2.2-Animate): 2025-09-24 — Hey! you probably saw my post and were curious how to recreate it haha, I know I sent these out a little late but that’s because every single service that offers these models for free is ...
 
 ---
 
