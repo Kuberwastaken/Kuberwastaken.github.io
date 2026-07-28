@@ -75,12 +75,15 @@
   {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": "https://kuber.studio/#person",
     "name": "Kuber Mehta",
+    "alternateName": "kuberwastaken",
     "url": "https://kuber.studio",
     "image": "https://kuber.studio/embed-image.png",
     "sameAs": [
       "https://github.com/Kuberwastaken",
       "https://www.linkedin.com/in/kubermehta/",
+      "https://x.com/Kuberwastaken",
       "https://kuber.studio/blog/",
       "https://www.youtube.com/@Kuberwastaken",
       "https://discord.com/users/1296085958374068316"
@@ -241,8 +244,33 @@
     "url": "https://kuber.studio",
     "description": "Interactive terminal-style portfolio showcasing AI development projects, skills, and professional journey of Kuber Mehta - a 19-year-old AI developer working on AI Initiatives @ Razorpay (YC W15) this summer and Perplexity Business Fellow.",
     "author": {
-      "@type": "Person",
-      "name": "Kuber Mehta"
+      "@id": "https://kuber.studio/#person"
+    },
+    "publisher": {
+      "@id": "https://kuber.studio/#person"
+    }
+  }
+  </script>
+  <!-- Blog Schema. States from this origin that the blog at /blog is the same
+       person's work, using the @id the blog's own pages reference. Without this
+       the two sites describe two unlinked entities. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": "https://kuber.studio/blog/#blog",
+    "name": "MindDump",
+    "url": "https://kuber.studio/blog/",
+    "description": "MindDump is the personal blog of Kuber Mehta — essays and notes on AI, technology, projects, and whatever else is currently stuck in his head.",
+    "inLanguage": "en-US",
+    "author": {
+      "@id": "https://kuber.studio/#person"
+    },
+    "creator": {
+      "@id": "https://kuber.studio/#person"
+    },
+    "publisher": {
+      "@id": "https://kuber.studio/#person"
     }
   }
   </script>
@@ -530,7 +558,13 @@
         <li><a href="https://kuber.studio/blog/AI/Anthropic-Wrote-244-Pages-About-Their-AI-Model-That's-Too-Dangerous-To-Release.-I-Read-It-So-You-Don't-Have-To" target="_blank" rel="noopener noreferrer">Anthropic Wrote 244 Pages About an AI Model That's &quot;Too Dangerous To Release&quot;. I Read It So You Don't Have To</a></li>
         <li><a href="https://kuber.studio/blog/AI/Claude-Code's-Entire-Source-Code-Got-Leaked-via-a-Sourcemap-in-npm,-Let's-Talk-About-it" target="_blank" rel="noopener noreferrer">Claude Code's Entire Source Code Got Leaked via a Sourcemap in npm, Let's Talk About it</a></li>
         <li><a href="https://kuber.studio/blog/Reflections/Clawdbot-will-be-dead-in-a-month" target="_blank" rel="noopener noreferrer">Clawdbot will be dead in a month</a></li>
+        <li><a href="https://kuber.studio/blog/Reflections/The-Bubble-is-Not-What-You-Think" target="_blank" rel="noopener noreferrer">The Bubble is Not What You Think</a></li>
+        <li><a href="https://kuber.studio/blog/Projects/How-I-Made-DOOM-Run-Inside-a-GitHub-Readme" target="_blank" rel="noopener noreferrer">How I Made DOOM Run Inside a GitHub Readme</a></li>
+        <li><a href="https://kuber.studio/blog/Social-Media/Studying-the-Twitter-Algorithm-and-Virality" target="_blank" rel="noopener noreferrer">Studying the Twitter Algorithm and Virality</a></li>
+        <li><a href="https://kuber.studio/blog/Reflections/Prompting-People" target="_blank" rel="noopener noreferrer">Prompting People</a></li>
+        <li><a href="https://kuber.studio/blog/Post-Extended/How-to-Statistically-Never-Lose-in-Wordle-Again" target="_blank" rel="noopener noreferrer">How to Statistically Never Lose in Wordle Again</a></li>
       </ul>
+      <p>All 36 posts: <a href="https://kuber.studio/blog/" target="_blank" rel="noopener noreferrer">kuber.studio/blog</a> (<a href="https://kuber.studio/blog/llms.txt" target="_blank" rel="noopener noreferrer">full index</a>).</p>
 
         <h2>skills</h2>
       <p><strong>Languages:</strong> Python, C, .NET, C#, Lua, JavaScript, TypeScript, R, HTML, CSS, SCSS</p>
