@@ -4,7 +4,7 @@
         "description": "Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. Hit 7k stars in its first week (10k+ now) & GitHub trending on 31 March 2026.",
         "website": "https://claurst.kuber.studio",
         "github": "https://github.com/Kuberwastaken/claurst/",
-        "showIframe": false,
+        "showIframe": true,
         "extra": "https://kuber.studio/blog/AI/Claude-Code's-Entire-Source-Code-Got-Leaked-via-a-Sourcemap-in-npm,-Let's-Talk-About-it"
     },
     {
@@ -37,7 +37,7 @@
     {
         "title": "Megaphone",
         "description": "A free, open-source dictation app for macOS that runs entirely on your Mac, powered by Apple's SpeechAnalyzer and Foundation Models frameworks.",
-        "website": null,
+        "website": "https://megaphone.kuber.studio/",
         "github": "https://github.com/Kuberwastaken/megaphone",
         "previewImg": "https://cdn.jsdelivr.net/gh/Kuberwastaken/megaphone@main/Resources/demo.gif",
         "showIframe": false,
@@ -47,7 +47,7 @@
         "title": "DIY Fitbit Air",
         "description": "Reverse-engineered the BLE protocol of a ~$30 Huawei smart band to make Google's new Health/Fitbit app recognize it as a 'Fitbit Air' — turning a cheap band with great sensors into a first-class citizen of Google's fitness ecosystem. Went viral on X.",
         "website": null,
-        "github": null,
+        "github": "https://github.com/Kuberwastaken/Huawhoop",
         "previewImg": "/images/kuberwastaken-fitbit-air.jpg",
         "showIframe": false,
         "extra": "https://x.com/kuberwastaken/status/2059306990774714715"
@@ -167,7 +167,7 @@
     {
         "title": "SecondYou",
         "description": "Democratizing SLMs for the masses, one computer at a time",
-        "website": "https://www.secondyou.app/",
+        "website": null,
         "github": null,
         "showIframe": true,
         "extra": "https://www.kaggle.com/competitions/google-gemma-3n-hackathon/writeups/secondyou-your-external-brain"
