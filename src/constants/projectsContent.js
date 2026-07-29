@@ -372,13 +372,13 @@ const ProjectsMasonry = () => {
                       src={project.website}
                       title={project.title + ' preview'}
                       style={{
-                        width: (project.title === 'ClawX' || project.title === 'PolyThink') ? '250%' : '200%',
-                        height: (project.title === 'ClawX' || project.title === 'PolyThink') ? 562 : 450,
+                        width: (project.title === 'ClawX' || project.title === 'PolyThink') ? '250%' : project.title === 'Claurst' ? '117.65%' : '200%',
+                        height: (project.title === 'ClawX' || project.title === 'PolyThink') ? 562 : project.title === 'Claurst' ? 265 : 450,
                         border: 'none',
                         borderRadius: 0,
                         background: '#181818',
                         display: 'block',
-                        transform: (project.title === 'ClawX' || project.title === 'PolyThink') ? 'scale(0.4)' : 'scale(0.5)',
+                        transform: (project.title === 'ClawX' || project.title === 'PolyThink') ? 'scale(0.4)' : project.title === 'Claurst' ? 'scale(0.85)' : 'scale(0.5)',
                         transformOrigin: '0 0',
                       }}
                       loading="lazy"
