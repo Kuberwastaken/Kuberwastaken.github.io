@@ -266,9 +266,11 @@ Further Compacted [Karpathy's work with MicroGPT](https://karpathy.github.io/202
 ### More projects
 
 - Megaphone — A free, open-source dictation app for macOS that runs entirely on your Mac, powered by Apple's SpeechAnalyzer and Foundation Models frameworks.
+  - Site: https://megaphone.kuber.studio/
   - GitHub: https://github.com/Kuberwastaken/megaphone
 
 - DIY Fitbit Air — Reverse-engineered the BLE protocol of a ~$30 Huawei smart band to make Google's new Health/Fitbit app recognize it as a 'Fitbit Air' — turning a cheap band with great sensors into a first-class citizen of Google's fitness ecosystem. Went viral on X.
+  - GitHub: https://github.com/Kuberwastaken/Huawhoop
   - X: https://x.com/kuberwastaken/status/2059306990774714715
 
 - HN-Digest — Winner @ [Nothing Essential Lab S1 Hackathon](https://playground.nothing.tech/detail/app/pDCVJNrJVYHj5PxM)
@@ -315,7 +317,6 @@ Powered by Gemini 3 Pro and further support for local LLMs for supporting educat
   - LinkedIn: https://www.linkedin.com/posts/kubermehta_ai-sundayproject-webdev-activity-7365365947773149184-fWe
 
 - SecondYou — Democratizing SLMs for the masses, one computer at a time
-  - Site: https://www.secondyou.app/
 
 - MiniLMs — My ongoing study learning about AI Models architecturally and making fun little chatbots from it. 
 
