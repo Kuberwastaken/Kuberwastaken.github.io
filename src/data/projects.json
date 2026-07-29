@@ -8,15 +8,6 @@
         "extra": "https://kuber.studio/blog/AI/Claude-Code's-Entire-Source-Code-Got-Leaked-via-a-Sourcemap-in-npm,-Let's-Talk-About-it"
     },
     {
-        "title": "Disproving WOWII Conjectures 63 & 85 with Agentic Loops",
-        "description": "Disproved two graph theory conjectures that had been open for 22+ years, with agentic loops running GPT 5.6 Terra Medium in Claurst.\n\nThe same counterexample graph — C5[K4] — kills both: any induced tree meeting three or more of the five cliques can use at most one vertex from each, and using all five closes a cycle, so the largest induced tree has 4 vertices where both conjectures require at least 5. Submitted to [Google DeepMind's formal-conjectures](https://github.com/google-deepmind/formal-conjectures/pull/4592). More to come.",
-        "website": null,
-        "github": null,
-        "previewImg": "/images/kuberwastaken-wowii.jpg",
-        "showIframe": false,
-        "extra": "https://x.com/kuberwastaken/status/2080363523167981886"
-    },
-    {
         "title": "PicoGPT",
         "description": "GPT in a QR Code ; The actual most atomic way to train and inference a GPT in pure, dependency-free JS/Python <35 lines of code\n\nFurther Compacted [Karpathy's work with MicroGPT](https://karpathy.github.io/2026/02/12/microgpt/) to be smaller and more resource efficient while adding native browser execution",
         "website": null,
@@ -33,6 +24,15 @@
         "previewImg": "/images/kuberwastaken-doomme.gif",
         "showIframe": false,
         "extra": "https://kuber.studio/blog/Projects/How-I-Made-DOOM-Run-Inside-a-GitHub-Readme"
+    },
+    {
+        "title": "Disproving WOWII Conjectures 63 & 85 with Agentic Loops",
+        "description": "Disproved two graph theory conjectures that had been open for 22+ years, with agentic loops running GPT 5.6 Terra Medium in Claurst.",
+        "website": null,
+        "github": "https://github.com/google-deepmind/formal-conjectures/pull/4592",
+        "previewImg": "/images/kuberwastaken-wowii.jpg",
+        "showIframe": false,
+        "extra": "https://x.com/kuberwastaken/status/2080363523167981886"
     },
     {
         "title": "Megaphone",
