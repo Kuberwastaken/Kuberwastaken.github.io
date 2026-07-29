@@ -135,6 +135,12 @@
       "github": "https://github.com/Kuberwastaken/claurst/"
     },
     {
+      "name": "Disproving WOWII Conjectures 63 & 85 with Agentic Loops",
+      "status": "Active",
+      "description": "Disproved two graph theory conjectures that had been open for 22+ years, with agentic loops running GPT 5.6 Terra Medium in Claurst.",
+      "github": "https://github.com/google-deepmind/formal-conjectures/pull/4592"
+    },
+    {
       "name": "DOOMme",
       "status": "Active",
       "description": "Running DOOM (1993) in a GitHub Readme.\n\nA DIY stateless engine with 8000+ markdown files and WebP images linked together with graphs programmatically mapping out every position in the E1M1 map in all 4 directions.",
@@ -143,12 +149,6 @@
         "Web Development",
         "Computer Vision"
       ]
-    },
-    {
-      "name": "Disproving WOWII Conjectures 63 & 85 with Agentic Loops",
-      "status": "Active",
-      "description": "Disproved two graph theory conjectures that had been open for 22+ years, with agentic loops running GPT 5.6 Terra Medium in Claurst.",
-      "github": "https://github.com/google-deepmind/formal-conjectures/pull/4592"
     },
     {
       "name": "Backdooms",
