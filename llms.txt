@@ -207,15 +207,14 @@ Ordered by implementation complexity:
   - Site: https://claurst.kuber.studio
   - GitHub: https://github.com/Kuberwastaken/claurst/
 
-- Disproving WOWII Conjectures 63 & 85 with Agentic Loops — Disproved two graph theory conjectures that had been open for 22+ years, with agentic loops running GPT 5.6 Terra Medium in Claurst.
-
-The same counterexample graph — C5[K4] — kills both: any induced tree meeting three or more of the five cliques can use at most one vertex from each, and using all five closes a cycle, so the largest induced tree has 4 vertices where both conjectures require at least 5. Submitted to [Google DeepMind's formal-conjectures](https://github.com/google-deepmind/formal-conjectures/pull/4592). More to come.
-  - X: https://x.com/kuberwastaken/status/2080363523167981886
-
 - DOOMme — Running DOOM (1993) in a GitHub Readme.
 
 A DIY stateless engine with 8000+ markdown files and WebP images linked together with graphs programmatically mapping out every position in the E1M1 map in all 4 directions.
   - GitHub: https://github.com/Kuberwastaken/DoomMe
+
+- Disproving WOWII Conjectures 63 & 85 with Agentic Loops — Disproved two graph theory conjectures that had been open for 22+ years, with agentic loops running GPT 5.6 Terra Medium in Claurst.
+  - GitHub: https://github.com/google-deepmind/formal-conjectures/pull/4592
+  - X: https://x.com/kuberwastaken/status/2080363523167981886
 
 - Backdooms — One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. 
 
