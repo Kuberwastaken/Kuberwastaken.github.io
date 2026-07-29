@@ -135,6 +135,11 @@
       "github": "https://github.com/Kuberwastaken/claurst/"
     },
     {
+      "name": "Disproving WOWII Conjectures 63 & 85 with Agentic Loops",
+      "status": "Active",
+      "description": "Disproved two graph theory conjectures that had been open for 22+ years, with agentic loops running GPT 5.6 Terra Medium in Claurst.\n\nThe same counterexample graph — C5[K4] — kills both: any induced tree meeting three or more of the five cliques can use at most one vertex from each, and using all five closes a cycle, so the largest induced tree has 4 vertices where both conjectures require at least 5. Submitted to [Google DeepMind's formal-conjectures](https://github.com/google-deepmind/formal-conjectures/pull/4592). More to come."
+    },
+    {
       "name": "DOOMme",
       "status": "Active",
       "description": "Running DOOM (1993) in a GitHub Readme.\n\nA DIY stateless engine with 8000+ markdown files and WebP images linked together with graphs programmatically mapping out every position in the E1M1 map in all 4 directions.",
@@ -194,13 +199,6 @@
       "technologies": [
         "AI/ML"
       ]
-    },
-    {
-      "name": "Litmus",
-      "status": "Active",
-      "description": "Run a Parallel Autonomous ML Research Organization on your OpenClaw instance. Shipped <12 Hours, MIT License",
-      "url": "https://litmus.kuber.studio/",
-      "github": "https://github.com/kuberwastaken/litmus"
     }
   ],
   "achievements": [
@@ -404,5 +402,5 @@
       "Mobile responsive design"
     ]
   },
-  "last_updated": "2026-07-28"
+  "last_updated": "2026-07-29"
 }
