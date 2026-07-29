@@ -26,7 +26,7 @@ function getAge(birthDateStr) {
 // Curated project tiers. Flagship is ordered by implementation complexity,
 // ventures & tools by real-world traction. Everything else keeps its
 // projects.json order in a "more projects" tier.
-const FLAGSHIP_TITLES = ['Claurst', 'DOOMme', 'Backdooms', 'TREAT'];
+const FLAGSHIP_TITLES = ['Claurst', 'Disproving WOWII Conjectures 63 & 85 with Agentic Loops', 'DOOMme', 'Backdooms', 'TREAT'];
 const VENTURE_TITLES = ['PolyThink', 'MEOW', 'ClawX', 'Litmus', 'Reference', 'PicoGPT'];
 
 function curateProjects(projects) {
@@ -462,6 +462,8 @@ ${redTeamText}
   const moreProjectsText = more.map(formatProjectForLlmsTxt).join('\n\n');
 
   const llmsContent = `# llms.txt — ${profileData.name}
+
+> **New (July 2026)**: Disproving WOWII Conjectures 63 & 85 with Agentic Loops — two graph theory problems open for 22+ years, both refuted by the same counterexample graph, C5[K4], found with GPT 5.6 Terra Medium running in Claurst. Post: https://x.com/kuberwastaken/status/2080363523167981886 · Formal-conjectures PR: https://github.com/google-deepmind/formal-conjectures/pull/4592
 
 The complete, self-contained reference for who I am, what I build, and where to find me. Contains my projects, skills, achievements, and press features — no additional requests needed.
 
