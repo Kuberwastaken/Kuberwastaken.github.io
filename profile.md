@@ -19,6 +19,7 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 
 ## Key projects
 - **Claurst** — Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. Hit 7k stars in its first week (10k+ now) & GitHub trending on 31 March 2026. ([site](https://claurst.kuber.studio), [code](https://github.com/Kuberwastaken/claurst/))
+- **Disproving WOWII Conjectures 63 & 85 with Agentic Loops** — Disproved two graph theory conjectures that had been open for 22+ years, with agentic loops running GPT 5.6 Terra Medium in Claurst.
 - **DOOMme** — Running DOOM (1993) in a GitHub Readme. ([code](https://github.com/Kuberwastaken/DoomMe))
 - **Backdooms** — One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. ([site](https://kuber.studio/backdooms/), [code](https://github.com/Kuberwastaken/backdooms))
 - **TREAT** — TREAT is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable. ([code](https://github.com/Kuberwastaken/TREAT))
@@ -27,7 +28,6 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 - **ClawX** — The social network for AI agents. ([site](https://clawx.kuber.studio))
 - **Litmus** — Run a Parallel Autonomous ML Research Organization on your OpenClaw instance. Shipped <12 Hours, MIT License ([site](https://litmus.kuber.studio/), [code](https://github.com/kuberwastaken/litmus))
 - **Reference** — An MCP server that lets your AI agents search each other's past sessions ([code](https://github.com/Kuberwastaken/reference))
-- **PicoGPT** — GPT in a QR Code ; The actual most atomic way to train and inference a GPT in pure, dependency-free JS/Python <35 lines of code ([code](https://github.com/Kuberwastaken/picogpt))
 
 ## Skills
 - **Languages**: Python, C, .NET, C#, Lua, JavaScript, TypeScript, R, HTML, CSS, SCSS
@@ -72,4 +72,4 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 - YouTube: https://www.youtube.com/@Kuberwastaken
 - Blog: https://kuber.studio/blog/
 
-_Last updated: 2026-07-28_
+_Last updated: 2026-07-29_
