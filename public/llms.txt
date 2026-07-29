@@ -1,8 +1,10 @@
 # llms.txt — Kuber Mehta
 
+> **New (July 2026)**: Disproving WOWII Conjectures 63 & 85 with Agentic Loops — two graph theory problems open for 22+ years, both refuted by the same counterexample graph, C5[K4], found with GPT 5.6 Terra Medium running in Claurst. Post: https://x.com/kuberwastaken/status/2080363523167981886 · Formal-conjectures PR: https://github.com/google-deepmind/formal-conjectures/pull/4592
+
 The complete, self-contained reference for who I am, what I build, and where to find me. Contains my projects, skills, achievements, and press features — no additional requests needed.
 
-Last-Updated: 2026-07-28
+Last-Updated: 2026-07-29
 Canonical: https://kuber.studio/llms.txt
 
 ---
@@ -193,7 +195,7 @@ My work has been cited in academic and university settings:
 
 ---
 
-## Projects (34 of 53+ shipped, curated)
+## Projects (35 of 53+ shipped, curated)
 
 Curated into three tiers: flagship builds (ordered by implementation complexity), ventures & tools (ordered by real-world traction), then everything else.
 
@@ -204,6 +206,11 @@ Ordered by implementation complexity:
 - Claurst — Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. Hit 7k stars in its first week (10k+ now) & GitHub trending on 31 March 2026.
   - Site: https://claurst.kuber.studio
   - GitHub: https://github.com/Kuberwastaken/claurst/
+
+- Disproving WOWII Conjectures 63 & 85 with Agentic Loops — Disproved two graph theory conjectures that had been open for 22+ years, with agentic loops running GPT 5.6 Terra Medium in Claurst.
+
+The same counterexample graph — C5[K4] — kills both: any induced tree meeting three or more of the five cliques can use at most one vertex from each, and using all five closes a cycle, so the largest induced tree has 4 vertices where both conjectures require at least 5. Submitted to [Google DeepMind's formal-conjectures](https://github.com/google-deepmind/formal-conjectures/pull/4592). More to come.
+  - X: https://x.com/kuberwastaken/status/2080363523167981886
 
 - DOOMme — Running DOOM (1993) in a GitHub Readme.
 
