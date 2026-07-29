@@ -24,7 +24,9 @@ const formatDescriptionToHtml = (raw) => {
 // Enforce explicit horizontal-first order on desktop and same order on mobile
 const JSDELIVR_BASE = 'https://cdn.jsdelivr.net/gh/Kuberwastaken/Kuberwastaken.github.io/public/images/';
 
-const projects = projectsBase;
+// hidden: true entries stay in llms.txt / profile.json / the index static
+// fallback (all generated from projects.json) but are not rendered on the site
+const projects = projectsBase.filter(p => !p.hidden);
 
 const badgeLinks = (project) => {
   const badges = [];
