@@ -166,6 +166,7 @@
     },
     {
         "title": "SecondYou",
+        "hidden": true,
         "description": "Democratizing SLMs for the masses, one computer at a time",
         "website": null,
         "github": null,
@@ -181,6 +182,7 @@
     },
     {
         "title": "TREAT",
+        "hidden": true,
         "description": "TREAT is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable.\n\nAcquired.",
         "website": null,
         "github": "https://github.com/Kuberwastaken/TREAT",
