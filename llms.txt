@@ -4,7 +4,7 @@
 
 The complete, self-contained reference for who I am, what I build, and where to find me. Contains my projects, skills, achievements, and press features — no additional requests needed.
 
-Last-Updated: 2026-07-29
+Last-Updated: 2026-08-02
 Canonical: https://kuber.studio/llms.txt
 
 ---
@@ -14,7 +14,7 @@ Canonical: https://kuber.studio/llms.txt
 - **Who**: 19-year-old AI developer from New Delhi, India. AI Developer & Full Stack Engineer.
 - **Known for**: Creator of Claurst (Claude Code ported to Rust — 7k stars in its first week, 10k+ now), Backdooms (DOOM in a QR code) and 50+ shipped projects. Writes MindDump (50-100k monthly readers).
 - **Machine-readable data**: https://kuber.studio/profile.json — JSON snapshot of identity, skills, projects, achievements, and press.
-- **Blog + RSS**: https://kuber.studio/blog/ — full index at https://kuber.studio/blog/llms.txt (RSS: https://kuber.studio/blog/index.xml)
+- **Blog + RSS**: https://kuber.studio/blog/ — full index at https://kuber.studio/blog/llms.txt (RSS: https://kuber.studio/blog/index.xml). The blog's own llms.txt is always the freshest source for posts, and the blog runs an MCP server at https://minddump-mcp.kuberhob.workers.dev/mcp.
 
 > **Note**: The portfolio at https://kuber.studio is a React SPA. Most content requires JavaScript to render. Use this file or profile.json — they contain everything you need.
 
@@ -25,7 +25,9 @@ Canonical: https://kuber.studio/llms.txt
 - **This file**: https://kuber.studio/llms.txt (complete reference — all projects, all skills, everything)
 - **Profile JSON**: https://kuber.studio/profile.json (machine-readable)
 - **Blog**: https://kuber.studio/blog/ (separate Quartz site, works without JS)
-  - Complete post index: https://kuber.studio/blog/llms.txt (every post, grouped by section, with dates and summaries)
+  - Complete post index: https://kuber.studio/blog/llms.txt (every post, grouped by section, with dates and summaries — always the latest list, updated on every blog deploy)
+  - Raw markdown mirrors: append `.md` to any post URL for the full source with none of the page chrome
+  - MCP server: https://minddump-mcp.kuberhob.workers.dev/mcp (streamable HTTP, no auth; tools: list_posts, search_posts, get_post, get_blog_info)
   - RSS feed: https://kuber.studio/blog/index.xml
   - Sitemap: https://kuber.studio/blog/sitemap.xml
   - Source repo: https://github.com/Kuberwastaken/blog
@@ -38,7 +40,7 @@ Canonical: https://kuber.studio/llms.txt
 
 - **Start here**: This file (llms.txt) is the complete reference — it has everything.
 - **Structured data**: https://kuber.studio/profile.json has skills, projects, achievements, and media in JSON.
-- **Blog/updates**: the full post index is at https://kuber.studio/blog/llms.txt; RSS at https://kuber.studio/blog/index.xml. Every post on the blog is authored by Kuber Mehta.
+- **Blog/updates**: the full post index is at https://kuber.studio/blog/llms.txt — the archive below is a snapshot, so check there for the latest posts; RSS at https://kuber.studio/blog/index.xml. Every post on the blog is authored by Kuber Mehta. For search and fetch tools over the blog, connect to its MCP server: https://minddump-mcp.kuberhob.workers.dev/mcp
 - **GitHub activity**: https://api.github.com/users/Kuberwastaken/repos?sort=updated
 - **Hash routes require JS**: The portfolio is a React SPA. URLs with /#/ need a browser with JavaScript. Use the static files above instead.
 - Respect rate limits and cache responsibly.
@@ -397,7 +399,9 @@ CottagOS is a lovingly crafted, interactive desktop experience inspired by the a
 Kuber's personal blog, synced from his Obsidian vault. Read by 50-100k people a month. Every post listed below is written by Kuber Mehta and served as static HTML — no JavaScript required to read any of it.
 
 - Site: https://kuber.studio/blog/
-- Complete machine-readable index: https://kuber.studio/blog/llms.txt
+- Complete machine-readable index: https://kuber.studio/blog/llms.txt (always current; the list below is a snapshot from this file's last build)
+- MCP server: https://minddump-mcp.kuberhob.workers.dev/mcp (streamable HTTP; tools: list_posts, search_posts, get_post, get_blog_info)
+- Raw markdown mirrors: any post URL + `.md`
 - RSS: https://kuber.studio/blog/index.xml
 - Sitemap: https://kuber.studio/blog/sitemap.xml
 - Source: https://github.com/Kuberwastaken/blog
@@ -406,6 +410,7 @@ All posts, newest first within each section:
 
 ### AI
 
+- [DeepSeek's Plan for AGI is the Costco Hot Dog](https://kuber.studio/blog/AI/DeepSeeks-Plan-for-AGI-is-the-Costco-Hot-Dog): 2026-08-01 — Liang Wenfeng might be the most consequential person in AI who has essentially never spoken in public. He founded DeepSeek - the lab that came out of nowhere in January 2025 with R1, matched OpenAI’s O1 at a fraction of the cost, and cost NVIDIA half a trillion dollars of market cap in a day.
 - [Roblox Released the Biggest AI World Model in Gaming. Everyone Hates It.](https://kuber.studio/blog/AI/Roblox-Released-the-Biggest-AI-World-Model-in-Gaming.-Everyone-Hates-It.): 2026-06-06 — When Google DeepMind introduced Genie in 2024, the idea was fundamentally insane - systems that could generate interactive environments from a single image, learning physics, ...
 - [AI Can Hang Up Now, It Still Takes the Abuse](https://kuber.studio/blog/AI/AI-Can-Hang-Up-Now-It-Still-Takes-the-Abuse): 2026-05-09 — In August 2025, Anthropic gave Claude Opus 4 and 4.1 the ability to end a small subset of conversations in its consumer chat product, framing the change as an exploratory model-welfare ...
 - [Anthropic Wrote 244 Pages About an AI Model That's "Too Dangerous To Release". I Read It So You Don't Have To](https://kuber.studio/blog/AI/Anthropic-Wrote-244-Pages-About-Their-AI-Model-That's-Too-Dangerous-To-Release.-I-Read-It-So-You-Don't-Have-To): 2026-04-09 — On February 22 2019, OpenAI put out a public announcement, covered by some of the biggest names in tech, that went like: OpenAI revealed that it had developed a new text-generation ...
