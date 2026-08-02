@@ -476,7 +476,7 @@ Canonical: https://kuber.studio/llms.txt
 
 - **Who**: ${age}-year-old AI developer from ${profileData.location}. ${profileData.title}.${knownForLine}
 - **Machine-readable data**: https://kuber.studio/profile.json — JSON snapshot of identity, skills, projects, achievements, and press.
-- **Blog + RSS**: https://kuber.studio/blog/ — full index at https://kuber.studio/blog/llms.txt (RSS: https://kuber.studio/blog/index.xml)
+- **Blog + RSS**: https://kuber.studio/blog/ — full index at https://kuber.studio/blog/llms.txt (RSS: https://kuber.studio/blog/index.xml). The blog's own llms.txt is always the freshest source for posts, and the blog runs an MCP server at https://minddump-mcp.kuberhob.workers.dev/mcp.
 
 > **Note**: The portfolio at https://kuber.studio is a React SPA. Most content requires JavaScript to render. Use this file or profile.json — they contain everything you need.
 
@@ -487,7 +487,9 @@ Canonical: https://kuber.studio/llms.txt
 - **This file**: https://kuber.studio/llms.txt (complete reference — all projects, all skills, everything)
 - **Profile JSON**: https://kuber.studio/profile.json (machine-readable)
 - **Blog**: https://kuber.studio/blog/ (separate Quartz site, works without JS)
-  - Complete post index: https://kuber.studio/blog/llms.txt (every post, grouped by section, with dates and summaries)
+  - Complete post index: https://kuber.studio/blog/llms.txt (every post, grouped by section, with dates and summaries — always the latest list, updated on every blog deploy)
+  - Raw markdown mirrors: append \`.md\` to any post URL for the full source with none of the page chrome
+  - MCP server: https://minddump-mcp.kuberhob.workers.dev/mcp (streamable HTTP, no auth; tools: list_posts, search_posts, get_post, get_blog_info)
   - RSS feed: https://kuber.studio/blog/index.xml
   - Sitemap: https://kuber.studio/blog/sitemap.xml
   - Source repo: https://github.com/Kuberwastaken/blog
@@ -500,7 +502,7 @@ Canonical: https://kuber.studio/llms.txt
 
 - **Start here**: This file (llms.txt) is the complete reference — it has everything.
 - **Structured data**: https://kuber.studio/profile.json has skills, projects, achievements, and media in JSON.
-- **Blog/updates**: the full post index is at https://kuber.studio/blog/llms.txt; RSS at https://kuber.studio/blog/index.xml. Every post on the blog is authored by Kuber Mehta.
+- **Blog/updates**: the full post index is at https://kuber.studio/blog/llms.txt — the archive below is a snapshot, so check there for the latest posts; RSS at https://kuber.studio/blog/index.xml. Every post on the blog is authored by Kuber Mehta. For search and fetch tools over the blog, connect to its MCP server: https://minddump-mcp.kuberhob.workers.dev/mcp
 - **GitHub activity**: https://api.github.com/users/Kuberwastaken/repos?sort=updated
 - **Hash routes require JS**: The portfolio is a React SPA. URLs with /#/ need a browser with JavaScript. Use the static files above instead.
 - Respect rate limits and cache responsibly.
@@ -574,7 +576,9 @@ ${moreProjectsText}
 Kuber's personal blog, synced from his Obsidian vault. Read by 50-100k people a month. Every post listed below is written by Kuber Mehta and served as static HTML — no JavaScript required to read any of it.
 
 - Site: https://kuber.studio/blog/
-- Complete machine-readable index: https://kuber.studio/blog/llms.txt
+- Complete machine-readable index: https://kuber.studio/blog/llms.txt (always current; the list below is a snapshot from this file's last build)
+- MCP server: https://minddump-mcp.kuberhob.workers.dev/mcp (streamable HTTP; tools: list_posts, search_posts, get_post, get_blog_info)
+- Raw markdown mirrors: any post URL + \`.md\`
 - RSS: https://kuber.studio/blog/index.xml
 - Sitemap: https://kuber.studio/blog/sitemap.xml
 - Source: https://github.com/Kuberwastaken/blog
