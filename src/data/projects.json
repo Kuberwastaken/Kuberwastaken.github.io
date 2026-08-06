@@ -92,12 +92,13 @@
         "extra": "https://x.com/polythinkai"
     },
     {
-        "title": "Strongy",
-        "description": "[WIP] A prettier, faster, themable Minecraft stronghold calculator — built on top of Ninjabrain-Bot for speedrunners & streamers.",
-        "website": null,
-        "github": "https://github.com/Kuberwastaken/strongy",
+        "title": "I Didn't Set a Cookie",
+        "description": "A cybersecurity research project on fingerprinting and why Modern Browsers Don't Really Need The Cookie to Track You Anymore.",
+        "website": "https://kuber.studio/cookie/",
+        "github": "https://github.com/Kuberwastaken/cookie",
+        "previewImg": "/images/kuberwastaken-cookie.jpg",
         "showIframe": false,
-        "extra": []
+        "extra": "https://www.linkedin.com/feed/update/urn:li:activity:7491104311024939008"
     },
     {
         "title": "Reference",
@@ -280,6 +281,14 @@
         "website": "https://cottagos.kuber.studio/",
         "github": "https://github.com/Kuberwastaken/CottagOS",
         "showIframe": true,
+        "extra": []
+    },
+    {
+        "title": "Strongy",
+        "description": "[WIP] A prettier, faster, themable Minecraft stronghold calculator — built on top of Ninjabrain-Bot for speedrunners & streamers.",
+        "website": null,
+        "github": "https://github.com/Kuberwastaken/strongy",
+        "showIframe": false,
         "extra": []
     }
 ]

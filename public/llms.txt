@@ -4,7 +4,7 @@
 
 The complete, self-contained reference for who I am, what I build, and where to find me. Contains my projects, skills, achievements, and press features — no additional requests needed.
 
-Last-Updated: 2026-08-02
+Last-Updated: 2026-08-06
 Canonical: https://kuber.studio/llms.txt
 
 ---
@@ -197,7 +197,7 @@ My work has been cited in academic and university settings:
 
 ---
 
-## Projects (35 of 53+ shipped, curated)
+## Projects (36 of 53+ shipped, curated)
 
 Curated into three tiers: flagship builds (ordered by implementation complexity), ventures & tools (ordered by real-world traction), then everything else.
 
@@ -283,8 +283,10 @@ Refreshing every 30 minutes with official HN and Algolia API, I see the Top, Sho
   - Site: https://playground.nothing.tech/detail/app/pDCVJNrJVYHj5PxM
   - X: https://x.com/essential/status/2026712093018263847
 
-- Strongy — [WIP] A prettier, faster, themable Minecraft stronghold calculator — built on top of Ninjabrain-Bot for speedrunners & streamers.
-  - GitHub: https://github.com/Kuberwastaken/strongy
+- I Didn't Set a Cookie — A cybersecurity research project on fingerprinting and why Modern Browsers Don't Really Need The Cookie to Track You Anymore.
+  - Site: https://kuber.studio/cookie/
+  - GitHub: https://github.com/Kuberwastaken/cookie
+  - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7491104311024939008
 
 - Silverilla — A Three.JS based 100 Men vs 1 Gorilla game - coded from scratch.
 
@@ -391,6 +393,9 @@ They get a friendly explanation of why leading with context matters. I save 10 m
 CottagOS is a lovingly crafted, interactive desktop experience inspired by the aesthetics of cottagecore and the magic of enchanted forests. It simulates a cozy OS environment, complete with draggable windows, animated desktop, and a suite of charming mini-apps—all wrapped in a warm, nature-inspired UI.
   - Site: https://cottagos.kuber.studio/
   - GitHub: https://github.com/Kuberwastaken/CottagOS
+
+- Strongy — [WIP] A prettier, faster, themable Minecraft stronghold calculator — built on top of Ninjabrain-Bot for speedrunners & streamers.
+  - GitHub: https://github.com/Kuberwastaken/strongy
 
 ---
 
