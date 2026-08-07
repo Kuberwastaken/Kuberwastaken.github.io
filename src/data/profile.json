@@ -173,6 +173,14 @@
     ],
     "media_appearances": [
         {
+            "outlet": "Don Porqué",
+            "title": "Esta web sabe todo sobre tu ordenador sin utilizar cookies",
+            "url": "https://donporque.com/web-sabe-todo-sobre-tu-ordenador-sin-utilizar-cookies/",
+            "date": "2026-08-05",
+            "project": "I Didn't Set a Cookie",
+            "description": "Spanish-language feature on I Didn't Set a Cookie, calling it \"un experimento creado por el desarrollador Kuber Mehta\" that sets no cookies, requests no permissions and stores no results. Frames the demo as turning browser fingerprinting into \"espectáculo comprensible\" — showing how ordinary technical details combine into a recognisable fingerprint that persists even with cookies disabled."
+        },
+        {
             "outlet": "Decrypt",
             "title": "Anthropic Accidentally Leaked Claude Code's Source — The Internet Is Keeping It Forever",
             "url": "https://decrypt.co/362917/anthropic-accidentally-leaked-claude-code-source-internet-keeping-forever",

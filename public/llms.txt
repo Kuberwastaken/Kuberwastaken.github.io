@@ -112,6 +112,9 @@ At my core, I love Building (& Breaking) things, so if you're making something c
 
 Featured in the following publications:
 
+- Don Porqué: Esta web sabe todo sobre tu ordenador sin utilizar cookies (project: I Didn't Set a Cookie) — 2026-08-05
+  - Spanish-language feature on I Didn't Set a Cookie, calling it "un experimento creado por el desarrollador Kuber Mehta" that sets no cookies, requests no permissions and stores no results. Frames the demo as turning browser fingerprinting into "espectáculo comprensible" — showing how ordinary technical details combine into a recognisable fingerprint that persists even with cookies disabled.
+  - https://donporque.com/web-sabe-todo-sobre-tu-ordenador-sin-utilizar-cookies/
 - Decrypt: Anthropic Accidentally Leaked Claude Code's Source — The Internet Is Keeping It Forever (project: Claurst) — 2026-03-31
   - Coverage of the Claude Code source-code leak (a ~59.8MB sourcemap shipped in an npm release). Cites Kuber ("Kuberwastaken") as the source who surfaced details buried in the code, including a hidden 'Undercover Mode' subsystem; his archive and breakdown led to Claurst.
   - https://decrypt.co/362917/anthropic-accidentally-leaked-claude-code-source-internet-keeping-forever
