@@ -46,6 +46,7 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 - 20+ hackathons participated
 
 ## Press & media
+- **Don Porqué**: Esta web sabe todo sobre tu ordenador sin utilizar cookies — https://donporque.com/web-sabe-todo-sobre-tu-ordenador-sin-utilizar-cookies/
 - **Decrypt**: Anthropic Accidentally Leaked Claude Code's Source — The Internet Is Keeping It Forever — https://decrypt.co/362917/anthropic-accidentally-leaked-claude-code-source-internet-keeping-forever
 - **Prism News**: Developers Race to Build Rust Ports After Claude Code Source Leak — https://www.prismnews.com/hobbies/rust-programming/developers-race-to-build-rust-ports-after-claude-code
 - **The Independent**: AIs are chatting with each other in the weirdest corner of the internet. Or are they? — https://www.independent.co.uk/tech/moltbook-ai-reddit-social-media-chat-b2915460.html
