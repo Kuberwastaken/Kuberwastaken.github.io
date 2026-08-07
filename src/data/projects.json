@@ -108,12 +108,11 @@
         "showIframe": false
     },
     {
-        "title": "Silverilla",
-        "description": "A Three.JS based 100 Men vs 1 Gorilla game - coded from scratch.\n\nSeed based map generation, custom NPC behaviors and multiple crafting and attack sequences powered by Gemini 3 Pro.",
-        "website": "https://silverilla.kuber.studio/",
-        "github": null,
-        "showIframe": true,
-        "extra": "https://x.com/kuberwastaken/status/2002013125688889852"
+        "title": "MindDump",
+        "description": "My Blog website that syncs from my Obsidian Vault! Made from a forked, custom version of Quartz \n\n It's extremely customizable and a little corner of the internet where I can express my thoughts freely. Now at 50-100k readers per month.",
+        "website": "https://kuber.studio/blog/",
+        "github": "https://github.com/Kuberwastaken/blog",
+        "extra": []
     },
     {
         "title": "MEOW",
@@ -205,11 +204,12 @@
         "extra": "https://colab.research.google.com/github/Kuberwastaken/sweeta/blob/main/colab_file/Sweeta_Colab.ipynb"
     },
     {
-        "title": "MindDump",
-        "description": "My Blog website that syncs from my Obsidian Vault! Made from a forked, custom version of Quartz \n\n It's extremely customizable and a little corner of the internet where I can express my thoughts freely. Now at 50-100k readers per month.",
-        "website": "https://kuber.studio/blog/",
-        "github": "https://github.com/Kuberwastaken/blog",
-        "extra": []
+        "title": "Silverilla",
+        "description": "A Three.JS based 100 Men vs 1 Gorilla game - coded from scratch.\n\nSeed based map generation, custom NPC behaviors and multiple crafting and attack sequences powered by Gemini 3 Pro.",
+        "website": "https://silverilla.kuber.studio/",
+        "github": null,
+        "showIframe": true,
+        "extra": "https://x.com/kuberwastaken/status/2002013125688889852"
     },
     {
         "title": "Engram",
