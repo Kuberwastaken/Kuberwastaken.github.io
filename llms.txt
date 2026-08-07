@@ -288,11 +288,11 @@ Refreshing every 30 minutes with official HN and Algolia API, I see the Top, Sho
   - GitHub: https://github.com/Kuberwastaken/cookie
   - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7491104311024939008
 
-- Silverilla — A Three.JS based 100 Men vs 1 Gorilla game - coded from scratch.
+- MindDump — My Blog website that syncs from my Obsidian Vault! Made from a forked, custom version of Quartz 
 
-Seed based map generation, custom NPC behaviors and multiple crafting and attack sequences powered by Gemini 3 Pro.
-  - Site: https://silverilla.kuber.studio/
-  - X: https://x.com/kuberwastaken/status/2002013125688889852
+ It's extremely customizable and a little corner of the internet where I can express my thoughts freely. Now at 50-100k readers per month.
+  - Site: https://kuber.studio/blog/
+  - GitHub: https://github.com/Kuberwastaken/blog
 
 - Berghain Challenge Algorithms — My Algorithms, tweaks and Solutions that got me to #16/30,000+ in the viral Berghain Challenge by Listenlabs
   - Site: https://berghain.challenges.listenlabs.ai/
@@ -339,11 +339,11 @@ It mimics the capabilities of the original agent, allowing users to run custom d
 Released with Spica to extend AI video generation endlessly, both Released <72 hours after Sora 2 release
   - GitHub: https://github.com/kuberwastaken/sweeta
 
-- MindDump — My Blog website that syncs from my Obsidian Vault! Made from a forked, custom version of Quartz 
+- Silverilla — A Three.JS based 100 Men vs 1 Gorilla game - coded from scratch.
 
- It's extremely customizable and a little corner of the internet where I can express my thoughts freely. Now at 50-100k readers per month.
-  - Site: https://kuber.studio/blog/
-  - GitHub: https://github.com/Kuberwastaken/blog
+Seed based map generation, custom NPC behaviors and multiple crafting and attack sequences powered by Gemini 3 Pro.
+  - Site: https://silverilla.kuber.studio/
+  - X: https://x.com/kuberwastaken/status/2002013125688889852
 
 - Engram — The centralized, No BS, Biggest Open-Source Notes and Resources Aggregator for IP University Engineering
   - Site: https://engram.kuber.studio/

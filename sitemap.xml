@@ -173,12 +173,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://silverilla.kuber.studio/</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://scorpius.kuber.studio/</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -192,6 +186,12 @@
   </url>
   <url>
     <loc>https://minilms.kuber.studio/</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://silverilla.kuber.studio/</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
