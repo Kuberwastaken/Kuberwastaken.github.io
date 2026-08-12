@@ -1,10 +1,10 @@
 # llms.txt — Kuber Mehta
 
-> **New (July 2026)**: Disproving WOWII Conjectures 63 & 85 with Agentic Loops — two graph theory problems open for 22+ years, both refuted by the same counterexample graph, C5[K4], found with GPT 5.6 Terra Medium running in Claurst. Post: https://x.com/kuberwastaken/status/2080363523167981886 · Formal-conjectures PR: https://github.com/google-deepmind/formal-conjectures/pull/4592
+> **New (July 2026)**: Disproving WOWII Conjectures 63 & 85 with Agentic Loops — two graph theory problems open for 22+ years, both refuted by the same counterexample graph, C5[K4], found with GPT 5.6 Terra Medium running in Claurst. Post: https://x.com/kuberwastaken/status/2080363523167981886 · Merged into Google DeepMind's formal-conjectures: https://github.com/google-deepmind/formal-conjectures/pull/4592
 
 The complete, self-contained reference for who I am, what I build, and where to find me. Contains my projects, skills, achievements, and press features — no additional requests needed.
 
-Last-Updated: 2026-08-07
+Last-Updated: 2026-08-12
 Canonical: https://kuber.studio/llms.txt
 
 ---
@@ -212,7 +212,7 @@ Ordered by implementation complexity:
   - Site: https://claurst.kuber.studio
   - GitHub: https://github.com/Kuberwastaken/claurst/
 
-- Disproving WOWII Conjectures 63 & 85 with Agentic Loops — Disproved two graph theory conjectures that had been open for 22+ years, with agentic loops running GPT 5.6 Terra Medium in Claurst.
+- Disproving WOWII Conjectures 63 & 85 with Agentic Loops — Disproved two graph theory conjectures that had been open for 22+ years, with agentic loops running GPT 5.6 Terra Medium in Claurst. Now merged into Google DeepMind's formal-conjectures.
   - GitHub: https://github.com/google-deepmind/formal-conjectures/pull/4592
   - X: https://x.com/kuberwastaken/status/2080363523167981886
 
@@ -454,6 +454,7 @@ All posts, newest first within each section:
 
 ### Reflections
 
+- [Humanising LLM Outputs is Dumb](https://kuber.studio/blog/Reflections/Humanising-LLM-Outputs-is-Actually-Dumb): 2026-08-10 — The largest tell for me to tell where culture and sentiment is shifting for AI tools is usually X, viral GitHub repositories and Hacker News. One of these tells I’ve been seeing a lot lately is skills like I have ADHD and Agents.md instructions such as giving outputs in only ASD-STE100 Simplified Technical English.
 - [Ageusia](https://kuber.studio/blog/Reflections/Ageusia): 2026-05-30 — For a long time, the hard part of making things on the internet was making them at all. If you wanted a website, you learned HTML and CSS. If you wanted it to do something, you learned JavaScript.
 - [I'm Scared About Biological Computing](https://kuber.studio/blog/Reflections/I'm-Scared-About-Biological-Computing): 2026-05-05 — I’ve been in the AI space since ChatGPT first dropped. I’ve toyed around with a lot of Language Models, built random side projects, built a couple from scratch and I’ve spent hours looking at the math behind it all.
 - [Clawdbot will be dead in a month](https://kuber.studio/blog/Reflections/Clawdbot-will-be-dead-in-a-month): 2026-01-28 — Your timeline knows it’s great. Every demo is really cool. None of that matters because running it costs $30+ a day to run and 99% of the people geeking over it are not going to pay that (me included) We’re in a really fun phase with AI right now, as the subsidization for model costs decreases further, you’re going to notice this pattern.
