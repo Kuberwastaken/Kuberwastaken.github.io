@@ -137,7 +137,7 @@
     {
       "name": "Disproving WOWII Conjectures 63 & 85 with Agentic Loops",
       "status": "Active",
-      "description": "Disproved two graph theory conjectures that had been open for 22+ years, with agentic loops running GPT 5.6 Terra Medium in Claurst.",
+      "description": "Disproved two graph theory conjectures that had been open for 22+ years, with agentic loops running GPT 5.6 Terra Medium in Claurst. Now merged into Google DeepMind's formal-conjectures.",
       "github": "https://github.com/google-deepmind/formal-conjectures/pull/4592"
     },
     {
@@ -411,5 +411,5 @@
       "Mobile responsive design"
     ]
   },
-  "last_updated": "2026-08-07"
+  "last_updated": "2026-08-12"
 }
