@@ -46,6 +46,8 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 - 20+ hackathons participated
 
 ## Press & media
+- **20minutos**: Esta web demuestra que pueden identificarte en internet sin usar ni una sola cookie — https://www.20minutos.es/tecnologia/ciberseguridad/esta-web-demuestra-pueden-identificarte-internet-sin-usar-ni-una-sola-cookie_7023192_0.html
+- **Microsiervos**: «Mira mamá, sin cookies»: una web que revela todo lo que un sitio web que se visita puede saber de ti y además te explica cómo lo hace — https://www.microsiervos.com/archivo/internet/sin-cookies-visitas-datos-fingerprinting.html
 - **Don Porqué**: Esta web sabe todo sobre tu ordenador sin utilizar cookies — https://donporque.com/web-sabe-todo-sobre-tu-ordenador-sin-utilizar-cookies/
 - **Decrypt**: Anthropic Accidentally Leaked Claude Code's Source — The Internet Is Keeping It Forever — https://decrypt.co/362917/anthropic-accidentally-leaked-claude-code-source-internet-keeping-forever
 - **Prism News**: Developers Race to Build Rust Ports After Claude Code Source Leak — https://www.prismnews.com/hobbies/rust-programming/developers-race-to-build-rust-ports-after-claude-code
