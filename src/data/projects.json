@@ -93,7 +93,7 @@
     },
     {
         "title": "I Didn't Set a Cookie",
-        "description": "A cybersecurity research project on fingerprinting and why Modern Browsers Don't Really Need The Cookie to Track You Anymore.",
+        "description": "Listed in the [Privacy entry on FMHY](https://fmhy.net/privacy) and featured in [Microsiervos](https://www.microsiervos.com/archivo/internet/sin-cookies-visitas-datos-fingerprinting.html) and [20minutos](https://www.20minutos.es/tecnologia/ciberseguridad/esta-web-demuestra-pueden-identificarte-internet-sin-usar-ni-una-sola-cookie_7023192_0.html) — a cybersecurity research project on fingerprinting and why Modern Browsers Don't Really Need The Cookie to Track You Anymore.",
         "website": "https://kuber.studio/cookie/",
         "github": "https://github.com/Kuberwastaken/cookie",
         "previewImg": "/images/kuberwastaken-cookie.jpg",
