@@ -215,6 +215,22 @@
   ],
   "media_appearances": [
     {
+      "outlet": "20minutos",
+      "title": "Esta web demuestra que pueden identificarte en internet sin usar ni una sola cookie",
+      "url": "https://www.20minutos.es/tecnologia/ciberseguridad/esta-web-demuestra-pueden-identificarte-internet-sin-usar-ni-una-sola-cookie_7023192_0.html",
+      "date": "2026-08-08",
+      "project": "I Didn't Set a Cookie",
+      "description": "Feature in 20minutos, one of Spain's biggest national dailies, on I Didn't Set a Cookie — demonstrating that websites can identify you on the internet without a single cookie, by combining ordinary browser and device details into a fingerprint."
+    },
+    {
+      "outlet": "Microsiervos",
+      "title": "«Mira mamá, sin cookies»: una web que revela todo lo que un sitio web que se visita puede saber de ti y además te explica cómo lo hace",
+      "url": "https://www.microsiervos.com/archivo/internet/sin-cookies-visitas-datos-fingerprinting.html",
+      "date": "2026-08-05",
+      "project": "I Didn't Set a Cookie",
+      "description": "Feature on Microsiervos, one of Spain's longest-running tech blogs, calling I Didn't Set a Cookie \"un proyecto de esos de fin de semana de Kuber Mehta\" — a site that reveals everything a website you visit can know about you without cookies, and explains how it does it."
+    },
+    {
       "outlet": "Don Porqué",
       "title": "Esta web sabe todo sobre tu ordenador sin utilizar cookies",
       "url": "https://donporque.com/web-sabe-todo-sobre-tu-ordenador-sin-utilizar-cookies/",
