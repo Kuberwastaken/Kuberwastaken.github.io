@@ -19,7 +19,7 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 
 ## Key projects
 - **Claurst** — Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. Hit 7k stars in its first week (10k+ now) & GitHub trending on 31 March 2026. ([site](https://claurst.kuber.studio), [code](https://github.com/Kuberwastaken/claurst/))
-- **Disproving WOWII Conjectures 63 & 85 with Agentic Loops** — Disproved two graph theory conjectures that had been open for 22+ years, with agentic loops running GPT 5.6 Terra Medium in Claurst. ([code](https://github.com/google-deepmind/formal-conjectures/pull/4592))
+- **Disproving WOWII Conjectures 63 & 85 with Agentic Loops** — Disproved two graph theory conjectures that had been open for 22+ years, with agentic loops running GPT 5.6 Terra Medium in Claurst. Now merged into Google DeepMind's formal-conjectures. ([code](https://github.com/google-deepmind/formal-conjectures/pull/4592))
 - **DOOMme** — Running DOOM (1993) in a GitHub Readme. ([code](https://github.com/Kuberwastaken/DoomMe))
 - **Backdooms** — One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. ([site](https://kuber.studio/backdooms/), [code](https://github.com/Kuberwastaken/backdooms))
 - **TREAT** — TREAT is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable. ([code](https://github.com/Kuberwastaken/TREAT))
@@ -73,4 +73,4 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 - YouTube: https://www.youtube.com/@Kuberwastaken
 - Blog: https://kuber.studio/blog/
 
-_Last updated: 2026-08-07_
+_Last updated: 2026-08-12_
