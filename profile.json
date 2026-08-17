@@ -135,10 +135,13 @@
       "github": "https://github.com/Kuberwastaken/claurst/"
     },
     {
-      "name": "Disproving WOWII Conjectures 63 & 85 with Agentic Loops",
+      "name": "Autonomous Counterexample Discovery with Agentic Loops",
       "status": "Active",
-      "description": "Disproved two graph theory conjectures that had been open for 22+ years, with agentic loops running GPT 5.6 Terra Medium in Claurst. Now merged into Google DeepMind's formal-conjectures.",
-      "github": "https://github.com/google-deepmind/formal-conjectures/pull/4592"
+      "description": "Started by disproving two graph theory conjectures that had been open for 22+ years (WOWII 63 & 85), with agentic loops running GPT 5.6 Terra Medium in Claurst.\n\nNow an autonomous counterexample-discovery program: map finite conjectures, build a tightness map, expose the obstruction for the tight ones, deliberately separate the family — reach a new crossing. Working with Google DeepMind's formal-conjectures maintainers, 22 PRs upstream so far.",
+      "github": "https://github.com/Kuberwastaken/c5-k4",
+      "technologies": [
+        "AI/ML"
+      ]
     },
     {
       "name": "DOOMme",
@@ -214,22 +217,6 @@
     "20+ hackathons participated"
   ],
   "media_appearances": [
-    {
-      "outlet": "20minutos",
-      "title": "Esta web demuestra que pueden identificarte en internet sin usar ni una sola cookie",
-      "url": "https://www.20minutos.es/tecnologia/ciberseguridad/esta-web-demuestra-pueden-identificarte-internet-sin-usar-ni-una-sola-cookie_7023192_0.html",
-      "date": "2026-08-08",
-      "project": "I Didn't Set a Cookie",
-      "description": "Feature in 20minutos, one of Spain's biggest national dailies, on I Didn't Set a Cookie — demonstrating that websites can identify you on the internet without a single cookie, by combining ordinary browser and device details into a fingerprint."
-    },
-    {
-      "outlet": "Microsiervos",
-      "title": "«Mira mamá, sin cookies»: una web que revela todo lo que un sitio web que se visita puede saber de ti y además te explica cómo lo hace",
-      "url": "https://www.microsiervos.com/archivo/internet/sin-cookies-visitas-datos-fingerprinting.html",
-      "date": "2026-08-05",
-      "project": "I Didn't Set a Cookie",
-      "description": "Feature on Microsiervos, one of Spain's longest-running tech blogs, calling I Didn't Set a Cookie \"un proyecto de esos de fin de semana de Kuber Mehta\" — a site that reveals everything a website you visit can know about you without cookies, and explains how it does it."
-    },
     {
       "outlet": "Don Porqué",
       "title": "Esta web sabe todo sobre tu ordenador sin utilizar cookies",
@@ -427,5 +414,5 @@
       "Mobile responsive design"
     ]
   },
-  "last_updated": "2026-08-12"
+  "last_updated": "2026-08-17"
 }
