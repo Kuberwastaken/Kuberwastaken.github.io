@@ -1,6 +1,6 @@
 # llms.txt — Kuber Mehta
 
-> **New (August 2026)**: Autonomous Counterexample Discovery with Agentic Loops — started by disproving WOWII Conjectures 63 & 85, two graph theory problems open for 22+ years, both refuted by the same counterexample graph, C5[K4]. Now a full counterexample-discovery program: map finite conjectures, build a tightness map, expose the obstruction for the tight ones, deliberately separate the family — reach a new crossing. Working with Google DeepMind's formal-conjectures maintainers, 22 PRs upstream so far. Repo: https://github.com/Kuberwastaken/c5-k4 · Post: https://x.com/kuberwastaken/status/2080363523167981886
+> **New (August 2026)**: Autonomous Counterexample Discovery with Agentic Loops — started by disproving WOWII Conjectures 63 & 85, two graph theory problems open for 22+ years, both refuted by the same counterexample graph, C5[K4] (merged into Google DeepMind's formal-conjectures). Now a full counterexample-discovery program: map finite conjectures, build a tightness map, expose the obstruction for the tight ones, deliberately separate the family — reach a new crossing. Working with Google DeepMind's formal-conjectures maintainers, 22 PRs upstream so far. Repo: https://github.com/Kuberwastaken/c5-k4 · Post: https://x.com/kuberwastaken/status/2080363523167981886
 
 The complete, self-contained reference for who I am, what I build, and where to find me. Contains my projects, skills, achievements, and press features — no additional requests needed.
 
@@ -112,6 +112,12 @@ At my core, I love Building (& Breaking) things, so if you're making something c
 
 Featured in the following publications:
 
+- 20minutos: Esta web demuestra que pueden identificarte en internet sin usar ni una sola cookie (project: I Didn't Set a Cookie) — 2026-08-08
+  - Feature in 20minutos, one of Spain's biggest national dailies, on I Didn't Set a Cookie — demonstrating that websites can identify you on the internet without a single cookie, by combining ordinary browser and device details into a fingerprint.
+  - https://www.20minutos.es/tecnologia/ciberseguridad/esta-web-demuestra-pueden-identificarte-internet-sin-usar-ni-una-sola-cookie_7023192_0.html
+- Microsiervos: «Mira mamá, sin cookies»: una web que revela todo lo que un sitio web que se visita puede saber de ti y además te explica cómo lo hace (project: I Didn't Set a Cookie) — 2026-08-05
+  - Feature on Microsiervos, one of Spain's longest-running tech blogs, calling I Didn't Set a Cookie "un proyecto de esos de fin de semana de Kuber Mehta" — a site that reveals everything a website you visit can know about you without cookies, and explains how it does it.
+  - https://www.microsiervos.com/archivo/internet/sin-cookies-visitas-datos-fingerprinting.html
 - Don Porqué: Esta web sabe todo sobre tu ordenador sin utilizar cookies (project: I Didn't Set a Cookie) — 2026-08-05
   - Spanish-language feature on I Didn't Set a Cookie, calling it "un experimento creado por el desarrollador Kuber Mehta" that sets no cookies, requests no permissions and stores no results. Frames the demo as turning browser fingerprinting into "espectáculo comprensible" — showing how ordinary technical details combine into a recognisable fingerprint that persists even with cookies disabled.
   - https://donporque.com/web-sabe-todo-sobre-tu-ordenador-sin-utilizar-cookies/
@@ -288,7 +294,7 @@ Refreshing every 30 minutes with official HN and Algolia API, I see the Top, Sho
   - Site: https://playground.nothing.tech/detail/app/pDCVJNrJVYHj5PxM
   - X: https://x.com/essential/status/2026712093018263847
 
-- I Didn't Set a Cookie — A cybersecurity research project on fingerprinting and why Modern Browsers Don't Really Need The Cookie to Track You Anymore.
+- I Didn't Set a Cookie — Listed in the [Privacy entry on FMHY](https://fmhy.net/privacy) and featured in [Microsiervos](https://www.microsiervos.com/archivo/internet/sin-cookies-visitas-datos-fingerprinting.html) and [20minutos](https://www.20minutos.es/tecnologia/ciberseguridad/esta-web-demuestra-pueden-identificarte-internet-sin-usar-ni-una-sola-cookie_7023192_0.html) — a cybersecurity research project on fingerprinting and why Modern Browsers Don't Really Need The Cookie to Track You Anymore.
   - Site: https://kuber.studio/cookie/
   - GitHub: https://github.com/Kuberwastaken/cookie
   - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7491104311024939008
