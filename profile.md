@@ -19,7 +19,7 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 
 ## Key projects
 - **Claurst** — Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. Hit 7k stars in its first week (10k+ now) & GitHub trending on 31 March 2026. ([site](https://claurst.kuber.studio), [code](https://github.com/Kuberwastaken/claurst/))
-- **Disproving WOWII Conjectures 63 & 85 with Agentic Loops** — Disproved two graph theory conjectures that had been open for 22+ years, with agentic loops running GPT 5.6 Terra Medium in Claurst. Now merged into Google DeepMind's formal-conjectures. ([code](https://github.com/google-deepmind/formal-conjectures/pull/4592))
+- **Autonomous Counterexample Discovery with Agentic Loops** — Started by disproving two graph theory conjectures that had been open for 22+ years (WOWII 63 & 85), with agentic loops running GPT 5.6 Terra Medium in Claurst. ([code](https://github.com/Kuberwastaken/c5-k4))
 - **DOOMme** — Running DOOM (1993) in a GitHub Readme. ([code](https://github.com/Kuberwastaken/DoomMe))
 - **Backdooms** — One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. ([site](https://kuber.studio/backdooms/), [code](https://github.com/Kuberwastaken/backdooms))
 - **TREAT** — TREAT is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable. ([code](https://github.com/Kuberwastaken/TREAT))
@@ -46,8 +46,6 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 - 20+ hackathons participated
 
 ## Press & media
-- **20minutos**: Esta web demuestra que pueden identificarte en internet sin usar ni una sola cookie — https://www.20minutos.es/tecnologia/ciberseguridad/esta-web-demuestra-pueden-identificarte-internet-sin-usar-ni-una-sola-cookie_7023192_0.html
-- **Microsiervos**: «Mira mamá, sin cookies»: una web que revela todo lo que un sitio web que se visita puede saber de ti y además te explica cómo lo hace — https://www.microsiervos.com/archivo/internet/sin-cookies-visitas-datos-fingerprinting.html
 - **Don Porqué**: Esta web sabe todo sobre tu ordenador sin utilizar cookies — https://donporque.com/web-sabe-todo-sobre-tu-ordenador-sin-utilizar-cookies/
 - **Decrypt**: Anthropic Accidentally Leaked Claude Code's Source — The Internet Is Keeping It Forever — https://decrypt.co/362917/anthropic-accidentally-leaked-claude-code-source-internet-keeping-forever
 - **Prism News**: Developers Race to Build Rust Ports After Claude Code Source Leak — https://www.prismnews.com/hobbies/rust-programming/developers-race-to-build-rust-ports-after-claude-code
@@ -75,4 +73,4 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 - YouTube: https://www.youtube.com/@Kuberwastaken
 - Blog: https://kuber.studio/blog/
 
-_Last updated: 2026-08-12_
+_Last updated: 2026-08-17_
