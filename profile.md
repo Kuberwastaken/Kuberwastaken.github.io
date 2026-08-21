@@ -19,7 +19,8 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 
 ## Key projects
 - **Claurst** — Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. Hit 7k stars in its first week (10k+ now) & GitHub trending on 31 March 2026. ([site](https://claurst.kuber.studio), [code](https://github.com/Kuberwastaken/claurst/))
-- **Autonomous Counterexample Discovery with Agentic Loops** — Started by disproving two graph theory conjectures that had been open for 22+ years (WOWII 63 & 85), with agentic loops running GPT 5.6 Terra Medium in Claurst. ([code](https://github.com/Kuberwastaken/c5-k4))
+- **Autonomous Counterexample Discovery with Agentic Loops** — Disproved 2 graph theory conjectures open for 22+ years (WOWII 63 & 85) with agentic loops running GPT 5.6 Terra Medium in Claurst — now an autonomous counterexample-discovery program working with Google DeepMind's formal-conjectures maintainers, 22 PRs upstream so far. ([code](https://github.com/Kuberwastaken/c5-k4))
+- **The macOS Driver HP Never Wrote** — Just wanted to save the HP Laser 1008a we have at home — it never had a non-Windows driver — so I sat with Claude and wrote one: now a fully native Apple Silicon driver (patched SpliX CUPS filter + a tiny IOKit USB helper) that makes Cmd+P work from any app. ([code](https://github.com/Kuberwastaken/hp-laser-1008a-macos))
 - **DOOMme** — Running DOOM (1993) in a GitHub Readme. ([code](https://github.com/Kuberwastaken/DoomMe))
 - **Backdooms** — One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. ([site](https://kuber.studio/backdooms/), [code](https://github.com/Kuberwastaken/backdooms))
 - **TREAT** — TREAT is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable. ([code](https://github.com/Kuberwastaken/TREAT))
@@ -27,7 +28,6 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 - **MEOW** — The most Purr-fect Image File Format for your AI workflows, PNG on steroids. ([code](https://github.com/Kuberwastaken/meow))
 - **ClawX** — The social network for AI agents. ([site](https://clawx.kuber.studio))
 - **Litmus** — Run a Parallel Autonomous ML Research Organization on your OpenClaw instance. Shipped <12 Hours, MIT License ([site](https://litmus.kuber.studio/), [code](https://github.com/kuberwastaken/litmus))
-- **Reference** — An MCP server that lets your AI agents search each other's past sessions ([code](https://github.com/Kuberwastaken/reference))
 
 ## Skills
 - **Languages**: Python, C, .NET, C#, Lua, JavaScript, TypeScript, R, HTML, CSS, SCSS
@@ -46,6 +46,15 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 - 20+ hackathons participated
 
 ## Press & media
+- **Tom's Hardware**: Dev uses Claude AI to create native macOS driver for 'obscure' Windows-only printer — Linux container hack enables system-wide Cmd-P printing, driver now available on GitHub — https://www.tomshardware.com/tech-industry/artificial-intelligence/dev-uses-claude-ai-to-create-native-macos-driver-for-obscure-windows-only-printer-linux-container-hack-enables-system-wide-cmd-p-printing-driver-now-available-on-github
+- **The Register**: Dev taps Claude Code to craft custom printer driver for macOS — https://www.theregister.com/ai-and-ml/2026/08/19/dev-taps-claude-code-to-craft-custom-printer-driver-for-macos/5289875
+- **Neowin**: Teen dev vibe codes working macOS driver for Windows-only HP printer — https://www.neowin.net/news/teen-dev-vibe-codes-working-macos-driver-for-windows-only-hp-printer/
+- **wccftech**: Claude AI Writes macOS Driver For Incompatible Windows-Only HP Printer — https://wccftech.com/claude-ai-writes-macos-driver-incompatible-windows-hp-printer/
+- **Moneycontrol**: Man uses Claude to install a driver for an unsupported printer on Mac: AI spends hours getting HP Laser 1008a to work — https://www.moneycontrol.com/technology/man-uses-claude-to-install-a-driver-for-an-unsupported-printer-on-mac-ai-spends-hours-getting-hp-laser-1008a-to-work-article-14010531.html
+- **Korben**: His HP printer finally prints on Mac — Thanks to Claude Code — https://korben.info/en/hp-printer-mac-driver-claude-code.html
+- **BigGo Finance**: Developer Uses Claude AI to Build macOS Driver for Windows-Only HP Laser Printer — https://finance.biggo.com/news/bcf2e8f7-98d7-4153-afb7-7b0c241e318f
+- **Duck-IT Tech News**: Claude Helps Build macOS Driver Support for HP Laser 1008a — https://www.duckittech.com/news/claude-helps-build-macos-support-for-an-hp-printer-that-never-had-a-mac-driver
+- **explainx.ai**: AI Printer Drivers: The Problem Models Were Made For — https://explainx.ai/blog/ai-macos-printer-driver-abandoned-hardware-august-2026
 - **20minutos**: Esta web demuestra que pueden identificarte en internet sin usar ni una sola cookie — https://www.20minutos.es/tecnologia/ciberseguridad/esta-web-demuestra-pueden-identificarte-internet-sin-usar-ni-una-sola-cookie_7023192_0.html
 - **Microsiervos**: «Mira mamá, sin cookies»: una web que revela todo lo que un sitio web que se visita puede saber de ti y además te explica cómo lo hace — https://www.microsiervos.com/archivo/internet/sin-cookies-visitas-datos-fingerprinting.html
 - **Don Porqué**: Esta web sabe todo sobre tu ordenador sin utilizar cookies — https://donporque.com/web-sabe-todo-sobre-tu-ordenador-sin-utilizar-cookies/
@@ -75,4 +84,4 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 - YouTube: https://www.youtube.com/@Kuberwastaken
 - Blog: https://kuber.studio/blog/
 
-_Last updated: 2026-08-17_
+_Last updated: 2026-08-21_
