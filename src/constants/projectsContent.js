@@ -154,11 +154,11 @@ const MobileProjectsCarousel = () => {
               />
             </div>
           ) : (project.previewImg || (project.title === 'Backdooms' && 'https://cdn.jsdelivr.net/gh/kuberwastaken/backdooms/public/Gameplay-GIF.gif')) ? (
-            <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: project.title === 'HN-Digest' ? '#000' : project.title === 'Autonomous Counterexample Discovery with Agentic Loops' ? '#fff' : 'transparent' }}>
+            <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: project.title === 'HN-Digest' ? '#000' : (project.title === 'Autonomous Counterexample Discovery with Agentic Loops' || project.title === 'The macOS Driver HP Never Wrote') ? '#fff' : 'transparent' }}>
               <img
                 src={project.previewImg?.startsWith('/images/') ? JSDELIVR_BASE + project.previewImg.replace('/images/', '') : (project.previewImg || (project.title === 'Backdooms' ? 'https://cdn.jsdelivr.net/gh/kuberwastaken/backdooms/public/Gameplay-GIF.gif' : ''))}
                 alt={project.title + ' preview'}
-                style={{ width: '100%', height: '100%', objectFit: (project.title === 'HN-Digest' || project.title === 'Autonomous Counterexample Discovery with Agentic Loops') ? 'contain' : 'cover', objectPosition: project.title === 'Megaphone' ? 'top' : 'center', display: 'block', borderRadius: 12 }}
+                style={{ width: '100%', height: '100%', objectFit: (project.title === 'HN-Digest' || project.title === 'Autonomous Counterexample Discovery with Agentic Loops' || project.title === 'The macOS Driver HP Never Wrote') ? 'contain' : 'cover', objectPosition: project.title === 'Megaphone' ? 'top' : 'center', display: 'block', borderRadius: 12 }}
               />
             </div>
           ) : null}
@@ -293,7 +293,7 @@ const ProjectsMasonry = () => {
                         overflow: 'hidden',
                         border: '1.5px solid rgba(90,187,154,0.18)',
                         boxShadow: '0 2px 16px 0 rgba(90,187,154,0.10)',
-                        background: project.title === 'HN-Digest' ? '#000' : project.title === 'Autonomous Counterexample Discovery with Agentic Loops' ? '#fff' : '#181818',
+                        background: project.title === 'HN-Digest' ? '#000' : (project.title === 'Autonomous Counterexample Discovery with Agentic Loops' || project.title === 'The macOS Driver HP Never Wrote') ? '#fff' : '#181818',
                         height: project.title === 'HN-Digest' ? 140 : 225,
                         maxWidth: '100%',
                         display: 'flex',
@@ -308,7 +308,7 @@ const ProjectsMasonry = () => {
                         style={{
                           width: '100%',
                           height: '100%',
-                          objectFit: (project.title === 'HN-Digest' || project.title === 'Autonomous Counterexample Discovery with Agentic Loops') ? 'contain' : 'cover',
+                          objectFit: (project.title === 'HN-Digest' || project.title === 'Autonomous Counterexample Discovery with Agentic Loops' || project.title === 'The macOS Driver HP Never Wrote') ? 'contain' : 'cover',
                           objectPosition: project.title === 'Megaphone' ? 'top' : 'center',
                           display: 'block',
                         }}

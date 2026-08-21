@@ -17,6 +17,15 @@
         "extra": "https://x.com/kuberwastaken/status/2080363523167981886"
     },
     {
+        "title": "The macOS Driver HP Never Wrote",
+        "description": "Just wanted to save the HP Laser 1008a we have at home — it never had a non-Windows driver — so I sat with Claude and wrote one: now a fully native Apple Silicon driver (patched SpliX CUPS filter + a tiny IOKit USB helper) that makes Cmd+P work from any app.\n\n3.5M+ views on X and [#1 on trending](https://x.com/i/trending/2089711059703857493), Aug 18 2026.\n\nCovered by [Tom's Hardware](https://www.tomshardware.com/tech-industry/artificial-intelligence/dev-uses-claude-ai-to-create-native-macos-driver-for-obscure-windows-only-printer-linux-container-hack-enables-system-wide-cmd-p-printing-driver-now-available-on-github), [The Register](https://www.theregister.com/ai-and-ml/2026/08/19/dev-taps-claude-code-to-craft-custom-printer-driver-for-macos/5289875), [Neowin](https://www.neowin.net/news/teen-dev-vibe-codes-working-macos-driver-for-windows-only-hp-printer/), [wccftech](https://wccftech.com/claude-ai-writes-macos-driver-incompatible-windows-hp-printer/) and more.",
+        "website": null,
+        "github": "https://github.com/Kuberwastaken/hp-laser-1008a-macos",
+        "previewImg": "/images/kuberwastaken-hp-printer.jpg",
+        "showIframe": false,
+        "extra": "https://x.com/kuberwastaken/status/2089377982536388964"
+    },
+    {
         "title": "PicoGPT",
         "description": "GPT in a QR Code ; The actual most atomic way to train and inference a GPT in pure, dependency-free JS/Python <35 lines of code\n\nFurther Compacted [Karpathy's work with MicroGPT](https://karpathy.github.io/2026/02/12/microgpt/) to be smaller and more resource efficient while adding native browser execution",
         "website": null,
