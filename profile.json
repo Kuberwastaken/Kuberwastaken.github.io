@@ -137,8 +137,17 @@
     {
       "name": "Autonomous Counterexample Discovery with Agentic Loops",
       "status": "Active",
-      "description": "Started by disproving two graph theory conjectures that had been open for 22+ years (WOWII 63 & 85), with agentic loops running GPT 5.6 Terra Medium in Claurst.\n\nNow an autonomous counterexample-discovery program: map finite conjectures, build a tightness map, expose the obstruction for the tight ones, deliberately separate the family — reach a new crossing. Working with Google DeepMind's formal-conjectures maintainers, 22 PRs upstream so far.",
+      "description": "Disproved 2 graph theory conjectures open for 22+ years (WOWII 63 & 85) with agentic loops running GPT 5.6 Terra Medium in Claurst — now an autonomous counterexample-discovery program working with Google DeepMind's formal-conjectures maintainers, 22 PRs upstream so far.",
       "github": "https://github.com/Kuberwastaken/c5-k4",
+      "technologies": [
+        "AI/ML"
+      ]
+    },
+    {
+      "name": "The macOS Driver HP Never Wrote",
+      "status": "Active",
+      "description": "Just wanted to save the HP Laser 1008a we have at home — it never had a non-Windows driver — so I sat with Claude and wrote one: now a fully native Apple Silicon driver (patched SpliX CUPS filter + a tiny IOKit USB helper) that makes Cmd+P work from any app.\n\n3.5M+ views on X and [#1 on trending](https://x.com/i/trending/2089711059703857493), Aug 18 2026.\n\nCovered by [Tom's Hardware](https://www.tomshardware.com/tech-industry/artificial-intelligence/dev-uses-claude-ai-to-create-native-macos-driver-for-obscure-windows-only-printer-linux-container-hack-enables-system-wide-cmd-p-printing-driver-now-available-on-github), [The Register](https://www.theregister.com/ai-and-ml/2026/08/19/dev-taps-claude-code-to-craft-custom-printer-driver-for-macos/5289875), [Neowin](https://www.neowin.net/news/teen-dev-vibe-codes-working-macos-driver-for-windows-only-hp-printer/), [wccftech](https://wccftech.com/claude-ai-writes-macos-driver-incompatible-windows-hp-printer/) and more.",
+      "github": "https://github.com/Kuberwastaken/hp-laser-1008a-macos",
       "technologies": [
         "AI/ML"
       ]
@@ -194,15 +203,6 @@
         "AI/ML",
         "Computer Vision"
       ]
-    },
-    {
-      "name": "ClawX",
-      "status": "Active",
-      "description": "The social network for AI agents.\nNow usable by Humans\n\nMade an X like interface for Humans to use Moltbook (Facebook for AI agents)\nDoubles as a pSEO aggregator with 85k+ dynamically rendered pages.",
-      "url": "https://clawx.kuber.studio",
-      "technologies": [
-        "AI/ML"
-      ]
     }
   ],
   "achievements": [
@@ -217,6 +217,78 @@
     "20+ hackathons participated"
   ],
   "media_appearances": [
+    {
+      "outlet": "Tom's Hardware",
+      "title": "Dev uses Claude AI to create native macOS driver for 'obscure' Windows-only printer — Linux container hack enables system-wide Cmd-P printing, driver now available on GitHub",
+      "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/dev-uses-claude-ai-to-create-native-macos-driver-for-obscure-windows-only-printer-linux-container-hack-enables-system-wide-cmd-p-printing-driver-now-available-on-github",
+      "date": "2026-08-19",
+      "project": "The macOS Driver HP Never Wrote",
+      "description": "Tom's Hardware feature on the HP Laser 1008a macOS driver written with Claude — from the initial Linux-container hack to system-wide Cmd+P printing, with the driver published on GitHub."
+    },
+    {
+      "outlet": "The Register",
+      "title": "Dev taps Claude Code to craft custom printer driver for macOS",
+      "url": "https://www.theregister.com/ai-and-ml/2026/08/19/dev-taps-claude-code-to-craft-custom-printer-driver-for-macos/5289875",
+      "date": "2026-08-19",
+      "project": "The macOS Driver HP Never Wrote",
+      "description": "The Register on using Claude Code to build a custom macOS driver for a printer HP never supported on Mac."
+    },
+    {
+      "outlet": "Neowin",
+      "title": "Teen dev vibe codes working macOS driver for Windows-only HP printer",
+      "url": "https://www.neowin.net/news/teen-dev-vibe-codes-working-macos-driver-for-windows-only-hp-printer/",
+      "date": "2026-08-20",
+      "project": "The macOS Driver HP Never Wrote",
+      "description": "Neowin coverage of the working macOS driver vibe-coded for the Windows-only HP Laser 1008a."
+    },
+    {
+      "outlet": "wccftech",
+      "title": "Claude AI Writes macOS Driver For Incompatible Windows-Only HP Printer",
+      "url": "https://wccftech.com/claude-ai-writes-macos-driver-incompatible-windows-hp-printer/",
+      "date": "2026-08-19",
+      "project": "The macOS Driver HP Never Wrote",
+      "description": "wccftech on Claude writing a macOS driver for an incompatible, Windows-only HP printer."
+    },
+    {
+      "outlet": "Moneycontrol",
+      "title": "Man uses Claude to install a driver for an unsupported printer on Mac: AI spends hours getting HP Laser 1008a to work",
+      "url": "https://www.moneycontrol.com/technology/man-uses-claude-to-install-a-driver-for-an-unsupported-printer-on-mac-ai-spends-hours-getting-hp-laser-1008a-to-work-article-14010531.html",
+      "date": "2026-08-19",
+      "project": "The macOS Driver HP Never Wrote",
+      "description": "Moneycontrol story on the hours-long Claude session that got the unsupported HP Laser 1008a printing on a Mac."
+    },
+    {
+      "outlet": "Korben",
+      "title": "His HP printer finally prints on Mac — Thanks to Claude Code",
+      "url": "https://korben.info/en/hp-printer-mac-driver-claude-code.html",
+      "date": "2026-08-19",
+      "project": "The macOS Driver HP Never Wrote",
+      "description": "Korben (major French tech blog) on the HP printer finally printing on Mac thanks to a driver written with Claude Code."
+    },
+    {
+      "outlet": "BigGo Finance",
+      "title": "Developer Uses Claude AI to Build macOS Driver for Windows-Only HP Laser Printer",
+      "url": "https://finance.biggo.com/news/bcf2e8f7-98d7-4153-afb7-7b0c241e318f",
+      "date": "2026-08-19",
+      "project": "The macOS Driver HP Never Wrote",
+      "description": "BigGo Finance coverage of the Claude-built macOS driver for the Windows-only HP laser printer."
+    },
+    {
+      "outlet": "Duck-IT Tech News",
+      "title": "Claude Helps Build macOS Driver Support for HP Laser 1008a",
+      "url": "https://www.duckittech.com/news/claude-helps-build-macos-support-for-an-hp-printer-that-never-had-a-mac-driver",
+      "date": "2026-08-19",
+      "project": "The macOS Driver HP Never Wrote",
+      "description": "Duck-IT Tech News on Claude helping build macOS support for an HP printer that never had a Mac driver."
+    },
+    {
+      "outlet": "explainx.ai",
+      "title": "AI Printer Drivers: The Problem Models Were Made For",
+      "url": "https://explainx.ai/blog/ai-macos-printer-driver-abandoned-hardware-august-2026",
+      "date": "2026-08-20",
+      "project": "The macOS Driver HP Never Wrote",
+      "description": "explainx.ai essay using the HP Laser 1008a macOS driver as a case study for AI rescuing abandoned hardware."
+    },
     {
       "outlet": "20minutos",
       "title": "Esta web demuestra que pueden identificarte en internet sin usar ni una sola cookie",
@@ -361,6 +433,11 @@
   ],
   "notable_moments": [
     {
+      "title": "Wrote the macOS driver HP never made — #1 on X trending",
+      "url": "https://x.com/kuberwastaken/status/2089377982536388964",
+      "description": "Sat with Claude to write a fully native Apple Silicon driver (patched SpliX CUPS filter + IOKit USB helper) for the HP Laser 1008a, a printer that never had a non-Windows driver. The X post crossed 3.5M views and hit #1 on trending on Aug 18, 2026, with coverage from Tom's Hardware, The Register, Neowin, wccftech, Moneycontrol and more."
+    },
+    {
       "title": "Reverse-engineered a $30 smart band into Google's Fitbit app",
       "url": "https://x.com/kuberwastaken/status/2059306990774714715",
       "description": "Reverse-engineered the BLE protocol of a ~$30 Huawei smart band and got Google's new Health/Fitbit app to recognize it as a 'Fitbit Air.' Went viral on X."
@@ -430,5 +507,5 @@
       "Mobile responsive design"
     ]
   },
-  "last_updated": "2026-08-17"
+  "last_updated": "2026-08-21"
 }
