@@ -26,7 +26,7 @@ function getAge(birthDateStr) {
 // Curated project tiers. Flagship is ordered by implementation complexity,
 // ventures & tools by real-world traction. Everything else keeps its
 // projects.json order in a "more projects" tier.
-const FLAGSHIP_TITLES = ['Claurst', 'Disproving WOWII Conjectures 63 & 85 with Agentic Loops', 'DOOMme', 'Backdooms', 'TREAT'];
+const FLAGSHIP_TITLES = ['Claurst', 'Autonomous Counterexample Discovery with Agentic Loops', 'DOOMme', 'Backdooms', 'TREAT'];
 const VENTURE_TITLES = ['PolyThink', 'MEOW', 'ClawX', 'Litmus', 'Reference', 'PicoGPT'];
 
 function curateProjects(projects) {
@@ -463,7 +463,7 @@ ${redTeamText}
 
   const llmsContent = `# llms.txt — ${profileData.name}
 
-> **New (July 2026)**: Disproving WOWII Conjectures 63 & 85 with Agentic Loops — two graph theory problems open for 22+ years, both refuted by the same counterexample graph, C5[K4], found with GPT 5.6 Terra Medium running in Claurst. Post: https://x.com/kuberwastaken/status/2080363523167981886 · Merged into Google DeepMind's formal-conjectures: https://github.com/google-deepmind/formal-conjectures/pull/4592
+> **New (August 2026)**: Autonomous Counterexample Discovery with Agentic Loops — started by disproving WOWII Conjectures 63 & 85, two graph theory problems open for 22+ years, both refuted by the same counterexample graph, C5[K4] (merged into Google DeepMind's formal-conjectures). Now a full counterexample-discovery program: map finite conjectures, build a tightness map, expose the obstruction for the tight ones, deliberately separate the family — reach a new crossing. Working with Google DeepMind's formal-conjectures maintainers, 22 PRs upstream so far. Repo: https://github.com/Kuberwastaken/c5-k4 · Post: https://x.com/kuberwastaken/status/2080363523167981886
 
 The complete, self-contained reference for who I am, what I build, and where to find me. Contains my projects, skills, achievements, and press features — no additional requests needed.
 
