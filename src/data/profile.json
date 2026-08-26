@@ -27,99 +27,85 @@
         "Languages": [
             {
                 "name": "Python",
-                "desc": "Versatile scripting & data science"
-            },
-            {
-                "name": "C",
-                "desc": "Low-level systems programming"
-            },
-            {
-                "name": ".NET",
-                "desc": "Modern object-oriented programming and enterprise development"
-            },
-            {
-                "name": "C#",
-                "desc": "Popular language for .NET and game development"
-            },
-            {
-                "name": "Lua",
-                "desc": "Lightweight scripting"
+                "desc": "AI systems, research tooling, and automation"
             },
             {
                 "name": "JavaScript",
-                "desc": "Web & full-stack development"
+                "desc": "Browser-native products and experiments"
             },
             {
                 "name": "TypeScript",
-                "desc": "Type-safe JavaScript"
+                "desc": "Typed product and agent interfaces"
             },
             {
-                "name": "R",
-                "desc": "Statistical computing"
-            },
-            {
-                "name": "HTML",
-                "desc": "Web structure"
-            },
-            {
-                "name": "CSS",
-                "desc": "Web styling"
-            },
-            {
-                "name": "SCSS",
-                "desc": "Advanced CSS preprocessing"
-            }
-        ],
-        "Frameworks": [
-            {
-                "name": "React",
-                "desc": "Component-based UI library"
-            },
-            {
-                "name": "Next.js",
-                "desc": "Full-stack React framework"
-            },
-            {
-                "name": "Flask",
-                "desc": "Lightweight web framework"
-            },
-            {
-                "name": "Node.js",
-                "desc": "Server-side JavaScript runtime"
-            },
-            {
-                "name": "TensorFlow",
-                "desc": "Deep learning framework"
-            },
-            {
-                "name": "PyTorch",
-                "desc": "Machine learning framework"
-            }
-        ],
-        "Tools": [
-            {
-                "name": "Git",
-                "desc": "Version control system"
+                "name": "Rust",
+                "desc": "Fast, reliable systems and developer tooling"
             },
             {
                 "name": "SQL",
-                "desc": "Database management"
+                "desc": "Analytics, retrieval, and data systems"
             },
             {
-                "name": "BigQuery",
-                "desc": "Cloud data warehouse"
+                "name": "C",
+                "desc": "Low-level and resource-constrained programs"
+            },
+            {
+                "name": "HTML",
+                "desc": "Semantic interfaces for the web"
+            },
+            {
+                "name": "CSS",
+                "desc": "Responsive systems and interaction design"
+            },
+            {
+                "name": "R",
+                "desc": "Statistics and exploratory analysis"
+            },
+            {
+                "name": "Lua",
+                "desc": "Games, scripting, and embedded logic"
+            }
+        ],
+        "Technologies": [
+            {
+                "name": "React",
+                "desc": "Interactive product interfaces"
+            },
+            {
+                "name": "Next.js",
+                "desc": "Full-stack web applications"
+            },
+            {
+                "name": "Node.js",
+                "desc": "JavaScript services and build tooling"
             },
             {
                 "name": "Tableau",
-                "desc": "Data visualization"
+                "desc": "Analysis and data visualization"
             },
             {
-                "name": "LaTeX",
-                "desc": "Document preparation"
+                "name": "FastAPI",
+                "desc": "Typed Python APIs and model services"
+            },
+            {
+                "name": "TensorFlow",
+                "desc": "Training and deploying neural models"
+            },
+            {
+                "name": "Transformers.js",
+                "desc": "On-device machine learning in the browser"
+            },
+            {
+                "name": "PyTorch",
+                "desc": "Research and model development"
             },
             {
                 "name": "Gradio",
-                "desc": "Machine learning interfaces"
+                "desc": "Fast interfaces for ML experiments"
+            },
+            {
+                "name": "Flask",
+                "desc": "Small Python services and prototypes"
             }
         ]
     },
@@ -438,14 +424,15 @@
         "Open source development"
     ],
     "portfolio_features": {
-        "type": "Interactive Terminal",
-        "technologies": ["React", "JavaScript", "CSS"],
+        "type": "Custom TUI Session",
+        "technologies": ["React", "JavaScript", "CSS", "Canvas"],
         "features": [
             "30+ terminal commands",
-            "Built-in games (Snake, Tetris, 2048, Flappy Bird)",
-            "AI assistant (JARVIS)",
-            "Calculator and utilities",
-            "Dynamic theming system",
+            "Claude Code-inspired session interface",
+            "Interactive ASCII depth portrait",
+            "Built-in games (Snake, Tetris, Game of Life)",
+            "Calculator, QR, password, and GitHub utilities",
+            "Keyboard commands and deep links",
             "Mobile responsive design"
         ]
     }
