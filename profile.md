@@ -6,7 +6,8 @@
 
 Hi! I'm Kuber Mehta (kuberwastaken), an AI developer from New Delhi, India.
 
-I'm studying Computer Science & Machine Learning at BITS Pilani and AI & Data Science at IP University. I'm currently part of [Razorpay's](https://razorpay.com) Central AI team in the Founders' Office, where we primarily build foundational models and agent-to-agent (A2A) systems. Alongside that, I work on generative UI for LLMs, world-model caching, and more at [PolyThink Labs](https://www.polyth.ink/).
+I'm studying Computer Science & Machine Learning at BITS Pilani and AI & Data Science at IP University.
+I'm currently part of [Razorpay's](https://razorpay.com) Central AI team in the Founders' Office, where we primarily build foundational models and agent-to-agent (A2A) systems. Alongside that, I work on generative UI for LLMs, world-model caching, and more at [PolyThink Labs](https://www.polyth.ink/).
 
 ## Current role
 I'm part of Razorpay's Central AI team in the Founders' Office, where we primarily build foundational models and agent-to-agent (A2A) systems.
