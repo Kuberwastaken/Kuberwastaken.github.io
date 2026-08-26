@@ -1,283 +1,169 @@
-import React, { useState, useCallback } from 'react';
-import './PasswordGenerator.css';
+import React, { useCallback, useState } from 'react';
+
+const CHARACTER_SETS = {
+  lowercase: 'abcdefghijklmnopqrstuvwxyz',
+  uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  numbers: '0123456789',
+  symbols: '!@#$%^&*()_+-=[]{}|;:,.<>?',
+  similar: 'il1Lo0O',
+  ambiguous: '{}[]()/\\\'"`~,;.<>'
+};
+
+const DEFAULT_OPTIONS = {
+  lowercase: true,
+  uppercase: true,
+  numbers: true,
+  symbols: true,
+  excludeSimilar: false,
+  excludeAmbiguous: false
+};
+
+const PRESETS = [
+  { name: 'secure / 16', length: 16, options: { ...DEFAULT_OPTIONS, excludeSimilar: true } },
+  { name: 'pin / 4', length: 4, options: { ...DEFAULT_OPTIONS, lowercase: false, uppercase: false, symbols: false } },
+  { name: 'alphanumeric / 12', length: 12, options: { ...DEFAULT_OPTIONS, symbols: false } },
+  { name: 'maximum / 20', length: 20, options: { ...DEFAULT_OPTIONS, excludeSimilar: true, excludeAmbiguous: true } }
+];
+
+const calculateStrength = (password) => {
+  let score = 0;
+  if (password.length >= 8) score += 1;
+  if (password.length >= 12) score += 1;
+  if (password.length >= 16) score += 1;
+  if (/[a-z]/.test(password) && /[A-Z]/.test(password)) score += 1;
+  if (/\d/.test(password) && [...password].some(char => CHARACTER_SETS.symbols.includes(char))) score += 1;
+  return Math.min(score, 5);
+};
 
 const PasswordGenerator = () => {
   const [password, setPassword] = useState('');
   const [length, setLength] = useState(12);
-  const [options, setOptions] = useState({
-    lowercase: true,
-    uppercase: true,
-    numbers: true,
-    symbols: true,
-    excludeSimilar: false,
-    excludeAmbiguous: false
-  });
+  const [options, setOptions] = useState(DEFAULT_OPTIONS);
   const [strength, setStrength] = useState(0);
   const [copied, setCopied] = useState(false);
 
-  const characterSets = {
-    lowercase: 'abcdefghijklmnopqrstuvwxyz',
-    uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-    numbers: '0123456789',
-    symbols: '!@#$%^&*()_+-=[]{}|;:,.<>?',
-    similar: 'il1Lo0O',
-    ambiguous: '{}[]()/\\\'"`~,;.<>'
-  };
-
-  const calculateStrength = (pass) => {
-    let score = 0;
-    
-    // Length scoring
-    if (pass.length >= 8) score += 1;
-    if (pass.length >= 12) score += 1;
-    if (pass.length >= 16) score += 1;
-    
-    // Character type scoring - check if password actually contains these
-    if (/[a-z]/.test(pass)) score += 1; // Has lowercase
-    if (/[A-Z]/.test(pass)) score += 1; // Has uppercase
-    if (/\d/.test(pass)) score += 1; // Has numbers
-    if (/[!@#$%^&*()_+\-=\[\]{}|;:,.<>?]/.test(pass)) score += 1; // Has symbols
-    
-    // Bonus points for very long passwords
-    if (pass.length >= 20) score += 1;
-    
-    // Character diversity bonus
-    const uniqueChars = new Set(pass).size;
-    if (uniqueChars >= pass.length * 0.7) score += 1; // High character diversity
-    
-    return Math.min(score, 5);
-  };
-
   const generatePassword = useCallback(() => {
     let charset = '';
-    if (options.lowercase) charset += characterSets.lowercase;
-    if (options.uppercase) charset += characterSets.uppercase;
-    if (options.numbers) charset += characterSets.numbers;
-    if (options.symbols) charset += characterSets.symbols;
+    if (options.lowercase) charset += CHARACTER_SETS.lowercase;
+    if (options.uppercase) charset += CHARACTER_SETS.uppercase;
+    if (options.numbers) charset += CHARACTER_SETS.numbers;
+    if (options.symbols) charset += CHARACTER_SETS.symbols;
+    if (options.excludeSimilar) charset = [...charset].filter(char => !CHARACTER_SETS.similar.includes(char)).join('');
+    if (options.excludeAmbiguous) charset = [...charset].filter(char => !CHARACTER_SETS.ambiguous.includes(char)).join('');
 
-    if (options.excludeSimilar) {
-      charset = charset.split('').filter(char => !characterSets.similar.includes(char)).join('');
-    }
-    if (options.excludeAmbiguous) {
-      charset = charset.split('').filter(char => !characterSets.ambiguous.includes(char)).join('');
-    }
-
-    if (charset === '') {
+    if (!charset) {
       setPassword('');
       setStrength(0);
       return;
     }
 
-    let newPassword = '';
-    const array = new Uint8Array(length);
-    window.crypto.getRandomValues(array);
-    
-    for (let i = 0; i < length; i++) {
-      newPassword += charset[array[i] % charset.length];
-    }
-
-    setPassword(newPassword);
-    setStrength(calculateStrength(newPassword));
+    const randomValues = new Uint32Array(length);
+    window.crypto.getRandomValues(randomValues);
+    const nextPassword = [...randomValues].map(value => charset[value % charset.length]).join('');
+    setPassword(nextPassword);
+    setStrength(calculateStrength(nextPassword));
     setCopied(false);
   }, [length, options]);
 
   const copyToClipboard = async () => {
     if (!password) return;
-    
     try {
       await navigator.clipboard.writeText(password);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      // Fallback for older browsers
+    } catch {
       const textArea = document.createElement('textarea');
       textArea.value = password;
       document.body.appendChild(textArea);
       textArea.select();
       document.execCommand('copy');
       document.body.removeChild(textArea);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
     }
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleOptionChange = (option) => {
-    const newOptions = { ...options, [option]: !options[option] };
-    setOptions(newOptions);
+  const toggleOption = (option) => {
+    setOptions(current => ({ ...current, [option]: !current[option] }));
   };
-
-  const getStrengthColor = () => {
-    const colors = ['#d64545', '#d6a545', '#d6d645', '#a5d645', '#45d645'];
-    return colors[Math.max(0, strength - 1)] || '#d64545';
-  };
-
-  const getStrengthText = () => {
-    const texts = ['Very Weak', 'Weak', 'Fair', 'Good', 'Strong'];
-    return texts[Math.max(0, strength - 1)] || 'Very Weak';
-  };
-
-  const presetPasswords = [
-    { name: 'Secure (16 chars)', length: 16, options: { lowercase: true, uppercase: true, numbers: true, symbols: true, excludeSimilar: true, excludeAmbiguous: false } },
-    { name: 'PIN (4 digits)', length: 4, options: { lowercase: false, uppercase: false, numbers: true, symbols: false, excludeSimilar: false, excludeAmbiguous: false } },
-    { name: 'Alphanumeric (12)', length: 12, options: { lowercase: true, uppercase: true, numbers: true, symbols: false, excludeSimilar: false, excludeAmbiguous: false } },
-    { name: 'Max Security (20)', length: 20, options: { lowercase: true, uppercase: true, numbers: true, symbols: true, excludeSimilar: true, excludeAmbiguous: true } }
-  ];
 
   const applyPreset = (preset) => {
     setLength(preset.length);
     setOptions(preset.options);
+    setPassword('');
+    setStrength(0);
   };
 
+  const strengthLabels = ['empty', 'very weak', 'weak', 'fair', 'good', 'strong'];
+
   return (
-    <div className="password-generator">
+    <section className="tui-tool password-generator">
+      <div className="tui-tool-titlebar">
+        <strong>/password-generator</strong>
+        <span>window.crypto · local only</span>
+      </div>
       <div className="password-header">
-        <h3>🔐 Password Generator</h3>
-        <p>Generate secure, cryptographically random passwords</p>
+        <h3>Password generator</h3>
+        <p>Generate cryptographically random passwords in this browser.</p>
       </div>
 
       <div className="password-output">
         <div className="password-display">
-          <input
-            type="text"
-            value={password}
-            readOnly
-            placeholder="Generated password will appear here..."
-            className="password-field"
-          />
-          <button
-            onClick={copyToClipboard}
-            disabled={!password}
-            className={`copy-btn ${copied ? 'copied' : ''}`}
-          >
-            {copied ? '✓' : '📋'}
+          <input type="text" value={password} readOnly placeholder="generated value" className="password-field" />
+          <button type="button" onClick={copyToClipboard} disabled={!password} className={`copy-btn ${copied ? 'copied' : ''}`}>
+            {copied ? 'copied' : 'copy'}
           </button>
         </div>
-        
         {password && (
           <div className="password-strength">
             <div className="strength-bar">
-              <div 
-                className="strength-fill"
-                style={{ 
-                  width: `${(strength / 5) * 100}%`,
-                  backgroundColor: getStrengthColor()
-                }}
-              />
+              <div className={`strength-fill strength-${strength}`} style={{ width: `${(strength / 5) * 100}%` }} />
             </div>
-            <span style={{ color: getStrengthColor() }}>
-              {getStrengthText()}
-            </span>
+            <span className={`strength-label strength-${strength}`}>{strengthLabels[strength]}</span>
           </div>
         )}
       </div>
 
       <div className="password-controls">
         <div className="length-control">
-          <label>
-            Length: <span className="length-value">{length}</span>
-          </label>
-          <input
-            type="range"
-            min="4"
-            max="50"
-            value={length}
-            onChange={(e) => setLength(parseInt(e.target.value))}
-            className="length-slider"
-          />
-          <div className="length-labels">
-            <span>4</span>
-            <span>50</span>
-          </div>
+          <label htmlFor="password-length">length <span className="length-value">{length}</span></label>
+          <input id="password-length" type="range" min="4" max="50" value={length} onChange={event => setLength(Number(event.target.value))} className="length-slider" />
+          <div className="length-labels"><span>04</span><span>50</span></div>
         </div>
 
         <div className="options-grid">
-          <label className="option-item">
-            <input
-              type="checkbox"
-              checked={options.lowercase}
-              onChange={() => handleOptionChange('lowercase')}
-            />
-            <span className="checkmark"></span>
-            Lowercase (a-z)
-          </label>
-          
-          <label className="option-item">
-            <input
-              type="checkbox"
-              checked={options.uppercase}
-              onChange={() => handleOptionChange('uppercase')}
-            />
-            <span className="checkmark"></span>
-            Uppercase (A-Z)
-          </label>
-          
-          <label className="option-item">
-            <input
-              type="checkbox"
-              checked={options.numbers}
-              onChange={() => handleOptionChange('numbers')}
-            />
-            <span className="checkmark"></span>
-            Numbers (0-9)
-          </label>
-          
-          <label className="option-item">
-            <input
-              type="checkbox"
-              checked={options.symbols}
-              onChange={() => handleOptionChange('symbols')}
-            />
-            <span className="checkmark"></span>
-            Symbols (!@#$...)
-          </label>
-          
-          <label className="option-item">
-            <input
-              type="checkbox"
-              checked={options.excludeSimilar}
-              onChange={() => handleOptionChange('excludeSimilar')}
-            />
-            <span className="checkmark"></span>
-            Exclude Similar (il1Lo0O)
-          </label>
-          
-          <label className="option-item">
-            <input
-              type="checkbox"
-              checked={options.excludeAmbiguous}
-              onChange={() => handleOptionChange('excludeAmbiguous')}
-            />
-            <span className="checkmark"></span>
-            Exclude Ambiguous
-          </label>
+          {[
+            ['lowercase', 'lowercase (a-z)'],
+            ['uppercase', 'uppercase (A-Z)'],
+            ['numbers', 'numbers (0-9)'],
+            ['symbols', 'symbols (!@#$…)'],
+            ['excludeSimilar', 'exclude similar'],
+            ['excludeAmbiguous', 'exclude ambiguous']
+          ].map(([option, label]) => (
+            <label className="option-item" key={option}>
+              <input type="checkbox" checked={options[option]} onChange={() => toggleOption(option)} />
+              <span aria-hidden="true" className="checkmark" />
+              {label}
+            </label>
+          ))}
         </div>
 
         <div className="action-buttons">
-          <button onClick={generatePassword} className="generate-btn">
-            🎲 Generate Password
-          </button>
-          <button onClick={() => setPassword('')} className="clear-btn">
-            🗑️ Clear
-          </button>
+          <button type="button" onClick={generatePassword} className="generate-btn">Generate password</button>
+          <button type="button" onClick={() => { setPassword(''); setStrength(0); }} className="clear-btn">Clear</button>
         </div>
       </div>
 
       <div className="presets-section">
-        <h4>Quick Presets:</h4>
+        <h4>Presets</h4>
         <div className="preset-buttons">
-          {presetPasswords.map((preset, index) => (
-            <button
-              key={index}
-              onClick={() => applyPreset(preset)}
-              className="preset-btn"
-            >
+          {PRESETS.map(preset => (
+            <button type="button" key={preset.name} onClick={() => applyPreset(preset)} className="preset-btn">
               {preset.name}
             </button>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default PasswordGenerator; 
+export default PasswordGenerator;

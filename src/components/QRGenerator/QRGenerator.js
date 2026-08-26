@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import './QRGenerator.css';
+import React, { useCallback, useEffect, useState } from 'react';
 
 const QRGenerator = () => {
   const [text, setText] = useState('');
   const [qrCodeUrl, setQrCodeUrl] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  const generateQR = async () => {
+  const generateQR = useCallback(async () => {
     if (!text.trim()) return;
     
     setIsLoading(true);
@@ -20,7 +19,7 @@ const QRGenerator = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [text]);
 
   const downloadQR = () => {
     if (!qrCodeUrl) return;
@@ -48,13 +47,17 @@ const QRGenerator = () => {
     } else {
       setQrCodeUrl('');
     }
-  }, [text]);
+  }, [generateQR, text]);
 
   return (
-    <div className="qr-generator">
+    <section className="tui-tool qr-generator">
+      <div className="tui-tool-titlebar">
+        <strong>/qr-generator</strong>
+        <span>api.qrserver.com · 200×200</span>
+      </div>
       <div className="qr-header">
-        <h3>🔗 QR Code Generator</h3>
-        <p>Generate QR codes for text, URLs, or any data</p>
+        <h3>QR code generator</h3>
+        <p>Encode text, URLs, or arbitrary data.</p>
       </div>
       
       <div className="qr-input-section">
@@ -62,7 +65,7 @@ const QRGenerator = () => {
           <textarea
             value={text}
             onChange={(e) => setText(e.target.value)}
-            placeholder="Enter text, URL, or any data..."
+            placeholder="data> enter text or a URL"
             rows="3"
             maxLength="2000"
           />
@@ -88,7 +91,7 @@ const QRGenerator = () => {
           </div>
           <div className="qr-actions">
             <button onClick={downloadQR} className="download-btn">
-              📥 Download QR Code
+              Download PNG
             </button>
             <div className="qr-info">
               <small>Right-click to save image or use download button</small>
@@ -98,21 +101,21 @@ const QRGenerator = () => {
       )}
 
       <div className="qr-examples">
-        <h4>Examples:</h4>
+        <h4>Presets</h4>
         <div className="example-buttons">
           <button onClick={() => setText('https://kuber.studio/')}>
-            My Portfolio
+            portfolio
           </button>
           <button onClick={() => setText('https://github.com/Kuberwastaken')}>
-            My GitHub
+            github
           </button>
           <button onClick={() => setText('Hello from Kuber\'s Terminal!')}>
-            Sample Text
+            sample text
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default QRGenerator; 
+export default QRGenerator;

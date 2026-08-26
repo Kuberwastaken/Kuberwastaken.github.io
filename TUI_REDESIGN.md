@@ -10,8 +10,8 @@ Reference direction: Claude Code session structure and prompt grammar from Brain
 - [x] Convert help, skills, games, miscellaneous tools, and system output into semantic terminal views.
 - [x] Rebuild `/who` around the interactive ASCII depth portrait.
 - [x] Replace project masonry/iframes with fast terminal project records.
-- [ ] Restyle résumé, calculator, QR, password, GitHub feed, Terms, and easter eggs.
-- [ ] Port Snake, Tetris, and Game of Life into the same visual system.
+- [x] Restyle résumé, calculator, QR, password, GitHub feed, Terms, and easter eggs.
+- [x] Port Snake, Tetris, and Game of Life into the same visual system.
 - [x] Remove 2048 and Flappy Bird from the bundle and command registry.
 - [x] Replace the public skill inventory with the requested languages and technologies.
 - [ ] Verify keyboard behavior, reduced motion, desktop, small mobile, build output, and deep links.

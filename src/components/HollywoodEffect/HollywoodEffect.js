@@ -24,8 +24,8 @@ const HollywoodEffect = React.memo(() => {
     const draw = () => {
       ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = '#0F0';
-      ctx.font = `${fontSize}px monospace`;
+      ctx.fillStyle = 'rgba(90, 187, 154, 0.42)';
+      ctx.font = `${fontSize}px "Geist Mono", monospace`;
 
       letters.forEach((y, index) => {
         const text = String.fromCharCode(3e4 + Math.random() * 33);
@@ -51,7 +51,7 @@ const HollywoodEffect = React.memo(() => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-  return <canvas ref={canvasRef} className="hollywood-effect"></canvas>;
+  return <canvas ref={canvasRef} className="hollywood-effect" aria-hidden="true" />;
 });
 
 export default HollywoodEffect;

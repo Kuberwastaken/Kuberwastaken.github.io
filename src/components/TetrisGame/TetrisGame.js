@@ -1,16 +1,21 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './TetrisGame.css';
 
 const TetrisGame = () => {
   const canvasRef = useRef(null);
   const [gameOver, setGameOver] = useState(false);
   const [score, setScore] = useState(0);
   const [topScore, setTopScore] = useState(0);
+  const [gameKey, setGameKey] = useState(0);
   const gameStateRef = useRef({ isOver: false });
+  const topScoreRef = useRef(0);
 
   useEffect(() => {
     const savedTopScore = localStorage.getItem('tetrisTopScore');
-    if (savedTopScore) setTopScore(parseInt(savedTopScore));
+    if (savedTopScore) {
+      const parsedTopScore = Number.parseInt(savedTopScore, 10);
+      topScoreRef.current = parsedTopScore;
+      setTopScore(parsedTopScore);
+    }
   }, []);
 
   useEffect(() => {
@@ -19,7 +24,7 @@ const TetrisGame = () => {
     const COLS = 10;
     const ROWS = 20;
     const BLOCK_SIZE = 30;
-    const COLORS = ['#5abb9a', '#ffebcd', '#d4b99c', '#7fffd4', '#bae1ff', '#baffc9', '#ffb3ba'];
+    const COLORS = ['#5abb9a', '#d9d9dc', '#d97757', '#8abeb7', '#b5bd68', '#e0af68', '#929298'];
     const SHAPES = [
       [[1, 1, 1, 1]],
       [[1, 1, 1], [0, 1, 0]],
@@ -158,7 +163,8 @@ const TetrisGame = () => {
         setScore(localScore);
 
         // Check for potential high score update
-        if (localScore > topScore) {
+        if (localScore > topScoreRef.current) {
+          topScoreRef.current = localScore;
           setTopScore(localScore);
           localStorage.setItem('tetrisTopScore', localScore.toString());
         }
@@ -175,7 +181,8 @@ const TetrisGame = () => {
         if (collision(currentPiece)) {
           gameStateRef.current.isOver = true;
           setGameOver(true);
-          if (localScore > topScore) {
+          if (localScore > topScoreRef.current) {
+            topScoreRef.current = localScore;
             setTopScore(localScore);
             localStorage.setItem('tetrisTopScore', localScore.toString());
           }
@@ -225,8 +232,8 @@ const TetrisGame = () => {
       
       const rect = canvas.getBoundingClientRect();
       const touch = e.touches[0];
-      const relX = touch.clientX - rect.left;
-      const relY = touch.clientY - rect.top;
+      const relX = (touch.clientX - rect.left) * (canvas.width / rect.width);
+      const relY = (touch.clientY - rect.top) * (canvas.height / rect.height);
       
       // Divide canvas into regions
       const regionWidth = canvas.width / 3;
@@ -264,19 +271,24 @@ const TetrisGame = () => {
       clearInterval(gameInterval);
       currentGameState.isOver = false;
     };
-  }, [gameOver, score, topScore]);
+  }, [gameKey]);
 
   const resetGame = () => {
     setGameOver(false);
     setScore(0);
     gameStateRef.current.isOver = false;
+    setGameKey(current => current + 1);
   };
 
   return (
-    <div className="tetris-game-container">
-      <div className="scoreboard">
-        <div>Score: {score}</div>
-        <div>Top Score: {topScore}</div>
+    <section className="tui-game tetris-game-container">
+      <div className="tui-tool-titlebar">
+        <strong>/tetris</strong>
+        <span>← → move · ↑ rotate · ↓ drop</span>
+      </div>
+      <div className="tetris-scoreboard">
+        <div>score {String(score).padStart(5, '0')}</div>
+        <div>best {String(topScore).padStart(5, '0')}</div>
       </div>
       <canvas
         ref={canvasRef}
@@ -284,9 +296,9 @@ const TetrisGame = () => {
         height="600"
         className="tetris-game-canvas"
       />
-      {gameOver && <div className="game-over">Game Over! Score: {score}</div>}
-      <button className="restart-button" onClick={resetGame}>Restart</button>
-    </div>
+      {gameOver && <div className="tetris-game-over">game over · score {score}</div>}
+      <button type="button" className="tui-game-button" onClick={resetGame}>restart</button>
+    </section>
   );
 };
 

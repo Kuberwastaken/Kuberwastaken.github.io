@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import './components/Tui/TuiTools.css';
 import Terminal from './components/Terminal';
 import ToS from './components/ToS';
 
