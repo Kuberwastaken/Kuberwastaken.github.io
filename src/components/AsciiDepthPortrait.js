@@ -10,7 +10,7 @@ const AsciiDepthPortrait = React.memo(() => {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    const context = canvas.getContext('2d', { alpha: false });
+    const context = canvas.getContext('2d');
     const motionQuery = window.matchMedia('(hover: none), (pointer: coarse), (max-width: 900px), (prefers-reduced-motion: reduce)');
     const state = {
       points: [],
@@ -32,8 +32,7 @@ const AsciiDepthPortrait = React.memo(() => {
 
     const draw = () => {
       if (!state.points.length) return;
-      context.fillStyle = '#000';
-      context.fillRect(0, 0, state.width, state.height);
+      context.clearRect(0, 0, state.width, state.height);
 
       const cosineYaw = Math.cos(state.yaw);
       const sineYaw = Math.sin(state.yaw);
