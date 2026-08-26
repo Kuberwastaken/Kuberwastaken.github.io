@@ -403,8 +403,8 @@ body {
 }
 
 .whoami-profile-col {
-  min-width: 180px;
-  max-width: 220px;
+  min-width: 260px;
+  max-width: 290px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -413,11 +413,11 @@ body {
 }
 
 .ascii-depth-portrait {
-  width: 220px;
+  width: 290px;
   max-width: 100%;
   aspect-ratio: 921 / 1024;
   overflow: hidden;
-  background: #000;
+  background: transparent;
 }
 
 .ascii-depth-portrait canvas {
@@ -454,7 +454,7 @@ body {
   }
 
   .ascii-depth-portrait {
-    width: min(220px, 72vw);
+    width: min(280px, 78vw);
     pointer-events: none;
   }
 

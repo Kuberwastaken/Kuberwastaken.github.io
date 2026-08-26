@@ -349,7 +349,6 @@ async function updateLlmsTxt(blogPostsArg) {
     formatHtmlToMarkdown(profileData.bio.blog_highlight),
     formatHtmlToMarkdown(profileData.bio.current_work),
     formatHtmlToMarkdown(profileData.bio.skills_highlight),
-    formatHtmlToMarkdown(profileData.bio.current_role),
     formatHtmlToMarkdown(profileData.bio.history),
     formatHtmlToMarkdown(profileData.bio.fun_fact),
     formatHtmlToMarkdown(profileData.bio.outro)
@@ -853,7 +852,6 @@ function buildStaticFallbackHtml(blogPosts) {
     profileData.bio.blog_highlight,
     profileData.bio.current_work,
     profileData.bio.skills_highlight,
-    profileData.bio.current_role,
     profileData.bio.history,
     profileData.bio.fun_fact,
     profileData.bio.outro
