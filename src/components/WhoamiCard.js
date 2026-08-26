@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import { getAsciiArt } from '../constants/asciiSelfie';
+import AsciiDepthPortrait from './AsciiDepthPortrait';
 
 import profileData from '../data/profile.json';
 
@@ -8,19 +8,7 @@ const WhoamiCard = React.memo(() => (
   <div className="whoami-glass-card whoami-landscape">
     <div className="whoami-profile-col">
       <h3 className="whoami-title">{profileData.name}</h3>
-      <div
-        className="whoami-mobile-hide"
-        dangerouslySetInnerHTML={{ __html: getAsciiArt() }}
-        style={{
-          fontSize: '0.3rem',
-          lineHeight: '0.4rem',
-          fontFamily: "'JetBrains Mono', monospace",
-          color: '#5abb9a',
-          opacity: 0.7,
-          overflow: 'hidden',
-          maxWidth: '100%'
-        }}
-      />
+      <AsciiDepthPortrait />
     </div>
     <div className="whoami-info-col">
       <div className="whoami-section">
