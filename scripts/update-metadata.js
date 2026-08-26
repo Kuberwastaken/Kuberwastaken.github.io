@@ -157,8 +157,11 @@ function formatProjectForProfileJson(project) {
 function formatHtmlToMarkdown(html) {
   if (!html) return '';
 
+  // Preserve intentional line breaks from the site copy.
+  let markdown = html.replace(/<br\s*\/?>/gi, '\n');
+
   // Replace <a href="...">text</a> with [text](url)
-  let markdown = html.replace(/<a\s+(?:[^>]*?\s+)?href="([^"]*)"[^>]*>(.*?)<\/a>/gi, '[$2]($1)');
+  markdown = markdown.replace(/<a\s+(?:[^>]*?\s+)?href="([^"]*)"[^>]*>(.*?)<\/a>/gi, '[$2]($1)');
 
   // Replace <span ...>text</span> with just text (for command links)
   markdown = markdown.replace(/<span[^>]*>(.*?)<\/span>/gi, '$1');
@@ -249,7 +252,7 @@ function renderBlogIndex(posts) {
 async function fetchBlogPosts() {
   return new Promise((resolve) => {
     const url = 'https://kuber.studio/blog/index.xml';
-    https.get(url, (res) => {
+    https.get(url, { headers: { 'User-Agent': 'OpenAI File Downloader, XaiImageApiFetch/1.0' } }, (res) => {
       let data = '';
       res.on('data', chunk => data += chunk);
       res.on('end', () => {
@@ -811,8 +814,8 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;');
 }
 
-// Convert bio-style source HTML into clean fallback HTML: keep <a> links
-// (rebuilt without inline styles), keep inner text of spans, escape the rest.
+// Convert bio-style source HTML into clean fallback HTML: keep <a> links and
+// intentional line breaks, keep inner text of spans, escape the rest.
 function formatHtmlToStaticHtml(html) {
   if (!html) return '';
   const anchors = [];
@@ -820,8 +823,10 @@ function formatHtmlToStaticHtml(html) {
     anchors.push({ href, text: text.replace(/<[^>]*>/g, '') });
     return `@@A${anchors.length - 1}@@`;
   });
+  out = out.replace(/<br\s*\/?>/gi, '@@BR@@');
   out = out.replace(/<[^>]*>/g, ''); // strip remaining tags, keep their text
   out = escapeHtml(out);
+  out = out.replace(/@@BR@@/g, '<br>');
   out = out.replace(/@@A(\d+)@@/g, (m, i) => {
     const a = anchors[Number(i)];
     return `<a href="${escapeHtml(a.href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(a.text)}</a>`;
