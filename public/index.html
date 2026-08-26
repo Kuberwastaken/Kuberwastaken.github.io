@@ -7,13 +7,25 @@
   <!-- Progressive enhancement: mark JS availability before first paint so the
        static no-JS fallback inside #root is never visible when the app runs -->
   <script>document.documentElement.classList.add('js')</script>
+  <script>
+    // Restore routes encoded by public/404.html for GitHub Pages SPA hosting.
+    (function restoreSpaRoute(location) {
+      if (location.search[1] !== '/') return;
+      var decoded = location.search
+        .slice(1)
+        .split('&')
+        .map(function (part) { return part.replace(/~and~/g, '&'); })
+        .join('?');
+      window.history.replaceState(null, '', location.pathname.slice(0, -1) + decoded + location.hash);
+    }(window.location));
+  </script>
   <style>
     html.js #static-fallback { display: none }
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="theme-color" content="#1a1a1a"> <!-- SEO Enhancements -->
+  <meta name="theme-color" content="#050505"> <!-- SEO Enhancements -->
   <meta name="description"
     content="Kuber Mehta — 19-year-old AI developer behind Claurst (Claude Code in Rust), Backdooms (DOOM in a QR code) & 50+ projects. Featured by PC Gamer, The Independent & Decrypt.">
   <meta name="author" content="Kuber Mehta">
@@ -110,25 +122,30 @@
       "Artificial Intelligence",
       "Machine Learning", 
       "Multi-agent AI Systems",
-      "Web Development",
+      "Foundational Models",
+      "Agent-to-Agent Systems",
+      "Generative UI",
+      "World Model Caching",
       "React",
+      "Next.js",
+      "Node.js",
+      "Tableau",
+      "FastAPI",
+      "TensorFlow",
+      "Transformers.js",
+      "PyTorch",
+      "Gradio",
+      "Flask",
       "Python",
       "JavaScript",
       "TypeScript",
-      "Data Science",
-      "Neural Networks",
-      "Computer Vision",
-      "Natural Language Processing",
-      "Deep Learning",
-      "TensorFlow",
-      "PyTorch",
-      "Node.js",
-      "Flask",
-      "MongoDB",
+      "Rust",
       "SQL",
-      "Git",
-      "Docker",
-      "AWS"
+      "C",
+      "HTML",
+      "CSS",
+      "R",
+      "Lua"
     ],
     "hasCredential": [
       {
@@ -145,11 +162,11 @@
       },
       {
         "@type": "Organization",
-        "name": "Perplexity AI",
-        "url": "https://www.perplexity.ai/"
+        "name": "PolyThink Labs",
+        "url": "https://www.polyth.ink/"
       }
     ],
-    "description": "19-year-old AI developer working on AI Initiatives @ Razorpay (YC W15) this summer and Perplexity Business Fellow. Winner of Nothing Essential Lab S1 Hackathon (awarded a Nothing Phone 3). Featured by The Independent for ClawX. 4th place at Unsloth x AMD RL Hackathon at IIT Delhi. 20+ hackathons. Creator of innovative solutions like PolyThink (multi-agent AI Orchestrator) and TREAT (trigger detection). Participant in OpenAI Asia-Pacific developer discussions. Creator of 10+ projects in AI/ML, web development, and creative technology. Expert in Python, JavaScript, React, machine learning, and modern web development.",
+    "description": "AI developer on Razorpay's Central AI team in the Founders' Office, building foundational models and agent-to-agent systems. Also works on generative UI for LLMs, world-model caching, and multi-agent research systems at PolyThink Labs.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "New Delhi",
@@ -162,7 +179,7 @@
         "@type": "Country",
         "name": "India"
       },
-      "skills": "Artificial Intelligence, Machine Learning, Full Stack Development, Python, JavaScript, React, TensorFlow, PyTorch"
+      "skills": "Artificial Intelligence, Machine Learning, Foundational Models, Agent-to-Agent Systems, Generative UI, Python, JavaScript, TypeScript, Rust, React, Next.js, FastAPI, TensorFlow, Transformers.js, PyTorch"
     },
     "award": [
       "Nothing Essential Lab S1 Hackathon Winner (awarded a Nothing Phone 3)",
@@ -242,7 +259,7 @@
     "name": "Kuber Mehta's Portfolio",
     "alternateName": "Kuber Mehta Portfolio",
     "url": "https://kuber.studio",
-    "description": "Interactive terminal-style portfolio showcasing AI development projects, skills, and professional journey of Kuber Mehta - a 19-year-old AI developer working on AI Initiatives @ Razorpay (YC W15) this summer and Perplexity Business Fellow.",
+    "description": "A custom TUI portfolio for Kuber Mehta, an AI developer on Razorpay's Central AI team in the Founders' Office and a builder at PolyThink Labs.",
     "author": {
       "@id": "https://kuber.studio/#person"
     },
@@ -284,7 +301,7 @@
     <!-- STATIC_FALLBACK_START -->
     <div id="static-fallback">
       <style>
-        #static-fallback { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; font-family: 'Geist Mono', 'SFMono-Regular', Menlo, monospace; color: #d6d6d6; line-height: 1.65; }
+        #static-fallback { max-width: 900px; min-height: 100vh; margin: 0 auto; padding: 32px 20px 64px; font-family: 'Geist Mono', 'SFMono-Regular', Menlo, monospace; color: #d9d9dc; background: #050505; line-height: 1.65; }
         #static-fallback h1 { color: #ffffff; font-size: 1.5em; }
         #static-fallback h2 { color: #ffffff; font-size: 1.15em; margin-top: 2.4em; border-bottom: 1px solid #2a2a2a; padding-bottom: 6px; }
         #static-fallback h2::before { content: "$ "; color: #5abb9a; }
@@ -293,14 +310,14 @@
         #static-fallback a { color: #5abb9a; }
         #static-fallback ul { padding-left: 1.3em; }
         #static-fallback li { margin-bottom: 0.4em; }
-        #static-fallback article { margin-bottom: 1.6em; }
+        #static-fallback article { margin-bottom: 1.6em; border-left: 1px solid #29292d; padding-left: 14px; }
         #static-fallback article p { margin: 0.2em 0; }
         #static-fallback .fb-links { font-size: 0.9em; }
-        #static-fallback .fb-note { border: 1px dashed #444; padding: 10px 14px; color: #999; font-size: 0.85em; }
+        #static-fallback .fb-note { border: 1px solid #4b4b51; padding: 10px 14px; color: #929298; background: #0b0b0c; font-size: 0.85em; }
       </style>
       <main>
         <p class="fb-note">JavaScript is off, so you're reading the static version of this site. Enable
-          JavaScript for the interactive terminal — 30+ commands, games, and JARVIS. AI agents: this same
+          JavaScript for the interactive TUI, command palette, tools, and terminal games. AI agents: this same
           content is at <a href="https://kuber.studio/llms.txt">kuber.studio/llms.txt</a>.</p>
 
         <h1>Kuber Mehta — AI Developer &amp; Full Stack Engineer</h1>

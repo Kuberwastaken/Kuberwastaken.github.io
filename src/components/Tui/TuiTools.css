@@ -882,6 +882,97 @@
 }
 
 /* ASCII easter egg */
+.system-profile {
+  width: min(100%, 680px);
+}
+
+.system-profile-grid {
+  display: grid;
+  grid-template-columns: minmax(190px, 0.7fr) minmax(260px, 1.3fr);
+  gap: 24px;
+  padding: 24px;
+}
+
+.system-profile-mark {
+  align-self: center;
+  color: var(--tui-accent);
+  font: clamp(11px, 2.2vw, 16px)/1.3 var(--tui-font);
+  text-align: center;
+}
+
+.system-profile-data {
+  min-width: 0;
+}
+
+.system-profile-host {
+  border-bottom: 1px solid var(--tui-line);
+  padding-bottom: 6px;
+  color: var(--tui-bright);
+  font-weight: 600;
+}
+
+.system-profile-data dl {
+  margin-top: 8px;
+}
+
+.system-profile-data dl > div {
+  display: grid;
+  grid-template-columns: minmax(72px, 0.45fr) minmax(0, 1fr);
+  gap: 10px;
+  padding: 2px 0;
+  font-size: 11px;
+}
+
+.system-profile-data dt {
+  color: var(--tui-accent);
+}
+
+.system-profile-data dd {
+  min-width: 0;
+  color: var(--tui-muted);
+  overflow-wrap: anywhere;
+}
+
+.system-palette {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(12px, 1fr));
+  gap: 2px;
+  margin-top: 14px;
+}
+
+.system-palette span {
+  height: 15px;
+  background: var(--tui-bg);
+}
+
+.system-palette span:nth-child(2) { background: var(--tui-surface-raised); }
+.system-palette span:nth-child(3) { background: var(--tui-line); }
+.system-palette span:nth-child(4) { background: var(--tui-line-strong); }
+.system-palette span:nth-child(5) { background: var(--tui-muted); }
+.system-palette span:nth-child(6) { background: var(--tui-accent-soft); }
+.system-palette span:nth-child(7) { background: var(--tui-accent); }
+.system-palette span:nth-child(8) { background: var(--tui-bright); }
+
+.ascii-selfie-view {
+  width: 100%;
+}
+
+.ascii-selfie-frame {
+  max-height: 68vh;
+  overflow: auto;
+  background: var(--tui-bg);
+  scrollbar-color: var(--tui-line-strong) var(--tui-bg);
+}
+
+.ascii-selfie-frame pre {
+  width: max-content;
+  min-width: 100%;
+  padding: 12px;
+  color: var(--tui-accent);
+  font: clamp(3px, 0.56vw, 7px)/1.05 var(--tui-font);
+  white-space: pre;
+}
+
 .rickroll-container {
   width: min(100%, 720px);
 }
@@ -958,6 +1049,20 @@
 
   .resume-frame {
     height: 65vh;
+  }
+
+  .system-profile-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .system-profile-mark {
+    font-size: 13px;
+  }
+
+  .ascii-selfie-frame pre {
+    font-size: 3px;
   }
 
   .tos-container {
