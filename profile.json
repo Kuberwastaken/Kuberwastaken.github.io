@@ -30,85 +30,99 @@
     "Languages": [
       {
         "name": "Python",
-        "desc": "AI systems, research tooling, and automation"
-      },
-      {
-        "name": "JavaScript",
-        "desc": "Browser-native products and experiments"
-      },
-      {
-        "name": "TypeScript",
-        "desc": "Typed product and agent interfaces"
-      },
-      {
-        "name": "Rust",
-        "desc": "Fast, reliable systems and developer tooling"
-      },
-      {
-        "name": "SQL",
-        "desc": "Analytics, retrieval, and data systems"
+        "desc": "Versatile scripting & data science"
       },
       {
         "name": "C",
-        "desc": "Low-level and resource-constrained programs"
+        "desc": "Low-level systems programming"
       },
       {
-        "name": "HTML",
-        "desc": "Semantic interfaces for the web"
+        "name": ".NET",
+        "desc": "Modern object-oriented programming and enterprise development"
       },
       {
-        "name": "CSS",
-        "desc": "Responsive systems and interaction design"
-      },
-      {
-        "name": "R",
-        "desc": "Statistics and exploratory analysis"
+        "name": "C#",
+        "desc": "Popular language for .NET and game development"
       },
       {
         "name": "Lua",
-        "desc": "Games, scripting, and embedded logic"
+        "desc": "Lightweight scripting"
+      },
+      {
+        "name": "JavaScript",
+        "desc": "Web & full-stack development"
+      },
+      {
+        "name": "TypeScript",
+        "desc": "Type-safe JavaScript"
+      },
+      {
+        "name": "R",
+        "desc": "Statistical computing"
+      },
+      {
+        "name": "HTML",
+        "desc": "Web structure"
+      },
+      {
+        "name": "CSS",
+        "desc": "Web styling"
+      },
+      {
+        "name": "SCSS",
+        "desc": "Advanced CSS preprocessing"
       }
     ],
-    "Technologies": [
+    "Frameworks": [
       {
         "name": "React",
-        "desc": "Interactive product interfaces"
+        "desc": "Component-based UI library"
       },
       {
         "name": "Next.js",
-        "desc": "Full-stack web applications"
-      },
-      {
-        "name": "Node.js",
-        "desc": "JavaScript services and build tooling"
-      },
-      {
-        "name": "Tableau",
-        "desc": "Analysis and data visualization"
-      },
-      {
-        "name": "FastAPI",
-        "desc": "Typed Python APIs and model services"
-      },
-      {
-        "name": "TensorFlow",
-        "desc": "Training and deploying neural models"
-      },
-      {
-        "name": "Transformers.js",
-        "desc": "On-device machine learning in the browser"
-      },
-      {
-        "name": "PyTorch",
-        "desc": "Research and model development"
-      },
-      {
-        "name": "Gradio",
-        "desc": "Fast interfaces for ML experiments"
+        "desc": "Full-stack React framework"
       },
       {
         "name": "Flask",
-        "desc": "Small Python services and prototypes"
+        "desc": "Lightweight web framework"
+      },
+      {
+        "name": "Node.js",
+        "desc": "Server-side JavaScript runtime"
+      },
+      {
+        "name": "TensorFlow",
+        "desc": "Deep learning framework"
+      },
+      {
+        "name": "PyTorch",
+        "desc": "Machine learning framework"
+      }
+    ],
+    "Tools": [
+      {
+        "name": "Git",
+        "desc": "Version control system"
+      },
+      {
+        "name": "SQL",
+        "desc": "Database management"
+      },
+      {
+        "name": "BigQuery",
+        "desc": "Cloud data warehouse"
+      },
+      {
+        "name": "Tableau",
+        "desc": "Data visualization"
+      },
+      {
+        "name": "LaTeX",
+        "desc": "Document preparation"
+      },
+      {
+        "name": "Gradio",
+        "desc": "Machine learning interfaces"
       }
     ]
   },
@@ -478,20 +492,18 @@
     "Open source development"
   ],
   "portfolio_features": {
-    "type": "Custom TUI Session",
+    "type": "Interactive Terminal",
     "technologies": [
       "React",
       "JavaScript",
-      "CSS",
-      "Canvas"
+      "CSS"
     ],
     "features": [
       "30+ terminal commands",
-      "Claude Code-inspired session interface",
-      "Interactive ASCII depth portrait",
-      "Built-in games (Snake, Tetris, Game of Life)",
-      "Calculator, QR, password, and GitHub utilities",
-      "Keyboard commands and deep links",
+      "Built-in games (Snake, Tetris, 2048, Flappy Bird)",
+      "AI assistant (JARVIS)",
+      "Calculator and utilities",
+      "Dynamic theming system",
       "Mobile responsive design"
     ]
   },
