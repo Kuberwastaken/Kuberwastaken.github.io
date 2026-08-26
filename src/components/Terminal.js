@@ -224,7 +224,15 @@ const Terminal = () => {
         break;
       case 'who':
       case 'w':
+        if (isMobile) suppressAutoScrollRef.current = true;
         addToOutput({ type: 'component', content: <WhoamiCard /> });
+        if (isMobile) {
+          window.setTimeout(() => {
+            const cards = document.querySelectorAll('.whoami-glass-card');
+            cards[cards.length - 1]?.scrollIntoView({ block: 'start' });
+            suppressAutoScrollRef.current = false;
+          }, 100);
+        }
         break;
       case 'wiki':
       case 'wikipedia':
@@ -441,7 +449,7 @@ const Terminal = () => {
         break;
     }
     setInput(''); // Clear the input field after handling the command
-  }, [availableCommands, getSimilarCommands, addToOutput, hackermode, setHackermode, backgrounds, changeBackgroundColor]);
+  }, [availableCommands, getSimilarCommands, addToOutput, hackermode, setHackermode, backgrounds, changeBackgroundColor, isMobile]);
 
   // Memoized command execution function
   const executeCommand = useCallback((command) => {

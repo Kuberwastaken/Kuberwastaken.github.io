@@ -412,6 +412,24 @@ body {
   padding-top: 10px;
 }
 
+.ascii-depth-portrait {
+  width: 220px;
+  max-width: 100%;
+  aspect-ratio: 921 / 1024;
+  overflow: hidden;
+  background: #000;
+}
+
+.ascii-depth-portrait canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ascii-depth-portrait canvas.ascii-depth-error {
+  opacity: 0.25;
+}
+
 .whoami-info-col {
   flex: 1;
   display: flex;
@@ -435,8 +453,9 @@ body {
     padding-top: 0;
   }
 
-  .whoami-mobile-hide {
-    display: none !important;
+  .ascii-depth-portrait {
+    width: min(220px, 72vw);
+    pointer-events: none;
   }
 
   .whoami-section {
