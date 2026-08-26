@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { rickrollFrames } from '../constants/rickroll';
 
 const RickrollAnimation = () => {
@@ -38,14 +38,19 @@ const RickrollAnimation = () => {
     const currentFrame = frames[frameIndex] || [];
 
     return (
-        <section className="tui-tool rickroll-container">
-            <div className="tui-tool-titlebar">
-                <strong>/classified-output</strong>
-                <span>frame {String(frameIndex + 1).padStart(3, '0')}/{String(frames.length).padStart(3, '0')}</span>
-            </div>
-            <div className="rickroll-frame" aria-label="Animated ASCII video">
+        <div className="rickroll-container" style={{ marginTop: '20px', marginBottom: '20px' }}>
+            <div style={{
+                whiteSpace: 'pre',
+                fontFamily: "'JetBrains Mono', monospace",
+                lineHeight: '1.2',
+                color: '#5abb9a',
+                fontSize: '8px', // Smaller font to fit standard terminals
+                overflowX: 'hidden',
+                transform: 'scale(1, 1)', // Ensure no distortion
+                transformOrigin: 'top left'
+            }}>
                 {currentFrame.map((line, i) => (
-                    <div key={i}>{line}</div>
+                    <div key={i} style={{ minHeight: '1.2em' }}>{line}</div>
                 ))}
             </div>
             {/* Hidden YouTube embed for audio */}
@@ -57,9 +62,9 @@ const RickrollAnimation = () => {
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-                className="rickroll-audio"
+                style={{ display: 'none' }}
             />
-        </section>
+        </div>
     );
 };
 

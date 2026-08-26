@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import './GitHubFeed.css';
 
 const GitHubFeed = () => {
   const [repositories, setRepositories] = useState([]);
@@ -51,7 +52,7 @@ const GitHubFeed = () => {
     // Refresh data every 5 minutes
     const interval = setInterval(fetchGitHubData, 5 * 60 * 1000);
     return () => clearInterval(interval);
-  }, [fetchGitHubData]);
+  }, [fetchGitHubData, username]);
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -69,15 +70,15 @@ const GitHubFeed = () => {
 
   const getEventIcon = (type) => {
     const iconMap = {
-      PushEvent: '↑',
-      CreateEvent: '+',
-      WatchEvent: '★',
-      ForkEvent: '⑂',
-      IssuesEvent: '!',
-      PullRequestEvent: '↗',
-      ReleaseEvent: '◆',
-      PublicEvent: '○',
-      default: '·'
+      PushEvent: '📤',
+      CreateEvent: '✨',
+      WatchEvent: '⭐',
+      ForkEvent: '🍴',
+      IssuesEvent: '🐛',
+      PullRequestEvent: '🔀',
+      ReleaseEvent: '🚀',
+      PublicEvent: '🌍',
+      default: '📝'
     };
     return iconMap[type] || iconMap.default;
   };
@@ -106,6 +107,10 @@ const GitHubFeed = () => {
     }
   };
 
+  const openRepository = (repoUrl) => {
+    window.open(repoUrl, '_blank', 'noopener,noreferrer');
+  };
+
   const handleUsernameChange = () => {
     if (inputUsername.trim() && inputUsername.trim() !== username) {
       setUsername(inputUsername.trim());
@@ -113,7 +118,7 @@ const GitHubFeed = () => {
     }
   };
 
-  const handleKeyDown = (e) => {
+  const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
       handleUsernameChange();
     }
@@ -121,41 +126,35 @@ const GitHubFeed = () => {
 
   if (loading) {
     return (
-      <section className="tui-tool github-feed">
-        <div className="tui-tool-titlebar"><strong>/github-feed</strong><span>loading</span></div>
+      <div className="github-feed">
         <div className="github-header">
-          <h3>GitHub activity</h3>
-          <div className="loading-spinner">Fetching public data…</div>
+          <h3>⚡ GitHub Activity Feed</h3>
+          <div className="loading-spinner">Loading GitHub data...</div>
         </div>
-      </section>
+      </div>
     );
   }
 
   if (error) {
     return (
-      <section className="tui-tool github-feed">
-        <div className="tui-tool-titlebar"><strong>/github-feed</strong><span>request failed</span></div>
+      <div className="github-feed">
         <div className="github-header">
-          <h3>GitHub activity</h3>
+          <h3>⚡ GitHub Activity Feed</h3>
           <div className="error-message">
-            <p>error: {error}</p>
+            <p>❌ {error}</p>
             <button onClick={fetchGitHubData} className="retry-btn">
-              Retry
+              🔄 Retry
             </button>
           </div>
         </div>
-      </section>
+      </div>
     );
   }
 
   return (
-    <section className="tui-tool github-feed">
-      <div className="tui-tool-titlebar">
-        <strong>/github-feed</strong>
-        <span>api.github.com · public</span>
-      </div>
+    <div className="github-feed">
       <div className="github-header">
-        <h3>GitHub activity</h3>
+        <h3>⚡ GitHub Activity Feed</h3>
         <p>Live updates from <a href={`https://github.com/${username}`} target="_blank" rel="noopener noreferrer">@{username}</a></p>
         
         <div className="username-input">
@@ -163,29 +162,41 @@ const GitHubFeed = () => {
             type="text"
             value={inputUsername}
             onChange={(e) => setInputUsername(e.target.value)}
-            onKeyDown={handleKeyDown}
-            placeholder="github username"
+            onKeyPress={handleKeyPress}
+            placeholder="Enter GitHub username..."
             className="username-field"
           />
           <button onClick={handleUsernameChange} disabled={!inputUsername.trim()}>
-            Load user
+            🔍 Load User
           </button>
         </div>
         
         <div className="quick-users">
-          <span>presets </span>
-          <button onClick={() => setUsername('Kuberwastaken')} className="quick-btn">kuber</button>
-          <button onClick={() => setUsername('torvalds')} className="quick-btn">torvalds</button>
-          <button onClick={() => setUsername('gaearon')} className="quick-btn">gaearon</button>
-          <button onClick={() => setUsername('tj')} className="quick-btn">tj</button>
+          <span>Quick users: </span>
+          <button onClick={() => setUsername('Kuberwastaken')} className="quick-btn">Me</button>
+          <button onClick={() => setUsername('torvalds')} className="quick-btn">Linus</button>
+          <button onClick={() => setUsername('gaearon')} className="quick-btn">Dan A.</button>
+          <button onClick={() => setUsername('tj')} className="quick-btn">TJ</button>
         </div>
         
         {stats && (
           <div className="github-stats">
-            <span>repos <strong>{stats.public_repos}</strong></span>
-            <span>stars <strong>{stats.total_stars}</strong></span>
-            <span>followers <strong>{stats.followers}</strong></span>
-            <span>following <strong>{stats.following}</strong></span>
+            <div className="stat-item">
+              <span className="stat-number">{stats.public_repos}</span>
+              <span className="stat-label">Repos</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-number">{stats.total_stars}</span>
+              <span className="stat-label">Stars</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-number">{stats.followers}</span>
+              <span className="stat-label">Followers</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-number">{stats.following}</span>
+              <span className="stat-label">Following</span>
+            </div>
           </div>
         )}
       </div>
@@ -195,13 +206,13 @@ const GitHubFeed = () => {
           className={`tab-btn ${activeTab === 'repos' ? 'active' : ''}`}
           onClick={() => setActiveTab('repos')}
         >
-          [ repositories ]
+          📂 Recent Repos
         </button>
         <button
           className={`tab-btn ${activeTab === 'activity' ? 'active' : ''}`}
           onClick={() => setActiveTab('activity')}
         >
-          [ activity ]
+          📈 Recent Activity
         </button>
       </div>
 
@@ -209,15 +220,15 @@ const GitHubFeed = () => {
         {activeTab === 'repos' && (
           <div className="repos-list">
             {repositories.map((repo) => (
-              <a key={repo.id} className="repo-item" href={repo.html_url} target="_blank" rel="noopener noreferrer">
+              <div key={repo.id} className="repo-item" onClick={() => openRepository(repo.html_url)}>
                 <div className="repo-header">
                   <h4 className="repo-name">{repo.name}</h4>
                   <div className="repo-stats">
                     {repo.stargazers_count > 0 && (
-                      <span className="repo-stat">★ {repo.stargazers_count}</span>
+                      <span className="repo-stat">⭐ {repo.stargazers_count}</span>
                     )}
                     {repo.forks_count > 0 && (
-                      <span className="repo-stat">⑂ {repo.forks_count}</span>
+                      <span className="repo-stat">🍴 {repo.forks_count}</span>
                     )}
                   </div>
                 </div>
@@ -229,13 +240,13 @@ const GitHubFeed = () => {
                 <div className="repo-footer">
                   {repo.language && (
                     <span className="repo-language">
-                      <span className="language-dot" />
+                      <span className="language-dot" style={{ backgroundColor: getLanguageColor(repo.language) }}></span>
                       {repo.language}
                     </span>
                   )}
                   <span className="repo-updated">Updated {formatDate(repo.updated_at)}</span>
                 </div>
-              </a>
+              </div>
             ))}
           </div>
         )}
@@ -257,12 +268,39 @@ const GitHubFeed = () => {
 
       <div className="github-footer">
         <button onClick={fetchGitHubData} className="refresh-btn">
-          Refresh
+          🔄 Refresh
         </button>
         <small>Auto-refreshes every 5 minutes</small>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default GitHubFeed;
+// Helper function to get language colors
+const getLanguageColor = (language) => {
+  const colors = {
+    JavaScript: '#f7df1e',
+    TypeScript: '#3178c6',
+    Python: '#3776ab',
+    Java: '#ed8b00',
+    HTML: '#e34c26',
+    CSS: '#1572b6',
+    React: '#61dafb',
+    Vue: '#4fc08d',
+    PHP: '#777bb4',
+    C: '#a8b9cc',
+    'C++': '#f34b7d',
+    'C#': '#239120',
+    Go: '#00add8',
+    Rust: '#000000',
+    Swift: '#fa7343',
+    Kotlin: '#7f52ff',
+    Dart: '#0175c2',
+    Ruby: '#cc342d',
+    Shell: '#89e051',
+    Dockerfile: '#384d54'
+  };
+  return colors[language] || '#6a737d';
+};
+
+export default GitHubFeed; 

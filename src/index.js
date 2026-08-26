@@ -2,6 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App';
+import { ThemeProvider } from './context/ThemeContext';
 
 // Define the linkHref function
 window.linkHref = (url) => {
@@ -13,6 +14,8 @@ const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>
 );

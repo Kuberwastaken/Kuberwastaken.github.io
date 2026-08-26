@@ -1,54 +1,14 @@
 :root {
-  --tui-bg: #050505;
-  --tui-surface: #0b0b0c;
-  --tui-surface-raised: #111113;
-  --tui-selection: #29292c;
-  --tui-line: #29292d;
-  --tui-line-strong: #4b4b51;
-  --tui-text: #d9d9dc;
-  --tui-bright: #f2f2f2;
-  --tui-muted: #929298;
-  --tui-dim: #626269;
-  --tui-accent: #5abb9a;
-  --tui-accent-soft: #294f43;
-  --tui-claude: #d97757;
-  --tui-warning: #e0af68;
-  --tui-error: #e06c75;
-  --tui-font: 'Geist Mono', 'SFMono-Regular', 'SF Mono', Menlo, Monaco, Consolas, monospace;
-}
-
-html,
-body,
-#root {
-  width: 100%;
-  min-width: 0;
-  height: 100%;
-}
-
-html {
-  background: #000;
-  color-scheme: dark;
+  --background-color: #000000;
+  --background-image: none;
 }
 
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  font-family: var(--tui-font);
+  font-family: 'JetBrains Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--tui-text);
-  background: var(--tui-bg);
-}
-
-button,
-input,
-textarea,
-select {
-  font: inherit;
-}
-
-::selection {
-  color: var(--tui-bright);
-  background: var(--tui-accent-soft);
+  color: #ffffff;
+  background: var(--background-image), var(--background-color);
 }

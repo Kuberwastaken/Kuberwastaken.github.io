@@ -1,0 +1,513 @@
+.github-feed {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(30, 30, 30, 0.95) 0%, rgba(90, 187, 154, 0.1) 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(90, 187, 154, 0.3);
+  color: #ffebcd;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.github-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.github-header h3 {
+  color: #5abb9a;
+  margin: 0 0 10px 0;
+  font-size: 1.4em;
+}
+
+.github-header p {
+  margin: 0 0 20px 0;
+  opacity: 0.8;
+  font-size: 0.9em;
+}
+
+.github-header a {
+  color: #5abb9a;
+  text-decoration: none;
+}
+
+.github-header a:hover {
+  text-decoration: underline;
+}
+
+.username-input {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.username-field {
+  background: rgba(20, 20, 20, 0.8);
+  border: 1px solid rgba(90, 187, 154, 0.3);
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: #ffebcd;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+  min-width: 200px;
+}
+
+.username-field:focus {
+  outline: none;
+  border-color: #5abb9a;
+  box-shadow: 0 0 0 2px rgba(90, 187, 154, 0.2);
+}
+
+.username-field::placeholder {
+  color: rgba(255, 235, 205, 0.5);
+}
+
+.username-input button {
+  background: linear-gradient(45deg, #5abb9a, #4a9d82);
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  padding: 8px 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.username-input button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(90, 187, 154, 0.3);
+}
+
+.username-input button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.quick-users {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.quick-users span {
+  font-size: 0.8em;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+
+.quick-btn {
+  background: rgba(90, 187, 154, 0.2);
+  border: 1px solid rgba(90, 187, 154, 0.3);
+  border-radius: 4px;
+  color: #ffebcd;
+  padding: 4px 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.quick-btn:hover {
+  background: rgba(90, 187, 154, 0.3);
+  border-color: #5abb9a;
+  transform: translateY(-1px);
+}
+
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: #5abb9a;
+  font-size: 14px;
+}
+
+.error-message {
+  text-align: center;
+  padding: 20px;
+}
+
+.error-message p {
+  color: #d64545;
+  margin-bottom: 15px;
+}
+
+.retry-btn {
+  background: linear-gradient(45deg, #5abb9a, #4a9d82);
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  padding: 8px 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.retry-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(90, 187, 154, 0.3);
+}
+
+.github-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: rgba(20, 20, 20, 0.5);
+  border-radius: 8px;
+  border: 1px solid rgba(90, 187, 154, 0.2);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #5abb9a;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 0.8em;
+  opacity: 0.7;
+}
+
+.github-tabs {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 20px;
+  background: rgba(20, 20, 20, 0.5);
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.tab-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: #ffebcd;
+  padding: 10px 15px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.tab-btn:hover {
+  opacity: 1;
+  background: rgba(90, 187, 154, 0.1);
+}
+
+.tab-btn.active {
+  background: linear-gradient(45deg, #5abb9a, #4a9d82);
+  color: #fff;
+  opacity: 1;
+}
+
+.github-content {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.github-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.github-content::-webkit-scrollbar-track {
+  background: rgba(20, 20, 20, 0.5);
+  border-radius: 3px;
+}
+
+.github-content::-webkit-scrollbar-thumb {
+  background: rgba(90, 187, 154, 0.3);
+  border-radius: 3px;
+}
+
+.github-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(90, 187, 154, 0.5);
+}
+
+.repos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.repo-item {
+  background: rgba(20, 20, 20, 0.5);
+  border: 1px solid rgba(90, 187, 154, 0.2);
+  border-radius: 8px;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.repo-item:hover {
+  border-color: #5abb9a;
+  background: rgba(90, 187, 154, 0.05);
+  transform: translateY(-1px);
+}
+
+.repo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.repo-name {
+  color: #5abb9a;
+  margin: 0;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.repo-stats {
+  display: flex;
+  gap: 10px;
+  font-size: 0.8em;
+  opacity: 0.7;
+}
+
+.repo-stat {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.repo-description {
+  color: rgba(255, 235, 205, 0.8);
+  font-size: 0.9em;
+  line-height: 1.4;
+  margin: 0 0 12px 0;
+}
+
+.repo-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8em;
+  opacity: 0.7;
+}
+
+.repo-language {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.language-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.activity-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(20, 20, 20, 0.5);
+  border: 1px solid rgba(90, 187, 154, 0.2);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.activity-item:hover {
+  border-color: rgba(90, 187, 154, 0.4);
+  background: rgba(90, 187, 154, 0.05);
+}
+
+.activity-icon {
+  font-size: 1.2em;
+  width: 24px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.activity-content {
+  flex: 1;
+}
+
+.activity-description {
+  margin: 0 0 6px 0;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+.activity-time {
+  font-size: 0.8em;
+  opacity: 0.6;
+}
+
+.github-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  border-top: 1px solid rgba(90, 187, 154, 0.2);
+}
+
+.refresh-btn {
+  background: linear-gradient(45deg, #5abb9a, #4a9d82);
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  padding: 8px 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.refresh-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(90, 187, 154, 0.3);
+}
+
+.github-footer small {
+  font-size: 0.7em;
+  opacity: 0.6;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .github-feed {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .github-header h3 {
+    font-size: 1.2em;
+  }
+
+  .github-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .stat-number {
+    font-size: 1.1em;
+  }
+
+  .tab-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .repo-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .repo-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .github-footer {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .username-input {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .username-field {
+    min-width: auto;
+    width: 100%;
+    font-size: 16px;
+    /* Prevents zoom on iOS */
+  }
+}
+
+@media (max-width: 480px) {
+  .github-feed {
+    padding: 12px;
+    margin: 5px;
+  }
+
+  .github-header h3 {
+    font-size: 1.1em;
+  }
+
+  .github-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .stat-number {
+    font-size: 1em;
+  }
+
+  .stat-label {
+    font-size: 0.7em;
+  }
+
+  .github-tabs {
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .tab-btn {
+    padding: 10px;
+  }
+
+  .activity-item {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .activity-icon {
+    font-size: 1.1em;
+    width: 20px;
+  }
+
+  .repo-item {
+    padding: 12px;
+  }
+
+  .username-input {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .username-field {
+    padding: 10px;
+  }
+
+  .username-input button {
+    padding: 10px 16px;
+  }
+}

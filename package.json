@@ -1,8 +1,8 @@
 {
   "name": "kuber-mehta-portfolio",
   "homepage": "https://kuber.studio",
-  "version": "2.0.0",
-  "description": "Kuber Mehta's custom responsive TUI portfolio for AI projects, technical work, browser tools, and terminal games",
+  "version": "1.6.9",
+  "description": "Kuber Mehta's Portfolio - AI Developer & Full Stack Engineer showcase featuring terminal-style interface, interactive games, and innovative projects",
   "keywords": [
     "portfolio",
     "react",

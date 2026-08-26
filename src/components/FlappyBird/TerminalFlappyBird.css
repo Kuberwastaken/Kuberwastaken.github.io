@@ -1,0 +1,100 @@
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.game-content {
+    position: relative;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffebcd;
+}
+
+.high-score {
+    position: absolute;
+    top: -30px;
+    right: 0;
+    font-size: 16px;
+    color: #ffebcd;
+}
+
+.game-area {
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+    color: #5abb9a;
+    font-family: 'JetBrains Mono', monospace;
+    border: 2px solid #5abb9a;
+    padding: 10px;
+}
+
+.bird {
+    position: absolute;
+    left: 50px;
+    width: 20px;
+    height: 20px;
+    background-color: #5abb9a;
+    border-radius: 50%;
+    transition: transform 0.1s;
+}
+
+.pipe {
+    position: absolute;
+    width: 60px;
+    background-color: #5abb9a;
+}
+
+@media (max-width: 480px) {
+    .scoreboard {
+        font-size: 8px;
+    }
+
+    .high-score {
+        font-size: 6px;
+        top: -5px;
+    }
+
+    .game-area {
+        max-width: 100%;
+        height: 150px;
+    }
+
+    .bird {
+        width: 5px;
+        height: 5px;
+    }
+
+    .pipe {
+        width: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .game-area {
+        max-width: 90%;
+        height: 250px;
+    }
+
+    .bird {
+        width: 10px;
+        height: 10px;
+    }
+
+    .pipe {
+        width: 25px;
+    }
+}
