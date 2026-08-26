@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './SnakeGame.css';
 
 const SnakeGame = () => {
   const canvasRef = useRef(null);
@@ -29,7 +28,7 @@ const SnakeGame = () => {
       ctx.fillRect(food.x * scale, food.y * scale, scale, scale);
 
       // Draw snake with theme color
-      ctx.fillStyle = '#ffebcd';
+      ctx.fillStyle = '#d9d9dc';
       snake.forEach(segment => {
         ctx.fillRect(segment.x * scale, segment.y * scale, scale, scale);
       });
@@ -99,8 +98,8 @@ const SnakeGame = () => {
       const canvas = canvasRef.current;
       const rect = canvas.getBoundingClientRect();
       const touch = e.touches[0];
-      const relX = touch.clientX - rect.left;
-      const relY = touch.clientY - rect.top;
+      const relX = (touch.clientX - rect.left) * (canvas.width / rect.width);
+      const relY = (touch.clientY - rect.top) * (canvas.height / rect.height);
 
       const regionWidth = canvas.width / 3;
       const regionHeight = canvas.height / 3;
@@ -141,18 +140,22 @@ const SnakeGame = () => {
   };
 
   return (
-    <div className="snake-game-container">
-      <div className="scoreboard">
-        <div>Score: {score}</div>
+    <section className="tui-game snake-game-container">
+      <div className="tui-tool-titlebar">
+        <strong>/snake</strong>
+        <span>arrows · tap zones</span>
       </div>
-      <canvas ref={canvasRef} width="400" height="400" className="snake-game-canvas"></canvas>
+      <div className="snake-scoreboard">
+        <div>score {String(score).padStart(3, '0')}</div>
+      </div>
+      <canvas ref={canvasRef} width="400" height="400" className="snake-game-canvas" aria-label="Snake game board" />
       {gameOver && (
-        <div className="game-over-overlay">
-          <div className="game-over">Game Over! Score: {score}</div>
+        <div className="snake-game-over-overlay">
+          <div className="snake-game-over">game over · score {score}</div>
         </div>
       )}
-      <button className="restart-button" onClick={resetGame}>Restart</button>
-    </div>
+      <button type="button" className="tui-game-button" onClick={resetGame}>restart</button>
+    </section>
   );
 };
 

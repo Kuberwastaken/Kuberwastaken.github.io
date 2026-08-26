@@ -1,0 +1,1016 @@
+/* Shared terminal windows for tools, games, documents, and easter eggs. */
+.tui-tool,
+.tui-game {
+  width: min(100%, 780px);
+  min-width: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid var(--tui-line-strong);
+  border-radius: 4px;
+  color: var(--tui-text);
+  background: color-mix(in srgb, var(--tui-surface) 96%, transparent);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.025), 0 16px 42px rgba(0, 0, 0, 0.22);
+}
+
+.tui-tool-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-width: 0;
+  border-bottom: 1px solid var(--tui-line);
+  padding: 7px 10px;
+  color: var(--tui-muted);
+  background: var(--tui-surface-raised);
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+.tui-tool-titlebar strong {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--tui-accent);
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tui-tool-titlebar span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tui-tool h3,
+.tui-game h3,
+.tui-tool h4,
+.tui-game h4 {
+  color: var(--tui-bright);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.tui-tool button,
+.tui-game button,
+.tos-window button {
+  border: 1px solid var(--tui-line-strong);
+  border-radius: 2px;
+  padding: 6px 10px;
+  color: var(--tui-text);
+  background: var(--tui-surface-raised);
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.tui-tool button:hover:not(:disabled),
+.tui-game button:hover:not(:disabled),
+.tos-window button:hover:not(:disabled) {
+  border-color: var(--tui-accent);
+  color: var(--tui-bright);
+  background: var(--tui-selection);
+}
+
+.tui-tool button:disabled,
+.tui-game button:disabled {
+  color: var(--tui-dim);
+  cursor: not-allowed;
+  opacity: 0.62;
+}
+
+.tui-tool input[type='text'],
+.tui-tool textarea {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--tui-line-strong);
+  border-radius: 2px;
+  padding: 8px 9px;
+  color: var(--tui-bright);
+  caret-color: var(--tui-accent);
+  background: var(--tui-bg);
+}
+
+.tui-tool input[type='text']::placeholder,
+.tui-tool textarea::placeholder {
+  color: var(--tui-dim);
+}
+
+.tui-tool input[type='text']:focus,
+.tui-tool textarea:focus {
+  border-color: var(--tui-accent);
+  outline: 0;
+}
+
+.tui-tool input[type='range'] {
+  accent-color: var(--tui-accent);
+}
+
+.tui-tool input[type='checkbox'] {
+  accent-color: var(--tui-accent);
+}
+
+/* Calculator */
+.calculator {
+  width: min(100%, 420px);
+}
+
+.calculator-display {
+  min-height: 88px;
+  border-bottom: 1px solid var(--tui-line);
+  padding: 14px 16px 10px;
+  text-align: right;
+  background: var(--tui-bg);
+}
+
+.calculator-input {
+  min-height: 28px;
+  overflow: hidden;
+  color: var(--tui-bright);
+  font-size: clamp(18px, 5vw, 26px);
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.calculator-result {
+  min-height: 20px;
+  color: var(--tui-accent);
+  font-size: 12px;
+}
+
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--tui-line);
+}
+
+.calculator .calculator-buttons button {
+  min-height: 48px;
+  border: 0;
+  border-radius: 0;
+  background: var(--tui-surface);
+  font-size: 13px;
+}
+
+.calculator .calculator-buttons button:hover {
+  color: var(--tui-bright);
+  background: var(--tui-selection);
+}
+
+.calculator .calculator-buttons .is-operator {
+  color: var(--tui-warning);
+}
+
+.calculator .calculator-buttons .is-primary {
+  color: var(--tui-bg);
+  background: var(--tui-accent);
+  font-weight: 700;
+}
+
+.calculator .calculator-buttons .is-primary:hover {
+  color: var(--tui-bg);
+  background: color-mix(in srgb, var(--tui-accent) 82%, white);
+}
+
+.calculator .calculator-buttons .is-danger {
+  color: var(--tui-error);
+}
+
+/* QR generator */
+.qr-header,
+.password-header,
+.github-header,
+.gameoflife-header {
+  border-bottom: 1px solid var(--tui-line);
+  padding: 14px 16px;
+}
+
+.qr-header p,
+.password-header p,
+.github-header > p,
+.gameoflife-header p {
+  margin-top: 3px;
+  color: var(--tui-muted);
+  font-size: 11px;
+}
+
+.qr-input-section,
+.password-controls {
+  padding: 14px 16px;
+}
+
+.input-group {
+  position: relative;
+}
+
+.qr-generator textarea {
+  display: block;
+  min-height: 90px;
+  resize: vertical;
+}
+
+.char-counter {
+  margin-top: 4px;
+  color: var(--tui-dim);
+  font-size: 10px;
+  text-align: right;
+}
+
+.button-group,
+.action-buttons,
+.preset-buttons,
+.example-buttons,
+.qr-actions,
+.username-input,
+.quick-users,
+.github-footer,
+.gameoflife-controls,
+.speed-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.button-group,
+.action-buttons {
+  margin-top: 10px;
+}
+
+.button-group button:first-child,
+.generate-btn,
+.download-btn {
+  border-color: var(--tui-accent) !important;
+  color: var(--tui-bg) !important;
+  background: var(--tui-accent) !important;
+  font-weight: 650;
+}
+
+.qr-result {
+  display: grid;
+  grid-template-columns: minmax(180px, 220px) minmax(0, 1fr);
+  gap: 16px;
+  border-top: 1px solid var(--tui-line);
+  border-bottom: 1px solid var(--tui-line);
+  padding: 16px;
+  background: var(--tui-bg);
+}
+
+.qr-code-container {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  border: 1px solid var(--tui-line-strong);
+  padding: 9px;
+  background: #fff;
+}
+
+.qr-code-container img {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
+
+.qr-actions {
+  align-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.qr-info {
+  color: var(--tui-dim);
+  font-size: 10px;
+}
+
+.qr-examples,
+.presets-section {
+  border-top: 1px solid var(--tui-line);
+  padding: 12px 16px 15px;
+}
+
+.qr-examples h4,
+.presets-section h4 {
+  margin-bottom: 8px;
+}
+
+/* Password generator */
+.password-output {
+  border-bottom: 1px solid var(--tui-line);
+  padding: 14px 16px;
+  background: var(--tui-bg);
+}
+
+.password-display {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.password-generator .password-field {
+  border-right: 0;
+  border-radius: 2px 0 0 2px;
+}
+
+.password-generator .copy-btn {
+  min-width: 66px;
+  border-radius: 0 2px 2px 0;
+}
+
+.password-generator .copy-btn.copied {
+  border-color: var(--tui-accent);
+  color: var(--tui-accent);
+}
+
+.password-strength {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 78px;
+  align-items: center;
+  gap: 10px;
+  margin-top: 9px;
+}
+
+.strength-bar {
+  height: 3px;
+  overflow: hidden;
+  background: var(--tui-line);
+}
+
+.strength-fill {
+  height: 100%;
+  background: var(--tui-error);
+}
+
+.strength-fill.strength-3 {
+  background: var(--tui-warning);
+}
+
+.strength-fill.strength-4,
+.strength-fill.strength-5 {
+  background: var(--tui-accent);
+}
+
+.strength-label {
+  color: var(--tui-muted);
+  font-size: 10px;
+  text-align: right;
+}
+
+.length-control label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  color: var(--tui-muted);
+  font-size: 11px;
+}
+
+.length-value {
+  color: var(--tui-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.length-slider {
+  width: 100%;
+}
+
+.length-labels {
+  display: flex;
+  justify-content: space-between;
+  color: var(--tui-dim);
+  font-size: 9px;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 12px;
+  border: 1px solid var(--tui-line);
+  background: var(--tui-line);
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  padding: 7px 9px;
+  color: var(--tui-muted);
+  background: var(--tui-surface);
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.option-item:hover {
+  color: var(--tui-text);
+  background: var(--tui-selection);
+}
+
+.option-item input {
+  width: 13px;
+  height: 13px;
+}
+
+.checkmark {
+  display: none;
+}
+
+/* GitHub feed */
+.github-feed {
+  width: min(100%, 860px);
+}
+
+.username-input {
+  margin-top: 12px;
+}
+
+.github-feed .username-field {
+  flex: 1 1 240px;
+  width: auto;
+}
+
+.quick-users {
+  margin-top: 8px;
+  color: var(--tui-dim);
+  font-size: 10px;
+}
+
+.github-feed .quick-btn {
+  border: 0;
+  padding: 2px 4px;
+  color: var(--tui-muted);
+  background: transparent;
+}
+
+.github-feed .quick-btn:hover {
+  color: var(--tui-accent);
+  background: transparent;
+}
+
+.github-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 13px;
+  border: 1px solid var(--tui-line);
+  background: var(--tui-line);
+  gap: 1px;
+}
+
+.github-stats span {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 6px 8px;
+  color: var(--tui-muted);
+  background: var(--tui-surface);
+  font-size: 10px;
+}
+
+.github-stats strong {
+  color: var(--tui-bright);
+  font-weight: 600;
+}
+
+.github-tabs {
+  display: flex;
+  gap: 2px;
+  border-bottom: 1px solid var(--tui-line);
+  padding: 5px 8px 0;
+}
+
+.github-feed .tab-btn {
+  border: 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  color: var(--tui-muted);
+  background: transparent;
+}
+
+.github-feed .tab-btn.active {
+  border-bottom-color: var(--tui-accent);
+  color: var(--tui-bright);
+}
+
+.github-content {
+  min-width: 0;
+}
+
+.repos-list,
+.activity-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--tui-line);
+}
+
+.repo-item,
+.activity-item {
+  min-width: 0;
+  padding: 11px 12px;
+  background: var(--tui-surface);
+}
+
+.repo-item {
+  display: block;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.repo-item:hover,
+.activity-item:hover {
+  background: var(--tui-selection);
+}
+
+.repo-header,
+.repo-footer,
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.repo-header,
+.repo-footer {
+  justify-content: space-between;
+}
+
+.repo-name {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--tui-accent);
+  font-size: 12px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.repo-stats {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 7px;
+  color: var(--tui-muted);
+  font-size: 9px;
+}
+
+.repo-description,
+.activity-description {
+  margin-top: 5px;
+  color: var(--tui-text);
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.repo-footer {
+  margin-top: 9px;
+  color: var(--tui-dim);
+  font-size: 9px;
+}
+
+.repo-language {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.language-dot {
+  width: 5px;
+  height: 5px;
+  background: var(--tui-accent);
+}
+
+.activity-icon {
+  display: grid;
+  flex: 0 0 20px;
+  place-items: center;
+  color: var(--tui-accent);
+}
+
+.activity-content {
+  min-width: 0;
+}
+
+.activity-description {
+  margin-top: 0;
+  overflow-wrap: anywhere;
+}
+
+.activity-time {
+  color: var(--tui-dim);
+  font-size: 9px;
+}
+
+.github-footer {
+  justify-content: space-between;
+  border-top: 1px solid var(--tui-line);
+  padding: 9px 12px;
+  color: var(--tui-dim);
+  font-size: 9px;
+}
+
+.loading-spinner,
+.error-message {
+  margin-top: 12px;
+  color: var(--tui-muted);
+  font-size: 11px;
+}
+
+.error-message p {
+  margin-bottom: 8px;
+  color: var(--tui-error);
+}
+
+/* Games */
+.tui-game {
+  width: min(100%, 680px);
+  position: relative;
+  padding-bottom: 14px;
+  text-align: center;
+}
+
+.tui-game .tui-tool-titlebar {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.snake-scoreboard,
+.tetris-scoreboard,
+.gameoflife-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid var(--tui-line);
+  padding: 7px 12px;
+  color: var(--tui-muted);
+  background: var(--tui-bg);
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+.snake-game-canvas,
+.tetris-game-canvas,
+.gameoflife-canvas {
+  display: block;
+  max-width: calc(100% - 28px);
+  height: auto;
+  margin: 14px auto;
+  border: 1px solid var(--tui-line-strong);
+  background: #020202;
+  image-rendering: pixelated;
+  touch-action: none;
+}
+
+.snake-game-canvas {
+  width: min(400px, calc(100% - 28px));
+  aspect-ratio: 1;
+}
+
+.tetris-game-canvas {
+  width: min(300px, calc(100% - 28px));
+  aspect-ratio: 1 / 2;
+}
+
+.snake-game-over-overlay {
+  position: absolute;
+  inset: 61px 14px 53px;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.snake-game-over,
+.tetris-game-over {
+  border: 1px solid var(--tui-error);
+  padding: 8px 12px;
+  color: var(--tui-error);
+  background: rgba(5, 5, 5, 0.92);
+  font-size: 11px;
+}
+
+.tetris-game-over {
+  width: fit-content;
+  margin: -4px auto 10px;
+}
+
+.tui-game-button {
+  min-width: 110px;
+}
+
+.gameoflife-container {
+  width: min(100%, 760px);
+}
+
+.gameoflife-header {
+  text-align: left;
+}
+
+.gameoflife-controls {
+  justify-content: center;
+  border-bottom: 1px solid var(--tui-line);
+  padding: 10px 12px;
+}
+
+.gameoflife-settings {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid var(--tui-line);
+  padding: 7px 12px;
+  color: var(--tui-muted);
+  font-size: 10px;
+}
+
+.gameoflife-speed-btn.active {
+  border-color: var(--tui-accent);
+  color: var(--tui-accent);
+}
+
+.grid-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.gameoflife-stats {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.gameoflife-status {
+  margin-left: auto;
+  color: var(--tui-warning);
+}
+
+.gameoflife-canvas {
+  width: min(600px, calc(100% - 28px));
+  aspect-ratio: 3 / 2;
+  cursor: crosshair;
+}
+
+.gameoflife-instructions {
+  border-top: 1px solid var(--tui-line);
+  padding: 10px 14px 0;
+  color: var(--tui-dim);
+  font-size: 9px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* Remote résumé */
+.resume-viewer {
+  width: min(100%, 980px);
+}
+
+.resume-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--tui-line);
+  padding: 8px 10px;
+  color: var(--tui-muted);
+  font-size: 10px;
+}
+
+.resume-frame {
+  display: block;
+  width: 100%;
+  height: min(72vh, 800px);
+  border: 0;
+  background: var(--tui-surface-raised);
+}
+
+/* Terms */
+.tos-container {
+  width: 100%;
+  height: 100svh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 28px 20px;
+  color: var(--tui-text);
+  background: var(--tui-bg);
+}
+
+.tos-window {
+  width: min(100%, 860px);
+}
+
+.tos-header,
+.tos-content,
+.tos-footer {
+  padding-right: clamp(16px, 5vw, 48px);
+  padding-left: clamp(16px, 5vw, 48px);
+}
+
+.tos-header {
+  border-bottom: 1px solid var(--tui-line);
+  padding-top: 24px;
+  padding-bottom: 22px;
+}
+
+.tos-path {
+  margin-bottom: 18px;
+  color: var(--tui-muted);
+  font-size: 10px;
+}
+
+.tos-header h1 {
+  color: var(--tui-bright);
+  font-size: clamp(20px, 4vw, 30px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.tos-header h1::before {
+  content: '# ';
+  color: var(--tui-accent);
+}
+
+.tos-header > p:last-child {
+  margin-top: 5px;
+  color: var(--tui-dim);
+  font-size: 10px;
+}
+
+.tos-content {
+  padding-top: 5px;
+  padding-bottom: 24px;
+}
+
+.tos-section {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--tui-line);
+}
+
+.tos-section h2 {
+  margin-bottom: 8px;
+  color: var(--tui-accent);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.tos-section p,
+.tos-section li {
+  color: var(--tui-muted);
+  font-size: 11px;
+  line-height: 1.75;
+}
+
+.tos-section ul {
+  margin-top: 8px;
+  padding-left: 2ch;
+  list-style-type: square;
+}
+
+.tos-link {
+  overflow-wrap: anywhere;
+}
+
+.tos-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid var(--tui-line);
+  padding-top: 12px;
+  padding-bottom: 12px;
+  color: var(--tui-dim);
+  font-size: 10px;
+}
+
+/* ASCII easter egg */
+.rickroll-container {
+  width: min(100%, 720px);
+}
+
+.rickroll-frame {
+  max-height: 62vh;
+  min-height: 320px;
+  overflow: hidden;
+  padding: 10px;
+  color: var(--tui-accent);
+  background: var(--tui-bg);
+  font-size: clamp(4px, 1vw, 8px);
+  line-height: 1.2;
+  white-space: pre;
+}
+
+.rickroll-frame > div {
+  min-height: 1.2em;
+}
+
+.rickroll-audio {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .tui-tool,
+  .tui-game {
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+  }
+
+  .tui-tool-titlebar {
+    gap: 8px;
+  }
+
+  .tui-tool-titlebar span {
+    max-width: 48%;
+  }
+
+  .qr-result,
+  .repos-list,
+  .activity-list {
+    grid-template-columns: 1fr;
+  }
+
+  .qr-code-container {
+    width: min(100%, 220px);
+  }
+
+  .qr-actions {
+    align-items: flex-start;
+  }
+
+  .github-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gameoflife-settings {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .gameoflife-status {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .resume-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .resume-frame {
+    height: 65vh;
+  }
+
+  .tos-container {
+    padding: 0;
+  }
+
+  .tos-window {
+    min-height: 100svh;
+    border-top: 0;
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 460px) {
+  .options-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .password-display {
+    grid-template-columns: 1fr;
+  }
+
+  .password-generator .password-field,
+  .password-generator .copy-btn {
+    border: 1px solid var(--tui-line-strong);
+    border-radius: 2px;
+  }
+
+  .password-generator .copy-btn {
+    margin-top: 6px;
+  }
+
+  .github-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .speed-controls label {
+    width: 100%;
+    text-align: left;
+  }
+
+  .gameoflife-controls button {
+    flex: 1 1 40%;
+  }
+
+  .rickroll-frame {
+    min-height: 240px;
+    font-size: 3.6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rickroll-frame {
+    animation: none;
+  }
+}

@@ -1067,7 +1067,7 @@ function updateSitemap() {
   const hashRoutes = [
     'who', 'projects', 'skills', 'misc',
     'misc/calculator', 'misc/qr-generator', 'misc/password-generator', 'misc/github-feed', 'misc/neofetch',
-    'games', 'games/snake', 'games/tetris', 'games/2048', 'games/flappybird', 'games/gameoflife'
+    'games', 'games/snake', 'games/tetris', 'games/gameoflife'
   ].map(route => ({
     loc: `/#/${route}`,
     priority: '0.7',

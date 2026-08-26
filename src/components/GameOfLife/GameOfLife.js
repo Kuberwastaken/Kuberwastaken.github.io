@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
-import './GameOfLife.css';
 
 class Cell {
   constructor(i, j) {
@@ -117,6 +116,7 @@ const GameOfLife = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [speed, setSpeed] = useState(200); // milliseconds
   const [generation, setGeneration] = useState(0);
+  const [population, setPopulation] = useState(0);
   const [showGrid, setShowGrid] = useState(true);
   const [statusMessage, setStatusMessage] = useState('');
   
@@ -169,14 +169,15 @@ const GameOfLife = () => {
     if (!canvas) return;
 
     const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const x = (e.clientX - rect.left) * (canvas.width / rect.width);
+    const y = (e.clientY - rect.top) * (canvas.height / rect.height);
     
     const col = Math.floor(x / cellSize);
     const row = Math.floor(y / cellSize);
     
     if (col >= 0 && col < cols && row >= 0 && row < rows) {
       gameRef.current.toggleCell(row, col);
+      setPopulation(gameRef.current.getCells().length);
       draw();
     }
   }, [draw, cellSize, cols, rows]);
@@ -188,14 +189,15 @@ const GameOfLife = () => {
 
     const rect = canvas.getBoundingClientRect();
     const touch = e.touches[0];
-    const x = touch.clientX - rect.left;
-    const y = touch.clientY - rect.top;
+    const x = (touch.clientX - rect.left) * (canvas.width / rect.width);
+    const y = (touch.clientY - rect.top) * (canvas.height / rect.height);
     
     const col = Math.floor(x / cellSize);
     const row = Math.floor(y / cellSize);
     
     if (col >= 0 && col < cols && row >= 0 && row < rows) {
       gameRef.current.toggleCell(row, col);
+      setPopulation(gameRef.current.getCells().length);
       draw();
     }
   }, [draw, cellSize, cols, rows]);
@@ -206,6 +208,7 @@ const GameOfLife = () => {
     const afterPopulation = gameRef.current.getCells().length;
     
     setGeneration(prev => prev + 1);
+    setPopulation(afterPopulation);
     
     // If population goes to 0, pause the game
     if (afterPopulation === 0 && beforePopulation > 0) {
@@ -233,6 +236,7 @@ const GameOfLife = () => {
     setIsPlaying(false);
     gameRef.current.clear();
     setGeneration(0);
+    setPopulation(0);
     draw();
   }, [draw]);
 
@@ -283,7 +287,9 @@ const GameOfLife = () => {
       });
     });
     
-    setStatusMessage(`Added ${gameRef.current.getCells().length} cells (clusters + stable patterns)`);
+    const nextPopulation = gameRef.current.getCells().length;
+    setPopulation(nextPopulation);
+    setStatusMessage(`Added ${nextPopulation} cells (clusters + stable patterns)`);
     setTimeout(() => setStatusMessage(''), 2000);
     draw();
   }, [draw, rows, cols]);
@@ -306,11 +312,15 @@ const GameOfLife = () => {
   }, []);
 
   return (
-    <div className="gameoflife-container">
+    <section className="tui-game gameoflife-container">
+      <div className="tui-tool-titlebar">
+        <strong>/gameoflife</strong>
+        <span>conway · {cols}×{rows}</span>
+      </div>
       <div className="gameoflife-header">
-        <h3 style={{ color: '#5abb9a', marginBottom: '10px' }}>Kuber's Game of Life</h3>
-        <p style={{ color: '#ffebcd', fontSize: '14px', marginBottom: '15px' }}>
-          Click cells to toggle them, use preset patterns, then press Play to watch evolution!
+        <h3>Kuber's Game of Life</h3>
+        <p>
+          Toggle cells, seed a pattern, then run the simulation.
         </p>
       </div>
 
@@ -319,7 +329,7 @@ const GameOfLife = () => {
           className="gameoflife-btn" 
           onClick={play}
         >
-          {isPlaying ? '⏸️ Pause' : '▶️ Play'}
+          {isPlaying ? 'pause' : 'play'}
         </button>
         
         <button 
@@ -327,27 +337,27 @@ const GameOfLife = () => {
           onClick={step}
           disabled={isPlaying}
         >
-          ⏭️ Step
+          step
         </button>
         
         <button 
           className="gameoflife-btn" 
           onClick={clear}
         >
-          🗑️ Clear
+          clear
         </button>
         
         <button 
           className="gameoflife-btn" 
           onClick={addRandomCells}
         >
-          🎲 Random
+          random seed
         </button>
       </div>
 
       <div className="gameoflife-settings">
         <div className="speed-controls">
-          <label style={{ color: '#ffebcd', marginRight: '10px' }}>Speed:</label>
+          <label>speed</label>
           <button 
             className={`gameoflife-speed-btn ${speed === 400 ? 'active' : ''}`}
             onClick={() => setSpeed(400)}
@@ -374,17 +384,17 @@ const GameOfLife = () => {
             checked={showGrid} 
             onChange={(e) => setShowGrid(e.target.checked)}
           />
-          <span style={{ color: '#ffebcd', marginLeft: '5px' }}>Show Grid</span>
+          <span>show grid</span>
         </label>
       </div>
 
       <div className="gameoflife-stats">
-        <span style={{ color: '#5abb9a' }}>Generation: {generation}</span>
-        <span style={{ color: '#5abb9a', marginLeft: '20px' }}>
-          Population: {gameRef.current?.getCells().length || 0}
+        <span>generation {generation}</span>
+        <span>
+          population {population}
         </span>
         {statusMessage && (
-          <span style={{ color: '#ffcc00', marginLeft: '20px', fontSize: '12px' }}>
+          <span className="gameoflife-status">
             {statusMessage}
           </span>
         )}
@@ -400,13 +410,13 @@ const GameOfLife = () => {
       />
 
       <div className="gameoflife-instructions">
-        <p style={{ color: '#888', fontSize: '12px', textAlign: 'center' }}>
+        <p>
           Rules: (1) Live cell with &lt;2 neighbors dies (2) Live cell with 2-3 neighbors survives 
           (3) Live cell with &gt;3 neighbors dies (4) Dead cell with exactly 3 neighbors becomes alive
         </p>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default React.memo(GameOfLife); 
+export default React.memo(GameOfLife);
