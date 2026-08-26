@@ -4,7 +4,7 @@
 
 The complete, self-contained reference for who I am, what I build, and where to find me. Contains my projects, skills, achievements, and press features — no additional requests needed.
 
-Last-Updated: 2026-08-21
+Last-Updated: 2026-08-26
 Canonical: https://kuber.studio/llms.txt
 
 ---
