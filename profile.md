@@ -4,12 +4,12 @@
 
 19-year-old AI developer from New Delhi, India.
 
-Hey! I'm an AI dev & Tech Enthusiast from New Delhi, India
+Hi! I'm Kuber Mehta (kuberwastaken), an AI developer from New Delhi, India.
 
-I'm studying Computer Science & AI-ML from BITS Pilani and AI & Data Science from IPU, primarily working on Generative UI for LLMs, World model caching and more  @ [PolyThink Labs](https://www.polyth.ink/).
+I'm studying Computer Science & Machine Learning at BITS Pilani and AI & Data Science at IP University. I'm currently part of [Razorpay's](https://razorpay.com) Central AI team in the Founders' Office, where we primarily build foundational models and agent-to-agent (A2A) systems. Alongside that, I work on generative UI for LLMs, world-model caching, and more at [PolyThink Labs](https://www.polyth.ink/).
 
 ## Current role
-This summer I'm working on central AI Initiatives @ [Razorpay](https://razorpay.com) (YC W15) — a 5-person mini AI lab reporting directly to CEO Harshil Mathur. We train foundational models and build large-scale internal and external AI applications on top of massive databases, at a company with 3500+ employees serving millions of merchants and billions of transactions.
+I'm part of Razorpay's Central AI team in the Founders' Office, where we primarily build foundational models and agent-to-agent (A2A) systems.
 
 Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai), AI Agents Websocket Framework LEAD Intern @ HTMX (thanks Twitter)
 
