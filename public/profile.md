@@ -31,9 +31,8 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 - **Litmus** — Run a Parallel Autonomous ML Research Organization on your OpenClaw instance. Shipped <12 Hours, MIT License ([site](https://litmus.kuber.studio/), [code](https://github.com/kuberwastaken/litmus))
 
 ## Skills
-- **Languages**: Python, C, .NET, C#, Lua, JavaScript, TypeScript, R, HTML, CSS, SCSS
-- **Frameworks**: React, Next.js, Flask, Node.js, TensorFlow, PyTorch
-- **Tools**: Git, SQL, BigQuery, Tableau, LaTeX, Gradio
+- **Languages**: Python, JavaScript, TypeScript, Rust, SQL, C, HTML, CSS, R, Lua
+- **Technologies**: React, Next.js, Node.js, Tableau, FastAPI, TensorFlow, Transformers.js, PyTorch, Gradio, Flask
 
 ## Achievements
 - AI Initiatives @ Razorpay (YC W15) — Summer 2026 — central AI lab of 5, reporting directly to CEO Harshil Mathur; training foundational models and shipping large-scale internal & external AI applications on massive databases for a company with 3500+ employees, millions of merchants, and billions of transactions
