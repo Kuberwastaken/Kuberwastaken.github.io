@@ -519,33 +519,28 @@ All posts, newest first within each section:
 ## Skills
 
 ### Languages
-  - Python: Versatile scripting & data science
-  - C: Low-level systems programming
-  - .NET: Modern object-oriented programming and enterprise development
-  - C#: Popular language for .NET and game development
-  - Lua: Lightweight scripting
-  - JavaScript: Web & full-stack development
-  - TypeScript: Type-safe JavaScript
-  - R: Statistical computing
-  - HTML: Web structure
-  - CSS: Web styling
-  - SCSS: Advanced CSS preprocessing
+  - Python: AI systems, research tooling, and automation
+  - JavaScript: Browser-native products and experiments
+  - TypeScript: Typed product and agent interfaces
+  - Rust: Fast, reliable systems and developer tooling
+  - SQL: Analytics, retrieval, and data systems
+  - C: Low-level and resource-constrained programs
+  - HTML: Semantic interfaces for the web
+  - CSS: Responsive systems and interaction design
+  - R: Statistics and exploratory analysis
+  - Lua: Games, scripting, and embedded logic
 
-### Frameworks
-  - React: Component-based UI library
-  - Next.js: Full-stack React framework
-  - Flask: Lightweight web framework
-  - Node.js: Server-side JavaScript runtime
-  - TensorFlow: Deep learning framework
-  - PyTorch: Machine learning framework
-
-### Tools
-  - Git: Version control system
-  - SQL: Database management
-  - BigQuery: Cloud data warehouse
-  - Tableau: Data visualization
-  - LaTeX: Document preparation
-  - Gradio: Machine learning interfaces
+### Technologies
+  - React: Interactive product interfaces
+  - Next.js: Full-stack web applications
+  - Node.js: JavaScript services and build tooling
+  - Tableau: Analysis and data visualization
+  - FastAPI: Typed Python APIs and model services
+  - TensorFlow: Training and deploying neural models
+  - Transformers.js: On-device machine learning in the browser
+  - PyTorch: Research and model development
+  - Gradio: Fast interfaces for ML experiments
+  - Flask: Small Python services and prototypes
 
 ---
 
@@ -561,13 +556,14 @@ All posts, newest first within each section:
 
 ## The portfolio (kuber.studio)
 
-An Interactive Terminal-style React SPA built with React, JavaScript, CSS. Capabilities:
+An Custom TUI Session-style React SPA built with React, JavaScript, CSS, Canvas. Capabilities:
 
 - 30+ terminal commands
-- Built-in games (Snake, Tetris, 2048, Flappy Bird)
-- AI assistant (JARVIS)
-- Calculator and utilities
-- Dynamic theming system
+- Claude Code-inspired session interface
+- Interactive ASCII depth portrait
+- Built-in games (Snake, Tetris, Game of Life)
+- Calculator, QR, password, and GitHub utilities
+- Keyboard commands and deep links
 - Mobile responsive design
 
 ---
