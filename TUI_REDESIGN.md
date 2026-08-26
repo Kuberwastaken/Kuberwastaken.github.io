@@ -15,7 +15,7 @@ Reference direction: Claude Code session structure and prompt grammar from Brain
 - [x] Remove 2048 and Flappy Bird from the bundle and command registry.
 - [x] Replace the public skill inventory with the requested languages and technologies.
 - [x] Verify keyboard behavior, reduced motion, desktop, small mobile, build output, and deep links.
-- [ ] Push sequential commits and deploy the final build to `kuber.studio`.
+- [x] Push sequential commits and deploy the final build to `kuber.studio`.
 
 ## Verification
 
