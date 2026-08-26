@@ -939,7 +939,7 @@ function buildStaticFallbackHtml(blogPosts) {
 
   return `<div id="static-fallback">
       <style>
-        #static-fallback { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; font-family: 'Geist Mono', 'SFMono-Regular', Menlo, monospace; color: #d6d6d6; line-height: 1.65; }
+        #static-fallback { max-width: 900px; min-height: 100vh; margin: 0 auto; padding: 32px 20px 64px; font-family: 'Geist Mono', 'SFMono-Regular', Menlo, monospace; color: #d9d9dc; background: #050505; line-height: 1.65; }
         #static-fallback h1 { color: #ffffff; font-size: 1.5em; }
         #static-fallback h2 { color: #ffffff; font-size: 1.15em; margin-top: 2.4em; border-bottom: 1px solid #2a2a2a; padding-bottom: 6px; }
         #static-fallback h2::before { content: "$ "; color: #5abb9a; }
@@ -948,14 +948,14 @@ function buildStaticFallbackHtml(blogPosts) {
         #static-fallback a { color: #5abb9a; }
         #static-fallback ul { padding-left: 1.3em; }
         #static-fallback li { margin-bottom: 0.4em; }
-        #static-fallback article { margin-bottom: 1.6em; }
+        #static-fallback article { margin-bottom: 1.6em; border-left: 1px solid #29292d; padding-left: 14px; }
         #static-fallback article p { margin: 0.2em 0; }
         #static-fallback .fb-links { font-size: 0.9em; }
-        #static-fallback .fb-note { border: 1px dashed #444; padding: 10px 14px; color: #999; font-size: 0.85em; }
+        #static-fallback .fb-note { border: 1px solid #4b4b51; padding: 10px 14px; color: #929298; background: #0b0b0c; font-size: 0.85em; }
       </style>
       <main>
         <p class="fb-note">JavaScript is off, so you're reading the static version of this site. Enable
-          JavaScript for the interactive terminal — 30+ commands, games, and JARVIS. AI agents: this same
+          JavaScript for the interactive TUI, command palette, tools, and terminal games. AI agents: this same
           content is at <a href="https://kuber.studio/llms.txt">kuber.studio/llms.txt</a>.</p>
 
         <h1>Kuber Mehta — ${escapeHtml(profileData.title)}</h1>

@@ -13,15 +13,15 @@
     },
     "bio": {
         "intro": "Hi! I'm Kuber Mehta (kuberwastaken), an AI developer from New Delhi, India.",
-        "education": "I'm studying Computer Science & Machine Learning at BITS Pilani and AI & Data Science at IP University.<br>I'm currently part of <a href=\"https://razorpay.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #5abb9a; text-decoration: underline;\">Razorpay's</a> Central AI team in the Founders' Office, where we primarily build foundational models and agent-to-agent (A2A) systems. Alongside that, I work on generative UI for LLMs, world-model caching, and more at <a href=\"https://www.polyth.ink/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #5abb9a; text-decoration: underline;\">PolyThink Labs</a>.",
-        "projects_highlight": "Chances are, you've come here after seeing one of my projects. Most of them start as an intrusive idea and turn into what I call a SideQuest — run <span class=\"command-link\" data-command=\"projects\" style=\"color: #5abb9a; cursor: pointer; text-decoration: underline;\">Projects</span> to see some of my favorites.",
-        "blog_highlight": "I also <span class=\"command-link\" data-command=\"projects\" style=\"color: #5abb9a; cursor: pointer; text-decoration: underline;\">write a blog named MindDump</span> now at 50-100k readers per month.",
+        "education": "I'm studying Computer Science & Machine Learning at BITS Pilani and AI & Data Science at IP University.<br>I'm currently part of <a href=\"https://razorpay.com\" target=\"_blank\" rel=\"noopener noreferrer\">Razorpay's</a> Central AI team in the Founders' Office, where we primarily build foundational models and agent-to-agent (A2A) systems. Alongside that, I work on generative UI for LLMs, world-model caching, and more at <a href=\"https://www.polyth.ink/\" target=\"_blank\" rel=\"noopener noreferrer\">PolyThink Labs</a>.",
+        "projects_highlight": "Chances are, you've come here after seeing one of my projects. Most of them start as an intrusive idea and turn into what I call a SideQuest — run <span class=\"command-link\" data-command=\"projects\">Projects</span> to see some of my favorites.",
+        "blog_highlight": "I also <span class=\"command-link\" data-command=\"blog\">write a blog named MindDump</span> now at 50-100k readers per month.",
         "current_work": "",
         "current_role": "I'm part of Razorpay's Central AI team in the Founders' Office, where we primarily build foundational models and agent-to-agent (A2A) systems.",
         "skills_highlight": "",
         "history": "Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai), AI Agents Websocket Framework LEAD Intern @ HTMX (thanks Twitter)",
         "fun_fact": "Fun Fact: I started making games on Roblox when I was 12, made over 1 Million Robux by 14, at 16 I got into 3D modelling and won India's biggest student contest for it, and I almost went to culinary school at 17 because I sucked at math - glad it worked out though :)",
-        "outro": "At my core, I love Building (& Breaking) things, so if you're making something cool and ambitious, reach out via <span class=\"command-link\" data-command=\"twitter\" style=\"color: #5abb9a; cursor: pointer; text-decoration: underline;\">twitter</span> or <span class=\"command-link\" data-command=\"linkedin\" style=\"color: #5abb9a; cursor: pointer; text-decoration: underline;\">linkedin</span>."
+        "outro": "At my core, I love Building (& Breaking) things, so if you're making something cool and ambitious, reach out via <span class=\"command-link\" data-command=\"twitter\">twitter</span> or <span class=\"command-link\" data-command=\"linkedin\">linkedin</span>."
     },
     "skills": {
         "Languages": [

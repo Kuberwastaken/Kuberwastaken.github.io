@@ -1,12 +1,11 @@
 import React, { Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { showNeofetch } from '../constants/neofetchContent';
-import { getAsciiArt } from '../constants/asciiSelfie';
 import PDFViewer from './PDFViewer';
 import HollywoodEffect from './HollywoodEffect/HollywoodEffect';
 import WhoamiCard from './WhoamiCard';
 import ProjectsTerminal from '../constants/projectsContent';
 import TuiBrandMark from './Tui/TuiBrand';
 import { GamesPanel, HelpPanel, MiscPanel, SkillsPanel, WelcomePanel } from './Tui/TuiPanels';
+import { AsciiSelfie, SystemProfile } from './Tui/TuiOddities';
 
 const Calculator = lazy(() => import('./Calculator/Calculator'));
 const SnakeGame = lazy(() => import('./SnakeGame/SnakeGame'));
@@ -231,11 +230,11 @@ const Terminal = () => {
         }
         break;
       case 'ascii-selfie':
-        addToOutput({ type: 'legacy-html', content: getAsciiArt() });
+        addToOutput({ type: 'component', content: <AsciiSelfie /> });
         break;
       case 'neofetch':
       case 'nf':
-        showNeofetch(addToOutput);
+        addToOutput({ type: 'component', content: <SystemProfile /> });
         break;
       case 'calculator':
         addToOutput({ type: 'component', content: <LazyView label="calculator"><Calculator /></LazyView> });
@@ -433,7 +432,7 @@ const Terminal = () => {
                   </div>
                 </div>
               )}
-              {(item.type === 'output' || item.type === 'legacy-html') && (
+              {item.type === 'output' && (
                 <div className="tui-output-line">
                   <div dangerouslySetInnerHTML={{ __html: item.content }} />
                 </div>

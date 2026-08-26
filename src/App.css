@@ -690,6 +690,12 @@ button.tui-command-row {
   cursor: pointer;
 }
 
+.whoami-section .command-link {
+  color: var(--tui-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* Projects */
 .projects-terminal {
   min-width: 0;
@@ -823,37 +829,6 @@ button.tui-command-row {
 .project-links a:hover {
   color: var(--tui-accent);
   text-decoration: underline;
-}
-
-/* Legacy HTML output kept terminal-shaped */
-.neofetch-container {
-  display: grid;
-  grid-template-columns: minmax(220px, auto) minmax(0, 1fr);
-  gap: 24px;
-  max-width: 780px;
-  border-left: 2px solid var(--tui-accent-soft);
-  padding: 10px 14px;
-  color: var(--tui-text);
-}
-
-.neofetch-logo,
-.neofetch-details {
-  min-width: 0;
-  overflow: hidden;
-}
-
-.neofetch-logo pre,
-.neofetch-details pre {
-  color: var(--tui-accent);
-  font: 12px/1.35 var(--tui-font);
-}
-
-.rickroll-container {
-  min-width: 0;
-  overflow: hidden;
-  border: 1px solid var(--tui-line);
-  padding: 10px;
-  background: var(--tui-surface);
 }
 
 @media (max-width: 820px) {
@@ -992,14 +967,6 @@ button.tui-command-row {
     font-size: 10px;
   }
 
-  .neofetch-container {
-    grid-template-columns: 1fr;
-  }
-
-  .neofetch-logo pre,
-  .neofetch-details pre {
-    font-size: 8px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
