@@ -13,99 +13,113 @@
     },
     "bio": {
         "intro": "Hi! I'm Kuber Mehta (kuberwastaken), an AI developer from New Delhi, India.",
-        "education": "I'm studying Computer Science & Machine Learning at BITS Pilani and AI & Data Science at IP University.<br>I'm currently part of <a href=\"https://razorpay.com\" target=\"_blank\" rel=\"noopener noreferrer\">Razorpay's</a> Central AI team in the Founders' Office, where we primarily build foundational models and agent-to-agent (A2A) systems. Alongside that, I work on generative UI for LLMs, world-model caching, and more at <a href=\"https://www.polyth.ink/\" target=\"_blank\" rel=\"noopener noreferrer\">PolyThink Labs</a>.",
-        "projects_highlight": "Chances are, you've come here after seeing one of my projects. Most of them start as an intrusive idea and turn into what I call a SideQuest — run <span class=\"command-link\" data-command=\"projects\">Projects</span> to see some of my favorites.",
-        "blog_highlight": "I also <span class=\"command-link\" data-command=\"blog\">write a blog named MindDump</span> now at 50-100k readers per month.",
+        "education": "I'm studying Computer Science & Machine Learning at BITS Pilani and AI & Data Science at IP University.<br>I'm currently part of <a href=\"https://razorpay.com\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #5abb9a; text-decoration: underline;\">Razorpay's</a> Central AI team in the Founders' Office, where we primarily build foundational models and agent-to-agent (A2A) systems. Alongside that, I work on generative UI for LLMs, world-model caching, and more at <a href=\"https://www.polyth.ink/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #5abb9a; text-decoration: underline;\">PolyThink Labs</a>.",
+        "projects_highlight": "Chances are, you've come here after seeing one of my projects. Most of them start as an intrusive idea and turn into what I call a SideQuest — run <span class=\"command-link\" data-command=\"projects\" style=\"color: #5abb9a; cursor: pointer; text-decoration: underline;\">Projects</span> to see some of my favorites.",
+        "blog_highlight": "I also <span class=\"command-link\" data-command=\"projects\" style=\"color: #5abb9a; cursor: pointer; text-decoration: underline;\">write a blog named MindDump</span> now at 50-100k readers per month.",
         "current_work": "",
         "current_role": "I'm part of Razorpay's Central AI team in the Founders' Office, where we primarily build foundational models and agent-to-agent (A2A) systems.",
         "skills_highlight": "",
         "history": "Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai), AI Agents Websocket Framework LEAD Intern @ HTMX (thanks Twitter)",
         "fun_fact": "Fun Fact: I started making games on Roblox when I was 12, made over 1 Million Robux by 14, at 16 I got into 3D modelling and won India's biggest student contest for it, and I almost went to culinary school at 17 because I sucked at math - glad it worked out though :)",
-        "outro": "At my core, I love Building (& Breaking) things, so if you're making something cool and ambitious, reach out via <span class=\"command-link\" data-command=\"twitter\">twitter</span> or <span class=\"command-link\" data-command=\"linkedin\">linkedin</span>."
+        "outro": "At my core, I love Building (& Breaking) things, so if you're making something cool and ambitious, reach out via <span class=\"command-link\" data-command=\"twitter\" style=\"color: #5abb9a; cursor: pointer; text-decoration: underline;\">twitter</span> or <span class=\"command-link\" data-command=\"linkedin\" style=\"color: #5abb9a; cursor: pointer; text-decoration: underline;\">linkedin</span>."
     },
     "skills": {
         "Languages": [
             {
                 "name": "Python",
-                "desc": "AI systems, research tooling, and automation"
-            },
-            {
-                "name": "JavaScript",
-                "desc": "Browser-native products and experiments"
-            },
-            {
-                "name": "TypeScript",
-                "desc": "Typed product and agent interfaces"
-            },
-            {
-                "name": "Rust",
-                "desc": "Fast, reliable systems and developer tooling"
-            },
-            {
-                "name": "SQL",
-                "desc": "Analytics, retrieval, and data systems"
+                "desc": "Versatile scripting & data science"
             },
             {
                 "name": "C",
-                "desc": "Low-level and resource-constrained programs"
+                "desc": "Low-level systems programming"
             },
             {
-                "name": "HTML",
-                "desc": "Semantic interfaces for the web"
+                "name": ".NET",
+                "desc": "Modern object-oriented programming and enterprise development"
             },
             {
-                "name": "CSS",
-                "desc": "Responsive systems and interaction design"
-            },
-            {
-                "name": "R",
-                "desc": "Statistics and exploratory analysis"
+                "name": "C#",
+                "desc": "Popular language for .NET and game development"
             },
             {
                 "name": "Lua",
-                "desc": "Games, scripting, and embedded logic"
+                "desc": "Lightweight scripting"
+            },
+            {
+                "name": "JavaScript",
+                "desc": "Web & full-stack development"
+            },
+            {
+                "name": "TypeScript",
+                "desc": "Type-safe JavaScript"
+            },
+            {
+                "name": "R",
+                "desc": "Statistical computing"
+            },
+            {
+                "name": "HTML",
+                "desc": "Web structure"
+            },
+            {
+                "name": "CSS",
+                "desc": "Web styling"
+            },
+            {
+                "name": "SCSS",
+                "desc": "Advanced CSS preprocessing"
             }
         ],
-        "Technologies": [
+        "Frameworks": [
             {
                 "name": "React",
-                "desc": "Interactive product interfaces"
+                "desc": "Component-based UI library"
             },
             {
                 "name": "Next.js",
-                "desc": "Full-stack web applications"
-            },
-            {
-                "name": "Node.js",
-                "desc": "JavaScript services and build tooling"
-            },
-            {
-                "name": "Tableau",
-                "desc": "Analysis and data visualization"
-            },
-            {
-                "name": "FastAPI",
-                "desc": "Typed Python APIs and model services"
-            },
-            {
-                "name": "TensorFlow",
-                "desc": "Training and deploying neural models"
-            },
-            {
-                "name": "Transformers.js",
-                "desc": "On-device machine learning in the browser"
-            },
-            {
-                "name": "PyTorch",
-                "desc": "Research and model development"
-            },
-            {
-                "name": "Gradio",
-                "desc": "Fast interfaces for ML experiments"
+                "desc": "Full-stack React framework"
             },
             {
                 "name": "Flask",
-                "desc": "Small Python services and prototypes"
+                "desc": "Lightweight web framework"
+            },
+            {
+                "name": "Node.js",
+                "desc": "Server-side JavaScript runtime"
+            },
+            {
+                "name": "TensorFlow",
+                "desc": "Deep learning framework"
+            },
+            {
+                "name": "PyTorch",
+                "desc": "Machine learning framework"
+            }
+        ],
+        "Tools": [
+            {
+                "name": "Git",
+                "desc": "Version control system"
+            },
+            {
+                "name": "SQL",
+                "desc": "Database management"
+            },
+            {
+                "name": "BigQuery",
+                "desc": "Cloud data warehouse"
+            },
+            {
+                "name": "Tableau",
+                "desc": "Data visualization"
+            },
+            {
+                "name": "LaTeX",
+                "desc": "Document preparation"
+            },
+            {
+                "name": "Gradio",
+                "desc": "Machine learning interfaces"
             }
         ]
     },
@@ -424,15 +438,14 @@
         "Open source development"
     ],
     "portfolio_features": {
-        "type": "Custom TUI Session",
-        "technologies": ["React", "JavaScript", "CSS", "Canvas"],
+        "type": "Interactive Terminal",
+        "technologies": ["React", "JavaScript", "CSS"],
         "features": [
             "30+ terminal commands",
-            "Claude Code-inspired session interface",
-            "Interactive ASCII depth portrait",
-            "Built-in games (Snake, Tetris, Game of Life)",
-            "Calculator, QR, password, and GitHub utilities",
-            "Keyboard commands and deep links",
+            "Built-in games (Snake, Tetris, 2048, Flappy Bird)",
+            "AI assistant (JARVIS)",
+            "Calculator and utilities",
+            "Dynamic theming system",
             "Mobile responsive design"
         ]
     }

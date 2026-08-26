@@ -1,474 +1,727 @@
-import React, { Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useState, useRef, useEffect, Suspense, lazy, useCallback, useMemo } from 'react';
+import { useTheme } from '../context/ThemeContext';
+import skillsBar from '../constants/skillsBar';
+import helpContent from '../constants/helpContent';
+import { showNeofetch } from '../constants/neofetchContent';
+import { getAsciiArt } from '../constants/asciiSelfie';
+import miscContent from '../constants/miscContent';
+import gamesContent from '../constants/gamesContent';
 import PDFViewer from './PDFViewer';
 import HollywoodEffect from './HollywoodEffect/HollywoodEffect';
 import WhoamiCard from './WhoamiCard';
-import ProjectsTerminal from '../constants/projectsContent';
-import TuiBrandMark from './Tui/TuiBrand';
-import { GamesPanel, HelpPanel, MiscPanel, SkillsPanel, WelcomePanel } from './Tui/TuiPanels';
-import { AsciiSelfie, SystemProfile } from './Tui/TuiOddities';
+import ProjectsMasonry from '../constants/projectsContent';
 
+// Lazy load heavy game components
 const Calculator = lazy(() => import('./Calculator/Calculator'));
 const SnakeGame = lazy(() => import('./SnakeGame/SnakeGame'));
 const TetrisGame = lazy(() => import('./TetrisGame/TetrisGame'));
+const Game2048 = lazy(() => import('./Game2048/Game2048'));
+const TerminalFlappyBird = lazy(() => import('./FlappyBird/TerminalFlappyBird'));
 const GameOfLife = lazy(() => import('./GameOfLife/GameOfLife'));
 const RickrollAnimation = lazy(() => import('./RickrollAnimation'));
+
+// Lazy load utility components
 const QRGenerator = lazy(() => import('./QRGenerator/QRGenerator'));
 const PasswordGenerator = lazy(() => import('./PasswordGenerator/PasswordGenerator'));
 const GitHubFeed = lazy(() => import('./GitHubFeed/GitHubFeed'));
 
-const INITIAL_OUTPUT = [
-  { type: 'component', content: <WelcomePanel /> },
-  { type: 'component', content: <HelpPanel /> }
-];
+// Memoized Levenshtein distance calculation
+const levenshteinDistance = (str1, str2) => {
+  const m = str1.length;
+  const n = str2.length;
+  const dp = Array.from({ length: m + 1 }, () => Array(n + 1).fill(0));
 
-const levenshteinDistance = (left, right) => {
-  const rows = left.length + 1;
-  const columns = right.length + 1;
-  const distances = Array.from({ length: rows }, () => Array(columns).fill(0));
+  for (let i = 0; i <= m; i++) dp[i][0] = i;
+  for (let j = 0; j <= n; j++) dp[0][j] = j;
 
-  for (let row = 0; row < rows; row += 1) distances[row][0] = row;
-  for (let column = 0; column < columns; column += 1) distances[0][column] = column;
-
-  for (let row = 1; row < rows; row += 1) {
-    for (let column = 1; column < columns; column += 1) {
-      distances[row][column] = left[row - 1] === right[column - 1]
-        ? distances[row - 1][column - 1]
-        : 1 + Math.min(
-          distances[row - 1][column],
-          distances[row][column - 1],
-          distances[row - 1][column - 1]
-        );
+  for (let i = 1; i <= m; i++) {
+    for (let j = 1; j <= n; j++) {
+      if (str1[i - 1] === str2[j - 1]) {
+        dp[i][j] = dp[i - 1][j - 1];
+      } else {
+        dp[i][j] = 1 + Math.min(dp[i - 1][j], dp[i - 1][j - 1], dp[i][j - 1]);
+      }
     }
   }
-
-  return distances[left.length][right.length];
+  return dp[m][n];
 };
 
-const LazyView = ({ label, children }) => (
-  <Suspense fallback={<div className="tui-loading">Loading {label}…</div>}>
-    {children}
-  </Suspense>
-);
+// Memoized command similarity finder
+const findSimilarCommands = (input, availableCommands) => {
+  const suggestions = availableCommands
+    .map(cmd => ({
+      command: cmd,
+      distance: levenshteinDistance(input.toLowerCase(), cmd.toLowerCase())
+    }))
+    .filter(({ distance }) => distance <= 2 && distance > 0)
+    .sort((a, b) => a.distance - b.distance)
+    .map(({ command }) => command);
 
-const TuiTopbar = () => (
-  <header className="tui-topbar">
-    <div className="tui-topbar-inner">
-      <div className="tui-brand-lockup">
-        <TuiBrandMark />
-        <span className="tui-brand-copy">
-          <span className="tui-brand-name">Kuber Mehta</span>
-          <span className="tui-brand-path">KM · ~/portfolio</span>
-        </span>
-      </div>
-      <nav className="tui-nav" aria-label="Primary commands">
-        {['who', 'projects', 'skills', 'blog', 'games', 'misc'].map(command => (
-          <button key={command} type="button" className="command-link" data-command={command}>
-            /{command}
-          </button>
-        ))}
-      </nav>
-      <div className="tui-topbar-status" aria-label="Portfolio status">
-        <span className="tui-status-dot" aria-hidden="true" />
-        <span>session ready</span>
-        <span>·</span>
-        <span>v2.0.0</span>
-      </div>
-    </div>
-  </header>
-);
+  return suggestions.slice(0, 3); // Return top 3 suggestions
+};
 
 const Terminal = () => {
-  const [output, setOutput] = useState(INITIAL_OUTPUT);
+  const [output, setOutput] = useState([]);
   const [commandHistory, setCommandHistory] = useState([]);
-  const [historyIndex, setHistoryIndex] = useState(0);
+  const [historyIndex, setHistoryIndex] = useState(-1);
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 768);
   const [input, setInput] = useState('');
   const [hackermode, setHackermode] = useState(false);
   const inputRef = useRef(null);
   const terminalRef = useRef(null);
+  const suppressAutoScrollRef = useRef(false);
+  const pendingScrollOffsetRef = useRef(0);
   const lastHandledHashRef = useRef('');
-  const hasMountedRef = useRef(false);
+  const { changeBackgroundColor, backgrounds } = useTheme();
 
+  // Memoized available commands array
   const availableCommands = useMemo(() => [
-    'help', 'skills', 'sk', 's', 'github', 'gh', 'discord', 'ds', 'email', 'em',
-    'youtube', 'yt', 'linkedin', 'li', 'twitter', 'ascii-selfie', 'projects', 'pj',
+    'help', 'skills', 's', 'github', 'gh', 'discord', 'ds', 'email', 'em',
+    'youtube', 'yt', 'linkedin', 'li', 'twitter',
+    'ascii-selfie', 'projects', 'pj',
     'blog', 'b', 'clear', 'c', 'games', 'g', 'who', 'w', 'wiki', 'wikipedia',
-    'chatgpt', 'gpt', 'neofetch', 'nf', 'misc', 'miscellaneous', 'resume', 'cv',
-    'google', 'snake', 'backdooms', 'thebackdooms', 'tetris', 'gameoflife', 'time',
-    'date', 'calculator', 'perplexity', 'perp', 'hackermode', 'qr-generator',
-    'password-generator', 'github-feed', 'secret', 'tos', 'rm', 'sudo'
+    'chatgpt', 'gpt', 'neofetch', 'nf', 'misc', 'miscellaneous', 'resume',
+    'cv', 'google', 'snake', 'backdooms', 'tetris', '2048',
+    'flappybird', 'gameoflife', 'time', 'date', 'background', 'theme', 'themes', 'bg',
+    'color', 'calculator', 'perplexity', 'perp', 'hackermode', 'qr-generator',
+    'password-generator', 'github-feed', 'rm', 'sudo'
   ], []);
 
-  const addToOutput = useCallback((entry) => {
-    setOutput(previous => {
-      const next = [...previous, entry];
-      return next.length > 100 ? next.slice(-100) : next;
+  // Memoized banners to avoid recreation on every render
+  const banners = useMemo(() => ({
+    large: `
+ 
+.##....##.##.....##.########..########.########.........##.....##.########.##.....##.########....###...
+.##...##..##.....##.##.....##.##.......##.....##........###...###.##.......##.....##....##......##.##..
+.##..##...##.....##.##.....##.##.......##.....##........####.####.##.......##.....##....##.....##...##.
+.#####....##.....##.########..######...########.........##.###.##.######...#########....##....##.....##
+.##..##...##.....##.##.....##.##.......##...##..........##.....##.##.......##.....##....##....#########
+.##...##..##.....##.##.....##.##.......##....##.........##.....##.##.......##.....##....##....##.....##
+.##....##..#######..########..########.##.....##........##.....##.########.##.....##....##....##.....##                                                              `,
+    small: `
+..##....##....##.....##..
+..##...##.....###...###..
+..##..##......####.####..
+..#####.......##.###.##..
+..##..##......##.....##..
+..##...##.....##.....##..
+..##....##....##.....##..`
+  }), []);
+
+  // Memoized add to output function
+  const addToOutput = useCallback((newEntry) => {
+    setOutput(prev => {
+      const updated = [...prev, newEntry];
+      // Keep only the last 100 entries to prevent memory bloat
+      return updated.length > 100 ? updated.slice(-100) : updated;
     });
   }, []);
 
-  const addMessage = useCallback((content, tone = 'normal') => {
-    addToOutput({ type: 'message', content, tone });
-  }, [addToOutput]);
+  // Memoized similar commands finder
+  const getSimilarCommands = useCallback((input) => {
+    return findSimilarCommands(input, availableCommands);
+  }, [availableCommands]);
 
+  // Memoized command handler (defined early to avoid dependency issues)
   const handleCommand = useCallback((command) => {
-    const [rawCommand, ...args] = command.trim().split(' ');
-    const cmd = rawCommand.toLowerCase();
-    const argument = args.join(' ').trim();
+    const [cmd, ...args] = command.toLowerCase().trim().split(' ');
+    const argument = args.join(' ');
 
+    // Check if command exists in availableCommands
     if (!availableCommands.includes(cmd)) {
-      const suggestions = availableCommands
-        .map(candidate => ({
-          command: candidate,
-          distance: levenshteinDistance(cmd, candidate)
-        }))
-        .filter(({ distance }) => distance > 0 && distance <= 2)
-        .sort((a, b) => a.distance - b.distance)
-        .slice(0, 3)
-        .map(({ command: candidate }) => candidate);
-
-      addToOutput({ type: 'suggestions', content: suggestions, attempted: cmd });
-      return;
+      const suggestions = getSimilarCommands(cmd);
+      if (suggestions.length > 0) {
+        const suggestionLinks = suggestions
+          .map(suggestion => `<span class="command-link" style="color: #5abb9a; cursor: pointer;" data-command="${suggestion}">${suggestion}</span>`)
+          .join(', ');
+        addToOutput({ type: 'output', content: `Command not found. Did you mean: ${suggestionLinks}?` });
+        return;
+      }
     }
 
     switch (cmd) {
-      case 'help':
-        addToOutput({ type: 'component', content: <HelpPanel /> });
-        break;
       case 'skills':
       case 'sk':
       case 's':
-        addToOutput({ type: 'component', content: <SkillsPanel /> });
-        break;
-      case 'who':
-      case 'w':
-        addToOutput({ type: 'component', content: <WhoamiCard /> });
-        break;
-      case 'projects':
-      case 'pj':
-        addToOutput({ type: 'component', content: <ProjectsTerminal /> });
-        break;
-      case 'games':
-      case 'g':
-        addToOutput({ type: 'component', content: <GamesPanel /> });
-        break;
-      case 'misc':
-      case 'miscellaneous':
-        addToOutput({ type: 'component', content: <MiscPanel /> });
+        addToOutput({ type: 'output', content: skillsBar });
         break;
       case 'github':
       case 'gh':
-        window.open('https://github.com/Kuberwastaken', '_blank', 'noopener,noreferrer');
-        addMessage('Opened github.com/Kuberwastaken.');
+        window.open('https://github.com/Kuberwastaken', '_blank');
+        addToOutput({ type: 'output', content: 'Opening GitHub profile...' });
         break;
       case 'discord':
       case 'ds':
-        window.open('https://discord.com/users/1296085958374068316', '_blank', 'noopener,noreferrer');
-        addMessage('Opened Discord profile.');
+        window.open('https://discord.com/users/1296085958374068316', '_blank');
+        addToOutput({ type: 'output', content: 'Opening Discord profile...' });
         break;
       case 'email':
       case 'em':
-        window.location.href = 'mailto:kuberhob@gmail.com';
-        addMessage('Opened mailto:kuberhob@gmail.com.');
+        window.open('mailto:kuberhob@gmail.com', '_blank');
+        addToOutput({ type: 'output', content: 'Opening email client...' });
         break;
       case 'youtube':
       case 'yt':
-        window.open(
-          argument
-            ? `https://www.youtube.com/results?search_query=${encodeURIComponent(argument)}`
-            : 'https://www.youtube.com/@Kuberwastaken',
-          '_blank',
-          'noopener,noreferrer'
-        );
-        addMessage(argument ? `Searching YouTube for “${argument}”.` : 'Opened YouTube profile.');
+        window.open('https://www.youtube.com/@Kuberwastaken', '_blank');
+        addToOutput({ type: 'output', content: 'Opening YouTube channel...' });
         break;
       case 'linkedin':
       case 'li':
-        window.open('https://www.linkedin.com/in/kubermehta/', '_blank', 'noopener,noreferrer');
-        addMessage('Opened LinkedIn profile.');
+        window.open('https://www.linkedin.com/in/kubermehta/', '_blank');
+        addToOutput({ type: 'output', content: 'Opening LinkedIn profile...' });
         break;
       case 'twitter':
-        window.open('https://x.com/Kuberwastaken', '_blank', 'noopener,noreferrer');
-        addMessage('Opened Twitter. I still refuse to call it X.');
+        window.open('https://x.com/Kuberwastaken', '_blank');
+        addToOutput({ type: 'output', content: 'I refuse to call it X lol' });
+        break;
+      case 'ascii-selfie':
+        addToOutput({ type: 'output', content: getAsciiArt() });
+        break;
+      case 'projects':
+      case 'pj':
+        // Temporarily disable full autoscroll and request a tiny partial scroll
+        suppressAutoScrollRef.current = true;
+        pendingScrollOffsetRef.current = Math.round((terminalRef.current?.clientHeight || 0) * 0.8) || 450;
+        addToOutput({ type: 'component', content: <ProjectsMasonry /> });
+        // Re-enable autoscroll shortly after render settles
+        setTimeout(() => { suppressAutoScrollRef.current = false; }, 600);
         break;
       case 'blog':
       case 'b':
-        window.open('https://kuber.studio/blog/', '_blank', 'noopener,noreferrer');
-        addMessage('Opened MindDump.');
+        window.open('https://kuber.studio/blog/', '_blank');
+        addToOutput({ type: 'output', content: 'Opening blog...' });
+        break;
+      case 'clear':
+      case 'c':
+        setOutput([]);
+        break;
+      case 'games':
+      case 'g':
+        addToOutput({ type: 'output', content: gamesContent });
+        break;
+      case 'help':
+        addToOutput({ type: 'output', content: helpContent });
+        break;
+      case "neofetch":
+      case "nf":
+        showNeofetch(addToOutput);
+        break;
+      case 'misc':
+      case 'miscellaneous':
+        addToOutput({ type: 'output', content: miscContent });
         break;
       case 'resume':
       case 'cv':
         addToOutput({ type: 'component', content: <PDFViewer /> });
         break;
       case 'google':
-        if (!argument) addMessage('Usage: google <query>', 'warning');
-        else {
-          window.open(`https://www.google.com/search?q=${encodeURIComponent(argument)}`, '_blank', 'noopener,noreferrer');
-          addMessage(`Searching Google for “${argument}”.`);
+        if (argument) {
+          window.open(`https://www.google.com/search?q=${encodeURIComponent(argument)}`, '_blank');
+          addToOutput({ type: 'output', content: `Searching Google for: ${argument}` });
+        } else {
+          addToOutput({ type: 'output', content: 'Please provide a search query.' });
+        }
+        break;
+      case 'who':
+      case 'w':
+        if (isMobile) suppressAutoScrollRef.current = true;
+        addToOutput({ type: 'component', content: <WhoamiCard /> });
+        if (isMobile) {
+          window.setTimeout(() => {
+            const cards = document.querySelectorAll('.whoami-glass-card');
+            cards[cards.length - 1]?.scrollIntoView({ block: 'start' });
+            suppressAutoScrollRef.current = false;
+          }, 100);
         }
         break;
       case 'wiki':
       case 'wikipedia':
-        if (!argument) addMessage('Usage: wiki <query>', 'warning');
-        else {
-          window.open(`https://wikipedia.org/w/index.php?search=${encodeURIComponent(argument)}`, '_blank', 'noopener,noreferrer');
-          addMessage(`Searching Wikipedia for “${argument}”.`);
+        if (argument) {
+          window.open(`https://wikipedia.org/w/index.php?search=${encodeURIComponent(argument)}`, '_blank');
+          addToOutput({ type: 'output', content: `Searching Wikipedia for: ${argument}` });
+        } else {
+          addToOutput({ type: 'output', content: 'Please provide a search query.' });
         }
         break;
       case 'chatgpt':
       case 'gpt':
-        if (!argument) addMessage('Usage: chatgpt <query>', 'warning');
-        else {
-          window.open(`https://chatgpt.com/?q=${encodeURIComponent(argument)}`, '_blank', 'noopener,noreferrer');
-          addMessage(`Opening ChatGPT with “${argument}”.`);
+        if (argument) {
+          window.open(`https://chatgpt.com/?q=${encodeURIComponent(argument)}`, '_blank');
+          addToOutput({ type: 'output', content: `Searching ChatGPT for: ${argument}` });
+        } else {
+          addToOutput({ type: 'output', content: 'Please provide a search query.' });
         }
         break;
       case 'perplexity':
       case 'perp':
-        if (!argument) addMessage('Usage: perplexity <query>', 'warning');
-        else {
-          window.open(`https://www.perplexity.ai/?q=${encodeURIComponent(argument)}`, '_blank', 'noopener,noreferrer');
-          addMessage(`Opening Perplexity with “${argument}”.`);
+        if (argument) {
+          window.open(`https://www.perplexity.ai/?q=${encodeURIComponent(argument)}`, '_blank');
+          addToOutput({ type: 'output', content: `Searching Perplexity for: ${argument}` });
+        } else {
+          addToOutput({ type: 'output', content: 'Please provide a search query.' });
         }
         break;
-      case 'ascii-selfie':
-        addToOutput({ type: 'component', content: <AsciiSelfie /> });
-        break;
-      case 'neofetch':
-      case 'nf':
-        addToOutput({ type: 'component', content: <SystemProfile /> });
+      case 'hackermode':
+        setHackermode(prev => !prev);
+        addToOutput({ type: 'output', content: `Hackermode ${hackermode ? 'deactivated' : 'activated'}` });
         break;
       case 'calculator':
-        addToOutput({ type: 'component', content: <LazyView label="calculator"><Calculator /></LazyView> });
+        addToOutput({
+          type: 'component', content: (
+            <Suspense fallback={<div>Loading calculator...</div>}>
+              <Calculator />
+            </Suspense>
+          )
+        });
         break;
       case 'qr-generator':
-        addToOutput({ type: 'component', content: <LazyView label="QR generator"><QRGenerator /></LazyView> });
+        addToOutput({
+          type: 'component', content: (
+            <Suspense fallback={<div>Loading QR Generator...</div>}>
+              <QRGenerator />
+            </Suspense>
+          )
+        });
         break;
       case 'password-generator':
-        addToOutput({ type: 'component', content: <LazyView label="password generator"><PasswordGenerator /></LazyView> });
+        addToOutput({
+          type: 'component', content: (
+            <Suspense fallback={<div>Loading Password Generator...</div>}>
+              <PasswordGenerator />
+            </Suspense>
+          )
+        });
         break;
       case 'github-feed':
-        addToOutput({ type: 'component', content: <LazyView label="GitHub feed"><GitHubFeed /></LazyView> });
+        addToOutput({
+          type: 'component', content: (
+            <Suspense fallback={<div>Loading GitHub Feed...</div>}>
+              <GitHubFeed />
+            </Suspense>
+          )
+        });
         break;
       case 'snake':
-        addToOutput({ type: 'component', content: <LazyView label="Snake"><SnakeGame /></LazyView> });
-        break;
-      case 'tetris':
-        addToOutput({ type: 'component', content: <LazyView label="Tetris"><TetrisGame /></LazyView> });
-        break;
-      case 'gameoflife':
-        addToOutput({ type: 'component', content: <LazyView label="Game of Life"><GameOfLife /></LazyView> });
+        addToOutput({
+          type: 'component', content: (
+            <Suspense fallback={<div>Loading Snake game...</div>}>
+              <SnakeGame />
+            </Suspense>
+          )
+        });
         break;
       case 'backdooms':
       case 'thebackdooms':
-        window.open('https://kuber.studio/backdooms/', '_blank', 'noopener,noreferrer');
-        addMessage('Opened The Backdooms in a new tab.');
+        window.open('https://kuber.studio/backdooms/', '_blank');
+        addToOutput({ type: 'output', content: 'Opening The Backdooms...' });
+        break;
+      case 'tetris':
+        addToOutput({
+          type: 'component', content: (
+            <Suspense fallback={<div>Loading Tetris game...</div>}>
+              <TetrisGame />
+            </Suspense>
+          )
+        });
+        break;
+      case '2048':
+        addToOutput({
+          type: 'component', content: (
+            <Suspense fallback={<div>Loading 2048 game...</div>}>
+              <Game2048 />
+            </Suspense>
+          )
+        });
+        break;
+      case 'flappybird':
+        addToOutput({
+          type: 'component', content: (
+            <Suspense fallback={<div>Loading Flappy Bird game...</div>}>
+              <TerminalFlappyBird />
+            </Suspense>
+          )
+        });
+        break;
+      case 'gameoflife':
+        addToOutput({
+          type: 'component', content: (
+            <Suspense fallback={<div>Loading Game of Life...</div>}>
+              <GameOfLife />
+            </Suspense>
+          )
+        });
         break;
       case 'secret':
-        addToOutput({ type: 'component', content: <LazyView label="classified output"><RickrollAnimation /></LazyView> });
+        addToOutput({
+          type: 'component', content: (
+            <Suspense fallback={<div>Loading secret...</div>}>
+              <RickrollAnimation />
+            </Suspense>
+          )
+        });
         break;
       case 'time':
-        addMessage(new Date().toLocaleTimeString());
+        addToOutput({ type: 'output', content: `Current Time: ${new Date().toLocaleTimeString()}` });
         break;
       case 'date':
-        addMessage(new Date().toLocaleDateString());
+        addToOutput({ type: 'output', content: `Current Date: ${new Date().toLocaleDateString()}` });
         break;
-      case 'hackermode':
-        setHackermode(active => !active);
-        addMessage(`Matrix overlay ${hackermode ? 'disabled' : 'enabled'}.`);
-        break;
-      case 'tos':
-        window.open('/tos', '_blank', 'noopener,noreferrer');
-        addMessage('Opened Terms of Service.');
-        break;
-      case 'rm':
-      case 'sudo':
-        if (command.toLowerCase().includes('rm -rf /')) {
-          setHackermode(true);
-          addMessage('Permission denied: this portfolio is mounted read-only. Nice try.', 'warning');
+      case 'background':
+      case 'theme':
+      case 'themes':
+      case 'bg':
+      case 'color':
+        if (argument) {
+          const selectedBackground = [...backgrounds.solid, ...backgrounds.gradients].find(bg => bg.name.toLowerCase() === argument.toLowerCase());
+          if (selectedBackground) {
+            changeBackgroundColor(selectedBackground.value);
+            addToOutput({ type: 'output', content: `Background changed to ${selectedBackground.name}` });
+          } else {
+            addToOutput({ type: 'output', content: 'Invalid background. Please choose from the list.' });
+          }
         } else {
-          addMessage(`${cmd}: command not found`, 'error');
+          const backgroundOptions = [...backgrounds.solid, ...backgrounds.gradients].map(bg => (
+            `<div key="${bg.name}" style="display: inline-block; margin: 5px;">
+                <div style="width: 50px; height: 50px; background: ${bg.value}; cursor: pointer;" onclick="document.dispatchEvent(new CustomEvent('backgroundSelected', { detail: '${bg.name}' }))"></div>
+              </div>`
+          )).join('');
+          addToOutput({ type: 'output', content: `<div style="display: flex; flex-wrap: wrap;">${backgroundOptions}</div>` });
         }
         break;
-      case 'clear':
-      case 'c':
-        setOutput([]);
+      case 'tos':
+        window.open('/tos', '_blank');
+        addToOutput({ type: 'output', content: 'Opening Terms of Service...' });
+        break;
+      case 'rm':
+        if (argument === '-rf /') {
+          addToOutput({ type: 'output', content: 'Deleting root filesystem... just kidding, goodbye!' });
+          setHackermode(true);
+          const allBgs = [...backgrounds.solid, ...backgrounds.gradients];
+          let bgIndex = 0;
+          document.body.style.transition = 'none'; // skip CSS transition
+          const bgInterval = setInterval(() => {
+            const currentBg = allBgs[bgIndex].value;
+            changeBackgroundColor(currentBg);
+            document.body.style.background = currentBg;
+            bgIndex = (bgIndex + 1) % allBgs.length;
+          }, 50);
+
+          setTimeout(() => {
+            clearInterval(bgInterval);
+            window.close();
+            // Fallback if window.close() fails due to browser security
+            document.body.style.background = '#000';
+            document.body.style.transition = '';
+            document.body.innerHTML = '<div style="background:#000;color:#0f0;height:100vh;display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:24px;">Connection closed.</div>';
+          }, 4500);
+        } else {
+          addToOutput({ type: 'output', content: `rm: cannot remove '${argument}': No such file or directory` });
+        }
+        break;
+      case 'sudo':
+        if (argument === 'rm -rf /') {
+          addToOutput({ type: 'output', content: '[sudo] password for kuber: *******\nDeleting root filesystem... goodbye!' });
+          setHackermode(true);
+          const allBgs = [...backgrounds.solid, ...backgrounds.gradients];
+          let bgIndex = 0;
+          document.body.style.transition = 'none'; // skip CSS transition
+          const bgInterval = setInterval(() => {
+            const currentBg = allBgs[bgIndex].value;
+            changeBackgroundColor(currentBg);
+            document.body.style.background = currentBg;
+            bgIndex = (bgIndex + 1) % allBgs.length;
+          }, 50);
+
+          setTimeout(() => {
+            clearInterval(bgInterval);
+            window.close();
+            // Fallback if window.close() fails due to browser security
+            document.body.style.background = '#000';
+            document.body.style.transition = '';
+            document.body.innerHTML = '<div style="background:#000;color:#0f0;height:100vh;display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:24px;">Connection closed.</div>';
+          }, 4500);
+        } else {
+          addToOutput({ type: 'output', content: `sudo: ${argument}: command not found` });
+        }
         break;
       default:
-        addMessage('Command not found. Run /help for the command directory.', 'error');
+        addToOutput({ type: 'output', content: 'Command not found. Type "help" for a list of commands.' });
+        break;
     }
-  }, [addMessage, addToOutput, availableCommands, hackermode]);
+    setInput(''); // Clear the input field after handling the command
+  }, [availableCommands, getSimilarCommands, addToOutput, hackermode, setHackermode, backgrounds, changeBackgroundColor, isMobile]);
 
+  // Memoized command execution function
   const executeCommand = useCallback((command) => {
-    const cleanCommand = command.trim();
-    if (!cleanCommand) return;
-
-    setCommandHistory(previous => {
-      const next = [...previous, cleanCommand];
-      setHistoryIndex(next.length);
-      return next;
-    });
+    setCommandHistory(prev => [...prev, command]);
+    setHistoryIndex(-1);
     setInput('');
-    addToOutput({ type: 'input', content: cleanCommand });
-    handleCommand(cleanCommand);
-  }, [addToOutput, handleCommand]);
+    handleCommand(command);
+  }, [handleCommand]);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    executeCommand(input);
-  };
-
-  const handleKeyDown = (event) => {
-    if (event.key === 'ArrowUp') {
-      event.preventDefault();
-      if (!commandHistory.length) return;
-      const nextIndex = Math.max(0, Math.min(historyIndex - 1, commandHistory.length - 1));
-      setHistoryIndex(nextIndex);
-      setInput(commandHistory[nextIndex]);
-    } else if (event.key === 'ArrowDown') {
-      event.preventDefault();
-      if (!commandHistory.length) return;
-      const nextIndex = Math.min(commandHistory.length, historyIndex + 1);
-      setHistoryIndex(nextIndex);
-      setInput(nextIndex === commandHistory.length ? '' : commandHistory[nextIndex]);
+  // Memoized typing simulation function
+  const simulateTyping = useCallback((command) => {
+    if (!command || typeof command !== 'string') {
+      console.error('Invalid command:', command);
+      return;
     }
-  };
+
+    // Clean the command string to ensure no undefined characters
+    const cleanCommand = command.trim();
+    if (!cleanCommand) {
+      console.error('Empty command after trimming:', command);
+      return;
+    }
+
+    let index = 0;
+    setInput(''); // Clear input
+    const interval = setInterval(() => {
+      if (index < cleanCommand.length) {
+        const char = cleanCommand[index];
+        if (char !== undefined && char !== null) {
+          setInput((prev) => prev + char); // Add each character
+        }
+        index++;
+      } else {
+        clearInterval(interval);
+        executeCommand(cleanCommand);
+      }
+    }, 100);
+  }, [executeCommand]);
+
+  // Convert URL hash to a terminal command and auto-execute
+  useEffect(() => {
+    const parseHashToCommand = (hash) => {
+      if (!hash) return null;
+      // remove leading # or #/
+      const cleaned = hash.replace(/^#\/?/, '');
+      if (!cleaned) return null;
+      const parts = cleaned.split('/').filter(Boolean).map(p => {
+        try { return decodeURIComponent(p); } catch { return p; }
+      });
+      if (parts.length === 0) return null;
+      const head = (parts[0] || '').toLowerCase();
+      const tail = parts.slice(1);
+      const joinTail = tail.join(' ');
+
+      // Map hash paths to commands
+      switch (head) {
+        case 'projects':
+          return 'projects';
+        case 'who':
+          return 'who';
+        case 'help':
+          return 'help';
+        case 'misc':
+          // e.g., #/misc/calculator -> 'calculator'
+          return tail.length ? joinTail.toLowerCase() : 'misc';
+        case 'games':
+          // e.g., #/games/snake -> 'snake'
+          return tail.length ? tail[0].toLowerCase() : 'games';
+        case 'google':
+        case 'youtube':
+        case 'wiki':
+        case 'wikipedia':
+        case 'chatgpt':
+        case 'perplexity':
+          // e.g., #/google/hello%20world -> 'google hello world'
+          return tail.length ? `${head} ${joinTail}` : head;
+        case 'background':
+        case 'theme':
+        case 'themes':
+        case 'bg':
+        case 'color':
+          return tail.length ? `${head} ${joinTail}` : head;
+        default: {
+          // Direct command passthrough if supported
+          // Examples: #/resume, #/cv, #/calculator, #/snake, #/2048
+          const direct = [head, ...tail].join(' ').trim();
+          return direct || null;
+        }
+      }
+    };
+
+    const maybeRunFromHash = () => {
+      const { hash } = window.location;
+      if (!hash || hash === '#' || hash === lastHandledHashRef.current) return;
+      const cmd = parseHashToCommand(hash);
+      if (cmd && typeof cmd === 'string') {
+        lastHandledHashRef.current = hash;
+        // Mirror typed input line for consistency and add to history
+        addToOutput({ type: 'input', content: cmd });
+        executeCommand(cmd);
+      }
+    };
+
+    // Run on initial load (after a microtask so React mount settles)
+    Promise.resolve().then(maybeRunFromHash);
+    window.addEventListener('hashchange', maybeRunFromHash);
+    return () => window.removeEventListener('hashchange', maybeRunFromHash);
+  }, [addToOutput, executeCommand]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    const welcomeMessage = `
+      <div style="margin-bottom: 20px;">
+      <div class="welcome-banner">
+      <pre style="color: #5abb9a;">
+    ${isMobile ? banners.small : banners.large}
+      </pre>
+      </div>
+      <div style="margin: 20px 0;">
+      <p>Welcome to my personal portfolio! (Version 1.6.9)
+      <p style="margin-top: 8px;">Type <span style="color: #5abb9a;">'help'</span> to see the list of available commands.</p>
+      <p style="margin-top: 15px;"><span class="rgb-animation">NEW</span> try <a href="https://polyth.ink" target="_blank" style="color: #5abb9a;">PolyThink</a> & <a href="https://github.com/Kuberwastaken/claurst" target="_blank" style="color: #e91e63;">Claurst</a></p>
+      </div>
+      </div>`;
+
+    // Only set the welcome/help content if nothing has been printed yet.
+    // This avoids overwriting deep-linked commands executed earlier in the mount cycle.
+    setOutput(prev => (prev && prev.length)
+      ? prev
+      : [
+        { type: 'output', content: welcomeMessage },
+        { type: 'output', content: helpContent }
+      ]
+    );
+    inputRef.current?.focus();
+
+    const observer = new MutationObserver(() => {
+      const el = terminalRef.current;
+      if (!el) return;
+
+      if (pendingScrollOffsetRef.current) {
+        const newTop = Math.min(el.scrollHeight, el.scrollTop + pendingScrollOffsetRef.current);
+        el.scrollTo({ top: newTop, behavior: 'smooth' });
+        pendingScrollOffsetRef.current = 0;
+        return;
+      }
+
+      if (!suppressAutoScrollRef.current) {
+        el.scrollTo({
+          top: el.scrollHeight,
+          behavior: 'smooth'
+        });
+      }
+    });
+
+    if (terminalRef.current) {
+      observer.observe(terminalRef.current, { childList: true, subtree: true });
+    }
+
+    return () => observer.disconnect();
+  }, [isMobile, banners.small, banners.large]);
 
   useEffect(() => {
     const handleCommandClick = (event) => {
-      const target = event.target.closest('.command-link[data-command]');
-      if (!target) return;
-      const command = target.getAttribute('data-command');
-      if (command) executeCommand(command);
+      if (event.target.classList.contains('command-link')) {
+        const command = event.target.getAttribute('data-command');
+        if (command && command.trim()) {
+          simulateTyping(command.trim());
+        } else {
+          console.error('Invalid command from click:', command);
+        }
+      }
     };
 
     document.addEventListener('click', handleCommandClick);
-    return () => document.removeEventListener('click', handleCommandClick);
-  }, [executeCommand]);
 
-  useEffect(() => {
-    const parseHashToCommand = (hash) => {
-      const cleaned = hash.replace(/^#\/?/, '');
-      if (!cleaned) return null;
-      const parts = cleaned.split('/').filter(Boolean).map(part => {
-        try {
-          return decodeURIComponent(part);
-        } catch {
-          return part;
-        }
-      });
-      if (!parts.length) return null;
-      const [head, ...tail] = parts;
-      const command = head.toLowerCase();
-      if (['misc', 'games'].includes(command) && tail.length) return tail[0].toLowerCase();
-      if (['google', 'youtube', 'wiki', 'wikipedia', 'chatgpt', 'perplexity'].includes(command) && tail.length) {
-        return `${command} ${tail.join(' ')}`;
+    return () => {
+      document.removeEventListener('click', handleCommandClick);
+    };
+  }, [simulateTyping]);
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      const command = e.target.value.trim();
+      if (command) {
+        setCommandHistory(prev => [...prev, command]);
+        setHistoryIndex(prev => prev + 1);
+        addToOutput({ type: 'input', content: command });
+        handleCommand(command);
+        e.target.value = '';
       }
-      return [command, ...tail].join(' ').trim();
-    };
-
-    const executeHash = () => {
-      const { hash } = window.location;
-      if (!hash || hash === '#' || hash === lastHandledHashRef.current) return;
-      const command = parseHashToCommand(hash);
-      if (!command) return;
-      lastHandledHashRef.current = hash;
-      executeCommand(command);
-    };
-
-    Promise.resolve().then(executeHash);
-    window.addEventListener('hashchange', executeHash);
-    return () => window.removeEventListener('hashchange', executeHash);
-  }, [executeCommand]);
-
-  useEffect(() => {
-    if (!hasMountedRef.current) {
-      hasMountedRef.current = true;
-      return;
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (historyIndex > 0) {
+        setHistoryIndex(prev => prev - 1);
+        setInput(commandHistory[historyIndex - 1]);
+      }
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (historyIndex < commandHistory.length - 1) {
+        setHistoryIndex(prev => prev + 1);
+        setInput(commandHistory[historyIndex + 1]);
+      } else {
+        setHistoryIndex(commandHistory.length);
+        setInput('');
+      }
     }
-    const scroller = terminalRef.current;
-    if (!scroller) return;
-    const lastTurn = scroller.querySelector('.tui-turn:last-child');
-    window.requestAnimationFrame(() => {
-      lastTurn?.scrollIntoView({ block: 'start', behavior: 'smooth' });
-    });
-  }, [output]);
+  };
 
   useEffect(() => {
-    inputRef.current?.focus();
-  }, []);
+    const handleBackgroundSelected = (event) => {
+      const selectedBackground = [...backgrounds.solid, ...backgrounds.gradients].find(bg => bg.name === event.detail);
+      if (selectedBackground) {
+        changeBackgroundColor(selectedBackground.value);
+        addToOutput({ type: 'output', content: `Background changed to ${selectedBackground.name}` });
+      }
+    };
+
+    document.addEventListener('backgroundSelected', handleBackgroundSelected);
+
+    return () => {
+      document.removeEventListener('backgroundSelected', handleBackgroundSelected);
+    };
+  }, [backgrounds, changeBackgroundColor, addToOutput]);
 
   return (
-    <div className="tui-shell">
+    <div id="terminal" className="terminal-container" ref={terminalRef}>
       {hackermode && <HollywoodEffect />}
-      <TuiTopbar />
-
-      <main id="terminal" className="tui-scroll-region" ref={terminalRef} aria-live="polite">
-        <div className="tui-transcript">
-          {output.map((item, index) => (
-            <div className={`tui-turn tui-turn-${item.type}`} key={`${item.type}-${index}`}>
-              {item.type === 'input' && (
-                <div className="tui-user-turn">
-                  <span className="tui-user-chevron" aria-hidden="true">❯</span>
-                  <span className="tui-user-command">{item.content}</span>
-                </div>
-              )}
-              {item.type === 'component' && item.content}
-              {item.type === 'message' && (
-                <div className={`tui-output-line tui-output-${item.tone || 'normal'}`}>
-                  <div>{item.content}</div>
-                </div>
-              )}
-              {item.type === 'suggestions' && (
-                <div className="tui-output-line tui-output-error">
-                  <div>
-                    command not found: {item.attempted}
-                    {item.content.length > 0 && (
-                      <span> · try {item.content.map((suggestion, suggestionIndex) => (
-                        <React.Fragment key={suggestion}>
-                          {suggestionIndex > 0 && ', '}
-                          <button type="button" className="command-link tui-inline-command" data-command={suggestion}>/{suggestion}</button>
-                        </React.Fragment>
-                      ))}</span>
-                    )}
-                  </div>
-                </div>
-              )}
-              {item.type === 'output' && (
-                <div className="tui-output-line">
-                  <div dangerouslySetInnerHTML={{ __html: item.content }} />
-                </div>
-              )}
+      {output.map((item, index) => (
+        <div key={index}>
+          {item.type === 'input' ? (
+            <div>
+              <span className="ownerTerminal"><b>kuber@profile</b></span>
+              <b>:~$</b> {item.content}
             </div>
-          ))}
+          ) : item.type === 'component' ? (
+            <div>{item.content}</div>
+          ) : (
+            <div dangerouslySetInnerHTML={{ __html: item.content }} />
+          )}
         </div>
-      </main>
+      ))}
 
-      <form className="tui-composer" onSubmit={handleSubmit}>
-        <div className="tui-composer-inner">
-          <div className="tui-effort-line">◈ portfolio · custom Claude harness</div>
-          <label className="tui-prompt-rule">
-            <span className="tui-prompt-symbol" aria-hidden="true">❯</span>
-            <span className="sr-only">Portfolio command</span>
-            <input
-              ref={inputRef}
-              type="text"
-              className="command-field"
-              value={input}
-              onChange={event => setInput(event.target.value)}
-              onKeyDown={handleKeyDown}
-              placeholder="Try /who, /projects, or /help"
-              autoComplete="off"
-              autoCapitalize="off"
-              spellCheck="false"
-              aria-label="Portfolio command"
-            />
-          </label>
-          <div className="tui-mode-line">
-            <span className="tui-mode-glyph">⏵⏵ </span>
-            <span className="tui-mode-active">explore mode on</span>
-            <span> · enter to run · ↑↓ history · tap commands anywhere</span>
-          </div>
-        </div>
-      </form>
+      <div className="command-input">
+        <span className="prompt">
+          <span className="ownerTerminal"><b>kuber@profile</b></span>
+          <b>:~$</b>
+        </span>
+        <input
+          ref={inputRef}
+          type="text"
+          className="command-field"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={handleKeyPress}
+          autoComplete="off"
+          autoCapitalize="off"
+          spellCheck="false"
+        />
+      </div>
     </div>
   );
 };

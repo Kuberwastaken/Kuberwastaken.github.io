@@ -1,20 +1,15 @@
 import React from 'react';
+import './ToS.css';
 
 const ToS = () => {
   return (
     <div className="tos-container">
-      <main className="tui-tool tos-window">
-        <div className="tui-tool-titlebar">
-          <strong>~/legal/terms-of-service.md</strong>
-          <span>read-only</span>
-        </div>
-        <header className="tos-header">
-          <p className="tos-path">$ sed -n '1,240p' terms-of-service.md</p>
-          <h1>Terms of Service</h1>
-          <p>Last updated: {new Date().toLocaleDateString()}</p>
-        </header>
-
-        <article className="tos-content">
+      <div className="tos-header">
+        <h1>Terms of Service</h1>
+        <p>Last updated: {new Date().toLocaleDateString()}</p>
+      </div>
+      
+      <div className="tos-content">
         <section className="tos-section">
           <h2>1. Acceptance of Terms</h2>
           <p>
@@ -63,17 +58,15 @@ const ToS = () => {
             <a href="mailto:kuberhob@gmail.com" className="tos-link"> kuberhob@gmail.com</a>
           </p>
         </section>
-        </article>
+      </div>
 
-        <footer className="tos-footer">
-          <button type="button" onClick={() => window.history.back()} className="tos-back-btn">
-            ← back to portfolio
-          </button>
-          <span>EOF</span>
-        </footer>
-      </main>
+      <div className="tos-footer">
+        <button onClick={() => window.history.back()} className="tos-back-btn">
+          ← Back to Portfolio
+        </button>
+      </div>
     </div>
   );
 };
 
-export default ToS;
+export default ToS; 

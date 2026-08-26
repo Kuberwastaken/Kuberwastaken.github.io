@@ -45,7 +45,7 @@ const AsciiDepthPortrait = React.memo(() => {
       const fontSize = Math.max(3, scale / 34);
 
       context.fillStyle = GREEN;
-      context.font = `${fontSize}px 'Geist Mono', ui-monospace, monospace`;
+      context.font = `${fontSize}px 'JetBrains Mono', ui-monospace, monospace`;
       context.textAlign = 'center';
       context.textBaseline = 'middle';
 
