@@ -29,11 +29,9 @@ const WhoamiCard = React.memo(() => (
         <p>{profileData.bio.fun_fact}</p>
       </div>
       <div className="whoami-section">
-        <p>{profileData.bio.outro}</p>
+        <p dangerouslySetInnerHTML={{ __html: profileData.bio.outro }} />
       </div>
-      <div className="whoami-footer">
-        <p>Type <span className="command-link" data-command="twitter" style={{ color: '#5abb9a', cursor: 'pointer', textDecoration: 'underline' }}>twitter</span>, <span className="command-link" data-command="linkedin" style={{ color: '#5abb9a', cursor: 'pointer', textDecoration: 'underline' }}>linkedin</span>, or <span className="command-link" data-command="email" style={{ color: '#5abb9a', cursor: 'pointer', textDecoration: 'underline' }}>email</span> to connect with me.</p>
-      </div>    </div>
+    </div>
   </div>
 ));
 

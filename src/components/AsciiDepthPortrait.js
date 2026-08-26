@@ -108,12 +108,14 @@ const AsciiDepthPortrait = React.memo(() => {
     const handlePointerMove = (event) => {
       if (state.staticMode) return;
       const bounds = canvas.getBoundingClientRect();
-      const x = ((event.clientX - bounds.left) / bounds.width) * 2 - 1;
-      const y = ((event.clientY - bounds.top) / bounds.height) * 2 - 1;
-      state.targetYaw = x * 0.09;
-      state.targetPitch = -y * 0.055;
-      state.targetOffsetX = x * 1.5;
-      state.targetOffsetY = y * 1.2;
+      const centerX = bounds.left + bounds.width / 2;
+      const centerY = bounds.top + bounds.height / 2;
+      const x = Math.max(-1, Math.min(1, (event.clientX - centerX) / (window.innerWidth * 0.45)));
+      const y = Math.max(-1, Math.min(1, (event.clientY - centerY) / (window.innerHeight * 0.45)));
+      state.targetYaw = x * 0.16;
+      state.targetPitch = y * 0.1;
+      state.targetOffsetX = x * 2.5;
+      state.targetOffsetY = y * 2;
       requestDraw();
     };
 
@@ -124,8 +126,8 @@ const AsciiDepthPortrait = React.memo(() => {
 
     const resizeObserver = new ResizeObserver(resize);
     resizeObserver.observe(canvas);
-    canvas.addEventListener('pointermove', handlePointerMove);
-    canvas.addEventListener('pointerleave', reset);
+    window.addEventListener('pointermove', handlePointerMove);
+    window.addEventListener('blur', reset);
     motionQuery.addEventListener('change', handleMotionChange);
 
     fetch(ASSET_PATH)
@@ -163,8 +165,8 @@ const AsciiDepthPortrait = React.memo(() => {
       state.cancelled = true;
       if (state.frame) window.cancelAnimationFrame(state.frame);
       resizeObserver.disconnect();
-      canvas.removeEventListener('pointermove', handlePointerMove);
-      canvas.removeEventListener('pointerleave', reset);
+      window.removeEventListener('pointermove', handlePointerMove);
+      window.removeEventListener('blur', reset);
       motionQuery.removeEventListener('change', handleMotionChange);
     };
   }, []);

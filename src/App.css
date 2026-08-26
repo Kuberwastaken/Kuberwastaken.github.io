@@ -344,14 +344,13 @@ body {
 }
 
 .whoami-glass-card {
-  background: rgba(30, 30, 30, 0.7);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: #000;
+  box-shadow: none;
   border-radius: 18px;
-  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(90, 187, 154, 0.3);
   padding: 32px 28px 20px 28px;
   margin: 32px auto 0 auto;
+  width: 100%;
   max-width: 1100px;
   color: #ffebcd;
   animation: fadeIn 1s ease-in-out;
@@ -374,14 +373,6 @@ body {
   animation: fadeInUp 0.7s;
 }
 
-.whoami-footer {
-  margin-top: 18px;
-  font-style: italic;
-  color: #bdbdbd;
-  text-align: center;
-  font-size: 1rem;
-}
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -399,12 +390,12 @@ body {
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 36px;
+  gap: 32px;
 }
 
 .whoami-profile-col {
-  min-width: 260px;
-  max-width: 290px;
+  flex: 0 0 clamp(320px, 32vw, 390px);
+  max-width: 390px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -413,7 +404,7 @@ body {
 }
 
 .ascii-depth-portrait {
-  width: 290px;
+  width: 390px;
   max-width: 100%;
   aspect-ratio: 921 / 1024;
   overflow: hidden;
@@ -432,6 +423,7 @@ body {
 
 .whoami-info-col {
   flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -440,6 +432,7 @@ body {
 @media (max-width: 900px) {
   .whoami-glass-card {
     max-width: 98vw;
+    padding: 28px 16px 20px;
   }
 
   .whoami-glass-card.whoami-landscape {
@@ -448,13 +441,15 @@ body {
   }
 
   .whoami-profile-col {
+    width: 100%;
+    flex-basis: auto;
     max-width: 100%;
     min-width: 0;
     padding-top: 0;
   }
 
   .ascii-depth-portrait {
-    width: min(280px, 78vw);
+    width: min(340px, 86vw);
     pointer-events: none;
   }
 
@@ -462,7 +457,4 @@ body {
     font-size: 0.95rem;
   }
 
-  .whoami-footer {
-    font-size: 0.9rem;
-  }
 }
