@@ -437,7 +437,7 @@ body {
 
   .whoami-glass-card.whoami-landscape {
     flex-direction: column;
-    gap: 0;
+    gap: 20px;
   }
 
   .whoami-profile-col {
