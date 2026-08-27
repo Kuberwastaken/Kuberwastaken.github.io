@@ -21,7 +21,7 @@ body {
   margin-bottom: 10px;
   font-size: 18px;
   font-weight: bold;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Geist Mono', monospace;
 }
 
 .game-2048-grid {
@@ -48,7 +48,7 @@ body {
   font-weight: bold;
   color: #776e65;
   border-radius: 5px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Geist Mono', monospace;
 }
 
 .game-2048-cell>div {
