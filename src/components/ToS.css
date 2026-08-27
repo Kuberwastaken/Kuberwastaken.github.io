@@ -2,7 +2,7 @@
   min-height: 100vh;
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
   color: #ffebcd;
-  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-family: 'Geist Mono', 'Courier New', monospace;
   padding: 40px 20px;
   line-height: 1.6;
   overflow-x: hidden;
@@ -93,7 +93,7 @@
   padding: 12px 24px;
   border-radius: 8px;
   cursor: pointer;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Geist Mono', monospace;
   font-size: 14px;
   transition: all 0.3s ease;
   text-decoration: none;

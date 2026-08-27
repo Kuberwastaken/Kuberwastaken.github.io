@@ -34,7 +34,7 @@ body {
   text-align: left;
   min-height: 100vh;
   font-size: 19px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Geist Mono', monospace;
 }
 
 /* Terminal container styles */
@@ -63,7 +63,7 @@ body {
   border: none;
   outline: none;
   color: #ffebcd;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Geist Mono', monospace;
   font-size: 16px;
   width: 70%;
   height: 30px;
@@ -230,7 +230,7 @@ body {
 .neofetch-container {
   display: flex;
   align-items: flex-start;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Geist Mono', monospace;
   color: #ffebcd;
   padding: 20px;
 }

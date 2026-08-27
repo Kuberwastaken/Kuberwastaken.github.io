@@ -195,7 +195,7 @@ const TerminalFlappyBird = () => {
             overflow: 'hidden',
             backgroundColor: '#000',
             color: '#56b494',
-            fontFamily: "'JetBrains Mono', monospace",
+            fontFamily: "'Geist Mono', monospace",
             border: '2px solid #56b494',
             padding: '10px'
           }}
@@ -254,7 +254,7 @@ const TerminalFlappyBird = () => {
               alignItems: 'center',
               color: '#56b494',
               fontSize: '24px',
-              fontFamily: "'JetBrains Mono', monospace"
+              fontFamily: "'Geist Mono', monospace"
             }}>
               <div style={{ fontSize: '32px', marginBottom: '20px' }}>
                 {gameOver ? 'GAME OVER' : 'TERMINAL BIRD'}

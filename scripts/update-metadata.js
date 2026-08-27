@@ -939,7 +939,7 @@ function buildStaticFallbackHtml(blogPosts) {
 
   return `<div id="static-fallback">
       <style>
-        #static-fallback { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; font-family: 'JetBrains Mono', monospace; color: #d6d6d6; line-height: 1.65; }
+        #static-fallback { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; font-family: 'Geist Mono', monospace; color: #d6d6d6; line-height: 1.65; }
         #static-fallback h1 { color: #ffffff; font-size: 1.5em; }
         #static-fallback h2 { color: #ffffff; font-size: 1.15em; margin-top: 2.4em; border-bottom: 1px solid #2a2a2a; padding-bottom: 6px; }
         #static-fallback h2::before { content: "$ "; color: #5abb9a; }

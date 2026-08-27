@@ -24,7 +24,7 @@ const generateSkillsHTML = () => {
   --bg-color: #1e1e1e;
   --text-color: #56b494;
   
-  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-family: 'Geist Mono', 'Courier New', monospace;
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;

@@ -6,7 +6,7 @@
   border-radius: 12px;
   border: 1px solid rgba(90,187,154,0.3);
   color: #ffebcd;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Geist Mono', monospace;
 }
 
 .qr-header {
@@ -42,7 +42,7 @@
   border-radius: 8px;
   padding: 12px;
   color: #ffebcd;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Geist Mono', monospace;
   font-size: 14px;
   resize: vertical;
   min-height: 80px;
@@ -83,7 +83,7 @@
   border-radius: 6px;
   color: #fff;
   padding: 10px 20px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Geist Mono', monospace;
   font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -142,7 +142,7 @@
   border-radius: 6px !important;
   color: #fff !important;
   padding: 10px 20px !important;
-  font-family: 'JetBrains Mono', monospace !important;
+  font-family: 'Geist Mono', monospace !important;
   font-size: 14px !important;
   cursor: pointer !important;
   transition: all 0.3s ease !important;
@@ -182,7 +182,7 @@
   border-radius: 4px;
   color: #ffebcd;
   padding: 6px 12px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Geist Mono', monospace;
   font-size: 12px;
   cursor: pointer;
   transition: all 0.3s ease;

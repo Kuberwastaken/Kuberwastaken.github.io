@@ -217,7 +217,7 @@ clear, misc
 ## 🎨 Design Philosophy
 
 ### **Terminal Aesthetics**
-- **Monospace Typography** - JetBrains Mono for authentic terminal feel
+- **Monospace Typography** - Geist Mono for authentic terminal feel
 - **Green-on-Black Color Scheme** - Classic terminal colors with modern touches
 - **Scan Lines & CRT Effects** - Subtle retro visual elements
 - **Authentic Terminal Behaviors** - Cursor animations, text streaming

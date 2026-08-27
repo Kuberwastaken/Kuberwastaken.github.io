@@ -41,7 +41,7 @@ const RickrollAnimation = () => {
         <div className="rickroll-container" style={{ marginTop: '20px', marginBottom: '20px' }}>
             <div style={{
                 whiteSpace: 'pre',
-                fontFamily: "'JetBrains Mono', monospace",
+                fontFamily: "'Geist Mono', monospace",
                 lineHeight: '1.2',
                 color: '#5abb9a',
                 fontSize: '8px', // Smaller font to fit standard terminals
