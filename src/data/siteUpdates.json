@@ -1,5 +1,0 @@
-[
-  { "date": "2026-09-08", "text": "this ticker is new - the site now wears its own changelog. whatever ships, lands here." },
-  { "date": "2026-09-07", "text": "fixed the blog mindmap freezing firefox on linux (webgpu texture limit). scoped to firefox after a mobile scare." },
-  { "date": "2026-09-04", "text": "the site got a self-maintainer: auto build + deploy pipeline, daily freshness sweeps, running changelog." }
-]
