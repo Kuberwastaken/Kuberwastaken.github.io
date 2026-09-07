@@ -9,7 +9,6 @@ import gamesContent from '../constants/gamesContent';
 import PDFViewer from './PDFViewer';
 import HollywoodEffect from './HollywoodEffect/HollywoodEffect';
 import WhoamiCard from './WhoamiCard';
-import UpdateTicker from './UpdateTicker';
 import ProjectsMasonry from '../constants/projectsContent';
 
 // Lazy load heavy game components
@@ -691,7 +690,6 @@ const Terminal = () => {
   return (
     <div id="terminal" className="terminal-container" ref={terminalRef}>
       {hackermode && <HollywoodEffect />}
-      <UpdateTicker />
       {output.map((item, index) => (
         <div key={index}>
           {item.type === 'input' ? (
