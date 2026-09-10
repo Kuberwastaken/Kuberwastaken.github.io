@@ -3,6 +3,10 @@
 Running log of changes to kuber.studio, maintained by Instinct's site-keeper agent.
 Newest entries first.
 
+## 2026-09-10
+
+- **Facts:** corrected stale current-tense Perplexity fellowship metadata to former / Mar–Aug 2025, removed Perplexity from active organization membership in structured data, and changed the Razorpay accomplishment date from "Summer 2026" to "Jun 2026–Present" to match the resume.
+
 ## 2026-09-08
 
 - **Brief experiment, fully reverted:** an "update ticker" status line shipped
