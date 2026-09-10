@@ -4,7 +4,7 @@
 
 The complete, self-contained reference for who I am, what I build, and where to find me. Contains my projects, skills, achievements, and press features — no additional requests needed.
 
-Last-Updated: 2026-09-07
+Last-Updated: 2026-09-10
 Canonical: https://kuber.studio/llms.txt
 
 ---
@@ -89,14 +89,14 @@ At my core, I love Building (& Breaking) things, so if you're making something c
 
 ## Achievements & hackathons
 
-- AI Initiatives @ Razorpay (YC W15) — Summer 2026 — central AI lab of 5, reporting directly to CEO Harshil Mathur; training foundational models and shipping large-scale internal & external AI applications on massive databases for a company with 3500+ employees, millions of merchants, and billions of transactions
+- AI Initiatives @ Razorpay (YC W15) — Jun 2026–Present — central AI lab of 5, reporting directly to CEO Harshil Mathur; training foundational models and shipping large-scale internal & external AI applications on massive databases for a company with 3500+ employees, millions of merchants, and billions of transactions
 - Won Nothing Essential Lab S1 Hackathon — Awarded a Nothing Phone 3
   - https://playground.nothing.tech/lab
   - https://x.com/essential/status/2026712093018263847
 - 4th Place — Unsloth x AMD RL Hackathon at IIT Delhi
 - First Place at Hack Club SiteJam (project: CottagOS)
 - Top 10 — Google x Kaggle Long Context AI Hackathon (project: Books Re-imagined)
-- Perplexity AI Business Fellow
+- Perplexity AI Business Fellow (Mar–Aug 2025)
 - GitHub Copilot Backstage Pass Member
 - Provided feedback to OpenAI on GPT OSS — Part of small group of Asia-Pacific developers
 - 20+ hackathons participated
