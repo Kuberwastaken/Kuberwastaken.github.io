@@ -47,7 +47,12 @@ const badgeLinks = (project) => {
     });
   }
 
-  // Normalize `extra` into an array of link objects using a default globe icon
+  const iconForExtra = (href) =>
+    /(?:^|\.)x\.com$|(?:^|\.)twitter\.com$/i.test(new URL(href).hostname)
+      ? { alt: 'X post', src: 'https://cdn.simpleicons.org/x/ffebcd' }
+      : { alt: 'Post', src: '/globe.svg' };
+
+  // Normalize `extra` into an array of link objects; X/Twitter links get the X icon.
   const normalizeExtra = (extra) => {
     if (!extra) return [];
     const arr = Array.isArray(extra) ? extra : [extra];
@@ -55,15 +60,16 @@ const badgeLinks = (project) => {
       .map((item) => {
         if (!item) return null;
         if (typeof item === 'string') {
-          return { href: item, alt: 'Post', src: '/globe.svg' };
+          return { href: item, ...iconForExtra(item) };
         }
         if (typeof item === 'object') {
           const href = item.href || item.url;
           if (!href) return null;
+          const fallback = iconForExtra(href);
           return {
             href,
-            alt: item.alt || 'Post',
-            src: item.src || '/globe.svg',
+            alt: item.alt || fallback.alt,
+            src: item.src || fallback.src,
           };
         }
         return null;
