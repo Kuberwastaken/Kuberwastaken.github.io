@@ -98,6 +98,7 @@ const MobileProjectsCarousel = () => {
   const goRight = () => setCurrent((prev) => (prev === total - 1 ? 0 : prev + 1));
   const project = projects[current];  // Faux webpage image logic for mobile
   const fauxWebImage =
+    project.mobilePreviewImg ? project.mobilePreviewImg :
     project.title === 'Claurst' ? JSDELIVR_BASE + 'kuberwastaken-claurst-site.jpg' :
       project.title === 'Reference' ? JSDELIVR_BASE + 'kuberwastaken-reference.png' :
       project.title === 'ClawX' ? JSDELIVR_BASE + 'kuberwastaken-clawx.png' :

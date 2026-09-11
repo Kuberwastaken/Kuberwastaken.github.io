@@ -4,7 +4,7 @@
 
 The complete, self-contained reference for who I am, what I build, and where to find me. Contains my projects, skills, achievements, and press features — no additional requests needed.
 
-Last-Updated: 2026-08-26
+Last-Updated: 2026-09-11
 Canonical: https://kuber.studio/llms.txt
 
 ---
@@ -231,7 +231,7 @@ My work has been cited in academic and university settings:
 
 ---
 
-## Projects (37 of 53+ shipped, curated)
+## Projects (38 of 53+ shipped, curated)
 
 Curated into three tiers: flagship builds (ordered by implementation complexity), ventures & tools (ordered by real-world traction), then everything else.
 
@@ -305,6 +305,11 @@ Further Compacted [Karpathy's work with MicroGPT](https://karpathy.github.io/202
   - X: https://x.com/kuberwastaken/status/2022006550756516189
 
 ### More projects
+
+- Math Gambling — A volunteer-computing search for integers x, y, and z where x³ + y³ + z³ = 114. Stake spare processor time in the browser or run the local worker; every exact search expands the shared frontier, and one winning hand would settle a famously stubborn case of the sum-of-three-cubes problem.
+  - Site: https://kuber.studio/math-gambling/
+  - GitHub: https://github.com/Kuberwastaken/math-gambling
+  - X: https://x.com/kuberwastaken/status/2098056655711986138
 
 - Megaphone — A free, open-source dictation app for macOS that runs entirely on your Mac, powered by Apple's SpeechAnalyzer and Foundation Models frameworks.
   - Site: https://megaphone.kuber.studio/
@@ -490,6 +495,7 @@ All posts, newest first within each section:
 
 ### Reflections
 
+- [Recreating Minecraft is Not a Benchmark](https://kuber.studio/blog/Reflections/Recreating-Minecraft-is-Not-a-Benchmark): 2026-09-06 — GPT Astra released a couple of days ago and, inevitably, within the hour my entire feed was the same five things: recreating Minecraft in one prompt, painting themselves in MS Paint, ...
 - [Humanising LLM Outputs is Dumb](https://kuber.studio/blog/Reflections/Humanising-LLM-Outputs-is-Actually-Dumb): 2026-08-10 — The largest tell for me to tell where culture and sentiment is shifting for AI tools is usually X, viral GitHub repositories and Hacker News. One of these tells I’ve been seeing a lot lately is skills like I have ADHD and Agents.md instructions such as giving outputs in only ASD-STE100 Simplified Technical English.
 - [Ageusia](https://kuber.studio/blog/Reflections/Ageusia): 2026-05-30 — For a long time, the hard part of making things on the internet was making them at all. If you wanted a website, you learned HTML and CSS. If you wanted it to do something, you learned JavaScript.
 - [I'm Scared About Biological Computing](https://kuber.studio/blog/Reflections/I'm-Scared-About-Biological-Computing): 2026-05-05 — I’ve been in the AI space since ChatGPT first dropped. I’ve toyed around with a lot of Language Models, built random side projects, built a couple from scratch and I’ve spent hours looking at the math behind it all.
