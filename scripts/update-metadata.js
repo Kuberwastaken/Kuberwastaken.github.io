@@ -26,7 +26,7 @@ function getAge(birthDateStr) {
 // Curated project tiers. Flagship is ordered by implementation complexity,
 // ventures & tools by real-world traction. Everything else keeps its
 // projects.json order in a "more projects" tier.
-const FLAGSHIP_TITLES = ['Claurst', 'Autonomous Counterexample Discovery with Agentic Loops', 'The macOS Driver HP Never Wrote', 'DOOMme', 'Backdooms', 'TREAT'];
+const FLAGSHIP_TITLES = ['Claurst', 'Autonomous Counterexample Discovery with Agentic Loops', 'Math Gambling', 'The macOS Driver HP Never Wrote', 'DOOMme', 'Backdooms', 'TREAT'];
 const VENTURE_TITLES = ['PolyThink', 'MEOW', 'ClawX', 'Litmus', 'Reference', 'PicoGPT'];
 
 function curateProjects(projects) {
