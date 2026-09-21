@@ -4,7 +4,7 @@
 
 The complete, self-contained reference for who I am, what I build, and where to find me. Contains my projects, skills, achievements, and press features — no additional requests needed.
 
-Last-Updated: 2026-09-11
+Last-Updated: 2026-09-21
 Canonical: https://kuber.studio/llms.txt
 
 ---
@@ -73,7 +73,7 @@ Canonical: https://kuber.studio/llms.txt
 Hi! I'm Kuber Mehta (kuberwastaken), an AI developer from New Delhi, India.
 
 I'm studying Computer Science & Machine Learning at BITS Pilani and AI & Data Science at IP University.
-I'm currently part of [Razorpay's](https://razorpay.com) Central AI team in the Founders' Office, where we primarily build foundational models and agent-to-agent (A2A) systems. Alongside that, I work on generative UI for LLMs, world-model caching, and more at [PolyThink Labs](https://www.polyth.ink/).
+I'm currently part of [Razorpay's](https://razorpay.com) Central AI team in the Founders' Office, where we primarily build foundational models ([Vulcan](https://razorpay.com/blog/vulcan-how-razorpay-built-a-foundation-model-for-payment-decisions/)) and agent-to-agent (A2A) systems. Alongside that, I work on generative UI for LLMs, world-model caching, and more at [PolyThink Labs](https://www.polyth.ink/).
 
 Chances are, you've come here after seeing one of my projects. Most of them start as an intrusive idea and turn into what I call a SideQuest — run Projects to see some of my favorites.
 
@@ -89,7 +89,8 @@ At my core, I love Building (& Breaking) things, so if you're making something c
 
 ## Achievements & hackathons
 
-- AI Initiatives @ Razorpay (YC W15) — Jun 2026–Present — central AI lab of 5, reporting directly to CEO Harshil Mathur; training foundational models and shipping large-scale internal & external AI applications on massive databases for a company with 3500+ employees, millions of merchants, and billions of transactions
+- AI Initiatives @ Razorpay (YC W15) — Jun 2026–Present — central AI lab of 5, reporting directly to CEO Harshil Mathur; training foundational models (Vulcan) and shipping large-scale internal & external AI applications on massive databases for a company with 3500+ employees, millions of merchants, and billions of transactions
+  - https://razorpay.com/blog/vulcan-how-razorpay-built-a-foundation-model-for-payment-decisions/
 - Won Nothing Essential Lab S1 Hackathon — Awarded a Nothing Phone 3
   - https://playground.nothing.tech/lab
   - https://x.com/essential/status/2026712093018263847

@@ -7,10 +7,10 @@
 Hi! I'm Kuber Mehta (kuberwastaken), an AI developer from New Delhi, India.
 
 I'm studying Computer Science & Machine Learning at BITS Pilani and AI & Data Science at IP University.
-I'm currently part of [Razorpay's](https://razorpay.com) Central AI team in the Founders' Office, where we primarily build foundational models and agent-to-agent (A2A) systems. Alongside that, I work on generative UI for LLMs, world-model caching, and more at [PolyThink Labs](https://www.polyth.ink/).
+I'm currently part of [Razorpay's](https://razorpay.com) Central AI team in the Founders' Office, where we primarily build foundational models ([Vulcan](https://razorpay.com/blog/vulcan-how-razorpay-built-a-foundation-model-for-payment-decisions/)) and agent-to-agent (A2A) systems. Alongside that, I work on generative UI for LLMs, world-model caching, and more at [PolyThink Labs](https://www.polyth.ink/).
 
 ## Current role
-I'm part of Razorpay's Central AI team in the Founders' Office, where we primarily build foundational models and agent-to-agent (A2A) systems.
+I'm part of Razorpay's Central AI team in the Founders' Office, where we primarily build foundational models ([Vulcan](https://razorpay.com/blog/vulcan-how-razorpay-built-a-foundation-model-for-payment-decisions/)) and agent-to-agent (A2A) systems.
 
 Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai), AI Agents Websocket Framework LEAD Intern @ HTMX (thanks Twitter)
 
@@ -36,7 +36,7 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 - **Tools**: Git, SQL, BigQuery, Tableau, LaTeX, Gradio
 
 ## Achievements
-- AI Initiatives @ Razorpay (YC W15) — Jun 2026–Present — central AI lab of 5, reporting directly to CEO Harshil Mathur; training foundational models and shipping large-scale internal & external AI applications on massive databases for a company with 3500+ employees, millions of merchants, and billions of transactions
+- AI Initiatives @ Razorpay (YC W15) — Jun 2026–Present — central AI lab of 5, reporting directly to CEO Harshil Mathur; training foundational models (Vulcan) and shipping large-scale internal & external AI applications on massive databases for a company with 3500+ employees, millions of merchants, and billions of transactions
 - Won Nothing Essential Lab S1 Hackathon — Awarded a Nothing Phone 3
 - 4th Place — Unsloth x AMD RL Hackathon at IIT Delhi
 - First Place at Hack Club SiteJam
@@ -85,4 +85,4 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 - YouTube: https://www.youtube.com/@Kuberwastaken
 - Blog: https://kuber.studio/blog/
 
-_Last updated: 2026-09-11_
+_Last updated: 2026-09-21_

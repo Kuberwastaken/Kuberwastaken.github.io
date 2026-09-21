@@ -3,6 +3,16 @@
 Running log of changes to kuber.studio, maintained by Instinct's site-keeper agent.
 Newest entries first.
 
+## 2026-09-21
+
+- **Vulcan link:** hyperlinked the Razorpay foundation-model mention to the Vulcan blog post
+  (https://razorpay.com/blog/vulcan-how-razorpay-built-a-foundation-model-for-payment-decisions/) everywhere
+  it appears: whoami bio + current-role text (named Vulcan), and the Razorpay accomplishment entry
+  (named in text + link). Source: src/data/profile.json; public/index.html, llms.txt, profile.json and
+  profile.md regenerated with scripts/update-metadata.js. Same link added to the resume (repo
+  Kuberwastaken/Resume, branch agent/vulcan-link).
+
+
 ## 2026-09-10
 
 - **Facts:** corrected stale current-tense Perplexity fellowship metadata to former / Mar–Aug 2025, removed Perplexity from active organization membership in structured data, and changed the Razorpay accomplishment date from "Summer 2026" to "Jun 2026–Present" to match the resume.
