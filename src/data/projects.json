@@ -11,6 +11,7 @@
         "title": "FLM (Fly Language Model)",
         "description": "A language model trained from scratch on a fruit-fly-connectome-derived recurrent network. Explore its neural states while it generates text, test interventions, and compare the trained model with controlled baselines.",
         "website": "https://flm.kuber.studio/",
+        "embed": "https://flm.kuber.studio/embed.html",
         "github": "https://github.com/Kuberwastaken/flm",
         "showIframe": true,
         "extra": {
