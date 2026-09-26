@@ -160,6 +160,14 @@ const MobileProjectsCarousel = () => {
                 style={{ width: '100%', minHeight: '100%', objectFit: 'cover', display: 'block' }}
               />
             </div>
+          ) : project.title === 'FLM (Fly Language Model)' ? (
+            <iframe
+              src={project.website}
+              title="FLM (Fly Language Model) preview"
+              loading="lazy"
+              sandbox="allow-scripts allow-same-origin allow-popups"
+              style={{ width: '100%', height: '100%', border: 'none', borderRadius: 12, background: '#181818' }}
+            />
           ) : (project.previewImg || (project.title === 'Backdooms' && 'https://cdn.jsdelivr.net/gh/kuberwastaken/backdooms/public/Gameplay-GIF.gif')) ? (
             <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: project.title === 'HN-Digest' ? '#000' : project.title === 'Autonomous Counterexample Discovery with Agentic Loops' ? '#fff' : 'transparent' }}>
               <img

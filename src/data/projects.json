@@ -8,6 +8,18 @@
         "extra": "https://kuber.studio/blog/AI/Claude-Code's-Entire-Source-Code-Got-Leaked-via-a-Sourcemap-in-npm,-Let's-Talk-About-it"
     },
     {
+        "title": "FLM (Fly Language Model)",
+        "description": "A language model trained from scratch on a fruit-fly-connectome-derived recurrent network. Explore its neural states while it generates text, test interventions, and compare the trained model with controlled baselines.",
+        "website": "https://flm.kuber.studio/",
+        "github": "https://github.com/Kuberwastaken/flm",
+        "showIframe": true,
+        "extra": {
+            "href": "https://www.linkedin.com/feed/update/urn:li:activity:7509546383075590144/",
+            "alt": "LinkedIn post",
+            "src": "https://cdn.simpleicons.org/linkedin/ffebcd"
+        }
+    },
+    {
         "title": "Autonomous Counterexample Discovery with Agentic Loops",
         "description": "Disproved 2 graph theory conjectures open for 22+ years (WOWII 63 & 85) with agentic loops running GPT 5.6 Terra Medium in Claurst — now an autonomous counterexample-discovery program working with Google DeepMind's formal-conjectures maintainers, 22 PRs upstream so far.",
         "website": null,
