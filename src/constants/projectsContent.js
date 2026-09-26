@@ -162,10 +162,10 @@ const MobileProjectsCarousel = () => {
             </div>
           ) : project.title === 'FLM (Fly Language Model)' ? (
             <iframe
-              src={project.website}
+              src={project.embed}
               title="FLM (Fly Language Model) preview"
               loading="lazy"
-              sandbox="allow-scripts allow-same-origin allow-popups"
+              sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
               style={{ width: '100%', height: '100%', border: 'none', borderRadius: 12, background: '#181818' }}
             />
           ) : (project.previewImg || (project.title === 'Backdooms' && 'https://cdn.jsdelivr.net/gh/kuberwastaken/backdooms/public/Gameplay-GIF.gif')) ? (
@@ -386,20 +386,20 @@ const ProjectsMasonry = () => {
                       }}
                       className="project-iframe-container"
                     >                <iframe
-                      src={project.website}
+                      src={project.embed || project.website}
                       title={project.title + ' preview'}
                       style={{
-                        width: (project.title === 'ClawX' || project.title === 'PolyThink') ? '250%' : project.title === 'Claurst' ? '117.65%' : '200%',
-                        height: (project.title === 'ClawX' || project.title === 'PolyThink') ? 562 : project.title === 'Claurst' ? 265 : 450,
+                        width: (project.title === 'ClawX' || project.title === 'PolyThink') ? '250%' : project.embed ? '100%' : project.title === 'Claurst' ? '117.65%' : '200%',
+                        height: (project.title === 'ClawX' || project.title === 'PolyThink') ? 562 : project.embed ? 225 : project.title === 'Claurst' ? 265 : 450,
                         border: 'none',
                         borderRadius: 0,
                         background: '#181818',
                         display: 'block',
-                        transform: (project.title === 'ClawX' || project.title === 'PolyThink') ? 'scale(0.4)' : project.title === 'Claurst' ? 'scale(0.85)' : 'scale(0.5)',
+                        transform: (project.title === 'ClawX' || project.title === 'PolyThink') ? 'scale(0.4)' : project.embed ? 'none' : project.title === 'Claurst' ? 'scale(0.85)' : 'scale(0.5)',
                         transformOrigin: '0 0',
                       }}
                       loading="lazy"
-                      sandbox="allow-scripts allow-same-origin allow-popups"
+                      sandbox={project.embed ? "allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" : "allow-scripts allow-same-origin allow-popups"}
                       allowFullScreen={false}
                       allow={project.title === 'CottagOS' ? "autoplay 'none'; microphone 'none'; camera 'none'; speaker 'none'" : undefined}
                       className="project-iframe"
