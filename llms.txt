@@ -4,7 +4,7 @@
 
 The complete, self-contained reference for who I am, what I build, and where to find me. Contains my projects, skills, achievements, and press features — no additional requests needed.
 
-Last-Updated: 2026-09-21
+Last-Updated: 2026-09-26
 Canonical: https://kuber.studio/llms.txt
 
 ---
@@ -232,7 +232,7 @@ My work has been cited in academic and university settings:
 
 ---
 
-## Projects (38 of 53+ shipped, curated)
+## Projects (39 of 53+ shipped, curated)
 
 Curated into three tiers: flagship builds (ordered by implementation complexity), ventures & tools (ordered by real-world traction), then everything else.
 
@@ -311,6 +311,11 @@ Further Compacted [Karpathy's work with MicroGPT](https://karpathy.github.io/202
   - X: https://x.com/kuberwastaken/status/2022006550756516189
 
 ### More projects
+
+- FLM (Fly Language Model) — A language model trained from scratch on a fruit-fly-connectome-derived recurrent network. Explore its neural states while it generates text, test interventions, and compare the trained model with controlled baselines.
+  - Site: https://flm.kuber.studio/
+  - GitHub: https://github.com/Kuberwastaken/flm
+  - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7509546383075590144/
 
 - Megaphone — A free, open-source dictation app for macOS that runs entirely on your Mac, powered by Apple's SpeechAnalyzer and Foundation Models frameworks.
   - Site: https://megaphone.kuber.studio/
@@ -496,6 +501,7 @@ All posts, newest first within each section:
 
 ### Reflections
 
+- [I gave my AI Agent autonomy, it ended up gaming Hacker News](https://kuber.studio/blog/Reflections/I-gave-my-AI-Agent-autonomy-it-ended-up-gaming-Hacker-News): 2026-09-23 — Last Wednesday, my AI agent submitted six links to Hacker News, and four reached the front page. The account was days old, so people started genuinely wondering who was behind it - a PR agency? Bought upvotes? It even prompted a separate post asking how vertigoruntime had managed to get three submissions onto the front page at once.
 - [Recreating Minecraft is Not a Benchmark](https://kuber.studio/blog/Reflections/Recreating-Minecraft-is-Not-a-Benchmark): 2026-09-06 — GPT Astra released a couple of days ago and, inevitably, within the hour my entire feed was the same five things: recreating Minecraft in one prompt, painting themselves in MS Paint, ...
 - [Humanising LLM Outputs is Dumb](https://kuber.studio/blog/Reflections/Humanising-LLM-Outputs-is-Actually-Dumb): 2026-08-10 — The largest tell for me to tell where culture and sentiment is shifting for AI tools is usually X, viral GitHub repositories and Hacker News. One of these tells I’ve been seeing a lot lately is skills like I have ADHD and Agents.md instructions such as giving outputs in only ASD-STE100 Simplified Technical English.
 - [Ageusia](https://kuber.studio/blog/Reflections/Ageusia): 2026-05-30 — For a long time, the hard part of making things on the internet was making them at all. If you wanted a website, you learned HTML and CSS. If you wanted it to do something, you learned JavaScript.
