@@ -1,6 +1,6 @@
 {
     "name": "Kuber Mehta",
-    "title": "AI Developer & Full Stack Engineer",
+    "title": "I build (& break) things",
     "known_for": "Creator of Claurst (Claude Code ported to Rust — 7k stars in its first week, 10k+ now), Backdooms (DOOM in a QR code) and 50+ shipped projects. Writes MindDump (50-100k monthly readers).",
     "birthDate": "2006-11-09",
     "location": "New Delhi, India",
@@ -25,6 +25,14 @@
     },
     "skills": {
         "Languages": [
+            {
+                "name": "Rust",
+                "desc": "Systems programming and developer tools"
+            },
+            {
+                "name": "Swift",
+                "desc": "Native macOS development"
+            },
             {
                 "name": "Python",
                 "desc": "Versatile scripting & data science"

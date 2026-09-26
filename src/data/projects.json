@@ -22,7 +22,7 @@
     },
     {
         "title": "Autonomous Counterexample Discovery with Agentic Loops",
-        "description": "Disproved 2 graph theory conjectures open for 22+ years (WOWII 63 & 85) with agentic loops running GPT 5.6 Terra Medium in Claurst — now an autonomous counterexample-discovery program working with Google DeepMind's formal-conjectures maintainers, 22 PRs upstream so far.",
+        "description": "Disproved [11+ graph theory conjectures](https://github.com/google-deepmind/formal-conjectures/pulls?q=is%3Apr+author%3AKuberwastaken+is%3Amerged), starting with [WOWII 63 & 85](https://github.com/google-deepmind/formal-conjectures/pull/4592), with agentic loops running GPT 5.6 Terra Medium in Claurst — now an autonomous counterexample-discovery program working with Google DeepMind's formal-conjectures maintainers, 22 PRs upstream so far.",
         "website": null,
         "github": "https://github.com/Kuberwastaken/c5-k4",
         "previewImg": "/images/kuberwastaken-wowii-graph.jpg",
@@ -279,44 +279,12 @@
         "extra": "https://linkedin.com/feed/update/urn:li:activity:7379082071723593728"
     },
     {
-        "title": "LifeMap",
-        "description": "Analyse your life's networks digitally",
-        "website": "https://lifemap.kuber.studio",
-        "github": "https://github.com/Kuberwastaken/LifeMap",
-        "showIframe": true,
-        "extra": []
-    },
-    {
-        "title": "PrayGo",
-        "description": "Main project for the Nas Daily AI Residency - DuoLingo for Religion. \n\n The world's first AI-powered religious education platform. Experience personalized, gamified lessons that adapt to your learning style while exploring world religions with respect and authenticity.",
-        "website": "https://www.sacredsteps.app/",
-        "github": null,
-        "showIframe": true,
-        "extra": "https://www.instagram.com/nasdaily/reel/DMLLKzMSuEK/"
-    },
-    {
         "title": "NoGreeting",
         "description": "I was tired of people dmming me saying just \"hi\" or \"yo\" and then waiting for me to answer so I made this website - just go, put in the greeting and the person's name and copy the link\n\nThey get a friendly explanation of why leading with context matters. I save 10 minutes. Everyone wins.",
         "website": "https://nogreeting.kuber.studio/",
         "github": "https://github.com/kuberwastaken/nogreeting",
         "showIframe": true,
         "extra": "https://www.linkedin.com/feed/update/urn:li:activity:7388816819316260864/"
-    },
-    {
-        "title": "Books Re-imagined",
-        "description": "Top 10 Google x Kaggle Long Context AI Hackathon \n\n An AI tool that transforms the narrative perspective of popular literature. In this case, it retells Diary of a Wimpy Kid: Rodrick Rules from Rodrick's point of view using Google Gemini 1.5.",
-        "website": "https://www.kaggle.com/code/kubermehta/books-reimagined-diary-of-a-wimpy-kid-by-rodrick",
-        "github": null,
-        "showIframe": true,
-        "extra": []
-    },
-    {
-        "title": "CottagOS",
-        "description": "Won first place at Hack Club SiteJam!\n\nCottagOS is a lovingly crafted, interactive desktop experience inspired by the aesthetics of cottagecore and the magic of enchanted forests. It simulates a cozy OS environment, complete with draggable windows, animated desktop, and a suite of charming mini-apps—all wrapped in a warm, nature-inspired UI.",
-        "website": "https://cottagos.kuber.studio/",
-        "github": "https://github.com/Kuberwastaken/CottagOS",
-        "showIframe": true,
-        "extra": []
     },
     {
         "title": "Strongy",
