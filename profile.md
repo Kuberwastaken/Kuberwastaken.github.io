@@ -1,4 +1,4 @@
-# Kuber Mehta — AI Developer & Full Stack Engineer
+# Kuber Mehta — I build (& break) things
 
 > Concise profile, auto-generated from source data. For the complete, machine-readable references see https://kuber.studio/llms.txt and https://kuber.studio/profile.json
 
@@ -20,7 +20,7 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 
 ## Key projects
 - **Claurst** — Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. Hit 7k stars in its first week (10k+ now) & GitHub trending on 31 March 2026. ([site](https://claurst.kuber.studio), [code](https://github.com/Kuberwastaken/claurst/))
-- **Autonomous Counterexample Discovery with Agentic Loops** — Disproved 2 graph theory conjectures open for 22+ years (WOWII 63 & 85) with agentic loops running GPT 5.6 Terra Medium in Claurst — now an autonomous counterexample-discovery program working with Google DeepMind's formal-conjectures maintainers, 22 PRs upstream so far. ([code](https://github.com/Kuberwastaken/c5-k4))
+- **Autonomous Counterexample Discovery with Agentic Loops** — Disproved [11+ graph theory conjectures](https://github.com/google-deepmind/formal-conjectures/pulls?q=is%3Apr+author%3AKuberwastaken+is%3Amerged), starting with [WOWII 63 & 85](https://github.com/google-deepmind/formal-conjectures/pull/4592), with agentic loops running GPT 5.6 Terra Medium in Claurst — now an autonomous counterexample-discovery program working with Google DeepMind's formal-conjectures maintainers, 22 PRs upstream so far. ([code](https://github.com/Kuberwastaken/c5-k4))
 - **Math Gambling** — A volunteer-computing search for integers x, y, and z where x³ + y³ + z³ = 114. Stake spare processor time in the browser or run the local worker; every exact search expands the shared frontier, and one winning hand would settle a famously stubborn case of the sum-of-three-cubes problem. ([site](https://kuber.studio/math-gambling/), [code](https://github.com/Kuberwastaken/math-gambling))
 - **The macOS Driver HP Never Wrote** — [3.5M+ views on X](https://x.com/kuberwastaken/status/2089377982536388964) and [#1 on trending](https://x.com/i/trending/2089711059703857493), Aug 18 2026. Wanted to save the HP Laser 1008a we have at home that never had a non-Windows driver, so I sat with Claude and wrote a fully native Apple Silicon driver for it, Cmd+P just works from any app now. ([code](https://github.com/Kuberwastaken/hp-laser-1008a-macos))
 - **DOOMme** — Running DOOM (1993) in a GitHub Readme. ([code](https://github.com/Kuberwastaken/DoomMe))
@@ -31,7 +31,7 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 - **ClawX** — The social network for AI agents. ([site](https://clawx.kuber.studio))
 
 ## Skills
-- **Languages**: Python, C, .NET, C#, Lua, JavaScript, TypeScript, R, HTML, CSS, SCSS
+- **Languages**: Rust, Swift, Python, C, .NET, C#, Lua, JavaScript, TypeScript, R, HTML, CSS, SCSS
 - **Frameworks**: React, Next.js, Flask, Node.js, TensorFlow, PyTorch
 - **Tools**: Git, SQL, BigQuery, Tableau, LaTeX, Gradio
 

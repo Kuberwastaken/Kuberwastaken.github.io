@@ -11,7 +11,7 @@ Canonical: https://kuber.studio/llms.txt
 
 ## Quick context for LLMs
 
-- **Who**: 19-year-old AI developer from New Delhi, India. AI Developer & Full Stack Engineer.
+- **Who**: 19-year-old AI developer from New Delhi, India. I build (& break) things.
 - **Known for**: Creator of Claurst (Claude Code ported to Rust — 7k stars in its first week, 10k+ now), Backdooms (DOOM in a QR code) and 50+ shipped projects. Writes MindDump (50-100k monthly readers).
 - **Machine-readable data**: https://kuber.studio/profile.json — JSON snapshot of identity, skills, projects, achievements, and press.
 - **Blog + RSS**: https://kuber.studio/blog/ — full index at https://kuber.studio/blog/llms.txt (RSS: https://kuber.studio/blog/index.xml). The blog's own llms.txt is always the freshest source for posts, and the blog runs an MCP server at https://minddump-mcp.kuberhob.workers.dev/mcp.
@@ -52,7 +52,7 @@ Canonical: https://kuber.studio/llms.txt
 - Name: Kuber Mehta
 - Age: 19
 - Location: New Delhi, India
-- Role: AI Developer & Full Stack Engineer
+- Role: I build (& break) things
 - Email: mailto:kuberhob@gmail.com
 - GitHub: https://github.com/Kuberwastaken (600+ followers)
 - LinkedIn: https://www.linkedin.com/in/kubermehta/ (14,000+ followers)
@@ -232,7 +232,7 @@ My work has been cited in academic and university settings:
 
 ---
 
-## Projects (39 of 53+ shipped, curated)
+## Projects (35 of 53+ shipped, curated)
 
 Curated into three tiers: flagship builds (ordered by implementation complexity), ventures & tools (ordered by real-world traction), then everything else.
 
@@ -244,7 +244,7 @@ Ordered by implementation complexity:
   - Site: https://claurst.kuber.studio
   - GitHub: https://github.com/Kuberwastaken/claurst/
 
-- Autonomous Counterexample Discovery with Agentic Loops — Disproved 2 graph theory conjectures open for 22+ years (WOWII 63 & 85) with agentic loops running GPT 5.6 Terra Medium in Claurst — now an autonomous counterexample-discovery program working with Google DeepMind's formal-conjectures maintainers, 22 PRs upstream so far.
+- Autonomous Counterexample Discovery with Agentic Loops — Disproved [11+ graph theory conjectures](https://github.com/google-deepmind/formal-conjectures/pulls?q=is%3Apr+author%3AKuberwastaken+is%3Amerged), starting with [WOWII 63 & 85](https://github.com/google-deepmind/formal-conjectures/pull/4592), with agentic loops running GPT 5.6 Terra Medium in Claurst — now an autonomous counterexample-discovery program working with Google DeepMind's formal-conjectures maintainers, 22 PRs upstream so far.
   - GitHub: https://github.com/Kuberwastaken/c5-k4
   - X: https://x.com/kuberwastaken/status/2080363523167981886
 
@@ -417,32 +417,12 @@ Runs entirely in your browser using Transformers.js, WebGPU and ONNX, loading ~3
   - Site: https://name.kuber.studio/
   - LinkedIn: https://linkedin.com/feed/update/urn:li:activity:7379082071723593728
 
-- LifeMap — Analyse your life's networks digitally
-  - Site: https://lifemap.kuber.studio
-  - GitHub: https://github.com/Kuberwastaken/LifeMap
-
-- PrayGo — Main project for the Nas Daily AI Residency - DuoLingo for Religion. 
-
- The world's first AI-powered religious education platform. Experience personalized, gamified lessons that adapt to your learning style while exploring world religions with respect and authenticity.
-  - Site: https://www.sacredsteps.app/
-
 - NoGreeting — I was tired of people dmming me saying just "hi" or "yo" and then waiting for me to answer so I made this website - just go, put in the greeting and the person's name and copy the link
 
 They get a friendly explanation of why leading with context matters. I save 10 minutes. Everyone wins.
   - Site: https://nogreeting.kuber.studio/
   - GitHub: https://github.com/kuberwastaken/nogreeting
   - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7388816819316260864/
-
-- Books Re-imagined — Top 10 Google x Kaggle Long Context AI Hackathon 
-
- An AI tool that transforms the narrative perspective of popular literature. In this case, it retells Diary of a Wimpy Kid: Rodrick Rules from Rodrick's point of view using Google Gemini 1.5.
-  - Site: https://www.kaggle.com/code/kubermehta/books-reimagined-diary-of-a-wimpy-kid-by-rodrick
-
-- CottagOS — Won first place at Hack Club SiteJam!
-
-CottagOS is a lovingly crafted, interactive desktop experience inspired by the aesthetics of cottagecore and the magic of enchanted forests. It simulates a cozy OS environment, complete with draggable windows, animated desktop, and a suite of charming mini-apps—all wrapped in a warm, nature-inspired UI.
-  - Site: https://cottagos.kuber.studio/
-  - GitHub: https://github.com/Kuberwastaken/CottagOS
 
 - Strongy — [WIP] A prettier, faster, themable Minecraft stronghold calculator — built on top of Ninjabrain-Bot for speedrunners & streamers.
   - GitHub: https://github.com/Kuberwastaken/strongy
@@ -532,6 +512,8 @@ All posts, newest first within each section:
 ## Skills
 
 ### Languages
+  - Rust: Systems programming and developer tools
+  - Swift: Native macOS development
   - Python: Versatile scripting & data science
   - C: Low-level systems programming
   - .NET: Modern object-oriented programming and enterprise development
