@@ -1,6 +1,6 @@
 {
   "name": "Kuber Mehta",
-  "title": "AI Developer & Full Stack Engineer",
+  "title": "I build (& break) things",
   "known_for": "Creator of Claurst (Claude Code ported to Rust — 7k stars in its first week, 10k+ now), Backdooms (DOOM in a QR code) and 50+ shipped projects. Writes MindDump (50-100k monthly readers).",
   "age": 19,
   "location": "New Delhi, India",
@@ -28,6 +28,14 @@
   ],
   "skills": {
     "Languages": [
+      {
+        "name": "Rust",
+        "desc": "Systems programming and developer tools"
+      },
+      {
+        "name": "Swift",
+        "desc": "Native macOS development"
+      },
       {
         "name": "Python",
         "desc": "Versatile scripting & data science"
@@ -137,7 +145,7 @@
     {
       "name": "Autonomous Counterexample Discovery with Agentic Loops",
       "status": "Active",
-      "description": "Disproved 2 graph theory conjectures open for 22+ years (WOWII 63 & 85) with agentic loops running GPT 5.6 Terra Medium in Claurst — now an autonomous counterexample-discovery program working with Google DeepMind's formal-conjectures maintainers, 22 PRs upstream so far.",
+      "description": "Disproved [11+ graph theory conjectures](https://github.com/google-deepmind/formal-conjectures/pulls?q=is%3Apr+author%3AKuberwastaken+is%3Amerged), starting with [WOWII 63 & 85](https://github.com/google-deepmind/formal-conjectures/pull/4592), with agentic loops running GPT 5.6 Terra Medium in Claurst — now an autonomous counterexample-discovery program working with Google DeepMind's formal-conjectures maintainers, 22 PRs upstream so far.",
       "github": "https://github.com/Kuberwastaken/c5-k4",
       "technologies": [
         "AI/ML"
