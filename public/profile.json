@@ -138,7 +138,7 @@
     {
       "name": "Claurst",
       "status": "Active",
-      "description": "Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. Hit 7k stars in its first week (10k+ now) & GitHub trending on 31 March 2026. [Grokipedia entry](https://grokipedia.com/page/Claurst).",
+      "description": "Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. Hit 7k stars in its first week (10k+ now) & GitHub trending on 31 March 2026.",
       "url": "https://claurst.kuber.studio",
       "github": "https://github.com/Kuberwastaken/claurst/"
     },
@@ -180,7 +180,7 @@
     {
       "name": "Backdooms",
       "status": "Active",
-      "description": "One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. \n\n A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.4kB in size, using a custom compression pipeline and the DecompressionStream browser API [Grokipedia entry](https://grokipedia.com/page/Backdooms).",
+      "description": "One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. \n\n A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.4kB in size, using a custom compression pipeline and the DecompressionStream browser API",
       "url": "https://kuber.studio/backdooms/",
       "github": "https://github.com/Kuberwastaken/backdooms",
       "technologies": [
