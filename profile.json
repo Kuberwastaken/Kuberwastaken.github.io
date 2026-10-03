@@ -138,7 +138,7 @@
     {
       "name": "Claurst",
       "status": "Active",
-      "description": "Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. Hit 7k stars in its first week (10k+ now) & GitHub trending on 31 March 2026.",
+      "description": "Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. Hit 7k stars in its first week (10k+ now) & GitHub trending on 31 March 2026. [Grokipedia entry](https://grokipedia.com/page/Claurst).",
       "url": "https://claurst.kuber.studio",
       "github": "https://github.com/Kuberwastaken/claurst/"
     },
@@ -222,6 +222,26 @@
     "20+ hackathons participated"
   ],
   "media_appearances": [
+    {
+      "outlet": "illegible podcast",
+      "title": "Built 53 projects at 19, now reports to a YC unicorn founder - Kuber Mehta",
+      "url": "https://illegibleworld.substack.com/p/built-53-projects-at-19-now-reports",
+      "date": "2026-09-29",
+      "description": "Podcast conversation with Kuber Mehta about his projects and building."
+    },
+    {
+      "outlet": "illegible podcast - YouTube",
+      "title": "Built 53 projects at 19, now reports to a YC unicorn founder - Kuber Mehta",
+      "url": "https://www.youtube.com/watch?v=7_YisPfWXoM",
+      "description": "YouTube version of the illegible podcast conversation."
+    },
+    {
+      "outlet": "Grokipedia",
+      "title": "Claurst",
+      "url": "https://grokipedia.com/page/Claurst",
+      "project": "Claurst",
+      "description": "Encyclopedia entry about Claurst, Kuber Mehta's Rust coding agent."
+    },
     {
       "outlet": "Tom's Hardware",
       "title": "Dev uses Claude AI to create native macOS driver for 'obscure' Windows-only printer — Linux container hack enables system-wide Cmd-P printing, driver now available on GitHub",
@@ -512,5 +532,5 @@
       "Mobile responsive design"
     ]
   },
-  "last_updated": "2026-09-26"
+  "last_updated": "2026-10-03"
 }
