@@ -202,6 +202,13 @@
             "description": "Encyclopedia entry about Claurst, Kuber Mehta's Rust coding agent."
         },
         {
+            "outlet": "Grokipedia",
+            "title": "Backdooms",
+            "url": "https://grokipedia.com/page/Backdooms",
+            "project": "Backdooms",
+            "description": "Encyclopedia entry about Backdooms, Kuber Mehta's DOOM-inspired game in a single QR code."
+        },
+        {
             "outlet": "Tom's Hardware",
             "title": "Dev uses Claude AI to create native macOS driver for 'obscure' Windows-only printer — Linux container hack enables system-wide Cmd-P printing, driver now available on GitHub",
             "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/dev-uses-claude-ai-to-create-native-macos-driver-for-obscure-windows-only-printer-linux-container-hack-enables-system-wide-cmd-p-printing-driver-now-available-on-github",

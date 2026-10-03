@@ -24,7 +24,7 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 - **Math Gambling** — A volunteer-computing search for integers x, y, and z where x³ + y³ + z³ = 114. Stake spare processor time in the browser or run the local worker; every exact search expands the shared frontier, and one winning hand would settle a famously stubborn case of the sum-of-three-cubes problem. ([site](https://kuber.studio/math-gambling/), [code](https://github.com/Kuberwastaken/math-gambling))
 - **The macOS Driver HP Never Wrote** — [3.5M+ views on X](https://x.com/kuberwastaken/status/2089377982536388964) and [#1 on trending](https://x.com/i/trending/2089711059703857493), Aug 18 2026. Wanted to save the HP Laser 1008a we have at home that never had a non-Windows driver, so I sat with Claude and wrote a fully native Apple Silicon driver for it, Cmd+P just works from any app now. ([code](https://github.com/Kuberwastaken/hp-laser-1008a-macos))
 - **DOOMme** — Running DOOM (1993) in a GitHub Readme. ([code](https://github.com/Kuberwastaken/DoomMe))
-- **Backdooms** — One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. ([site](https://kuber.studio/backdooms/), [code](https://github.com/Kuberwastaken/backdooms))
+- **Backdooms** — One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. [Grokipedia entry](https://grokipedia.com/page/Backdooms). ([site](https://kuber.studio/backdooms/), [code](https://github.com/Kuberwastaken/backdooms))
 - **TREAT** — TREAT is an AI-powered platform for trigger recognition in movies and TV, making content more accessible and enjoyable. ([code](https://github.com/Kuberwastaken/TREAT))
 - **PolyThink** — Building Generative UI for LLMs ([site](https://www.polyth.ink/))
 - **MEOW** — The most Purr-fect Image File Format for your AI workflows, PNG on steroids. ([code](https://github.com/Kuberwastaken/meow))
@@ -50,6 +50,7 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 - **illegible podcast**: Built 53 projects at 19, now reports to a YC unicorn founder - Kuber Mehta — https://illegibleworld.substack.com/p/built-53-projects-at-19-now-reports
 - **illegible podcast - YouTube**: Built 53 projects at 19, now reports to a YC unicorn founder - Kuber Mehta — https://www.youtube.com/watch?v=7_YisPfWXoM
 - **Grokipedia**: Claurst — https://grokipedia.com/page/Claurst
+- **Grokipedia**: Backdooms — https://grokipedia.com/page/Backdooms
 - **Tom's Hardware**: Dev uses Claude AI to create native macOS driver for 'obscure' Windows-only printer — Linux container hack enables system-wide Cmd-P printing, driver now available on GitHub — https://www.tomshardware.com/tech-industry/artificial-intelligence/dev-uses-claude-ai-to-create-native-macos-driver-for-obscure-windows-only-printer-linux-container-hack-enables-system-wide-cmd-p-printing-driver-now-available-on-github
 - **The Register**: Dev taps Claude Code to craft custom printer driver for macOS — https://www.theregister.com/ai-and-ml/2026/08/19/dev-taps-claude-code-to-craft-custom-printer-driver-for-macos/5289875
 - **Neowin**: Teen dev vibe codes working macOS driver for Windows-only HP printer — https://www.neowin.net/news/teen-dev-vibe-codes-working-macos-driver-for-windows-only-hp-printer/
@@ -88,4 +89,4 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 - YouTube: https://www.youtube.com/@Kuberwastaken
 - Blog: https://kuber.studio/blog/
 
-_Last updated: 2026-10-03_
+_Last updated: 2026-10-04_
