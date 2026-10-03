@@ -4,7 +4,7 @@
 
 The complete, self-contained reference for who I am, what I build, and where to find me. Contains my projects, skills, achievements, and press features — no additional requests needed.
 
-Last-Updated: 2026-09-26
+Last-Updated: 2026-10-03
 Canonical: https://kuber.studio/llms.txt
 
 ---
@@ -108,6 +108,15 @@ At my core, I love Building (& Breaking) things, so if you're making something c
 
 Featured in the following publications:
 
+- illegible podcast: Built 53 projects at 19, now reports to a YC unicorn founder - Kuber Mehta — 2026-09-29
+  - Podcast conversation with Kuber Mehta about his projects and building.
+  - https://illegibleworld.substack.com/p/built-53-projects-at-19-now-reports
+- illegible podcast - YouTube: Built 53 projects at 19, now reports to a YC unicorn founder - Kuber Mehta
+  - YouTube version of the illegible podcast conversation.
+  - https://www.youtube.com/watch?v=7_YisPfWXoM
+- Grokipedia: Claurst (project: Claurst)
+  - Encyclopedia entry about Claurst, Kuber Mehta's Rust coding agent.
+  - https://grokipedia.com/page/Claurst
 - Tom's Hardware: Dev uses Claude AI to create native macOS driver for 'obscure' Windows-only printer — Linux container hack enables system-wide Cmd-P printing, driver now available on GitHub (project: The macOS Driver HP Never Wrote) — 2026-08-19
   - Tom's Hardware feature on the HP Laser 1008a macOS driver written with Claude — from the initial Linux-container hack to system-wide Cmd+P printing, with the driver published on GitHub.
   - https://www.tomshardware.com/tech-industry/artificial-intelligence/dev-uses-claude-ai-to-create-native-macos-driver-for-obscure-windows-only-printer-linux-container-hack-enables-system-wide-cmd-p-printing-driver-now-available-on-github
@@ -240,7 +249,7 @@ Curated into three tiers: flagship builds (ordered by implementation complexity)
 
 Ordered by implementation complexity:
 
-- Claurst — Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. Hit 7k stars in its first week (10k+ now) & GitHub trending on 31 March 2026.
+- Claurst — Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. Hit 7k stars in its first week (10k+ now) & GitHub trending on 31 March 2026. [Grokipedia entry](https://grokipedia.com/page/Claurst).
   - Site: https://claurst.kuber.studio
   - GitHub: https://github.com/Kuberwastaken/claurst/
 

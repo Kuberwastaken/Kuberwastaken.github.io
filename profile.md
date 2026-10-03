@@ -19,7 +19,7 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 - BTech AI & Data Science — Indraprastha University (GGSIPU) (Current)
 
 ## Key projects
-- **Claurst** — Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. Hit 7k stars in its first week (10k+ now) & GitHub trending on 31 March 2026. ([site](https://claurst.kuber.studio), [code](https://github.com/Kuberwastaken/claurst/))
+- **Claurst** — Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. Hit 7k stars in its first week (10k+ now) & GitHub trending on 31 March 2026. [Grokipedia entry](https://grokipedia.com/page/Claurst). ([site](https://claurst.kuber.studio), [code](https://github.com/Kuberwastaken/claurst/))
 - **Autonomous Counterexample Discovery with Agentic Loops** — Disproved [11+ graph theory conjectures](https://github.com/google-deepmind/formal-conjectures/pulls?q=is%3Apr+author%3AKuberwastaken+is%3Amerged), starting with [WOWII 63 & 85](https://github.com/google-deepmind/formal-conjectures/pull/4592), with agentic loops running GPT 5.6 Terra Medium in Claurst — now an autonomous counterexample-discovery program working with Google DeepMind's formal-conjectures maintainers, 24 PRs upstream so far. ([code](https://github.com/Kuberwastaken/c5-k4))
 - **Math Gambling** — A volunteer-computing search for integers x, y, and z where x³ + y³ + z³ = 114. Stake spare processor time in the browser or run the local worker; every exact search expands the shared frontier, and one winning hand would settle a famously stubborn case of the sum-of-three-cubes problem. ([site](https://kuber.studio/math-gambling/), [code](https://github.com/Kuberwastaken/math-gambling))
 - **The macOS Driver HP Never Wrote** — [3.5M+ views on X](https://x.com/kuberwastaken/status/2089377982536388964) and [#1 on trending](https://x.com/i/trending/2089711059703857493), Aug 18 2026. Wanted to save the HP Laser 1008a we have at home that never had a non-Windows driver, so I sat with Claude and wrote a fully native Apple Silicon driver for it, Cmd+P just works from any app now. ([code](https://github.com/Kuberwastaken/hp-laser-1008a-macos))
@@ -47,6 +47,9 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 - 20+ hackathons participated
 
 ## Press & media
+- **illegible podcast**: Built 53 projects at 19, now reports to a YC unicorn founder - Kuber Mehta — https://illegibleworld.substack.com/p/built-53-projects-at-19-now-reports
+- **illegible podcast - YouTube**: Built 53 projects at 19, now reports to a YC unicorn founder - Kuber Mehta — https://www.youtube.com/watch?v=7_YisPfWXoM
+- **Grokipedia**: Claurst — https://grokipedia.com/page/Claurst
 - **Tom's Hardware**: Dev uses Claude AI to create native macOS driver for 'obscure' Windows-only printer — Linux container hack enables system-wide Cmd-P printing, driver now available on GitHub — https://www.tomshardware.com/tech-industry/artificial-intelligence/dev-uses-claude-ai-to-create-native-macos-driver-for-obscure-windows-only-printer-linux-container-hack-enables-system-wide-cmd-p-printing-driver-now-available-on-github
 - **The Register**: Dev taps Claude Code to craft custom printer driver for macOS — https://www.theregister.com/ai-and-ml/2026/08/19/dev-taps-claude-code-to-craft-custom-printer-driver-for-macos/5289875
 - **Neowin**: Teen dev vibe codes working macOS driver for Windows-only HP printer — https://www.neowin.net/news/teen-dev-vibe-codes-working-macos-driver-for-windows-only-hp-printer/
@@ -85,4 +88,4 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 - YouTube: https://www.youtube.com/@Kuberwastaken
 - Blog: https://kuber.studio/blog/
 
-_Last updated: 2026-09-26_
+_Last updated: 2026-10-03_
