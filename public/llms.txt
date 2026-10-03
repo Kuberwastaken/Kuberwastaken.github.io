@@ -252,7 +252,7 @@ Curated into three tiers: flagship builds (ordered by implementation complexity)
 
 Ordered by implementation complexity:
 
-- Claurst — Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. Hit 7k stars in its first week (10k+ now) & GitHub trending on 31 March 2026. [Grokipedia entry](https://grokipedia.com/page/Claurst).
+- Claurst — Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. Hit 7k stars in its first week (10k+ now) & GitHub trending on 31 March 2026.
   - Site: https://claurst.kuber.studio
   - GitHub: https://github.com/Kuberwastaken/claurst/
 
@@ -277,7 +277,7 @@ A DIY stateless engine with 8000+ markdown files and WebP images linked together
 
 - Backdooms — One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. 
 
- A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.4kB in size, using a custom compression pipeline and the DecompressionStream browser API [Grokipedia entry](https://grokipedia.com/page/Backdooms).
+ A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.4kB in size, using a custom compression pipeline and the DecompressionStream browser API
   - Site: https://kuber.studio/backdooms/
   - GitHub: https://github.com/Kuberwastaken/backdooms
   - HN: https://news.ycombinator.com/item?id=43729683
