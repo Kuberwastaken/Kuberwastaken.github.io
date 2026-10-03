@@ -1,7 +1,7 @@
 [
     {
         "title": "Claurst",
-        "description": "Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. Hit 7k stars in its first week (10k+ now) & GitHub trending on 31 March 2026.",
+        "description": "Claude Code ported to Rust & a Breakdown of the Claude Code leak & discoveries. Hit 7k stars in its first week (10k+ now) & GitHub trending on 31 March 2026. [Grokipedia entry](https://grokipedia.com/page/Claurst).",
         "website": "https://claurst.kuber.studio",
         "github": "https://github.com/Kuberwastaken/claurst/",
         "showIframe": true,

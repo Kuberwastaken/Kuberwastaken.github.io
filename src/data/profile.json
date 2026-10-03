@@ -182,6 +182,26 @@
     ],
     "media_appearances": [
         {
+            "outlet": "illegible podcast",
+            "title": "Built 53 projects at 19, now reports to a YC unicorn founder - Kuber Mehta",
+            "url": "https://illegibleworld.substack.com/p/built-53-projects-at-19-now-reports",
+            "date": "2026-09-29",
+            "description": "Podcast conversation with Kuber Mehta about his projects and building."
+        },
+        {
+            "outlet": "illegible podcast - YouTube",
+            "title": "Built 53 projects at 19, now reports to a YC unicorn founder - Kuber Mehta",
+            "url": "https://www.youtube.com/watch?v=7_YisPfWXoM",
+            "description": "YouTube version of the illegible podcast conversation."
+        },
+        {
+            "outlet": "Grokipedia",
+            "title": "Claurst",
+            "url": "https://grokipedia.com/page/Claurst",
+            "project": "Claurst",
+            "description": "Encyclopedia entry about Claurst, Kuber Mehta's Rust coding agent."
+        },
+        {
             "outlet": "Tom's Hardware",
             "title": "Dev uses Claude AI to create native macOS driver for 'obscure' Windows-only printer — Linux container hack enables system-wide Cmd-P printing, driver now available on GitHub",
             "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/dev-uses-claude-ai-to-create-native-macos-driver-for-obscure-windows-only-printer-linux-container-hack-enables-system-wide-cmd-p-printing-driver-now-available-on-github",
