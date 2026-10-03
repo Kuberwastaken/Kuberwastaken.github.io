@@ -117,6 +117,9 @@ Featured in the following publications:
 - Grokipedia: Claurst (project: Claurst)
   - Encyclopedia entry about Claurst, Kuber Mehta's Rust coding agent.
   - https://grokipedia.com/page/Claurst
+- Grokipedia: Backdooms (project: Backdooms)
+  - Encyclopedia entry about Backdooms, Kuber Mehta's DOOM-inspired game in a single QR code.
+  - https://grokipedia.com/page/Backdooms
 - Tom's Hardware: Dev uses Claude AI to create native macOS driver for 'obscure' Windows-only printer — Linux container hack enables system-wide Cmd-P printing, driver now available on GitHub (project: The macOS Driver HP Never Wrote) — 2026-08-19
   - Tom's Hardware feature on the HP Laser 1008a macOS driver written with Claude — from the initial Linux-container hack to system-wide Cmd+P printing, with the driver published on GitHub.
   - https://www.tomshardware.com/tech-industry/artificial-intelligence/dev-uses-claude-ai-to-create-native-macos-driver-for-obscure-windows-only-printer-linux-container-hack-enables-system-wide-cmd-p-printing-driver-now-available-on-github
@@ -274,7 +277,7 @@ A DIY stateless engine with 8000+ markdown files and WebP images linked together
 
 - Backdooms — One of the top HN Posts of 2025, [cited by an ex-NASA Scientist](https://www.researchgate.net/publication/392716839_Encoding_Software_For_Perpetuity_A_Compact_Representation_Of_Apollo_11_Guidance_Code) on his independent research paper. 
 
- A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.4kB in size, using a custom compression pipeline and the DecompressionStream browser API
+ A Game inspired by DOOM and the Backrooms inside a single QR code, less than 2.4kB in size, using a custom compression pipeline and the DecompressionStream browser API [Grokipedia entry](https://grokipedia.com/page/Backdooms).
   - Site: https://kuber.studio/backdooms/
   - GitHub: https://github.com/Kuberwastaken/backdooms
   - HN: https://news.ycombinator.com/item?id=43729683

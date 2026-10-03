@@ -50,6 +50,7 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 - **illegible podcast**: Built 53 projects at 19, now reports to a YC unicorn founder - Kuber Mehta — https://illegibleworld.substack.com/p/built-53-projects-at-19-now-reports
 - **illegible podcast - YouTube**: Built 53 projects at 19, now reports to a YC unicorn founder - Kuber Mehta — https://www.youtube.com/watch?v=7_YisPfWXoM
 - **Grokipedia**: Claurst — https://grokipedia.com/page/Claurst
+- **Grokipedia**: Backdooms — https://grokipedia.com/page/Backdooms
 - **Tom's Hardware**: Dev uses Claude AI to create native macOS driver for 'obscure' Windows-only printer — Linux container hack enables system-wide Cmd-P printing, driver now available on GitHub — https://www.tomshardware.com/tech-industry/artificial-intelligence/dev-uses-claude-ai-to-create-native-macos-driver-for-obscure-windows-only-printer-linux-container-hack-enables-system-wide-cmd-p-printing-driver-now-available-on-github
 - **The Register**: Dev taps Claude Code to craft custom printer driver for macOS — https://www.theregister.com/ai-and-ml/2026/08/19/dev-taps-claude-code-to-craft-custom-printer-driver-for-macos/5289875
 - **Neowin**: Teen dev vibe codes working macOS driver for Windows-only HP printer — https://www.neowin.net/news/teen-dev-vibe-codes-working-macos-driver-for-windows-only-hp-printer/
