@@ -21,6 +21,15 @@
         }
     },
     {
+        "title": "Planethunt",
+        "description": "A possible planet hiding in old Kepler data. Codex and I searched thousands of stars for repeating dips in starlight and found KIC 5689121, a red dwarf in Lyra about 300 parsecs away, dimming every 13.77 days. The signal comes back in held-back quarters, and a brighter neighbour 7.1\" away is ruled out as the source. It is a planet candidate, not a confirmed discovery: statistical validation still needs a lower false-positive probability, and its novelty is provisional. Every file, chart and null result is public.",
+        "website": "https://kuber.studio/planethunt/",
+        "github": "https://github.com/Kuberwastaken/planethunt",
+        "previewImg": "https://kuber.studio/planethunt/docs/sky/ps1-2arcmin-clean.jpg",
+        "showIframe": false,
+        "extra": "https://x.com/kuberwastaken/status/2109240782368751834"
+    },
+    {
         "title": "Autonomous Counterexample Discovery with Agentic Loops",
         "description": "Disproved [11+ graph theory conjectures](https://github.com/google-deepmind/formal-conjectures/pulls?q=is%3Apr+author%3AKuberwastaken+is%3Amerged), starting with [WOWII 63 & 85](https://github.com/google-deepmind/formal-conjectures/pull/4592), with agentic loops running GPT 5.6 Terra Medium in Claurst — now an autonomous counterexample-discovery program working with Google DeepMind's formal-conjectures maintainers, 24 PRs upstream so far.",
         "website": null,
