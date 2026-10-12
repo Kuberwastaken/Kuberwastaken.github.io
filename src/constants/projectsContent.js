@@ -151,7 +151,7 @@ const MobileProjectsCarousel = () => {
         }}
       >
         {/* Faux webpage, preview, or gif */}
-        <div style={{ width: '100%', marginBottom: 16, borderRadius: 12, overflow: 'hidden', background: '#181818', height: 200, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ width: '100%', marginBottom: 16, borderRadius: 12, overflow: 'hidden', background: '#181818', height: project.previewAspect ? 'auto' : 200, aspectRatio: project.previewAspect || undefined, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           {fauxWebImage ? (
             <div style={{ width: '100%', height: '100%', overflowY: 'auto', background: '#fff', borderRadius: 6 }}>
               <img
@@ -169,11 +169,11 @@ const MobileProjectsCarousel = () => {
               style={{ width: '100%', height: '100%', border: 'none', borderRadius: 12, background: '#181818' }}
             />
           ) : (project.previewImg || (project.title === 'Backdooms' && 'https://cdn.jsdelivr.net/gh/kuberwastaken/backdooms/public/Gameplay-GIF.gif')) ? (
-            <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: project.title === 'HN-Digest' ? '#000' : project.title === 'Autonomous Counterexample Discovery with Agentic Loops' ? '#fff' : 'transparent' }}>
+            <div style={{ width: '100%', height: project.previewAspect ? 'auto' : '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: project.title === 'HN-Digest' ? '#000' : project.title === 'Autonomous Counterexample Discovery with Agentic Loops' ? '#fff' : 'transparent' }}>
               <img
                 src={project.previewImg?.startsWith('/images/') ? JSDELIVR_BASE + project.previewImg.replace('/images/', '') : (project.previewImg || (project.title === 'Backdooms' ? 'https://cdn.jsdelivr.net/gh/kuberwastaken/backdooms/public/Gameplay-GIF.gif' : ''))}
                 alt={project.title + ' preview'}
-                style={{ width: '100%', height: '100%', objectFit: (project.title === 'HN-Digest' || project.title === 'Autonomous Counterexample Discovery with Agentic Loops') ? 'contain' : 'cover', objectPosition: project.title === 'Megaphone' ? 'top' : 'center', display: 'block', borderRadius: 12 }}
+                style={{ width: '100%', height: project.previewAspect ? 'auto' : '100%', objectFit: (project.title === 'HN-Digest' || project.title === 'Autonomous Counterexample Discovery with Agentic Loops') ? 'contain' : 'cover', objectPosition: project.title === 'Megaphone' ? 'top' : 'center', display: 'block', borderRadius: 12 }}
               />
             </div>
           ) : null}
@@ -309,7 +309,8 @@ const ProjectsMasonry = () => {
                         border: '1.5px solid rgba(90,187,154,0.18)',
                         boxShadow: '0 2px 16px 0 rgba(90,187,154,0.10)',
                         background: project.title === 'HN-Digest' ? '#000' : project.title === 'Autonomous Counterexample Discovery with Agentic Loops' ? '#fff' : '#181818',
-                        height: project.title === 'HN-Digest' ? 140 : 225,
+                        height: project.previewAspect ? 'auto' : (project.title === 'HN-Digest' ? 140 : 225),
+                        aspectRatio: project.previewAspect || undefined,
                         maxWidth: '100%',
                         display: 'flex',
                         alignItems: 'center',
@@ -322,7 +323,7 @@ const ProjectsMasonry = () => {
                         alt={project.title + ' preview'}
                         style={{
                           width: '100%',
-                          height: '100%',
+                          height: project.previewAspect ? 'auto' : '100%',
                           objectFit: (project.title === 'HN-Digest' || project.title === 'Autonomous Counterexample Discovery with Agentic Loops') ? 'contain' : 'cover',
                           objectPosition: project.title === 'Megaphone' ? 'top' : 'center',
                           display: 'block',
