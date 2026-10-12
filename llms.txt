@@ -329,7 +329,7 @@ Further Compacted [Karpathy's work with MicroGPT](https://karpathy.github.io/202
   - GitHub: https://github.com/Kuberwastaken/flm
   - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7509546383075590144/
 
-- Planethunt — A possible planet hiding in old Kepler data. Found by pixel-peeping: Codex and I combed through the raw pixels of thousands of stars until one red dwarf, KIC 5689121 in Lyra, about 300 parsecs away, dimmed every 13.77 days. A candidate, not a confirmed discovery. Every file is public.
+- Planethunt — A possible planet hiding in old Kepler data. Found by pixel-peeping: Codex and I combed through the raw pixels of thousands of stars until one red dwarf, KIC 5689121 in the constellation Lyra, dimmed every 13.77 days. Every file is public.
   - Site: https://kuber.studio/planethunt/
   - GitHub: https://github.com/Kuberwastaken/planethunt
   - X: https://x.com/kuberwastaken/status/2109240782368751834
