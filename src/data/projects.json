@@ -22,7 +22,7 @@
     },
     {
         "title": "Planethunt",
-        "description": "A possible planet hiding in old Kepler data. Codex and I searched thousands of stars for repeating dips in starlight and found KIC 5689121, a red dwarf in Lyra about 300 parsecs away, dimming every 13.77 days. The signal comes back in held-back quarters, and a brighter neighbour 7.1\" away is ruled out as the source. It is a planet candidate, not a confirmed discovery: statistical validation still needs a lower false-positive probability, and its novelty is provisional. Every file, chart and null result is public.",
+        "description": "A possible planet hiding in old Kepler data. Found by pixel-peeping: Codex and I combed through the raw pixels of thousands of stars until one red dwarf, KIC 5689121 in Lyra, about 300 parsecs away, dimmed every 13.77 days. A candidate, not a confirmed discovery. Every file is public.",
         "website": "https://kuber.studio/planethunt/",
         "github": "https://github.com/Kuberwastaken/planethunt",
         "previewImg": "https://kuber.studio/planethunt/docs/sky/ps1-2arcmin-clean.jpg",
