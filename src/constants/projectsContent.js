@@ -153,11 +153,11 @@ const MobileProjectsCarousel = () => {
         {/* Faux webpage, preview, or gif */}
         <div style={{ width: '100%', marginBottom: 16, borderRadius: 12, overflow: 'hidden', background: '#181818', height: project.previewAspect ? 'auto' : 200, aspectRatio: project.previewAspect || undefined, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           {fauxWebImage ? (
-            <div style={{ width: '100%', height: '100%', overflowY: 'auto', background: '#fff', borderRadius: 6 }}>
+            <div style={{ width: '100%', height: project.previewAspect ? 'auto' : '100%', overflowY: project.previewAspect ? 'visible' : 'auto', background: '#fff', borderRadius: 6 }}>
               <img
                 src={fauxWebImage}
                 alt={project.title + ' faux webpage'}
-                style={{ width: '100%', minHeight: '100%', objectFit: 'cover', display: 'block' }}
+                style={{ width: '100%', minHeight: project.previewAspect ? 0 : '100%', objectFit: 'cover', display: 'block' }}
               />
             </div>
           ) : project.title === 'FLM (Fly Language Model)' ? (
