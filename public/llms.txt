@@ -244,7 +244,7 @@ My work has been cited in academic and university settings:
 
 ---
 
-## Projects (35 of 53+ shipped, curated)
+## Projects (36 of 53+ shipped, curated)
 
 Curated into three tiers: flagship builds (ordered by implementation complexity), ventures & tools (ordered by real-world traction), then everything else.
 
@@ -328,6 +328,11 @@ Further Compacted [Karpathy's work with MicroGPT](https://karpathy.github.io/202
   - Site: https://flm.kuber.studio/
   - GitHub: https://github.com/Kuberwastaken/flm
   - LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7509546383075590144/
+
+- Planethunt — Discovered a Planetary Candidate in the Kepler field from pixel-peeping dimming data with Codex, combining raw pixels from thousands of stars until we found one red dwarf, KIC 5689121 in the constellation Lyra, dimming every 13.77 days.
+  - Site: https://kuber.studio/planethunt/
+  - GitHub: https://github.com/Kuberwastaken/planethunt
+  - X: https://x.com/kuberwastaken/status/2109240782368751834
 
 - Megaphone — A free, open-source dictation app for macOS that runs entirely on your Mac, powered by Apple's SpeechAnalyzer and Foundation Models frameworks.
   - Site: https://megaphone.kuber.studio/
