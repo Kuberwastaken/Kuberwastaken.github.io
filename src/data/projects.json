@@ -22,7 +22,7 @@
     },
     {
         "title": "Planethunt",
-        "description": "A possible planet hiding in old Kepler data. Found by pixel-peeping: Codex and I combed through the raw pixels of thousands of stars until one red dwarf, KIC 5689121 in the constellation Lyra, dimmed every 13.77 days. Every file is public.",
+        "description": "Discovered a Planetary Candidate in the Kepler field from pixel-peeping dimming data with Codex, combining raw pixels from thousands of stars until we found one red dwarf, KIC 5689121 in the constellation Lyra, dimming every 13.77 days.",
         "website": "https://kuber.studio/planethunt/",
         "github": "https://github.com/Kuberwastaken/planethunt",
         "mobilePreviewImg": "https://cdn.jsdelivr.net/gh/Kuberwastaken/Kuberwastaken.github.io/public/images/kuberwastaken-planethunt.jpg",
