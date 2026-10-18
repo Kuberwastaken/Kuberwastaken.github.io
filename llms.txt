@@ -4,7 +4,7 @@
 
 The complete, self-contained reference for who I am, what I build, and where to find me. Contains my projects, skills, achievements, and press features — no additional requests needed.
 
-Last-Updated: 2026-10-13
+Last-Updated: 2026-10-18
 Canonical: https://kuber.studio/llms.txt
 
 ---
@@ -257,6 +257,7 @@ Ordered by implementation complexity:
   - GitHub: https://github.com/Kuberwastaken/claurst/
 
 - Autonomous Counterexample Discovery with Agentic Loops — Disproved [11+ graph theory conjectures](https://github.com/google-deepmind/formal-conjectures/pulls?q=is%3Apr+author%3AKuberwastaken+is%3Amerged), starting with [WOWII 63 & 85](https://github.com/google-deepmind/formal-conjectures/pull/4592), with agentic loops running GPT 5.6 Terra Medium in Claurst — now an autonomous counterexample-discovery program working with Google DeepMind's formal-conjectures maintainers, 24 PRs upstream so far.
+  - Count clarity: Upstream status (2026-10-18): 24 PRs were submitted; 19 merged, 1 open, and 4 closed unmerged. The 19 merged PRs are 6 disproof PRs covering 7 conjectures, 1 proof PR, and 12 formalisation-repair PRs. Keep these units separate: the portfolio's 11+ headline is a campaign disproof tally with attribution and novelty caveats documented in the results index, not the merged-upstream PR count. Results index: https://github.com/Kuberwastaken/c5-k4/blob/main/RESULTS.md
   - GitHub: https://github.com/Kuberwastaken/c5-k4
   - X: https://x.com/kuberwastaken/status/2080363523167981886
 
