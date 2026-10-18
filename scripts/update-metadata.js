@@ -72,6 +72,10 @@ function formatProjectForLlmsTxt(project) {
     formatted += ` — ${cleanDesc}`;
   }
 
+  if (project.llm_context) {
+    formatted += `\n  - Count clarity: ${project.llm_context}`;
+  }
+
   const links = [];
   if (project.website) links.push(`Site: ${project.website}`);
   if (project.github) links.push(`GitHub: ${project.github}`);
@@ -109,6 +113,10 @@ function formatProjectForProfileJson(project) {
 
   if (project.description) {
     formatted.description = project.description;
+  }
+
+  if (project.llm_context) {
+    formatted.llm_context = project.llm_context;
   }
 
   if (project.website) {
@@ -717,6 +725,7 @@ function updateProfileMd() {
     if (p.github) links.push(`[code](${p.github})`);
     let line = `- **${p.title}** — ${desc}`;
     if (links.length) line += ` (${links.join(', ')})`;
+    if (p.llm_context) line += `\n  - Count clarity: ${p.llm_context}`;
     return line;
   }).join('\n');
 
