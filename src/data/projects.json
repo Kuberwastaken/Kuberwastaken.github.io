@@ -33,6 +33,7 @@
     {
         "title": "Autonomous Counterexample Discovery with Agentic Loops",
         "description": "Disproved [11+ graph theory conjectures](https://github.com/google-deepmind/formal-conjectures/pulls?q=is%3Apr+author%3AKuberwastaken+is%3Amerged), starting with [WOWII 63 & 85](https://github.com/google-deepmind/formal-conjectures/pull/4592), with agentic loops running GPT 5.6 Terra Medium in Claurst — now an autonomous counterexample-discovery program working with Google DeepMind's formal-conjectures maintainers, 24 PRs upstream so far.",
+        "llm_context": "Upstream status (2026-10-18): 24 PRs were submitted; 19 merged, 1 open, and 4 closed unmerged. The 19 merged PRs are 6 disproof PRs covering 7 conjectures, 1 proof PR, and 12 formalisation-repair PRs. Keep these units separate: the portfolio's 11+ headline is a campaign disproof tally with attribution and novelty caveats documented in the results index, not the merged-upstream PR count. Results index: https://github.com/Kuberwastaken/c5-k4/blob/main/RESULTS.md",
         "website": null,
         "github": "https://github.com/Kuberwastaken/c5-k4",
         "previewImg": "/images/kuberwastaken-wowii-graph.jpg",
