@@ -69,3 +69,4 @@ Allow: /
 
 Sitemap: https://kuber.studio/sitemap.xml
 Sitemap: https://kuber.studio/blog/sitemap.xml
+Sitemap: https://kuber.studio/internetonfire/sitemap.xml
