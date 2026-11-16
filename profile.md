@@ -2,7 +2,7 @@
 
 > Concise profile, auto-generated from source data. For the complete, machine-readable references see https://kuber.studio/llms.txt and https://kuber.studio/profile.json
 
-19-year-old AI developer from New Delhi, India.
+20-year-old AI developer from New Delhi, India.
 
 Hi! I'm Kuber Mehta (kuberwastaken), an AI developer from New Delhi, India.
 
@@ -90,4 +90,4 @@ Previously: Business Fellow @ Perplexity, AI Summer Resident @ Nas Daily (Dubai)
 - YouTube: https://www.youtube.com/@Kuberwastaken
 - Blog: https://kuber.studio/blog/
 
-_Last updated: 2026-10-22_
+_Last updated: 2026-11-16_
